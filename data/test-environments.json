@@ -1,0 +1,224 @@
+{
+  "schema": "cohavora-test-environments-v1",
+  "scope": "各原执行结果的环境配置；只使用保留的结果和冻结计划，不以当前机器补写历史配置。",
+  "profiles": [
+    {
+      "id": "env-b14-retry07",
+      "label": "B14 Formal retry07：同进程8小时／100轮",
+      "server": "阿里云 ECS：2 vCPU／2 GiB 内存／3 Mbps 带宽。原运行计划固定配置；SFU服务端版本未记录。",
+      "client": "Windows Cohavora.exe，RelWithDebInfo，单产品进程（PID 45424）。CPU型号、物理内存、GPU型号、Windows具体版本及Qt版本未在该run的最终环境记录中提供。",
+      "load": "10个VP8视频发布端，160×90、5 fps、每路40 kbps；音频24 kbps；simulcast=false、E2EE关闭。共享计划60秒，日志OFF/ON计划每侧35秒。",
+      "boundary": "3 Mbps为冻结计划中的服务器带宽配置字段，另有独立的出口门限；不把带宽配置当作吞吐实测值。",
+      "sources": [
+        {
+          "path": "evidence/b14/S048-plan.json",
+          "basis": "server_provider/server_instance_id/server_cpu/server_memory_gib/server_bandwidth_mbps及固定load字段"
+        },
+        {
+          "path": "evidence/b14/S039-result.json",
+          "basis": "configuration=RelWithDebInfo"
+        },
+        {
+          "path": "evidence/b14/S047-uia-result.json",
+          "basis": "同进程身份、100轮及存活时间"
+        }
+      ]
+    },
+    {
+      "id": "env-wgc-local",
+      "label": "局部WGC：1小时／100轮及24轮ETW生命周期",
+      "server": "本地采集生命周期测试，不依赖云服务器或SFU。",
+      "client": "Windows test_desktop_capture_runtime.exe，RelWithDebInfo；同一进程WGC启停。原结果未记录CPU、物理内存、GPU及显示器型号。",
+      "load": "本地捕获源启停、释放和资源观测；100轮／至少3600秒与24轮ETW是各自独立运行。",
+      "boundary": "不能套用B07/B08实服环境，也不能作为完整会议长稳。",
+      "sources": [
+        {
+          "path": "evidence/screen-share/S026-result.json",
+          "basis": "configuration、可执行工件及100轮本地生命周期结果"
+        },
+        {
+          "path": "evidence/screen-share/S024-final-etw-acceptance.json",
+          "basis": "24轮局部生命周期范围"
+        }
+      ]
+    },
+    {
+      "id": "env-screen-share",
+      "label": "B07/B08屏幕共享最终质量、生命周期与成本批次",
+      "server": "阿里云 ECS：2 vCPU／2 GB内存／3 Mbps带宽；原系统MemTotal=1,917,536 kB。LiveKit 1.13.6派生服务，镜像和二进制指纹见原报告。",
+      "client": "Windows本机，28逻辑核；RAM 34,164,101,120 bytes（约31.82 GiB）；AMD Radeon RX 6750 GRE 12GB，驱动32.0.21045.5002；主显示器2560×1440；RelWithDebInfo。CPU具体型号、Windows build和Qt版本未在该批次单列。",
+      "load": "同进程两个独立native Room经真实SFU；WGC/GDI、生成窗口/屏幕、热切、重连、远端解码和成本采集按各原case执行。",
+      "boundary": "同进程成本包含两个Room及图案绘制；不等于跨物理终端或任意2K/30内容的容量保证。",
+      "sources": [
+        {
+          "path": "evidence/historical/S007-FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+          "basis": "目标范围、输入与公共环境；batch C说明"
+        },
+        {
+          "path": "evidence/screen-share/S023-SCREEN_SHARE_QUALITY_IMPLEMENTATION_REPORT.md",
+          "basis": "目标设备、显示器、LiveKit 1.13.6及固定服务指纹"
+        }
+      ]
+    },
+    {
+      "id": "env-b15",
+      "label": "B15遥测／日志配对性能及9000秒资源批次",
+      "server": "阿里云 ECS：2 vCPU／2 GB内存／3 Mbps带宽；同批次MemTotal=1,917,536 kB。LiveKit 1.13.6镜像及二进制指纹绑定原结果，任务服务使用独立配置。",
+      "client": "Windows本机，28逻辑核，RAM 34,164,101,120 bytes（约31.82 GiB）；AMD Radeon RX 6750 GRE 12GB／驱动32.0.21045.5002；uia_entry_fixture.exe，RelWithDebInfo。CPU具体型号和Windows build未单列。",
+      "load": "同机独立publisher／receiver产品peer；三组OFF/ON正式配对，每侧180秒；独立UIA、五轮资源残余及9000秒长门分别判定。",
+      "boundary": "不把两个产品peer解释为两台物理客户端；9000秒资源门不等于B14正式8小时生命周期。",
+      "sources": [
+        {
+          "path": "evidence/historical/S007-FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+          "basis": "输入与公共环境；batch G"
+        },
+        {
+          "path": "evidence/telemetry-logging/S028-B15_BATCH_INDEX.json",
+          "basis": "binary_identity、cases及long-resource-9000s服务指纹"
+        }
+      ]
+    },
+    {
+      "id": "env-e2ee-performance",
+      "label": "E2EE v2性能与600秒功能观察",
+      "server": "现存最终性能报告未记录云厂商、服务器CPU、内存、带宽和SFU版本；保留未记录，不套用其他批次的阿里云或腾讯云环境。",
+      "client": "Windows RelWithDebInfo；同机三个native peer；性能工件build105、v2 backend。主机CPU、物理内存和GPU未记录。build124属于最终工程回归，不能代替性能工件身份。",
+      "load": "H264窗口共享＋麦克风＋初始聊天/文件/白板；OFF/ON/ON/OFF，每轮100秒，20秒预热、45秒共同窗口；另有逐轨600秒功能观察。",
+      "boundary": "限定三native peer性能负载；其他Native／Flutter互通功能case不自动复用这组拓扑或配置。",
+      "sources": [
+        {
+          "path": "evidence/e2ee/S021-E2EE_IMPLEMENTATION_REPORT_20260930.md",
+          "basis": "P01固定口径及build105/v2性能结果"
+        },
+        {
+          "path": "evidence/e2ee/S022-FINAL_ACCEPTANCE_20261001.json",
+          "basis": "native_backend_profile与性能范围限制"
+        }
+      ]
+    },
+    {
+      "id": "env-whiteboard-m5",
+      "label": "Whiteboard M5：4K offscreen工程测量",
+      "server": "本地Debug/offscreen工程测试，不依赖真实云服务器或SFU。",
+      "client": "Microsoft Windows NT 10.0.26200.0；x64／Debug；CMake 4.3.0、Visual Studio 18 2026、Qt 5.15.18、x64-windows-static；单屏。CPU、GPU、物理内存在原报告明确为UNKNOWN。",
+      "load": "合成4K offscreen输入与QPainter绘制、图片缓存；白板5项／批注3项focused门。",
+      "boundary": "不能套用B12的RelWithDebInfo实服客户端配置，不代表真实显示器落笔或跨端可见时延。",
+      "sources": [
+        {
+          "path": "evidence/whiteboard/S027-M5_ACCEPTANCE.md",
+          "basis": "第2节平台与构建输入、第4节工程性能与资源"
+        }
+      ]
+    },
+    {
+      "id": "env-whiteboard-b12",
+      "label": "Whiteboard B12：三独立产品进程实服协同",
+      "server": "阿里云 ECS：2 vCPU／2 GB内存／3 Mbps带宽；同批次MemTotal=1,917,536 kB。使用现有LiveKit实服；版本号未在B12结果单列。",
+      "client": "公共Windows主机：28逻辑核、RAM 34,164,101,120 bytes（约31.82 GiB）、AMD Radeon RX 6750 GRE 12GB／驱动32.0.21045.5002；RelWithDebInfo，三个独立产品进程。CPU具体型号与Windows build未单列。",
+      "load": "三端同时编辑、图片资产、迟加入、实际信令重连、导出像素一致与authority正常/异常退场，共8项。",
+      "boundary": "三独立进程不等于三台物理终端；不包含B13容量或长期硬件条件。",
+      "sources": [
+        {
+          "path": "evidence/historical/S007-FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+          "basis": "公共环境及batch E三产品进程范围"
+        },
+        {
+          "path": "evidence/whiteboard/S027-M5_ACCEPTANCE.md",
+          "basis": "2026-10-02 B12实服补充记录"
+        }
+      ]
+    },
+    {
+      "id": "env-common-final-regression",
+      "label": "2026-10-02综合自动化限定回归公共环境",
+      "server": "阿里云 ECS：2 vCPU／2 GB内存／3 Mbps带宽；MemTotal=1,917,536 kB；现有LiveKit容器。",
+      "client": "Windows交互式桌面；28逻辑核、RAM 34,164,101,120 bytes（约31.82 GiB）、AMD Radeon RX 6750 GRE 12GB／驱动32.0.21045.5002；RelWithDebInfo。CPU型号与Windows build未单列。",
+      "load": "公共环境只绑定B01/B02/B03/B04/B07/B08/B10/B12/B15当时的限定范围；各case负载和拓扑另列。",
+      "boundary": "不把该批次的服务器、硬件或测试通过结论转移到其他日期和运行。",
+      "sources": [
+        {
+          "path": "evidence/historical/S007-FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+          "basis": "目标范围及输入与公共环境"
+        }
+      ]
+    },
+    {
+      "id": "env-tencent-history",
+      "label": "腾讯云历史UIA／9000秒／固定九宫格长稳",
+      "server": "腾讯云。当前保留摘要未提供各原运行的实例规格、CPU、内存、带宽或SFU版本，不以其他腾讯云运行补写。",
+      "client": "各原运行的CPU、内存、GPU及构建配置未在当前保留摘要完整记录。固定九宫格负载仅属于对应8小时运行。",
+      "load": "9366秒UIA、9000秒资源门、8小时固定九宫格是三个独立运行，按各自原范围保留结果。",
+      "boundary": "这些历史结果不授予B14正式生命周期通过，也不证明当前候选环境等价。",
+      "sources": [
+        {
+          "path": "audit/baseline/report-input.json",
+          "basis": "H187/H188/H189原封存摘要与来源边界"
+        },
+        {
+          "path": "evidence/historical/S045-summary.json",
+          "basis": "固定九宫格8小时原最终结果"
+        }
+      ]
+    },
+    {
+      "id": "env-tencent-external-pilot",
+      "label": "腾讯云外部100周期／8小时有限复核",
+      "server": "腾讯云 CVM；CPU、内存、带宽与SFU版本未在保留的外部最终报告中记录。",
+      "client": "外部报告主机为Windows 10 x64，Qt 5.15／MSVC 2026、RelWithDebInfo；CPU、物理内存和GPU型号未记录。",
+      "load": "同产品进程100周期，10路持续VP8发布；原运行自身为Pilot／UI-only。",
+      "boundary": "配置和结果来自外部报告声明及有限复核，不升级为Formal。",
+      "sources": [
+        {
+          "path": "evidence/historical/S043-TENCENT_100_CYCLE_SOAK_20261008.md",
+          "basis": "报告主机、负载及原运行Pilot身份"
+        },
+        {
+          "path": "evidence/historical/S044-evidence-supplement-20261008.json",
+          "basis": "有限复核与输入边界"
+        }
+      ]
+    },
+    {
+      "id": "env-b11-300s",
+      "label": "B11 100发布／第二页16路低层／300秒",
+      "server": "原最终结果仅明确20 Mbps带宽为用户确认、未由厂商API核验；云厂商、实例CPU、内存及SFU版本未在该最终结果单列。",
+      "client": "原生接收端RelWithDebInfo；全屏2K第二页固定16路低层；CPU、物理内存、GPU型号未在保留结果单列。",
+      "load": "100路720p simulcast发布，接收端固定16路低层，300秒；不含完整音频、翻页及混合长稳。",
+      "boundary": "20 Mbps配置不能替换为其他运行的3 Mbps，也不能继承其他云实例规格。",
+      "sources": [
+        {
+          "path": "evidence/historical/S013-completion-checkpoint.json",
+          "basis": "scope、validation.configuration及public_bandwidth_provenance"
+        }
+      ]
+    },
+    {
+      "id": "env-b11-lowcap",
+      "label": "B11 100发布／音频／翻页混合短前置",
+      "server": "保留结果声明3 Mbps带宽（用户确认、非厂商API核验）。该最终结果未完整记录云厂商、实例CPU、内存及SFU版本。",
+      "client": "接收端与混合负载环境未在最终结果完整记录；客户端资源覆盖不足，保持INCONCLUSIVE。",
+      "load": "计划100路视频＋1个任务音频参考及翻页；100路发布前置失败，长稳NOT_RUN。",
+      "boundary": "不把路径名中的供应商标识或其他运行的2 vCPU／2 GiB规格冒认为该最终结果已核验的环境。",
+      "sources": [
+        {
+          "path": "evidence/historical/S015-readiness-summary.json",
+          "basis": "criteria.server_resources的3 Mbps配置来源、混合负载及失败边界"
+        }
+      ]
+    },
+    {
+      "id": "env-local-tools",
+      "label": "当前四条限定离线／静态工具门",
+      "server": "不依赖云服务器或SFU；未运行产品服务验收。",
+      "client": "本地Windows文件级fixture／静态门；27个直接输入快照与原指纹一致。CPU、RAM、GPU及完整运行环境未作为本门冻结输入记录。",
+      "load": "LUID／QueueSampler、独立DXGI inventory、STOP-return时钟合同、SDK布局及wrapper静态检查；以各条声明范围为准。",
+      "boundary": "只授予限定工具范围信用；不将当前主机硬件或离线PASS解释为产品实服性能。",
+      "sources": [
+        {
+          "path": "data/direct-inputs.json",
+          "basis": "27项冻结直接输入及SHA"
+        }
+      ]
+    }
+  ]
+}

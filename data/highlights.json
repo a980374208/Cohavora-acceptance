@@ -1,0 +1,386 @@
+[
+  {
+    "id": "highlight-b14",
+    "title": "B14 8小时 / 100轮会议生命周期正式长稳测试（Formal Soak Test）",
+    "status": "FAIL",
+    "date": "2026-10-10T18:47:31.7900122Z — 2026-10-11T02:47:53.5730651Z",
+    "summary": "历史Formal retry07在同一个产品进程中连续运行八小时，执行100轮固定会议生命周期操作，100/100轮全部完成；逐轮32类检查均PASS，整体因Private Bytes释放窗口增长超出64 MiB原门限判FAIL。下方列出每轮验证阶段及100轮重要实测统计。",
+    "scope": "原 retry07 冻结输入的 Formal 运行；run_id=e7501e95039f4eb7ab23594a83fe82f0。该历史结果不等于当前候选验收。",
+    "metrics": [
+      {
+        "name": "完整会议生命周期",
+        "value": "100 / 100",
+        "limit": "100 / 100",
+        "unit": "轮",
+        "basis": "external-review.json: cycles.length、cycle_counts.PASS"
+      },
+      {
+        "name": "运行时长",
+        "value": 28821.783053,
+        "limit": "≥28800",
+        "unit": "s",
+        "basis": "external-review.json: duration_seconds；非把计划时长当实测"
+      },
+      {
+        "name": "Private Bytes 释放窗口增长",
+        "value": 100.412109375,
+        "limit": "≤64",
+        "unit": "MiB",
+        "basis": "external-review.json: resource_growth.private_bytes.growth=105289728 bytes、limit=67108864 bytes、passed=false；首末各十个 room-release 窗口中位数差"
+      },
+      {
+        "name": "逐周期检查覆盖",
+        "value": "32 类 × 100 轮全部 PASS",
+        "limit": "逐周期检查成立",
+        "unit": "",
+        "basis": "external-review.json: cycles[*].checks；11 个 final_checks 亦均为 true，但不抵消资源门 FAIL"
+      },
+      {
+        "name": "Windows 崩溃事件",
+        "value": 0,
+        "limit": 0,
+        "unit": "个",
+        "basis": "external-review.json: windows_crash_events；产品 exit_code=0"
+      },
+      {
+        "name": "WDDM 释放窗口增长",
+        "value": 0,
+        "limit": "≤32",
+        "unit": "MiB",
+        "basis": "external-review.json: resource_growth.wddm_bytes.growth=0、limit=33554432 bytes、passed=true"
+      }
+    ],
+    "limitations": [
+      "Private Bytes增长归因尚未闭合；当前日志/遥测约40 MB容量上限与系统堆机制的定位进展见上方说明。局部检查通过不覆盖整体Formal FAIL。",
+      "GPU release_eligible=false 是原报告自身限制；kernel scheduler packets 不等于硬件队列深度。",
+      "历史输入与当前候选完整等价未证明，不将该历史 FAIL 外推为当前候选实测失败，也不将其局部 PASS 继承为当前正式通过。"
+    ],
+    "sources": [
+      "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/external-review.json",
+      "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/result.json",
+      "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/uia/uia-result.json",
+      "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/plan.json",
+      "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/limits.json"
+    ],
+    "failureAnalysis": {
+      "title": "失败原因与当前定位进展",
+      "summary": "Private Bytes 释放窗口增长100.412109375 MiB（约100 MB量级），超过期望门限64 MiB，因此本次Formal资源门仍为FAIL。",
+      "explanation": "目前定位到日志和遥测中约40 MB的容量上限，以及长时间运行中的系统堆申请、保留与复用机制。其余增长仍待定位。",
+      "conclusion": "现有证据不能确定为内存泄漏，也不能据此说明不存在内存泄漏。",
+      "basis": "用户在本次修订中提供的当前排查说明，不是原Formal回执中的完整归因结论",
+      "details": "约40 MB是当前定位到的容量上限说明，不是本次100轮运行经独立测量的分项增长或可扣除量；原FAIL和64 MiB门限保持不变。",
+      "receipt": "data/b14-memory-investigation-note.json"
+    },
+    "cycleSummaryPath": "data/b14-100-cycle-summary.json",
+    "environmentIds": [
+      "env-b14-retry07"
+    ]
+  },
+  {
+    "id": "highlight-screen-share",
+    "title": "屏幕共享（WGC / GDI）生命周期与性能成本测试",
+    "status": "PASS",
+    "date": "2026-09-29 局部 WGC；2026-10-02 屏幕共享最终回归",
+    "summary": "历史局部 WGC 在普通用户令牌下完成同进程至少 1 小时 / 100 轮启停；B07/B08 最终 15 项限定回归通过，覆盖后端切换、FPS、重连、释放、复杂生成内容和成本采集。各组结果按独立运行分别展示。",
+    "scope": "WGC 局部生命周期与 B07/B08 历史限定门；B07/B08 为 RelWithDebInfo、同机同进程两个独立 native Room 经真实 SFU，成本包含相应测试负载。",
+    "metrics": [
+      {
+        "name": "屏幕共享最终独立 case",
+        "value": "15 / 15",
+        "limit": "15 / 15",
+        "unit": "项",
+        "basis": "FINAL_REGRESSION_INDEX.json: batches.C.unique_cases、batches.C.cases[*].status"
+      },
+      {
+        "name": "WGC 同进程启停 / 实测耗时",
+        "value": "100 / 3694.4689999999828",
+        "limit": "≥100 / ≥3600",
+        "unit": "轮 / s",
+        "basis": "wgc-soak result.json: cycles、elapsed_seconds；2026-09-29T10:41:39.856073Z 至 11:43:14.328108Z"
+      },
+      {
+        "name": "WGC 首末停止态句柄",
+        "value": "184 → 183",
+        "limit": "未在最终 result 单独列数值上限；stability gate PASS",
+        "unit": "个",
+        "basis": "wgc-soak result.json: first_stopped.handles、last_stopped.handles、gates.stability"
+      },
+      {
+        "name": "WGC 首末停止态 Private Bytes 增长",
+        "value": 1.75390625,
+        "limit": "≤8",
+        "unit": "MiB",
+        "basis": "wgc-soak result.json: (last_stopped.private_bytes-first_stopped.private_bytes)/1048576；门限按 report-input historicalRecords[H155].metrics"
+      },
+      {
+        "name": "GDI 目标 15 / 20 / 30 FPS 的实际解码",
+        "value": "14.999553763275543 / 19.997916717026005 / 24.99534524183234",
+        "limit": "10.5–18 / 14–24 / 21–36（原 70%–120%）",
+        "unit": "FPS",
+        "basis": "report-input.json: historicalRecords[H150].metrics；对应 1280×720、1920×1080、2560×1440，最终原 summary 当前缺失，仅引用已保留最终摘要"
+      },
+      {
+        "name": "WGC 1800 秒资源门 Private Bytes 增长",
+        "value": 3.8125,
+        "limit": "≤64",
+        "unit": "MiB",
+        "basis": "FINAL_REGRESSION_INDEX.json: batches.C.cases[case=wgc-hot-switch-fps-reconnect-1800s].resource_checks.private_bytes.growth=3997696 bytes"
+      },
+      {
+        "name": "WGC 1800 秒资源门 CPU 变化",
+        "value": -0.5578516609175654,
+        "limit": "≤2",
+        "unit": "个百分点",
+        "basis": "FINAL_REGRESSION_INDEX.json: 同 case resource_checks.cpu_pct；首窗中位数4.915843269745685%，末窗4.35799160882812%，六资源门均PASS"
+      },
+      {
+        "name": "WGC 2K 屏幕独立成本（原报告记录）",
+        "value": "约19.62 FPS / 2.36 Mbps / CPU +49.34 core-percent",
+        "limit": "原成本采集完整；未设 CPU / 网络预算门",
+        "unit": "",
+        "basis": "FINAL_AUTOMATION_ACCEPTANCE_REPORT.md:116，complex-2k-screen-01；此为最终重跑前已完成成本运行，勿称为 10-02 最终重跑同一数值"
+      }
+    ],
+    "limitations": [
+      "历史 GDI 目标 30 FPS 约 12.25–12.50 FPS 的 FAIL 保留；后续约 25 FPS 满足原 21–36 FPS 门，不能宣称稳定精确 30 FPS。",
+      "WGC 局部 1 小时 / 100 轮不覆盖完整会议、SFU、远端音视频或 B14 Formal。",
+      "WGC 1800 秒最终摘要记录最低/中位/最高解码 FPS 为 2.1/12.05/24.4，不证明持续复杂 4K/30。",
+      "WGC 2K 成本包含同进程两个 Room 及图案绘制；CPU core-percent 不是整机 CPU 百分比，也没有未知预算通过结论。",
+      "相关产品、会话、UI、渲染及工具输入已有变化；本卡是历史限定结果，当前候选仍须重新绑定。"
+    ],
+    "sources": [
+      "E:/vsSource/WebRTC/live-kit-test/out/wgc-soak-1h-100-20260929-retry/result.json",
+      "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/final-regression-20261002/FINAL_REGRESSION_INDEX.json",
+      "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+      "E:/vsSource/WebRTC/live-kit-test/out/release-acceptance-report-20261012/report-input.json"
+    ],
+    "resolvedSources": {
+      "E:/vsSource/WebRTC/live-kit-test-local/docs/acceptance/evidence/final-regression-20261002/FINAL_REGRESSION_INDEX.json": "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/final-regression-20261002/FINAL_REGRESSION_INDEX.json",
+      "E:/vsSource/WebRTC/live-kit-test-local/docs/acceptance/FINAL_AUTOMATION_ACCEPTANCE_REPORT.md": "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/FINAL_AUTOMATION_ACCEPTANCE_REPORT.md"
+    },
+    "environmentIds": [
+      "env-wgc-local",
+      "env-screen-share"
+    ]
+  },
+  {
+    "id": "highlight-b15",
+    "title": "B15 遥测与日志系统配对（A/B）性能开销测试",
+    "status": "PASS",
+    "date": "2026-10-01 / 2026-10-02；最终索引生成UTC 2026-10-01T20:51:53.511879+00:00",
+    "summary": "历史 RelWithDebInfo 在同负载下执行三组 OFF/ON 正式配对，每侧 180 秒，CPU、工作集和回调 p99 开销均满足原门；连同独立 UIA 干扰、五轮残余资源与 9000 秒资源门共 6 项通过。",
+    "scope": "原 f153e339fe58aad7023e18ba89bfc4daa4714a13 范围；夹具 SHA256=df16539c1d14e7b39db7a7fd731bb98c933968d19b011ec4f4d97605bf0e4712。原生生产 Coordinator、会议/遥测 UI 与实际媒体；最终综合回归当时按输入一致复用。",
+    "metrics": [
+      {
+        "name": "正式 OFF / ON 配对",
+        "value": "3 / 3，每侧180秒",
+        "limit": "三组同负载配对",
+        "unit": "组",
+        "basis": "B15_BATCH_INDEX.json: cases[paired-1..3].status；每侧180秒见 FINAL_AUTOMATION_ACCEPTANCE_REPORT.md:152"
+      },
+      {
+        "name": "CPU 增量（第1 / 2 / 3组）",
+        "value": "0.6748644834018991 / 0.7064084782162388 / 0.7098815712675011",
+        "limit": "每组≤1",
+        "unit": "个百分点",
+        "basis": "B15_BATCH_INDEX.json: cases[0..2].comparison.cpu_increase_pp、comparison.limits.cpu_increase_pp"
+      },
+      {
+        "name": "工作集增量（第1 / 2 / 3组）",
+        "value": "4.26953125 / 4.736328125 / 2.181640625",
+        "limit": "每组≤32",
+        "unit": "MiB",
+        "basis": "B15_BATCH_INDEX.json: cases[0..2].comparison.working_set_increase_bytes =4476928 /4966400 /2287616，除以1048576；limit=33554432 bytes"
+      },
+      {
+        "name": "回调 p99 增幅保守上界（第1 / 2 / 3组）",
+        "value": "-3.831417624521072 / 0 / -5.67200986436498",
+        "limit": "每组≤5",
+        "unit": "%",
+        "basis": "B15_BATCH_INDEX.json: cases[0..2].comparison.callback_p99_increase_upper_percent、limits.callback_p99_increase_percent"
+      },
+      {
+        "name": "原生媒体 / UI / 持久化长门实测时长",
+        "value": 9000.128,
+        "limit": "≥9000",
+        "unit": "s",
+        "basis": "B15_BATCH_INDEX.json: cases[case=long-resource-9000s].original_gate.duration_s；9002个样本，最大间隔1.095秒≤30秒，预热300秒"
+      },
+      {
+        "name": "长门 Private Bytes 增长",
+        "value": 8.185546875,
+        "limit": "≤64",
+        "unit": "MiB",
+        "basis": "B15_BATCH_INDEX.json: cases[case=long-resource-9000s].original_gate.private_growth_mib；退会后相对入会前31.96875MiB≤64MiB"
+      }
+    ],
+    "limitations": [
+      "native callback 计时覆盖元数据/帧复制及订阅分发，不包含 decoder 自身计算；不能把 p99 改善解释成整条解码链性能提高。",
+      "此前 p99 配对及内存 FAIL 保持各自原输入边界；本卡只展示最终限定门，不声称 ETW 已证明具体 heap 锁栈或零泄漏。",
+      "9000 秒资源门不是 B14 8 小时 / 100 完整会议生命周期；当前会话/UI/遥测 probe 与产品输入已变化，历史 PASS 不继承为当前候选 PASS。"
+    ],
+    "sources": [
+      "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/batch-g-20261002/B15_BATCH_INDEX.json",
+      "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/FINAL_AUTOMATION_ACCEPTANCE_REPORT.md"
+    ],
+    "resolvedSources": {
+      "E:/vsSource/WebRTC/live-kit-test-local/docs/acceptance/evidence/batch-g-20261002/B15_BATCH_INDEX.json": "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/batch-g-20261002/B15_BATCH_INDEX.json"
+    },
+    "environmentIds": [
+      "env-b15"
+    ]
+  },
+  {
+    "id": "highlight-e2ee",
+    "title": "E2EE 端到端加密性能基准测试",
+    "status": "PASS（原限定性能负载）",
+    "date": "2026-10-01",
+    "summary": "固定 v2 backend/build105 下完成 Off/On/On/Off 三端配对性能对照，CPU、私有内存与解码帧率均在事前批准预算内，并完成共同 600 秒逐轨功能观察。",
+    "scope": "三 native peer，同机 H264 窗口共享＋麦克风及初始聊天／文件／白板负载。每轮 100 秒，最后一端入会后预热 20 秒，共同测量窗口 45 秒；各客户端逐轮 P95 后对两轮 On/Off 分别平均。此为原冻结工件的历史最终结果，当前候选 T033 尚未重测。",
+    "metrics": [
+      {
+        "name": "CPU 增量范围（On−Off）",
+        "value": "−0.163008～−0.052448",
+        "limit": "≤10",
+        "unit": "个百分点",
+        "basis": "E2EE_IMPLEMENTATION_REPORT_20260930.md:657；事前批准预算见471、496、652"
+      },
+      {
+        "name": "最大私有内存增量（On−Off）",
+        "value": 3.732422,
+        "limit": "≤128",
+        "unit": "MiB",
+        "basis": "E2EE_IMPLEMENTATION_REPORT_20260930.md:657"
+      },
+      {
+        "name": "解码 FPS 损失范围",
+        "value": "−1.374675～−0.361170",
+        "limit": "≤10",
+        "unit": "%",
+        "basis": "E2EE_IMPLEMENTATION_REPORT_20260930.md:657；负值只按测量波动解释"
+      },
+      {
+        "name": "PCM 回调间隔 P95 上界／稳态 >100 ms 间隔",
+        "value": "15 / 0",
+        "limit": "仅观测，未设音质门限",
+        "unit": "ms / 次",
+        "basis": "E2EE_IMPLEMENTATION_REPORT_20260930.md:659"
+      },
+      {
+        "name": "音频 jitter-buffer delay P95 差值（On−Off）",
+        "value": "−3.720930～＋4.949495",
+        "limit": "仅观测，未设音质门限",
+        "unit": "ms",
+        "basis": "E2EE_IMPLEMENTATION_REPORT_20260930.md:659；不是嘴到耳延迟"
+      },
+      {
+        "name": "共同可用窗口／逐轨判定时长",
+        "value": "617.546 / 600",
+        "limit": "逐轨判定覆盖≥600",
+        "unit": "s",
+        "basis": "E2EE_IMPLEMENTATION_REPORT_20260930.md:661；每端60个10秒区间、两路音频与两路视频各自推进"
+      }
+    ],
+    "limitations": [
+      "以上为 2026-10-01 原版本限定负载 PASS；当前候选的完整输入等价未证明，T033 保持 NOT_RUN。",
+      "未覆盖真实摄像头性能、物理嘴到耳延迟、2 小时／100 次启停／8 小时长稳；负差值不宣称加密提升性能。"
+    ],
+    "sources": [
+      "E:/vsSource/WebRTC/live-kit-test-local/docs/analysis/e2ee/E2EE_IMPLEMENTATION_REPORT_20260930.md"
+    ],
+    "sourceChecks": [
+      {
+        "path": "E:/vsSource/WebRTC/live-kit-test-local/docs/analysis/e2ee/E2EE_IMPLEMENTATION_REPORT_20260930.md",
+        "sha256": "45fc5367429d0fabea9545b0f843ba52dfaadc9296dd693967fd3fc2b48f92ea",
+        "status": "MATCH_RECORDED_RECEIPT"
+      }
+    ],
+    "environmentIds": [
+      "env-e2ee-performance"
+    ]
+  },
+  {
+    "id": "highlight-whiteboard",
+    "title": "白板渲染与协同性能测试（Whiteboard M5 / B12）",
+    "status": "PASS_SCOPED（M5）／PASS（B12 原实服范围）",
+    "date": "M5：2026-09-22；B12：2026-10-02",
+    "summary": "M5 的 4K offscreen 合成绘制和图片缓存满足原 Debug 设计门；B12 在真实服务下完成三个独立产品进程的 8 项协作验收，并核对三端导出像素一致。",
+    "scope": "M5 是原 Debug/offscreen 输入；B12 是 RelWithDebInfo 三独立产品进程实服功能范围，包括同时写入、图片资产、迟加入、同步、实际信令重连后新提交、导出及 authority 退场边界。",
+    "metrics": [
+      {
+        "name": "4K offscreen 输入＋绘制 P95",
+        "value": 0.2652,
+        "limit": "<8",
+        "unit": "ms",
+        "basis": "M5_ACCEPTANCE.md:第4节；仅合成 QPainter 路径"
+      },
+      {
+        "name": "Qt 图片缓存",
+        "value": 33177600,
+        "limit": "<100663296（96 MiB）",
+        "unit": "bytes",
+        "basis": "M5_ACCEPTANCE.md:第4节；约31.64 MiB"
+      },
+      {
+        "name": "白板／批注 focused 门",
+        "value": "5/5 / 3/3",
+        "limit": "全部通过",
+        "unit": "项",
+        "basis": "M5_ACCEPTANCE.md:第4节"
+      },
+      {
+        "name": "B12 独立产品进程／独立 case",
+        "value": "3 / 8（8/8 PASS）",
+        "limit": "3 个进程、8 项全部通过",
+        "unit": "端 / 项",
+        "basis": "M5_ACCEPTANCE.md:首段；FINAL_REGRESSION_INDEX.json:batches.E.unique_cases=8 及 cases[].status=PASS"
+      },
+      {
+        "name": "独立像素回读与导出一致",
+        "value": "320×180；三端全像素 SHA256 一致",
+        "limit": "尺寸、背景／注释像素及三端全像素一致",
+        "unit": "px",
+        "basis": "FINAL_AUTOMATION_ACCEPTANCE_REPORT.md:132；Pillow 独立回读、真实 production renderPage/QSaveFile"
+      },
+      {
+        "name": "正常退出清理",
+        "value": "Room 弱引用=0；shutdown pending=0；进程 exit=0",
+        "limit": "均为0",
+        "unit": "计数 / exit code",
+        "basis": "FINAL_AUTOMATION_ACCEPTANCE_REPORT.md:134；异常 authority 不声明 native drain"
+      }
+    ],
+    "limitations": [
+      "M5 的 0.2652 ms 只代表原 Debug 合成绘制；现行 RelWithDebInfo 性能门尚未重测，不代表实物 4K 落笔、采集开销或跨端可见延迟。",
+      "B12 为同机三个独立产品进程；不外推三台物理终端、4／8 人负载、100 ms RTT／2%丢包、50 次启停或 30 分钟持续书写。"
+    ],
+    "sources": [
+      "E:/vsSource/WebRTC/live-kit-test-local/docs/whiteboard/M5_ACCEPTANCE.md",
+      "E:/vsSource/WebRTC/live-kit-test-local/docs/acceptance/FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+      "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/final-regression-20261002/FINAL_REGRESSION_INDEX.json"
+    ],
+    "resolvedSources": [
+      {
+        "original": "E:/vsSource/WebRTC/live-kit-test-local/docs/acceptance/evidence/final-regression-20261002/FINAL_REGRESSION_INDEX.json",
+        "resolved": "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/final-regression-20261002/FINAL_REGRESSION_INDEX.json",
+        "sha256": "f54b8fee5601192c5e6b1daa3d3b09d2eb2b45981440042e73a0b80324a01905"
+      }
+    ],
+    "sourceChecks": [
+      {
+        "path": "E:/vsSource/WebRTC/live-kit-test-local/docs/whiteboard/M5_ACCEPTANCE.md",
+        "sha256": "99111519166c3090b54e4c753889e04613dd4af9895e64028588db8bec1d70f0",
+        "status": "MATCH_RECORDED_RECEIPT"
+      },
+      {
+        "path": "E:/vsSource/WebRTC/live-kit-test-local/docs/acceptance/FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+        "sha256": "e71690d2cd70f8d189a304238aa995a2f02d6a85b22c6cc7581da935f01e4b57",
+        "status": "MATCH_RECORDED_RECEIPT"
+      }
+    ],
+    "environmentIds": [
+      "env-whiteboard-m5",
+      "env-whiteboard-b12"
+    ]
+  }
+]

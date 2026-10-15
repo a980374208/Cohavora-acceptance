@@ -1,0 +1,116 @@
+{
+  "schema": "cohavora-b14-memory-usage-summary",
+  "schema_version": 1,
+  "status": "READ_ONLY_DERIVED_NO_RETEST",
+  "created_utc": "2026-10-15T09:14:37.409Z",
+  "run_id": "e7501e95039f4eb7ab23594a83fe82f0",
+  "run_verdict": "FAIL",
+  "cycle_count": 100,
+  "sources": [
+    {
+      "path": "evidence/b14/S038-external-review.json",
+      "sha256": "36763b18722b5567c31d1cfcbbbb7aa54de9211e5f4cfc958b2ee769a7527618",
+      "bytes": 54263934
+    },
+    {
+      "path": "evidence/b14/S039-result.json",
+      "sha256": "dc9a056e5d0e4a6169785cf119bcad021ea2b5bff7bc803879c31191bf72a6ad",
+      "bytes": 1505
+    },
+    {
+      "path": "evidence/b14/S047-uia-result.json",
+      "sha256": "d5e6f839bfc429dd12f97f42d3e081c53320b0f3461c21262c8a8b0b2cd88f73",
+      "bytes": 1298
+    },
+    {
+      "path": "evidence/b14/S048-plan.json",
+      "sha256": "54899b68b88794d2d36bd95e818b23f0b6ee97baf0ca337b7bfea7dcbc4dd619",
+      "bytes": 4326
+    }
+  ],
+  "metrics": [
+    {
+      "id": "normal_idle_private_bytes",
+      "phase": "软件常态（未入会／空闲）",
+      "metric": "Private Bytes",
+      "definition": "进程私有提交内存",
+      "status": "UNKNOWN",
+      "mean_bytes": null,
+      "mean_mib": null,
+      "samples": 0,
+      "valid_windows": 0,
+      "window_scope": "需按未入会且空闲状态识别稳定窗口；不能以离会释放窗替代全新启动常态",
+      "reason": "同run保留的最终结果没有该状态下的绝对内存占用采样或窗口mean；原始external-resources.jsonl已不在，不能由增长量、PASS或中位数推回平均值。"
+    },
+    {
+      "id": "normal_idle_working_set_bytes",
+      "phase": "软件常态（未入会／空闲）",
+      "metric": "Working Set",
+      "definition": "进程当前驻留物理内存；与 Private Bytes 不是同一指标",
+      "status": "UNKNOWN",
+      "mean_bytes": null,
+      "mean_mib": null,
+      "samples": 0,
+      "valid_windows": 0,
+      "window_scope": "需按未入会且空闲状态识别稳定窗口；不能以离会释放窗替代全新启动常态",
+      "reason": "同run保留的最终结果没有该状态下的绝对内存占用采样或窗口mean；原始external-resources.jsonl已不在，不能由增长量、PASS或中位数推回平均值。"
+    },
+    {
+      "id": "in_meeting_private_bytes",
+      "phase": "会议中",
+      "metric": "Private Bytes",
+      "definition": "进程私有提交内存",
+      "status": "UNKNOWN",
+      "mean_bytes": null,
+      "mean_mib": null,
+      "samples": 0,
+      "valid_windows": 0,
+      "window_scope": "需按会议状态识别窗口；原计划为10路160×90@5fps VP8，另包含共享与日志OFF/ON阶段，需分别标识",
+      "reason": "同run保留的最终结果没有该状态下的绝对内存占用采样或窗口mean；原始external-resources.jsonl已不在，不能由增长量、PASS或中位数推回平均值。"
+    },
+    {
+      "id": "in_meeting_working_set_bytes",
+      "phase": "会议中",
+      "metric": "Working Set",
+      "definition": "进程当前驻留物理内存；与 Private Bytes 不是同一指标",
+      "status": "UNKNOWN",
+      "mean_bytes": null,
+      "mean_mib": null,
+      "samples": 0,
+      "valid_windows": 0,
+      "window_scope": "需按会议状态识别窗口；原计划为10路160×90@5fps VP8，另包含共享与日志OFF/ON阶段，需分别标识",
+      "reason": "同run保留的最终结果没有该状态下的绝对内存占用采样或窗口mean；原始external-resources.jsonl已不在，不能由增长量、PASS或中位数推回平均值。"
+    }
+  ],
+  "available_but_different_metrics": [
+    {
+      "id": "whole_run_private_bytes_growth",
+      "name": "整场离会释放窗口 Private Bytes 增长",
+      "bytes": 105289728,
+      "mib": 100.412109375,
+      "limit_mib": 64,
+      "passed": false,
+      "note": "增长量，不是占用量；不能用于计算常态或会议平均占用。"
+    },
+    {
+      "id": "share_stop_private_delta",
+      "name": "每轮停止共享后 Private Bytes 增量的算术平均",
+      "cycles": 100,
+      "mean_mib": 16.30828125,
+      "note": "逐轮增量均值，不是绝对占用量。"
+    }
+  ],
+  "method": {
+    "required": "仅可使用同run同进程、按产品状态标记的绝对bytes采样计算sum(bytes)/N，或已保留sum和N的状态窗口汇总；需报告窗口、有效样本与单位。",
+    "no_estimation_from_growth": true,
+    "no_estimation_from_medians": true,
+    "no_cross_run_mixing": true,
+    "no_product_test_executed": true,
+    "raw_evidence_not_restored": true
+  },
+  "limitations": [
+    "保留的logging_performance只有CPU、render P95和OFF/ON时窗，不包含Private Bytes或Working Set均值。",
+    "released-heap-formal-alignment-01.json保留的是20个已离会释放窗的Private Bytes中位数，不能代替未入会常态均值或会议中均值。",
+    "UNKNOWN不是0 MiB；未将内存增长按基线相加、两端中位数取平均或不同run拼接。"
+  ]
+}

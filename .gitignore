@@ -1,0 +1,9 @@
+# Acceptance heavy evidence, process audits and raw inputs
+evidence/
+audit/
+inputs/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.tmp

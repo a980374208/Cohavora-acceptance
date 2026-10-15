@@ -1,0 +1,814 @@
+{
+  "e:/vssource/webrtc/live-kit-test/out/release-acceptance-report-20261012/report-input.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\release-acceptance-report-20261012\\report-input.json",
+    "portable_path": "audit/baseline/report-input.json",
+    "sha256": "0b6d55fa034e623dd7c9e690a6e2b638f9787384868ecc5e5314a4721adbb81f",
+    "status": "PRESERVED_REPORT_SUMMARY"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/native-luid-direct-gate01/direct-gate-result01.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/native-luid-direct-gate01/direct-gate-result01.json",
+    "portable_path": "evidence/current/S001-direct-gate-result01.json",
+    "sha256": "86b7f049c2f6c2217d79b138a41b4321f319a01134700146e1f3045bce5f179d",
+    "bytes": 791,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/native-luid-direct-gate01/direct-gate-result01.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/direct-gate-result01.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/direct-gate-result01.json",
+    "portable_path": "evidence/current/S002-direct-gate-result01.json",
+    "sha256": "0ff69033a0bb0972a00425f098a27fdcac941431a105294497006ba958426f87",
+    "bytes": 575,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/direct-gate-result01.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/time-contract-manifest.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/time-contract-manifest.json",
+    "portable_path": "evidence/current/S003-time-contract-manifest.json",
+    "sha256": "664515639a5e82ba8919e105eae437161dcaf7b025096e2638934eeba3dda6bc",
+    "bytes": 3508,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/time-contract-manifest.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/static-validation-receipt.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/static-validation-receipt.json",
+    "portable_path": "evidence/current/S004-static-validation-receipt.json",
+    "sha256": "eb41a3a4b7652d24f6707e484b226460fb9430b796e715735429a11bb32ce15c",
+    "bytes": 1917,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/static-validation-receipt.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/wrapper-static-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/wrapper-static-result.json",
+    "portable_path": "evidence/current/S005-wrapper-static-result.json",
+    "sha256": "80498c3b0727a035e1af6282f92e6e992da1472a27fd9e1f47b382db7e9a08b9",
+    "bytes": 565,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/wrapper-static-result.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/launcher-manifest.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/launcher-manifest.json",
+    "portable_path": "evidence/current/S006-launcher-manifest.json",
+    "sha256": "1e9a458328b58ce540b6727352ddb057a5f2672b6186ab738bd7dd6adf5484af",
+    "bytes": 1033,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/launcher-manifest.json"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/acceptance/final_automation_acceptance_report.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+    "portable_path": "evidence/historical/S007-FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+    "sha256": "e71690d2cd70f8d189a304238aa995a2f02d6a85b22c6cc7581da935f01e4b57",
+    "bytes": 43602,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\FINAL_AUTOMATION_ACCEPTANCE_REPORT.md"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/acceptance/evidence/final-regression-20261002/final_regression_index.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\evidence\\final-regression-20261002\\FINAL_REGRESSION_INDEX.json",
+    "portable_path": "evidence/historical/S008-FINAL_REGRESSION_INDEX.json",
+    "sha256": "f54b8fee5601192c5e6b1daa3d3b09d2eb2b45981440042e73a0b80324a01905",
+    "bytes": 31306,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261007-105933\\source-snapshots\\docs\\acceptance\\evidence\\final-regression-20261002\\FINAL_REGRESSION_INDEX.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/final-regression-20261002/final_regression_index.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\evidence\\final-regression-20261002\\FINAL_REGRESSION_INDEX.json",
+    "portable_path": "evidence/historical/S008-FINAL_REGRESSION_INDEX.json",
+    "sha256": "f54b8fee5601192c5e6b1daa3d3b09d2eb2b45981440042e73a0b80324a01905",
+    "bytes": 31306,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261007-105933\\source-snapshots\\docs\\acceptance\\evidence\\final-regression-20261002\\FINAL_REGRESSION_INDEX.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b09-b18-ssh-20261009/completion-checkpoint.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b09-b18-ssh-20261009\\completion-checkpoint.json",
+    "portable_path": "evidence/historical/S009-completion-checkpoint.json",
+    "sha256": "4873790e00b20729d26100fd8059cba51ba94ddec0cb2cb5f79f9a5d3fad21e5",
+    "bytes": 26009,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b09-b18-ssh-20261009\\completion-checkpoint.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b09-local-permission-recheck-20261010/camera-runtime.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b09-local-permission-recheck-20261010\\camera-runtime.json",
+    "portable_path": "evidence/historical/S010-camera-runtime.json",
+    "sha256": "9ad209b599ad19952fd117e8d812065e2f59478883882279a59d48a7816e0cd8",
+    "bytes": 1814,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b09-local-permission-recheck-20261010\\camera-runtime.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b09-known-source-20261010-coupled03/review.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b09-known-source-20261010-coupled03\\review.json",
+    "portable_path": "evidence/historical/S011-review.json",
+    "sha256": "2977346715a747990d7e503b6912ddbdaf057221c3da8c45eec4ecbf7701a1c4",
+    "bytes": 1632,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b09-known-source-20261010-coupled03\\review.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b09-b18-crosshost-20261009-run01/report.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b09-b18-crosshost-20261009-run01\\report.json",
+    "portable_path": "evidence/historical/S012-report.json",
+    "sha256": "a09448d1be9750c0a42b24a6705c04ba34aebf027220de95806e7f581305d210",
+    "bytes": 5559,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b09-b18-crosshost-20261009-run01\\report.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b11-formal-page1-20261009/completion-checkpoint.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b11-formal-page1-20261009\\completion-checkpoint.json",
+    "portable_path": "evidence/historical/S013-completion-checkpoint.json",
+    "sha256": "2667854eee718e3f5f81872c75c4ef1b3f0c9332a07e6c396e7602a0a92f7ae0",
+    "bytes": 2884,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b11-formal-page1-20261009\\completion-checkpoint.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b11-formal-page1-20261009/metrics-report.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b11-formal-page1-20261009\\metrics-report.json",
+    "portable_path": "evidence/historical/S014-metrics-report.json",
+    "sha256": "f779714ed83243322924fc369512c521c8d3cf272772703bcb52383e0986823f",
+    "bytes": 3728,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b11-formal-page1-20261009\\metrics-report.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b11-lowcap-tencent-20261010/run-03/readiness-summary.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b11-lowcap-tencent-20261010\\run-03\\readiness-summary.json",
+    "portable_path": "evidence/historical/S015-readiness-summary.json",
+    "sha256": "3b7730571bbd2cb4d04f4c39e2028038c2486c63e5be14833e6074b7253a9f22",
+    "bytes": 13473,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b11-lowcap-tencent-20261010\\run-03\\readiness-summary.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b11-lowcap-tencent-20261010/run-03/runner-summary.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b11-lowcap-tencent-20261010\\run-03\\runner-summary.json",
+    "portable_path": "evidence/historical/S016-runner-summary.json",
+    "sha256": "acc1b6df12c7f2efe176338fa3bfbfb4a08742b03716f8d19b8b290a1803d0d5",
+    "bytes": 565,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b11-lowcap-tencent-20261010\\run-03\\runner-summary.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/audio-lifetime-repair-20261011/comparison.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\audio-lifetime-repair-20261011\\comparison.json",
+    "portable_path": "evidence/b14/S017-comparison.json",
+    "sha256": "8c5db28f05f38ed78af918f0373310aeadb90904107c6dd44b41efcfe6c0064b",
+    "bytes": 2210,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\audio-lifetime-repair-20261011\\comparison.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/audio-lifetime-repair-20261011/comparison-protocol.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\audio-lifetime-repair-20261011\\comparison-protocol.json",
+    "portable_path": "evidence/b14/S018-comparison-protocol.json",
+    "sha256": "c3cab4a96379e7c3b3bff2914b9e44499f98ae8d92d1f8b42f2914b5983218ad",
+    "bytes": 2023,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\audio-lifetime-repair-20261011\\comparison-protocol.json"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/integration/current_result.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\integration\\current_result.json",
+    "portable_path": "evidence/historical/S019-current_result.json",
+    "sha256": "3e30ea6225505deab12363c49b9f9e493628d340eb538061f8b4cf94f904b68f",
+    "bytes": 3876,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test-local\\integration\\current_result.json"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/readme.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\README.md",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "b709f37b3b84bee079b44578b4dcb4536ec4742e30aba3eba78c3fa89e0442b8",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/local-automation-20260930-191551/result.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\local-automation-20260930-191551\\result.json",
+    "portable_path": "evidence/historical/S020-result.json",
+    "sha256": "37b660f5748519cb172963dbf1a64202e7e2a26c93ac28b2d5984375a1532a05",
+    "bytes": 11873,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\local-automation-20260930-191551\\result.json"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/analysis/e2ee/e2ee_implementation_report_20260930.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\analysis\\e2ee\\E2EE_IMPLEMENTATION_REPORT_20260930.md",
+    "portable_path": "evidence/e2ee/S021-E2EE_IMPLEMENTATION_REPORT_20260930.md",
+    "sha256": "45fc5367429d0fabea9545b0f843ba52dfaadc9296dd693967fd3fc2b48f92ea",
+    "bytes": 123444,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\analysis\\e2ee\\E2EE_IMPLEMENTATION_REPORT_20260930.md"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/analysis/e2ee/evidence/e0-product-20261001/final_acceptance_20261001.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\analysis\\e2ee\\evidence\\e0-product-20261001\\FINAL_ACCEPTANCE_20261001.json",
+    "portable_path": "evidence/e2ee/S022-FINAL_ACCEPTANCE_20261001.json",
+    "sha256": "889d490ca6781089628969ba4d265a2c9154b94200f532bb657a7bf595a5cc2b",
+    "bytes": 17454,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261007-105933\\source-snapshots\\docs\\analysis\\e2ee\\evidence\\e0-product-20261001\\FINAL_ACCEPTANCE_20261001.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/analysis/e2ee/evidence/e0-product-20261001/final_acceptance_20261001.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261007-105933\\source-snapshots\\docs\\analysis\\e2ee\\evidence\\e0-product-20261001\\FINAL_ACCEPTANCE_20261001.json",
+    "portable_path": "evidence/e2ee/S022-FINAL_ACCEPTANCE_20261001.json",
+    "sha256": "889d490ca6781089628969ba4d265a2c9154b94200f532bb657a7bf595a5cc2b",
+    "bytes": 17454,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261007-105933\\source-snapshots\\docs\\analysis\\e2ee\\evidence\\e0-product-20261001\\FINAL_ACCEPTANCE_20261001.json"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/analysis/e2ee/evidence/e0-product-20261001/performance_v2_result_20261001.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\analysis\\e2ee\\evidence\\e0-product-20261001\\PERFORMANCE_V2_RESULT_20261001.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "a4a18c2d6fc4a433c0b15cd14c4def9c3dba4760bf3b5d42da8c7c2fb015a2d7",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/analysis/e2ee/evidence/e0-product-20261001/camera_content_result_20261001.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\analysis\\e2ee\\evidence\\e0-product-20261001\\CAMERA_CONTENT_RESULT_20261001.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "a9512bf9a8d32d4f99e80fa7a5ff6537cba60c9a9e9d9f3b04360de66a8a9dd3",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/analysis/e2ee/evidence/e0-product-20261001/relay_visual_marker_result_20261001.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\analysis\\e2ee\\evidence\\e0-product-20261001\\RELAY_VISUAL_MARKER_RESULT_20261001.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "52062230124869e0d72e67555fc1d930df4a807e55a4fcd3333cebd08b6ccdc2",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/analysis/e2ee/evidence/e0-product-20261001/product-e2ee-db66819cd8cc49f8/result.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\analysis\\e2ee\\evidence\\e0-product-20261001\\product-e2ee-db66819cd8cc49f8\\result.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "3db2d911974d4debbf9cc84b1cde8b2990d251eb8bb957f83c0c25d5d313b8c3",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/analysis/screen-share/screen_share_quality_implementation_report.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\analysis\\screen-share\\SCREEN_SHARE_QUALITY_IMPLEMENTATION_REPORT.md",
+    "portable_path": "evidence/screen-share/S023-SCREEN_SHARE_QUALITY_IMPLEMENTATION_REPORT.md",
+    "sha256": "a6fc1d3d898d9dfa296abeba4ce5e1ee11ace9583ac6d6d5a2023d88407914e2",
+    "bytes": 22276,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\analysis\\screen-share\\SCREEN_SHARE_QUALITY_IMPLEMENTATION_REPORT.md"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/acceptance/evidence/final-regression-20261002/c-gdi-hot-01/summary.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\evidence\\final-regression-20261002\\c-gdi-hot-01\\summary.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "c9cf1f0280cb7f9c25cd92e9b95d31290c4340e606a11716e5b23e5f981259b1",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/acceptance/evidence/final-regression-20261002/c-wgc-soak-01/summary.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\evidence\\final-regression-20261002\\c-wgc-soak-01\\summary.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "7143dd272096545261acbaa9071f2ebd72c31400821b32df5a3f6230a660da41",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/acceptance/evidence/final-regression-20261002/c-wgc-soak-01/resource-analysis.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\evidence\\final-regression-20261002\\c-wgc-soak-01\\resource-analysis.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "d26663485cd50a14a0c3af9c6718fe62e3dfbaa6b6f55f4587bfabe91eebdd3f",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/wgc-unload-fix-20260929/final-etw-acceptance.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\wgc-unload-fix-20260929\\final-etw-acceptance.json",
+    "portable_path": "evidence/screen-share/S024-final-etw-acceptance.json",
+    "sha256": "faca94dc36ac99074634e35b2bdee92e1b576fc2ef578ff0c4cbe2e726a0c8c2",
+    "bytes": 7553,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\wgc-unload-fix-20260929\\final-etw-acceptance.json"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/testing/wgc_resource_deferral_20260927.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\testing\\WGC_RESOURCE_DEFERRAL_20260927.md",
+    "portable_path": "evidence/screen-share/S025-WGC_RESOURCE_DEFERRAL_20260927.md",
+    "sha256": "d0da932f891e41260af24b49188c116c7a12ce595b96cb63f4e19a26a1f38621",
+    "bytes": 9679,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\testing\\WGC_RESOURCE_DEFERRAL_20260927.md"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/wgc-soak-1h-100-20260929-retry/result.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\wgc-soak-1h-100-20260929-retry\\result.json",
+    "portable_path": "evidence/screen-share/S026-result.json",
+    "sha256": "f88cde4254ffc77d689fa27dd405a2022c29171eb97602d6bae9f4116b1ac8ac",
+    "bytes": 25274,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\wgc-soak-1h-100-20260929-retry\\result.json"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/acceptance/evidence/final-regression-20261002/e-whiteboard-three-processes-01/collaboration-and-leave/result.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\evidence\\final-regression-20261002\\e-whiteboard-three-processes-01\\collaboration-and-leave\\result.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "2c12c91cff7b86ee58a14244d12a9041defc2d6239b969a298435e2295c2d76f",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/acceptance/evidence/final-regression-20261002/e-whiteboard-three-processes-01/authority-disconnect/result.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\evidence\\final-regression-20261002\\e-whiteboard-three-processes-01\\authority-disconnect\\result.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "c799da4e2d279b3bffb6f0deb88be17c276fe117c8aa8739d2a8d99145ff93fb",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/whiteboard/m5_acceptance.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\whiteboard\\M5_ACCEPTANCE.md",
+    "portable_path": "evidence/whiteboard/S027-M5_ACCEPTANCE.md",
+    "sha256": "99111519166c3090b54e4c753889e04613dd4af9895e64028588db8bec1d70f0",
+    "bytes": 8419,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\whiteboard\\M5_ACCEPTANCE.md"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/acceptance/evidence/batch-g-20261002/b15_batch_index.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\evidence\\batch-g-20261002\\B15_BATCH_INDEX.json",
+    "portable_path": "evidence/telemetry-logging/S028-B15_BATCH_INDEX.json",
+    "sha256": "c08339bb25c5bc85a5613b93634fa5180d0abd99cebb2a68aac1a106554f7fde",
+    "bytes": 8286,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261007-105933\\source-snapshots\\docs\\acceptance\\evidence\\batch-g-20261002\\B15_BATCH_INDEX.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/batch-g-20261002/b15_batch_index.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\evidence\\batch-g-20261002\\B15_BATCH_INDEX.json",
+    "portable_path": "evidence/telemetry-logging/S028-B15_BATCH_INDEX.json",
+    "sha256": "c08339bb25c5bc85a5613b93634fa5180d0abd99cebb2a68aac1a106554f7fde",
+    "bytes": 8286,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261007-105933\\source-snapshots\\docs\\acceptance\\evidence\\batch-g-20261002\\B15_BATCH_INDEX.json"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/telemetry/final_implementation_report.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\telemetry\\FINAL_IMPLEMENTATION_REPORT.md",
+    "portable_path": "evidence/telemetry-logging/S029-FINAL_IMPLEMENTATION_REPORT.md",
+    "sha256": "2d682a9ef572f0338f68c2ed88a03b9b0977a2b2d08233d4eb8f21432402f527",
+    "bytes": 23276,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\telemetry\\FINAL_IMPLEMENTATION_REPORT.md"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/acceptance/evidence/batch-g-20261002/soak-native-01/long-feature/result.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\evidence\\batch-g-20261002\\soak-native-01\\long-feature\\result.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "5d0b43bae9c761e48c3249b9292354eeb933e8cc0b582dca0192ee53602883ea",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/telemetry-phase2-20260930/p2v-soak-20260929t223430z/acceptance-summary.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\telemetry-phase2-20260930\\p2v-soak-20260929T223430Z\\acceptance-summary.json",
+    "portable_path": "evidence/telemetry-logging/S030-acceptance-summary.json",
+    "sha256": "28efe909cd850553aece8285740d3aa5f736715fbf08f4868245106863288718",
+    "bytes": 2890,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\telemetry-phase2-20260930\\p2v-soak-20260929T223430Z\\acceptance-summary.json"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/telemetry/logging/evidence/final_completion.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\telemetry\\logging\\evidence\\FINAL_COMPLETION.md",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "2671f778569824c384e11622997a2cd19e16b81a1d442fe706a5f2d9412c91c4",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/telemetry/logging/evidence/lg7-20260927/readme.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\telemetry\\logging\\evidence\\lg7-20260927\\README.md",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "0da0320b0a7da049b16a72cd1c362d78d962dedca68d0a6b420523a423345adc",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/remediation/pr_sec_001_close_report.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\remediation\\PR_SEC_001_CLOSE_REPORT.md",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "1c56943bacc4bca50b0479d7f573920ec397378a80c1ef0e846c552032eb3cf8",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/analysis/screen-share/remote_control_contract.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\analysis\\screen-share\\REMOTE_CONTROL_CONTRACT.md",
+    "portable_path": "evidence/screen-share/S031-REMOTE_CONTROL_CONTRACT.md",
+    "sha256": "fc40cd194048335b75197b7a5fb2ab91850426cfc73d5f726c44c3fa1205a6ca",
+    "bytes": 22421,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261007-105933\\source-snapshots\\docs\\analysis\\screen-share\\REMOTE_CONTROL_CONTRACT.md"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/analysis/screen-share/remote_control_contract.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261007-105933\\source-snapshots\\docs\\analysis\\screen-share\\REMOTE_CONTROL_CONTRACT.md",
+    "portable_path": "evidence/screen-share/S031-REMOTE_CONTROL_CONTRACT.md",
+    "sha256": "fc40cd194048335b75197b7a5fb2ab91850426cfc73d5f726c44c3fa1205a6ca",
+    "bytes": 22421,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261007-105933\\source-snapshots\\docs\\analysis\\screen-share\\REMOTE_CONTROL_CONTRACT.md"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/telemetry/evidence/s9c-20260924/s9c_acceptance.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\telemetry\\evidence\\s9c-20260924\\S9C_ACCEPTANCE.md",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "8384a544f123b401ce46f88875de22f3b9a78864bc05d992444338e463b09f97",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/checkpoint-cache-ab-20260928/summary.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\checkpoint-cache-ab-20260928\\summary.json",
+    "portable_path": "evidence/historical/S032-summary.json",
+    "sha256": "8794bc2047f6695ff4d4a72429628729dc09726bea587bf3ed67e0662a7d82cd",
+    "bytes": 3795,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\checkpoint-cache-ab-20260928\\summary.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/checkpoint-cache-ab-20260928/identical-inputs.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\checkpoint-cache-ab-20260928\\identical-inputs.json",
+    "portable_path": "evidence/historical/S033-identical-inputs.json",
+    "sha256": "eb93ae3884aad0195641499dba5d8718159f2a861f27f314f266a35db83d70d1",
+    "bytes": 721,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\checkpoint-cache-ab-20260928\\identical-inputs.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/audio-lifetime-repair-20261011/qualification/status.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\audio-lifetime-repair-20261011\\qualification\\status.json",
+    "portable_path": "evidence/b14/S034-status.json",
+    "sha256": "7d8afdd206107d51382aea24c9e626ea56da1e0592bff6c319af8fb2f2db25d8",
+    "bytes": 2033,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\audio-lifetime-repair-20261011\\qualification\\status.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/audio-lifetime-repair-20261011/qualification/disk-ready/pilot-01/complete-review.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\audio-lifetime-repair-20261011\\qualification\\disk-ready\\pilot-01\\complete-review.json",
+    "portable_path": "evidence/b14/S035-complete-review.json",
+    "sha256": "d8e5b18a23c2a0ecdc5be459ccda2aed5f467d2cac9ec55a041146076d89ceb6",
+    "bytes": 9706,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\audio-lifetime-repair-20261011\\qualification\\disk-ready\\pilot-01\\complete-review.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-qualification-20261010/retry-06/formal/failure-review.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-qualification-20261010\\retry-06\\formal\\failure-review.json",
+    "portable_path": "evidence/b14/S036-failure-review.json",
+    "sha256": "4a3454273cf2a6075b70cf792a409813f39190669b302b2f1f3b4319c9e01567",
+    "bytes": 5710,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-qualification-20261010\\retry-06\\formal\\failure-review.json"
+  },
+  "f:/cohavoraacceptance/b14-formal-20261010-retry06-8h100/external-review.json": {
+    "original_path": "F:\\CohavoraAcceptance\\b14-formal-20261010-retry06-8h100\\external-review.json",
+    "portable_path": "evidence/b14/S037-external-review.json",
+    "sha256": "019a9947d508b7bad2345eff0e92ab6783d1fecc5e438111bca8831062ab4ea1",
+    "bytes": 54264404,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "F:\\CohavoraAcceptance\\b14-formal-20261010-retry06-8h100\\external-review.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/external-review.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-qualification-20261010\\retry-07\\formal-8h100\\runtime\\external-review.json",
+    "portable_path": "evidence/b14/S038-external-review.json",
+    "sha256": "36763b18722b5567c31d1cfcbbbb7aa54de9211e5f4cfc958b2ee769a7527618",
+    "bytes": 54263934,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-qualification-20261010\\retry-07\\formal-8h100\\runtime\\external-review.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/result.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-qualification-20261010\\retry-07\\formal-8h100\\result.json",
+    "portable_path": "evidence/b14/S039-result.json",
+    "sha256": "dc9a056e5d0e4a6169785cf119bcad021ea2b5bff7bc803879c31191bf72a6ad",
+    "bytes": 1505,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-qualification-20261010\\retry-07\\formal-8h100\\result.json"
+  },
+  "f:/cohavoraacceptance/b14-20261006-62/formal-8h100/external-review.json": {
+    "original_path": "F:\\CohavoraAcceptance\\b14-20261006-62\\formal-8h100\\external-review.json",
+    "portable_path": "evidence/b14/S040-external-review.json",
+    "sha256": "aec783ff1530b383f43165fc9a2744ed7768a6597a5252968a554e3e2c67497e",
+    "bytes": 28628,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "F:\\CohavoraAcceptance\\b14-20261006-62\\formal-8h100\\external-review.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-source62-20261006/run62-terminal.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-source62-20261006\\run62-terminal.json",
+    "portable_path": "evidence/b14/S041-run62-terminal.json",
+    "sha256": "79c549ab39292e716092f956083bc0082d75d7b083d5a40e7ddbc7f2fffed989",
+    "bytes": 260,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-source62-20261006\\run62-terminal.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-source64-20261007/three-pilot-stop-checkpoint.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-source64-20261007\\three-pilot-stop-checkpoint.json",
+    "portable_path": "evidence/b14/S042-three-pilot-stop-checkpoint.json",
+    "sha256": "ff9bd13505a7d7867423c8b3daddc18268231be994e40339e63c2969cb8d1b4a",
+    "bytes": 3719,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-source64-20261007\\three-pilot-stop-checkpoint.json"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/testing/tencent_uia_long_retest_20260929.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\testing\\TENCENT_UIA_LONG_RETEST_20260929.md",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "a6d5d1b33dcf5960a959ebac3aadbc5c135cc24e5ff8fb6045f31f66f199bae4",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/testing/evidence/tencent-long-retest-02/long-verification.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\testing\\evidence\\tencent-long-retest-02\\long-verification.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "734b69e208904486826bac03003d28202a5df7064e785ae79583277c622ff118",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/testing/tencent_formal_soak_20260929.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\testing\\TENCENT_FORMAL_SOAK_20260929.md",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "a03aa332b52f1ea3357bb856ec208693f6bb289082b6d2901f3e979a917d0fbc",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/testing/evidence/soak-tencent-formal-20260929-01/summary.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\testing\\evidence\\soak-tencent-formal-20260929-01\\summary.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "5a7946da72700c9adae9717676da4cbcea772e89508fa9bbd3f7c73c575a1430",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/testing/tencent_8h_steady_soak_20261001.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\testing\\TENCENT_8H_STEADY_SOAK_20261001.md",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "d9e5eef6c83268eb846a508eba941a17b257ec088c73e635d8ef342382c0796e",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/testing/tencent_100_cycle_soak_20261008.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\testing\\TENCENT_100_CYCLE_SOAK_20261008.md",
+    "portable_path": "evidence/historical/S043-TENCENT_100_CYCLE_SOAK_20261008.md",
+    "sha256": "0d9dbc2e4ea669315fbaf5c247b9fb1f180f64d3e8e7f2f619e21c9a9fb027ef",
+    "bytes": 6298,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\testing\\TENCENT_100_CYCLE_SOAK_20261008.md"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/docs/testing/evidence/antigravity-tencent-formal-soak-20261008/evidence-supplement-20261008.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\testing\\evidence\\antigravity-tencent-formal-soak-20261008\\evidence-supplement-20261008.json",
+    "portable_path": "evidence/historical/S044-evidence-supplement-20261008.json",
+    "sha256": "db412f028892636608b1a704d760c4537e247d2a948b79d25b14ab2edbca2e19",
+    "bytes": 56679,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261008-162321\\source-snapshots\\docs\\testing\\evidence\\antigravity-tencent-formal-soak-20261008\\evidence-supplement-20261008.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/html-refresh-20261008-162321/source-snapshots/docs/testing/evidence/antigravity-tencent-formal-soak-20261008/evidence-supplement-20261008.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261008-162321\\source-snapshots\\docs\\testing\\evidence\\antigravity-tencent-formal-soak-20261008\\evidence-supplement-20261008.json",
+    "portable_path": "evidence/historical/S044-evidence-supplement-20261008.json",
+    "sha256": "db412f028892636608b1a704d760c4537e247d2a948b79d25b14ab2edbca2e19",
+    "bytes": 56679,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\html-refresh-20261008-162321\\source-snapshots\\docs\\testing\\evidence\\antigravity-tencent-formal-soak-20261008\\evidence-supplement-20261008.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/heap-etw-20261012/hot-window-offline-01/candidate-evidence-selftest.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\heap-etw-20261012\\hot-window-offline-01\\candidate-evidence-selftest.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "9588a06250c216f070046e057a58c59726346e52078ee9ab1ff86652fdf41753",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/heap-etw-20261012/hot-window-offline-01/candidate-analysis/final-delivery.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\heap-etw-20261012\\hot-window-offline-01\\candidate-analysis\\final-delivery.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "43f69fd3a7c8346c363d0a476d085cb67c7cd0cfd7230a705f3c83cfc188d4a7",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/heap-etw-20261012/hot-window-offline-01/candidate-analysis/results-03/analysis.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\heap-etw-20261012\\hot-window-offline-01\\candidate-analysis\\results-03\\analysis.json",
+    "status": "ORIGINAL_UNAVAILABLE",
+    "expected_sha256": "07c4232286d513b8e9b2edeb9dbe69fcf194be452066a67da38ac788bee7f2de",
+    "availability_note": "原来源缺失或已变化；仅保留封存结果摘要。"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/release-acceptance-report-20261012/retained-final-results/tencent-8h-20261001/summary.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\release-acceptance-report-20261012\\retained-final-results\\tencent-8h-20261001\\summary.json",
+    "portable_path": "evidence/historical/S045-summary.json",
+    "sha256": "2ab02b25b877409dd3b485f5118d81864d7ffd420b98674e6e99220c3fe8515e",
+    "bytes": 1066,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\release-acceptance-report-20261012\\retained-final-results\\tencent-8h-20261001\\summary.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/release-acceptance-report-20261012/retained-final-results/tencent-8h-20261001/last-status.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\release-acceptance-report-20261012\\retained-final-results\\tencent-8h-20261001\\last-status.json",
+    "portable_path": "evidence/historical/S046-last-status.json",
+    "sha256": "08b24e3385aaae4a55ace237574ce291a722ebedc120df1bd6ef2b6057b5ec25",
+    "bytes": 898,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\release-acceptance-report-20261012\\retained-final-results\\tencent-8h-20261001\\last-status.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/final_automation_acceptance_report.md": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+    "portable_path": "evidence/historical/S007-FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+    "sha256": "e71690d2cd70f8d189a304238aa995a2f02d6a85b22c6cc7581da935f01e4b57",
+    "bytes": 43602,
+    "status": "IDENTICAL_SOURCE_COPY",
+    "resolved_from": "E:\\vsSource\\WebRTC\\live-kit-test-local\\docs\\acceptance\\FINAL_AUTOMATION_ACCEPTANCE_REPORT.md"
+  },
+  "e:/vssource/webrtc/live-kit-test/src/app/diagnostics/product_gpu_queue_snapshot.h": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/src/app/diagnostics/product_gpu_queue_snapshot.h",
+    "path": "E:/vsSource/WebRTC/live-kit-test/src/app/diagnostics/product_gpu_queue_snapshot.h",
+    "portable_path": "inputs/I001-product_gpu_queue_snapshot.h",
+    "sha256": "1989f9c661edc864651d22322bf0683044570533369c7aa0dc1527d94fc3e7d8",
+    "bytes": 11461,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/native-luid-direct-gate01/build/relwithdebinfo/native_luid_direct_gate.exe": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/native-luid-direct-gate01/build/RelWithDebInfo/native_luid_direct_gate.exe",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/native-luid-direct-gate01/build/RelWithDebInfo/native_luid_direct_gate.exe",
+    "portable_path": "inputs/I002-native_luid_direct_gate.exe",
+    "sha256": "c9f004a89a55bb99dbef8983048706cd7899ee38976bf1e62f145abedfa8df83",
+    "bytes": 81920,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/native-luid-direct-gate01/actual-header-samples.jsonl": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/native-luid-direct-gate01/actual-header-samples.jsonl",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/native-luid-direct-gate01/actual-header-samples.jsonl",
+    "portable_path": "inputs/I003-actual-header-samples.jsonl",
+    "sha256": "18d67d3aec953a14cbfc703d37f556990acb771d124e422f585aaf0c4047e696",
+    "bytes": 244306,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/global_inventory.cpp": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/global_inventory.cpp",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/global_inventory.cpp",
+    "portable_path": "inputs/I004-global_inventory.cpp",
+    "sha256": "0ef4b70431e41ba396efa47fc1b0ea772a350b0f50188597a8171576f2879b69",
+    "bytes": 6837,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/build/relwithdebinfo/global_inventory.exe": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/build/RelWithDebInfo/global_inventory.exe",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/build/RelWithDebInfo/global_inventory.exe",
+    "portable_path": "inputs/I005-global_inventory.exe",
+    "sha256": "0bf8c88747d2fad77ead464d7cbac267ee31ff38dfd39fda82f191238f6b8cf1",
+    "bytes": 74240,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/actual-inventory01.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/actual-inventory01.json",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/actual-inventory01.json",
+    "portable_path": "inputs/I006-actual-inventory01.json",
+    "sha256": "ed9dbb0500fc0505f70a0c298ca7a8c07fb0c957cd5b1486455ed63ab952cfe3",
+    "bytes": 4677,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/passive_no_participation.py": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/passive_no_participation.py",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/passive_no_participation.py",
+    "portable_path": "inputs/I007-passive_no_participation.py",
+    "sha256": "71b0a090dce44f72f131f842bb46bda5c49de7adfb2fd204f2d0c054aa4812a0",
+    "bytes": 26724,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/input-contract.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/input-contract.json",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/input-contract.json",
+    "portable_path": "inputs/I008-input-contract.json",
+    "sha256": "373a0f9f6be0d7e044d94f95830ecd769ffb4730cfea439bde9f4f0fca05820d",
+    "bytes": 4156,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/readme.md": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/README.md",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/README.md",
+    "portable_path": "inputs/I009-README.md",
+    "sha256": "554703e764add0155952349bf267b8e0c5a34c923b504d84861e3c8df8a1561b",
+    "bytes": 9261,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/production_adapter.md": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/PRODUCTION_ADAPTER.md",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/PRODUCTION_ADAPTER.md",
+    "portable_path": "inputs/I010-PRODUCTION_ADAPTER.md",
+    "sha256": "319c5cec251f7133087d4e10c7828b71051094f6b22c237e494fe77490b54ac5",
+    "bytes": 6873,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/candidate02.md": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/CANDIDATE02.md",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/CANDIDATE02.md",
+    "portable_path": "inputs/I011-CANDIDATE02.md",
+    "sha256": "5a53605bb66dc1fc06234274bcfee55305c2ac299375ea232cd61c99cb5f9fb5",
+    "bytes": 2584,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/test_time_contract.py": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/test_time_contract.py",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/test_time_contract.py",
+    "portable_path": "inputs/I012-test_time_contract.py",
+    "sha256": "10fa1da863e947faba5cd99b83a022085254c48e35ba94bdb5254799db93920a",
+    "bytes": 4926,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/run_time_contract_gate.py": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/run_time_contract_gate.py",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/run_time_contract_gate.py",
+    "portable_path": "inputs/I013-run_time_contract_gate.py",
+    "sha256": "74f5c6bc7b4d3c68a2a486272fd91a14855cabd733b2984c546a73f04d1de274",
+    "bytes": 2726,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/test_passive_no_participation.py": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/test_passive_no_participation.py",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/test_passive_no_participation.py",
+    "portable_path": "inputs/I014-test_passive_no_participation.py",
+    "sha256": "db0b7933c7d20e7daea41c2f17d72641847f2746452426bd6df2af7601df93bd",
+    "bytes": 23554,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/candidate01-preserved-inputs.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/candidate01-preserved-inputs.json",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/candidate01-preserved-inputs.json",
+    "portable_path": "inputs/I015-candidate01-preserved-inputs.json",
+    "sha256": "521b2b612cd61a5c403971754bbe1277707dad48811f04bc1ca2929113a58760",
+    "bytes": 2368,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/exact-source-change.patch": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/exact-source-change.patch",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/exact-source-change.patch",
+    "portable_path": "inputs/I016-exact-source-change.patch",
+    "sha256": "f6c7f7b746b5d3a3745076a33e3d5187eee5053045662f4da639caea41dc31a1",
+    "bytes": 19329,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-run01-local/adapter-properties.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-run01-local/adapter-properties.json",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-run01-local/adapter-properties.json",
+    "portable_path": "inputs/I017-adapter-properties.json",
+    "sha256": "618222085cde891b493e9e6b155e5756bc0c74fc0f0cf1d39333c31e6d323644",
+    "bytes": 19129,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/adapter_properties_probe.py": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/adapter_properties_probe.py",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/adapter_properties_probe.py",
+    "portable_path": "inputs/I018-adapter_properties_probe.py",
+    "sha256": "6a8e86d484daf39720bfedf2b4a561ca0a7b19728ed77975ff71b5b11cc8e2a7",
+    "bytes": 18411,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/sdk_layout_asserts.cpp": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/sdk_layout_asserts.cpp",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/sdk_layout_asserts.cpp",
+    "portable_path": "inputs/I019-sdk_layout_asserts.cpp",
+    "sha256": "6acb0de9de5b9df02c17378ab81c57e21aa4334cca2f8e120279f9043f46029f",
+    "bytes": 2738,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/readme.md": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/README.md",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/README.md",
+    "portable_path": "inputs/I020-README.md",
+    "sha256": "ce7dffdb94626298e830bf8c5ff120a91894443310ecb4accaa14428510312cb",
+    "bytes": 2770,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "c:/program files (x86)/windows kits/10/include/10.0.26100.0/shared/d3dkmthk.h": {
+    "original_path": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared/d3dkmthk.h",
+    "path": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared/d3dkmthk.h",
+    "portable_path": "inputs/I021-d3dkmthk.h",
+    "sha256": "e7df81476816d5112cd8c73be18dbaf9924c3af4af352ea2650b48dfc23ba40d",
+    "bytes": 310504,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "c:/program files (x86)/windows kits/10/include/10.0.26100.0/shared/d3dukmdt.h": {
+    "original_path": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared/d3dukmdt.h",
+    "path": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared/d3dukmdt.h",
+    "portable_path": "inputs/I022-d3dukmdt.h",
+    "sha256": "d1c43d619589c2eb3f47877bba6d48735c7f26644fed44a5bb682f9e591eb33f",
+    "bytes": 102729,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "c:/program files (x86)/windows kits/10/include/10.0.26100.0/shared/dxgi.h": {
+    "original_path": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared/dxgi.h",
+    "path": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared/dxgi.h",
+    "portable_path": "inputs/I023-dxgi.h",
+    "sha256": "4b983ac75717296191a5faef4a87ff0b02b0e8d6202cd5af85bf75accea2cbbe",
+    "bytes": 104147,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/start-b14-interactive.ps1": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/start-b14-interactive.ps1",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/start-b14-interactive.ps1",
+    "portable_path": "inputs/I024-start-b14-interactive.ps1",
+    "sha256": "9743ce6127a0ed7020458a2f658d878538bb806828efc42983e22b3e0458fc07",
+    "bytes": 9199,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/b14-interactive-primitives.ps1": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/b14-interactive-primitives.ps1",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/b14-interactive-primitives.ps1",
+    "portable_path": "inputs/I025-b14-interactive-primitives.ps1",
+    "sha256": "555e065b91aefda874649c7b9444b208deefa5ccf9b7c113119787615b092d19",
+    "bytes": 9368,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/b14-environment-witness.ps1": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/b14-environment-witness.ps1",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/b14-environment-witness.ps1",
+    "portable_path": "inputs/I026-b14-environment-witness.ps1",
+    "sha256": "fad50a20b36158d1ee3a22a0485fc12f3093aa7557b1caf0df4c48390c9a7ff0",
+    "bytes": 4974,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/adapter_properties_probe.py": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/adapter_properties_probe.py",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/adapter_properties_probe.py",
+    "portable_path": "inputs/I027-adapter_properties_probe.py",
+    "sha256": "6a8e86d484daf39720bfedf2b4a561ca0a7b19728ed77975ff71b5b11cc8e2a7",
+    "bytes": 18411,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/uia/uia-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/uia/uia-result.json",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/uia/uia-result.json",
+    "sha256": "d5e6f839bfc429dd12f97f42d3e081c53320b0f3461c21262c8a8b0b2cd88f73",
+    "bytes": 1298,
+    "portable_path": "evidence/b14/S047-uia-result.json",
+    "status": "SAME_RUN_FINAL_RESULT_OR_FROZEN_PROTOCOL_COPY",
+    "resolved_from": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/uia/uia-result.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/plan.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/plan.json",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/plan.json",
+    "sha256": "54899b68b88794d2d36bd95e818b23f0b6ee97baf0ca337b7bfea7dcbc4dd619",
+    "bytes": 4326,
+    "portable_path": "evidence/b14/S048-plan.json",
+    "status": "SAME_RUN_FINAL_RESULT_OR_FROZEN_PROTOCOL_COPY",
+    "resolved_from": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/plan.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/executed-inputs.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/executed-inputs.json",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/executed-inputs.json",
+    "sha256": "8a01bccfc88e458f561618bedce9473323c86162b7249af1a9e0e26446958198",
+    "bytes": 15657,
+    "portable_path": "evidence/b14/S049-executed-inputs.json",
+    "status": "SAME_RUN_FINAL_RESULT_OR_FROZEN_PROTOCOL_COPY",
+    "resolved_from": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/executed-inputs.json"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/limits.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/limits.json",
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/limits.json",
+    "sha256": "760ea4af6ea9537fc9ccf9d01ab3a1effe8529be9c7b12be39e4a2846fd1ed28",
+    "bytes": 1015,
+    "portable_path": "evidence/b14/S050-limits.json",
+    "status": "SAME_RUN_FROZEN_LIMITS_COPY",
+    "resolved_from": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/limits.json"
+  }
+}

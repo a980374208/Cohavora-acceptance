@@ -1,0 +1,191 @@
+[
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/src/app/diagnostics/product_gpu_queue_snapshot.h",
+    "portable_path": "inputs/I001-product_gpu_queue_snapshot.h",
+    "sha256": "1989f9c661edc864651d22322bf0683044570533369c7aa0dc1527d94fc3e7d8",
+    "bytes": 11461,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/native-luid-direct-gate01/build/RelWithDebInfo/native_luid_direct_gate.exe",
+    "portable_path": "inputs/I002-native_luid_direct_gate.exe",
+    "sha256": "c9f004a89a55bb99dbef8983048706cd7899ee38976bf1e62f145abedfa8df83",
+    "bytes": 81920,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/native-luid-direct-gate01/actual-header-samples.jsonl",
+    "portable_path": "inputs/I003-actual-header-samples.jsonl",
+    "sha256": "18d67d3aec953a14cbfc703d37f556990acb771d124e422f585aaf0c4047e696",
+    "bytes": 244306,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/global_inventory.cpp",
+    "portable_path": "inputs/I004-global_inventory.cpp",
+    "sha256": "0ef4b70431e41ba396efa47fc1b0ea772a350b0f50188597a8171576f2879b69",
+    "bytes": 6837,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/build/RelWithDebInfo/global_inventory.exe",
+    "portable_path": "inputs/I005-global_inventory.exe",
+    "sha256": "0bf8c88747d2fad77ead464d7cbac267ee31ff38dfd39fda82f191238f6b8cf1",
+    "bytes": 74240,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/global-inventory-candidate01/actual-inventory01.json",
+    "portable_path": "inputs/I006-actual-inventory01.json",
+    "sha256": "ed9dbb0500fc0505f70a0c298ca7a8c07fb0c957cd5b1486455ed63ab952cfe3",
+    "bytes": 4677,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/passive_no_participation.py",
+    "portable_path": "inputs/I007-passive_no_participation.py",
+    "sha256": "71b0a090dce44f72f131f842bb46bda5c49de7adfb2fd204f2d0c054aa4812a0",
+    "bytes": 26724,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/input-contract.json",
+    "portable_path": "inputs/I008-input-contract.json",
+    "sha256": "373a0f9f6be0d7e044d94f95830ecd769ffb4730cfea439bde9f4f0fca05820d",
+    "bytes": 4156,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/README.md",
+    "portable_path": "inputs/I009-README.md",
+    "sha256": "554703e764add0155952349bf267b8e0c5a34c923b504d84861e3c8df8a1561b",
+    "bytes": 9261,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/PRODUCTION_ADAPTER.md",
+    "portable_path": "inputs/I010-PRODUCTION_ADAPTER.md",
+    "sha256": "319c5cec251f7133087d4e10c7828b71051094f6b22c237e494fe77490b54ac5",
+    "bytes": 6873,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/CANDIDATE02.md",
+    "portable_path": "inputs/I011-CANDIDATE02.md",
+    "sha256": "5a53605bb66dc1fc06234274bcfee55305c2ac299375ea232cd61c99cb5f9fb5",
+    "bytes": 2584,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/test_time_contract.py",
+    "portable_path": "inputs/I012-test_time_contract.py",
+    "sha256": "10fa1da863e947faba5cd99b83a022085254c48e35ba94bdb5254799db93920a",
+    "bytes": 4926,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/run_time_contract_gate.py",
+    "portable_path": "inputs/I013-run_time_contract_gate.py",
+    "sha256": "74f5c6bc7b4d3c68a2a486272fd91a14855cabd733b2984c546a73f04d1de274",
+    "bytes": 2726,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/test_passive_no_participation.py",
+    "portable_path": "inputs/I014-test_passive_no_participation.py",
+    "sha256": "db0b7933c7d20e7daea41c2f17d72641847f2746452426bd6df2af7601df93bd",
+    "bytes": 23554,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/candidate01-preserved-inputs.json",
+    "portable_path": "inputs/I015-candidate01-preserved-inputs.json",
+    "sha256": "521b2b612cd61a5c403971754bbe1277707dad48811f04bc1ca2929113a58760",
+    "bytes": 2368,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/passive-etw-closure01/analyzer-candidate02/exact-source-change.patch",
+    "portable_path": "inputs/I016-exact-source-change.patch",
+    "sha256": "f6c7f7b746b5d3a3745076a33e3d5187eee5053045662f4da639caea41dc31a1",
+    "bytes": 19329,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-run01-local/adapter-properties.json",
+    "portable_path": "inputs/I017-adapter-properties.json",
+    "sha256": "618222085cde891b493e9e6b155e5756bc0c74fc0f0cf1d39333c31e6d323644",
+    "bytes": 19129,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/adapter_properties_probe.py",
+    "portable_path": "inputs/I018-adapter_properties_probe.py",
+    "sha256": "6a8e86d484daf39720bfedf2b4a561ca0a7b19728ed77975ff71b5b11cc8e2a7",
+    "bytes": 18411,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/sdk_layout_asserts.cpp",
+    "portable_path": "inputs/I019-sdk_layout_asserts.cpp",
+    "sha256": "6acb0de9de5b9df02c17378ab81c57e21aa4334cca2f8e120279f9043f46029f",
+    "bytes": 2738,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate01/README.md",
+    "portable_path": "inputs/I020-README.md",
+    "sha256": "ce7dffdb94626298e830bf8c5ff120a91894443310ecb4accaa14428510312cb",
+    "bytes": 2770,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared/d3dkmthk.h",
+    "portable_path": "inputs/I021-d3dkmthk.h",
+    "sha256": "e7df81476816d5112cd8c73be18dbaf9924c3af4af352ea2650b48dfc23ba40d",
+    "bytes": 310504,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared/d3dukmdt.h",
+    "portable_path": "inputs/I022-d3dukmdt.h",
+    "sha256": "d1c43d619589c2eb3f47877bba6d48735c7f26644fed44a5bb682f9e591eb33f",
+    "bytes": 102729,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared/dxgi.h",
+    "portable_path": "inputs/I023-dxgi.h",
+    "sha256": "4b983ac75717296191a5faef4a87ff0b02b0e8d6202cd5af85bf75accea2cbbe",
+    "bytes": 104147,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/start-b14-interactive.ps1",
+    "portable_path": "inputs/I024-start-b14-interactive.ps1",
+    "sha256": "9743ce6127a0ed7020458a2f658d878538bb806828efc42983e22b3e0458fc07",
+    "bytes": 9199,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/b14-interactive-primitives.ps1",
+    "portable_path": "inputs/I025-b14-interactive-primitives.ps1",
+    "sha256": "555e065b91aefda874649c7b9444b208deefa5ccf9b7c113119787615b092d19",
+    "bytes": 9368,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/b14-environment-witness.ps1",
+    "portable_path": "inputs/I026-b14-environment-witness.ps1",
+    "sha256": "fad50a20b36158d1ee3a22a0485fc12f3093aa7557b1caf0df4c48390c9a7ff0",
+    "bytes": 4974,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  },
+  {
+    "path": "E:/vsSource/WebRTC/live-kit-test/out/b14-windows-151-20261012/gpu-etw-mapping-review01/adapter-properties-candidate02/adapter_properties_probe.py",
+    "portable_path": "inputs/I027-adapter_properties_probe.py",
+    "sha256": "6a8e86d484daf39720bfedf2b4a561ca0a7b19728ed77975ff71b5b11cc8e2a7",
+    "bytes": 18411,
+    "status": "FROZEN_DIRECT_INPUT_COPY_NOT_EXECUTED"
+  }
+]

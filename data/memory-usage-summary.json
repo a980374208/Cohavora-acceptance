@@ -1,0 +1,99 @@
+{
+  "schema": "cohavora-product-memory-usage-summary-v1",
+  "created_at": "2026-10-15T09:16:55.622Z",
+  "runtime": "NOT_RUN; reused recorded means only",
+  "definitions": {
+    "normal": "未入会且空闲的产品状态；不以离会后累计内存释放窗或独立采集探针代替。",
+    "working_set": "当前驻留物理页量，可能包含共享页。",
+    "private_bytes": "进程私有提交内存；与工作集不是同一口径，二者不能相加。",
+    "units": "1 MiB = 1048576 bytes；界面按MiB显示，原bytes均值保留。"
+  },
+  "rows": [
+    {
+      "id": "idle_working_set",
+      "phase": "软件常态（未入会／空闲）",
+      "metric": "Working Set（工作集）",
+      "meaning": "进程驻留的物理内存页，可能含共享页",
+      "status": "UNKNOWN",
+      "mean_bytes": null,
+      "mean_mib": null,
+      "valid_samples": 0,
+      "window": "现存结果未保留可用于计算常态均值的状态采样；不是0 MiB。",
+      "source": null
+    },
+    {
+      "id": "idle_private_bytes",
+      "phase": "软件常态（未入会／空闲）",
+      "metric": "Private Bytes（专用提交量）",
+      "meaning": "进程私有提交内存，不能直接当作物理常驻量",
+      "status": "UNKNOWN",
+      "mean_bytes": null,
+      "mean_mib": null,
+      "valid_samples": 0,
+      "window": "现存结果未保留可用于计算常态均值的状态采样；不能由增长、峰值或释放窗中位数反推。",
+      "source": null
+    },
+    {
+      "id": "meeting_working_set",
+      "phase": "会议中（B11固定16路低层历史场景）",
+      "metric": "Working Set（工作集）",
+      "meaning": "进程驻留的物理内存页，可能含共享页",
+      "status": "RECORDED_MEAN",
+      "mean_bytes": 227594868.05333334,
+      "mean_mib": 217.05138020833334,
+      "valid_samples": 300,
+      "window": "300.328秒稳态窗口；100路720p simulcast发布，接收端全屏2K第二页固定16路320×150／320×180低层，约15 FPS。",
+      "source": "evidence/historical/S014-metrics-report.json",
+      "source_field": "client_resources.working_set_bytes.mean"
+    },
+    {
+      "id": "meeting_private_bytes",
+      "phase": "会议中（B11固定16路低层历史场景）",
+      "metric": "Private Bytes（专用提交量）",
+      "meaning": "进程私有提交内存，不能直接当作物理常驻量",
+      "status": "RECORDED_MEAN",
+      "mean_bytes": 257283140.26666668,
+      "mean_mib": 245.36432291666668,
+      "valid_samples": 300,
+      "window": "300.328秒稳态窗口；100路720p simulcast发布，接收端全屏2K第二页固定16路320×150／320×180低层，约15 FPS。",
+      "source": "evidence/historical/S014-metrics-report.json",
+      "source_field": "client_resources.private_bytes.mean"
+    }
+  ],
+  "meeting_context": {
+    "date": "2026-10-09",
+    "head": "812172bf439a0e462ac12d551ce7976d5ee9317a",
+    "configuration": "RelWithDebInfo",
+    "scope": "B11_100PUB_720P_SIMULCAST_FULLSCREEN_GRID16_300S",
+    "steady_seconds": 300.328,
+    "steady_samples": 300,
+    "status": "PASS_SCOPED",
+    "full_b11_status": "NOT_CLOSED",
+    "environment_id": "env-b11-300s",
+    "boundary": "这是独立历史会议样本，不是B14的100轮内存均值，也不能代表所有会议、任意参会规模或当前候选。"
+  },
+  "sources": [
+    {
+      "path": "evidence/historical/S014-metrics-report.json",
+      "sha256": "f779714ed83243322924fc369512c521c8d3cf272772703bcb52383e0986823f",
+      "bytes": 3728
+    },
+    {
+      "path": "evidence/historical/S013-completion-checkpoint.json",
+      "sha256": "2667854eee718e3f5f81872c75c4ef1b3f0c9332a07e6c396e7602a0a92f7ae0",
+      "bytes": 2884
+    }
+  ],
+  "method": {
+    "source": "复用原metrics-report.json中300个有效稳态资源样本的绝对mean字段；不使用peak/growth或median替代mean。",
+    "conversion": "mean_mib = recorded mean_bytes / 1048576",
+    "no_cross_run_mixing": true,
+    "no_product_test_executed": true
+  },
+  "b14_availability_file": "data/b14-memory-usage-summary.json",
+  "limitations": [
+    "软件常态平均占用未在当前保留结果中记录，保持UNKNOWN。",
+    "B14 retry07的常态和会议平均绝对占用均缺少原始资源采样，保持UNKNOWN；100.412109375 MiB是整场增长，16.30828125 MiB是停止共享后增量均值，均不是占用量。",
+    "原结果没有为软件常态或会议平均占用设置独立验收门限；此处记录实测，不新增PASS。"
+  ]
+}
