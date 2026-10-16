@@ -7,6 +7,7 @@ const unique = values => [...new Set(values)];
 /** Build the displayed plan from the unchanged, evidence-bound input catalog. */
 export function consolidateTests(input) {
   const data = structuredClone(input);
+  data.timingMeasurements = structuredClone(plan.timing_measurements);
   const originals = data.retestRecords;
   const byId = new Map(originals.map(record => [record.id, record]));
   assert.equal(originals.length, 52, 'Expected the original 52-item acceptance baseline');

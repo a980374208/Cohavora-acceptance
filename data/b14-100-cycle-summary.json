@@ -67,6 +67,7 @@
       "id": "camera_first_frame",
       "name": "摄像头/远端视频首帧耗时",
       "status": "UNKNOWN",
+      "availability_reason": "NOT_RETAINED",
       "n": 0,
       "unit": "ms",
       "mean": null,
@@ -75,12 +76,13 @@
       "max": null,
       "original_limit": null,
       "source": "evidence/b14/S038-external-review.json",
-      "reason": "保留的同run最终审查与UIA结果未记录该耗时的逐轮数值；不能从PASS或帧数倒推，也未重测"
+      "reason": "现存同run资料未保留可关联的逐轮首帧耗时；模拟远端视频仍可测接收侧首次解码／渲染，但不覆盖真实摄像头采集启动；不能从PASS或帧数倒推，也不能据此断言历史运行从未采集"
     },
     {
       "id": "screen_first_frame",
       "name": "屏幕共享首帧耗时",
       "status": "UNKNOWN",
+      "availability_reason": "NOT_RETAINED",
       "n": 0,
       "unit": "ms",
       "mean": null,
@@ -89,12 +91,14 @@
       "max": null,
       "original_limit": null,
       "source": "evidence/b14/S038-external-review.json",
-      "reason": "保留的同run最终审查与UIA结果未记录该耗时的逐轮数值；不能从PASS或帧数倒推，也未重测"
+      "reason": "现存同run资料保留共享交付检查与解码帧数，未保留共享发起至声明接收边界首帧的逐轮时序；帧数或PASS不能还原耗时，也未重测"
     },
     {
       "id": "first_paint",
       "name": "UI首屏/首绘耗时",
       "status": "UNKNOWN",
+      "availability_reason": "DEFINITION_PENDING",
+      "definition_id": "ui_first_paint",
       "n": 0,
       "unit": "ms",
       "mean": null,
@@ -103,12 +107,14 @@
       "max": null,
       "original_limit": null,
       "source": "evidence/b14/S038-external-review.json",
-      "reason": "保留的同run最终审查与UIA结果未记录该耗时的逐轮数值；不能从PASS或帧数倒推，也未重测"
+      "reason": "现存同run资料无法确认应用启动、settings或meeting等scene及统一首绘起终点，也无对应逐轮数值；视频首次渲染与设置页SettingsPaint不能替代；新ui_first_paint定义仅用于后续采集，不回填历史run"
     },
     {
       "id": "join_duration",
       "name": "入会操作耗时",
       "status": "UNKNOWN",
+      "availability_reason": "NOT_RETAINED",
+      "definition_id": "join_ready",
       "n": 0,
       "unit": "ms",
       "mean": null,
@@ -117,12 +123,14 @@
       "max": null,
       "original_limit": null,
       "source": "evidence/b14/S038-external-review.json",
-      "reason": "保留的同run最终审查与UIA结果未记录该耗时的逐轮数值；不能从PASS或帧数倒推，也未重测"
+      "reason": "现存同run最终资料保留UIA操作完整性检查，未保留逐轮动作时序或耗时，不能断言当时从未记录；UIA整段操作及Room connect span不等同join_ready，新定义仅用于后续采集"
     },
     {
       "id": "leave_duration",
       "name": "离会操作耗时",
       "status": "UNKNOWN",
+      "availability_reason": "NOT_RETAINED",
+      "definition_id": "leave_complete",
       "n": 0,
       "unit": "ms",
       "mean": null,
@@ -131,12 +139,13 @@
       "max": null,
       "original_limit": null,
       "source": "evidence/b14/S038-external-review.json",
-      "reason": "保留的同run最终审查与UIA结果未记录该耗时的逐轮数值；不能从PASS或帧数倒推，也未重测"
+      "reason": "现存同run最终资料未保留逐轮UIA离会起止或完整关闭耗时，不能由离会PASS、Room disconnect span或资源释放窗口还原；新leave_complete定义仅用于后续采集，不回填历史run"
     },
     {
       "id": "reconnect_video_first",
       "name": "重连后视频首帧耗时",
       "status": "UNKNOWN",
+      "availability_reason": "NOT_TRIGGERED",
       "n": 0,
       "unit": "ms",
       "mean": null,
@@ -145,7 +154,7 @@
       "max": null,
       "original_limit": null,
       "source": "evidence/b14/S038-external-review.json",
-      "reason": "该保留字段在100轮均没有有效样本，UNKNOWN；每轮重新入会不等于故障重连测试",
+      "reason": "同run的reconnect.episodes在100轮逐轮maximum均为0，未触发网络故障重连，因此没有恢复后视频首帧样本；每轮重新入会不等于重连，保留原UNKNOWN状态",
       "source_field": "cycles[*].details.revision_1_to_terminal.native_metric_summary.reconnect.video.first",
       "valid_samples_total": 0,
       "availability_totals": {
@@ -156,6 +165,7 @@
       "id": "reconnect_audio_first",
       "name": "重连后音频首样本耗时",
       "status": "UNKNOWN",
+      "availability_reason": "NOT_TRIGGERED",
       "n": 0,
       "unit": "ms",
       "mean": null,
@@ -164,7 +174,7 @@
       "max": null,
       "original_limit": null,
       "source": "evidence/b14/S038-external-review.json",
-      "reason": "该保留字段在100轮均没有有效样本，UNKNOWN；每轮重新入会不等于故障重连测试",
+      "reason": "同run的reconnect.episodes在100轮逐轮maximum均为0，未触发网络故障重连，因此没有恢复后音频首样本；每轮重新入会不等于重连，保留原UNKNOWN状态",
       "source_field": "cycles[*].details.revision_1_to_terminal.native_metric_summary.reconnect.audio.first",
       "valid_samples_total": 0,
       "availability_totals": {
@@ -175,6 +185,7 @@
       "id": "reconnect_render_first",
       "name": "重连后渲染首帧耗时",
       "status": "UNKNOWN",
+      "availability_reason": "NOT_TRIGGERED",
       "n": 0,
       "unit": "ms",
       "mean": null,
@@ -183,7 +194,7 @@
       "max": null,
       "original_limit": null,
       "source": "evidence/b14/S038-external-review.json",
-      "reason": "该保留字段在100轮均没有有效样本，UNKNOWN；每轮重新入会不等于故障重连测试",
+      "reason": "同run的reconnect.episodes在100轮逐轮maximum均为0，未触发网络故障重连，因此没有恢复后渲染首帧样本；每轮重新入会不等于重连，保留原UNKNOWN状态",
       "source_field": "cycles[*].details.revision_1_to_terminal.native_metric_summary.reconnect.render.first",
       "valid_samples_total": 0,
       "availability_totals": {

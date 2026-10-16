@@ -1,8 +1,8 @@
 {
   "schema": "cohavora-portable-report-manifest-v1",
-  "generatedAt": "2026-10-16 15:43:46",
+  "generatedAt": "2026-10-16 18:14:29",
   "evidence_head": "1911e99a7e5b093488001e7121639730591297e2",
-  "scope": "2026-10-16 验收计划去重、合并与报告排版；沿用原证据，未执行产品重测",
+  "scope": "2026-10-16 区分历史计时数据的缺失原因，明确三项操作计时边界；沿用原证据，未执行产品重测",
   "outputs": [
     {
       "path": ".gitignore",
@@ -13,10 +13,10 @@
     },
     {
       "path": "assets/report-style.css",
-      "sha256": "3f9b451137f75954f58dc6c5c40f57600ee3551c5b3920b25933d3fdfb5d3793",
-      "bytes": 32819,
-      "text_lf_sha256": "3f9b451137f75954f58dc6c5c40f57600ee3551c5b3920b25933d3fdfb5d3793",
-      "text_lf_bytes": 32819
+      "sha256": "a9c1c2f2ddafd014a6ab094b2cd2e868672d6f61582e2977bdd2e84e1b24b79c",
+      "bytes": 33689,
+      "text_lf_sha256": "a9c1c2f2ddafd014a6ab094b2cd2e868672d6f61582e2977bdd2e84e1b24b79c",
+      "text_lf_bytes": 33689
     },
     {
       "path": "assets/report.js",
@@ -262,10 +262,10 @@
     },
     {
       "path": "data/b14-100-cycle-summary.json",
-      "sha256": "f1669c61069753f5a167d19daadad521375acd0f0811b24ad1b24d821a46602c",
-      "bytes": 118356,
-      "text_lf_sha256": "e3e673ba010084a9dc14ba6fc469affbc1b65bed918ff895fe8b93b4564ba069",
-      "text_lf_bytes": 115299
+      "sha256": "68772c3778797bef212fbbaea238e16b2fa0e25d368cf24d43c25d400405d5fb",
+      "bytes": 119609,
+      "text_lf_sha256": "d43540020e31691994c2c64bdc6230d7319086e19594977e66c9f1cec0c83272",
+      "text_lf_bytes": 116541
     },
     {
       "path": "data/b14-memory-investigation-note.json",
@@ -304,10 +304,10 @@
     },
     {
       "path": "data/report-data.json",
-      "sha256": "e55cec2527d8864c45911ccbcb942913e85342aef724926d039f84ce4b3b8e08",
-      "bytes": 557135,
-      "text_lf_sha256": "e55cec2527d8864c45911ccbcb942913e85342aef724926d039f84ce4b3b8e08",
-      "text_lf_bytes": 557135
+      "sha256": "8e0fce1bdb8f725fc7489c12fe7f6d1fd2caeacaf595e8115144ab5c86f8b03c",
+      "bytes": 565455,
+      "text_lf_sha256": "8e0fce1bdb8f725fc7489c12fe7f6d1fd2caeacaf595e8115144ab5c86f8b03c",
+      "text_lf_bytes": 565455
     },
     {
       "path": "data/report-input.json",
@@ -332,10 +332,10 @@
     },
     {
       "path": "data/test-plan.json",
-      "sha256": "fe9bd9c670fc89cc36cef7c5a7022a293e86aa5aebfc3d0677d0773e719d193b",
-      "bytes": 28788,
-      "text_lf_sha256": "fe9bd9c670fc89cc36cef7c5a7022a293e86aa5aebfc3d0677d0773e719d193b",
-      "text_lf_bytes": 28788
+      "sha256": "c5eacfb32da7c64065e8a4fed6fcd75305b0dc106219be784016d6600eee0afc",
+      "bytes": 34933,
+      "text_lf_sha256": "c5eacfb32da7c64065e8a4fed6fcd75305b0dc106219be784016d6600eee0afc",
+      "text_lf_bytes": 34933
     },
     {
       "path": "evidence/b14/S017-comparison.json",
@@ -589,10 +589,10 @@
     },
     {
       "path": "index.html",
-      "sha256": "852bdaf54137b726fcf01842527c8366ae8dd42d473f5fe5d17ee7ea9f4e5172",
-      "bytes": 574589,
-      "text_lf_sha256": "852bdaf54137b726fcf01842527c8366ae8dd42d473f5fe5d17ee7ea9f4e5172",
-      "text_lf_bytes": 574589
+      "sha256": "e86aabd2b2756ba31f23a0059424d458edafe674303e63fa546856480fbd439b",
+      "bytes": 590852,
+      "text_lf_sha256": "e86aabd2b2756ba31f23a0059424d458edafe674303e63fa546856480fbd439b",
+      "text_lf_bytes": 590852
     },
     {
       "path": "inputs/I001-product_gpu_queue_snapshot.h",
@@ -731,31 +731,31 @@
     },
     {
       "path": "package-info.json",
-      "sha256": "d3816337f4e478f9a3dfb91d4a933ab06850a5c08b8e1206410b320ef8f6f6c5",
+      "sha256": "b4fef0e9c1b4daf76aa0de1905f7a16667ab3375c908a68332e5602bf1d6614c",
       "bytes": 1123,
-      "text_lf_sha256": "d3816337f4e478f9a3dfb91d4a933ab06850a5c08b8e1206410b320ef8f6f6c5",
+      "text_lf_sha256": "b4fef0e9c1b4daf76aa0de1905f7a16667ab3375c908a68332e5602bf1d6614c",
       "text_lf_bytes": 1123
     },
     {
       "path": "scripts/assemble.mjs",
-      "sha256": "11b92cb7228cf3a3dd608b4607e9d8fe15ce22e6240e03bdc2750e61d8ac6af2",
-      "bytes": 18901,
-      "text_lf_sha256": "11b92cb7228cf3a3dd608b4607e9d8fe15ce22e6240e03bdc2750e61d8ac6af2",
-      "text_lf_bytes": 18901
+      "sha256": "3202925834df6af112852f1e1ccc2330ca127c8170a649f63fc9832b2afc63c2",
+      "bytes": 19060,
+      "text_lf_sha256": "3202925834df6af112852f1e1ccc2330ca127c8170a649f63fc9832b2afc63c2",
+      "text_lf_bytes": 19060
     },
     {
       "path": "scripts/consolidate-tests.mjs",
-      "sha256": "9bddbfac923b7a5636dea684cc73759038afd8e2efe68e2708da8c5470b8473a",
-      "bytes": 5913,
-      "text_lf_sha256": "9bddbfac923b7a5636dea684cc73759038afd8e2efe68e2708da8c5470b8473a",
-      "text_lf_bytes": 5913
+      "sha256": "3a6b9e292752b361eb163d7caf952c847e1a611c10a3242596ca79e3fa6f6273",
+      "bytes": 5984,
+      "text_lf_sha256": "3a6b9e292752b361eb163d7caf952c847e1a611c10a3242596ca79e3fa6f6273",
+      "text_lf_bytes": 5984
     },
     {
       "path": "scripts/render-b14.mjs",
-      "sha256": "e336282376e1b22b6d7b891e0e9c3b768933af8ab9781ef59e3afc0c409f4d8e",
-      "bytes": 4285,
-      "text_lf_sha256": "e336282376e1b22b6d7b891e0e9c3b768933af8ab9781ef59e3afc0c409f4d8e",
-      "text_lf_bytes": 4285
+      "sha256": "cf2578732cc338e91668bf4760381c86a918a0a9604130e490191e7347119542",
+      "bytes": 7192,
+      "text_lf_sha256": "cf2578732cc338e91668bf4760381c86a918a0a9604130e490191e7347119542",
+      "text_lf_bytes": 7192
     },
     {
       "path": "scripts/render-environments.mjs",
@@ -773,17 +773,17 @@
     },
     {
       "path": "scripts/validate.mjs",
-      "sha256": "1be96656a23aa3a58df500e34b4b642a85f5c3a916561e96c7cd34b99660e210",
-      "bytes": 32403,
-      "text_lf_sha256": "1be96656a23aa3a58df500e34b4b642a85f5c3a916561e96c7cd34b99660e210",
-      "text_lf_bytes": 32403
+      "sha256": "6593805b7c3d34396b0f4e113a19acc2b8669230270b1505060c053ef6ac1b6c",
+      "bytes": 39880,
+      "text_lf_sha256": "6593805b7c3d34396b0f4e113a19acc2b8669230270b1505060c053ef6ac1b6c",
+      "text_lf_bytes": 39880
     },
     {
       "path": "validation.json",
-      "sha256": "58ab1982cada4a261f8d43598135a5c86e912b837dada6863eae10c71d7161f3",
-      "bytes": 3727,
-      "text_lf_sha256": "58ab1982cada4a261f8d43598135a5c86e912b837dada6863eae10c71d7161f3",
-      "text_lf_bytes": 3727
+      "sha256": "23709a95760f4006b2533d83fe9c5348373b196a829ff4af3f8e89c8a5fd3b16",
+      "bytes": 3978,
+      "text_lf_sha256": "23709a95760f4006b2533d83fe9c5348373b196a829ff4af3f8e89c8a5fd3b16",
+      "text_lf_bytes": 3978
     }
   ],
   "sources": [

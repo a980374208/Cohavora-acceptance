@@ -11,6 +11,90 @@
     "保留原52条输入全文及旧ID映射；合并不代表补测完成，也不自动授权任何已暂停的runtime。",
     "某一子门未执行、失败或证据缺失时，不以同组其他子门的PASS覆盖。"
   ],
+  "timing_measurements": {
+    "definition_version": "2026-10-16-v1",
+    "applicability": "后续采集口径；不回填或重判历史run",
+    "availability_reasons": [
+      {
+        "id": "NOT_TRIGGERED",
+        "label": "未触发",
+        "description": "有效事件计数或记录表明该运行未观测到对应事件；例如重连episode计数为0，没有适用的恢复耗时样本。"
+      },
+      {
+        "id": "NOT_RETAINED",
+        "label": "未留存",
+        "description": "现存同run资料没有可关联的逐轮起终点或耗时值；不据此断言历史运行从未采集。"
+      },
+      {
+        "id": "DEFINITION_PENDING",
+        "label": "口径待明确",
+        "description": "现存同run资料无法确认当时固定的测量场景、起终点或有效样本规则；后续定义不追溯应用于历史运行。"
+      }
+    ],
+    "collection_policy": [
+      "起终点使用同一单调时钟；跨进程观察另存时钟域与关联方法，不直接相减墙钟时间。",
+      "原始记录关联同一run、cycle、session、operation与generation；过期generation、重复和late callback不产生新成功样本。",
+      "每轮每个声明场景只取一次有效终态；成功耗时分布仅使用完整成功样本，失败、超时和取消分别计数。",
+      "保留原始起终点、时钟信息、definition_version、场景、身份、结果与缺失原因，再生成均值、P50、P95和最大值。",
+      "未设置性能阈值仍记录有效数值；缺失值不按0毫秒计入，不用PASS、帧数、render interval或其他run补造耗时。",
+      "采集实现与runtime验证均未执行；collection_status保持NOT_RUN。新增口径不更改历史状态、门限或原暂停约束。"
+    ],
+    "definitions": [
+      {
+        "id": "join_ready",
+        "name": "入会耗时",
+        "group_ids": ["T001", "T003", "T020"],
+        "start": "最终入会按钮handler受理本次请求的单调时间；排除打开及填写入会对话框的时间。",
+        "end": "同一次startup transaction已提交成功，用户选择的必要本地媒体已ready且状态为InMeeting，会议窗口已可见且对应Qt queued投影已应用；不处于启动或回滚状态。",
+        "rules": [
+          "按用户本次选择核对本地音视频ready；关闭的媒体不作为等待条件，远端首帧不纳入入会耗时。",
+          "终点同时满足startup成功提交、业务状态和界面投影，不能用Room连接成功、较早的InMeeting／meetingJoinedSuccessfully、窗口对象存在或UIA控件出现单独替代。",
+          "接收模式等startup为DegradedSuccess的结果使用独立场景／结果桶，不混入普通Success的成功耗时分布。",
+          "启动失败、超时、取消或回滚分别保留终态与已发生的起终点，不进入成功耗时分布。"
+        ],
+        "evidence": [
+          "按钮handler受理记录与同operation的startup成功提交终态、InMeeting状态记录。",
+          "同generation的窗口可见及Qt投影应用确认；保留本次音视频选择与ready结果。"
+        ],
+        "collection_status": "NOT_RUN"
+      },
+      {
+        "id": "leave_complete",
+        "name": "离会耗时",
+        "group_ids": ["T001", "T003", "T020"],
+        "start": "用户确认离会的handler受理本次请求的单调时间；排除打开确认框与用户停留时间。",
+        "end": "同session的SessionStopped／meetingLeft对应关闭终态已确认，startup／发布等在途操作已收敛且native cleanup完成，会议窗口已关闭并回到可见的会前页面。",
+        "rules": [
+          "业务关闭、在途操作收敛、native cleanup与界面返回均须关联同session及generation；确认离会后的窗口close可早于stopRoomSession，不以Room断开、窗口关闭／隐藏或按钮消失单独判定终点。",
+          "不包含产品进程退出及操作系统内存回收；资源增长仍按既有独立释放窗口与门限判定。",
+          "离会失败、超时和取消分别计数，不进入成功耗时分布。"
+        ],
+        "evidence": [
+          "确认离会handler受理、同session的SessionStopped／meetingLeft对应关闭终态及在途操作终态记录。",
+          "native cleanup完成记录与同generation的会议窗口关闭、会前页面恢复可见确认。"
+        ],
+        "collection_status": "NOT_RUN"
+      },
+      {
+        "id": "ui_first_paint",
+        "name": "UI页面首绘耗时",
+        "group_ids": ["T003", "T020"],
+        "start": "用户打开目标页面的handler受理本次请求的单调时间。",
+        "end": "该operation对应的可见页面内容完成首个有效paint后，返回event loop的观察点。",
+        "rules": [
+          "settings与meeting等页面按scene分别统计；记录目标页面、operation与generation，不合并为一个首屏分布。",
+          "只计目标内容可见且有效的首个paint；占位、隐藏或过期页面的paint不能作为终点。",
+          "终点代表Qt内容首绘后的event loop观察点，不代表DWM呈现或用户已在显示器上看到像素。",
+          "应用进程启动首屏使用独立scene和独立起点定义，不混入同进程100轮页面打开样本；设置页既有SettingsPaint及视频首帧日志不能直接替代会议页面首绘。"
+        ],
+        "evidence": [
+          "打开页面handler受理记录及目标scene、operation、session与generation。",
+          "目标内容可见性、首个有效paint完成及随后event loop观察点的原始时间记录。"
+        ],
+        "collection_status": "NOT_RUN"
+      }
+    ]
+  },
   "groups": [
     {
       "id": "T001",
@@ -23,7 +107,8 @@
       "gates": [
         "Room／Session／发布与取消发布：状态转换、generation、owner和thread归属一致，Qt投影不持有native lifetime。",
         "取消、late callback、重复操作和启动失败：终态唯一、回滚完整，销毁后的回调不改写新会话。",
-        "音频source／track／factory／probe／Qt引用链：在相同冻结工件下配对复现与释放，直接lifetime断言成立。"
+        "音频source／track／factory／probe／Qt引用链：在相同冻结工件下配对复现与释放，直接lifetime断言成立。",
+        "入离会耗时：按timing_measurements中的join_ready／leave_complete关联业务终态、native cleanup与Qt投影，保存逐轮原始起终点及结果。"
       ],
       "conditions": ["只运行受影响core或直接gate；输入及依赖等价的既有结论可复用。"],
       "boundaries": ["局部音频释放不关闭B14正式资源门", "工程PASS不替代真实设备、实服或长稳"]
@@ -54,7 +139,7 @@
       "originalIds": ["T005", "T006", "T018", "T024", "T030"],
       "description": "将B01、B02及其批次D明细合为一份矩阵，补充真实I/O和人工输入子门。",
       "gates": [
-        "界面流程：settings、入会、会议工具栏／分页、日志及白板文件操作，在声明语言下完成且状态一致。",
+        "界面流程：settings、入会、会议工具栏／分页、日志及白板文件操作，在声明语言下完成且状态一致；页面首绘与入离会分别引用timing_measurements的ui_first_paint／join_ready／leave_complete。",
         "文件内容：JPEG、拒绝访问、页数替换、导出回读与像素／哈希判定；同一文件case只执行一次。",
         "远端上传：离线拒绝、上传中断、回读和重试恢复分别验证，失败不残留错误状态。",
         "真实I/O：受控磁盘满、oplock／慢I/O、驱动不响应及关停持久化／恢复按独立故障条件判定。",
@@ -345,7 +430,7 @@
         "执行前置：明确资源增长与测量链，对应环境同输入三次完整PILOT通过，满足现有Formal执行条件。",
         "固定生命周期：同一产品进程连续8小时／100轮，关联cycle与session强身份，全部必需阶段完成。",
         "资源与媒体：按冻结释放窗口、GPU、音视频／共享连续性等门限独立判定，Private Bytes原64 MiB门限不变。",
-        "归档与完整性：遥测、日志、support bundle、质量和终态完整；丢失或缺项不得用其他run拼接。"
+        "归档与完整性：遥测、日志、support bundle、质量和终态完整；按timing_measurements保留入离会及各scene首绘的逐轮起终点、版本与结果，丢失或缺项不得用其他run拼接。"
       ],
       "conditions": ["正式长稳保持原暂停和单独执行授权边界；本次整理不启动。"],
       "boundaries": ["retry07原Formal FAIL及100.412109375 MiB增长保留", "资格、诊断、固定grid和局部生命周期不能替代Formal", "首帧／入会／离会等原缺失样本保持UNKNOWN"]

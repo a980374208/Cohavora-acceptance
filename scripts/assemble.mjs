@@ -4,7 +4,7 @@ import vm from 'node:vm';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {consolidateTests} from './consolidate-tests.mjs';
-import {renderB14Procedure, renderB14Measured} from './render-b14.mjs';
+import {renderB14Procedure, renderB14Measured, renderTimingDefinitions} from './render-b14.mjs';
 import {renderHighlightEnvironments, renderEnvironmentOverview} from './render-environments.mjs';
 import {renderMemoryUsage} from './render-memory.mjs';
 
@@ -18,8 +18,8 @@ data.b14CycleSummary = await readJSON('data/b14-100-cycle-summary.json');
 data.testEnvironments = await readJSON('data/test-environments.json');
 data.memoryUsageSummary = await readJSON('data/memory-usage-summary.json');
 data.meta.documentRevisedAt = new Date().toISOString();
-data.meta.scope = '2026-10-16 验收计划去重、合并与报告排版；沿用原证据，未执行产品重测';
-data.documentRevision = {date: '2026-10-16', changes: ['52条待测记录合并为21个产品组和3个附属组', '删除独立综合摘要执行项；用户反馈转归档动作', '五类实测摘要置于产品验收计划之前；移除重复指标目录；指标、工具与审计按需展开'], product_runtime: 'NOT_RUN', evidence_baseline: data.meta.evidenceBaselineAt};
+data.meta.scope = '2026-10-16 区分历史计时数据的缺失原因，明确三项操作计时边界；沿用原证据，未执行产品重测';
+data.documentRevision = {date: '2026-10-16', changes: ['沿用21个产品组和3个附属组，五类实测摘要位于产品验收计划之前', '历史计时数据区分未触发、未留存和口径待明确，不回填缺失数值', '入会、离会和界面首绘边界统一维护于test-plan.json，采集验证NOT_RUN'], product_runtime: 'NOT_RUN', evidence_baseline: data.meta.evidenceBaselineAt};
 const productPlans = data.retestRecords.filter(record => record.plan_kind === 'product');
 const auxiliaryPlans = data.retestRecords.filter(record => record.plan_kind === 'auxiliary');
 const timestamp = new Intl.DateTimeFormat('sv-SE', {timeZone: 'Asia/Shanghai', dateStyle: 'short', timeStyle: 'medium'}).format(new Date(data.meta.documentRevisedAt));
@@ -40,7 +40,7 @@ const highlightCards = data.highlights.map((highlight, index) => `<article class
 <details><summary>查看实测指标、原门限与测试环境</summary><p class="note">原执行日期：${esc(highlight.date)}</p>
 ${renderHighlightEnvironments(highlight.environmentIds, data.testEnvironments.profiles)}${renderB14Procedure(highlight, data.b14CycleSummary)}
 <div class="table-wrap"><table class="highlight-metrics"><thead><tr><th>指标</th><th>实测值</th><th>原门限／期望</th><th>单位</th></tr></thead><tbody>${highlight.metrics.map(metric => '<tr><th scope="row">' + esc(metric.name) + '</th><td><strong>' + esc(show(metric.value)) + '</strong></td><td>' + esc(show(metric.limit)) + '</td><td>' + esc(metric.unit || '—') + '</td></tr>').join('')}</tbody></table></div>
-${renderB14Measured(highlight, data.b14CycleSummary)}<details><summary>指标依据、报告与限制</summary><ul>${highlight.metrics.map(metric => '<li><b>' + esc(metric.name) + '：</b>' + esc(metric.basis) + '</li>').join('')}</ul><ul>${highlight.limitations.map(item => '<li>' + esc(item) + '</li>').join('')}</ul><ul class="sources">${highlight.sources.map((source, i) => '<li>' + sourceLink(source, '报告依据 ' + (i + 1)) + '<br><small>' + esc(sourceInfo(source)?.portable_path ? 'samples/acceptance/' + sourceInfo(source).portable_path : '原来源缺失') + '</small></li>').join('')}</ul></details></details></article>`).join('');
+${renderB14Measured(highlight, data.b14CycleSummary, data.timingMeasurements)}<details><summary>指标依据、报告与限制</summary><ul>${highlight.metrics.map(metric => '<li><b>' + esc(metric.name) + '：</b>' + esc(metric.basis) + '</li>').join('')}</ul><ul>${highlight.limitations.map(item => '<li>' + esc(item) + '</li>').join('')}</ul><ul class="sources">${highlight.sources.map((source, i) => '<li>' + sourceLink(source, '报告依据 ' + (i + 1)) + '<br><small>' + esc(sourceInfo(source)?.portable_path ? 'samples/acceptance/' + sourceInfo(source).portable_path : '原来源缺失') + '</small></li>').join('')}</ul></details></details></article>`).join('');
 
 const mappingRows = data.retestRecords.map(record => '<tr><td>' + esc(record.originalIds.join('、')) + '</td><td><a href="#' + (record.plan_kind === 'product' ? 'retest' : 'aux') + '-' + record.id + '">' + esc(record.plan_code + ' · ' + record.title) + '</a></td><td>' + (record.plan_kind === 'product' ? '合并为产品验收组；子门分别判定' : '附属工具／诊断，按所依赖的门执行') + '</td></tr>').join('');
 const consolidationHTML = `<details class="appendix"><summary>合并与删除依据 · 52 条原记录的去向</summary><p>合并采用同一主题、可共用准备环境和工件的执行组；保留每个场景的断言、门限和独立结果。codec、后端、物理条件与负载矩阵均保留，不用一个代表场景替代整组。</p><div class="table-wrap"><table><thead><tr><th>原条目</th><th>维护入口</th><th>处理方式</th></tr></thead><tbody>${mappingRows}<tr><td>T028</td><td>P11 白板／批注的证据归档动作</td><td>移出执行清单：先归档用户已执行反馈，只有缺口进入对应子门。</td></tr><tr><td>T029</td><td>各领域验收组</td><td>删除独立综合摘要测试：复用各领域同一冻结输入的结果，不再重复跑整批摘要。</td></tr></tbody></table></div><p><a href="data/test-plan.json">维护计划与去重规则</a> · <a href="data/report-input.json">原始 52 条记录及历史基准</a>。旧编号可在上方搜索；此映射用于追溯，不新增待测项。</p></details>`;
@@ -58,7 +58,7 @@ const html = `<!doctype html>
 <section id="decision"><h2>验收结论</h2><p class="lede">当前证据仍不足以签发项目正式验收通过。</p><p class="boundary"><b>B14 最近完整 Formal：FAIL。</b>Private Bytes 释放窗口增长 100.412 MiB，原门限 64 MiB。新候选未完成正式验收；工具自检、历史 PASS 与排版修订均不改变此结论。</p>
 <div class="metric-grid"><div class="metric"><strong>${productPlans.length}</strong><span>产品验收组<br>合并主题，保留独立子门</span></div><div class="metric"><strong>${auxiliaryPlans.length}</strong><span>附属工具／诊断组<br>随依赖执行，见附录</span></div><div class="metric"><strong>52 → ${data.retestRecords.length}</strong><span>待测入口精简<br>原条目去向全部可追溯</span></div><div class="metric"><strong>${data.historicalRecords.length}</strong><span>历史最终结果<br>保留原状态与版本边界</span></div></div><p class="overview-note">执行组数量不是用例数或通过率。本次只整理报告，未启动构建、产品、服务、设备测试或长稳。基准日的 ${data.currentRecords.length} 条限定工具结果放入附录，未重新核验为当前产品通过。</p></section>
 <section id="highlights"><h2>五类实测摘要</h2><p>以下为原执行范围的关键结果。展开后查看指标、门限、环境与限制；历史结果不计当前候选通过。</p><div class="highlight-grid">${highlightCards}</div></section>
-<section id="retests"><h2>产品验收计划</h2><p>同组共享准备步骤和冻结工件，每个验收子门分别判定。与当前改动无关且输入完整一致的结果可复用；改变的范围才补测。物理条件不足、已暂缓的现场测试和正式长稳继续保持原暂停边界。</p>${toolbar('retest')}${consolidationHTML}</section>
+<section id="retests"><h2>产品验收计划</h2><p>同组共享准备步骤和冻结工件，每个验收子门分别判定。与当前改动无关且输入完整一致的结果可复用；改变的范围才补测。物理条件不足、已暂缓的现场测试和正式长稳继续保持原暂停边界。</p>${renderTimingDefinitions(data.timingMeasurements)}${toolbar('retest')}${consolidationHTML}</section>
 ${renderMemoryUsage(data.memoryUsageSummary)}
 ${renderEnvironmentOverview(data.testEnvironments.profiles)}
 <section id="history"><h2>历史最终结果</h2><p>保留 ${data.historicalRecords.length} 条最终结论及原指标。Formal、资格、诊断和用户反馈分别归属原运行，不合并 PASS，不拼接不同环境与版本。</p><details class="appendix"><summary>查阅与筛选历史结果</summary><div class="toolbar" role="search" aria-label="历史结果筛选"><input id="history-q" type="search" aria-label="搜索历史结果" placeholder="搜索历史最终结果…"><label>领域<select id="history-domain"><option value="">全部领域</option></select></label><label>原状态<select id="history-status"><option value="">全部具体状态</option></select></label><button id="history-reset">重置</button></div><div id="history-count" class="status-line" aria-live="polite"></div><div class="table-wrap"><table><thead><tr><th>验收与原范围</th><th>原结论</th><th>关键结果</th><th>边界</th></tr></thead><tbody id="history-body"></tbody></table></div></details></section>

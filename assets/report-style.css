@@ -1157,6 +1157,60 @@ li {
   text-align: left;
 }
 
+.timing-availability, .timing-contracts {
+  min-width: 740px;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.timing-availability th:first-child {
+  width: 22%;
+  min-width: 160px;
+}
+
+.timing-availability td:nth-child(2), .timing-availability td:nth-child(3) {
+  white-space: nowrap;
+}
+
+.timing-state {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  color: #9a3412;
+  background: #fff7ed;
+  font-weight: 600;
+}
+
+.timing-state[data-reason="NOT_TRIGGERED"] {
+  border-color: #cbd5e1;
+  color: #475569;
+  background: #f1f5f9;
+}
+
+.timing-legend {
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.timing-definitions {
+  margin: 24px 0;
+}
+
+.timing-contracts th:first-child {
+  width: 17%;
+  min-width: 125px;
+}
+
+.timing-contracts td {
+  width: 41.5%;
+}
+
+.timing-contracts tr:target {
+  background: #fff7ed;
+}
+
 /* ==================== TEST ENVIRONMENTS ==================== */
 .test-environment {
   margin: 20px 0;

@@ -1,6 +1,6 @@
 {
   "status": "PASS_STATIC_FULL",
-  "checked_at": "2026-10-16T07:43:48.702Z",
+  "checked_at": "2026-10-16T10:14:41.130Z",
   "validation_mode": "FULL_OFFLINE",
   "method": "Node vm structure/synthetic DOM, relative links, lightweight report data consistency; heavy offline evidence decoupled",
   "checks": {
@@ -48,12 +48,16 @@
     "idle_memory_mean_missing_not_estimated": true,
     "memory_occupancy_growth_and_run_scopes_separated": true,
     "package_local_links": {
-      "references": 126,
+      "references": 127,
       "verified_existing": 66,
       "decoupled_omitted": 0,
       "omitted_paths": []
     },
     "archived_cleanup_receipts_and_plans_match": true,
+    "timing_definitions_single_source_and_three_contracts": true,
+    "b14_timing_missing_reasons_separated": true,
+    "b14_timing_unknown_null_values_and_rendered_reasons": true,
+    "b14_reconnect_100_cycles_not_triggered_original_evidence": true,
     "b14_100_cycle_scalar_statistics_recomputed": 20,
     "b14_first_frame_unknown_not_fabricated": true,
     "b14_same_process_and_fixed_stages_documented": true,

@@ -11,6 +11,7 @@ const dataText=html.match(/<script id="report-data" type="application\/json">([\
 const data=JSON.parse(dataText);
 const baseline=JSON.parse(await fs.readFile(path.join(dest,'data/report-input.json'),'utf8'));
 const testPlan=JSON.parse(await fs.readFile(path.join(dest,'data/test-plan.json'),'utf8'));
+assert.deepEqual(data.timingMeasurements,testPlan.timing_measurements,'Timing definitions must come from the maintained test plan');
 const baselineBefore=JSON.stringify(baseline),derived=consolidateTests(baseline);
 assert.equal(JSON.stringify(baseline),baselineBefore,'Consolidation must preserve the frozen input catalog');
 for(const key of ['retestRecords','consolidation','curationSummary'])assert.deepEqual(data[key],derived[key],'Generated '+key+' differs from the maintained plan');
@@ -46,6 +47,29 @@ assert.equal(new Set(data.registry.map(r=>r.id)).size,data.registry.length);
 for(const record of data.currentRecords){assert.ok(record.curation.inputChecks.length>0);assert.ok(record.source_checks.length>0);}
 const originalById=new Map(baseline.retestRecords.map(record=>[record.id,record]));
 const planById=new Map(testPlan.groups.map(group=>[group.id,group]));
+const timingDefinitions=data.timingMeasurements;
+assert.ok(timingDefinitions&&timingDefinitions.definition_version);
+assert.ok(Array.isArray(timingDefinitions.collection_policy)&&timingDefinitions.collection_policy.length>0);
+assert.deepEqual(timingDefinitions.availability_reasons.map(reason=>reason.id).sort(),['DEFINITION_PENDING','NOT_RETAINED','NOT_TRIGGERED']);
+const availabilityById=new Map(timingDefinitions.availability_reasons.map(reason=>[reason.id,reason]));
+for(const [id,label]of Object.entries({NOT_TRIGGERED:'未触发',NOT_RETAINED:'未留存',DEFINITION_PENDING:'口径待明确'})){const reason=availabilityById.get(id);assert.ok(reason.label.includes(label));assert.ok(reason.description);}
+assert.deepEqual(timingDefinitions.definitions.map(definition=>definition.id).sort(),['join_ready','leave_complete','ui_first_paint']);
+const timingDefinitionById=new Map(timingDefinitions.definitions.map(definition=>[definition.id,definition]));
+for(const definition of timingDefinitions.definitions){
+  assert.ok(definition.name&&definition.start&&definition.end&&definition.start!==definition.end);
+  assert.ok(Array.isArray(definition.group_ids)&&definition.group_ids.length>0&&new Set(definition.group_ids).size===definition.group_ids.length);
+  assert.ok(definition.group_ids.every(id=>planById.has(id)),'Unknown group in timing definition '+definition.id);
+  assert.ok(Array.isArray(definition.rules)&&definition.rules.length>0);
+  assert.ok(Array.isArray(definition.evidence)&&definition.evidence.length>0);
+  assert.equal(definition.collection_status,'NOT_RUN');
+}
+assert.ok(timingDefinitionById.get('join_ready').end.includes('startup transaction已提交成功'));
+assert.ok(timingDefinitionById.get('join_ready').rules.some(rule=>rule.includes('较早的InMeeting')));
+assert.ok(timingDefinitionById.get('join_ready').rules.some(rule=>rule.includes('DegradedSuccess')));
+assert.ok(timingDefinitionById.get('leave_complete').end.includes('native cleanup完成'));
+assert.ok(timingDefinitionById.get('leave_complete').end.includes('SessionStopped／meetingLeft'));
+assert.ok(timingDefinitionById.get('ui_first_paint').end.includes('paint')&&timingDefinitionById.get('ui_first_paint').end.includes('event loop'));
+assert.ok(timingDefinitionById.get('ui_first_paint').rules.some(rule=>rule.includes('不代表DWM呈现')));
 const consolidation=data.consolidation;
 assert.equal(consolidation.original_retest_count,52);
 assert.equal(consolidation.displayed_retest_count,24);
@@ -321,6 +345,55 @@ const cycleSummary=JSON.parse(await fs.readFile(path.join(dest,'data/b14-100-cyc
 assert.deepEqual(data.b14CycleSummary,cycleSummary);
 assert.equal(cycleSummary.run_id,'e7501e95039f4eb7ab23594a83fe82f0');
 assert.equal(cycleSummary.cycle_count,100);
+assert.equal(cycleSummary.procedure_parameters.network_reconnect_episodes_per_cycle_maximum,0);
+const expectedTimingReasons={camera_first_frame:'NOT_RETAINED',screen_first_frame:'NOT_RETAINED',first_paint:'DEFINITION_PENDING',join_duration:'NOT_RETAINED',leave_duration:'NOT_RETAINED',reconnect_video_first:'NOT_TRIGGERED',reconnect_audio_first:'NOT_TRIGGERED',reconnect_render_first:'NOT_TRIGGERED'};
+const expectedTimingDefinitions={first_paint:'ui_first_paint',join_duration:'join_ready',leave_duration:'leave_complete'};
+assert.equal(cycleSummary.first_frame_and_action_timing.length,8);
+assert.deepEqual(cycleSummary.first_frame_and_action_timing.map(row=>row.id).sort(),Object.keys(expectedTimingReasons).sort());
+for(const row of cycleSummary.first_frame_and_action_timing){
+  assert.equal(row.availability_reason,expectedTimingReasons[row.id]);assert.ok(availabilityById.has(row.availability_reason));
+  assert.equal(row.definition_id,expectedTimingDefinitions[row.id]);
+  assert.equal(row.status,'UNKNOWN');assert.equal(row.n,0);assert.equal(row.unit,'ms');
+  for(const key of ['mean','p50','p95','max','original_limit'])assert.equal(row[key],null,'Unrecorded timing must remain null: '+row.id+'.'+key);
+  assert.ok(row.reason);assert.equal(row.source,'evidence/b14/S038-external-review.json');
+  if(row.id.startsWith('reconnect_'))assert.equal(row.valid_samples_total,0);
+}
+const htmlEscape=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const timingMarkup=[...structure.matchAll(/<tr\b([^>]*)>([\s\S]*?)<\/tr>/g)].filter(match=>/\bdata-timing-id="/.test(match[1]));
+assert.equal(timingMarkup.length,8);
+const timingMarkupById=new Map(timingMarkup.map(match=>[match[1].match(/\bdata-timing-id="([^"]+)"/)[1],match]));
+assert.equal(timingMarkupById.size,8);
+for(const row of cycleSummary.first_frame_and_action_timing){
+  const markup=timingMarkupById.get(row.id);assert.ok(markup,'Missing timing table row '+row.id);
+  assert.equal(markup[1].match(/\bdata-availability-reason="([^"]+)"/)?.[1],row.availability_reason);
+  assert.ok(markup[2].includes(htmlEscape(row.name))&&markup[2].includes(htmlEscape(row.reason)));
+  assert.ok(markup[2].includes(htmlEscape(availabilityById.get(row.availability_reason).label)));
+  const expectedSamples=row.availability_reason==='NOT_TRIGGERED'?'不适用（重连0次）':row.availability_reason==='DEFINITION_PENDING'?'未形成同口径样本':'0/100';
+  assert.ok(markup[2].includes(expectedSamples),'Timing sample applicability is incorrect: '+row.id);
+  assert.ok(!/<td[^>]*>\s*(?:<strong>)?\s*0(?:\.0+)?\s*(?:<\/strong>)?\s*<\/td>/.test(markup[2]),'Unavailable latency rendered as zero: '+row.id);
+  if(row.definition_id)assert.ok(markup[2].includes('#timing-definition-'+row.definition_id));
+}
+assert.ok(ids.includes('timing-measurement-definitions'));
+function elementMarkup(id){
+  assert.ok(ids.includes(id),'Missing timing anchor '+id);
+  const opening=new RegExp('<([a-z][a-z0-9]*)\\b[^>]*\\bid="'+id+'"[^>]*>','i').exec(structure);assert.ok(opening);
+  const tags=new RegExp('</?'+opening[1]+'\\b[^>]*>','gi');tags.lastIndex=opening.index;
+  let depth=0,end=-1;
+  for(let match; (match=tags.exec(structure));){depth+=match[0].startsWith('</')?-1:1;if(depth===0){end=tags.lastIndex;break;}}
+  assert.ok(end>opening.index,'Unclosed timing definition '+id);
+  return structure.slice(opening.index,end);
+}
+const timingDefinitionSection=elementMarkup('timing-measurement-definitions');
+for(const value of [timingDefinitions.definition_version,timingDefinitions.applicability,...timingDefinitions.collection_policy])assert.ok(timingDefinitionSection.includes(htmlEscape(value)),'Timing collection policy not rendered: '+value);
+for(const reason of timingDefinitions.availability_reasons)assert.ok(structure.includes(htmlEscape(reason.label))&&structure.includes(htmlEscape(reason.description)),'Timing availability legend missing '+reason.id);
+for(const definition of timingDefinitions.definitions){
+  const row=elementMarkup('timing-definition-'+definition.id);
+  for(const value of [definition.name,definition.start,definition.end,definition.collection_status])assert.ok(row.includes(htmlEscape(value)),'Timing definition field not rendered: '+definition.id+' '+value);
+  for(const value of [...definition.rules,...definition.evidence])assert.ok(timingDefinitionSection.includes(htmlEscape(value)),'Timing definition rule/evidence not rendered: '+definition.id+' '+value);
+}
+checks.timing_definitions_single_source_and_three_contracts=true;
+checks.b14_timing_missing_reasons_separated=true;
+checks.b14_timing_unknown_null_values_and_rendered_reasons=true;
 if(b14FullPath&&(await fileExists(b14FullPath))){
   const b14=JSON.parse((await fs.readFile(b14FullPath,'utf8')).replace(/^\uFEFF/,''));
   assert.equal(data.highlights[0].metrics.find(x=>x.name.includes('Private Bytes')).value,b14.resource_growth.private_bytes.growth/1048576);
@@ -338,22 +411,25 @@ if(b14FullPath&&(await fileExists(b14FullPath))){
     close(metric.p95,sorted[Math.ceil(.95*values.length)-1],metric.id+' P95');
     close(metric.max,sorted.at(-1),metric.id+' max');
   }
-  for(const row of cycleSummary.first_frame_and_action_timing){
-    assert.equal(row.n,0);assert.equal(row.status,'UNKNOWN');
-    for(const key of ['mean','p50','p95','max'])assert.equal(row[key],null);
-    if(row.id.startsWith('reconnect_')){
+  for(const cycle of b14.cycles){
+    const native=cycle.details.revision_1_to_terminal.native_metric_summary;
+    const episodes=native['reconnect.episodes'];
+    assert.ok(Number.isInteger(episodes.valid_samples)&&episodes.valid_samples>0,'Reconnect episode coverage missing: '+cycle.cycle_id);
+    assert.equal(episodes.maximum,0,'Reconnect episode actually triggered: '+cycle.cycle_id);
+    for(const row of cycleSummary.first_frame_and_action_timing.filter(row=>row.id.startsWith('reconnect_'))){
       const key=row.source_field.split('native_metric_summary.')[1];
-      assert.ok(b14.cycles.every(c=>c.details.revision_1_to_terminal.native_metric_summary[key].valid_samples===0));
+      assert.ok(key&&Object.hasOwn(native,key));assert.equal(native[key].valid_samples,0);
     }
   }
+  checks.b14_reconnect_100_cycles_not_triggered_original_evidence=true;
   checks.b14_100_cycle_scalar_statistics_recomputed=cycleSummary.metrics.length;
 }else{
+  checks.b14_reconnect_100_cycles_not_triggered_original_evidence='DECOUPLED_REPORT_DATA_ONLY';
   checks.b14_100_cycle_scalar_statistics_recomputed='DECOUPLED_REPORT_DATA_ONLY';
 }
 assert.equal(cycleSummary.process.pid,45424);
 assert.equal(cycleSummary.process.start_ticks,'639272548518528998');
 assert.ok(cycleSummary.process.product_live_seconds_before_close>=28800);
-assert.ok(structure.includes('平均首帧时延：UNKNOWN（有效样本0/100）'));
 assert.ok(structure.includes('100 MB增长中约62~90 MB已定位为系统合理保留'));
 assert.ok(structure.includes('现有证据不能确定为内存泄漏，也不能据此说明不存在内存泄漏。'));
 checks.b14_first_frame_unknown_not_fabricated=true;
