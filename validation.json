@@ -1,7 +1,7 @@
 {
-  "status": "PASS_STATIC_FULL",
-  "checked_at": "2026-10-15T09:53:47.185Z",
-  "validation_mode": "FULL_OFFLINE",
+  "status": "PASS_STATIC_LIGHTWEIGHT",
+  "checked_at": "2026-10-16T06:16:09.518Z",
+  "validation_mode": "LIGHTWEIGHT_REPO",
   "method": "Node vm structure/synthetic DOM, relative links, lightweight report data consistency; heavy offline evidence decoupled",
   "checks": {
     "html_unique_ids": true,
@@ -46,7 +46,10 @@
     "b14_memory_partial_attribution_boundary": true,
     "media_latency_highlight_removed": true,
     "highlight_result_boundaries": true,
-    "complete_package_file_hashes": 143
+    "complete_package_file_hashes": {
+      "verified_existing": 210,
+      "decoupled_omitted": 0
+    }
   },
   "counts": {
     "original_records": 202,

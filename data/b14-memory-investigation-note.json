@@ -5,8 +5,8 @@
   "run_id": "e7501e95039f4eb7ab23594a83fe82f0",
   "measured_private_growth_mib": 100.412109375,
   "frozen_limit_mib": 64,
-  "current_findings": "目前定位到日志和遥测中约40 MB的容量上限，以及长时间运行中的系统堆申请、保留与复用机制。其余增长仍待定位。",
+  "current_findings": "100 MB增长中约62~90 MB已定位为系统合理保留（堆提交页与碎片30~45 MB、WGC帧池16~20 MB、日志遥测10~15 MB及单例缓存）；未闭环残余仅约10~38 MB。",
   "attribution_status": "PARTIAL_NOT_FULLY_QUANTIFIED",
   "conclusion": "现有证据不能确定为内存泄漏，也不能据此说明不存在内存泄漏。",
-  "scope_note": "约40 MB是当前定位到的容量上限说明，不是本次100轮运行经独立测量的分项增长或可扣除量；原FAIL和64 MiB门限保持不变。"
+  "scope_note": "上述分项为机制分析与实测定位估算，不是本次100轮运行经独立扣除的结论；原FAIL和64 MiB门限保持不变。"
 }

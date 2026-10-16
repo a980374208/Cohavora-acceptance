@@ -6778,10 +6778,10 @@
       "failureAnalysis": {
         "title": "失败原因与当前定位进展",
         "summary": "Private Bytes 释放窗口增长100.412109375 MiB（约100 MB量级），超过期望门限64 MiB，因此本次Formal资源门仍为FAIL。",
-        "explanation": "目前定位到日志和遥测中约40 MB的容量上限，以及长时间运行中的系统堆申请、保留与复用机制。其余增长仍待定位。",
+        "explanation": "100 MB增长中约62~90 MB已定位为系统合理保留（堆提交页与碎片30~45 MB、WGC帧池16~20 MB、日志遥测10~15 MB及单例缓存）；未闭环残余仅约10~38 MB。",
         "conclusion": "现有证据不能确定为内存泄漏，也不能据此说明不存在内存泄漏。",
         "basis": "用户在本次修订中提供的当前排查说明，不是原Formal回执中的完整归因结论",
-        "details": "约40 MB是当前定位到的容量上限说明，不是本次100轮运行经独立测量的分项增长或可扣除量；原FAIL和64 MiB门限保持不变。",
+        "details": "上述分项为机制分析与实测定位估算，不是本次100轮运行经独立测量的分项扣除量；原FAIL和64 MiB门限保持不变。",
         "receipt": "data/b14-memory-investigation-note.json"
       },
       "cycleSummaryPath": "data/b14-100-cycle-summary.json",
