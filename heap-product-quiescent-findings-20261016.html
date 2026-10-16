@@ -1,0 +1,43 @@
+<html lang="zh"><meta charset="utf-8"><title>产品静置对照与增长机制</title><style>body{max-width:1000px;margin:32px auto;font:16px/1.6 sans-serif;padding:0 20px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><pre># 产品自有 UIA 客户端退出后90秒：实际结果
+
+状态 INCONCLUSIVE；qualification_credit=0、formal_credit=0。新路线只执行一次；未重试、未放宽预算、未改产品代码、未构建产品或运行CTest。
+
+## 实测
+
+- run_id：90463225315740268e1f20ea96c90148。
+- 冻结SHA-256：a31fc11e5c2f4e4f5401611ae4c8bb8eef7a08a30d8bd880e4df32342cfa3c0b（完成后复核未变）；17632项输入核验。
+- 104.4608951秒采集，ETL810221568字节（平均7.3969MiB/s）；解析27.1476秒，私有内存峰值696496128字节，输出665580369字节。
+- 自有UIA客户端由保留进程对象确认退出；实际静置90.2482秒。查询begin/end共92对，全部在退出观察前；静置内无该客户端查询。不能排除其他系统可访问性客户端。
+- 退出后0至90秒：Private Bytes与MEM_PRIVATE提交均减少2809856字节（2.6797MiB）。已知窗口存活堆分配86572→103940字节（+17368），未知大小记录保持2笔。
+- 事件丢失0，日志缓冲丢失0，实时缓冲丢失0，缺栈0；函数帧覆盖83.15%。仍有3250次realloc旧大小不符、2次模糊配对及未知大小，未解除INCONCLUSIVE。AMD PDB继续BLOCKED404，无下载。
+- owned ETW会话已不存在、产品已退出、远端清理COMPLETE、只读观测句柄/输入锁/guardian均已释放。
+
+## 已确认机制及边界
+
+精确匹配PDB的源文件SHA-256与冻结meeting_log_console.cpp完全一致：e9f4b317f19ea73c0e7178e66e15f03a6cdf1239b8e7ba56a67087c204f789e9。仅证明该文件，未把全构建源码等价UNKNOWN升级。
+
+50ms定时器drainPending→renderVisible→trimVisible，在日志为空时仍反复_logView-&gt;clear()（源590行，实际栈返回行591），经过QTextDocument清空、Qt accessibility通知进入UIAutomationCore EventMap。这是已确认的持续分配抖动来源。
+
+EventMap各静置检查点均700笔/45600字节，最大年龄约3.1秒；每个30秒子区间的原700笔全部退休/被新批次替代，同时有实际physical free。它是持续周转的保留量，不能称旧记录泄漏。结束时该批存量未变，也不能把它算作本次净增长。
+
+另外4笔4172字节（共16688）新增记录经现有精确匹配微软PDB补至RPC BCACHE::Allocate、LRPC_BASE_CCALL::GetBuffer及NDR队列路径；数值相当于已知净增17368字节的96.08%，仅为数量级对照，不将未知字节当0，也不证明缓存实际membership或所有owner已释放。另有6笔COM/UIA构造路径共26880字节稳定保留，owner仍需核查。
+
+旧持续轮询路线idle增长约1.11MiB，本路线下降2.68MiB，支持存在观测/提交量波动；两次运行的窗口起点不同，不能仅凭跨运行差值宣布因果闭环或整个产品无泄漏。报告仍称“窗口内观察到、截至检查点仍未释放的分配”。
+
+closeEvent只hide并ignore，普通关日志窗不等于DestroyInstance/provider拆除，也不会自动停止50ms定时器。不得将其当作销毁对照。
+
+## 下一步（未运行）
+
+在同一产品进程、相同释放状态下做90秒无客户端之后的一次有界文本查询，记录查询前/期间/退出后Private Bytes、区域提交、分配栈与COM/RPC存量，以验证观测动作是否产生此前端点增量。优先保留120秒硬上限；剩余时间不足则该阶段UNAVAILABLE，不延长本次已完成路线。必须独立新冻结及入口/负例验证，不能重跑本次单次入口。
+
+持续分配抖动的修复候选是避免空文档重复clear，但本任务保持不修改产品代码；不能用代码推断代替修改后的实际对照。
+
+## 工件
+
+原始ETL：run-90463225315740268e1f20ea96c90148/capture/heap.etl。
+ETLX与一次解析：相同run的parse/heap.etlx、report.json、short-route-analysis.json。
+区域/身份/质量/清理回执：run下regions/、client-exit.json、quiet-stage.jsonl、capture/owner-receipt.json；根目录single-attempt-decision.json。
+离线候选：postprocess-01/result.json、candidates.csv、mechanisms.json、system-symbol-supplement.csv、pdb-source-checksum.json、findings.html。
+
+捕获前分配不可追溯；未覆盖全部自定义分配器、VirtualAlloc/GPU等域；MEM_PRIVATE非堆ownership。导出被显式跳过，不能排除正式流程中的导出增长；缓存5000平台未达到。
+</pre></html>

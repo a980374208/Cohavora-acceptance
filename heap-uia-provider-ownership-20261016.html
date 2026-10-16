@@ -1,0 +1,135 @@
+<html lang="zh"><meta charset="utf-8"><title>Qt UIA ownership audit</title><h1>Qt／UIAutomationCore 只读 ownership 核查</h1><pre>{
+  &quot;status&quot;: &quot;READONLY_SOURCE_AND_EXISTING_EVIDENCE_REVIEW&quot;,
+  &quot;leak_verdict&quot;: &quot;INCONCLUSIVE&quot;,
+  &quot;root_cause&quot;: &quot;UNKNOWN&quot;,
+  &quot;eventmap_original_cohort&quot;: {
+    &quot;records&quot;: 688,
+    &quot;known_bytes&quot;: 44360,
+    &quot;all_original_survivors&quot;: 689
+  },
+  &quot;findings&quot;: [
+    {
+      &quot;subject&quot;: &quot;Qt event lifetime&quot;,
+      &quot;evidence&quot;: &quot;qwidgettextcontrol.cpp:676-701 creates accessibility event, synchronously updates, then deletes event; qaccessible.cpp:873 delegates without taking event ownership&quot;,
+      &quot;conclusion&quot;: &quot;No missing delete on inspected normal notification path&quot;
+    },
+    {
+      &quot;subject&quot;: &quot;Qt provider temporary reference&quot;,
+      &quot;evidence&quot;: &quot;qwindowsuiamainprovider.cpp:80-108 initial ref1 or AddRef on lookup; :232-247 raises text event then Release; :272-281 deletes at zero&quot;,
+      &quot;conclusion&quot;: &quot;Notification-local reference is balanced; external references may outlive call&quot;
+    },
+    {
+      &quot;subject&quot;: &quot;Qt provider cache&quot;,
+      &quot;evidence&quot;: &quot;qwindowsuiaprovidercache.cpp:65-100 raw pointer lookup/insert; no AddRef; destroyed signal removes both maps&quot;,
+      &quot;conclusion&quot;: &quot;Non-owning index, not a per-event owning queue; no 50-entry cap or idle expiry here&quot;
+    },
+    {
+      &quot;subject&quot;: &quot;Qt accessible interface cache&quot;,
+      &quot;evidence&quot;: &quot;qaccessiblecache.cpp:111-156 owns accessible interface; QObject destroyed invokes deleteInterface; base provider stores accessibility ID and resolves it on demand&quot;,
+      &quot;conclusion&quot;: &quot;Interface deletion and COM provider deletion are separate; invalid interface does not prove provider COM references released&quot;
+    },
+    {
+      &quot;subject&quot;: &quot;Windows teardown&quot;,
+      &quot;evidence&quot;: &quot;qwindowswindow.cpp:1415-1453 DestroyWindow then removeWindow; qwindowscontext.cpp DestroyEvent only warns/returns; UIA wrapper resolves five APIs&quot;,
+      &quot;conclusion&quot;: &quot;No UiaDisconnectProvider/AllProviders nor explicit returnRawElementProvider(hwnd,0,0,nullptr) in inspected Windows/UIA implementation&quot;
+    },
+    {
+      &quot;subject&quot;: &quot;UIAutomationCore event map&quot;,
+      &quot;evidence&quot;: &quot;Matched-symbol allocation stacks include EventMap::AddEntry, ComInvoker::Init and UiaRaiseAutomationEvent&quot;,
+      &quot;conclusion&quot;: &quot;Allocation attribution confirmed; current ownership, exact cache cap/eviction and destruction path unavailable from public PDB. Cannot equate stack with current owner&quot;
+    }
+  ],
+  &quot;official_sources&quot;: [
+    {
+      &quot;url&quot;: &quot;https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcoreapi/nf-uiautomationcoreapi-uiareturnrawelementprovider&quot;,
+      &quot;meaning&quot;: &quot;Raised-event map can retain provider references; NULL provider notification after HWND destruction clears associated map entries&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcoreapi/nf-uiautomationcoreapi-uiadisconnectprovider&quot;,
+      &quot;meaning&quot;: &quot;Disconnect destroyed element provider; guard reentrant WM_GETOBJECT and avoid SendMessage synchronous callout&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcoreapi/nf-uiautomationcoreapi-uiadisconnectallproviders&quot;,
+      &quot;meaning&quot;: &quot;Process-wide provider shutdown cleanup, not a neutral per-control test&quot;
+    }
+  ],
+  &quot;next_plan&quot;: &quot;Isolated fixture only: keep QApplication/helper window alive, destroy actual exposed view/HWND, verify same HWND is gone, explicitly clear its raised-event mapping and disconnect exact retained provider from queued non-SendMessage context with reentrancy guard; compare original allocation identities. Requires new instrumentation/freeze before runtime; do not use all-provider global cleanup as equivalent.&quot;,
+  &quot;limits&quot;: [
+    &quot;No UIAutomationCore private source/current reference graph; exact internal cap and eviction UNKNOWN&quot;,
+    &quot;Additional local adjacent source fingerprints recorded but not independently matched to PDB source checksums&quot;,
+    &quot;No runtime, build, symbol download, product edit or new capture in this review&quot;
+  ],
+  &quot;source_fingerprints&quot;: [
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\widgets\\widgets\\qwidgettextcontrol.cpp&quot;,
+      &quot;sha256&quot;: &quot;1c4bf4c1394bb86bc3fc123b3061e474223814437465a3e04260408d08016dff&quot;,
+      &quot;pdb_source_match&quot;: &quot;REUSED_UNCHANGED_PRIOR_MATCH&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\gui\\text\\qtextdocument_p.cpp&quot;,
+      &quot;sha256&quot;: &quot;4d76531fd7bd7cd912c1fe7c9957a1daf2b733af97fda65feed0ff48cb0b056f&quot;,
+      &quot;pdb_source_match&quot;: &quot;REUSED_UNCHANGED_PRIOR_MATCH&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\plugins\\platforms\\windows\\uiautomation\\qwindowsuiamainprovider.cpp&quot;,
+      &quot;sha256&quot;: &quot;c059a0c954a2bd2d8ce8f6b9b94bec2207aec7fcd366370e7358421801cd606a&quot;,
+      &quot;pdb_source_match&quot;: &quot;REUSED_UNCHANGED_PRIOR_MATCH&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\platformsupport\\windowsuiautomation\\qwindowsuiawrapper.cpp&quot;,
+      &quot;sha256&quot;: &quot;e9eb4b12b1b6674536ad33eb29ec054bc43e2ac5518f8f506f9736177224418d&quot;,
+      &quot;pdb_source_match&quot;: &quot;REUSED_UNCHANGED_PRIOR_MATCH&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\plugins\\platforms\\windows\\uiautomation\\qwindowsuiaprovidercache.cpp&quot;,
+      &quot;sha256&quot;: &quot;6b3d5683ff089576bb34daedbcb655bf7b036dbef973fff4da893af4a82eaa4b&quot;,
+      &quot;pdb_source_match&quot;: &quot;ADJACENT_LOCAL_SOURCE_NOT_INDEPENDENTLY_PDB_VERIFIED&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\plugins\\platforms\\windows\\uiautomation\\qwindowsuiaprovidercache.h&quot;,
+      &quot;sha256&quot;: &quot;e75adce4b87e4fbf1c49ba9516d9704ac42a7fd58525f7ad19b4109b4bd8a2ec&quot;,
+      &quot;pdb_source_match&quot;: &quot;ADJACENT_LOCAL_SOURCE_NOT_INDEPENDENTLY_PDB_VERIFIED&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\plugins\\platforms\\windows\\uiautomation\\qwindowsuiabaseprovider.cpp&quot;,
+      &quot;sha256&quot;: &quot;9deb29dde0b3c11f1a9b9fbed3ca0315946616174ada07c6adc1356a1c077e4b&quot;,
+      &quot;pdb_source_match&quot;: &quot;ADJACENT_LOCAL_SOURCE_NOT_INDEPENDENTLY_PDB_VERIFIED&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\plugins\\platforms\\windows\\uiautomation\\qwindowsuiamainprovider.h&quot;,
+      &quot;sha256&quot;: &quot;75dec0e97f9b8f0d07dff18637203f234243a7257b8e597f6e0b823188160c67&quot;,
+      &quot;pdb_source_match&quot;: &quot;ADJACENT_LOCAL_SOURCE_NOT_INDEPENDENTLY_PDB_VERIFIED&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\plugins\\platforms\\windows\\uiautomation\\qwindowsuiaaccessibility.cpp&quot;,
+      &quot;sha256&quot;: &quot;13824e2914e2809b61a4b5f4601424ab55c83682f3136054be06af960a78827f&quot;,
+      &quot;pdb_source_match&quot;: &quot;ADJACENT_LOCAL_SOURCE_NOT_INDEPENDENTLY_PDB_VERIFIED&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\gui\\accessible\\qaccessiblecache.cpp&quot;,
+      &quot;sha256&quot;: &quot;f0b74846ea0003150713b564b56063928ef64e55227949b0db7f906d9b8671e5&quot;,
+      &quot;pdb_source_match&quot;: &quot;ADJACENT_LOCAL_SOURCE_NOT_INDEPENDENTLY_PDB_VERIFIED&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\gui\\accessible\\qaccessible.cpp&quot;,
+      &quot;sha256&quot;: &quot;bd6df6e848130b51e81c1cdddbf3df97ba4117ec3bad5309f56f4a5bc107d5c2&quot;,
+      &quot;pdb_source_match&quot;: &quot;ADJACENT_LOCAL_SOURCE_NOT_INDEPENDENTLY_PDB_VERIFIED&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\plugins\\platforms\\windows\\qwindowswindow.cpp&quot;,
+      &quot;sha256&quot;: &quot;7766a5fb59e784fc807fc1e1f0fd48fbf696d0366b00c18b43b12d9b1a021503&quot;,
+      &quot;pdb_source_match&quot;: &quot;ADJACENT_LOCAL_SOURCE_NOT_INDEPENDENTLY_PDB_VERIFIED&quot;
+    },
+    {
+      &quot;path&quot;: &quot;E:\\vsSource\\TDeskTop\\Libraries\\win64\\qt_5.15.18\\qtbase\\src\\plugins\\platforms\\windows\\qwindowscontext.cpp&quot;,
+      &quot;sha256&quot;: &quot;4a2f49254339eb4ea29d00373e496adb150951f3bab194f03b2060dff5acadc7&quot;,
+      &quot;pdb_source_match&quot;: &quot;ADJACENT_LOCAL_SOURCE_NOT_INDEPENDENTLY_PDB_VERIFIED&quot;
+    }
+  ],
+  &quot;prior_receipt&quot;: {
+    &quot;path&quot;: &quot;F:\\CohavoraWPR\\runtime-20261015-01\\routes\\session-1-io-20261015-03\\run-ce2b5040263740348c14cfd1fb19d32a\\qt-uia-review-01\\qt-uia-review.json&quot;,
+    &quot;sha256&quot;: &quot;06062d9bf5f8180884d13e861324b96d6b47bfc200e763fd92c398be7f6e4376&quot;
+  },
+  &quot;qualification_credit&quot;: 0,
+  &quot;formal_credit&quot;: 0
+}</pre></html>

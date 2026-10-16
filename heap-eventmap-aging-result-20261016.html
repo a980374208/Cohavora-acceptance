@@ -1,0 +1,349 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>EventMap 90秒静置结果</title><style>body{font:16px/1.6 system-ui;max-width:1000px;margin:40px auto;padding:0 24px;color:#172132}table{border-collapse:collapse}td,th{padding:8px 16px;border:1px solid #ccd3dd}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f5f8;padding:16px}</style><h1>EventMap 90秒静置对照</h1><p>本窗口候选已证实为延迟保留并最终释放：EventMap 分配在停止通知后60秒仍存活，到75秒及90秒归零。目标GUI和同一视图保持存活，客户端已经释放自有COM引用并退出，未主动断开provider。</p><table><tr><th>检查点</th><th>存活条数</th><th>已知字节</th></tr><tr><td>LAST_NOTIFICATION_IDLE_30</td><td>702</td><td>45256</td></tr><tr><td>LAST_NOTIFICATION_IDLE_60</td><td>702</td><td>45256</td></tr><tr><td>LAST_NOTIFICATION_IDLE_75</td><td>0</td><td>0</td></tr><tr><td>LAST_NOTIFICATION_IDLE_90</td><td>0</td><td>0</td></tr></table><p>选定EventMap栈累计8,974次分配、666,296字节，全部匹配物理free；无进程退出、堆销毁或不确定退役抵扣。丢事件及缺栈事件均为0。</p><p>整体仍为INCONCLUSIVE：另有未知大小／符号及配对缺口；清屏路径剩余18条／1124字节。此结果不证明整个产品无泄漏，产品未运行，全部credit=0。</p><h2>实测预算</h2><pre>{
+  &quot;capture_seconds&quot;: 102.5129303,
+  &quot;etl_mib&quot;: 94.5625,
+  &quot;average_etl_mib_per_second&quot;: 0.9224446098971771,
+  &quot;sampled_max_growth_mib_per_second&quot;: 54.69819203341989,
+  &quot;target_peak_private_bytes&quot;: 5554176,
+  &quot;collector_peak_private_bytes&quot;: 30932992,
+  &quot;parse_seconds&quot;: 3.444076,
+  &quot;parse_sampled_peak_private_bytes&quot;: 281456640,
+  &quot;parse_output_bytes&quot;: 96126048,
+  &quot;measurement_boundary&quot;: &quot;250ms samples; final CPU/private peak may be missed; no incremental-overhead baseline&quot;,
+  &quot;overhead_conclusion&quot;: &quot;MEASURED_INSTRUMENTED_CPU_AND_GROWTH;CAUSAL_OVERHEAD_UNKNOWN_WITHOUT_UNINSTRUMENTED_BASELINE&quot;
+}</pre><h2>完整摘要</h2><pre>{
+  &quot;status&quot;: &quot;BOUNDED_RUNTIME_AND_PARSE_COMPLETE&quot;,
+  &quot;overall_leak_verdict&quot;: &quot;INCONCLUSIVE&quot;,
+  &quot;root_cause&quot;: &quot;THIS_CANDIDATE: expected delayed UIAutomationCore EventMap retention; PRODUCT_WIDE: UNKNOWN&quot;,
+  &quot;report_name&quot;: &quot;窗口内观察到、截至检查点仍未释放的分配&quot;,
+  &quot;run_id&quot;: &quot;40b8251f20774d75b58f7cc54ee24ac2&quot;,
+  &quot;checkpoints&quot;: [
+    {
+      &quot;scope&quot;: &quot;clear_path&quot;,
+      &quot;label&quot;: &quot;CLEAR_ACTIVE_END&quot;,
+      &quot;records&quot;: 720,
+      &quot;known_bytes&quot;: 46380,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 46380,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;clear_path&quot;,
+      &quot;label&quot;: &quot;LAST_NOTIFICATION_STOP&quot;,
+      &quot;records&quot;: 750,
+      &quot;known_bytes&quot;: 49308,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 4932,
+      &quot;retired_known_bytes&quot;: 2004
+    },
+    {
+      &quot;scope&quot;: &quot;clear_path&quot;,
+      &quot;label&quot;: &quot;CLEAR_STOPPED_IDLE&quot;,
+      &quot;records&quot;: 720,
+      &quot;known_bytes&quot;: 46380,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 2928
+    },
+    {
+      &quot;scope&quot;: &quot;clear_path&quot;,
+      &quot;label&quot;: &quot;UNSUBSCRIBED_IDLE&quot;,
+      &quot;records&quot;: 720,
+      &quot;known_bytes&quot;: 46380,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;clear_path&quot;,
+      &quot;label&quot;: &quot;CLIENT_EXITED&quot;,
+      &quot;records&quot;: 720,
+      &quot;known_bytes&quot;: 46380,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;clear_path&quot;,
+      &quot;label&quot;: &quot;LAST_NOTIFICATION_IDLE_30&quot;,
+      &quot;records&quot;: 720,
+      &quot;known_bytes&quot;: 46380,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;clear_path&quot;,
+      &quot;label&quot;: &quot;LAST_NOTIFICATION_IDLE_60&quot;,
+      &quot;records&quot;: 720,
+      &quot;known_bytes&quot;: 46380,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;clear_path&quot;,
+      &quot;label&quot;: &quot;LAST_NOTIFICATION_IDLE_75&quot;,
+      &quot;records&quot;: 18,
+      &quot;known_bytes&quot;: 1124,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 45256
+    },
+    {
+      &quot;scope&quot;: &quot;clear_path&quot;,
+      &quot;label&quot;: &quot;LAST_NOTIFICATION_IDLE_90&quot;,
+      &quot;records&quot;: 18,
+      &quot;known_bytes&quot;: 1124,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;eventmap_clear_path&quot;,
+      &quot;label&quot;: &quot;CLEAR_ACTIVE_END&quot;,
+      &quot;records&quot;: 702,
+      &quot;known_bytes&quot;: 45256,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 45256,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;eventmap_clear_path&quot;,
+      &quot;label&quot;: &quot;LAST_NOTIFICATION_STOP&quot;,
+      &quot;records&quot;: 702,
+      &quot;known_bytes&quot;: 45256,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 896,
+      &quot;retired_known_bytes&quot;: 896
+    },
+    {
+      &quot;scope&quot;: &quot;eventmap_clear_path&quot;,
+      &quot;label&quot;: &quot;CLEAR_STOPPED_IDLE&quot;,
+      &quot;records&quot;: 702,
+      &quot;known_bytes&quot;: 45256,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;eventmap_clear_path&quot;,
+      &quot;label&quot;: &quot;UNSUBSCRIBED_IDLE&quot;,
+      &quot;records&quot;: 702,
+      &quot;known_bytes&quot;: 45256,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;eventmap_clear_path&quot;,
+      &quot;label&quot;: &quot;CLIENT_EXITED&quot;,
+      &quot;records&quot;: 702,
+      &quot;known_bytes&quot;: 45256,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;eventmap_clear_path&quot;,
+      &quot;label&quot;: &quot;LAST_NOTIFICATION_IDLE_30&quot;,
+      &quot;records&quot;: 702,
+      &quot;known_bytes&quot;: 45256,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;eventmap_clear_path&quot;,
+      &quot;label&quot;: &quot;LAST_NOTIFICATION_IDLE_60&quot;,
+      &quot;records&quot;: 702,
+      &quot;known_bytes&quot;: 45256,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 0
+    },
+    {
+      &quot;scope&quot;: &quot;eventmap_clear_path&quot;,
+      &quot;label&quot;: &quot;LAST_NOTIFICATION_IDLE_75&quot;,
+      &quot;records&quot;: 0,
+      &quot;known_bytes&quot;: 0,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 45256
+    },
+    {
+      &quot;scope&quot;: &quot;eventmap_clear_path&quot;,
+      &quot;label&quot;: &quot;LAST_NOTIFICATION_IDLE_90&quot;,
+      &quot;records&quot;: 0,
+      &quot;known_bytes&quot;: 0,
+      &quot;unknown_size_count&quot;: 0,
+      &quot;new_known_bytes&quot;: 0,
+      &quot;retired_known_bytes&quot;: 0
+    }
+  ],
+  &quot;original_cohort_survivors&quot;: {
+    &quot;clear_path&quot;: {
+      &quot;records&quot;: 1,
+      &quot;known_bytes&quot;: 16,
+      &quot;unknown_size_count&quot;: 0
+    },
+    &quot;eventmap_clear_path&quot;: {
+      &quot;records&quot;: 0,
+      &quot;known_bytes&quot;: 0,
+      &quot;unknown_size_count&quot;: 0
+    }
+  },
+  &quot;cohort_identity&quot;: &quot;process_instance+heap_generation+address+incarnation; allocated_ms &lt;= CLEAR_ACTIVE_END; exact final live allocation identities&quot;,
+  &quot;quality&quot;: {
+    &quot;coverage_issues&quot;: {
+      &quot;unhandled_heap_metadata_schema&quot;: 6823,
+      &quot;moved_realloc_missing_old_or_partial_pair&quot;: 1,
+      &quot;in_place_realloc_preexisting_or_missing_allocation&quot;: 324,
+      &quot;symbol_or_module_coverage_incomplete&quot;: 1
+    },
+    &quot;events_lost&quot;: 0,
+    &quot;log_buffers_lost&quot;: 0,
+    &quot;realtime_buffers_lost&quot;: 0,
+    &quot;collector_loss_counters_status&quot;: &quot;OBSERVED&quot;,
+    &quot;events_lost_observed_minimum&quot;: 0,
+    &quot;missing_stack_events&quot;: 0,
+    &quot;incomplete_unique_stacks&quot;: 1134,
+    &quot;unmatched_free_events&quot;: 134,
+    &quot;symbol_coverage&quot;: {
+      &quot;frame_count_basis&quot;: &quot;Frame occurrences across distinct observed stacks, not event-weighted frames.&quot;,
+      &quot;frame_count&quot;: 35523,
+      &quot;resolved_function_frames&quot;: 19360,
+      &quot;resolved_function_ratio&quot;: 0.5449990147228556,
+      &quot;matching_pdb_frames&quot;: 19360,
+      &quot;matching_pdb_ratio&quot;: 0.5449990147228556,
+      &quot;expected_allocation_stack_events&quot;: 250213,
+      &quot;missing_stack_events&quot;: 0,
+      &quot;missing_stack_ratio&quot;: 0,
+      &quot;stack_event_basis&quot;: &quot;All successful Alloc and ReAlloc callbacks, including non-accounting physical-pair ReAlloc descriptors; missing stack events are callback-weighted. Diagnostic descriptor stacks do not credit duplicate allocation bytes.&quot;,
+      &quot;observed_allocated_or_resized_bytes&quot;: 55086265,
+      &quot;bytes_with_missing_matched_stack_symbols&quot;: 55086265,
+      &quot;missing_matched_symbol_bytes_ratio&quot;: 1,
+      &quot;unknown_outstanding_size_count&quot;: 1,
+      &quot;byte_ratio_basis&quot;: &quot;Ledger observed-known physical and direct semantic contributions; only uniquely matched prior physical-pair ReAlloc descriptors avoid duplicate credit. Unresolved physical events after direct ReAlloc can represent duplicate evidence, so this denominator is not guaranteed deduplicated allocator traffic. Unknown current sizes are reported separately; the whole known contribution is incomplete when any stack frame lacks matching PDB/function. This is symbol coverage of ledger contributions, not leaked bytes or trace completeness.&quot;
+    },
+    &quot;unknown_outstanding_count&quot;: 1,
+    &quot;suspended_known_bytes&quot;: 64,
+    &quot;accounting&quot;: {
+      &quot;observed_allocation_bytes&quot;: 55086265,
+      &quot;retired_known_bytes&quot;: 55004831,
+      &quot;difference_count&quot;: 0,
+      &quot;observed_allocation_count&quot;: 249857,
+      &quot;live_count&quot;: 144,
+      &quot;destroyed_bytes&quot;: 0,
+      &quot;exited_bytes&quot;: 0,
+      &quot;physical_free_count&quot;: 249713,
+      &quot;realloc_retired_count&quot;: 0,
+      &quot;destroyed_count&quot;: 0,
+      &quot;exited_count&quot;: 0,
+      &quot;unknown_retired_count&quot;: 0,
+      &quot;unknown_retired_known_count&quot;: 0,
+      &quot;suspended_known_bytes&quot;: 64,
+      &quot;live_known_bytes&quot;: 81370,
+      &quot;difference_bytes&quot;: 0,
+      &quot;verdict&quot;: &quot;PASS&quot;,
+      &quot;unknown_outstanding_count&quot;: 1,
+      &quot;raw_allocate_bytes&quot;: 55086265,
+      &quot;raw_free_bytes&quot;: 55004831,
+      &quot;semantic_allocate_bytes&quot;: 0,
+      &quot;realloc_retired_bytes&quot;: 0,
+      &quot;unknown_retired_bytes&quot;: 0,
+      &quot;unknown_retired_known_bytes&quot;: 0
+    },
+    &quot;ambiguous_moved_realloc_count&quot;: 1,
+    &quot;missing_old_moved_realloc_count&quot;: 0
+  },
+  &quot;decision&quot;: {
+    &quot;status&quot;: &quot;INCONCLUSIVE&quot;,
+    &quot;run_id&quot;: &quot;40b8251f20774d75b58f7cc54ee24ac2&quot;,
+    &quot;run_directory&quot;: &quot;F:\\CohavoraWPR\\experiments\\20261016-eventmap-aging-04-utf8\\run-40b8251f20774d75b58f7cc54ee24ac2&quot;,
+    &quot;runtime&quot;: &quot;COMPLETE&quot;,
+    &quot;parse&quot;: &quot;COMPLETE&quot;,
+    &quot;qualification_credit&quot;: 0,
+    &quot;formal_credit&quot;: 0,
+    &quot;product&quot;: &quot;NOT_RUN&quot;,
+    &quot;automatic_retry&quot;: false,
+    &quot;client_exited_before_final_checkpoint&quot;: true,
+    &quot;client_com_release&quot;: {
+      &quot;pid&quot;: 30112,
+      &quot;qpc&quot;: 1129316867480,
+      &quot;callbacks&quot;: 324,
+      &quot;owned_element_released&quot;: true,
+      &quot;owned_automation_released&quot;: true,
+      &quot;owned_handler_released&quot;: true,
+      &quot;co_uninitialized&quot;: true,
+      &quot;element_release_return&quot;: 0,
+      &quot;automation_release_return&quot;: 1,
+      &quot;handler_release_return&quot;: 0
+    },
+    &quot;gui_alive_after_client_exit&quot;: true,
+    &quot;clear_calls&quot;: &quot;162&quot;,
+    &quot;uia_callbacks&quot;: 324,
+    &quot;heap_cleanup&quot;: &quot;OWNED_SESSION_ABSENT&quot;,
+    &quot;subscriber_exited&quot;: true,
+    &quot;fixture_exited&quot;: true,
+    &quot;owned_job_closed&quot;: true
+  },
+  &quot;etl&quot;: {
+    &quot;path&quot;: &quot;F:\\CohavoraWPR\\experiments\\20261016-eventmap-aging-04-utf8\\run-40b8251f20774d75b58f7cc54ee24ac2\\capture\\heap.etl&quot;,
+    &quot;bytes&quot;: 99155968,
+    &quot;sha256&quot;: &quot;e36982bc840a8bf28f4c89a1222e7cbadb968102c5a8567f16e6daa39fe6cacd&quot;
+  },
+  &quot;observation_end_ms&quot;: 102519.8025,
+  &quot;cleanup&quot;: &quot;OWNED_SESSION_ABSENT&quot;,
+  &quot;freeze&quot;: {
+    &quot;primary_sha256&quot;: &quot;9316df1e1fadb27e4d2db26240f296486f2ac15bd701e942eb6c5a2418c5ce88&quot;,
+    &quot;system_binding_sha256&quot;: &quot;c19586dd5fd7408fca0a836fa5015284da9fe0a9d1441522d0cd0f527f576d66&quot;,
+    &quot;input_fingerprints_verified&quot;: 69
+  },
+  &quot;limits&quot;: [
+    &quot;Controlled Qt fixture only; no product runtime&quot;,
+    &quot;Any selected allocation gone at endpoint is retirement, not by itself proof of physical free; inspect group physical_free/unknown_retired/destroy/exit counters&quot;,
+    &quot;Pre-window allocations, VirtualAlloc, custom allocators and GPU not fully covered&quot;,
+    &quot;No explicit provider disconnect/view destruction during capture; GUI cleaned only after owned trace stop&quot;
+  ],
+  &quot;qualification_credit&quot;: 0,
+  &quot;formal_credit&quot;: 0,
+  &quot;scoped_finding&quot;: {
+    &quot;verdict&quot;: &quot;CONFIRMED_TEMPORARY_EVENTMAP_RETENTION_IN_THIS_FIXTURE_WINDOW&quot;,
+    &quot;physical_accounting&quot;: {
+      &quot;allocation_count&quot;: 8974,
+      &quot;allocation_bytes&quot;: 666296,
+      &quot;free_count&quot;: 8974,
+      &quot;free_bytes&quot;: 666296,
+      &quot;outstanding_count&quot;: 0,
+      &quot;known_outstanding_bytes&quot;: 0,
+      &quot;unknown_outstanding_count&quot;: 0,
+      &quot;unknown_retired_count&quot;: 0,
+      &quot;destroyed_count&quot;: 0,
+      &quot;exited_count&quot;: 0,
+      &quot;accounting_difference_bytes&quot;: 0
+    },
+    &quot;observation&quot;: &quot;702 allocations / 45256 bytes at stop+60s; 0 at +75s and +90s. Original active cohort has no final survivors. All observed contributions in selected EventMap stacks have matching physical frees; no heap-destroy/process-exit/uncertain retirement credit.&quot;,
+    &quot;mechanism&quot;: &quot;Current exact DLL stamps EventMap entries and periodically ages them (60s gate, 15s timer); runtime timing agrees. This rules out permanent retention of this observed cohort, not every EventMap path or product memory leak.&quot;
+  },
+  &quot;measurements&quot;: {
+    &quot;capture_seconds&quot;: 102.5129303,
+    &quot;etl_mib&quot;: 94.5625,
+    &quot;average_etl_mib_per_second&quot;: 0.9224446098971771,
+    &quot;sampled_max_growth_mib_per_second&quot;: 54.69819203341989,
+    &quot;target_peak_private_bytes&quot;: 5554176,
+    &quot;collector_peak_private_bytes&quot;: 30932992,
+    &quot;parse_seconds&quot;: 3.444076,
+    &quot;parse_sampled_peak_private_bytes&quot;: 281456640,
+    &quot;parse_output_bytes&quot;: 96126048,
+    &quot;measurement_boundary&quot;: &quot;250ms samples; final CPU/private peak may be missed; no incremental-overhead baseline&quot;,
+    &quot;overhead_conclusion&quot;: &quot;MEASURED_INSTRUMENTED_CPU_AND_GROWTH;CAUSAL_OVERHEAD_UNKNOWN_WITHOUT_UNINSTRUMENTED_BASELINE&quot;
+  },
+  &quot;remaining_scope&quot;: {
+    &quot;clear_path_records&quot;: 18,
+    &quot;clear_path_known_bytes&quot;: 1124,
+    &quot;original_active_cohort_records&quot;: 1,
+    &quot;original_active_cohort_known_bytes&quot;: 16,
+    &quot;attribution&quot;: &quot;17 records /1108 bytes allocated later in Qt text layout/document/connection paths; original cohort has one 16-byte OLEAUT32 -&gt; FetchingVisitor::GetResults allocation. Neither is proven leakage; GUI remains alive.&quot;,
+    &quot;next&quot;: &quot;Read-only ownership review of Qt view/document structures and unresolved OLEAUT32 allocation; keep separate from cleared EventMap candidate. No product-level no-leak claim.&quot;
+  }
+}</pre></html>

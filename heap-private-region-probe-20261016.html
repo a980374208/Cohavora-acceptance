@@ -1,0 +1,29 @@
+<html lang=zh><meta charset=utf-8><h1>外部只读提交区域观测器验证</h1><pre>{
+  &quot;status&quot;: &quot;PROTOTYPE_SELFTESTED_NOT_PRODUCT_ADMITTED&quot;,
+  &quot;native_assertions&quot;: 15,
+  &quot;cli_positive&quot;: &quot;PASS&quot;,
+  &quot;cli_creation_mismatch&quot;: &quot;PASS_REJECTED_BEFORE_SCAN&quot;,
+  &quot;source_sha256&quot;: &quot;ab80b5f8905bdc5154fddc0256bc6ae17d99294350f2227aefefe75cebca36bf&quot;,
+  &quot;measured_self_scan_ms&quot;: 2.7875,
+  &quot;positive_sample_output_bytes&quot;: 314725,
+  &quot;scope&quot;: &quot;Only current process and finite owned child tested. No product, UIA, ETW, network or system settings.&quot;,
+  &quot;bounds&quot;: {
+    &quot;duration_seconds_max&quot;: 120,
+    &quot;scan_budget_ms&quot;: 5000,
+    &quot;region_limit&quot;: 100000,
+    &quot;output_mib_default&quot;: 64,
+    &quot;disk_reserve_bytes&quot;: 1073741824,
+    &quot;classification&quot;: &quot;ENGINEERING_STARTING_POINTS_NOT_ACCEPTANCE_THRESHOLDS&quot;
+  },
+  &quot;limits&quot;: [
+    &quot;Counters and VirtualQueryEx region scan bracket one another; not atomic, target not suspended.&quot;,
+    &quot;MEM_PRIVATE commit is not heap commit. Image/mapped copy-on-write pages and other accounting differences prevent equating totals with PrivateUsage.&quot;,
+    &quot;No allocation stack or lifetime tracking from region snapshots; address reuse across scans is ambiguous.&quot;,
+    &quot;No heap compaction, working-set trimming, memory writes, suspension or target cleanup.&quot;,
+    &quot;Self scan latency does not establish product overhead or leak verdict.&quot;
+  ],
+  &quot;integration_next&quot;: &quot;Use FromRetainedHandle(product.Handle), independently verify frozen create time and full image, sample at phase markers and within idle. Require new bounded product plan with budgets and identity bindings; preserve existing default behavior.&quot;,
+  &quot;product&quot;: &quot;NOT_RUN&quot;,
+  &quot;qualification_credit&quot;: 0,
+  &quot;formal_credit&quot;: 0
+}</pre></html>

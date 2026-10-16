@@ -1,0 +1,66 @@
+<html lang="zh"><meta charset="utf-8"><h1>RPC缓冲区缓存释放路径核查</h1><pre>{
+  &quot;status&quot;: &quot;OFFLINE_RPC_CACHE_LIFETIME_PATH_IDENTIFIED&quot;,
+  &quot;leak_verdict&quot;: &quot;INCONCLUSIVE&quot;,
+  &quot;dll_sha256&quot;: &quot;c060f02c11fb19c9c8a30b5077a87cdb17d4be40f08070a539ec73eb53402775&quot;,
+  &quot;pdb_identity&quot;: {
+    &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+    &quot;module_copy&quot;: &quot;F:\\CohavoraWPR\\experiments\\20261016-product-system-symbols-07\\rpcrt4\\RPCRT4.dll&quot;,
+    &quot;module_sha256&quot;: &quot;c060f02c11fb19c9c8a30b5077a87cdb17d4be40f08070a539ec73eb53402775&quot;,
+    &quot;pdb&quot;: &quot;F:\\CohavoraWPR\\experiments\\20261016-product-system-symbols-07\\rpcrt4\\rpcrt4.pdb&quot;,
+    &quot;pdb_sha256&quot;: &quot;bb4ef09f9394e8cdf6cc877bb95c6549acc3a6bc835196ae17fa42d8f2f14c86&quot;,
+    &quot;guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+    &quot;image_age&quot;: 1,
+    &quot;pdb_info_age&quot;: 2,
+    &quot;pdb_dbi_age&quot;: 1,
+    &quot;status&quot;: &quot;MATCH_MICROSOFT_OPENVALIDATE4_RULE_STRICT_DBI_EQUALITY&quot;
+  },
+  &quot;functions&quot;: {
+    &quot;allocate_rva&quot;: &quot;0x2f6e0&quot;,
+    &quot;free_rva&quot;: &quot;0x34520&quot;,
+    &quot;flush_rva&quot;: &quot;0x17650&quot;
+  },
+  &quot;imports&quot;: {
+    &quot;0xe9428&quot;: &quot;RtlGetCurrentProcessorNumber (1073)&quot;,
+    &quot;0xe8cd8&quot;: &quot;QueryDepthSList (5)&quot;,
+    &quot;0xe8cf8&quot;: &quot;InterlockedPushEntrySList (3)&quot;,
+    &quot;0xe8ce8&quot;: &quot;InterlockedFlushSList (1)&quot;
+  },
+  &quot;evidence&quot;: [
+    {
+      &quot;rva&quot;: &quot;0x2f73d-0x2f752&quot;,
+      &quot;meaning&quot;: &quot;Allocate searches5 size categories; cached-path logic distinct from direct allocator fallback&quot;
+    },
+    {
+      &quot;rva&quot;: &quot;0x34596-0x34605&quot;,
+      &quot;meaning&quot;: &quot;Free handles cache-class index1..5; obtains current processor, selects bucket; QueryDepthSList compared to per-class threshold; permitted entries use InterlockedPushEntrySList&quot;
+    },
+    {
+      &quot;rva&quot;: &quot;0x34724&quot;,
+      &quot;meaning&quot;: &quot;Depth-exceeded/unavailable bucket branch; separate physical deallocation path, not unconditional retention&quot;
+    },
+    {
+      &quot;rva&quot;: &quot;0x1767d-0x176c1&quot;,
+      &quot;meaning&quot;: &quot;Flush iterates processor buckets and5 categories, InterlockedFlushSList then calls release helper per popped block&quot;
+    }
+  ],
+  &quot;specific_candidates&quot;: {
+    &quot;known_bytes_each&quot;: 4172,
+    &quot;count_each&quot;: 1,
+    &quot;total_known_bytes&quot;: 8344,
+    &quot;attribution&quot;: &quot;NDR RPC buffer and mini-compute queue allocations via BCACHE::Allocate; downstream COM frames unresolved&quot;,
+    &quot;current_owner&quot;: &quot;UNKNOWN&quot;,
+    &quot;cache_membership&quot;: &quot;UNKNOWN: heap events alone cannot prove logical BCACHE::Free happened&quot;,
+    &quot;per_round_growth&quot;: &quot;UNAVAILABLE_SINGLE_WINDOW&quot;,
+    &quot;classification&quot;: &quot;UNATTRIBUTABLE_LIFETIME_REQUIRES_MORE_EVIDENCE&quot;
+  },
+  &quot;bounds&quot;: &quot;Per-class depth limiter visible, but runtime threshold values/processor bucket population were not captured. Do not claim an exact global memory cap or universal idle-release timer.&quot;,
+  &quot;next&quot;: [
+    &quot;Resolve exact COM caller with bounded new symbol budget only after preserving original64MiB download FAIL; no automatic retry in this step.&quot;,
+    &quot;Prioritize a synchronized product resource/commit-region observation for Private Bytes growth beyond live heap ledger; avoid enlarging full heap ETL by default.&quot;
+  ],
+  &quot;runtime&quot;: &quot;NOT_RUN&quot;,
+  &quot;downloads&quot;: &quot;NOT_RUN&quot;,
+  &quot;product_code&quot;: &quot;UNCHANGED&quot;,
+  &quot;qualification_credit&quot;: 0,
+  &quot;formal_credit&quot;: 0
+}</pre></html>

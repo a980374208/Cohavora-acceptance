@@ -1,6 +1,6 @@
 {
   "schema": "cohavora-portable-report-manifest-v1",
-  "generatedAt": "2026-10-16 18:14:29",
+  "generatedAt": "2026-10-16 16:50:10",
   "evidence_head": "1911e99a7e5b093488001e7121639730591297e2",
   "scope": "2026-10-16 区分历史计时数据的缺失原因，明确三项操作计时边界；沿用原证据，未执行产品重测",
   "outputs": [
@@ -304,10 +304,10 @@
     },
     {
       "path": "data/report-data.json",
-      "sha256": "8e0fce1bdb8f725fc7489c12fe7f6d1fd2caeacaf595e8115144ab5c86f8b03c",
-      "bytes": 565455,
-      "text_lf_sha256": "8e0fce1bdb8f725fc7489c12fe7f6d1fd2caeacaf595e8115144ab5c86f8b03c",
-      "text_lf_bytes": 565455
+      "sha256": "0b0bca8421f2d0c4d8d16e6ca13f9818c9301b794dff534db3d8b2f0e1148743",
+      "bytes": 565506,
+      "text_lf_sha256": "0b0bca8421f2d0c4d8d16e6ca13f9818c9301b794dff534db3d8b2f0e1148743",
+      "text_lf_bytes": 565506
     },
     {
       "path": "data/report-input.json",
@@ -332,10 +332,10 @@
     },
     {
       "path": "data/test-plan.json",
-      "sha256": "c5eacfb32da7c64065e8a4fed6fcd75305b0dc106219be784016d6600eee0afc",
-      "bytes": 34933,
-      "text_lf_sha256": "c5eacfb32da7c64065e8a4fed6fcd75305b0dc106219be784016d6600eee0afc",
-      "text_lf_bytes": 34933
+      "sha256": "c0761162d80c86f87e7a22f12903cb080ac5cd7c385a81a7fca0692cfe624f01",
+      "bytes": 36100,
+      "text_lf_sha256": "c0761162d80c86f87e7a22f12903cb080ac5cd7c385a81a7fca0692cfe624f01",
+      "text_lf_bytes": 36100
     },
     {
       "path": "evidence/b14/S017-comparison.json",
@@ -589,10 +589,10 @@
     },
     {
       "path": "index.html",
-      "sha256": "e86aabd2b2756ba31f23a0059424d458edafe674303e63fa546856480fbd439b",
-      "bytes": 590852,
-      "text_lf_sha256": "e86aabd2b2756ba31f23a0059424d458edafe674303e63fa546856480fbd439b",
-      "text_lf_bytes": 590852
+      "sha256": "dcc196a6b2546dba29272e58bf9a16a9ef65ccb2d0ab25f591e2f9d3752c27db",
+      "bytes": 590954,
+      "text_lf_sha256": "dcc196a6b2546dba29272e58bf9a16a9ef65ccb2d0ab25f591e2f9d3752c27db",
+      "text_lf_bytes": 590954
     },
     {
       "path": "inputs/I001-product_gpu_queue_snapshot.h",
@@ -731,9 +731,9 @@
     },
     {
       "path": "package-info.json",
-      "sha256": "b4fef0e9c1b4daf76aa0de1905f7a16667ab3375c908a68332e5602bf1d6614c",
+      "sha256": "c9067f338e7a150c3ac247d4b66d828dee6b207183079b9da93f0f3e2adfc712",
       "bytes": 1123,
-      "text_lf_sha256": "b4fef0e9c1b4daf76aa0de1905f7a16667ab3375c908a68332e5602bf1d6614c",
+      "text_lf_sha256": "c9067f338e7a150c3ac247d4b66d828dee6b207183079b9da93f0f3e2adfc712",
       "text_lf_bytes": 1123
     },
     {
@@ -780,10 +780,10 @@
     },
     {
       "path": "validation.json",
-      "sha256": "23709a95760f4006b2533d83fe9c5348373b196a829ff4af3f8e89c8a5fd3b16",
-      "bytes": 3978,
-      "text_lf_sha256": "23709a95760f4006b2533d83fe9c5348373b196a829ff4af3f8e89c8a5fd3b16",
-      "text_lf_bytes": 3978
+      "sha256": "5063f1d7a585b022eebebfd4683b317967b0adc7982295cc2e25f9c8b5ed6f09",
+      "bytes": 4054,
+      "text_lf_sha256": "5063f1d7a585b022eebebfd4683b317967b0adc7982295cc2e25f9c8b5ed6f09",
+      "text_lf_bytes": 4054
     }
   ],
   "sources": [

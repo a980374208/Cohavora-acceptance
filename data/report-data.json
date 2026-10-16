@@ -16,7 +16,7 @@
     "no_project_wide_pass": true,
     "originalReportAt": "2026-10-12 19:38:59",
     "curation_policy": "最新有效完整保留；历史只保留最终验收结果摘要，不保留测试过程、重复投影或旧明细。缺少当前输入等价依据时列待重测/补测。",
-    "documentRevisedAt": "2026-10-16T10:14:29.986Z",
+    "documentRevisedAt": "2026-10-16T08:50:10.519Z",
     "evidenceBaselineAt": "2026-10-12T19:40:19.353Z",
     "portablePackage": true,
     "packageScope": "报告直接引用的最终来源、直接输入指纹快照、分类与清理审计；不追溯原结果中已删除的过程文件，不包含可运行产品完整环境。"
@@ -7786,7 +7786,7 @@
       "每轮每个声明场景只取一次有效终态；成功耗时分布仅使用完整成功样本，失败、超时和取消分别计数。",
       "保留原始起终点、时钟信息、definition_version、场景、身份、结果与缺失原因，再生成均值、P50、P95和最大值。",
       "未设置性能阈值仍记录有效数值；缺失值不按0毫秒计入，不用PASS、帧数、render interval或其他run补造耗时。",
-      "采集实现与runtime验证均未执行；collection_status保持NOT_RUN。新增口径不更改历史状态、门限或原暂停约束。"
+      "采集实现已接入现有诊断、UIA与runner链路；真实runtime采集验证未执行，collection_status保持NOT_RUN。新增实现不更改历史状态、门限或原暂停约束。"
     ],
     "definitions": [
       {

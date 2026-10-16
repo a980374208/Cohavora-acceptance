@@ -37,7 +37,7 @@
       "每轮每个声明场景只取一次有效终态；成功耗时分布仅使用完整成功样本，失败、超时和取消分别计数。",
       "保留原始起终点、时钟信息、definition_version、场景、身份、结果与缺失原因，再生成均值、P50、P95和最大值。",
       "未设置性能阈值仍记录有效数值；缺失值不按0毫秒计入，不用PASS、帧数、render interval或其他run补造耗时。",
-      "采集实现与runtime验证均未执行；collection_status保持NOT_RUN。新增口径不更改历史状态、门限或原暂停约束。"
+      "采集实现已接入现有诊断、UIA与runner链路；真实runtime采集验证未执行，collection_status保持NOT_RUN。新增实现不更改历史状态、门限或原暂停约束。"
     ],
     "definitions": [
       {
@@ -94,6 +94,19 @@
         "collection_status": "NOT_RUN"
       }
     ]
+  },
+  "idle_memory_measurements": {
+    "definition_version": "2026-10-16-idle-v1",
+    "metrics": ["working_set_bytes", "private_bytes"],
+    "scenes": ["initial_home_idle", "post_leave_home_idle"],
+    "collection_status": "NOT_RUN",
+    "implementation_status": "IMPLEMENTED_RUNTIME_NOT_RUN",
+    "group_ids": ["T020"],
+    "scope": "后续同run、同PID/start_ticks的会前空闲状态绝对均值；首次入会前与离会后分组，不回填历史缺失值。",
+    "window": "首次会前10秒；离会后复用room_settled。每窗口剔除前5秒，至少3个有效样本、跨度至少2秒、相邻间隔不超过2.5秒。",
+    "validity": "会前页面可见且入会按钮可用、无会议窗口、2秒内同run原生probe、native_cleanup_pending=0；离会后还须session_complete。",
+    "aggregation": "保留逐次时间、状态、身份和bytes，按scene计算有效样本算术平均值及MiB；缺失或不足为UNKNOWN/null，不用增长、峰值或释放中位数代替。",
+    "implementation": "live-kit-test-local/tests/runtime/tools/product_acceptance/UI_TIMING_COLLECTION.md"
   },
   "groups": [
     {

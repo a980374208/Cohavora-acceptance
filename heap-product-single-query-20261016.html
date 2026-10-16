@@ -1,0 +1,29 @@
+<meta charset="utf-8"><title>堆诊断单查询对照</title><pre># 一次有界对照结果
+
+状态：runtime COMPLETE / parse COMPLETE；结论 INCONCLUSIVE；全部 credit=0。
+Run ID: 004b5f7d92da4b5f969596fd534fdc25
+冻结 SHA256: 81e6247b29d5e640f74782c747d475b581993bd61ecec25918dfb0de5692f0a6
+
+## 已确认
+- 用户说明上一次过滤框非空来自正常桌面输入；旧尝试排除分析，原始失败另存，不拼接进本次。
+- 原 worker 未改；本次空过滤框检查正常。未采用候选 null 修复。
+- 原 UIA 客户端退出后实际静置 90.064 秒；Private Bytes 和提交 MEM_PRIVATE 均下降 2,756,608 字节（2.629 MiB）。
+- 一次重新查询耗时 0.129180 秒；查询区间 Private Bytes/MEM_PRIVATE 增加524,288字节，客户端退出区间下降507,904字节。从启动新客户端之前到退出之后合计下降8,192字节。
+- 窗口内已知堆存活量 QUERY_READY 117,755 → POST_QUERY 149,887 → REQUERY_CLIENT_EXIT 118,403字节。查询增加32,132，退出减少31,484，净残留648字节/6项；另外2项大小 UNKNOWN 始终单列，不能算作0。
+- EventMap 各静置检查点都是700项/45,600字节；每个15–30秒区间起点700项全部退出存活集合，survived_at_b_count=0，并记录持续物理free。它是持续有界周转的候选机制，不是这批旧对象不断累积。
+- 648字节的栈含 UIAutomationCore NotifyClientInfoIfNeeded/COM调用路径，以及 MtaProxyCache::CacheAndGetProxy(40字节)、CreateProxyFromGit(24字节)。COM部分帧仍为模块+RVA；不能据此认定全部owner或泄漏。
+
+## 成本与质量
+- 采集 105.562 秒，ETL 828,506,112 字节，平均 7.485 MiB/s。
+- 解析 27.863 秒，采样峰值 private 700,948,480 字节，解析输出（含ETLX）732,515,305 字节。
+- 事件/日志buffer/实时buffer丢失均0，missing_stack_events=0；函数帧覆盖 75.88%。
+- realloc_old_size_mismatch=3282，ambiguous moved=2，unknown outstanding=2，suspended known=6656字节；会计恒等式PASS不消除语义盲区。
+- 已观测工具CPU和文件增长；无未插桩基线，因果采集开销 UNKNOWN，不能宣称低/零开销。
+- 自有ETW会话确认不存在、产品退出、远端清理COMPLETE、只读句柄/输入锁/guardian释放。
+
+## 判定及边界
+本次未观察到由单次查询带来的持续Private Bytes增加，并验证EventMap旧对象周转；仍不能证明整个产品无泄漏。报告名称为“窗口内观察到、截至检查点仍未释放的分配”。开始前分配无法追溯，VirtualAlloc、自定义分配器及GPU不由本堆账本完整覆盖。区域扫描非原子，不等于堆提交归属。未达到缓存5000上限；没有查询后再静置90秒；导出跳过，不能排除正式导出行为增长。AMD PDB仍BLOCKED404，无下载。
+
+## 下一步
+优先离线复用已有精确符号及二进制核对 MtaProxyCache/COM通知owner和淘汰路径。只有需要验证这6项的延迟释放时，再独立冻结“单次查询后90秒、目标GUI继续存活”的短窗口；不直接扩展轮数、不更改本次预算或重试本次入口。产品50ms空文档重复clear属于已定位的分配抖动机制，未修改产品代码。
+</pre><p><a href="result.html">详细检查点与候选</a></p>

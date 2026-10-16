@@ -1,0 +1,49 @@
+<html lang="zh"><meta charset="utf-8"><h1>EventMap 年龄淘汰边界</h1><pre>{
+  &quot;status&quot;: &quot;READONLY_BINARY_EVIDENCE&quot;,
+  &quot;leak_verdict&quot;: &quot;INCONCLUSIVE&quot;,
+  &quot;root_cause&quot;: &quot;UNKNOWN&quot;,
+  &quot;dll&quot;: {
+    &quot;path&quot;: &quot;C:\\Windows\\System32\\UIAutomationCore.dll&quot;,
+    &quot;sha256&quot;: &quot;be5037bf46e61566d3e5a83a6c628cebe9035771e4ae741a7b9aa27b5696d989&quot;
+  },
+  &quot;pdb&quot;: {
+    &quot;path&quot;: &quot;F:\\CohavoraWPR\\runtime-20261015-01\\mirror\\E\\vsSource\\WebRTC\\live-kit-test\\out\\heap-etw-20261011\\anomaly-symbols-01\\public-symbol-cache\\UIAutomationCore.pdb\\7EB15B847D3ABFE3E9351438DA8595C31\\UIAutomationCore.pdb&quot;,
+    &quot;sha256&quot;: &quot;be1769ac14cd1b71624885660c3849ba7baa190f202e77fb8c84d0f195702f71&quot;,
+    &quot;match&quot;: &quot;PE_CODEVIEW_GUID_AGE_MATCH_FROM_EXISTING_REPORT&quot;
+  },
+  &quot;verified_instructions&quot;: [
+    {
+      &quot;rva&quot;: &quot;0xeefd7&quot;,
+      &quot;meaning&quot;: &quot;call import GetTickCount64 at IAT RVA 0x2fa3a8&quot;
+    },
+    {
+      &quot;rva&quot;: &quot;0xeefe3&quot;,
+      &quot;meaning&quot;: &quot;cutoff = GetTickCount64() - 0xea60 (60000 ms)&quot;
+    },
+    {
+      &quot;rva&quot;: &quot;0xef3ae&quot;,
+      &quot;meaning&quot;: &quot;timestamp &lt; cutoff selected in scan&quot;
+    },
+    {
+      &quot;rva&quot;: &quot;0xef53e&quot;,
+      &quot;meaning&quot;: &quot;second pass skips timestamp &gt;= cutoff; retires selected entry fields and invokes release path&quot;
+    }
+  ],
+  &quot;original_eventmap_cohort&quot;: {
+    &quot;records&quot;: 688,
+    &quot;known_bytes&quot;: 44360,
+    &quot;min_allocation_age_ms&quot;: 50548.0919,
+    &quot;max_allocation_age_ms&quot;: 60607.5915,
+    &quot;allocations_younger_than_60s&quot;: 686
+  },
+  &quot;interpretation&quot;: &quot;30 seconds after client exit is insufficient to test 60-second EventMap aging. Allocation age is not independently proven identical to entry timestamp; this is a concrete alternative explanation, not confirmed release or no-leak verdict.&quot;,
+  &quot;limits&quot;: [
+    &quot;Only this exact DLL version; not an API stability guarantee&quot;,
+    &quot;Cleanup scheduling period and timestamp refresh semantics not yet established&quot;,
+    &quot;Observed scan bound 100 is not independently established as a universal provider cache capacity&quot;,
+    &quot;No new runtime/capture/product changes&quot;
+  ],
+  &quot;next_step&quot;: &quot;Before new runtime, derive timer scheduling and AddEntry timestamp assignment from same binary. Then freeze sufficiently long idle route including margin beyond 60 seconds and cleanup scheduling, retaining GUI and comparing same cohort.&quot;,
+  &quot;qualification_credit&quot;: 0,
+  &quot;formal_credit&quot;: 0
+}</pre></html>

@@ -1,7 +1,7 @@
 {
-  "status": "PASS_STATIC_FULL",
-  "checked_at": "2026-10-16T10:14:41.130Z",
-  "validation_mode": "FULL_OFFLINE",
+  "status": "PASS_STATIC_LIGHTWEIGHT",
+  "checked_at": "2026-10-16T08:50:11.505Z",
+  "validation_mode": "LIGHTWEIGHT_REPO",
   "method": "Node vm structure/synthetic DOM, relative links, lightweight report data consistency; heavy offline evidence decoupled",
   "checks": {
     "html_unique_ids": true,
@@ -64,7 +64,10 @@
     "b14_memory_partial_attribution_boundary": true,
     "media_latency_highlight_removed": true,
     "highlight_result_boundaries": true,
-    "complete_package_file_hashes": 147,
+    "complete_package_file_hashes": {
+      "verified_existing": 147,
+      "decoupled_omitted": 0
+    },
     "report_text_checkout_line_endings": 0,
     "manifest_excludes_git_internals": true
   },

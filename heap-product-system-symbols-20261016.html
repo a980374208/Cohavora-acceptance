@@ -1,0 +1,353 @@
+<html lang=zh><meta charset=utf-8><h1>产品未解释系统栈的符号补充</h1><p>98,043字节/198条：LdrpAllocateTls。两条各4,172字节：RPCRT4 BCACHE::Allocate。仅新增函数归属，不是泄漏根因确认。</p><pre>{
+  &quot;status&quot;: &quot;OFFLINE_SYMBOL_IDENTITY_POLICY_VERIFIED&quot;,
+  &quot;policy&quot;: &quot;GUID equality; PDB Info age &gt;= image age; DBI age == image age; unknown/zero DBI age rejected in this candidate&quot;,
+  &quot;policy_source&quot;: &quot;https://github.com/microsoft/microsoft-pdb/blob/master/PDB/dbi/pdb.cpp#L745-L819&quot;,
+  &quot;policy_selftests_passed&quot;: 8,
+  &quot;modules&quot;: [
+    {
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;module_copy&quot;: &quot;F:\\CohavoraWPR\\experiments\\20261016-product-system-symbols-07\\ntdll\\ntdll.dll&quot;,
+      &quot;module_sha256&quot;: &quot;651ac9041af8e6b5ebd331d53163244c0a27d36d1433f0f15cac1f28c5f2e82c&quot;,
+      &quot;pdb&quot;: &quot;F:\\CohavoraWPR\\experiments\\20261016-product-system-symbols-07\\ntdll\\ntdll.pdb&quot;,
+      &quot;pdb_sha256&quot;: &quot;c93f4614aa6f40fe370d40eb7ee9589ca0eda170ef2d704b5d278da71c02c249&quot;,
+      &quot;guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1,
+      &quot;status&quot;: &quot;MATCH_MICROSOFT_OPENVALIDATE4_RULE_STRICT_DBI_EQUALITY&quot;
+    },
+    {
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;module_copy&quot;: &quot;F:\\CohavoraWPR\\experiments\\20261016-product-system-symbols-07\\rpcrt4\\RPCRT4.dll&quot;,
+      &quot;module_sha256&quot;: &quot;c060f02c11fb19c9c8a30b5077a87cdb17d4be40f08070a539ec73eb53402775&quot;,
+      &quot;pdb&quot;: &quot;F:\\CohavoraWPR\\experiments\\20261016-product-system-symbols-07\\rpcrt4\\rpcrt4.pdb&quot;,
+      &quot;pdb_sha256&quot;: &quot;bb4ef09f9394e8cdf6cc877bb95c6549acc3a6bc835196ae17fa42d8f2f14c86&quot;,
+      &quot;guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1,
+      &quot;status&quot;: &quot;MATCH_MICROSOFT_OPENVALIDATE4_RULE_STRICT_DBI_EQUALITY&quot;
+    },
+    {
+      &quot;module&quot;: &quot;combase.dll&quot;,
+      &quot;status&quot;: &quot;BLOCKED_NO_DOWNLOADED_PDB&quot;,
+      &quot;original_download_error&quot;: &quot;DOWNLOAD_SIZE_BUDGET&quot;,
+      &quot;retry&quot;: &quot;NOT_RUN&quot;
+    }
+  ],
+  &quot;frames&quot;: [
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:dcc3e00222f542c944152d24bc1d05df44ca9c56f4d12a90f20701b0d5dcf351&quot;,
+      &quot;frame_id&quot;: 0,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x32716&quot;,
+      &quot;function&quot;: &quot;RtlpAllocateNTHeapInternal&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:dcc3e00222f542c944152d24bc1d05df44ca9c56f4d12a90f20701b0d5dcf351&quot;,
+      &quot;frame_id&quot;: 1,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x3200b&quot;,
+      &quot;function&quot;: &quot;RtlAllocateHeap&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:dcc3e00222f542c944152d24bc1d05df44ca9c56f4d12a90f20701b0d5dcf351&quot;,
+      &quot;frame_id&quot;: 6546,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x1ac4f&quot;,
+      &quot;function&quot;: &quot;LdrpAllocateTls&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:dcc3e00222f542c944152d24bc1d05df44ca9c56f4d12a90f20701b0d5dcf351&quot;,
+      &quot;frame_id&quot;: 6542,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x1ae67&quot;,
+      &quot;function&quot;: &quot;LdrpInitializeThread&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:dcc3e00222f542c944152d24bc1d05df44ca9c56f4d12a90f20701b0d5dcf351&quot;,
+      &quot;frame_id&quot;: 6543,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x94313&quot;,
+      &quot;function&quot;: &quot;_LdrpInitialize&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:dcc3e00222f542c944152d24bc1d05df44ca9c56f4d12a90f20701b0d5dcf351&quot;,
+      &quot;frame_id&quot;: 6544,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x941c2&quot;,
+      &quot;function&quot;: &quot;LdrpInitializeInternal&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:dcc3e00222f542c944152d24bc1d05df44ca9c56f4d12a90f20701b0d5dcf351&quot;,
+      &quot;frame_id&quot;: 6545,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0xdf09e&quot;,
+      &quot;function&quot;: &quot;LdrInitializeThunk&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:1472bf821d8d9eb856de9ffccb5775ba01db73c95434da4d57afe9f3c2a55a07&quot;,
+      &quot;frame_id&quot;: 0,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x32716&quot;,
+      &quot;function&quot;: &quot;RtlpAllocateNTHeapInternal&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:1472bf821d8d9eb856de9ffccb5775ba01db73c95434da4d57afe9f3c2a55a07&quot;,
+      &quot;frame_id&quot;: 1,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x3200b&quot;,
+      &quot;function&quot;: &quot;RtlAllocateHeap&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:1472bf821d8d9eb856de9ffccb5775ba01db73c95434da4d57afe9f3c2a55a07&quot;,
+      &quot;frame_id&quot;: 5126,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x3077b&quot;,
+      &quot;function&quot;: &quot;AllocWrapper(unsigned __int64)&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:1472bf821d8d9eb856de9ffccb5775ba01db73c95434da4d57afe9f3c2a55a07&quot;,
+      &quot;frame_id&quot;: 5127,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x2f91c&quot;,
+      &quot;function&quot;: &quot;BCACHE::Allocate(unsigned __int64)&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:1472bf821d8d9eb856de9ffccb5775ba01db73c95434da4d57afe9f3c2a55a07&quot;,
+      &quot;frame_id&quot;: 5303,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x6a6ec&quot;,
+      &quot;function&quot;: &quot;LRPC_BASE_CCALL::GetBuffer(struct _RPC_MESSAGE *, struct _GUID *)&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:1472bf821d8d9eb856de9ffccb5775ba01db73c95434da4d57afe9f3c2a55a07&quot;,
+      &quot;frame_id&quot;: 5304,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x2a2bb&quot;,
+      &quot;function&quot;: &quot;NdrGetBuffer&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:1472bf821d8d9eb856de9ffccb5775ba01db73c95434da4d57afe9f3c2a55a07&quot;,
+      &quot;frame_id&quot;: 5305,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x145c&quot;,
+      &quot;function&quot;: &quot;NdrpClientCall2(struct _MIDL_STUB_DESC const *, unsigned char const *, unsigned char *, unsigned char)&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:1472bf821d8d9eb856de9ffccb5775ba01db73c95434da4d57afe9f3c2a55a07&quot;,
+      &quot;frame_id&quot;: 5306,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x102f&quot;,
+      &quot;function&quot;: &quot;NdrClientCall2&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:1472bf821d8d9eb856de9ffccb5775ba01db73c95434da4d57afe9f3c2a55a07&quot;,
+      &quot;frame_id&quot;: 6,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x7ee4c&quot;,
+      &quot;function&quot;: &quot;RtlUserThreadStart&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:d1bc1eb5390ee864e67a846f425d95bd9d02ee9bcaa97d0bd3a775c1e585f9d2&quot;,
+      &quot;frame_id&quot;: 0,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x32716&quot;,
+      &quot;function&quot;: &quot;RtlpAllocateNTHeapInternal&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:d1bc1eb5390ee864e67a846f425d95bd9d02ee9bcaa97d0bd3a775c1e585f9d2&quot;,
+      &quot;frame_id&quot;: 1,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x3200b&quot;,
+      &quot;function&quot;: &quot;RtlAllocateHeap&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:d1bc1eb5390ee864e67a846f425d95bd9d02ee9bcaa97d0bd3a775c1e585f9d2&quot;,
+      &quot;frame_id&quot;: 5126,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x3077b&quot;,
+      &quot;function&quot;: &quot;AllocWrapper(unsigned __int64)&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:d1bc1eb5390ee864e67a846f425d95bd9d02ee9bcaa97d0bd3a775c1e585f9d2&quot;,
+      &quot;frame_id&quot;: 5127,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x2f91c&quot;,
+      &quot;function&quot;: &quot;BCACHE::Allocate(unsigned __int64)&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:d1bc1eb5390ee864e67a846f425d95bd9d02ee9bcaa97d0bd3a775c1e585f9d2&quot;,
+      &quot;frame_id&quot;: 5310,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x84f50&quot;,
+      &quot;function&quot;: &quot;NDR_MINICOMPUTE_QUEUE::Allocate(void)&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:d1bc1eb5390ee864e67a846f425d95bd9d02ee9bcaa97d0bd3a775c1e585f9d2&quot;,
+      &quot;frame_id&quot;: 5311,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x7709c&quot;,
+      &quot;function&quot;: &quot;NdrConformantArrayComputeConformanceSetup(struct _MIDL_STUB_MESSAGE *, unsigned char *, unsigned char const *)&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:d1bc1eb5390ee864e67a846f425d95bd9d02ee9bcaa97d0bd3a775c1e585f9d2&quot;,
+      &quot;frame_id&quot;: 5312,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x76fba&quot;,
+      &quot;function&quot;: &quot;NdrpClientMiniComputeConformanceSetup(struct _MIDL_STUB_MESSAGE *)&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:d1bc1eb5390ee864e67a846f425d95bd9d02ee9bcaa97d0bd3a775c1e585f9d2&quot;,
+      &quot;frame_id&quot;: 5313,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x76a64&quot;,
+      &quot;function&quot;: &quot;NdrpClientUnMarshal&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:d1bc1eb5390ee864e67a846f425d95bd9d02ee9bcaa97d0bd3a775c1e585f9d2&quot;,
+      &quot;frame_id&quot;: 5314,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x1538&quot;,
+      &quot;function&quot;: &quot;NdrpClientCall2(struct _MIDL_STUB_DESC const *, unsigned char const *, unsigned char *, unsigned char)&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:d1bc1eb5390ee864e67a846f425d95bd9d02ee9bcaa97d0bd3a775c1e585f9d2&quot;,
+      &quot;frame_id&quot;: 5306,
+      &quot;module&quot;: &quot;RPCRT4.dll&quot;,
+      &quot;rva&quot;: &quot;0x102f&quot;,
+      &quot;function&quot;: &quot;NdrClientCall2&quot;,
+      &quot;pdb_guid&quot;: &quot;98EB0270D0FF305F7ED48A570CFD4FF6&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 2,
+      &quot;pdb_dbi_age&quot;: 1
+    },
+    {
+      &quot;normalized_stack_key&quot;: &quot;normalized-sha256:d1bc1eb5390ee864e67a846f425d95bd9d02ee9bcaa97d0bd3a775c1e585f9d2&quot;,
+      &quot;frame_id&quot;: 6,
+      &quot;module&quot;: &quot;ntdll.dll&quot;,
+      &quot;rva&quot;: &quot;0x7ee4c&quot;,
+      &quot;function&quot;: &quot;RtlUserThreadStart&quot;,
+      &quot;pdb_guid&quot;: &quot;C031D45B0DA18A6E74D06ED6AB2DD9E1&quot;,
+      &quot;image_age&quot;: 1,
+      &quot;pdb_info_age&quot;: 4,
+      &quot;pdb_dbi_age&quot;: 1
+    }
+  ],
+  &quot;original_download_receipt_preserved&quot;: true,
+  &quot;original_report_modified&quot;: false,
+  &quot;existing_parser_modified&quot;: false,
+  &quot;explanation&quot;: &quot;Initial summary-only age equality in this review rejected valid public PDBs. Independent corrected supplement uses Microsoft OpenValidate4 criteria; existing frozen tooling remains unchanged and is not requalified.&quot;,
+  &quot;downloads_in_this_review&quot;: 0,
+  &quot;ETL_reparse&quot;: &quot;NOT_RUN&quot;,
+  &quot;product&quot;: &quot;NOT_RUN&quot;,
+  &quot;qualification_credit&quot;: 0,
+  &quot;formal_credit&quot;: 0,
+  &quot;interpretation&quot;: {
+    &quot;stable_98043_bytes&quot;: &quot;198 retained allocations originate from ntdll LdrpAllocateTls during thread initialization. Stable in available product checkpoint interval; exact live thread/module ownership and cleanup not captured. Not attributed to a product lost owner.&quot;,
+    &quot;two_4172_byte_candidates&quot;: &quot;RPC allocator BCACHE::Allocate, via NDR GetBuffer / mini-compute queue, downstream COM call frames still unresolved. One survivor in each stack; per-cycle growth and cache bounds unproven.&quot;,
+    &quot;symbol_validation_root_cause&quot;: &quot;This offline download reviewer incorrectly required PDB Info age == PE age. Microsoft OpenValidate4 instead permits Info age &gt;= PE age and checks DBI age == PE age. Corrected independent supplement retains strict GUID/DBI checks and passes8 positive/negative tests. Frozen parser unchanged; NativeSymbolLookup PdbAge behavior requires separate validation before any production-tool change.&quot;,
+    &quot;combase&quot;: &quot;Original request stopped at64MiB file budget; partial removed, original failure retained, no retry or larger budget.&quot;,
+    &quot;whole_product&quot;: &quot;INCONCLUSIVE; no new product execution or ETL replay.&quot;
+  }
+}</pre></html>

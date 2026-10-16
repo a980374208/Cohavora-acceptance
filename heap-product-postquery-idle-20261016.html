@@ -1,0 +1,31 @@
+<meta charset="utf-8"><h1>查询后90秒堆诊断</h1><pre># 查询后90秒有界对照结果
+
+runtime COMPLETE，parse COMPLETE，结论 INCONCLUSIVE，qualification_credit=0、formal_credit=0。
+Run ID: 39ac2b009ee745f885372fdb1878a884
+冻结 SHA256: e7f08b825937b31ad7f86c49887a3424acbeed1cbee9e2c6d509825349816bb5
+
+## 本次新证据
+- 一次入退会，首页稳定后开始ETW，清屏一次；原UIA客户端退出，执行一次新客户端只读查询并退出，再保持目标GUI存活静置 90.013 秒。两个自有客户端退出身份、时序已验证。
+- 查询READY→POST_QUERY已知窗口存活堆82,352→113,600字节；客户端退出后82,416字节，查询净残留64字节/2项，另2项大小UNKNOWN独立保留。
+- 与上轮候选归一化栈匹配的40字节weak缓存节点和24字节引用计数代理存储，查询前无该栈存活记录，查询后各新增1项；每个查询退出→静置0/30/60/75/90相邻区间都报告完整A队列存活。依据process_instance+heap_generation+address+incarnation账本，可确认这两项观测分配跨过90秒；不只是栈字节相同。
+- 上轮另四项共584字节，本轮查询退出点未观察到。不同运行不能拼接为“相同对象已释放”。
+- 查询后静置期间Private Bytes和提交MEM_PRIVATE均下降2,473,984字节（约2.36MiB）；已知窗口堆存活82,416→118,815字节（+36,399），UNKNOWN2项未消失。提交页下降与小额活跃堆增长不矛盾，不能强行把两者等同。
+- 本次查询区间资源计数仍与原客户端退出后的延迟清理重叠，不能将PrivateBytes变化全部归因于查询成本；前轮查询前90秒对照另行保留，不拼接本次。
+
+## EventMap新增边界
+各静置检查点703项/54,728字节；每15–30秒区间700项/45,600字节被新对象替换，并有物理free；另3项/9,128字节跨过整个窗口。最终分配年龄约92–103秒，origin均OBSERVED_ALLOC。两项4480字节、一项168字节，栈仍指向EventMap::AddEntry（部分经ComInvoker::Init），及产品trimVisible→QTextDocument::clear→Qt通知路径。
+这3项必须单列为保留候选；分配年龄不是EventMap条目时间戳，不能据超过60秒就称淘汰失效或泄漏。是否是表存储、当前条目刷新或其他共享owner仍UNKNOWN。
+
+## 成本、质量、清理
+- ETL 655,491,072字节；采集105.927秒，平均5.901MiB/s。
+- 解析25.162秒；采样private峰值644,243,456字节；输出（含ETLX）537,699,927字节。
+- 事件/buffer丢失0，missing_stack_events=0；函数帧覆盖68.14%。
+- realloc_old_size_mismatch=3306，ambiguous moved=2，UNKNOWN outstanding=2；这些语义和符号缺口保留，结论INCONCLUSIVE。
+- 自有ETW会话不存在；产品已退出、远端清理COMPLETE；只读句柄、输入锁、guardian均释放。
+- 冻结入口离线26项、Python证据33项通过；后处理JSON读取12项及队列判定10项通过。历史真实查询/90秒helper字节未变，复用旧验证，未冒充全产品测试。
+
+## 限制与下一步
+报告仍为“窗口内观察到、截至检查点仍未释放的分配”。不能追溯起点前分配，不完整覆盖VirtualAlloc、自定义分配器和GPU。区域扫描非原子，采集因果开销无非插桩基线仍UNKNOWN。未达到缓存5000上限，无逐轮增长证据；导出跳过，正式导出增长未排除；AMD保持BLOCKED404，无下载。未修改产品代码、未构建、未跑CTests或长路线。
+
+64字节证明一次查询后存在小额保留，未证明会无限增长。下一步先离线核查新3项EventMap存储/刷新及ComInvoker owner路径，再决定是否需要有限重复查询或停止通知夹具；不直接扩大入退会轮数，不重试本入口。整体内存增长根因仍UNKNOWN，目标继续。
+</pre><p><a href="result.html">完整检查点</a></p>
