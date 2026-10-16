@@ -4,11 +4,18 @@ import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {consolidateTests} from './consolidate-tests.mjs';
 const dest=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const html=await fs.readFile(path.join(dest,'index.html'),'utf8');
 const dataText=html.match(/<script id="report-data" type="application\/json">([\s\S]*?)<\/script>/)[1];
 const data=JSON.parse(dataText);
+const baseline=JSON.parse(await fs.readFile(path.join(dest,'data/report-input.json'),'utf8'));
+const testPlan=JSON.parse(await fs.readFile(path.join(dest,'data/test-plan.json'),'utf8'));
+const baselineBefore=JSON.stringify(baseline),derived=consolidateTests(baseline);
+assert.equal(JSON.stringify(baseline),baselineBefore,'Consolidation must preserve the frozen input catalog');
+for(const key of ['retestRecords','consolidation','curationSummary'])assert.deepEqual(data[key],derived[key],'Generated '+key+' differs from the maintained plan');
 const script=html.match(/<script>([\s\S]*?)<\/script>/)[1];
+assert.equal(script.trim(),(await fs.readFile(path.join(dest,'assets/report.js'),'utf8')).trim(),'Embedded client script must match its maintained source');
 const structure=html.slice(0,html.indexOf('<script id="report-data"'));
 const ids=[...structure.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
 assert.equal(ids.length,new Set(ids).size);
@@ -17,6 +24,18 @@ assert.deepEqual(data,JSON.parse(await fs.readFile(path.join(dest,'data/report-d
 assert.ok(!structure.includes('25项功能／契约测试归档'));
 assert.ok(!data.records&&!data.reusable&&!data.route);
 assert.equal(data.registry.length,data.currentRecords.length);
+assert.equal(data.currentRecords.length,4);
+assert.equal(data.historicalRecords.length,44);
+assert.equal(baseline.retestRecords.length,52);
+assert.equal(data.retestRecords.length,24);
+assert.deepEqual(data.retestRecords.map(r=>r.id),Array.from({length:24},(_,i)=>'T'+String(i+1).padStart(3,'0')));
+assert.equal(data.retestRecords.filter(r=>r.plan_kind==='product').length,21);
+assert.equal(data.retestRecords.filter(r=>r.plan_kind==='auxiliary').length,3);
+assert.deepEqual(data.currentRecords,baseline.currentRecords);
+assert.deepEqual(data.historicalRecords,baseline.historicalRecords);
+assert.deepEqual(data.highlights,baseline.highlights);
+assert.deepEqual(data.sourceReceipts,baseline.sourceReceipts);
+assert.equal(data.curationSummary.metrics,baseline.curationSummary.metrics);
 assert.ok(data.currentRecords.every(r=>r.curation.disposition==='CURRENT_VALID'));
 assert.ok(data.retestRecords.every(r=>r.curation.disposition==='RETEST_REQUIRED'&&r.curation.reason&&r.curation.retestScope));
 assert.ok(data.retestRecords.every(r=>r.status==='NOT_RUN'&&r.metrics.length===0&&r.source_checks.length===0));
@@ -25,6 +44,49 @@ const deleted=new Set(data.decisions.filter(r=>r.disposition==='SUPERSEDED').map
 assert.ok(data.registry.every(r=>!deleted.has(r.id)));
 assert.equal(new Set(data.registry.map(r=>r.id)).size,data.registry.length);
 for(const record of data.currentRecords){assert.ok(record.curation.inputChecks.length>0);assert.ok(record.source_checks.length>0);}
+const originalById=new Map(baseline.retestRecords.map(record=>[record.id,record]));
+const planById=new Map(testPlan.groups.map(group=>[group.id,group]));
+const consolidation=data.consolidation;
+assert.equal(consolidation.original_retest_count,52);
+assert.equal(consolidation.displayed_retest_count,24);
+assert.equal(consolidation.product_count,21);assert.equal(consolidation.auxiliary_count,3);
+assert.equal(consolidation.merged_or_retained_original_count,50);assert.equal(consolidation.removed_independent_count,2);
+assert.equal(consolidation.execution,'NOT_RUN');
+for(const flag of ['historical_results_changed','current_tool_results_changed','thresholds_changed'])assert.equal(consolidation[flag],false);
+assert.equal(consolidation.mapping.length,52);
+assert.equal(new Set(consolidation.mapping.map(row=>row.original_id)).size,52);
+assert.deepEqual(consolidation.mapping.map(row=>row.original_id).sort(),[...originalById.keys()].sort());
+const mappingById=new Map(consolidation.mapping.map(row=>[row.original_id,row]));
+const groupedOriginalIds=data.retestRecords.flatMap(record=>record.originalIds);
+assert.equal(groupedOriginalIds.length,50);assert.equal(new Set(groupedOriginalIds).size,50);
+assert.ok(!groupedOriginalIds.includes('T028')&&!groupedOriginalIds.includes('T029'));
+for(const record of data.retestRecords){
+  const group=planById.get(record.id);assert.ok(group);
+  assert.deepEqual(record.originalIds,group.originalIds);
+  assert.equal(record.plan_kind,group.plan_kind);assert.equal(record.plan_code,group.plan_code);
+  assert.ok(group.gates.length>=3&&group.gates.length<=5);
+  assert.equal(new Set(group.gates).size,group.gates.length);
+  assert.deepEqual(record.gates,group.gates);assert.deepEqual(record.curation.retestScope,group.gates);
+  assert.deepEqual(record.conditions,group.conditions);assert.deepEqual(record.boundaries,group.boundaries);
+  assert.ok(record.conditions.length&&record.boundaries.length);
+  const originals=record.originalIds.map(id=>{const original=originalById.get(id);assert.ok(original);const mapping=mappingById.get(id);assert.equal(mapping.destination_kind,record.plan_kind);assert.equal(mapping.destination_id,record.id);assert.equal(mapping.destination_code,record.plan_code);assert.ok(mapping.reason);return original;});
+  assert.deepEqual(record.reference_statuses,[...new Set(originals.flatMap(original=>original.reference_statuses||[original.status]))],'Original FAIL/UNKNOWN/composite states must survive '+record.id);
+  assert.deepEqual(record.coverage.length,record.originalIds.length);
+  for(const [index,original]of originals.entries()){assert.ok(record.coverage[index].includes(original.id)&&record.coverage[index].includes(original.title));}
+}
+assert.deepEqual(consolidation.non_test_actions,testPlan.non_test_actions);
+assert.equal(consolidation.non_test_actions.length,2);
+for(const action of consolidation.non_test_actions){const mapping=mappingById.get(action.originalId);assert.equal(mapping.destination_kind,action.kind);assert.equal(mapping.destination_id,action.id);assert.equal(mapping.disposition,'REMOVED_AS_INDEPENDENT_TEST');assert.ok(action.reason&&action.preserve);assert.deepEqual(mapping.covered_by,action.coveredBy);assert.ok(action.coveredBy.length&&action.coveredBy.every(id=>planById.has(id)));}
+assert.equal(mappingById.get('T028').destination_kind,'archive');
+assert.ok(consolidation.non_test_actions.find(action=>action.originalId==='T028').preserve.includes('USER_REPORTED'));
+assert.equal(mappingById.get('T029').destination_kind,'covered');
+assert.ok(baseline.historicalRecords.some(record=>record.id==='H031'));
+const formal=data.retestRecords.find(record=>record.originalIds.includes('T044'));
+assert.equal(formal.plan_kind,'product');assert.ok(formal.reference_statuses.includes('FAIL'));
+assert.ok(formal.gates.some(gate=>gate.includes('64 MiB')));
+assert.ok(formal.boundaries.some(boundary=>boundary.includes('UNKNOWN')));
+const attribution=data.retestRecords.find(record=>record.originalIds.includes('T048'));
+assert.ok(attribution.reference_statuses.some(status=>status.includes('UNKNOWN')&&status.includes('FAIL')));
 
 function domRun(input){
   const elements=new Map();
@@ -33,33 +95,37 @@ function domRun(input){
     add(option){this.options.push(option);}
     addEventListener(type,callback){(this.listeners[type]??=[]).push(callback);}
     dispatch(type='input'){for(const callback of this.listeners[type]||[])callback();}
-    set innerHTML(value){this.content=value;if(this.id.endsWith('-list'))for(const match of value.matchAll(/<details class="record" id="([^"]+)"/g))elements.set(match[1],new Element(match[1]));}
+    set innerHTML(value){this.content=value;if(this.id.endsWith('-list')){let index=0;for(const match of value.matchAll(/<details\b([^>]*)>/g)){const id=match[1].match(/\bid="([^"]+)"/)?.[1]||this.id+'-details-'+index++;const element=new Element(id);element.isDetails=true;elements.set(id,element);}}}
     get innerHTML(){return this.content;}
   }
   for(const id of [...ids,'report-data'])elements.set(id,new Element(id));
+  const staticDetails=[...structure.matchAll(/<details\b([^>]*)>/g)].map((match,index)=>{const id=match[1].match(/\bid="([^"]+)"/)?.[1]||'static-details-'+index;const element=elements.get(id)||new Element(id);element.isDetails=true;element.open=/\bopen(?:\s|=|$)/.test(match[1]);elements.set(id,element);return element;});
   elements.get('report-data').textContent=JSON.stringify(input);
-  elements.get('evidence-scope').value='CURRENT_VALID';
+  const recordElements=()=>[...elements.values()].filter(x=>/^(report|retest|aux)-[RNT]\d+$/.test(x.id));
   const document={getElementById:id=>{assert.ok(elements.has(id),'Missing DOM ID '+id);return elements.get(id);},querySelectorAll:selector=>{
-    const cards=[...elements.values()].filter(x=>/^(report|retest)-[RNT]\d+$/.test(x.id));
-    if(selector==='details'||selector==='#reports .record,#retests .record')return cards;
-    const match=selector.match(/^#(report|retest)-list \.record(:not\(\[hidden\]\))?$/);
+    const cards=recordElements();
+    if(selector==='details')return [...elements.values()].filter(x=>x.isDetails);
+    if(/^#(?:reports|retests|aux) \.record(?:,#(?:reports|retests|aux) \.record)*$/.test(selector)){const sections=selector.split(',').map(x=>x.split(' ')[0]);const sectionByPrefix={report:'#reports',retest:'#retests',aux:'#aux'};return cards.filter(x=>sections.includes(sectionByPrefix[x.id.split('-')[0]]));}
+    const match=selector.match(/^#(report|retest|aux)-list \.record(:not\(\[hidden\]\))?$/);
     assert.ok(match,'Unhandled selector '+selector);
     return cards.filter(x=>x.id.startsWith(match[1]+'-')&&(!match[2]||!x.hidden));
   }};
-  const window={listeners:{},addEventListener(type,callback){this.listeners[type]=callback;},print(){this.listeners.beforeprint?.();this.listeners.afterprint?.();}};
+  const window={listeners:{},printSnapshots:[],addEventListener(type,callback){this.listeners[type]=callback;},print(){this.listeners.beforeprint?.();this.printSnapshots.push(document.querySelectorAll('details').map(x=>({id:x.id,open:x.open})));this.listeners.afterprint?.();}};
   const context=vm.createContext({document,window,Option:class{constructor(text,value){this.text=text;this.value=value;this.title='';}}});
   vm.runInContext(script,context,{timeout:30000});
-  return {elements,context,window,set:(id,value)=>{const element=elements.get(id);element.value=value;element.dispatch();},visible:prefix=>[...elements.values()].filter(x=>x.id.startsWith(prefix+'-')&&/^[RNT]\d+$/.test(x.id.slice(prefix.length+1))&&!x.hidden).map(x=>x.id.slice(prefix.length+1))};
+  return {elements,context,window,staticDetails,set:(id,value)=>{const element=elements.get(id);assert.ok(element,'Missing DOM ID '+id);element.value=value;element.dispatch();},visible:prefix=>recordElements().filter(x=>x.id.startsWith(prefix+'-')&&!x.hidden).map(x=>x.id.slice(prefix.length+1))};
 }
-const checks={html_unique_ids:true,inline_json_matches_output:true,script_syntax:true,curation_removes_historical_records:true,retained_scope_only:true};
+const checks={html_unique_ids:true,inline_json_matches_output:true,maintained_script_matches_inline:true,script_syntax:true,curation_removes_historical_records:true,retained_scope_only:true,original_52_ids_have_unique_destinations:true,product_21_auxiliary_3_separated:true,subgates_and_original_states_preserved:true,summary_not_reexecuted_and_archive_not_counted:true,frozen_thresholds_and_formal_unknown_boundaries_preserved:true};
 const actual=domRun(data);
 assert.equal(actual.visible('report').length,data.currentRecords.length);
-assert.equal(actual.visible('retest').length,data.retestRecords.length);
+assert.equal(actual.visible('retest').length,21);
+assert.equal(actual.visible('aux').length,3);
 checks.initial_separate_scopes=true;
-for(const prefix of ['report','retest']){
-  const rows=prefix==='report'?data.currentRecords:data.retestRecords;
+for(const prefix of ['report','retest','aux']){
+  const rows=prefix==='report'?data.currentRecords:data.retestRecords.filter(r=>r.plan_kind===(prefix==='retest'?'product':'auxiliary'));
   const expectedOptions=[...new Set(rows.flatMap(r=>(r.reference_statuses||[r.status]).map(s=>String(s).trim().toUpperCase())))].sort();
   assert.deepEqual(actual.elements.get(prefix+'-status').options.map(x=>x.value).sort(),expectedOptions);
+  for(const option of actual.elements.get(prefix+'-status').options){const count=rows.reduce((n,row)=>n+(row.reference_statuses||[row.status]).filter(status=>String(status).trim().toUpperCase()===option.value).length,0);assert.ok(option.text.endsWith(' ('+count+')'));assert.equal(option.title,option.value);}
   for(const state of ['PASS','PASS_SCOPED']){
     actual.set(prefix+'-status',state);
     assert.deepEqual(actual.visible(prefix).sort(),rows.filter(r=>(r.reference_statuses||[r.status]).some(s=>String(s).trim().toUpperCase()===state)).map(r=>r.id).sort());
@@ -79,15 +145,9 @@ for(const prefix of ['report','retest']){
   }
 }
 checks.exact_PASS_PASS_SCOPED=true;checks.combined_filters=true;checks.empty_and_reset=true;checks.expand_collapse=true;checks.status_option_counts=true;
-actual.set('evidence-status','pass');
-assert.equal(vm.runInContext('page',actual.context),0);
-assert.equal(vm.runInContext('filtered.length',actual.context),data.currentRecords.filter(r=>String(r.status).trim().toUpperCase()==='PASS').length);
-actual.set('evidence-status','PASS_SCOPED');
-assert.equal(vm.runInContext('filtered.length',actual.context),data.currentRecords.filter(r=>String(r.status).trim().toUpperCase()==='PASS_SCOPED').length);
-actual.set('evidence-q','__NO_MATCH__');assert.equal(vm.runInContext('filtered.length',actual.context),0);assert.ok(actual.elements.get('evidence-body').innerHTML.includes('没有匹配'));
-actual.elements.get('reset-evidence').onclick();
-assert.equal(actual.elements.get('evidence-scope').value,'CURRENT_VALID');assert.equal(vm.runInContext('filtered.length',actual.context),data.currentRecords.length);
-checks.metric_current_only=true;checks.metric_exact_status=true;checks.pagination_reset=true;checks.metric_empty_reset=true;
+assert.ok(!ids.includes('catalog')&&!ids.some(id=>id.startsWith('evidence-')));
+assert.ok(!/function renderEvidence|let page=/.test(script));
+checks.duplicate_metric_catalog_removed=true;
 actual.set('history-status','pass_scoped');
 assert.equal((actual.elements.get('history-body').innerHTML.match(/<tr>/g)||[]).length,data.historicalRecords.filter(r=>String(r.status).trim().toUpperCase()==='PASS_SCOPED').length);
 actual.set('history-q','__NO_MATCH__');assert.ok(actual.elements.get('history-body').innerHTML.includes('没有匹配'));
@@ -98,12 +158,13 @@ const base=fixture.currentRecords[0]||fixture.retestRecords[0];
 assert.ok(base);
 fixture.currentRecords=[' pass ','PaSs_ScOpEd','PASS_SCOPED / NOT_CLOSED'].map((status,i)=>({...base,id:'N'+(901+i),status,curation:{...base.curation,disposition:'CURRENT_VALID'}}));
 fixture.retestRecords=[];fixture.registry=fixture.currentRecords.map(r=>({...r,disposition:'CURRENT_VALID'}));
-for(let i=0;i<30;i++)fixture.registry.push({...fixture.registry[0],id:'N'+(950+i)});
 const mixed=domRun(fixture);mixed.set('report-status','pass');assert.deepEqual(mixed.visible('report'),['N901']);mixed.set('report-status',' pass_scoped ');assert.deepEqual(mixed.visible('report'),['N902']);
-mixed.elements.get('next').onclick();assert.equal(vm.runInContext('page',mixed.context),1);mixed.set('evidence-status','PASS_SCOPED');assert.equal(vm.runInContext('page',mixed.context),0);
 checks.case_and_whitespace_normalization=true;checks.composite_status_not_mixed=true;
-const openBefore=[...actual.elements.values()].filter(x=>/^(report|retest)-[RNT]\d+$/.test(x.id)).map(x=>({id:x.id,open:x.open}));
+const printable=[...actual.elements.values()].filter(x=>x.isDetails);
+for(const [i,element]of printable.entries())element.open=i%2===0;
+const openBefore=printable.map(x=>({id:x.id,open:x.open}));
 actual.elements.get('print-main').onclick();
+assert.ok(actual.window.printSnapshots.at(-1).every(x=>x.open),'Print must expand all report details');
 for(const {id,open}of openBefore)assert.equal(actual.elements.get(id).open,open);
 checks.print_state_restored=true;
 
@@ -116,13 +177,13 @@ assert.ok(!structure.includes('callout danger'));
 assert.ok(!structure.includes('建议：完成所需补测及正式验收后再决定定版放行。'));
 assert.ok(!structure.includes('最新D盘部署／源码验证已完成'));
 assert.equal(data.currentRecords.some(x=>x.id==='N010'),false);
-assert.ok(data.retestRecords.some(x=>x.id==='T052'));
+assert.ok(data.retestRecords.some(x=>x.originalIds.includes('T052')&&x.plan_kind==='auxiliary'));
 checks.five_homepage_highlights=true;checks.requested_box_removed_conclusion_retained=true;
 const isFull=process.argv.includes('--full')||process.argv.includes('--offline');
 const fileExists=async p=>{try{await fs.access(p);return true;}catch{return false;}};
 const safePath=p=>{assert.ok(p&&!path.isAbsolute(p)&&!p.includes('..')&&!p.includes('\\'));const absolute=path.resolve(dest,p);assert.ok(absolute.startsWith(dest+path.sep));return absolute;};
 const norm=p=>String(p).split(String.fromCharCode(92)).join('/').toLowerCase();
-let verifiedInputs=0;
+let verifiedInputs=0,omittedInputs=0;
 for(const record of data.currentRecords)for(const entry of record.curation.inputChecks){
   const copied=data.portableFiles[norm(entry.path)];
   if(copied?.portable_path){
@@ -132,12 +193,13 @@ for(const record of data.currentRecords)for(const entry of record.curation.input
       verifiedInputs++;
     }else if(isFull){
       assert.fail('Missing direct input in full validation: '+copied.portable_path);
-    }
-  }
+    }else omittedInputs++;
+  }else if(isFull)assert.fail('Unmapped direct input in full validation: '+entry.path);
+  else omittedInputs++;
 }
-checks.frozen_direct_input_hashes=verifiedInputs||'SKIPPED_LIGHTWEIGHT';
+checks.frozen_direct_input_hashes={verified_existing:verifiedInputs,decoupled_omitted:omittedInputs};
 checks.no_product_executable_or_test_executed=true;
-let verifiedReceipts=0;
+let verifiedReceipts=0,omittedReceipts=0;
 for(const entry of data.sourceReceipts){
   const full=safePath(entry.portable_path);
   if(await fileExists(full)){
@@ -145,9 +207,9 @@ for(const entry of data.sourceReceipts){
     verifiedReceipts++;
   }else if(isFull){
     assert.fail('Missing source receipt in full validation: '+entry.portable_path);
-  }
+  }else omittedReceipts++;
 }
-checks.source_receipts_verified=verifiedReceipts||'SKIPPED_LIGHTWEIGHT';
+checks.source_receipts_verified={verified_existing:verifiedReceipts,decoupled_omitted:omittedReceipts};
 for(const h of data.highlights){assert.ok(h.metrics.length>=5);for(const source of h.sources)assert.ok(data.portableFiles[norm(source)]?.portable_path,'Highlight missing source '+source);}
 for(const h of data.highlights){const marker='id="'+h.id+'"';const start=structure.indexOf(marker);const end=structure.indexOf('</article>',start);const card=structure.slice(start,end);for(const p of h.sources){const entry=data.portableFiles[norm(p)];assert.ok(card.includes('samples/acceptance/'+entry.portable_path));assert.ok(!card.includes(p),'Original display path leaked: '+p);}}
 checks.highlight_sources_portable=true;checks.highlight_display_paths_match_package=true;
@@ -155,8 +217,10 @@ const unavailable=Object.values(data.portableFiles).filter(x=>x.status==='ORIGIN
 assert.equal(unavailable.length,data.packageAvailability.unavailable_original_sources);
 assert.ok(!script.includes('file:///'));
 checks.missing_sources_explicit_no_absolute_fallback=true;
-// 验证静态与动态渲染产生的全部附件href，拒绝逃出包根或断链。
-const rendered=[structure,...[...actual.elements.values()].map(x=>x.innerHTML)].join('\n');let linkCount=0;
+// 检查全部渲染链接；轻量仓库仅允许冻结基准中已声明的附件缺省。
+const rendered=[structure,...[...actual.elements.values()].map(x=>x.innerHTML)].join('\n');
+const declaredOmissions=new Set([...Object.values(baseline.portableFiles).map(x=>x.portable_path),...baseline.sourceReceipts.map(x=>x.portable_path),...Object.values(baseline.auditFiles),baseline.packageAvailability.missing_source_details].filter(Boolean));
+const existingLinks=new Set(),omittedLinks=new Set();let linkCount=0;
 assert.ok(ids.includes('test-environments'));
 assert.equal(data.testEnvironments.profiles.length,13);
 assert.ok(!/腾讯(?!云)|阿里(?!云|巴巴)/.test(rendered),'Cloud provider shorthand remains in report prose');
@@ -225,19 +289,21 @@ checks.idle_memory_mean_missing_not_estimated=true;
 checks.memory_occupancy_growth_and_run_scopes_separated=true;
 for(const [,raw]of rendered.matchAll(/href="([^"]+)"/g)){
   const href=raw.replaceAll('&amp;','&');
-  if(href.startsWith('#')){assert.ok(ids.includes(href.slice(1)));continue;}
+  if(href.startsWith('#')){assert.ok(actual.elements.has(href.slice(1)),'Missing anchor '+href);continue;}
   assert.ok(!/^[a-z]+:/i.test(href),'Absolute link '+href);
-  const full=safePath(decodeURIComponent(href));
+  const relative=decodeURIComponent(href),full=safePath(relative);
+  linkCount++;
   if(await fileExists(full)){
     assert.ok((await fs.stat(full)).isFile(),'Missing attachment '+href);
-    linkCount++;
+    existingLinks.add(relative);
   }else if(isFull){
     assert.fail('Missing attachment in full validation: '+href);
   }else{
-    linkCount++;
+    assert.ok(declaredOmissions.has(relative),'Undeclared broken link '+href);
+    omittedLinks.add(relative);
   }
 }
-checks.package_local_links=linkCount;
+checks.package_local_links={references:linkCount,verified_existing:existingLinks.size,decoupled_omitted:omittedLinks.size,omitted_paths:[...omittedLinks].sort()};
 // 原清理事实仅核对封存回执/计划一致性，不再执行删除或实时保护盘点。
 const cleanupPath=path.join(dest,'audit/cleanup/cleanup-history-result.json');
 if(await fileExists(cleanupPath)){
@@ -300,14 +366,21 @@ checks.highlight_result_boundaries=true;
 const manifestPath=path.join(dest,'evidence-manifest.json');
 if(await fileExists(manifestPath)){
   const manifest=JSON.parse(await fs.readFile(manifestPath,'utf8'));
-  let verifiedOutputs=0,decoupledOutputs=0;
+  const outputPaths=new Set(manifest.outputs.map(entry=>entry.path));
+  assert.equal(outputPaths.size,manifest.outputs.length,'Duplicate package manifest entries');
+  for(const name of ['index.html','data/report-data.json','data/report-input.json','data/test-plan.json','scripts/consolidate-tests.mjs','scripts/validate.mjs','assets/report.js','assets/report-style.css'])assert.ok(outputPaths.has(name),'Required output missing from manifest: '+name);
+  let verifiedOutputs=0,decoupledOutputs=0,normalizedTextOutputs=0;
   for(const entry of manifest.outputs){
+    assert.ok(!/(^|\/)\.git(?:\/|$)/i.test(entry.path),'Git internals leaked into package manifest: '+entry.path);
     const full=safePath(entry.path);
     if(await fileExists(full)){
       const b=await fs.readFile(full);
-      if(entry.path==='scripts/validate.mjs'){
-        entry.sha256=sha(b);
-        entry.bytes=b.length;
+      if(!isFull&&entry.text_lf_sha256&&sha(b)!==entry.sha256){
+        assert.ok(/^(?:assets\/|data\/|scripts\/)|^(?:index\.html|package-info\.json|validation\.json|\.gitignore)$/.test(entry.path),'Text normalization outside report outputs');
+        const lf=Buffer.from(b.toString('utf8').replace(/\r\n/g,'\n'));
+        assert.equal(sha(lf),entry.text_lf_sha256,'Package LF text hash '+entry.path);
+        assert.equal(lf.length,entry.text_lf_bytes);
+        normalizedTextOutputs++;
       }else{
         assert.equal(sha(b),entry.sha256,'Package hash '+entry.path);
         assert.equal(b.length,entry.bytes);
@@ -320,8 +393,10 @@ if(await fileExists(manifestPath)){
     }
   }
   checks.complete_package_file_hashes=isFull?verifiedOutputs:{verified_existing:verifiedOutputs,decoupled_omitted:decoupledOutputs};
+  checks.report_text_checkout_line_endings=normalizedTextOutputs;
+  checks.manifest_excludes_git_internals=true;
   const validation={status:isFull?'PASS_STATIC_FULL':'PASS_STATIC_LIGHTWEIGHT',checked_at:new Date().toISOString(),validation_mode:isFull?'FULL_OFFLINE':'LIGHTWEIGHT_REPO',method:'Node vm structure/synthetic DOM, relative links, lightweight report data consistency; heavy offline evidence decoupled',checks,counts:{...data.curationSummary,highlights:data.highlights.length},source_availability:data.packageAvailability,visual_rendering:'NOT_RUN',product_build_runtime:'NOT_RUN; documentation revision only',live_product_acceptance:'NOT_RUN; frozen package verification grants no current product PASS',evidence_baseline:data.meta.evidenceBaselineAt};
   await fs.writeFile(path.join(dest,'validation.json'),JSON.stringify(validation,null,2));
-  const vb=await fs.readFile(path.join(dest,'validation.json'));manifest.outputs=manifest.outputs.filter(x=>x.path!=='validation.json');manifest.outputs.push({path:'validation.json',sha256:sha(vb),bytes:vb.length});await fs.writeFile(manifestPath,JSON.stringify(manifest,null,2));
+  const vb=await fs.readFile(path.join(dest,'validation.json'));const vlf=Buffer.from(vb.toString('utf8').replace(/\r\n/g,'\n'));manifest.outputs=manifest.outputs.filter(x=>x.path!=='validation.json');manifest.outputs.push({path:'validation.json',sha256:sha(vb),bytes:vb.length,text_lf_sha256:sha(vlf),text_lf_bytes:vlf.length});await fs.writeFile(manifestPath,JSON.stringify(manifest,null,2));
   console.log(JSON.stringify(validation,null,2));
 }
