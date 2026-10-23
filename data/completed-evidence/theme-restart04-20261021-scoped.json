@@ -1,0 +1,254 @@
+{
+  "schema": "cohavora-theme-restart-safe-projection-v1",
+  "created_utc": "2026-10-21T11:59:57.373567+00:00",
+  "status": "PASS_SCOPED",
+  "run_id": "2420aaaa41814c6db80af48ebf23f04a",
+  "started_utc": "2026-10-21T11:56:28.139463+00:00",
+  "finished_utc": "2026-10-21T11:57:28.053398+00:00",
+  "elapsed_seconds": 59.913935,
+  "cases": [
+    {
+      "mode": "light",
+      "status": "PASS_SCOPED",
+      "steps": [
+        {
+          "step": "Write",
+          "identity": {
+            "run_id": "46da7fe347b34d3d82aa655a317a7c45",
+            "pid": 23944,
+            "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+            "start_ticks": 639281805889473759
+          },
+          "selected_label": "浅色",
+          "stored_theme_before": null,
+          "stored_theme_after": "light",
+          "effective": "light",
+          "sample_colorref": 16777215,
+          "pixel_matches": true,
+          "natural_exit_code": 0,
+          "forced": 0,
+          "cleanup_complete": true,
+          "first_live_utc": "2026-10-21T11:56:31.634464+00:00",
+          "exited_utc": "2026-10-21T11:56:35.831576+00:00"
+        },
+        {
+          "step": "Read",
+          "identity": {
+            "run_id": "0fd403f9f49a4bd2b8353fadef1eb0f3",
+            "pid": 40560,
+            "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+            "start_ticks": 639281805967065383
+          },
+          "selected_label": "浅色",
+          "stored_theme_before": "light",
+          "stored_theme_after": "light",
+          "effective": "light",
+          "sample_colorref": 16777215,
+          "pixel_matches": true,
+          "natural_exit_code": 0,
+          "forced": 0,
+          "cleanup_complete": true,
+          "first_live_utc": "2026-10-21T11:56:39.472563+00:00",
+          "exited_utc": "2026-10-21T11:56:42.270177+00:00"
+        }
+      ]
+    },
+    {
+      "mode": "dark",
+      "status": "PASS_SCOPED",
+      "steps": [
+        {
+          "step": "Write",
+          "identity": {
+            "run_id": "9754ef95976140cdba37b6cff262dec3",
+            "pid": 39860,
+            "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+            "start_ticks": 639281806039543174
+          },
+          "selected_label": "深色",
+          "stored_theme_before": "light",
+          "stored_theme_after": "dark",
+          "effective": "dark",
+          "sample_colorref": 3221540,
+          "pixel_matches": true,
+          "natural_exit_code": 0,
+          "forced": 0,
+          "cleanup_complete": true,
+          "first_live_utc": "2026-10-21T11:56:46.643642+00:00",
+          "exited_utc": "2026-10-21T11:56:50.784785+00:00"
+        },
+        {
+          "step": "Read",
+          "identity": {
+            "run_id": "2c3deca43a1449bfacbc99e505f74937",
+            "pid": 24896,
+            "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+            "start_ticks": 639281806117049257
+          },
+          "selected_label": "深色",
+          "stored_theme_before": "dark",
+          "stored_theme_after": "dark",
+          "effective": "dark",
+          "sample_colorref": 3221540,
+          "pixel_matches": true,
+          "natural_exit_code": 0,
+          "forced": 0,
+          "cleanup_complete": true,
+          "first_live_utc": "2026-10-21T11:56:54.387492+00:00",
+          "exited_utc": "2026-10-21T11:56:57.189313+00:00"
+        }
+      ]
+    },
+    {
+      "mode": "teal",
+      "status": "PASS_SCOPED",
+      "steps": [
+        {
+          "step": "Write",
+          "identity": {
+            "run_id": "8c2fddd2973e423ab02acd824a4cf1f7",
+            "pid": 40028,
+            "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+            "start_ticks": 639281806188000814
+          },
+          "selected_label": "青绿",
+          "stored_theme_before": "dark",
+          "stored_theme_after": "teal",
+          "effective": "teal",
+          "sample_colorref": 16646139,
+          "pixel_matches": true,
+          "natural_exit_code": 0,
+          "forced": 0,
+          "cleanup_complete": true,
+          "first_live_utc": "2026-10-21T11:57:01.520869+00:00",
+          "exited_utc": "2026-10-21T11:57:05.702059+00:00"
+        },
+        {
+          "step": "Read",
+          "identity": {
+            "run_id": "762acb6054954b9ea7af29f8ac9bb3aa",
+            "pid": 39128,
+            "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+            "start_ticks": 639281806266708062
+          },
+          "selected_label": "青绿",
+          "stored_theme_before": "teal",
+          "stored_theme_after": "teal",
+          "effective": "teal",
+          "sample_colorref": 16646139,
+          "pixel_matches": true,
+          "natural_exit_code": 0,
+          "forced": 0,
+          "cleanup_complete": true,
+          "first_live_utc": "2026-10-21T11:57:09.380273+00:00",
+          "exited_utc": "2026-10-21T11:57:12.186263+00:00"
+        }
+      ]
+    },
+    {
+      "mode": "system",
+      "status": "PASS_SCOPED",
+      "steps": [
+        {
+          "step": "Write",
+          "identity": {
+            "run_id": "32650017aa874a169cce88505e20d2c2",
+            "pid": 9324,
+            "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+            "start_ticks": 639281806337678368
+          },
+          "selected_label": "系统",
+          "stored_theme_before": "teal",
+          "stored_theme_after": "system",
+          "effective": "dark",
+          "sample_colorref": 3221540,
+          "pixel_matches": true,
+          "natural_exit_code": 0,
+          "forced": 0,
+          "cleanup_complete": true,
+          "first_live_utc": "2026-10-21T11:57:16.482489+00:00",
+          "exited_utc": "2026-10-21T11:57:20.702598+00:00"
+        },
+        {
+          "step": "Read",
+          "identity": {
+            "run_id": "3a643f40edd34dd8aab50a0c460ecd79",
+            "pid": 40880,
+            "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+            "start_ticks": 639281806417099776
+          },
+          "selected_label": "系统",
+          "stored_theme_before": "system",
+          "stored_theme_after": "system",
+          "effective": "dark",
+          "sample_colorref": 3221540,
+          "pixel_matches": true,
+          "natural_exit_code": 0,
+          "forced": 0,
+          "cleanup_complete": true,
+          "first_live_utc": "2026-10-21T11:57:24.434187+00:00",
+          "exited_utc": "2026-10-21T11:57:27.229865+00:00"
+        }
+      ]
+    }
+  ],
+  "unique_process_identities": 8,
+  "bound_input_files": 16,
+  "strict_input": {
+    "policy": "strict",
+    "tick_unchanged": true,
+    "outer_samples": 1190,
+    "maximum_sample_gap_seconds": 0.0743625,
+    "observed_events": 0,
+    "previous_failed_attempt_input_source": "UNKNOWN",
+    "continuous_hook_coverage": "UNKNOWN"
+  },
+  "windows_preference": 0,
+  "windows_preference_unchanged": true,
+  "natural_exits": 8,
+  "forced": 0,
+  "cleanup_complete": true,
+  "scope": "Four themes: settings selection, persisted value and exact settings-surface pixel restored in a new product process.",
+  "binary_source_provenance": "NOT_VERIFIED; REUSED_UI15_FROZEN_BINARY",
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "not_covered": [
+    "First window painted before settings open",
+    "Complete controls or meeting-stage visual matrix",
+    "Windows system light/dark roundtrip",
+    "Invalid configuration runtime",
+    "Media continuity",
+    "Update manifest or asynchronous settings",
+    "Complete P21"
+  ],
+  "completed_date": "2026-10-21",
+  "plan_groups": [
+    "P21"
+  ],
+  "full_p21_credit": 0,
+  "first_window_before_settings": "NOT_RUN",
+  "system_light_dark_roundtrip": "NOT_RUN",
+  "media_continuity": "NOT_RUN",
+  "stage_visual_matrix": "NOT_RUN",
+  "attempts_preserved": [
+    {
+      "attempt": 1,
+      "status": "INCONCLUSIVE",
+      "reason": "Driver hash helper unavailable before product start; fixed using .NET SHA256"
+    },
+    {
+      "attempt": 2,
+      "status": "PARTIAL",
+      "reason": "Strict input changed during light Read; no complete mode"
+    },
+    {
+      "attempt": 3,
+      "status": "PARTIAL",
+      "reason": "Strict input changed during light Read; no complete mode"
+    }
+  ],
+  "observation_scope": "An independent input-metadata observer accompanied run04; strict matrix criteria remained unchanged. No input occurred, so prior input origin remains UNKNOWN.",
+  "product_source_changed": false,
+  "product_build": "REUSED_UI15_FROZEN_BINARY; no product code change"
+}

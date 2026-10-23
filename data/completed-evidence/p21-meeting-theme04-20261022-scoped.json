@@ -1,0 +1,1202 @@
+{
+  "schema": "cohavora-p21-meeting-theme-scoped-v1",
+  "status": "PASS_SCOPED",
+  "created_utc": "2026-10-21T16:10:10.758427+00:00",
+  "completed_date": "2026-10-22",
+  "completed_timezone": "Asia/Shanghai",
+  "started_utc": "2026-10-21T16:03:09.742473+00:00",
+  "finished_utc": "2026-10-21T16:04:01.288978+00:00",
+  "scope": "REAL_SETTINGS_CONTROLS_DURING_SYNTHETIC_MEDIA",
+  "plan_groups": [
+    "P21"
+  ],
+  "receiver_identity": {
+    "schema": "cohavora-p21-meeting-identity-v1",
+    "pid": 2416,
+    "start_ticks": 639281953908434322,
+    "start_time_utc": "2026-10-21T16:03:10.8434322Z",
+    "executable_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.exe",
+    "executable_sha256": "c128045e7995a0a1f2a02e1b11ae440b480437ec84dfce204fff3003e45935ed",
+    "session_id": 1,
+    "baseline_input_tick": 89441828
+  },
+  "cases": [
+    {
+      "theme": "light",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "浅色",
+        "selected_value": "浅色",
+        "stored_theme": "light",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_light",
+          "utc": "2026-10-21T16:03:22.3483112Z",
+          "product_pid": 2416,
+          "mode": "light",
+          "effective": "light",
+          "native_hwnd": 7471294,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 16777215,
+          "client_colorref": 4294967295,
+          "sample_colorref": 16777215,
+          "sample_valid": true,
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "stage": {
+        "status": "PASS_PIXEL",
+        "observation": "OBSERVED",
+        "reason": null,
+        "theme": "light",
+        "effective": "light",
+        "theme_revision": 2,
+        "observation_sequence": 21,
+        "root_hwnd": "21171792",
+        "hwnd": "16125038",
+        "physical_rect": {
+          "height": 582,
+          "width": 1120,
+          "x": 721,
+          "y": 440
+        },
+        "sample_point": {
+          "x": 1280,
+          "y": 510
+        },
+        "expected_colorref": 15986153,
+        "expected_rgb": [
+          233,
+          237,
+          243
+        ],
+        "client_colorref": 15986153,
+        "sample_colorref": 15986153,
+        "rgb": [
+          233,
+          237,
+          243
+        ],
+        "sample_valid": true,
+        "pixel_matches": true,
+        "measurement": "owned_foreground_surface_composited_pixel",
+        "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+      },
+      "windows": [
+        {
+          "label": "light-before",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 32,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95646090598700,
+            "frames": 33,
+            "last_callback_steady_ns": 95648092282300,
+            "maximum_callback_gap_ns": 69359600,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95648136479400,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 210,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95646043793600,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95648133889000,
+            "maximum_callback_gap_ns": 10643700,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95648136482600,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 0,
+            "silent_windows": 0,
+            "tone_windows": 21,
+            "total_samples": 100800,
+            "total_windows": 21,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 100800,
+              "silent_windows": 0,
+              "tone_windows": 21,
+              "windows": 21
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 11.713311424830911,
+            "unique_render_submits": 84
+          }
+        },
+        {
+          "label": "light-during",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 64,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95648408217100,
+            "frames": 65,
+            "last_callback_steady_ns": 95652437412900,
+            "maximum_callback_gap_ns": 68173000,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95652478945200,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 413,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95648353849800,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95652473857800,
+            "maximum_callback_gap_ns": 10782100,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95652478947500,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 1440,
+            "silent_windows": 0,
+            "tone_windows": 41,
+            "total_samples": 198240,
+            "total_windows": 41,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 198240,
+              "silent_windows": 0,
+              "tone_windows": 41,
+              "windows": 41
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 12.963330865712988,
+            "unique_render_submits": 147
+          }
+        },
+        {
+          "label": "light-after",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 32,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95652751829200,
+            "frames": 33,
+            "last_callback_steady_ns": 95654764855300,
+            "maximum_callback_gap_ns": 80759200,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95654825779100,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 213,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95652703890800,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95654823850400,
+            "maximum_callback_gap_ns": 10585300,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95654825779900,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 1440,
+            "silent_windows": 0,
+            "tone_windows": 21,
+            "total_samples": 102240,
+            "total_windows": 21,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 102240,
+              "silent_windows": 0,
+              "tone_windows": 21,
+              "windows": 21
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 13.447981861362065,
+            "unique_render_submits": 180
+          }
+        }
+      ],
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-meeting-runtime04/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "light"
+      }
+    },
+    {
+      "theme": "dark",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "深色",
+        "selected_value": "深色",
+        "stored_theme": "dark",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_dark",
+          "utc": "2026-10-21T16:03:32.4292420Z",
+          "product_pid": 2416,
+          "mode": "dark",
+          "effective": "dark",
+          "native_hwnd": 43845912,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 3221540,
+          "client_colorref": 4294967295,
+          "sample_colorref": 3221540,
+          "sample_valid": true,
+          "rgb": [
+            36,
+            40,
+            49
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "stage": {
+        "status": "PASS_PIXEL",
+        "observation": "OBSERVED",
+        "reason": null,
+        "theme": "dark",
+        "effective": "dark",
+        "theme_revision": 3,
+        "observation_sequence": 29,
+        "root_hwnd": "21171792",
+        "hwnd": "16125038",
+        "physical_rect": {
+          "height": 582,
+          "width": 1120,
+          "x": 721,
+          "y": 440
+        },
+        "sample_point": {
+          "x": 1280,
+          "y": 510
+        },
+        "expected_colorref": 2103314,
+        "expected_rgb": [
+          18,
+          24,
+          32
+        ],
+        "client_colorref": 2103314,
+        "sample_colorref": 2103314,
+        "rgb": [
+          18,
+          24,
+          32
+        ],
+        "sample_valid": true,
+        "pixel_matches": true,
+        "measurement": "owned_foreground_surface_composited_pixel",
+        "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+      },
+      "windows": [
+        {
+          "label": "dark-before",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 33,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95656198120600,
+            "frames": 34,
+            "last_callback_steady_ns": 95658254401900,
+            "maximum_callback_gap_ns": 66323400,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95658262534200,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 209,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95656173863600,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95658253937900,
+            "maximum_callback_gap_ns": 10591200,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95658262536700,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 4320,
+            "silent_windows": 0,
+            "tone_windows": 20,
+            "total_samples": 100320,
+            "total_windows": 20,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 100320,
+              "silent_windows": 0,
+              "tone_windows": 20,
+              "windows": 20
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 14.020383616506429,
+            "unique_render_submits": 241
+          }
+        },
+        {
+          "label": "dark-during",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 66,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95658501803600,
+            "frames": 67,
+            "last_callback_steady_ns": 95662617201400,
+            "maximum_callback_gap_ns": 65783800,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95662636773200,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 416,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95658483784200,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95662633831500,
+            "maximum_callback_gap_ns": 10561300,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95662636775700,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 2880,
+            "silent_windows": 0,
+            "tone_windows": 41,
+            "total_samples": 199680,
+            "total_windows": 41,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 199680,
+              "silent_windows": 0,
+              "tone_windows": 41,
+              "windows": 41
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 14.246654460963393,
+            "unique_render_submits": 303
+          }
+        },
+        {
+          "label": "dark-after",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 33,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95662864575300,
+            "frames": 34,
+            "last_callback_steady_ns": 95664921426800,
+            "maximum_callback_gap_ns": 80444500,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95664949136200,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 209,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95662863776900,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95664943861100,
+            "maximum_callback_gap_ns": 10563000,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95664949139100,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 4320,
+            "silent_windows": 0,
+            "tone_windows": 20,
+            "total_samples": 100320,
+            "total_windows": 20,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 100320,
+              "silent_windows": 0,
+              "tone_windows": 20,
+              "windows": 20
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 14.430755102887453,
+            "unique_render_submits": 342
+          }
+        }
+      ],
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-meeting-runtime04/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "dark"
+      }
+    },
+    {
+      "theme": "teal",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "青绿",
+        "selected_value": "青绿",
+        "stored_theme": "teal",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_teal",
+          "utc": "2026-10-21T16:03:42.5688118Z",
+          "product_pid": 2416,
+          "mode": "teal",
+          "effective": "teal",
+          "native_hwnd": 43976984,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 16646139,
+          "client_colorref": 4294967295,
+          "sample_colorref": 16646139,
+          "sample_valid": true,
+          "rgb": [
+            251,
+            255,
+            253
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "stage": {
+        "status": "PASS_PIXEL",
+        "observation": "OBSERVED",
+        "reason": null,
+        "theme": "teal",
+        "effective": "teal",
+        "theme_revision": 4,
+        "observation_sequence": 37,
+        "root_hwnd": "21171792",
+        "hwnd": "16125038",
+        "physical_rect": {
+          "height": 582,
+          "width": 1120,
+          "x": 721,
+          "y": 440
+        },
+        "sample_point": {
+          "x": 1280,
+          "y": 510
+        },
+        "expected_colorref": 14739926,
+        "expected_rgb": [
+          214,
+          233,
+          224
+        ],
+        "client_colorref": 14739926,
+        "sample_colorref": 14739926,
+        "rgb": [
+          214,
+          233,
+          224
+        ],
+        "sample_valid": true,
+        "pixel_matches": true,
+        "measurement": "owned_foreground_surface_composited_pixel",
+        "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+      },
+      "windows": [
+        {
+          "label": "teal-before",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 33,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95666294752900,
+            "frames": 34,
+            "last_callback_steady_ns": 95668358588200,
+            "maximum_callback_gap_ns": 67019900,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95668386342300,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 210,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95666293795500,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95668383908500,
+            "maximum_callback_gap_ns": 10564400,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95668386347800,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 0,
+            "silent_windows": 0,
+            "tone_windows": 21,
+            "total_samples": 100800,
+            "total_windows": 21,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 100800,
+              "silent_windows": 0,
+              "tone_windows": 21,
+              "windows": 21
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 14.64424445169675,
+            "unique_render_submits": 400
+          }
+        },
+        {
+          "label": "teal-during",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 65,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95668668281000,
+            "frames": 66,
+            "last_callback_steady_ns": 95672727761100,
+            "maximum_callback_gap_ns": 70877400,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95672729395300,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 412,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95668613795100,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95672723833700,
+            "maximum_callback_gap_ns": 10592000,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95672729397600,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 960,
+            "silent_windows": 0,
+            "tone_windows": 41,
+            "total_samples": 197760,
+            "total_windows": 41,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 197760,
+              "silent_windows": 0,
+              "tone_windows": 41,
+              "windows": 41
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 14.738834329891143,
+            "unique_render_submits": 462
+          }
+        },
+        {
+          "label": "teal-after",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 33,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95672976815800,
+            "frames": 34,
+            "last_callback_steady_ns": 95675039925100,
+            "maximum_callback_gap_ns": 64926200,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95675074018500,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 213,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95672953812400,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95675073833900,
+            "maximum_callback_gap_ns": 10561000,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95675074019500,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 1440,
+            "silent_windows": 0,
+            "tone_windows": 21,
+            "total_samples": 102240,
+            "total_windows": 21,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 102240,
+              "silent_windows": 0,
+              "tone_windows": 21,
+              "windows": 21
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 14.824325085613195,
+            "unique_render_submits": 505
+          }
+        }
+      ],
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-meeting-runtime04/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "teal"
+      }
+    },
+    {
+      "theme": "system",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "系统",
+        "selected_value": "系统",
+        "stored_theme": "system",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_system",
+          "utc": "2026-10-21T16:03:52.6858045Z",
+          "product_pid": 2416,
+          "mode": "system",
+          "effective": "dark",
+          "native_hwnd": 44108056,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 3221540,
+          "client_colorref": 4294967295,
+          "sample_colorref": 3221540,
+          "sample_valid": true,
+          "rgb": [
+            36,
+            40,
+            49
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "stage": {
+        "status": "PASS_PIXEL",
+        "observation": "OBSERVED",
+        "reason": null,
+        "theme": "system",
+        "effective": "dark",
+        "theme_revision": 5,
+        "observation_sequence": 45,
+        "root_hwnd": "21171792",
+        "hwnd": "16125038",
+        "physical_rect": {
+          "height": 582,
+          "width": 1120,
+          "x": 721,
+          "y": 440
+        },
+        "sample_point": {
+          "x": 1280,
+          "y": 510
+        },
+        "expected_colorref": 2103314,
+        "expected_rgb": [
+          18,
+          24,
+          32
+        ],
+        "client_colorref": 2103314,
+        "sample_colorref": 2103314,
+        "rgb": [
+          18,
+          24,
+          32
+        ],
+        "sample_valid": true,
+        "pixel_matches": true,
+        "measurement": "owned_foreground_surface_composited_pixel",
+        "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+      },
+      "windows": [
+        {
+          "label": "system-before",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 33,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95676419427000,
+            "frames": 34,
+            "last_callback_steady_ns": 95678476610600,
+            "maximum_callback_gap_ns": 67785600,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95678514170200,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 213,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95676393834100,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95678513842300,
+            "maximum_callback_gap_ns": 10560200,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95678514177500,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 1440,
+            "silent_windows": 0,
+            "tone_windows": 21,
+            "total_samples": 102240,
+            "total_windows": 21,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 102240,
+              "silent_windows": 0,
+              "tone_windows": 21,
+              "windows": 21
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 14.94167280616515,
+            "unique_render_submits": 558
+          }
+        },
+        {
+          "label": "system-during",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 66,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95678728786000,
+            "frames": 67,
+            "last_callback_steady_ns": 95682849883300,
+            "maximum_callback_gap_ns": 76045200,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95682856820200,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 413,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95678733835700,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95682853791700,
+            "maximum_callback_gap_ns": 10566000,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95682856822500,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 1440,
+            "silent_windows": 0,
+            "tone_windows": 41,
+            "total_samples": 198240,
+            "total_windows": 41,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 198240,
+              "silent_windows": 0,
+              "tone_windows": 41,
+              "windows": 41
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 14.96646850981765,
+            "unique_render_submits": 620
+          }
+        },
+        {
+          "label": "system-after",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 32,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 95683161504500,
+            "frames": 33,
+            "last_callback_steady_ns": 95685159625600,
+            "maximum_callback_gap_ns": 68387500,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95685197308600,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 209,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 95683113858400,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 95685193868100,
+            "maximum_callback_gap_ns": 10586000,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 95685197311800,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 4320,
+            "silent_windows": 0,
+            "tone_windows": 20,
+            "total_samples": 100320,
+            "total_windows": 20,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 100320,
+              "silent_windows": 0,
+              "tone_windows": 20,
+              "windows": 20
+            },
+            "window_samples": 4800
+          },
+          "render_backend": "dx11",
+          "scene_presented": true,
+          "cumulative_render": {
+            "render_maximum_interval_ms": 624,
+            "render_measurement_point": "dx11_module_present",
+            "render_stall_count": 2,
+            "render_submit_fps": 15.028791800094751,
+            "unique_render_submits": 662
+          }
+        }
+      ],
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-meeting-runtime04/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "system"
+      }
+    }
+  ],
+  "summary": {
+    "observation_windows": 12,
+    "video_frames": 534,
+    "video_content_changes": 522,
+    "audio_total_samples": 1603200,
+    "audio_complete_windows": 329,
+    "audio_tone_windows": 329,
+    "audio_partial_samples": 24000,
+    "maximum_video_callback_gap_ns": 80759200,
+    "maximum_audio_callback_gap_ns": 10782100,
+    "continuity_threshold": "NO_NEW_THRESHOLD; RAW_INTERVALS_RETAINED"
+  },
+  "strict_input": {
+    "policy": "strict",
+    "baseline": {
+      "session_id": 1,
+      "last_input_tick": 89441828,
+      "monotonic_ns": 95637437000000
+    },
+    "final": {
+      "session_id": 1,
+      "last_input_tick": 89441828,
+      "monotonic_ns": 95687796000000
+    },
+    "parent_samples": 716,
+    "continuous_hook_coverage": "UNKNOWN",
+    "input_origin": "UNKNOWN"
+  },
+  "bound_input_files": 1319,
+  "inputs_unchanged": true,
+  "cleanup": {
+    "status": "PASS",
+    "native_retirement": {
+      "receiver": {
+        "pid": 2416,
+        "exit_code": 0,
+        "retired": true,
+        "retirement": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792598638939
+        },
+        "status": "PASS"
+      },
+      "publisher": {
+        "pid": 38608,
+        "exit_code": 0,
+        "retired": true,
+        "retirement": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792598639128
+        },
+        "status": "PASS"
+      }
+    },
+    "forced_roles": [],
+    "failures": []
+  },
+  "cleanup_complete": true,
+  "shared_service": {
+    "configuration_mutated": false,
+    "service_unchanged": true,
+    "room_empty": true,
+    "before": {
+      "config_sha256": "adeea7210d4a05f07909c0c10fbb6460f24f129484963acebf6f58972208c66e",
+      "room": {
+        "empty_timeout": 72000,
+        "departure_timeout": 86400
+      },
+      "video": {},
+      "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+      "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+      "health_status": 200,
+      "participants_remaining": 0,
+      "publications_remaining": 0
+    },
+    "after": {
+      "config_sha256": "adeea7210d4a05f07909c0c10fbb6460f24f129484963acebf6f58972208c66e",
+      "room": {
+        "empty_timeout": 72000,
+        "departure_timeout": 86400
+      },
+      "video": {},
+      "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+      "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+      "health_status": 200,
+      "participants_remaining": 0,
+      "publications_remaining": 0
+    }
+  },
+  "source_provenance": "INCREMENTAL_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_NOT_PROVEN",
+  "physical_audio_output": "NOT_MEASURED",
+  "complete_stage_visual_matrix": "NOT_RUN",
+  "meeting_window_settings_button": "NOT_PRESENT",
+  "not_covered": [
+    "Physical audio output or acoustic delay",
+    "Per-frame Present or all video content pixel preservation",
+    "Complete stage, controls, DPI, multi-monitor, CPU/OpenGL or accessibility matrix",
+    "Audio partial tails do not form complete classified windows",
+    "Any new numerical continuity threshold",
+    "Transitive clean-build provenance, final regression or complete P21"
+  ],
+  "full_plan_gate_credit": 0,
+  "full_p21_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "provenance_file": "p21-meeting-theme04-20261022-provenance.json",
+  "plan_note_zh": "新增完成p21-meeting-runtime04（2026-10-22北京时间）会中主题限定子门PASS_SCOPED：同一当前增量fixture通过真实SettingsDialog可见下拉及SelectionItem.Select切换浅色／深色／青绿／系统四模式，选择标签、隔离INI和设置页原精确像素匹配；关闭对话框后，实际DX11舞台安全留白像素依次为RGB(233,237,243)／(18,24,32)／(214,233,224)／(18,24,32)，系统跟随原Windows深色。四主题各切换前／操作期间／切换后共12个解码窗口均有变化视频和预期完整PCM窗口：共534帧、522次内容指纹变化、329/329个完整440Hz窗口；静音／other／invalid均0，另24000个尾窗样本未作完整窗口分类。原始最大视频／音频callback间隔分别80.7592／10.7821ms，未新增数值连续性门限。原生Present累计最大间隔624ms、stall计数2在首个before观察已存在，12次快照未增；保留原因UNKNOWN，不声称零stall。1319项绑定、原始窗口及进程身份独立回读；strict输入不变，两端自然退出0、forced0、清理完成，原共享服务指纹未变且房间为空。会议窗本身无设置按钮；fixture命令仅打开真实产品设置对话框。原生解码PCM不证明扬声器输出，scene_presented不证明逐帧Present；当前源码增量工件的传递性clean-build来源未证明。来源data/completed-evidence/p21-meeting-theme04-20261022-scoped.json，追溯data/completed-evidence/p21-meeting-theme04-20261022-provenance.json。"
+}

@@ -1,0 +1,8 @@
+{
+  "binary_sha256_after": "2a6e86f589ac3bfd927d89d33c0c0b2c72ca46ec3c6f273608336655f438ba84",
+  "final_cleanup": "ALREADY_EXITED",
+  "cleanup": "ALREADY_EXITED",
+  "status": "EXECUTED",
+  "timed_out": false,
+  "exit_code": null
+}

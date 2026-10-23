@@ -1,0 +1,153 @@
+{
+  "created_utc": "2026-10-21T11:32:23.274862+00:00",
+  "status": "PASS_SCOPED",
+  "cases": [
+    {
+      "mode": "off",
+      "run_id": "cpp-audio-d7664551a6a54276aff1dd1a92d7f123",
+      "status": "PASS_SCOPED",
+      "started_utc": "2026-10-21T11:28:34.909840+00:00",
+      "finished_utc": "2026-10-21T11:29:39.184866+00:00",
+      "measurement_elapsed_ms": 60010,
+      "content": {
+        "native": {
+          "samples": 2880960,
+          "windows": 600,
+          "tone_windows": 599,
+          "silent_windows": 0,
+          "other_windows": 1,
+          "invalid_frames": 0
+        },
+        "official": {
+          "samples": 2907360,
+          "windows": 605,
+          "tone_windows": 603,
+          "silent_windows": 1,
+          "other_windows": 1,
+          "invalid_frames": 0,
+          "relayed_samples": 2907360
+        }
+      },
+      "conservative_inside_window_bounds": {
+        "native": {
+          "tone_window_lower_bound": 567,
+          "first_snapshot_ms": 1792582119791,
+          "last_snapshot_ms": 1792582176543,
+          "method": "same-host system-clock correlation; counter delta minus one boundary window"
+        },
+        "official": {
+          "tone_window_lower_bound": 579,
+          "first_snapshot_ms": 1792582119837,
+          "last_snapshot_ms": 1792582177844,
+          "method": "same-host system-clock correlation; counter delta minus one boundary window"
+        }
+      },
+      "native_audio_crypto_output": {},
+      "exit_codes": [
+        0,
+        0
+      ],
+      "forced_processes": 0,
+      "cleanup_complete": true,
+      "loaded_module_binding": "MATCHED_ORIGINAL_PATH_AND_SHA256"
+    },
+    {
+      "mode": "on",
+      "run_id": "cpp-audio-62b5e8ce8aa142bb8241a9df193a3e97",
+      "status": "PASS_SCOPED",
+      "started_utc": "2026-10-21T11:29:39.192051+00:00",
+      "finished_utc": "2026-10-21T11:30:43.001565+00:00",
+      "measurement_elapsed_ms": 60004,
+      "content": {
+        "native": {
+          "samples": 2880480,
+          "windows": 600,
+          "tone_windows": 570,
+          "silent_windows": 0,
+          "other_windows": 30,
+          "invalid_frames": 0
+        },
+        "official": {
+          "samples": 2904000,
+          "windows": 605,
+          "tone_windows": 603,
+          "silent_windows": 2,
+          "other_windows": 0,
+          "invalid_frames": 0,
+          "relayed_samples": 2904000
+        }
+      },
+      "conservative_inside_window_bounds": {
+        "native": {
+          "tone_window_lower_bound": 540,
+          "first_snapshot_ms": 1792582183918,
+          "last_snapshot_ms": 1792582240253,
+          "method": "same-host system-clock correlation; counter delta minus one boundary window"
+        },
+        "official": {
+          "tone_window_lower_bound": 579,
+          "first_snapshot_ms": 1792582183893,
+          "last_snapshot_ms": 1792582241887,
+          "method": "same-host system-clock correlation; counter delta minus one boundary window"
+        }
+      },
+      "native_audio_crypto_output": {
+        "rx": 2755,
+        "tx": 2800
+      },
+      "exit_codes": [
+        0,
+        0
+      ],
+      "forced_processes": 0,
+      "cleanup_complete": true,
+      "loaded_module_binding": "MATCHED_ORIGINAL_PATH_AND_SHA256"
+    }
+  ],
+  "bound_input_files": 86,
+  "full_plan_gate_credit": 0,
+  "plan_groups": [
+    "P05",
+    "P06"
+  ],
+  "audio_continuity": "NOT_EVALUATED",
+  "acoustic_latency": "NOT_RUN",
+  "sdk_in_process_retirement": "NOT_VERIFIED",
+  "scope": "Frozen 60-second returned-audio content-presence subgate; all silent/other windows preserved.",
+  "caveats": [
+    "Official forward counter includes startup/tail; interior cumulative counter bounds independently exceed 500.",
+    "Interior correlation uses the same Windows host system clock; it is not physical or cross-host timing.",
+    "Encrypted return retains 30 other-content windows; no continuity, subjective quality, or full E2EE credit."
+  ],
+  "schema": "cohavora-official-audio-content-safe-projection-v1",
+  "completed_date": "2026-10-21",
+  "full_p05_credit": 0,
+  "full_p06_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "definition": {
+    "name": "tone440-pcm48k-mono-v1",
+    "sample_rate": 48000,
+    "channels": 1,
+    "window_samples": 4800,
+    "minimum_rms": 100,
+    "minimum_tone_energy_fraction": 0.85,
+    "returned_observation_seconds": 60,
+    "minimum_tone_windows_each_direction": 500,
+    "all_windows_retained": true,
+    "invalid_frames_required": 0
+  },
+  "fixture": "Native explicit bindings + unmodified fixed official C++ SDK; two processes on one Windows host",
+  "preparation_failures_preserved": [
+    "content01: DLL loader exit 0xC0000135; missing module UNKNOWN",
+    "content02: relative child evidence path; exit2; Native not started",
+    "content03: SDK not initialized before AudioSource; exit2; Native not started"
+  ],
+  "sdk_or_product_source_changed": false,
+  "not_covered": [
+    "Complete P05/P06 or product E2EE",
+    "Audio continuity, subjective quality, physical mouth-to-ear delay",
+    "Cross-host/platform and long stability",
+    "SDK in-process callback retirement, key rotation or reconnect in this audio subgate"
+  ]
+}

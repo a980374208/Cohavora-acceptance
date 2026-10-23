@@ -1,0 +1,337 @@
+{
+  "schema": 3,
+  "title": "B14完整100周期：user_pass（用户暂定通过），原始Private Bytes增长FAIL保留",
+  "utc": "2026-10-23T02:47:02.7768477Z",
+  "latest_completed_utc": "2026-10-23T02:46:59.226524+00:00",
+  "scope": "本机同一冻结Formal的完整8小时/100周期；当前用户处置user_pass，原机器FAIL保留，不授无例外Formal或发布通过",
+  "root": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/formal-8h100",
+  "completed_source": "data/completed-evidence/b14-formal-20261023-completed-scoped.json",
+  "completed_source_sha256": "98efe6c0c638d95144092817862e6d51496d43ec00aab8cdb3db963b49e694f8",
+  "qualification": {
+    "status": "READY",
+    "completed_pilots": [
+      {
+        "pilot": "pilot-01",
+        "run_id": "c54e28392851480a9a25f0227656a802",
+        "verdict": "PILOT_PASS",
+        "check_counts": {
+          "PASS": 78
+        },
+        "cycles_pass": 2,
+        "duration_seconds": 505.867958,
+        "reviewed_utc": "2026-10-22T17:48:11.058102+00:00"
+      },
+      {
+        "pilot": "pilot-02",
+        "run_id": "1619173098a24cd2a3a22b437a9bf34c",
+        "verdict": "PILOT_PASS",
+        "check_counts": {
+          "PASS": 78
+        },
+        "cycles_pass": 2,
+        "duration_seconds": 504.21357,
+        "reviewed_utc": "2026-10-22T17:57:34.041789+00:00"
+      },
+      {
+        "pilot": "pilot-03",
+        "run_id": "227d281957284dc3bc87682c34bd423e",
+        "verdict": "PILOT_PASS",
+        "check_counts": {
+          "PASS": 78
+        },
+        "cycles_pass": 2,
+        "duration_seconds": 504.962256,
+        "reviewed_utc": "2026-10-22T18:06:55.080788+00:00"
+      }
+    ],
+    "source": "data/completed-evidence/p19-qualification-20261023-completed-scoped.json",
+    "sha256": "1e25d0e5605887c58dcd762c0b435f601c77098be43d40b8bed379ae5086a26b",
+    "scope": "资格时独立READY快照；不因Formal失败改写"
+  },
+  "formal": {
+    "status": "FAIL",
+    "run_id": "5653c962b41646c4aa1e4600fefa8e97",
+    "raw_verdict": "FAIL",
+    "raw_runner": {
+      "verdict": "FAIL",
+      "run_id": "5653c962b41646c4aa1e4600fefa8e97",
+      "cleanup_errors": [],
+      "stage_timings_complete": true,
+      "exit_code": 1
+    },
+    "raw_cycle_counts": {
+      "PASS": 100
+    },
+    "effective_cycle_counts": {
+      "PASS": 100
+    },
+    "cycles_completed": 100,
+    "cycle_checks": {
+      "PASS": 3200,
+      "total": 3200
+    },
+    "product_live_seconds": 28820.990210999997,
+    "exception": null,
+    "resource_growth": {
+      "private_bytes": {
+        "growth": 100526080,
+        "limit": 67108864,
+        "passed": false
+      },
+      "wddm_bytes": {
+        "growth": 0,
+        "limit": 33554432,
+        "passed": true
+      },
+      "handles": {
+        "growth": 2.5,
+        "limit": 64,
+        "passed": true
+      },
+      "threads": {
+        "growth": 0,
+        "limit": 8,
+        "passed": true
+      }
+    },
+    "final_checks": {
+      "audio_complete": true,
+      "remote_complete": true,
+      "isolated_load_lifecycle_complete": true,
+      "process_released": true,
+      "diagnostic_watcher_complete": true,
+      "diagnostic_privacy_schema": true,
+      "collector_scheduler_policy_complete": true,
+      "collector_local_route_complete": true,
+      "collectors_exited_normally": true,
+      "diagnostic_final_matches_continuous": true,
+      "product_lifetime_floor": true
+    },
+    "deferred": [
+      "wgc_handle_ownership",
+      "slow_disk",
+      "power_loss",
+      "real_crash_recovery",
+      "release_symbol_review",
+      "audio_pixel_quality",
+      "physical_multimonitor_coordinates"
+    ],
+    "remaining_failures": [
+      {
+        "check": "resource_growth.private_bytes",
+        "growth_bytes": 100526080,
+        "growth_mib": 95.869140625,
+        "limit_bytes": 67108864,
+        "limit_mib": 64,
+        "root_cause": "UNKNOWN"
+      }
+    ],
+    "network_attribution": {
+      "status": "NO_EXCEEDANCE",
+      "exception_applied": false
+    },
+    "next_environment_decision": "原Private增长门FAIL；根因UNKNOWN，修复/重测待后续授权，目标仍active。"
+  },
+  "owner_execution": {
+    "schema": "p19_readmission_execution_v2",
+    "utc": "2026-10-23T02:47:02.7768477Z",
+    "state": "FORMAL",
+    "exit_code": 1,
+    "failure": {
+      "stage": "FORMAL",
+      "message": "P19_FORMAL_FAILED_EXIT_1",
+      "type": "System.Management.Automation.RuntimeException"
+    },
+    "software": "IMPORT_VALIDATION",
+    "software_status": "COMPLETE",
+    "import_validation": {
+      "path": "F:\\CohavoraEvidence\\p19-direct-readmission-20261023-02\\admission\\software\\current-validation.json",
+      "sha256": "2f678366f63ac273b90dd2583af0302814ae7db5f89e2c38fbba0ad787531397"
+    },
+    "formal_requested": true,
+    "formal": "FAILED",
+    "report_checkpoint": {
+      "checkpoint": {
+        "path": "F:\\CohavoraEvidence\\b14-completion-20261023-01\\report-checkpoint.json",
+        "sha256": "7eee21f0aa4ead0888af927a0392d366bb45df8d971ec9c3a684475bfb24e2c8"
+      },
+      "static_review": {
+        "path": "F:\\CohavoraEvidence\\b14-completion-20261023-01\\report-static-review.json",
+        "sha256": "630570ab57f0bd822ca9a94775b559d67b409b44d22df5b413bcae5445d831e1"
+      },
+      "reports": [
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\data\\completed-evidence\\p19-qualification-20261023-completed-scoped.json",
+          "sha256": "1e25d0e5605887c58dcd762c0b435f601c77098be43d40b8bed379ae5086a26b"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\data\\report-catalog.json",
+          "sha256": "69695fa1a899e7df1e8c060ed254eeee94d2236563a5b3129da7ff776d4e89ee"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\data\\report-data.json",
+          "sha256": "078b8fe45bc8997d525e38d37b468bf394c983ec152dc99429b8cef8eee3f17f"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\data\\source-map.json",
+          "sha256": "fe6e71dbd2c3cdc539528aa5a30aaf686490513fb70db87a4322b8148e8577c8"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\data\\test-plan.json",
+          "sha256": "92401d93f573cfcb6880cd0a69f6967897da8a40f3dec4ee7864b85fa575f9a2"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\evidence-manifest.json",
+          "sha256": "1bb887e8b47338c1298fe8e003788436c823f8ffbe1e61e92dc2a34f62702fed"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\index.html",
+          "sha256": "51d9c9c2c6a628caa434b9a7de2e4208207b1341a01d79571c3c5e59c9821b33"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\package-info.json",
+          "sha256": "c088ec9b26d8061dd7b867370b60150d6d43e5f8e63ea9d8e8f2d797a04f2125"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\reports\\b14\\b14-full-standard-20261020-01.html",
+          "sha256": "8a3912fd785515d8393fc642e9e3849437bf5fd24174e22edc457efbd95edbac"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\reports\\b14\\b14-full-standard-20261020-01.json",
+          "sha256": "4b07dbf01097bb4df151e903db38b87e07015e6fd5d2a4e8dcf2cd4cc43fcc84"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\reports\\index.html",
+          "sha256": "01d7cb2ebc17ba56b70d540e28cc50ee72353d6a1bce9a4514d65f87ecbd8d90"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\scripts\\refresh-plan-results.mjs",
+          "sha256": "96e9faa84fefa67ee02306c70c77877d3a1a5e971cc1a9ee960d8c4f6fea7799"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\scripts\\refresh-stage.mjs",
+          "sha256": "6643a14cea8a4182b360d0377a09ed3125a6b0a1bd1df1f2baca2e043fb083e1"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\scripts\\report-catalog.mjs",
+          "sha256": "3e271ed9ad34040655ea070aa2c3052191d48ad7a24165345d6e03fa2ad76881"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\scripts\\validate-report-layout.mjs",
+          "sha256": "6c0e89d42d58bbac0f8027b8df2b4999ed1b05b2e01946533ef7c5160161b731"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\scripts\\validate.mjs",
+          "sha256": "48445492b1f3e2c6a7f1055bf9bb0c4dc88ee44d60fba115fe4f26cd57085cbd"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\validation.json",
+          "sha256": "24c89a805d21881e6c8883ed4c540f81e4a811364f2f266a1490962b51c55261"
+        }
+      ]
+    },
+    "formal_window": {
+      "guard_deadline_utc": "2026-10-23T03:38:39.2993866Z",
+      "latest_formal_start_utc": "2026-10-22T19:03:39.2993866Z",
+      "formal_maximum_seconds": 30000,
+      "cleanup_reserve_seconds": 900,
+      "maximum_wait_seconds": 3379
+    },
+    "owner_pid": 43468,
+    "guard_run_id": "1171bbb028a045c9be2d15f27ca9def1"
+  },
+  "cleanup": {
+    "service": {
+      "status": "PASS",
+      "utc": "2026-10-23T02:47:02.7683342Z",
+      "service_status": "Running",
+      "service_start_type": "Automatic",
+      "recovery_task_absent": true,
+      "guard_run_id": "1171bbb028a045c9be2d15f27ca9def1"
+    },
+    "token_owner": {
+      "status": "PASS",
+      "utc": "2026-10-23T02:47:02.7748427Z",
+      "before_owner_sid": "S-1-5-32-544",
+      "after_owner_sid": "S-1-5-32-544",
+      "restored_after_service_cleanup": true
+    },
+    "guard_restored": {
+      "utc": "2026-10-23T02:47:01.0617561Z",
+      "start_type": "Automatic",
+      "service": "AMD Crash Defender Service",
+      "run_id": "1171bbb028a045c9be2d15f27ca9def1",
+      "status": "RESTORED",
+      "attempt": 1
+    },
+    "guard_task_cleanup": {
+      "status": "REMOVED_OR_ABSENT",
+      "run_id": "1171bbb028a045c9be2d15f27ca9def1",
+      "utc": "2026-10-23T02:47:02.0881625Z"
+    }
+  },
+  "validation": {
+    "full_gate_credit": 0,
+    "target_complete": false,
+    "production_ready": false,
+    "owner_os_exit_code": "NOT_INDEPENDENTLY_OBSERVED",
+    "root_cause": "UNKNOWN"
+  },
+  "history_archive": {
+    "base": "../../out/acceptance-history-20261021-latest-only",
+    "files": [
+      {
+        "path": "reports/b14/b14-clipboard-readmission-20261019-01.html",
+        "snapshot": "presentation-before/final-20261023/reports/b14/b14-clipboard-readmission-20261019-01.html",
+        "sha256": "99bebe6111d3fa243bd6905dd7be82d2db4a27c1b46da332d15d5ec990052ecf",
+        "bytes": 3521,
+        "run_id": "9abbe7b7953240b68de789b548eba598"
+      },
+      {
+        "path": "reports/b14/b14-clipboard-readmission-20261019-01.json",
+        "snapshot": "presentation-before/final-20261023/reports/b14/b14-clipboard-readmission-20261019-01.json",
+        "sha256": "fad19ebf8d651dd42414cc488725cc588d392cb306fba2124d9efc02dad12e6c",
+        "bytes": 12927,
+        "run_id": "9abbe7b7953240b68de789b548eba598"
+      },
+      {
+        "path": "data/b14-100-cycle-summary.json",
+        "snapshot": "presentation-before/final-20261023/data/b14-100-cycle-summary.json",
+        "sha256": "fb0f17d5d91e5adc17d8dc96fc194b61e9f51d5f684e43aa74d5a7434745f24e",
+        "bytes": 120443,
+        "run_id": "9abbe7b7953240b68de789b548eba598"
+      }
+    ],
+    "old_exception_scope": "旧run9abbe7b7953240b68de789b548eba598的cycle52 NIC限定例外只在归档追溯，不继承到新run"
+  },
+  "historical_camera_native_causes": "UNKNOWN",
+  "immutable_inputs": {
+    "F:/CohavoraEvidence/b14-completion-20261023-01/admission/formal-8h100/external-review.json": "165d756fe99df0a1bdd6d813c6aac6e6eea5d4404c2f12e715e512fc35af739a",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/admission/formal-8h100/uia/uia-result.json": "476b0626bc2c0ebe8836d8daca52db37d09daae1ab5642af0d44bbb89787ea55",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/admission/formal-8h100/uia/product-identity.json": "ff5845d9651a3c01f4ffbe0735cdbd04ce1500e3018fc49023aeebd95f08be9b",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/admission/formal-8h100/uia/process-exit.json": "c7df6fd77e53d3e020bdff26cf10ccb0eba2b962a1b8352dc041cef6c543becc",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/admission/formal-8h100/plan.json": "15d216cc1654428e5c204ffcfd3fed6da4b8b412d645df97d7e414d011105b50",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/admission/formal-8h100/limits.json": "665c2d9cd7e8f72b673d01788b60cf1138813ad09dc943a2a464740e6430d20b",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/admission/formal-8h100/runner-exit.json": "044f78e20f03bcf427a4c85ac92a487b40d96bd1f9ef0b4f977f816219401ef2",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/admission/b14-controller.json": "278a741d63cddfd708fc79d2a75bbe53285da0bd04467c7f6e34081348e739b5",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/execution-result.json": "a5233cd9bfdba8a224226139c76145ab9fe1ebe9622ed6fe2a65ef597e1ccf06",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/service-cleanup.json": "01aeb8938b45cd29a5337f6e0cdb5cf697d7b8fae693235f1cda8285a896010a",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/token-owner-restored.json": "922f1fc2fb6608cc596e20615800cd8c5b287288476eda74c49ff2d4040d26f9",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/amd-guard/restored.json": "445d5f3fadf7f2ad4d0edfb96b03650b87b36b9f5e76d963d96e82c96a3e6ae2",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/amd-guard/task-cleanup.json": "ffa8ef921f3af649295f2bafcb24151a0c20f5f75bea807151342bb3e2d1a9db",
+    "F:/CohavoraEvidence/b14-completion-20261023-01/admission/formal-8h100/ui-timing-review.json": "9a5201223aacc5ae7a411830b0103e974a899b25d601495964aee2e599af93da",
+    "F:\\CohavoraEvidence\\b14-completion-20261023-01\\terminal-review.json": "644e1feb2471f9e6fa973eadaf574b123acc1997261755d6b66b5b779a2987cf"
+  },
+  "status": "user_pass",
+  "document_updated_on": "2026-10-23",
+  "acceptance_disposition": {
+    "status": "user_pass",
+    "date": "2026-10-23",
+    "source": "data/b14-user-disposition-20261023.json",
+    "raw_verdict": "FAIL",
+    "raw_private_growth_mib": 95.869140625,
+    "original_limit_mib": 64,
+    "new_threshold": "NOT_FROZEN",
+    "scope": "仅接受当前B14长稳未闭环内存增长风险；用户认为10～38 MiB估算规模较小，不宣称已证明泄漏上限或无泄漏。"
+  }
+}

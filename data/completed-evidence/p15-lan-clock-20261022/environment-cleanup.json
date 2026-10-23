@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "removed_container_id": "7d9224e712a98ac25f5eaca62e49689502d10bf6c6a809c41e2d9d7e513719bd",
+  "task_label": "b-acceptance-20261001",
+  "foreign_rooms": 0,
+  "active_participants": 0,
+  "shared_service_unchanged": true,
+  "configuration_unchanged": true,
+  "security_group_modified": false
+}

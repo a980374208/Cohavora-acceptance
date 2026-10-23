@@ -1,0 +1,21 @@
+{
+  "schema": "cohavora-stage-closure-report-reference-v1",
+  "title": "冻结测试清单：阶段收口报告",
+  "status": "PARTIAL",
+  "task_status": "STAGE_CLOSED_BY_USER",
+  "updated_utc": "2026-10-22T05:15:45.499477+08:00",
+  "frozen_at": "2026-10-22T05:07:21.396912+08:00",
+  "draft": false,
+  "final_snapshot": true,
+  "source_artifact_final_freeze": false,
+  "active_runs": [],
+  "stage_data": "../../data/stage-closure-20261022.json",
+  "summary": {
+    "statement": "冻结现有24组后收口；已通过范围复用，P13/Flutter等正式FAIL保留；P03有限内容INCONCLUSIVE；P20暂停、最终回归未跑。本阶段停止，无新增执行项。",
+    "full_plan_gates_completed": 0,
+    "final_regression_status": "NOT_RUN",
+    "production_ready": false,
+    "completion_percentage": null
+  },
+  "scope": "Documentary stage closure only; no new test item, result rejudgment or product gate credit."
+}

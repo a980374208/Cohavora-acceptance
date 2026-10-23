@@ -1,0 +1,568 @@
+{
+  "schema": "cohavora-p09-network-eleven-completed-scoped-v1",
+  "status": "PASS",
+  "case_count": 11,
+  "case_status": "PASS",
+  "cleanup_status": "PASS",
+  "input_identity_status": "PASS",
+  "environment_restore_status": "PASS",
+  "security_group_restore_status": "PASS",
+  "finished_utc": "2026-10-22T07:24:47.694145+00:00",
+  "closed_utc": "2026-10-22T07:26:57.874258+00:00",
+  "scope": "本轮同一重建RelWithDebInfo产物、同一隔离拓扑的原11项软件网络恢复矩阵，同批11/11 PASS；合成视频与真实接收MeetingRoomWindow，保留原始输入／退出／清理和恢复证据。冻结时P09整组FAIL与历史十项批次FAIL不重判，完整主门信用0。",
+  "full_P09_gate_credit": 0,
+  "binary_identity": {
+    "configuration": "RelWithDebInfo",
+    "binary_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\RelWithDebInfo\\uia_entry_fixture.exe",
+    "binary_sha256": "e3d6076b5518fa18c97f8ecc81de0a34098ec2dc5f6a18676e06846c8e022bf3",
+    "pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\RelWithDebInfo\\uia_entry_fixture.pdb",
+    "pdb_guid": "a676e871-4699-4551-9ee9-cda1b6a09552",
+    "pdb_age": 1
+  },
+  "diagnostics_enabled": false,
+  "cases": [
+    {
+      "case": "baseline",
+      "status": "PASS",
+      "started_utc": "2026-10-22T07:21:46.055792+00:00",
+      "finished_utc": "2026-10-22T07:21:57.278450+00:00",
+      "decoded_before": 17,
+      "decoded_after": 28,
+      "render_delivered": 25,
+      "local_candidate": "prflx",
+      "protocol": "udp",
+      "exit_codes": {
+        "receiver": 0,
+        "publisher": 0
+      },
+      "native_retirement": {
+        "receiver": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653715530
+        },
+        "publisher": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653714924
+        }
+      },
+      "persistence_close_status": "PASS",
+      "case_status": "PASS",
+      "cleanup_status": "PASS",
+      "evidence": "network-eleven-rebuilt/baseline/result.json"
+    },
+    {
+      "case": "packet-loss",
+      "status": "PASS",
+      "started_utc": "2026-10-22T07:21:57.287782+00:00",
+      "finished_utc": "2026-10-22T07:22:20.975834+00:00",
+      "decoded_before": 13,
+      "decoded_after": 235,
+      "render_delivered": 209,
+      "local_candidate": "prflx",
+      "protocol": "udp",
+      "exit_codes": {
+        "receiver": 0,
+        "publisher": 0
+      },
+      "native_retirement": {
+        "receiver": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653739224
+        },
+        "publisher": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653738569
+        }
+      },
+      "persistence_close_status": "PASS",
+      "case_status": "PASS",
+      "cleanup_status": "PASS",
+      "evidence": "network-eleven-rebuilt/packet-loss/result.json"
+    },
+    {
+      "case": "jitter",
+      "status": "PASS",
+      "started_utc": "2026-10-22T07:22:20.984621+00:00",
+      "finished_utc": "2026-10-22T07:22:43.765067+00:00",
+      "decoded_before": 11,
+      "decoded_after": 235,
+      "render_delivered": 218,
+      "local_candidate": "prflx",
+      "protocol": "udp",
+      "exit_codes": {
+        "receiver": 0,
+        "publisher": 0
+      },
+      "native_retirement": {
+        "receiver": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653762017
+        },
+        "publisher": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653761376
+        }
+      },
+      "persistence_close_status": "PASS",
+      "case_status": "PASS",
+      "cleanup_status": "PASS",
+      "evidence": "network-eleven-rebuilt/jitter/result.json"
+    },
+    {
+      "case": "bandwidth",
+      "status": "PASS",
+      "started_utc": "2026-10-22T07:22:43.775781+00:00",
+      "finished_utc": "2026-10-22T07:23:06.770679+00:00",
+      "decoded_before": 12,
+      "decoded_after": 133,
+      "render_delivered": 131,
+      "local_candidate": "prflx",
+      "protocol": "udp",
+      "exit_codes": {
+        "receiver": 0,
+        "publisher": 0
+      },
+      "native_retirement": {
+        "receiver": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653785041
+        },
+        "publisher": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653784392
+        }
+      },
+      "persistence_close_status": "PASS",
+      "case_status": "PASS",
+      "cleanup_status": "PASS",
+      "evidence": "network-eleven-rebuilt/bandwidth/result.json"
+    },
+    {
+      "case": "network-loss",
+      "status": "PASS",
+      "started_utc": "2026-10-22T07:23:06.780089+00:00",
+      "finished_utc": "2026-10-22T07:23:21.695905+00:00",
+      "decoded_before": 12,
+      "decoded_after": 31,
+      "render_delivered": 29,
+      "local_candidate": "prflx",
+      "protocol": "udp",
+      "exit_codes": {
+        "receiver": 0,
+        "publisher": 0
+      },
+      "native_retirement": {
+        "receiver": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653799967
+        },
+        "publisher": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653798720
+        }
+      },
+      "persistence_close_status": "PASS",
+      "case_status": "PASS",
+      "cleanup_status": "PASS",
+      "evidence": "network-eleven-rebuilt/network-loss/result.json"
+    },
+    {
+      "case": "service-restart",
+      "status": "PASS",
+      "started_utc": "2026-10-22T07:23:21.703708+00:00",
+      "finished_utc": "2026-10-22T07:23:39.602416+00:00",
+      "decoded_before": 15,
+      "decoded_after": 73,
+      "render_delivered": 68,
+      "local_candidate": "prflx",
+      "protocol": "udp",
+      "exit_codes": {
+        "receiver": 0,
+        "publisher": 0
+      },
+      "native_retirement": {
+        "receiver": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653817859
+        },
+        "publisher": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653817208
+        }
+      },
+      "persistence_close_status": "PASS",
+      "case_status": "PASS",
+      "cleanup_status": "PASS",
+      "evidence": "network-eleven-rebuilt/service-restart/result.json"
+    },
+    {
+      "case": "signal-reconnect",
+      "status": "PASS",
+      "started_utc": "2026-10-22T07:23:39.612766+00:00",
+      "finished_utc": "2026-10-22T07:23:50.142198+00:00",
+      "decoded_before": 14,
+      "decoded_after": 36,
+      "render_delivered": 34,
+      "local_candidate": "prflx",
+      "protocol": "udp",
+      "exit_codes": {
+        "receiver": 0,
+        "publisher": 0
+      },
+      "native_retirement": {
+        "receiver": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653828398
+        },
+        "publisher": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653827763
+        }
+      },
+      "persistence_close_status": "PASS",
+      "case_status": "PASS",
+      "cleanup_status": "PASS",
+      "evidence": "network-eleven-rebuilt/signal-reconnect/result.json"
+    },
+    {
+      "case": "full-reconnect",
+      "status": "PASS",
+      "started_utc": "2026-10-22T07:23:50.150035+00:00",
+      "finished_utc": "2026-10-22T07:24:01.303448+00:00",
+      "decoded_before": 12,
+      "decoded_after": 36,
+      "render_delivered": 33,
+      "local_candidate": "prflx",
+      "protocol": "udp",
+      "exit_codes": {
+        "receiver": 0,
+        "publisher": 0
+      },
+      "native_retirement": {
+        "receiver": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653839537
+        },
+        "publisher": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653838583
+        }
+      },
+      "persistence_close_status": "PASS",
+      "case_status": "PASS",
+      "cleanup_status": "PASS",
+      "evidence": "network-eleven-rebuilt/full-reconnect/result.json"
+    },
+    {
+      "case": "auth-recovery",
+      "status": "PASS",
+      "started_utc": "2026-10-22T07:24:01.313308+00:00",
+      "finished_utc": "2026-10-22T07:24:12.576400+00:00",
+      "decoded_before": 14,
+      "decoded_after": 25,
+      "render_delivered": 24,
+      "local_candidate": "prflx",
+      "protocol": "udp",
+      "exit_codes": {
+        "receiver": 0,
+        "publisher": 0
+      },
+      "native_retirement": {
+        "receiver": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 2,
+          "utc_ms": 1792653850830
+        },
+        "publisher": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653850186
+        }
+      },
+      "persistence_close_status": "PASS",
+      "case_status": "PASS",
+      "cleanup_status": "PASS",
+      "evidence": "network-eleven-rebuilt/auth-recovery/result.json"
+    },
+    {
+      "case": "path-switch",
+      "status": "PASS",
+      "started_utc": "2026-10-22T07:24:12.584651+00:00",
+      "finished_utc": "2026-10-22T07:24:31.120609+00:00",
+      "decoded_before": 15,
+      "decoded_after": 61,
+      "render_delivered": 57,
+      "local_candidate": "prflx",
+      "protocol": "tcp",
+      "exit_codes": {
+        "receiver": 0,
+        "publisher": 0
+      },
+      "native_retirement": {
+        "receiver": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653869375
+        },
+        "publisher": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653868748
+        }
+      },
+      "persistence_close_status": "PASS",
+      "case_status": "PASS",
+      "cleanup_status": "PASS",
+      "evidence": "network-eleven-rebuilt/path-switch/result.json"
+    },
+    {
+      "case": "turn-relay",
+      "status": "PASS",
+      "started_utc": "2026-10-22T07:24:31.128480+00:00",
+      "finished_utc": "2026-10-22T07:24:47.609914+00:00",
+      "decoded_before": 14,
+      "decoded_after": 32,
+      "render_delivered": 32,
+      "local_candidate": "relay",
+      "protocol": "udp",
+      "exit_codes": {
+        "receiver": 0,
+        "publisher": 0
+      },
+      "native_retirement": {
+        "receiver": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653883406
+        },
+        "publisher": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792653882780
+        }
+      },
+      "persistence_close_status": "PASS",
+      "case_status": "PASS",
+      "cleanup_status": "PASS",
+      "evidence": "network-eleven-rebuilt/turn-relay/result.json"
+    }
+  ],
+  "history": {
+    "original_ten_case_batch": "FAIL",
+    "original_terminal_input_identity": "UNKNOWN",
+    "original_failure_reason": "HTTP and UDP egress sources differed; original source-scoped direct-media block did not force TURN. Original failures remain historical.",
+    "prior_turn_only_retest": "PASS",
+    "frozen_stage_as_of": "2026-10-22T05:15:45.499477+08:00",
+    "frozen_stage_P09": "FAIL"
+  },
+  "prelaunch_attempt": {
+    "status": "BLOCKED_BEFORE_PRODUCT_LAUNCH",
+    "case_count": 0,
+    "reason": "Original binary directory deleted; user confirmed deletion. Required fixture rebuilt from existing cached preset; no failed product case."
+  },
+  "not_covered": [
+    "physical network loss",
+    "actual audio recovery",
+    "UDP/RTP fault log closure",
+    "fault live-current/UI export",
+    "long soak",
+    "final regression",
+    "release qualification"
+  ],
+  "product_source_changed_by_this_run": false,
+  "task7_restored": false,
+  "product_gate_status": "PARTIAL",
+  "test_date": "2026-10-22",
+  "finished_local": "2026-10-22T15:24:47.694145+08:00",
+  "full_gate_credit": 0,
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "source": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/closeout.json",
+    "sha256": "3330cab316a8f07b17763f0a2c0999634b2ddb3f5893906c44979e91eb7b84de",
+    "bytes": 17286
+  },
+  "source_files": [
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/local-admission.json",
+      "sha256": "d1da6ecf7a70605569775459c45552c8fa588011bb94c78757ad33b12586047b",
+      "bytes": 265
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/environment-before.json",
+      "sha256": "d884d39c55448d688db1823122d3e8f55874e8a3454cef42049694e371f4fb5c",
+      "bytes": 479
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/server-prepare/server.json",
+      "sha256": "fe7b29a28a3684765d5277185dc39eac4ed9d7856f1f8081311a76f8a482b70d",
+      "bytes": 724
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/fault-network-prepare/network.json",
+      "sha256": "165b34197e4b4a9a7be23eb61dd87b4c9fca3d62bcfa90c45e0610f51e92ffb4",
+      "bytes": 812
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/security-group-before/network.json",
+      "sha256": "3cd5dbae7091d8ae7883de105e87cb9c98d49b7f8013f2e2bc246de6c145a805",
+      "bytes": 7395
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/security-group-prepare/network.json",
+      "sha256": "ad4995fae0b5f264f940c25839ed8b06c3740454da91aa0a55ee45ba65c934d5",
+      "bytes": 8005
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/udp-source.json",
+      "sha256": "68fd01685d5fb676628909256d70bf6a06a0662f3e0638c270243bd5a0f6155d",
+      "bytes": 2407
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/endpoint-ready.json",
+      "sha256": "3be5787eccb43c16b97d6f0ca3012859ba62d3576c2981a0a68d4a7186b4bec8",
+      "bytes": 223
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/artifact-admission-attempt.json",
+      "sha256": "95226f625f64c99f8a4880aa8be020d817196966d7ecc362972830ba056d42f4",
+      "bytes": 613
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/build-uia-entry.log",
+      "sha256": "17334eddc991d5fc4606355e63c0a4ff44d7865569b72c0a4e4075b6f749ea75",
+      "bytes": 52617
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/index.json",
+      "sha256": "cc74eec4a46a620d9df7899062dc0f5d60f0188e58ce935f8c5aa0605ae1ec45",
+      "bytes": 10216
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/environment-restore.json",
+      "sha256": "0c6206b346998aa85511983298fab88fd5368d940affa56d6fb6f1b62e3cfaca",
+      "bytes": 452
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/security-group-restore.json",
+      "sha256": "95312363c7eb2ea05c53e00152576ad5a54b1a51a73f6119d2ae51d03c28f532",
+      "bytes": 362
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/baseline/result.json",
+      "sha256": "0a88de17325d4287343f9e06748d45fdee7eab65c164747e87676eed110bb6f8",
+      "bytes": 21178
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/packet-loss/result.json",
+      "sha256": "8888c0b36bac74b8d9303beb1bf13bc351074c8043686836f49b66f7bc92b428",
+      "bytes": 52643
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/jitter/result.json",
+      "sha256": "ad5a2d8ba8eecdb71eef7d1ea29db1545da3e5d5c470a72a96b2d4b45ec44eea",
+      "bytes": 52570
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/bandwidth/result.json",
+      "sha256": "e7a42d37859a4dae7943f1dbc1d3ae5e80dd047cbdc3e0d0cdfe0ab5aba07653",
+      "bytes": 52565
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/network-loss/result.json",
+      "sha256": "ef4e05d7ac282d2ff73e1054aeda1d17161ff71a9779c80ab3379a0c96eb23af",
+      "bytes": 22234
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/service-restart/result.json",
+      "sha256": "ac0f450a30479151cea59d4a5ed1afe8b1822bc9be13d263a28fffdfce84eb89",
+      "bytes": 35503
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/signal-reconnect/result.json",
+      "sha256": "c46110886ad83e2c379ed3a43528a86f8146f92403bb88eea4478202059c7438",
+      "bytes": 22166
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/full-reconnect/result.json",
+      "sha256": "f81d358920936999c48671f852c1d7a1e6838ad79cd0a34ca5162e9b0261ed3d",
+      "bytes": 22205
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/auth-recovery/result.json",
+      "sha256": "83af2d771fda151dd48316072cfe6c079030a62dae3dfc3ed30b1ce4ae54e3d6",
+      "bytes": 21346
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/path-switch/result.json",
+      "sha256": "919cccfdf83b22007463b0355af9bfd0a8fe563a616450329597393fd24f6693",
+      "bytes": 24791
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-full-20261022-01/network-eleven-rebuilt/turn-relay/result.json",
+      "sha256": "4eb57dde5e34f33ec7c8d516d539aac28dfc9dae906505713710fc88ad26d687",
+      "bytes": 26013
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema": 2,
+  "title": "B14 完整标准：本机3/3资格 READY",
+  "utc": "2026-10-22T18:07:13.027190+00:00",
+  "latest_completed_utc": "2026-10-22T18:07:13.027190+00:00",
+  "status": "READY",
+  "formal": "FAILED",
+  "qualification_passes": 3,
+  "full_media_gpu_ready": true,
+  "group_status": "PARTIAL",
+  "full_gate_credit": 0,
+  "service_condition": "Stopped/Automatic under bound guardian",
+  "exceptions": [],
+  "evidence_root": "F:/CohavoraEvidence/b14-completion-20261023-01",
+  "controller_id": "e4b0a73762e84cb9ace03afc5fcb22f3",
+  "completed_source": "data/completed-evidence/p19-qualification-20261023-completed-scoped.json",
+  "completed_source_sha256": "1e25d0e5605887c58dcd762c0b435f601c77098be43d40b8bed379ae5086a26b",
+  "controller_ready_snapshot": {
+    "path": "F:/CohavoraEvidence/b14-completion-20261023-01/report-ready-snapshot/b14-controller.json",
+    "sha256": "376d4a7a0b956fde0f80aeb6afab6e50e96f4ec80969bc0035d9f21c85a66395",
+    "bytes": 13490,
+    "original_live_path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/b14-controller.json"
+  },
+  "completed_pilots": [
+    {
+      "pilot": "pilot-01",
+      "run_id": "c54e28392851480a9a25f0227656a802",
+      "verdict": "PILOT_PASS",
+      "check_counts": {
+        "PASS": 78
+      },
+      "cycles_pass": 2,
+      "duration_seconds": 505.867958,
+      "reviewed_utc": "2026-10-22T17:48:11.058102+00:00"
+    },
+    {
+      "pilot": "pilot-02",
+      "run_id": "1619173098a24cd2a3a22b437a9bf34c",
+      "verdict": "PILOT_PASS",
+      "check_counts": {
+        "PASS": 78
+      },
+      "cycles_pass": 2,
+      "duration_seconds": 504.21357,
+      "reviewed_utc": "2026-10-22T17:57:34.041789+00:00"
+    },
+    {
+      "pilot": "pilot-03",
+      "run_id": "227d281957284dc3bc87682c34bd423e",
+      "verdict": "PILOT_PASS",
+      "check_counts": {
+        "PASS": 78
+      },
+      "cycles_pass": 2,
+      "duration_seconds": 504.962256,
+      "reviewed_utc": "2026-10-22T18:06:55.080788+00:00"
+    }
+  ],
+  "camera": {
+    "status": "PASS_SCOPED",
+    "source": "data/completed-evidence/p19-camera-rejoin-20261023-scoped.json",
+    "original_report": "reports/b14/b14-amd-camera-rejoin-20261019-03-reviewed.html",
+    "test_date": "2026-10-19T06:59:32.123957+00:00",
+    "checks": {
+      "PASS": 33,
+      "FAIL": 0
+    },
+    "scope": "Original same-process two-cycle camera diagnostic: 33/33 PASS, plus separately recorded deterministic timeout handling. Retain original input/date; pixel quality, raw DirectShow/conversion failures, encoder/RTP and injected hardware timeout remain unmeasured. No current-input, qualification or Formal credit."
+  },
+  "other_hosts": [
+    {
+      "host": "Windows .151",
+      "status": "PARTIAL",
+      "current_source": "UNKNOWN",
+      "scope": "42/42 bounded-device PROCESS_NODE query calibration does not prove current real-product all-node/global topology/passive absence/release or independent 3-of-3 qualification."
+    }
+  ],
+  "history_archive": {
+    "base": "../../out/acceptance-history-20261021-latest-only/presentation-before",
+    "files": [
+      {
+        "path": "reports/b14/b14-full-standard-20261020-01.html",
+        "sha256": "ccac431aa490ace212c3740ecee9fff4e59824888733d33d04cdd1c41d1cceb2",
+        "bytes": 2617
+      },
+      {
+        "path": "reports/b14/b14-full-standard-20261020-01.json",
+        "sha256": "a57035e9c4c7ebd96e045161d49873ca78f73584566c418133b5435ccd5a1a91",
+        "bytes": 3032
+      }
+    ]
+  },
+  "prior_failures_preserved": [
+    {
+      "root": "F:/CohavoraEvidence/p19-direct-readmission-20261023-02",
+      "status": "FAILED_PILOT_01_NETWORK_CAPACITY",
+      "retrospective_traffic_attribution": "UNKNOWN"
+    },
+    {
+      "source": "original same-name report pair retained byte-for-byte in presentation-before",
+      "status": "HISTORICAL_FAILURES_RETAINED"
+    }
+  ],
+  "latest_attempt": {
+    "root": "F:/CohavoraEvidence/b14-completion-20261023-01",
+    "run_id": "5653c962b41646c4aa1e4600fefa8e97",
+    "verdict": "FAIL",
+    "controller_id": "e4b0a73762e84cb9ace03afc5fcb22f3",
+    "completed_utc": "2026-10-23T02:46:59.226524+00:00",
+    "source": "data/completed-evidence/b14-formal-20261023-completed-scoped.json",
+    "source_sha256": "98efe6c0c638d95144092817862e6d51496d43ec00aab8cdb3db963b49e694f8",
+    "report": "reports/b14/b14-clipboard-readmission-20261019-01.html"
+  },
+  "active": false,
+  "active_phase": "FORMAL_FAILED_RESOURCE_GROWTH",
+  "note": "本页READY仅为本机3/3资格时快照；后续完整Formal100周期FAIL，唯一Private Bytes增长95.869140625MiB>64MiB，根因UNKNOWN。摄像头独立PASS_SCOPED对象/日期/来源与其他host边界原样保留，P19整组PARTIAL/full_gate_credit=0；目标仍active。"
+}

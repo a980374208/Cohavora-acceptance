@@ -1,0 +1,131 @@
+{
+  "baseline_source_sha256": "26eb8377312fe055b2913f67a621a6d5e4b13815f276eecc18f7b87e94642a35",
+  "case": "escaping",
+  "equivalence": {
+    "manifest.json": {
+      "bytes": 423,
+      "sha256": "0180335665ba803ff05a89973613fbc5fed2021b2891a8a84ab5341f6463de1e"
+    },
+    "metrics.csv": {
+      "bytes": 442023,
+      "sha256": "d583ebcf3f9688a3dc9b484d7833efd2d66f4407f0ecf7c181d1ab102fb3c446"
+    },
+    "metrics.jsonl": {
+      "bytes": 913922,
+      "sha256": "3a3f373574291ccbcb2a295da024056bcf69cdc5cf62f76cbc92079dec602199"
+    },
+    "session.json": {
+      "bytes": 570,
+      "sha256": "3b85ec0d4210ea0bfb32fd9ded44bc7bf4c2d3e5d6591ed51341c3af5b526b66"
+    }
+  },
+  "executable_sha256": "5d3c541c87c47f2e336d555352bd021623c98d0241dddf150085d5fed8feb993",
+  "fixture_sha256": "163acc8a1760ed64e62882f6a1bfbd86b1f866902bcd939086bef7f53569f336",
+  "invalid_utf8": {
+    "baseline_json_error_id": 316,
+    "candidate_json_error_id": 316
+  },
+  "layout": {
+    "baseline_dependency": "frozen cpp compiled against current product headers; require ABI-compatible unchanged owning fields",
+    "cpp_standard": 199711,
+    "msvc_full_version": 195035730,
+    "record_bytes": 8696,
+    "snapshot_bytes": 8320
+  },
+  "measurement": "C++ new requests only; excludes malloc/OS/allocator overhead; input and output verification excluded",
+  "observations": [
+    {
+      "allocation_calls": 295711,
+      "cumulative_requested_bytes": 17229162,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 193686,
+      "variant": "baseline"
+    },
+    {
+      "allocation_calls": 38305,
+      "cumulative_requested_bytes": 2361122,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 154126,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 38305,
+      "cumulative_requested_bytes": 2361122,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 154126,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 295711,
+      "cumulative_requested_bytes": 17229162,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 193686,
+      "variant": "baseline"
+    },
+    {
+      "allocation_calls": 295711,
+      "cumulative_requested_bytes": 17229162,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 193686,
+      "variant": "baseline"
+    },
+    {
+      "allocation_calls": 38305,
+      "cumulative_requested_bytes": 2361122,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 154126,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 38305,
+      "cumulative_requested_bytes": 2361122,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 154126,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 295711,
+      "cumulative_requested_bytes": 17229162,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 193686,
+      "variant": "baseline"
+    },
+    {
+      "allocation_calls": 295711,
+      "cumulative_requested_bytes": 17229162,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 193686,
+      "variant": "baseline"
+    },
+    {
+      "allocation_calls": 38305,
+      "cumulative_requested_bytes": 2361122,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 154126,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 38305,
+      "cumulative_requested_bytes": 2361138,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 154126,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 295711,
+      "cumulative_requested_bytes": 17229178,
+      "output_bytes": 1357062,
+      "peak_live_requested_bytes": 193686,
+      "variant": "baseline"
+    }
+  ],
+  "records": 8,
+  "retained_charge": {
+    "anonymous_id_capacity_charge": 48,
+    "corrected_estimate": 13376,
+    "fixed_snapshot_bytes": 8320,
+    "meaning": "accounting only; may retain more live records at the unchanged 8MiB cap",
+    "original_estimate": 21648
+  },
+  "scope": "OFFLINE_SYNTHETIC_NOT_FORMAL"
+}

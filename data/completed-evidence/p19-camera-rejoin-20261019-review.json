@@ -1,0 +1,1123 @@
+{
+  "schema": 1,
+  "scope": "qualification-excluded same-process camera rejoin diagnostic",
+  "run_id": "299e0e35cb1f4bad9417c2ecaedbe091",
+  "root": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-readmission-20261019-amd-stop-03\\camera-rejoin",
+  "reviewed_utc": "2026-10-19T06:59:32.123957+00:00",
+  "camera_scoped_verdict": "PASS",
+  "b14_qualification_credit": false,
+  "formal_status": "NOT_RUN",
+  "original_reviews": {
+    "external-review.json": {
+      "verdict": "PASS_WITH_DEFERRED",
+      "exit_code": 0,
+      "non_pass_checks": {}
+    },
+    "pilot-review.json": {
+      "verdict": "PILOT_PASS",
+      "exit_code": null,
+      "non_pass_checks": {}
+    },
+    "runner-exit.json": {
+      "verdict": "EVIDENCE_COMPLETE",
+      "exit_code": 0,
+      "non_pass_checks": {}
+    }
+  },
+  "limitations": [
+    "VideoSource counters count converted frame entry, not raw DirectShow callbacks or conversion failures.",
+    "RTC output means OnFrame delivery, not encoder output or RTP delivery.",
+    "Independent receiver counters prove decoded camera callbacks and buffer release, not pixel quality.",
+    "This review does not change any original gate, threshold, FAIL, or qualification status.",
+    "First-frame timeout negative behavior requires the separate deterministic tests; no injected hardware timeout is claimed."
+  ],
+  "checks": {
+    "qualification_excluded": {
+      "status": "PASS",
+      "detail": {
+        "mode": "Pilot",
+        "marker_present": true,
+        "b14_credit": false
+      }
+    },
+    "two_cycles_planned": {
+      "status": "PASS",
+      "detail": 2
+    },
+    "run_identity_consistent": {
+      "status": "PASS",
+      "detail": {
+        "remote_rows": 2551,
+        "probe_rows": 503
+      }
+    },
+    "same_product_process": {
+      "status": "PASS",
+      "detail": {
+        "pid": 23492,
+        "start_ticks": 639279893812092917,
+        "process_run_ids": [
+          "cfc74a7cb39a09b97cedc4a08e53b83f"
+        ]
+      }
+    },
+    "uia_two_cycles_completed": {
+      "status": "PASS",
+      "detail": {
+        "verdict": "PILOT_COMPLETE",
+        "cycles_requested": 2,
+        "cycles_completed": 2
+      }
+    },
+    "product_normal_exit": {
+      "status": "PASS",
+      "detail": {
+        "pid": 23492,
+        "exit_code": 0
+      }
+    },
+    "uia_observer_fences": {
+      "status": "PASS",
+      "detail": {
+        "actions": 32,
+        "accepted_fences": 32
+      }
+    },
+    "cycle_1_join_leave": {
+      "status": "PASS",
+      "detail": {
+        "counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "cycle_1_action_order": {
+      "status": "PASS",
+      "detail": {
+        "join_requested_utc": "2026-10-19T06:50:02.8807868Z",
+        "leave_observed_utc": "2026-10-19T06:53:45.0943350Z"
+      }
+    },
+    "cycle_1_product_identity": {
+      "status": "PASS",
+      "detail": {
+        "matching_authenticated_joins": 1,
+        "test_cycle": null,
+        "method": "acknowledged_uia_operation_salted_identity_time_fence",
+        "load_identity_prefix_excluded": "pilot-299e0e35"
+      }
+    },
+    "cycle_1_remote_leave": {
+      "status": "PASS",
+      "detail": {
+        "matching_peer_leaves": 1
+      }
+    },
+    "cycle_1_observer_identity": {
+      "status": "PASS",
+      "detail": {
+        "in_meeting_remote_rows": 1087
+      }
+    },
+    "cycle_1_camera_sfu_publication": {
+      "status": "PASS",
+      "detail": {
+        "samples": 202,
+        "camera_present_samples": 202,
+        "camera_sids": [
+          "TR_VCj5wFxdKJGj4C"
+        ],
+        "source": 1,
+        "kind": "video",
+        "identity_method": "authenticated_product_only"
+      }
+    },
+    "cycle_1_camera_independent_decode": {
+      "status": "PASS",
+      "detail": {
+        "streams": [
+          {
+            "sid": "TR_VCj5wFxdKJGj4C",
+            "samples": 202,
+            "first_sample_frames": 50,
+            "last_sample_frames": 3407,
+            "terminal_frames": 3433,
+            "terminal_buffers_released": 3433,
+            "all_stream_samples": 206,
+            "last_sample_counters": {
+              "frames": 3424,
+              "frames_observed": 3424,
+              "buffers_released": 3424
+            },
+            "terminal_counters": {
+              "frames": 3433,
+              "frames_observed": 3433,
+              "buffers_released": 3433
+            },
+            "last_sample_utc_ms": 1792392822789,
+            "terminal_utc_ms": 1792392823367,
+            "progress": true,
+            "same_sid": true,
+            "terminal_after_last_sample": true,
+            "terminal_counters_not_regressed": true,
+            "terminal_buffer_accounting": true,
+            "subscribed": true
+          }
+        ],
+        "scope": "native decoded-frame callbacks; camera source1; pixel quality unmeasured"
+      }
+    },
+    "cycle_1_camera_pipeline": {
+      "status": "PASS",
+      "detail": {
+        "active_valid_samples": 202,
+        "active_invalid_samples": 0,
+        "publication_scopes": [
+          [
+            1,
+            2
+          ]
+        ],
+        "progress": {
+          "source_frames": {
+            "first": 68,
+            "last": 3424,
+            "minimum": 68,
+            "maximum": 3424,
+            "nondecreasing": true,
+            "increases": 201
+          },
+          "rtc_input_frames": {
+            "first": 61,
+            "last": 3417,
+            "minimum": 61,
+            "maximum": 3417,
+            "nondecreasing": true,
+            "increases": 201
+          },
+          "rtc_output_frames": {
+            "first": 61,
+            "last": 3417,
+            "minimum": 61,
+            "maximum": 3417,
+            "nondecreasing": true,
+            "increases": 201
+          },
+          "rtc_dropped_frames": {
+            "first": 0,
+            "last": 0,
+            "minimum": 0,
+            "maximum": 0,
+            "nondecreasing": true,
+            "increases": 0
+          }
+        },
+        "first_active": {
+          "revision": 156,
+          "source_utc_ms": 1792392620774,
+          "session_generation": 1,
+          "active": true,
+          "room_generation": 1,
+          "publication_epoch": 2,
+          "source_frames": 68,
+          "rtc_input_frames": 61,
+          "rtc_output_frames": 61,
+          "rtc_dropped_frames": 0
+        },
+        "last_active": {
+          "revision": 1480,
+          "source_utc_ms": 1792392821822,
+          "session_generation": 1,
+          "active": true,
+          "room_generation": 1,
+          "publication_epoch": 2,
+          "source_frames": 3424,
+          "rtc_input_frames": 3417,
+          "rtc_output_frames": 3417,
+          "rtc_dropped_frames": 0
+        },
+        "availability_counts": {
+          "camera.pipeline.active:VALID": 202,
+          "camera.pipeline.publication_epoch:VALID": 202,
+          "camera.pipeline.room_generation:VALID": 202,
+          "camera.pipeline.rtc_dropped_frames:VALID": 202,
+          "camera.pipeline.rtc_input_frames:VALID": 202,
+          "camera.pipeline.rtc_output_frames:VALID": 202,
+          "camera.pipeline.source_frames:VALID": 202
+        },
+        "terminal": {
+          "required": false,
+          "valid_samples": 0,
+          "invalid_samples": 0,
+          "first": null,
+          "last": null,
+          "active_after_inactive": false
+        }
+      }
+    },
+    "cycle_1_checkpoint_terminal": {
+      "status": "PASS",
+      "detail": {
+        "anonymous_session_id": "719b38f98b5247cf967bcc5ae19877f0",
+        "session_generation": 1,
+        "last_committed_revision": 1496,
+        "session_complete": true,
+        "missing_revisions": 0,
+        "integrity": {
+          "segment_count": 23,
+          "status": "complete"
+        }
+      }
+    },
+    "cycle_1_bundle_camera_counters": {
+      "status": "PASS",
+      "detail": {
+        "matching_bundles": 1,
+        "files_hash_verified": true,
+        "camera_pipeline": {
+          "active_valid_samples": 110,
+          "active_invalid_samples": 0,
+          "publication_scopes": [
+            [
+              1,
+              2
+            ]
+          ],
+          "progress": {
+            "source_frames": {
+              "first": 3139,
+              "last": 3452,
+              "minimum": 3139,
+              "maximum": 3452,
+              "nondecreasing": true,
+              "increases": 38
+            },
+            "rtc_input_frames": {
+              "first": 3132,
+              "last": 3445,
+              "minimum": 3132,
+              "maximum": 3445,
+              "nondecreasing": true,
+              "increases": 38
+            },
+            "rtc_output_frames": {
+              "first": 3132,
+              "last": 3445,
+              "minimum": 3132,
+              "maximum": 3445,
+              "nondecreasing": true,
+              "increases": 38
+            },
+            "rtc_dropped_frames": {
+              "first": 0,
+              "last": 0,
+              "minimum": 0,
+              "maximum": 0,
+              "nondecreasing": true,
+              "increases": 0
+            }
+          },
+          "first_active": {
+            "revision": 1379,
+            "source_utc_ms": 1792392804747,
+            "session_generation": 1,
+            "active": true,
+            "room_generation": 1,
+            "publication_epoch": 2,
+            "source_frames": 3139,
+            "rtc_input_frames": 3132,
+            "rtc_output_frames": 3132,
+            "rtc_dropped_frames": 0
+          },
+          "last_active": {
+            "revision": 1488,
+            "source_utc_ms": 1792392823516,
+            "session_generation": 1,
+            "active": true,
+            "room_generation": 1,
+            "publication_epoch": 2,
+            "source_frames": 3452,
+            "rtc_input_frames": 3445,
+            "rtc_output_frames": 3445,
+            "rtc_dropped_frames": 0
+          },
+          "availability_counts": {
+            "camera.pipeline.active:VALID": 118,
+            "camera.pipeline.publication_epoch:VALID": 118,
+            "camera.pipeline.room_generation:VALID": 118,
+            "camera.pipeline.rtc_dropped_frames:VALID": 118,
+            "camera.pipeline.rtc_input_frames:VALID": 118,
+            "camera.pipeline.rtc_output_frames:VALID": 118,
+            "camera.pipeline.source_frames:VALID": 118
+          },
+          "terminal": {
+            "required": true,
+            "valid_samples": 8,
+            "invalid_samples": 0,
+            "first": {
+              "revision": 1489,
+              "source_utc_ms": 1792392823639,
+              "session_generation": 1,
+              "active": false,
+              "room_generation": 1,
+              "publication_epoch": 2,
+              "source_frames": 3453,
+              "rtc_input_frames": 3446,
+              "rtc_output_frames": 3446,
+              "rtc_dropped_frames": 0
+            },
+            "last": {
+              "revision": 1496,
+              "source_utc_ms": 1792392823961,
+              "session_generation": 1,
+              "active": false,
+              "room_generation": 1,
+              "publication_epoch": 2,
+              "source_frames": 3453,
+              "rtc_input_frames": 3446,
+              "rtc_output_frames": 3446,
+              "rtc_dropped_frames": 0
+            },
+            "active_after_inactive": false,
+            "session_generation_matches": true,
+            "publication_scope_matches": true,
+            "after_last_active": true,
+            "counters_not_regressed": true,
+            "subsequent_inactive_frozen": true
+          }
+        },
+        "last_committed_revision": 1496
+      }
+    },
+    "cycle_2_join_leave": {
+      "status": "PASS",
+      "detail": {
+        "counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "cycle_2_action_order": {
+      "status": "PASS",
+      "detail": {
+        "join_requested_utc": "2026-10-19T06:54:03.1030314Z",
+        "leave_observed_utc": "2026-10-19T06:57:45.3400624Z"
+      }
+    },
+    "cycle_2_product_identity": {
+      "status": "PASS",
+      "detail": {
+        "matching_authenticated_joins": 1,
+        "test_cycle": null,
+        "method": "acknowledged_uia_operation_salted_identity_time_fence",
+        "load_identity_prefix_excluded": "pilot-299e0e35"
+      }
+    },
+    "cycle_2_remote_leave": {
+      "status": "PASS",
+      "detail": {
+        "matching_peer_leaves": 1
+      }
+    },
+    "cycle_2_observer_identity": {
+      "status": "PASS",
+      "detail": {
+        "in_meeting_remote_rows": 1093
+      }
+    },
+    "cycle_2_camera_sfu_publication": {
+      "status": "PASS",
+      "detail": {
+        "samples": 203,
+        "camera_present_samples": 203,
+        "camera_sids": [
+          "TR_VCqDQ6vnNoEGzr"
+        ],
+        "source": 1,
+        "kind": "video",
+        "identity_method": "authenticated_product_only"
+      }
+    },
+    "cycle_2_camera_independent_decode": {
+      "status": "PASS",
+      "detail": {
+        "streams": [
+          {
+            "sid": "TR_VCqDQ6vnNoEGzr",
+            "samples": 203,
+            "first_sample_frames": 36,
+            "last_sample_frames": 3373,
+            "terminal_frames": 3397,
+            "terminal_buffers_released": 3397,
+            "all_stream_samples": 206,
+            "last_sample_counters": {
+              "frames": 3389,
+              "frames_observed": 3389,
+              "buffers_released": 3389
+            },
+            "terminal_counters": {
+              "frames": 3397,
+              "frames_observed": 3397,
+              "buffers_released": 3397
+            },
+            "last_sample_utc_ms": 1792393063055,
+            "terminal_utc_ms": 1792393063565,
+            "progress": true,
+            "same_sid": true,
+            "terminal_after_last_sample": true,
+            "terminal_counters_not_regressed": true,
+            "terminal_buffer_accounting": true,
+            "subscribed": true
+          }
+        ],
+        "scope": "native decoded-frame callbacks; camera source1; pixel quality unmeasured"
+      }
+    },
+    "cycle_2_camera_pipeline": {
+      "status": "PASS",
+      "detail": {
+        "active_valid_samples": 203,
+        "active_invalid_samples": 0,
+        "publication_scopes": [
+          [
+            1,
+            2
+          ]
+        ],
+        "progress": {
+          "source_frames": {
+            "first": 52,
+            "last": 3421,
+            "minimum": 52,
+            "maximum": 3421,
+            "nondecreasing": true,
+            "increases": 202
+          },
+          "rtc_input_frames": {
+            "first": 46,
+            "last": 3415,
+            "minimum": 46,
+            "maximum": 3415,
+            "nondecreasing": true,
+            "increases": 202
+          },
+          "rtc_output_frames": {
+            "first": 46,
+            "last": 3415,
+            "minimum": 46,
+            "maximum": 3415,
+            "nondecreasing": true,
+            "increases": 202
+          },
+          "rtc_dropped_frames": {
+            "first": 0,
+            "last": 0,
+            "minimum": 0,
+            "maximum": 0,
+            "nondecreasing": true,
+            "increases": 0
+          }
+        },
+        "first_active": {
+          "revision": 154,
+          "source_utc_ms": 1792392859976,
+          "session_generation": 2,
+          "active": true,
+          "room_generation": 1,
+          "publication_epoch": 2,
+          "source_frames": 52,
+          "rtc_input_frames": 46,
+          "rtc_output_frames": 46,
+          "rtc_dropped_frames": 0
+        },
+        "last_active": {
+          "revision": 1503,
+          "source_utc_ms": 1792393061835,
+          "session_generation": 2,
+          "active": true,
+          "room_generation": 1,
+          "publication_epoch": 2,
+          "source_frames": 3421,
+          "rtc_input_frames": 3415,
+          "rtc_output_frames": 3415,
+          "rtc_dropped_frames": 0
+        },
+        "availability_counts": {
+          "camera.pipeline.active:VALID": 203,
+          "camera.pipeline.publication_epoch:VALID": 203,
+          "camera.pipeline.room_generation:VALID": 203,
+          "camera.pipeline.rtc_dropped_frames:VALID": 203,
+          "camera.pipeline.rtc_input_frames:VALID": 203,
+          "camera.pipeline.rtc_output_frames:VALID": 203,
+          "camera.pipeline.source_frames:VALID": 203
+        },
+        "terminal": {
+          "required": false,
+          "valid_samples": 0,
+          "invalid_samples": 0,
+          "first": null,
+          "last": null,
+          "active_after_inactive": false
+        }
+      }
+    },
+    "cycle_2_checkpoint_terminal": {
+      "status": "PASS",
+      "detail": {
+        "anonymous_session_id": "95dcb397dee2442d897bab716e7cd657",
+        "session_generation": 2,
+        "last_committed_revision": 1519,
+        "session_complete": true,
+        "missing_revisions": 0,
+        "integrity": {
+          "segment_count": 22,
+          "status": "complete"
+        }
+      }
+    },
+    "cycle_2_bundle_camera_counters": {
+      "status": "PASS",
+      "detail": {
+        "matching_bundles": 1,
+        "files_hash_verified": true,
+        "camera_pipeline": {
+          "active_valid_samples": 107,
+          "active_invalid_samples": 0,
+          "publication_scopes": [
+            [
+              1,
+              2
+            ]
+          ],
+          "progress": {
+            "source_frames": {
+              "first": 3151,
+              "last": 3452,
+              "minimum": 3151,
+              "maximum": 3452,
+              "nondecreasing": true,
+              "increases": 36
+            },
+            "rtc_input_frames": {
+              "first": 3145,
+              "last": 3446,
+              "minimum": 3145,
+              "maximum": 3446,
+              "nondecreasing": true,
+              "increases": 36
+            },
+            "rtc_output_frames": {
+              "first": 3145,
+              "last": 3446,
+              "minimum": 3145,
+              "maximum": 3446,
+              "nondecreasing": true,
+              "increases": 37
+            },
+            "rtc_dropped_frames": {
+              "first": 0,
+              "last": 0,
+              "minimum": 0,
+              "maximum": 0,
+              "nondecreasing": true,
+              "increases": 0
+            }
+          },
+          "first_active": {
+            "revision": 1405,
+            "source_utc_ms": 1792393045639,
+            "session_generation": 2,
+            "active": true,
+            "room_generation": 1,
+            "publication_epoch": 2,
+            "source_frames": 3151,
+            "rtc_input_frames": 3145,
+            "rtc_output_frames": 3145,
+            "rtc_dropped_frames": 0
+          },
+          "last_active": {
+            "revision": 1511,
+            "source_utc_ms": 1792393063702,
+            "session_generation": 2,
+            "active": true,
+            "room_generation": 1,
+            "publication_epoch": 2,
+            "source_frames": 3452,
+            "rtc_input_frames": 3446,
+            "rtc_output_frames": 3446,
+            "rtc_dropped_frames": 0
+          },
+          "availability_counts": {
+            "camera.pipeline.active:VALID": 115,
+            "camera.pipeline.publication_epoch:VALID": 115,
+            "camera.pipeline.room_generation:VALID": 115,
+            "camera.pipeline.rtc_dropped_frames:VALID": 115,
+            "camera.pipeline.rtc_input_frames:VALID": 115,
+            "camera.pipeline.rtc_output_frames:VALID": 115,
+            "camera.pipeline.source_frames:VALID": 115
+          },
+          "terminal": {
+            "required": true,
+            "valid_samples": 8,
+            "invalid_samples": 0,
+            "first": {
+              "revision": 1512,
+              "source_utc_ms": 1792393063848,
+              "session_generation": 2,
+              "active": false,
+              "room_generation": 1,
+              "publication_epoch": 2,
+              "source_frames": 3452,
+              "rtc_input_frames": 3446,
+              "rtc_output_frames": 3446,
+              "rtc_dropped_frames": 0
+            },
+            "last": {
+              "revision": 1519,
+              "source_utc_ms": 1792393064101,
+              "session_generation": 2,
+              "active": false,
+              "room_generation": 1,
+              "publication_epoch": 2,
+              "source_frames": 3452,
+              "rtc_input_frames": 3446,
+              "rtc_output_frames": 3446,
+              "rtc_dropped_frames": 0
+            },
+            "active_after_inactive": false,
+            "session_generation_matches": true,
+            "publication_scope_matches": true,
+            "after_last_active": true,
+            "counters_not_regressed": true,
+            "subsequent_inactive_frozen": true
+          }
+        },
+        "last_committed_revision": 1519
+      }
+    },
+    "distinct_native_sessions_in_order": {
+      "status": "PASS",
+      "detail": {
+        "sessions": [
+          "719b38f98b5247cf967bcc5ae19877f0",
+          "95dcb397dee2442d897bab716e7cd657"
+        ]
+      }
+    },
+    "collectors_cleanup": {
+      "status": "PASS",
+      "detail": {
+        "collector_count": 4,
+        "cleanup_errors": []
+      }
+    },
+    "remote_cleanup": {
+      "status": "PASS",
+      "detail": {
+        "status": "COMPLETE",
+        "terminal": true,
+        "cleanup_complete": true,
+        "actual_cleanup": {
+          "rule_check_codes": [
+            1,
+            1
+          ],
+          "cgroup_present": false
+        }
+      }
+    },
+    "original_identity_external-review_json": {
+      "status": "PASS",
+      "detail": null
+    },
+    "original_identity_pilot-review_json": {
+      "status": "PASS",
+      "detail": null
+    },
+    "original_identity_runner-exit_json": {
+      "status": "PASS",
+      "detail": null
+    }
+  },
+  "cycles": [
+    {
+      "cycle": 1,
+      "cycle_id": "1df186510a15477891aa5f124de39dac",
+      "anonymous_session_id": "719b38f98b5247cf967bcc5ae19877f0",
+      "participant_sha256": "cd9b549d9fa16b77587f915bf77bbbb0cad802756a952c37b1d4a17389fb8893",
+      "camera_sids": [
+        "TR_VCj5wFxdKJGj4C"
+      ],
+      "decoded_streams": [
+        {
+          "sid": "TR_VCj5wFxdKJGj4C",
+          "samples": 202,
+          "first_sample_frames": 50,
+          "last_sample_frames": 3407,
+          "terminal_frames": 3433,
+          "terminal_buffers_released": 3433,
+          "all_stream_samples": 206,
+          "last_sample_counters": {
+            "frames": 3424,
+            "frames_observed": 3424,
+            "buffers_released": 3424
+          },
+          "terminal_counters": {
+            "frames": 3433,
+            "frames_observed": 3433,
+            "buffers_released": 3433
+          },
+          "last_sample_utc_ms": 1792392822789,
+          "terminal_utc_ms": 1792392823367,
+          "progress": true,
+          "same_sid": true,
+          "terminal_after_last_sample": true,
+          "terminal_counters_not_regressed": true,
+          "terminal_buffer_accounting": true,
+          "subscribed": true
+        }
+      ],
+      "pipeline": {
+        "active_valid_samples": 202,
+        "active_invalid_samples": 0,
+        "publication_scopes": [
+          [
+            1,
+            2
+          ]
+        ],
+        "progress": {
+          "source_frames": {
+            "first": 68,
+            "last": 3424,
+            "minimum": 68,
+            "maximum": 3424,
+            "nondecreasing": true,
+            "increases": 201
+          },
+          "rtc_input_frames": {
+            "first": 61,
+            "last": 3417,
+            "minimum": 61,
+            "maximum": 3417,
+            "nondecreasing": true,
+            "increases": 201
+          },
+          "rtc_output_frames": {
+            "first": 61,
+            "last": 3417,
+            "minimum": 61,
+            "maximum": 3417,
+            "nondecreasing": true,
+            "increases": 201
+          },
+          "rtc_dropped_frames": {
+            "first": 0,
+            "last": 0,
+            "minimum": 0,
+            "maximum": 0,
+            "nondecreasing": true,
+            "increases": 0
+          }
+        },
+        "first_active": {
+          "revision": 156,
+          "source_utc_ms": 1792392620774,
+          "session_generation": 1,
+          "active": true,
+          "room_generation": 1,
+          "publication_epoch": 2,
+          "source_frames": 68,
+          "rtc_input_frames": 61,
+          "rtc_output_frames": 61,
+          "rtc_dropped_frames": 0
+        },
+        "last_active": {
+          "revision": 1480,
+          "source_utc_ms": 1792392821822,
+          "session_generation": 1,
+          "active": true,
+          "room_generation": 1,
+          "publication_epoch": 2,
+          "source_frames": 3424,
+          "rtc_input_frames": 3417,
+          "rtc_output_frames": 3417,
+          "rtc_dropped_frames": 0
+        },
+        "availability_counts": {
+          "camera.pipeline.active:VALID": 202,
+          "camera.pipeline.publication_epoch:VALID": 202,
+          "camera.pipeline.room_generation:VALID": 202,
+          "camera.pipeline.rtc_dropped_frames:VALID": 202,
+          "camera.pipeline.rtc_input_frames:VALID": 202,
+          "camera.pipeline.rtc_output_frames:VALID": 202,
+          "camera.pipeline.source_frames:VALID": 202
+        },
+        "terminal": {
+          "required": false,
+          "valid_samples": 0,
+          "invalid_samples": 0,
+          "first": null,
+          "last": null,
+          "active_after_inactive": false
+        }
+      }
+    },
+    {
+      "cycle": 2,
+      "cycle_id": "427fd4f0ba8349e8b3d0d2cbd2760942",
+      "anonymous_session_id": "95dcb397dee2442d897bab716e7cd657",
+      "participant_sha256": "cd9b549d9fa16b77587f915bf77bbbb0cad802756a952c37b1d4a17389fb8893",
+      "camera_sids": [
+        "TR_VCqDQ6vnNoEGzr"
+      ],
+      "decoded_streams": [
+        {
+          "sid": "TR_VCqDQ6vnNoEGzr",
+          "samples": 203,
+          "first_sample_frames": 36,
+          "last_sample_frames": 3373,
+          "terminal_frames": 3397,
+          "terminal_buffers_released": 3397,
+          "all_stream_samples": 206,
+          "last_sample_counters": {
+            "frames": 3389,
+            "frames_observed": 3389,
+            "buffers_released": 3389
+          },
+          "terminal_counters": {
+            "frames": 3397,
+            "frames_observed": 3397,
+            "buffers_released": 3397
+          },
+          "last_sample_utc_ms": 1792393063055,
+          "terminal_utc_ms": 1792393063565,
+          "progress": true,
+          "same_sid": true,
+          "terminal_after_last_sample": true,
+          "terminal_counters_not_regressed": true,
+          "terminal_buffer_accounting": true,
+          "subscribed": true
+        }
+      ],
+      "pipeline": {
+        "active_valid_samples": 203,
+        "active_invalid_samples": 0,
+        "publication_scopes": [
+          [
+            1,
+            2
+          ]
+        ],
+        "progress": {
+          "source_frames": {
+            "first": 52,
+            "last": 3421,
+            "minimum": 52,
+            "maximum": 3421,
+            "nondecreasing": true,
+            "increases": 202
+          },
+          "rtc_input_frames": {
+            "first": 46,
+            "last": 3415,
+            "minimum": 46,
+            "maximum": 3415,
+            "nondecreasing": true,
+            "increases": 202
+          },
+          "rtc_output_frames": {
+            "first": 46,
+            "last": 3415,
+            "minimum": 46,
+            "maximum": 3415,
+            "nondecreasing": true,
+            "increases": 202
+          },
+          "rtc_dropped_frames": {
+            "first": 0,
+            "last": 0,
+            "minimum": 0,
+            "maximum": 0,
+            "nondecreasing": true,
+            "increases": 0
+          }
+        },
+        "first_active": {
+          "revision": 154,
+          "source_utc_ms": 1792392859976,
+          "session_generation": 2,
+          "active": true,
+          "room_generation": 1,
+          "publication_epoch": 2,
+          "source_frames": 52,
+          "rtc_input_frames": 46,
+          "rtc_output_frames": 46,
+          "rtc_dropped_frames": 0
+        },
+        "last_active": {
+          "revision": 1503,
+          "source_utc_ms": 1792393061835,
+          "session_generation": 2,
+          "active": true,
+          "room_generation": 1,
+          "publication_epoch": 2,
+          "source_frames": 3421,
+          "rtc_input_frames": 3415,
+          "rtc_output_frames": 3415,
+          "rtc_dropped_frames": 0
+        },
+        "availability_counts": {
+          "camera.pipeline.active:VALID": 203,
+          "camera.pipeline.publication_epoch:VALID": 203,
+          "camera.pipeline.room_generation:VALID": 203,
+          "camera.pipeline.rtc_dropped_frames:VALID": 203,
+          "camera.pipeline.rtc_input_frames:VALID": 203,
+          "camera.pipeline.rtc_output_frames:VALID": 203,
+          "camera.pipeline.source_frames:VALID": 203
+        },
+        "terminal": {
+          "required": false,
+          "valid_samples": 0,
+          "invalid_samples": 0,
+          "first": null,
+          "last": null,
+          "active_after_inactive": false
+        }
+      }
+    }
+  ],
+  "inputs": {
+    "plan.json": {
+      "size_bytes": 4313,
+      "sha256": "9a91c375df7dadd4fb06caceae7a29745e774165221367be627995ff726defd8"
+    },
+    "qualification-excluded.json": {
+      "size_bytes": 717,
+      "sha256": "08a4b7774a667762ec81a6a31e2148fbe5f5ef651303e0681154612697103f9a"
+    },
+    "uia/product-identity.json": {
+      "size_bytes": 239,
+      "sha256": "da25e8d3bfab178ca8816f4a12c0c5dc5a587b7fabbf7968f39d95b7f6c3ad98"
+    },
+    "uia/uia-result.json": {
+      "size_bytes": 1429,
+      "sha256": "da71646777295d264731d31f0ac2175d9484ec5b8a5276bdce957aa906af818d"
+    },
+    "uia/process-exit.json": {
+      "size_bytes": 147,
+      "sha256": "cae5e719b7e9da59b58ea2d7a5f7881eeba7a19d7c08553c99d02ab86eb0451e"
+    },
+    "uia/uia-actions.jsonl": {
+      "size_bytes": 15257,
+      "sha256": "ffb18fb53935c41841ffdca1668c76d3195a15c9abed50c7e5c996d8ba2879bf"
+    },
+    "remote.jsonl": {
+      "size_bytes": 6452147,
+      "sha256": "fc20148624fd0f8ceb89b0c78540c1181b9e390959dc1c97138303120723968d"
+    },
+    "process-probe.jsonl": {
+      "size_bytes": 63613848,
+      "sha256": "633eebf3f58a5f0dbf974a1bbf67997c6029951bd728a97ee93b99f8c8980d5d"
+    },
+    "checkpoint-archive/719b38f98b5247cf967bcc5ae19877f0/manifest-00000000000000001496.json": {
+      "size_bytes": 8634,
+      "sha256": "7ec9b778d6a1c0736581283e076ddcdd7c0cb49c6c9103d135f23a14c6e5ea5c"
+    },
+    "uia/export-0001/cohavora-diagnostic-bundle-4371f0ee4fc9381e6ca1d4a79829fe86/manifest.json": {
+      "size_bytes": 1859,
+      "sha256": "de10da6e84e07a00896cf9e1028273d5bc758d528ce6ce9e6877c28a2379aacd"
+    },
+    "uia/export-0001/cohavora-diagnostic-bundle-4371f0ee4fc9381e6ca1d4a79829fe86/build.json": {
+      "size_bytes": 203,
+      "sha256": "c90524d026bf8567e50c849af166bd94bb5517ae80d5598d10478330dbbed067"
+    },
+    "uia/export-0001/cohavora-diagnostic-bundle-4371f0ee4fc9381e6ca1d4a79829fe86/environment.json": {
+      "size_bytes": 119,
+      "sha256": "842c08d9684a662a74e7813b3dfa7a56c151f89d7c13d3858a43193dcf7448c4"
+    },
+    "uia/export-0001/cohavora-diagnostic-bundle-4371f0ee4fc9381e6ca1d4a79829fe86/diagnostics-health.json": {
+      "size_bytes": 409,
+      "sha256": "0487110333ab13905bb57c0f92025e68b21e6be7d8cb04e7b7300c52d0948199"
+    },
+    "uia/export-0001/cohavora-diagnostic-bundle-4371f0ee4fc9381e6ca1d4a79829fe86/sessions/719b38f98b5247cf967bcc5ae19877f0/events.jsonl": {
+      "size_bytes": 37674,
+      "sha256": "c4b72df8672977cc6f096b7b5dc21b866463701bef2223ec4ac230b4396ce3a7"
+    },
+    "uia/export-0001/cohavora-diagnostic-bundle-4371f0ee4fc9381e6ca1d4a79829fe86/sessions/719b38f98b5247cf967bcc5ae19877f0/stability.json": {
+      "size_bytes": 170,
+      "sha256": "89db41f0264301b0801ea89de50424c6c0a8f84a3cb84a87aba1b23229ee0eea"
+    },
+    "uia/export-0001/cohavora-diagnostic-bundle-4371f0ee4fc9381e6ca1d4a79829fe86/sessions/719b38f98b5247cf967bcc5ae19877f0/telemetry/checkpoint.json": {
+      "size_bytes": 722,
+      "sha256": "97c36e01002c52c60dd9b4b01453c7630912608634760edf20525c7941b5b2a7"
+    },
+    "uia/export-0001/cohavora-diagnostic-bundle-4371f0ee4fc9381e6ca1d4a79829fe86/sessions/719b38f98b5247cf967bcc5ae19877f0/telemetry/metrics.jsonl": {
+      "size_bytes": 31263425,
+      "sha256": "65a9a569703f2ea17b93d904466fa5c4e93c98cd07b9b5580dc695dbc961b7e6"
+    },
+    "checkpoint-archive/95dcb397dee2442d897bab716e7cd657/manifest-00000000000000001519.json": {
+      "size_bytes": 8288,
+      "sha256": "204cada83a067ac9c0e7b669179445005a83aafbbeb4435b110f06c7e726f08d"
+    },
+    "uia/export-0002/cohavora-diagnostic-bundle-3a1602ec81102ccc51a2b0f1e0b4ba3e/manifest.json": {
+      "size_bytes": 1859,
+      "sha256": "9d6ed18479ec6d333eda4489f063c2d484ab07ac46a1fc4a0a40f142d85f3b82"
+    },
+    "uia/export-0002/cohavora-diagnostic-bundle-3a1602ec81102ccc51a2b0f1e0b4ba3e/build.json": {
+      "size_bytes": 203,
+      "sha256": "c90524d026bf8567e50c849af166bd94bb5517ae80d5598d10478330dbbed067"
+    },
+    "uia/export-0002/cohavora-diagnostic-bundle-3a1602ec81102ccc51a2b0f1e0b4ba3e/environment.json": {
+      "size_bytes": 119,
+      "sha256": "842c08d9684a662a74e7813b3dfa7a56c151f89d7c13d3858a43193dcf7448c4"
+    },
+    "uia/export-0002/cohavora-diagnostic-bundle-3a1602ec81102ccc51a2b0f1e0b4ba3e/diagnostics-health.json": {
+      "size_bytes": 409,
+      "sha256": "28f24a15bdd3b9a40c6accb1cf99eff9fec637271ff95bf35eba01e517b69ca4"
+    },
+    "uia/export-0002/cohavora-diagnostic-bundle-3a1602ec81102ccc51a2b0f1e0b4ba3e/sessions/95dcb397dee2442d897bab716e7cd657/events.jsonl": {
+      "size_bytes": 37746,
+      "sha256": "d0bdc8a1318d1c172a1414fbf391e68791640152ef7b1e1ce2e71f521717e890"
+    },
+    "uia/export-0002/cohavora-diagnostic-bundle-3a1602ec81102ccc51a2b0f1e0b4ba3e/sessions/95dcb397dee2442d897bab716e7cd657/stability.json": {
+      "size_bytes": 170,
+      "sha256": "89db41f0264301b0801ea89de50424c6c0a8f84a3cb84a87aba1b23229ee0eea"
+    },
+    "uia/export-0002/cohavora-diagnostic-bundle-3a1602ec81102ccc51a2b0f1e0b4ba3e/sessions/95dcb397dee2442d897bab716e7cd657/telemetry/checkpoint.json": {
+      "size_bytes": 722,
+      "sha256": "cac5a247ed15bc80bf459c42943580d065383ce187a79dd0afd1e9acc12efc21"
+    },
+    "uia/export-0002/cohavora-diagnostic-bundle-3a1602ec81102ccc51a2b0f1e0b4ba3e/sessions/95dcb397dee2442d897bab716e7cd657/telemetry/metrics.jsonl": {
+      "size_bytes": 30423421,
+      "sha256": "0fbe9ef527a9286a06e33a50a48e2bf817bb948e30c1bcf1e6ac2fcace5ada14"
+    },
+    "collector-exits.json": {
+      "size_bytes": 1131,
+      "sha256": "1ce179d65e067860dbfbc50f2df494278c653d24b20cf1ef4424f9a09f627321"
+    },
+    "remote-shutdown.json": {
+      "size_bytes": 4444,
+      "sha256": "7d09c1841bc47c919624e4c9468c18715d0e55073b237a4c17f30859ef88b11e"
+    },
+    "external-review.json": {
+      "size_bytes": 1094426,
+      "sha256": "80abe6523c662ad055f8fac9071dd114c80e83741dad56aa203ed8b442ac3f01"
+    },
+    "pilot-review.json": {
+      "size_bytes": 1037174,
+      "sha256": "cecdca59fe239d3b867ce8b36e10762b99f2279483c6e83d249e48c75bc3461c"
+    },
+    "runner-exit.json": {
+      "size_bytes": 213,
+      "sha256": "3ebbdf6826eaa1b131d4d86f0c9594745e546017136361e773bad538ba183cdf"
+    }
+  },
+  "reviewer_script_sha256": "a2e59918c3f7bdb80d0418cafe354f8f9014dbc67549b1a80a54e6c00b822df6"
+}

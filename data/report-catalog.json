@@ -1,0 +1,339 @@
+{
+  "schema": "cohavora-acceptance-report-catalog-v1",
+  "revised_at": "2026-10-23",
+  "entry": "reports/index.html",
+  "plan": "data/test-plan.json",
+  "scope": "文档导航与原报告状态索引；不新增验收项，不授予当前产品通过。",
+  "status_policy": "仅索引已登记来源JSON顶层status/verdict/result；缺少可靠结构化状态时记UNRECORDED，正文中的局部PASS不用于推定整份报告通过。",
+  "report_count": 12,
+  "categories": [
+    {
+      "id": "product",
+      "title": "产品与阶段补测",
+      "description": "功能、媒体、资源与界面报告；按各批次声明的子门与输入判断。",
+      "count": 6
+    },
+    {
+      "id": "b14",
+      "title": "B14 准入与正式长稳",
+      "description": "环境冻结、资格、readmission、Formal 尝试及其阻塞记录。",
+      "count": 4
+    },
+    {
+      "id": "memory",
+      "title": "内存与资源诊断",
+      "description": "堆、系统保留、资源归属与优化对照；诊断结果不等同正式验收。",
+      "count": 1
+    },
+    {
+      "id": "tooling",
+      "title": "工具、合同与测量准入",
+      "description": "自动化、采集与运行合同的限定验证，不重复计入产品验收组。",
+      "count": 1
+    }
+  ],
+  "featured": [
+    {
+      "path": "reports/product/stage-closure-20261022.html",
+      "json_path": "reports/product/stage-closure-20261022.json",
+      "title": "冻结测试清单：阶段收口报告",
+      "date": "2026-10-22",
+      "status": "PARTIAL",
+      "updated_utc": "2026-10-22T05:15:45.499477+08:00",
+      "statement": "冻结现有24组后收口；已通过范围复用，P13/Flutter等正式FAIL保留；P03有限内容INCONCLUSIVE；P20暂停、最终回归未跑。本阶段停止，无新增执行项。",
+      "details": [
+        {
+          "label": "任务状态",
+          "value": "STAGE_CLOSED_BY_USER"
+        },
+        {
+          "label": "草稿",
+          "value": false
+        },
+        {
+          "label": "批次快照已收口",
+          "value": true
+        },
+        {
+          "label": "完整主门完成数",
+          "value": 0
+        },
+        {
+          "label": "最终回归",
+          "value": "NOT_RUN"
+        },
+        {
+          "label": "Production Ready",
+          "value": false
+        }
+      ],
+      "boundary": "阶段已收口，完整主门完成0，最终回归NOT_RUN，Production Ready为false；各已完成子门及原失败分别保留，不代表最终工件已冻结或完整验收通过。"
+    },
+    {
+      "path": "reports/product/resource-completion-20261021-01.html",
+      "json_path": "reports/product/resource-completion-20261021-01.json",
+      "title": "最新源码：单机与2C2G/3Mbps可完成子门阶段报告",
+      "date": "2026-10-21",
+      "status": "PARTIAL",
+      "updated_utc": "2026-10-21T02:52:50.224869+00:00",
+      "statement": "历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。",
+      "details": [
+        {
+          "label": "任务状态",
+          "value": "IN_PROGRESS"
+        },
+        {
+          "label": "修订",
+          "value": 6
+        },
+        {
+          "label": "草稿",
+          "value": true
+        },
+        {
+          "label": "批次快照已收口",
+          "value": false
+        },
+        {
+          "label": "完整主门完成数",
+          "value": 0
+        },
+        {
+          "label": "最终回归",
+          "value": "NOT_RUN"
+        },
+        {
+          "label": "Production Ready",
+          "value": false
+        }
+      ],
+      "boundary": "阶段快照仍在增量更新；不表示任务完成或当前源码通过。"
+    },
+    {
+      "path": "reports/product/resource-completion-20261020-01.html",
+      "json_path": "reports/product/resource-completion-20261020-01.json",
+      "title": "单机与2C2G/3Mbps服务机：可完成子门补测",
+      "date": "2026-10-20",
+      "status": "PARTIAL",
+      "updated_utc": "2026-10-20T17:54:04.618596+00:00",
+      "statement": "受控I/O三项、service-restart运行/审计及固定派生Flutter七格最新终态通过；原wrong-slot、性能、批注、采集及UI失败分别保留。window/GDI按本批终态记录；完整主门信用0，最终回归NOT_RUN。",
+      "details": [
+        {
+          "label": "修订",
+          "value": 2
+        },
+        {
+          "label": "草稿",
+          "value": false
+        },
+        {
+          "label": "批次快照已收口",
+          "value": true
+        },
+        {
+          "label": "完整主门完成数",
+          "value": 0
+        },
+        {
+          "label": "最终回归",
+          "value": "NOT_RUN"
+        },
+        {
+          "label": "Production Ready",
+          "value": false
+        }
+      ],
+      "boundary": "按原批次、原输入及各子门保留结论；本次文档整理未重新执行验收。"
+    },
+    {
+      "path": "reports/product/functional-media-retest-20261020-01.html",
+      "json_path": "reports/product/functional-media-retest-20261020-01.json",
+      "title": "最新代码：功能、编码、网络及E2EE子门补测",
+      "date": "2026-10-20",
+      "status": "PARTIAL",
+      "updated_utc": "2026-10-20T15:18:27.868748+00:00",
+      "statement": "本轮完成：B01界面10、B02文件4、B12白板8，B03编码9与B04策略恢复13，B10网络11均PASS；工程16项及远控UI增量1项PASS；Native E2EE七场景、后端四项支持、三端ABBA及共同600秒观察PASS。按phase与实际二进制分别追溯；最后output-only长路径修复不重复六个未启用输出场景。原失败与诊断保留，专用网络资源CLEANED、本地测试进程归零。Flutter固定派生/marker内容对应、物理跨机、真实设备及长稳未关闭；P02/P12网络遥测仍PARTIAL且full_gate_credit=0。",
+      "details": [
+        {
+          "label": "批次快照已收口",
+          "value": true
+        }
+      ],
+      "boundary": "按原批次、原输入及各子门保留结论；本次文档整理未重新执行验收。"
+    },
+    {
+      "path": "reports/b14/b14-full-standard-20261020-01.html",
+      "json_path": "reports/b14/b14-full-standard-20261020-01.json",
+      "title": "B14 完整标准：本机3/3资格 READY",
+      "date": "2026-10-22",
+      "status": "READY",
+      "updated_utc": "2026-10-22T18:07:13.027190+00:00",
+      "statement": "本页READY仅为本机3/3资格时快照；后续完整Formal100周期FAIL，唯一Private Bytes增长95.869140625MiB>64MiB，根因UNKNOWN。摄像头独立PASS_SCOPED对象/日期/来源与其他host边界原样保留，P19整组PARTIAL/full_gate_credit=0；目标仍active。",
+      "details": [
+        {
+          "label": "Formal",
+          "value": "FAILED"
+        },
+        {
+          "label": "已通过资格次数",
+          "value": 3
+        },
+        {
+          "label": "最近尝试",
+          "value": "FAIL"
+        },
+        {
+          "label": "仍在运行",
+          "value": false
+        }
+      ],
+      "boundary": "按原批次、原输入及各子门保留结论；本次文档整理未重新执行验收。"
+    },
+    {
+      "path": "reports/b14/b14-clipboard-readmission-20261019-01.html",
+      "json_path": "reports/b14/b14-clipboard-readmission-20261019-01.json",
+      "title": "B14完整100周期：user_pass（用户暂定通过），原始Private Bytes增长FAIL保留",
+      "date": "2026-10-23",
+      "status": "user_pass",
+      "updated_utc": "2026-10-23T02:47:02.7768477Z",
+      "statement": null,
+      "details": [
+        {
+          "label": "Formal 限定处置",
+          "value": "FAIL"
+        },
+        {
+          "label": "原机器判定",
+          "value": "FAIL"
+        },
+        {
+          "label": "Formal run_id",
+          "value": "5653c962b41646c4aa1e4600fefa8e97"
+        },
+        {
+          "label": "当前用户处置",
+          "value": "user_pass"
+        },
+        {
+          "label": "已完成周期",
+          "value": 100
+        },
+        {
+          "label": "仍暂缓范围",
+          "value": "wgc_handle_ownership、slow_disk、power_loss、real_crash_recovery、release_symbol_review、audio_pixel_quality、physical_multimonitor_coordinates"
+        }
+      ],
+      "boundary": "按原批次、原输入及各子门保留结论；本次文档整理未重新执行验收。"
+    }
+  ],
+  "reports": [
+    {
+      "path": "reports/b14/b14-clipboard-readmission-20261019-01.html",
+      "json_path": "reports/b14/b14-clipboard-readmission-20261019-01.json",
+      "category": "b14",
+      "date": "2026-10-23",
+      "title": "B14完整100周期：user_pass（用户暂定通过），原始Private Bytes增长FAIL保留",
+      "status": "user_pass",
+      "status_basis": "companion_json_top_level"
+    },
+    {
+      "path": "reports/b14/b14-historical-metrics.html",
+      "json_path": "data/b14-historical-metrics.json",
+      "category": "b14",
+      "date": "2026-10-23",
+      "title": "B14 历史五次八小时／一百轮重要实测指标",
+      "status": "READ_ONLY_DERIVED_NO_RETEST",
+      "status_basis": "historical_metrics_json_top_level"
+    },
+    {
+      "path": "reports/b14/b14-full-standard-20261020-01.html",
+      "json_path": "reports/b14/b14-full-standard-20261020-01.json",
+      "category": "b14",
+      "date": "2026-10-22",
+      "title": "B14 完整标准：本机3/3资格 READY",
+      "status": "READY",
+      "status_basis": "companion_json_top_level"
+    },
+    {
+      "path": "reports/product/p05-p06-deferred-remediation-20261022.html",
+      "json_path": "reports/product/p05-p06-deferred-remediation-20261022.json",
+      "category": "product",
+      "date": "2026-10-22",
+      "title": "P05／P06 已知缺陷延期与后续修复方案",
+      "status": "DEFERRED",
+      "status_basis": "companion_json_top_level"
+    },
+    {
+      "path": "reports/product/p15-lan-clock-20261022.html",
+      "json_path": "reports/product/p15-lan-clock-20261022.json",
+      "category": "product",
+      "date": "2026-10-22",
+      "title": "P15 双机软件校时：局域网直连，媒体经阿里云 SFU",
+      "status": "PASS",
+      "status_basis": "companion_json_top_level"
+    },
+    {
+      "path": "reports/product/stage-closure-20261022.html",
+      "json_path": "reports/product/stage-closure-20261022.json",
+      "category": "product",
+      "date": "2026-10-22",
+      "title": "冻结测试清单：阶段收口报告",
+      "status": "PARTIAL",
+      "status_basis": "companion_json_top_level"
+    },
+    {
+      "path": "reports/product/resource-completion-20261021-01.html",
+      "json_path": "reports/product/resource-completion-20261021-01.json",
+      "category": "product",
+      "date": "2026-10-21",
+      "title": "最新源码：单机与2C2G/3Mbps可完成子门阶段报告",
+      "status": "PARTIAL",
+      "status_basis": "companion_json_top_level"
+    },
+    {
+      "path": "reports/product/functional-media-retest-20261020-01.html",
+      "json_path": "reports/product/functional-media-retest-20261020-01.json",
+      "category": "product",
+      "date": "2026-10-20",
+      "title": "最新代码：功能、编码、网络及E2EE子门补测",
+      "status": "PARTIAL",
+      "status_basis": "companion_json_top_level"
+    },
+    {
+      "path": "reports/product/resource-completion-20261020-01.html",
+      "json_path": "reports/product/resource-completion-20261020-01.json",
+      "category": "product",
+      "date": "2026-10-20",
+      "title": "单机与2C2G/3Mbps服务机：可完成子门补测",
+      "status": "PARTIAL",
+      "status_basis": "companion_json_top_level"
+    },
+    {
+      "path": "reports/b14/b14-amd-camera-rejoin-20261019-03-reviewed.html",
+      "json_path": null,
+      "category": "b14",
+      "date": "2026-10-19",
+      "title": "摄像头二次入会专项验证",
+      "status": "UNRECORDED",
+      "status_basis": "no_structured_top_level_status"
+    },
+    {
+      "path": "reports/memory/memory-optimization-20261019.html",
+      "json_path": null,
+      "category": "memory",
+      "date": "2026-10-19",
+      "title": "内存成本与诊断工具优化 · 2026-10-19",
+      "status": "UNRECORDED",
+      "status_basis": "no_structured_top_level_status"
+    },
+    {
+      "path": "reports/tooling/tests-portability-audit-20261018.html",
+      "json_path": null,
+      "category": "tooling",
+      "date": "2026-10-18",
+      "title": "tests 跨电脑跨服务器复用审计",
+      "status": "UNRECORDED",
+      "status_basis": "no_structured_top_level_status"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "schema": "cohavora-p09-turn-relay-completed-scoped-v1",
+  "status": "PASS",
+  "case": "turn-relay",
+  "scope": "仅本轮独立TURN relay单case：实际路径、持续解码与DX11交付、双方原生退场、同run输入身份、owned TURN配置恢复及外部隔离环境清理；不同run不拼接为完整11项或P09整组PASS。",
+  "product_gate_status": "PARTIAL",
+  "full_gate_credit": 0,
+  "finished_utc": "2026-10-22T06:56:09.115960+00:00",
+  "closed_utc": "2026-10-22T07:00:52.528672+00:00",
+  "binary_identity": {
+    "configuration": "RelWithDebInfo",
+    "binary_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.exe",
+    "binary_sha256": "7193491df4e655bc0e5e5a3763de0f5a0ed9ae95ebf1dfbd0d679b5c5253a152",
+    "pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.pdb",
+    "pdb_guid": "1d32253b-9f9f-4f5a-a08d-e6f9ed4588a1",
+    "pdb_age": 23
+  },
+  "actual_local_candidate": "relay",
+  "protocol": "udp",
+  "decoded_before": 20,
+  "decoded_after": 31,
+  "render_delivered": 31,
+  "case_status": "PASS",
+  "cleanup_status": "PASS",
+  "input_identity_status": "PASS",
+  "environment_restore_status": "PASS",
+  "security_group_restore_status": "PASS",
+  "history": {
+    "original_ten_case_batch": "FAIL",
+    "original_terminal_input_identity": "UNKNOWN",
+    "original_failure_reason": "HTTP egress source differed from actual UDP source, so the original source-scoped direct-media block did not force TURN. Historical verdicts are retained.",
+    "stage_P09": "FAIL"
+  },
+  "control_attempts": {
+    "pre_restore_failures": 2,
+    "reason": "Local control code omitted remote CONFIG_PATH before REMOTE_AUTH; both failed before any resource mutation. Corrected control restored the environment; original attempt receipts are retained."
+  },
+  "not_run": [
+    "other ten cases in this retest",
+    "full eleven-case batch",
+    "physical link loss",
+    "UDP/RTP fault log closure",
+    "fault live-current/UI export",
+    "final regression"
+  ],
+  "product_source_changed": false,
+  "test_date": "2026-10-22",
+  "finished_local": "2026-10-22T14:56:09.115960+08:00",
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "native_retirement": {
+    "receiver": {
+      "exit_code": 0,
+      "retired": true,
+      "rooms_alive": 0,
+      "cleanup_pending": 0
+    },
+    "publisher": {
+      "exit_code": 0,
+      "retired": true,
+      "rooms_alive": 0,
+      "cleanup_pending": 0
+    }
+  },
+  "render_backend": "dx11",
+  "turn_restore": {
+    "health_status": 200,
+    "restored_config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+    "participant_drain": {
+      "polls": 1,
+      "wait_ms": 7
+    },
+    "shared_service_unchanged": true
+  },
+  "not_covered": [
+    "原九成功case及旧service-restart仅按各自原输入复用",
+    "原十项FAIL批次的terminal输入身份UNKNOWN不回填",
+    "本轮不授音频恢复或最终回归信用"
+  ],
+  "source": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/closeout.json",
+    "sha256": "7aad4dff497ead79e6a9e300276335401cd007848647ff87c85f3dd109b23fb5",
+    "bytes": 4265
+  },
+  "source_files": [
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/endpoint-admission.json",
+      "sha256": "55687fec4b56052091b12915c84670beb093e06e4d225c71bd1150635912fa69",
+      "bytes": 586
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/remote-admission.json",
+      "sha256": "6db24887bcca7b884a99d95191f9c460e7421eb991c30f726291f29acc6ba40e",
+      "bytes": 979
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/environment-before.json",
+      "sha256": "d229ed9ef322f482271aa60f365a7da4d15d7fd4eeec1623151e2fd6b6ac30a2",
+      "bytes": 225
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/server-prepare/server.json",
+      "sha256": "fe7b29a28a3684765d5277185dc39eac4ed9d7856f1f8081311a76f8a482b70d",
+      "bytes": 724
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/fault-network-prepare/network.json",
+      "sha256": "95f9d847e08da1ede99c10517c582029d03075b306c7cec5abd7d100173d0721",
+      "bytes": 812
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/security-group-before/network.json",
+      "sha256": "3cd5dbae7091d8ae7883de105e87cb9c98d49b7f8013f2e2bc246de6c145a805",
+      "bytes": 7395
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/security-group-probe-scope/network.json",
+      "sha256": "2e0d5c7cd5c7708cfbd395b774d94c040182d7a37a28bbf4a4e2907554e0ba9c",
+      "bytes": 8005
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/udp-source.json",
+      "sha256": "2dce82e1618b7f5916d2f3cead96b2c475f4e9f3348c618708e9ee5390fd3430",
+      "bytes": 2407
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/turn-retest/index.json",
+      "sha256": "3f70aa5f1219555ab83f130f38706c55fb732b07380ec5cacee2174d81110562",
+      "bytes": 7617
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/turn-retest/turn-relay/result.json",
+      "sha256": "6eb6a31c7cf163ff08b4fdf687d9d79fc5a6ee29283c525362541fadf021be41",
+      "bytes": 25981
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/environment-restore.json",
+      "sha256": "37a08d08696b4ac81419681f169b617e583716d049bb7d4da8d3fee366bc4102",
+      "bytes": 112
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/environment-restore-final.json",
+      "sha256": "cb994961a55b0ea00c2ad309bc52724d1a562ab30cc6f6b9da5cb8e22c77bf8b",
+      "bytes": 340
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/environment-restore-complete.json",
+      "sha256": "a6564a5357c8e13fc3988fe77c18411c613a940fad1ef22831cd9f608a203d85",
+      "bytes": 452
+    },
+    {
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/p09-network-retest-20261022-01/security-group-restore.json",
+      "sha256": "d3bdc25667f26b60c8eec455e9c16cc518b2d1ceb843e17ab5f82cb9c99c4c96",
+      "bytes": 362
+    }
+  ]
+}

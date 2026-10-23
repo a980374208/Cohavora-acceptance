@@ -1,0 +1,242 @@
+{
+  "status": "PASS_SCOPED_STAGED_PAIR_IDENTITY",
+  "started_utc": "2026-10-22T00:05:45.713236+00:00",
+  "completed_utc": "2026-10-22T00:05:53.400547+00:00",
+  "configuration": "RelWithDebInfo",
+  "media_diagnostics": "ON",
+  "build_directory": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022",
+  "scope": "Exact current task12 diagnostic-ON product file pairs only",
+  "verification_invocation_count": 1,
+  "verification_invocation": {
+    "command": [
+      "C:\\python3\\python.exe",
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\packaging\\verify_artifact_identity.py",
+      "--manifest",
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task13-current-product01\\frozen-schema2.json",
+      "--llvm-readobj",
+      "C:/Program Files/LLVM/bin/llvm-readobj.exe",
+      "--llvm-pdbutil",
+      "C:/Program Files/LLVM/bin/llvm-pdbutil.exe",
+      "--output",
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task13-current-product01\\source-verification",
+      "--stage-output",
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task13-current-product01\\staged"
+    ],
+    "cwd": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+    "returncode": 0,
+    "elapsed_seconds": 7.686999999990803,
+    "stdout": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task13-current-product01\\verify.stdout.txt",
+      "sha256": "88d5603098008b495dcdb6bab5b07d505e8bed121f8fa7787ecea5ad900bf331",
+      "size": 183,
+      "mtime_utc": "2026-10-22T00:05:52.760630+00:00",
+      "mtime_ns": 1792627552760629700
+    },
+    "stderr": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task13-current-product01\\verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_utc": "2026-10-22T00:05:52.760630+00:00",
+      "mtime_ns": 1792627552760629700
+    }
+  },
+  "checks": {
+    "original_inspection_sources_still_unchanged": true,
+    "llvm_tools_still_unchanged": true,
+    "verifier_still_unchanged": true,
+    "build_chain_inputs_still_unchanged": true,
+    "runtime_renderer_copies_still_unchanged": true,
+    "frozen_manifest_still_unchanged": true,
+    "source_gate_passed": true,
+    "terminal_stage_gate_passed": true,
+    "source_inputs_unchanged": true,
+    "staged_inputs_unchanged": true,
+    "stage_admitted": true,
+    "verify_exit_zero": true
+  },
+  "errors": [],
+  "inspection_receipt": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task13-current-product01\\inspection-result.json",
+    "sha256": "a2894266819a271e408f7450d528c9e35e52df06109ca3548574fa9ee61aded1",
+    "size": 24524,
+    "mtime_utc": "2026-10-22T00:04:40.536796+00:00",
+    "mtime_ns": 1792627480536796300
+  },
+  "frozen_manifest": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task13-current-product01\\frozen-schema2.json",
+    "sha256": "ed34778031ae35a1bb3e19b966c63f5a7ce19293c75f65e7eb6f470babf68033",
+    "size": 2134,
+    "mtime_utc": "2026-10-22T00:04:40.530794+00:00",
+    "mtime_ns": 1792627480530794200
+  },
+  "source_gate_receipt": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task13-current-product01\\source-verification\\result.json",
+    "sha256": "4bbc033b5b1c42e80f770f8e8919da7b5123dc98ecc4ba50d3b6384d43c639bf",
+    "size": 19812,
+    "mtime_utc": "2026-10-22T00:05:47.702286+00:00",
+    "mtime_ns": 1792627547702286100
+  },
+  "terminal_stage_gate_receipt": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task13-current-product01\\staged\\verification\\result.json",
+    "sha256": "11a0ca0066689bc9ae6e5172a611e109827486f4b0e5769f3918a9938cf39708",
+    "size": 20143,
+    "mtime_utc": "2026-10-22T00:05:50.347114+00:00",
+    "mtime_ns": 1792627550347114100
+  },
+  "stage_receipt": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task13-current-product01\\staged\\stage-result.json",
+    "sha256": "9443c11577758df83371598f5ddaac015ea1f72895596d8c9ad932959428dffd",
+    "size": 971,
+    "mtime_utc": "2026-10-22T00:05:52.755630+00:00",
+    "mtime_ns": 1792627552755630600
+  },
+  "admitted_manifest": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task13-current-product01\\staged\\admitted-manifest.json",
+    "sha256": "7e7995e4cf084fab9b4127943fe957ee8f7dcb73894fb4df90aeedea79323c15",
+    "size": 2244,
+    "mtime_utc": "2026-10-22T00:05:51.549817+00:00",
+    "mtime_ns": 1792627551549816700
+  },
+  "pairs": [
+    {
+      "id": "app",
+      "binary": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+        "sha256": "a1bb62ac63e1205a0da45e9d4bca71c000d5c89eec0678e1a939266e503c66a3",
+        "size": 107419648,
+        "mtime_utc": "2026-10-21T23:23:10.145065+00:00",
+        "mtime_ns": 1792624990145064900
+      },
+      "pdb": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\src\\app\\RelWithDebInfo\\Cohavora.pdb",
+        "sha256": "31bd94992b96421801833f3bd43fd058a9c43c1f92f36ddf79d17c16107346a0",
+        "size": 719892480,
+        "mtime_utc": "2026-10-21T23:23:10.192363+00:00",
+        "mtime_ns": 1792624990192363100
+      },
+      "pdb_guid": "F6D8729D-76A4-4A27-89AB-34F5F257ECBC",
+      "pdb_age": 1
+    },
+    {
+      "id": "dx11",
+      "binary": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\src\\render\\RelWithDebInfo\\cohavora-render-dx11.dll",
+        "sha256": "26f5f80c3dbd5d6c70c072eb0d036dc7953a38b0bf1dd855951794c71004c205",
+        "size": 755712,
+        "mtime_utc": "2026-10-21T23:22:09.693354+00:00",
+        "mtime_ns": 1792624929693354300
+      },
+      "pdb": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\src\\render\\RelWithDebInfo\\cohavora-render-dx11.pdb",
+        "sha256": "a4ff2f47c6e40fd397984243437e41aa0cf400e6ad06b166f20185f72d756c65",
+        "size": 9179136,
+        "mtime_utc": "2026-10-21T23:22:09.694354+00:00",
+        "mtime_ns": 1792624929694353900
+      },
+      "pdb_guid": "E3A50685-D3B4-4714-9677-962925F32D29",
+      "pdb_age": 1
+    },
+    {
+      "id": "opengl",
+      "binary": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\src\\render\\RelWithDebInfo\\cohavora-render-opengl.dll",
+        "sha256": "fbc39a0fdadf0b94b6227fe9069aafe0a3828afee72670078b1b83e4935ba28a",
+        "size": 741888,
+        "mtime_utc": "2026-10-21T23:22:11.604519+00:00",
+        "mtime_ns": 1792624931604518900
+      },
+      "pdb": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\src\\render\\RelWithDebInfo\\cohavora-render-opengl.pdb",
+        "sha256": "7e214edd9dd634cecb4c247bf51c61279ee1932ecb60ccab6efe65b3ea0499fd",
+        "size": 8515584,
+        "mtime_utc": "2026-10-21T23:22:11.604519+00:00",
+        "mtime_ns": 1792624931604518900
+      },
+      "pdb_guid": "6BD4B8CD-F3D4-461D-B45B-9F3E56334311",
+      "pdb_age": 1
+    }
+  ],
+  "runtime_renderer_bindings": [
+    {
+      "id": "dx11",
+      "runtime": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\src\\app\\RelWithDebInfo\\renderers\\cohavora-render-dx11.dll",
+        "sha256": "26f5f80c3dbd5d6c70c072eb0d036dc7953a38b0bf1dd855951794c71004c205",
+        "size": 755712,
+        "mtime_utc": "2026-10-21T23:22:10.310140+00:00",
+        "mtime_ns": 1792624930310140400
+      },
+      "build_output_sha256": "26f5f80c3dbd5d6c70c072eb0d036dc7953a38b0bf1dd855951794c71004c205",
+      "same_bytes": true
+    },
+    {
+      "id": "opengl",
+      "runtime": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\src\\app\\RelWithDebInfo\\renderers\\cohavora-render-opengl.dll",
+        "sha256": "fbc39a0fdadf0b94b6227fe9069aafe0a3828afee72670078b1b83e4935ba28a",
+        "size": 741888,
+        "mtime_utc": "2026-10-21T23:22:12.227823+00:00",
+        "mtime_ns": 1792624932227822500
+      },
+      "build_output_sha256": "fbc39a0fdadf0b94b6227fe9069aafe0a3828afee72670078b1b83e4935ba28a",
+      "same_bytes": true
+    }
+  ],
+  "build_chain_inputs": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\CMakeCache.txt",
+      "sha256": "168d3c05382679baac7a094690f16d26f23f8e842cec4edbdc3e78987a477f80",
+      "size": 31922,
+      "mtime_utc": "2026-10-21T22:16:46.050863+00:00",
+      "mtime_ns": 1792621006050862500
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task12\\window-repair-receipt.json",
+      "sha256": "35a0097a78bd53c91abb840a0a49e2b90c3cd47a5d7783ea0dfc427d1762da1c",
+      "size": 5430,
+      "mtime_utc": "2026-10-21T23:23:29.212752+00:00",
+      "mtime_ns": 1792625009212751900
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task12\\probe-app-build.log",
+      "sha256": "ec40883cda098bd3a9054cb63d200d30c9d6cf828c868b702ca95c6233c16334",
+      "size": 6938052,
+      "mtime_utc": "2026-10-21T23:23:11.072463+00:00",
+      "mtime_ns": 1792624991072463100
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\src\\app\\cohavora_app.vcxproj",
+      "sha256": "8073574ee7fe1fc587d744f31067ef8fa3b3ef5982d2a0f5df661b0c9417e5fe",
+      "size": 161145,
+      "mtime_utc": "2026-10-21T21:47:20.398117+00:00",
+      "mtime_ns": 1792619240398117400
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\src\\render\\cohavora_render_dx11.vcxproj",
+      "sha256": "962dc794a70da3ac72fbb20efee77a0f49e35c5ff448d3b8bdad5cf290192188",
+      "size": 32352,
+      "mtime_utc": "2026-10-21T21:47:20.339702+00:00",
+      "mtime_ns": 1792619240339701700
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\build\\media-diagnostics-on-20261022\\src\\render\\cohavora_render_opengl.vcxproj",
+      "sha256": "8743964a65afe876cfc34b74fe8387de33e2ad90dc64ebb1adaa135010c69755",
+      "size": 32180,
+      "mtime_utc": "2026-10-21T21:47:20.343707+00:00",
+      "mtime_ns": 1792619240343707300
+    }
+  ],
+  "no_other_build_writer": "Parent confirmed task12 product build has no other writer",
+  "build_executed": false,
+  "product_executed": false,
+  "deployment_modified": false,
+  "product_or_verifier_source_modified": false,
+  "source_provenance": "NOT_VERIFIED",
+  "final_sdk_flutter_freeze": "NOT_VERIFIED",
+  "runtime_acceptance": "NOT_RUN",
+  "performance_acceptance": "NOT_RUN",
+  "release_qualification": "NOT_VERIFIED",
+  "automatic_build_or_installer_integration": false,
+  "historical_acceptance_credit": 0,
+  "downstream_requirement": "Re-verify these exact staged identities before any future consumer action; source provenance and final SDK/Flutter inputs require separate closure"
+}

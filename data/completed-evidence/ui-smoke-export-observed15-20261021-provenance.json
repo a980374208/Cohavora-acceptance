@@ -1,0 +1,136 @@
+{
+  "schema": "cohavora-ui-smoke-export-provenance-v1",
+  "run_id": "1e43861b9bf745cebd942826dfa20eb8",
+  "status": "SCOPED_COMPLETED_RESULT",
+  "created_utc": "2026-10-21T10:58:44.989103+00:00",
+  "source_references": [
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021-load06\\ui-smoke-export-observed15\\summary.json",
+      "sha256": "acc3035d0f5a960c4f70a926c214a7236f002014372927fa520fe72256d38430",
+      "bytes": 1023
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021-load06\\ui-smoke-export-observed15\\uia\\uia-result.json",
+      "sha256": "77b9f26a174efff7c7eaa311b928b4c2add41e89f7cb964f00adcce4aaee8bf4",
+      "bytes": 1437
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021-load06\\ui-smoke-export-observed15\\uia\\product-identity.json",
+      "sha256": "31f407c6dd2c2fd5dfed1213c45c8807e226f428d8b984800426f70242117c11",
+      "bytes": 259
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021-load06\\ui-smoke-export-observed15\\run.json",
+      "sha256": "4c77a736d201c089981fae6bded74d9d990f308b96467a7f02c84c9b3ffde200",
+      "bytes": 1161
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021-load06\\ui-smoke-export-observed15\\uia\\desktop-baseline.json",
+      "sha256": "31c6eefc997460215d68d6b25f7f87fc42873530cbfc8f4cb0e05f817d54aedc",
+      "bytes": 343
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021-load06\\ui-smoke-export-observed15\\uia\\desktop-observations.jsonl",
+      "sha256": "396fc2335efff4f7d6af8a65418eb3f8689744dfc9057823503f056ce97dba35",
+      "bytes": 105837
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021-load06\\ui-smoke-export-observed15\\uia\\input-origin\\receipt.json",
+      "sha256": "5e125e67486918582cd04a8279347113084e9c76236558b07cc038ae504620b6",
+      "bytes": 1498
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021-load06\\ui-smoke-export-observed15\\uia\\process-exit.json",
+      "sha256": "db7464a5f14f6974994590aa9230a4fc2c40312fb18acd82c768eec70f3c9b8f",
+      "bytes": 147
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021-load06\\ui-smoke-export-observed15\\uia\\startup-focus.json",
+      "sha256": "91fe0fc6156f9feeaa9eccf4a5a9a752a13d2cfdd26533248daf839459eb9507",
+      "bytes": 1216
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021-load06\\ui-smoke-export-observed15\\uia\\startup-main-focus.json",
+      "sha256": "e8bbfe9c3b9eab4531d2077c979e83e550673d24949cd38e65c09b8a30a972af",
+      "bytes": 1213
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\ui-export-readback15-02\\result-0001.json",
+      "sha256": "08fc4ccb9de79d8e2f69c2ded9ccaed869c61b4ce6ad6818db938812d06568da",
+      "bytes": 10363
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\ui-export-readback15-02\\result-0002.json",
+      "sha256": "3a79b09d8f459d63266b1a6796244621135240082be935f1b529e3e7ef083395",
+      "bytes": 10212
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\ui-export-readback15-02\\result-0003.json",
+      "sha256": "34626ada94cbfe827daba02bfbff54cd88e4fbb7f6d9eb5e2842f3157e6d4d35",
+      "bytes": 10069
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\ui-load-preparation06\\execution\\load-result.json",
+      "sha256": "7779668c7fe7fc6c1e69550f2b6302f7cf951495b35e3fde91956da306761937",
+      "bytes": 569
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\integration\\source_paths.py",
+      "sha256": "e90a6a62ab08e436510294d201985cceedd023cf38a364c9a59b634417ce99f2",
+      "bytes": 4533
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\desktop\\product_uia_retest.py",
+      "sha256": "db9f1b873c0141a01d742c872f47900ffca26e6d0a66d33a337091830e919a64",
+      "bytes": 36969
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_desktop.ps1",
+      "sha256": "b814dc4b8cc3491450220e9724e12ee2ed220ea8b549f372a80e8d210acb99f5",
+      "bytes": 128573
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\meeting\\meeting_soak.py",
+      "sha256": "ce45172dd9b590c4482a74ed0066636eb9d7c80bf62d676c01e8a333263a772b",
+      "bytes": 46012
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\product_acceptance\\product_pilot_checkpoints.py",
+      "sha256": "ebfccd8f94f11e76932be10172c5d1c3af2dee5e950e9f90406fc33aa35bbf88",
+      "bytes": 6894
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\desktop\\ui_input_origin.py",
+      "sha256": "2b229dd3f690f01d9845350f0abdb7740bcda91bb0a9510882fbf0e6e56734fc",
+      "bytes": 25669
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_input_origin.ps1",
+      "sha256": "f6f8071ec20c136d3c61deaee7d2cd1fdb12f470cec760097897e417d0ec7214",
+      "bytes": 9157
+    }
+  ],
+  "superseded_smoke": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\data\\completed-evidence\\ui-smoke-export-unblocked04-20261021-failure.json",
+    "sha256": "ae829dad15254a87f4a54ee4b1b742e836704d4a427ce121ef2a048cc268e4a7",
+    "bytes": 4410
+  },
+  "previous_joint_theme_and_smoke_provenance_retained": true,
+  "plan_update": {
+    "before_sha256": "ac0b88ebbe37364ef47886e578e770e746cf8fe5105a243a4b4476e091bc2bf9",
+    "after_sha256": "1eed4b58a6e2f1246b11f006d5b41fb2697413ab34c49c0dddff696ba5a7b90f",
+    "group": "P03",
+    "boundary_index": 5,
+    "before": "本批resource-completion-20261021-01桌面子门：ui-timing-theme=PASS_SCOPED, ui-smoke-export=FAIL；最新完成ui-timing-theme-unblocked09（2026-10-21）三轮typed UI耗时仅OBSERVATION_ONLY、release_gate_issued=false，不新增性能门限；theme设置限定结果只归P21既有主题边界，不重复计项。ui-smoke-export-unblocked04终态FAIL、0/3轮，DEDICATED_DESKTOP_INPUT_ACTIVITY；GetLastInputInfo仅证实session输入时间变化，输入来源UNKNOWN，未证明用户操作或产品SendInput执行；导出内容回读NOT_RUN。来源data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json与data/completed-evidence/ui-smoke-export-unblocked04-20261021-failure.json，追溯data/completed-evidence/ui-terminal-20261021-provenance.json；旧历史FAIL保留于reports/product/resource-completion-20261021-01.html；原gates/conditions/门限、完整P03/full-plan/Formal/P20信用0保留，媒体连续性及完整外观矩阵未覆盖。",
+    "after": "本批resource-completion-20261021-01桌面子门：ui-timing-theme=PASS_SCOPED, ui-smoke-export=PASS_SCOPED；最新完成ui-timing-theme-unblocked09（2026-10-21）三轮typed UI耗时仅OBSERVATION_ONLY、release_gate_issued=false，不新增性能门限；theme设置限定结果只归P21既有主题边界，不重复计项。最新完成ui-smoke-export-observed15（2026-10-21）strict短测3/3轮PASS，产品存活105.6158393秒（原最小50秒），自然退出码0；三次生产导出均独立回读PASS_SCOPED：21个清单文件、473771条指标、135条时间线事件，与同run压缩检查点及native事件逐项匹配。保留各包指标裁剪／字符串值省略，以及confirmed_crash_metadata与persistent_loss_summary缺失声明；不声称零持久化损失或故障复盘完整。strict输入时间戳全程未变；另90.047秒observer未记录事件且两个hook均注销，continuous_hook_coverage与历史输入来源仍UNKNOWN。来源data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json，追溯data/completed-evidence/ui-smoke-export-observed15-20261021-provenance.json；主题原来源data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json与data/completed-evidence/ui-terminal-20261021-provenance.json保留。旧FAIL仅作历史追溯，保留于原报告和既有证据；原gates/conditions/门限、完整P03/full-plan/Formal/P20信用0保留；媒体连续性、L3、长时内存、完整外观矩阵未覆盖。",
+    "only_one_existing_boundary_changed": true
+  },
+  "safe_projection_sha256": "81e42e236db538a32f48aa34cfc3a79ca10e74cfa0becbbac55210e99872e06a",
+  "helper_sha256": "b521e88dc3ce9409ee9a126c3a6e6a5cadc17f1d75bd957d866dcebabb1f7174",
+  "formal_credit": 0,
+  "full_plan_gate_credit": 0,
+  "p20_credit": 0,
+  "theme_and_p21_unchanged": true,
+  "layout_and_thresholds_unchanged": true,
+  "product_runtime_run": "NOT_RUN_REPORT_UPDATE_ONLY"
+}

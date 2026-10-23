@@ -1,12 +1,14 @@
 {
   "schema": "b14-memory-investigation-note-v1",
   "noted_at": "2026-10-15T08:48:17.078Z",
-  "origin": "用户在本次修订中提供的当前排查说明，不是原Formal回执中的完整归因结论",
+  "origin": "本对话及关联B14／WPR堆诊断讨论中基于历史诊断观察形成的估算；不是用户提供的新测量，也不是原Formal回执中的完整量化归因结论",
   "run_id": "e7501e95039f4eb7ab23594a83fe82f0",
   "measured_private_growth_mib": 100.412109375,
   "frozen_limit_mib": 64,
-  "current_findings": "100 MB增长中约62~90 MB已定位为系统合理保留（堆提交页与碎片30~45 MB、WGC帧池16~20 MB、日志遥测10~15 MB及单例缓存）；未闭环残余仅约10~38 MB。",
+  "current_findings": "本对话曾估算约100 MB增长中，约62~90 MB可能属于系统及组件合理保留（堆提交页与碎片30~45 MB、WGC帧池16~20 MB、日志遥测10~15 MB及单例缓存）；未闭环残余估算约10~38 MB。分项与残余尚未完成互斥量化归因。",
   "attribution_status": "PARTIAL_NOT_FULLY_QUANTIFIED",
   "conclusion": "现有证据不能确定为内存泄漏，也不能据此说明不存在内存泄漏。",
-  "scope_note": "上述分项为机制分析与实测定位估算，不是本次100轮运行经独立扣除的结论；原FAIL和64 MiB门限保持不变。"
+  "scope_note": "上述分项属于本对话历史诊断估算，尚未完成同run、同窗口、互斥量化与统一单位核算，不从100轮正式增长中独立扣除。原始FAIL和64 MiB门限保留；本次用户认为10～38 MiB规模较小而暂定PASS，见data/b14-user-disposition-20261023.json。",
+  "provenance_corrected_at": "2026-10-23",
+  "provenance_correction": "按本对话用户澄清更正来源；原估算数值保留，未将其升级为已证实的泄漏量或上限。"
 }

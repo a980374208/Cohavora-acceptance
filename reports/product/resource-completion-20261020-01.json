@@ -1,0 +1,3361 @@
+{
+  "schema": "cohavora-resource-completion-v2",
+  "batch_id": "resource-completion-20261020-01",
+  "title": "单机与2C2G/3Mbps服务机：可完成子门补测",
+  "status": "PARTIAL",
+  "final_snapshot": true,
+  "draft": false,
+  "revision": 2,
+  "updated_utc": "2026-10-20T17:54:04.618596+00:00",
+  "context": {
+    "product_root": "E:\\vsSource\\WebRTC\\live-kit-test",
+    "private_root": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+    "report_repository": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance",
+    "product_head": "cb10d689e53ad6adae13a2bfaf2a44af4a27a6a6",
+    "private_head": "58abbbcef8402194f53e6688790b5371d8d7cf37",
+    "report_head": "c5296d3ddd3742d6663d89039660ca1c428fefa0",
+    "heads_are_context_only": true,
+    "input_binding": "以各原始证据的源码、runner、二进制及PDB身份为准；不以HEAD相同推断输入相同。",
+    "resource_scope": "一台Windows电脑与2核2GiB/3Mbps服务机；单机多进程不授予物理多端或独立测量信用。",
+    "predecessor_report": "functional-media-retest-20261020-01.json",
+    "predecessor_modified": false,
+    "test_plan": "data/test-plan.json",
+    "test_plan_modified_by_this_report": true,
+    "latest_build_source_phase": "source-phase12-inputs.json",
+    "latest_build_source_phase_sha256": "d42aaead198d65d5539b288178b024ba641289ee70da8479751f2e0c059ab290",
+    "final_snapshot_scope": "当前功能、编码、网络及E2EE阶段快照；final_snapshot=true仅表示本批已收口，overall仍PARTIAL、完整主门信用0。",
+    "latest_build_scope": "phase12仅重建E2EE peer及annotation target；其余产品目标按phase11源码差异及EXE/PDB身份复用。此上下文不把所有历史run重标为phase12。"
+  },
+  "summary": {
+    "executed_product_subconditions_passed": 3,
+    "full_plan_gates_completed": 0,
+    "whiteboard_engineering_tests_passed": 3,
+    "auxiliary_counts_are_not_product_gates": true,
+    "statement": "受控I/O三项、service-restart运行/审计及固定派生Flutter七格最新终态通过；原wrong-slot、性能、批注、采集及UI失败分别保留。window/GDI按本批终态记录；完整主门信用0，最终回归NOT_RUN。",
+    "final_regression_status": "NOT_RUN",
+    "production_ready": false,
+    "runtime_case_observations_passed": 15,
+    "runtime_case_counting_policy": "本批运行case观察包含与前批重测重叠，仅作批次观察数；不与原I/O三项相加作新增独立验收项或计划完成率。"
+  },
+  "entries": {
+    "io": {
+      "title": "真实I/O：三项受控运行子条件",
+      "plan_codes": [
+        "P03"
+      ],
+      "status": "PASS",
+      "evidence_kind": "runtime_subconditions",
+      "executed_product_subconditions": 3,
+      "product_subgate_credit": 3,
+      "full_gate_credit": 0,
+      "scope": "真实诊断sink进程退出；隔离受控NTFS卷磁盘满及恢复；oplock阻塞文件打开取消及恢复。",
+      "checks": [
+        {
+          "id": "disk-full-recovery",
+          "status": "PASS",
+          "win32_error": 112,
+          "committed_after_recovery": 1001,
+          "cleanup": "PASS",
+          "evidence_refs": [
+            "io_disk_full",
+            "io_disk_cleanup"
+          ]
+        },
+        {
+          "id": "oplock-open-cancellation",
+          "status": "PASS",
+          "attempts": 3,
+          "exited_before_release": true,
+          "cleanup": "PASS",
+          "evidence_refs": [
+            "io_oplock",
+            "io_oplock_cleanup"
+          ]
+        },
+        {
+          "id": "diagnostic-sink-process-exit",
+          "status": "PASS",
+          "observations": 17,
+          "evidence_refs": [
+            "io_sink_exit"
+          ]
+        }
+      ],
+      "auxiliary_checks": [
+        {
+          "id": "volume-guard-selftest",
+          "status": "PASS",
+          "checks": 8,
+          "product_subgate_credit": 0,
+          "evidence_ref": "io_guard"
+        }
+      ],
+      "evidence_refs": [
+        "io_summary"
+      ],
+      "remaining": [
+        "真实物理慢盘与驱动不响应未覆盖。",
+        "断电恢复未执行。",
+        "不据此关闭P03全部UI、人工输入和辅助功能矩阵。"
+      ]
+    },
+    "network_audit": {
+      "title": "既有B10网络证据完整性、关联与历史支持包回读",
+      "plan_codes": [
+        "P02",
+        "P12",
+        "P17"
+      ],
+      "status": "PARTIAL",
+      "evidence_kind": "offline_audit",
+      "product_subgate_credit": 0,
+      "full_gate_credit": 0,
+      "scope": "Offline audit of closed B10 evidence and production historical bundle export/readback; original results are unchanged.",
+      "source": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\functional-media-retest-20261020-01\\b10-network-01",
+      "source_head": "cb10d689e53ad6adae13a2bfaf2a44af4a27a6a6",
+      "audit_head": "cb10d689e53ad6adae13a2bfaf2a44af4a27a6a6",
+      "original_evidence_unchanged": true,
+      "original_files_verified": 239,
+      "checks": [
+        {
+          "id": "baseline",
+          "status": "PASS",
+          "integrity_status": "PASS",
+          "correlation_status": "PASS",
+          "missing": []
+        },
+        {
+          "id": "packet-loss",
+          "status": "PASS",
+          "integrity_status": "PASS",
+          "correlation_status": "PASS",
+          "missing": []
+        },
+        {
+          "id": "jitter",
+          "status": "PASS",
+          "integrity_status": "PASS",
+          "correlation_status": "PASS",
+          "missing": []
+        },
+        {
+          "id": "bandwidth",
+          "status": "PASS",
+          "integrity_status": "PASS",
+          "correlation_status": "PASS",
+          "missing": []
+        },
+        {
+          "id": "network-loss",
+          "status": "PASS",
+          "integrity_status": "PASS",
+          "correlation_status": "PASS",
+          "missing": []
+        },
+        {
+          "id": "service-restart",
+          "status": "PARTIAL",
+          "integrity_status": "PASS",
+          "correlation_status": "PARTIAL",
+          "missing": [
+            "reconnect_recovery_milestones_missing"
+          ]
+        },
+        {
+          "id": "signal-reconnect",
+          "status": "PASS",
+          "integrity_status": "PASS",
+          "correlation_status": "PASS",
+          "missing": []
+        },
+        {
+          "id": "full-reconnect",
+          "status": "PASS",
+          "integrity_status": "PASS",
+          "correlation_status": "PASS",
+          "missing": []
+        },
+        {
+          "id": "auth-recovery",
+          "status": "PASS",
+          "integrity_status": "PASS",
+          "correlation_status": "PASS",
+          "missing": []
+        },
+        {
+          "id": "path-switch",
+          "status": "PASS",
+          "integrity_status": "PASS",
+          "correlation_status": "PASS",
+          "missing": []
+        },
+        {
+          "id": "turn-relay",
+          "status": "PASS",
+          "integrity_status": "PASS",
+          "correlation_status": "PASS",
+          "missing": []
+        }
+      ],
+      "audit_totals": {
+        "cases": 11,
+        "integrity_pass": 11,
+        "correlation_pass": 10,
+        "correlation_partial": 1
+      },
+      "export_readback": {
+        "status": "PASS",
+        "files_verified": 7,
+        "metric_rows": 85587,
+        "timeline_events": 24,
+        "declared_missing": [
+          "build_id",
+          "symbol_identity",
+          "historical_stability_run_detail",
+          "historical_stability_session_link",
+          "confirmed_crash_metadata",
+          "persistent_loss_summary"
+        ],
+        "note": "实际产品历史导出器生成并回读；导出器身份不替代原网络run的产品身份。"
+      },
+      "auxiliary_checks": [
+        {
+          "command": "python -B integration/run_private.py tests/runtime/selftests/test_b_acceptance_network_audit.py",
+          "tests": 10,
+          "status": "PASS"
+        },
+        {
+          "command": "python -B integration/run_private.py tests/runtime/selftests/test_b_acceptance_runner_scope.py",
+          "tests": 13,
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check -- tests/runtime/tools/product_acceptance/run_b_acceptance_network.py tests/runtime/selftests/test_b_acceptance_network_audit.py",
+          "status": "PASS"
+        }
+      ],
+      "evidence_refs": [
+        "network_index",
+        "network_attempt_03",
+        "network_validation"
+      ],
+      "remaining": [
+        "service-restart原始日志缺恢复media milestone，保留PARTIAL。",
+        "导出包build/PDB、稳定性链接、crash及持久化loss等缺失按原声明保留UNKNOWN。",
+        "真实当前故障后的UI导出、UDP/RTP故障日志及完整P02/P12/P17未由本次离线审计覆盖。"
+      ]
+    },
+    "whiteboard_engineering": {
+      "title": "白板三项直接工程门与长门准备",
+      "plan_codes": [
+        "P11"
+      ],
+      "status": "PASS",
+      "evidence_kind": "engineering",
+      "product_subgate_credit": 0,
+      "full_gate_credit": 0,
+      "scope": "白板三项工程结果、source contract、1800秒受控负载尝试及独立环境恢复分别留证；工程PASS不替代真实负载FAIL。",
+      "checks": [
+        {
+          "id": "whiteboard_document_test",
+          "status": "PASS",
+          "seconds": 0.134631
+        },
+        {
+          "id": "whiteboard_ui_test",
+          "status": "PASS",
+          "seconds": 1.77359
+        },
+        {
+          "id": "whiteboard_collaboration_test",
+          "status": "PASS",
+          "seconds": 1.00095
+        }
+      ],
+      "long_load": {
+        "status": "FAIL",
+        "measured_seconds": 1.078,
+        "peers": 8,
+        "writers": 4,
+        "share_annotation_cycles_completed": 0,
+        "expected_cycles": 50,
+        "full_gate_credit": 0,
+        "failure": "pattern_marker_occluded; diagnostic PID0, blocker identity UNKNOWN",
+        "evidence_ref": "whiteboard_long_result"
+      },
+      "evidence_refs": [
+        "whiteboard_direct",
+        "whiteboard_load_contract",
+        "whiteboard_load_validation",
+        "whiteboard_long_index",
+        "whiteboard_long_result",
+        "whiteboard_restore_02",
+        "whiteboard_cleanup_fix",
+        "whiteboard_owned_source"
+      ],
+      "remaining": [
+        "P11 1800秒、8逻辑端、4书写者及50对启停完整负载留后续阶段。",
+        "物理多端、跨DPI、笔和手写及人工对齐仍未覆盖。"
+      ],
+      "status_detail": "工程门通过与真实负载分列：1800秒负载尝试在1.078秒因marker遮挡失败，50对启停完成0；独立restore-host恢复通过。cleanup/诊断工具修补19/19自测通过，未据此授长门信用。"
+    },
+    "flutter_build": {
+      "title": "固定派生Flutter：后端恢复与E2EE互通",
+      "plan_codes": [
+        "P05",
+        "P06"
+      ],
+      "status": "PASS_SCOPED",
+      "evidence_kind": "runtime_observation",
+      "product_subgate_credit": 0,
+      "full_gate_credit": 0,
+      "checks": [
+        {
+          "id": "protocol-h264-replace3-rpc",
+          "status": "PASS",
+          "detail": "H264/Opus bidirectional media and user/TextStream/RPC across three same-slot replacements, default ratchet window 16.",
+          "evidence_refs": [
+            "flutter_batch_1_case_1_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_1"
+        },
+        {
+          "id": "protocol-vp8-ratchet2-latejoin",
+          "status": "PASS",
+          "detail": "VP8/Opus bidirectional media and user/TextStream after an eight-second late join and across two explicit ratchets, default window 16.",
+          "evidence_refs": [
+            "flutter_batch_1_case_2_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_1"
+        },
+        {
+          "id": "protocol-h264-wrong-slot-recovery",
+          "status": "PASS",
+          "detail": "Wrong-key zero-delivery interval followed by slot recovery and bidirectional media/data; failure tolerance 0 retains the existing explicit invalid-key recovery path.",
+          "evidence_refs": [
+            "flutter_batch_3_case_1_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_3"
+        },
+        {
+          "id": "protocol-h264-nativefull-replace-rpc",
+          "status": "PASS",
+          "detail": "Native full reconnect and same-slot key replacement in the same run, with post-generation bidirectional media/data and RPC.",
+          "evidence_refs": [
+            "flutter_batch_2_case_1_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_2"
+        },
+        {
+          "id": "relay-h264-marker",
+          "status": "PASS",
+          "detail": "Native synthetic CRC marker through Flutter decode/relay/re-encode back to Native; first returned decoded frame and marker sequence checks, H264.",
+          "evidence_refs": [
+            "flutter_batch_2_case_2_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_2"
+        },
+        {
+          "id": "relay-vp8-marker",
+          "status": "PASS",
+          "detail": "The independent VP8 controlled relay first-frame/CRC-marker/sequence case.",
+          "evidence_refs": [
+            "flutter_batch_2_case_3_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_2"
+        },
+        {
+          "id": "qt-h264-business-text-byte",
+          "status": "PASS",
+          "detail": "Real Qt/Coordinator and staged Flutter bidirectional media, chat/fragmented file and concurrent Text/Byte streams at epochs 4/6.",
+          "evidence_refs": [
+            "flutter_batch_2_case_4_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_2"
+        }
+      ],
+      "evidence_refs": [
+        "flutter_preflight",
+        "flutter_plugin_state",
+        "flutter_reprepare",
+        "flutter_helper_tests",
+        "flutter_analyze",
+        "flutter_recovery",
+        "flutter_preflight_current",
+        "flutter_backend_build",
+        "flutter_backend_stage",
+        "flutter_backend_handoff",
+        "flutter_matrix_1",
+        "flutter_batch_1_case_1_result_1",
+        "flutter_batch_1_case_2_result_1",
+        "flutter_batch_1_case_3_result_1",
+        "flutter_matrix_2",
+        "flutter_batch_2_case_1_result_1",
+        "flutter_batch_2_case_2_result_1",
+        "flutter_batch_2_case_3_result_1",
+        "flutter_batch_2_case_4_result_1",
+        "flutter_matrix_3",
+        "flutter_batch_3_case_1_result_1",
+        "identity_source_phase12",
+        "build_phase12",
+        "identity_runtime_phase12"
+      ],
+      "remaining": [
+        "未修改官方Flutter、独立C++ SDK和跨平台互通未执行。",
+        "摄像头内容、物理口到耳、长期稳定性、完整E2EE成本门不从本矩阵关闭。"
+      ],
+      "historical_build_preparation": {
+        "scope": "官方缓存DLL的Release fixture Build及helper/插件输入绑定；修复后的完整E2EE后端尚未构建或stage。",
+        "build_receipt": {
+          "initial_attempt": "FAIL",
+          "initial_reason": "CMake missing generated Windows plugin links after Dart-only pub get",
+          "retry": "PASS",
+          "retry_exit_code": 0,
+          "retry_elapsed_seconds": 53.7,
+          "receipt_source": "parent agent message; artifacts independently fingerprinted here"
+        },
+        "compiled_fixture_artifacts": {
+          "e2ee_flutter_peer.exe": {
+            "sha256": "35f92ec9efd14b3cd7516ceb80ac474c06d8ec9f2ba04b150b3bd2d8ad50dec6",
+            "bytes": 91136
+          },
+          "flutter_webrtc_plugin.dll": {
+            "sha256": "a386b8856327e4047167789f42f2cabc87b799b28961a6630141e4515a8eb0e4",
+            "bytes": 518144
+          },
+          "libwebrtc.dll": {
+            "sha256": "d7df94ed827b0b08884ab7c79ca764e6b20c0eebf4252db37b37a2dbcfb658f2",
+            "bytes": 20015104
+          },
+          "data\\app.so": {
+            "sha256": "c6e6dcca615c3d455f332d4b8b29c6cf1fafbe3cea671e6d75bf6848cc63cdad",
+            "bytes": 5358512
+          }
+        },
+        "resource_classification": "repairable software dependency gap; not physical resource unavailability"
+      },
+      "scope": "完整后端构建及stage已完成；固定Windows Native与任务所有的派生Flutter，七个唯一协议/relay/Qt业务case按实际终态分别判断。",
+      "backend_build_receipt": {
+        "action": "build",
+        "command": [
+          "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\full\\src\\third_party\\ninja\\ninja.exe",
+          "-C",
+          "out-e2ee-release",
+          "-j",
+          "8",
+          "libwebrtc"
+        ],
+        "cwd": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\full\\src",
+        "started_at_utc": "2026-10-20T16:48:55.555897+00:00",
+        "driver_sha256": "af7bfe0ade245c45953d056bad9228ad1d702c9731f0dc33de0946ec9e566477",
+        "python": "C:\\Users\\Jiangbinbin\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "environment_additions": {
+          "DEPOT_TOOLS_WIN_TOOLCHAIN": "0",
+          "DEPOT_TOOLS_UPDATE": "0",
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONUTF8": "1",
+          "GYP_MSVS_OVERRIDE_PATH": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional",
+          "vs2022_install": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional",
+          "WINDOWSSDKDIR": "C:\\Program Files (x86)\\Windows Kits\\10",
+          "GIT_OPTIONAL_LOCKS": "0"
+        },
+        "path_prefix": "C:\\Users\\Jiangbinbin\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python",
+        "disk_reserve_bytes": 8589934592,
+        "free_before": 26904035328,
+        "log_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend-build-01.log",
+        "media_runtime_performed": false,
+        "exit_code": 0,
+        "completed_at_utc": "2026-10-20T16:53:00.654909+00:00",
+        "free_after": 26486800384,
+        "minimum_free_bytes": 26557030400,
+        "log_sha256": "8fd7af282a5a4eea37e8a1d678c45d8e72b921e8263983c16d0d940ae3daa577"
+      },
+      "backend_stage_handoff_artifacts": {
+        "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\e2ee_flutter_peer.exe": {
+          "sha256": "35f92ec9efd14b3cd7516ceb80ac474c06d8ec9f2ba04b150b3bd2d8ad50dec6",
+          "bytes": 91136
+        },
+        "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\libwebrtc.dll": {
+          "sha256": "34afa051f00940508d2d23c0961495327fb550f091dc14c6fbd1cd6c486bed67",
+          "bytes": 19998208
+        },
+        "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\flutter_webrtc_plugin.dll": {
+          "sha256": "a386b8856327e4047167789f42f2cabc87b799b28961a6630141e4515a8eb0e4",
+          "bytes": 518144
+        },
+        "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\flutter_windows.dll": {
+          "sha256": "92e7aa320afe026e90780e4049dc6f6a480696400a269c179b1cca0ef751d175",
+          "bytes": 20803584
+        },
+        "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\data\\app.so": {
+          "sha256": "c6e6dcca615c3d455f332d4b8b29c6cf1fafbe3cea671e6d75bf6848cc63cdad",
+          "bytes": 5358512
+        },
+        "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\backend-provenance.json": {
+          "sha256": "ae17e1fcf9f713eecb40d13ccc1f7c32b7ae57000a0a8c00566cdca71e47f18f",
+          "bytes": 139923
+        },
+        "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_e2ee_room_peer.exe": {
+          "sha256": "f5f8149075c88e4a2f0435620954a58e4ac600ab13afa6b5b9a5a7347075bce4",
+          "bytes": 50098688
+        }
+      },
+      "runtime_identity_binding": "handoff工件仅表示当时stage快照；各case的实际Native/Flutter身份以各自result.json为准，phase12补跑不改写先前case身份。",
+      "matrix_observed_status": [
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T172702Z-30d383740c\\summary.json",
+          "status": "FAIL"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\summary.json",
+          "status": "PASS_SCOPED"
+        },
+        {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173839Z-d6a9832147\\summary.json",
+          "status": "PASS_SCOPED"
+        }
+      ],
+      "runtime_matrices": [
+        {
+          "schema": "fixed_derived_flutter_matrix_v1",
+          "status": "FAIL",
+          "scope": "P05/P06 fixed Windows Native plus task-owned derived Flutter only",
+          "plan_origin": "new explicit parameters for this batch; retained historical four-case requirements, not recovered historical argv",
+          "historical_requirement_source": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\evidence\\e2ee\\S021-E2EE_IMPLEMENTATION_REPORT_20260930.md",
+          "historical_requirement_lines": {
+            "four_protocol_cases": 638,
+            "two_relay_codecs": 683
+          },
+          "historical_raw_four_results": "UNAVAILABLE - no historical argv equivalence claim",
+          "product_root": "E:\\vsSource\\WebRTC\\live-kit-test",
+          "private_root": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+          "backend_root": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend",
+          "native_build_root": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+          "controller": {
+            "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261020-01-control\\run_flutter_matrix.py",
+            "bytes": 12978,
+            "sha256": "4c5d8d9c7e4ae4e1d9351418c529a06bfa861e41d3e01498fac186d22385e44a"
+          },
+          "created_at_utc": "2026-10-20T17:27:02.845815+00:00",
+          "cases": [
+            {
+              "id": "protocol-h264-replace3-rpc",
+              "runner": "interop",
+              "declaration": "H264/Opus bidirectional media and user/TextStream/RPC across three same-slot replacements, default ratchet window 16.",
+              "flags": [
+                "--mode",
+                "on",
+                "--duration",
+                "100",
+                "--codec",
+                "h264",
+                "--key-action",
+                "replace",
+                "--key-rounds",
+                "3",
+                "--rpc"
+              ],
+              "status": "PASS",
+              "argv": [
+                "C:\\python3\\python.exe",
+                "-B",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_interop.py",
+                "--product-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test",
+                "--backend-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend",
+                "--output-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T172702Z-30d383740c\\protocol-h264-replace3-rpc\\runs",
+                "--interactive-desktop",
+                "--focus-source",
+                "--repaired-flutter",
+                "--video-source",
+                "window",
+                "--ratchet-window",
+                "16",
+                "--mode",
+                "on",
+                "--duration",
+                "100",
+                "--codec",
+                "h264",
+                "--key-action",
+                "replace",
+                "--key-rounds",
+                "3",
+                "--rpc"
+              ],
+              "cwd": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+              "environment_overrides": {
+                "COHAVORA_PRIVATE_BUILD_ROOT": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+                "PYTHONDONTWRITEBYTECODE": "1"
+              },
+              "started_at_utc": "2026-10-20T17:27:03.019957+00:00",
+              "exit_code": 0,
+              "completed_at_utc": "2026-10-20T17:28:47.933246+00:00",
+              "console_log": {
+                "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T172702Z-30d383740c\\protocol-h264-replace3-rpc\\console.log",
+                "bytes": 3522,
+                "sha256": "24252dbca5814d05f9940b6bad5ed34f37bb1970932f87b24efd8737020e12c3"
+              },
+              "run_results": [
+                {
+                  "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T172702Z-30d383740c\\protocol-h264-replace3-rpc\\runs\\on-e2ee-95e89c0668984946\\result.json",
+                  "bytes": 154985,
+                  "sha256": "5c4d43f647b3988690a1abcbb670a840725f437f45f3b3c04a370d348fed164f",
+                  "status": "PASS",
+                  "failed_checks": []
+                }
+              ]
+            },
+            {
+              "id": "protocol-vp8-ratchet2-latejoin",
+              "runner": "interop",
+              "declaration": "VP8/Opus bidirectional media and user/TextStream after an eight-second late join and across two explicit ratchets, default window 16.",
+              "flags": [
+                "--mode",
+                "on",
+                "--duration",
+                "80",
+                "--codec",
+                "vp8",
+                "--key-action",
+                "ratchet",
+                "--key-rounds",
+                "2",
+                "--late-join",
+                "8"
+              ],
+              "status": "PASS",
+              "argv": [
+                "C:\\python3\\python.exe",
+                "-B",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_interop.py",
+                "--product-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test",
+                "--backend-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend",
+                "--output-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T172702Z-30d383740c\\protocol-vp8-ratchet2-latejoin\\runs",
+                "--interactive-desktop",
+                "--focus-source",
+                "--repaired-flutter",
+                "--video-source",
+                "window",
+                "--ratchet-window",
+                "16",
+                "--mode",
+                "on",
+                "--duration",
+                "80",
+                "--codec",
+                "vp8",
+                "--key-action",
+                "ratchet",
+                "--key-rounds",
+                "2",
+                "--late-join",
+                "8"
+              ],
+              "cwd": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+              "environment_overrides": {
+                "COHAVORA_PRIVATE_BUILD_ROOT": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+                "PYTHONDONTWRITEBYTECODE": "1"
+              },
+              "started_at_utc": "2026-10-20T17:28:47.954302+00:00",
+              "exit_code": 0,
+              "completed_at_utc": "2026-10-20T17:30:20.440887+00:00",
+              "console_log": {
+                "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T172702Z-30d383740c\\protocol-vp8-ratchet2-latejoin\\console.log",
+                "bytes": 2786,
+                "sha256": "79fa15acece79ef9d23af3840cc71dbc2e1b7e4d22d9dbd731eed04f0af64015"
+              },
+              "run_results": [
+                {
+                  "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T172702Z-30d383740c\\protocol-vp8-ratchet2-latejoin\\runs\\on-e2ee-901f3fcfaadb4c09\\result.json",
+                  "bytes": 154146,
+                  "sha256": "fe5b5e5c3acc074450b9f45562949ea91f26e07856dd9fcae70635ee8b460647",
+                  "status": "PASS",
+                  "failed_checks": []
+                }
+              ]
+            },
+            {
+              "id": "protocol-h264-wrong-slot-recovery",
+              "runner": "interop",
+              "declaration": "Wrong-key zero-delivery interval followed by slot recovery and bidirectional media/data; failure tolerance 0 retains the existing explicit invalid-key recovery path.",
+              "flags": [
+                "--mode",
+                "on",
+                "--duration",
+                "60",
+                "--codec",
+                "h264",
+                "--key-action",
+                "slot",
+                "--initial-key",
+                "wrong",
+                "--failure-tolerance",
+                "0"
+              ],
+              "status": "FAIL",
+              "argv": [
+                "C:\\python3\\python.exe",
+                "-B",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_interop.py",
+                "--product-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test",
+                "--backend-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend",
+                "--output-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T172702Z-30d383740c\\protocol-h264-wrong-slot-recovery\\runs",
+                "--interactive-desktop",
+                "--focus-source",
+                "--repaired-flutter",
+                "--video-source",
+                "window",
+                "--ratchet-window",
+                "16",
+                "--mode",
+                "on",
+                "--duration",
+                "60",
+                "--codec",
+                "h264",
+                "--key-action",
+                "slot",
+                "--initial-key",
+                "wrong",
+                "--failure-tolerance",
+                "0"
+              ],
+              "cwd": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+              "environment_overrides": {
+                "COHAVORA_PRIVATE_BUILD_ROOT": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+                "PYTHONDONTWRITEBYTECODE": "1"
+              },
+              "started_at_utc": "2026-10-20T17:30:20.460782+00:00",
+              "exit_code": 1,
+              "completed_at_utc": "2026-10-20T17:31:24.938652+00:00",
+              "console_log": {
+                "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T172702Z-30d383740c\\protocol-h264-wrong-slot-recovery\\console.log",
+                "bytes": 2523,
+                "sha256": "2279b60a8e3bbd0bec6df7682a14c254c23cb7c26aaff7f60262e7d1ea14b218"
+              },
+              "run_results": [
+                {
+                  "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T172702Z-30d383740c\\protocol-h264-wrong-slot-recovery\\runs\\on-e2ee-6c2d4f88047145e4\\result.json",
+                  "bytes": 153806,
+                  "sha256": "3fb88d06b7808d8195dd0f39d86a81b583f009d700f3482fdf7b0e0caf5a082c",
+                  "status": "FAIL",
+                  "failed_checks": [
+                    "native_decoded_video",
+                    "native_crypto_rx_video",
+                    "native_crypto_rx_audio",
+                    "product_state_rx_audio",
+                    "product_state_rx_video",
+                    "native_post_key_rx_audio",
+                    "native_post_key_rx_video"
+                  ]
+                }
+              ]
+            }
+          ],
+          "unmodified_official_flutter": "NOT_RUN by this matrix; separate upstream baseline/support conclusion remains unchanged",
+          "boundaries": [
+            "No camera capture, camera-content acceptance or physical mouth-to-ear measurement.",
+            "No cross-platform, unmodified official Flutter or independent C++ SDK support credit.",
+            "No new thresholds; each existing runner evaluates its unchanged checks.",
+            "No full permutation, performance acceptance, long soak or full P05/P06 PASS from these cases alone."
+          ],
+          "frozen_artifacts": [
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\e2ee_flutter_peer.exe",
+              "bytes": 91136,
+              "sha256": "35f92ec9efd14b3cd7516ceb80ac474c06d8ec9f2ba04b150b3bd2d8ad50dec6"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\libwebrtc.dll",
+              "bytes": 19998208,
+              "sha256": "34afa051f00940508d2d23c0961495327fb550f091dc14c6fbd1cd6c486bed67"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\flutter_webrtc_plugin.dll",
+              "bytes": 518144,
+              "sha256": "a386b8856327e4047167789f42f2cabc87b799b28961a6630141e4515a8eb0e4"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\data\\app.so",
+              "bytes": 5358512,
+              "sha256": "c6e6dcca615c3d455f332d4b8b29c6cf1fafbe3cea671e6d75bf6848cc63cdad"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\backend-provenance.json",
+              "bytes": 139923,
+              "sha256": "ae17e1fcf9f713eecb40d13ccc1f7c32b7ae57000a0a8c00566cdca71e47f18f"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_e2ee_room_peer.exe",
+              "bytes": 50119680,
+              "sha256": "1c1055e2e7038056f89d83707e21ef58eac34d0ac6d4bbf213ffa42cdc4f3f26"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_main_window_latency.exe",
+              "bytes": 107431424,
+              "sha256": "d3ad552e5695c9477ea6d8bdf350560b385d8164fc27c66ff27ccec1b6619a44"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\CMakeCache.txt",
+              "bytes": 31712,
+              "sha256": "ded0397f60c1910b6665eb25b4d26dfaa44d139b8f90719447f754f5ad619c52"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_interop.py",
+              "bytes": 41461,
+              "sha256": "cb42c3f76ee17ce0e7bc8078dbd48feca14c96cccac9fe5d540fa62429f11a93"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_product.py",
+              "bytes": 49405,
+              "sha256": "8196f32b1a6f69815df05ce31af8dd435114c0910f02fea3cf2d9db567e038f3"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\e2ee_flutter_workspace.py",
+              "bytes": 11081,
+              "sha256": "c8f1cbd14cf18d93c6e2bd711c68990e8c9fe81b657d385a6e39325a65e59247"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-current.json",
+              "bytes": 83,
+              "sha256": "851bd93ea390c9ecef9c7af0df98b091ca91e9bf1557c7e657217e461f5a74b8"
+            }
+          ],
+          "child_environment_overrides": {
+            "COHAVORA_PRIVATE_BUILD_ROOT": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+            "PYTHONDONTWRITEBYTECODE": "1"
+          },
+          "stopped_after_case": "protocol-h264-wrong-slot-recovery",
+          "not_run_cases": [
+            "protocol-h264-nativefull-replace-rpc",
+            "relay-h264-marker",
+            "relay-vp8-marker",
+            "qt-h264-business-text-byte"
+          ],
+          "completed_at_utc": "2026-10-20T17:31:24.958741+00:00"
+        },
+        {
+          "schema": "fixed_derived_flutter_matrix_v1",
+          "status": "PASS_SCOPED",
+          "scope": "P05/P06 fixed Windows Native plus task-owned derived Flutter only",
+          "plan_origin": "new explicit parameters for this batch; retained historical four-case requirements, not recovered historical argv",
+          "historical_requirement_source": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\evidence\\e2ee\\S021-E2EE_IMPLEMENTATION_REPORT_20260930.md",
+          "historical_requirement_lines": {
+            "four_protocol_cases": 638,
+            "two_relay_codecs": 683
+          },
+          "historical_raw_four_results": "UNAVAILABLE - no historical argv equivalence claim",
+          "product_root": "E:\\vsSource\\WebRTC\\live-kit-test",
+          "private_root": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+          "backend_root": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend",
+          "native_build_root": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+          "controller": {
+            "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261020-01-control\\run_flutter_matrix.py",
+            "bytes": 12978,
+            "sha256": "4c5d8d9c7e4ae4e1d9351418c529a06bfa861e41d3e01498fac186d22385e44a"
+          },
+          "created_at_utc": "2026-10-20T17:32:22.148006+00:00",
+          "cases": [
+            {
+              "id": "protocol-h264-nativefull-replace-rpc",
+              "runner": "interop",
+              "declaration": "Native full reconnect and same-slot key replacement in the same run, with post-generation bidirectional media/data and RPC.",
+              "flags": [
+                "--mode",
+                "on",
+                "--duration",
+                "80",
+                "--codec",
+                "h264",
+                "--key-action",
+                "replace",
+                "--reconnect",
+                "native-full",
+                "--rpc"
+              ],
+              "status": "PASS",
+              "argv": [
+                "C:\\python3\\python.exe",
+                "-B",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_interop.py",
+                "--product-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test",
+                "--backend-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend",
+                "--output-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\protocol-h264-nativefull-replace-rpc\\runs",
+                "--interactive-desktop",
+                "--focus-source",
+                "--repaired-flutter",
+                "--video-source",
+                "window",
+                "--ratchet-window",
+                "16",
+                "--mode",
+                "on",
+                "--duration",
+                "80",
+                "--codec",
+                "h264",
+                "--key-action",
+                "replace",
+                "--reconnect",
+                "native-full",
+                "--rpc"
+              ],
+              "cwd": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+              "environment_overrides": {
+                "COHAVORA_PRIVATE_BUILD_ROOT": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+                "PYTHONDONTWRITEBYTECODE": "1"
+              },
+              "started_at_utc": "2026-10-20T17:32:22.312111+00:00",
+              "exit_code": 0,
+              "completed_at_utc": "2026-10-20T17:33:46.808145+00:00",
+              "console_log": {
+                "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\protocol-h264-nativefull-replace-rpc\\console.log",
+                "bytes": 2856,
+                "sha256": "56b2e72de96706ffdc409c3584c614ba7999fc472948b7524862e6c4a6f525b3"
+              },
+              "run_results": [
+                {
+                  "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\protocol-h264-nativefull-replace-rpc\\runs\\on-e2ee-b4934931ab0b4c6a\\result.json",
+                  "bytes": 154180,
+                  "sha256": "635a9d58003c3ddce4d9017539baedc0c6ee7bd9ede05ce7a773ccb514cdbf09",
+                  "status": "PASS",
+                  "failed_checks": []
+                }
+              ]
+            },
+            {
+              "id": "relay-h264-marker",
+              "runner": "interop",
+              "declaration": "Native synthetic CRC marker through Flutter decode/relay/re-encode back to Native; first returned decoded frame and marker sequence checks, H264.",
+              "flags": [
+                "--mode",
+                "on",
+                "--duration",
+                "45",
+                "--codec",
+                "h264",
+                "--video-source",
+                "relay"
+              ],
+              "status": "PASS",
+              "argv": [
+                "C:\\python3\\python.exe",
+                "-B",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_interop.py",
+                "--product-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test",
+                "--backend-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend",
+                "--output-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\relay-h264-marker\\runs",
+                "--interactive-desktop",
+                "--focus-source",
+                "--repaired-flutter",
+                "--ratchet-window",
+                "16",
+                "--mode",
+                "on",
+                "--duration",
+                "45",
+                "--codec",
+                "h264",
+                "--video-source",
+                "relay"
+              ],
+              "cwd": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+              "environment_overrides": {
+                "COHAVORA_PRIVATE_BUILD_ROOT": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+                "PYTHONDONTWRITEBYTECODE": "1"
+              },
+              "started_at_utc": "2026-10-20T17:33:46.827967+00:00",
+              "exit_code": 0,
+              "completed_at_utc": "2026-10-20T17:34:36.299173+00:00",
+              "console_log": {
+                "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\relay-h264-marker\\console.log",
+                "bytes": 1762,
+                "sha256": "b345bca62ea3ce78b9ec2576de863662b773a9156f30f07fcffa38f0b7e2f633"
+              },
+              "run_results": [
+                {
+                  "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\relay-h264-marker\\runs\\on-e2ee-671373d96ca242f0\\result.json",
+                  "bytes": 153317,
+                  "sha256": "abf427c5b54bb1b9545158e023554133a54332a65c40dc63cb8158e8f13feec9",
+                  "status": "PASS",
+                  "failed_checks": []
+                }
+              ]
+            },
+            {
+              "id": "relay-vp8-marker",
+              "runner": "interop",
+              "declaration": "The independent VP8 controlled relay first-frame/CRC-marker/sequence case.",
+              "flags": [
+                "--mode",
+                "on",
+                "--duration",
+                "45",
+                "--codec",
+                "vp8",
+                "--video-source",
+                "relay"
+              ],
+              "status": "PASS",
+              "argv": [
+                "C:\\python3\\python.exe",
+                "-B",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_interop.py",
+                "--product-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test",
+                "--backend-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend",
+                "--output-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\relay-vp8-marker\\runs",
+                "--interactive-desktop",
+                "--focus-source",
+                "--repaired-flutter",
+                "--ratchet-window",
+                "16",
+                "--mode",
+                "on",
+                "--duration",
+                "45",
+                "--codec",
+                "vp8",
+                "--video-source",
+                "relay"
+              ],
+              "cwd": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+              "environment_overrides": {
+                "COHAVORA_PRIVATE_BUILD_ROOT": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+                "PYTHONDONTWRITEBYTECODE": "1"
+              },
+              "started_at_utc": "2026-10-20T17:34:36.316804+00:00",
+              "exit_code": 0,
+              "completed_at_utc": "2026-10-20T17:35:25.792310+00:00",
+              "console_log": {
+                "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\relay-vp8-marker\\console.log",
+                "bytes": 1760,
+                "sha256": "b1ad4f4becf835a4df8e185d828048d8fff8faefd5f9fa92466ba7d083fa84d3"
+              },
+              "run_results": [
+                {
+                  "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\relay-vp8-marker\\runs\\on-e2ee-e2a502161acc4834\\result.json",
+                  "bytes": 153316,
+                  "sha256": "aa5801fd36e4f17ab108d29398f94105a17a2babb8964b3b7cd7d5da560255a0",
+                  "status": "PASS",
+                  "failed_checks": []
+                }
+              ]
+            },
+            {
+              "id": "qt-h264-business-text-byte",
+              "runner": "product",
+              "declaration": "Real Qt/Coordinator and staged Flutter bidirectional media, chat/fragmented file and concurrent Text/Byte streams at epochs 4/6.",
+              "flags": [
+                "--duration",
+                "70",
+                "--codec",
+                "h264",
+                "--flutter-business",
+                "--byte-streams"
+              ],
+              "status": "PASS",
+              "argv": [
+                "C:\\python3\\python.exe",
+                "-B",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_product.py",
+                "--product-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test",
+                "--backend-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend",
+                "--output-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\qt-h264-business-text-byte\\runs",
+                "--native-build-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+                "--duration",
+                "70",
+                "--codec",
+                "h264",
+                "--flutter-business",
+                "--byte-streams"
+              ],
+              "cwd": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+              "environment_overrides": {
+                "COHAVORA_PRIVATE_BUILD_ROOT": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+                "PYTHONDONTWRITEBYTECODE": "1"
+              },
+              "started_at_utc": "2026-10-20T17:35:25.806275+00:00",
+              "exit_code": 0,
+              "completed_at_utc": "2026-10-20T17:36:40.713895+00:00",
+              "console_log": {
+                "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\qt-h264-business-text-byte\\console.log",
+                "bytes": 466,
+                "sha256": "016e86d177919fdd631223c7aa868e9a598449d9c2caf7264902c20da27f8bb3"
+              },
+              "run_results": [
+                {
+                  "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173222Z-018c650754\\qt-h264-business-text-byte\\runs\\product-e2ee-401a52ba98f34047\\result.json",
+                  "bytes": 11432,
+                  "sha256": "f0c0825e19fc4cd12cb902e344511a01aa90544386f0cde9c5fc10dbe3fd1d16",
+                  "status": "PASS",
+                  "failed_checks": []
+                }
+              ]
+            }
+          ],
+          "unmodified_official_flutter": "NOT_RUN by this matrix; separate upstream baseline/support conclusion remains unchanged",
+          "boundaries": [
+            "No camera capture, camera-content acceptance or physical mouth-to-ear measurement.",
+            "No cross-platform, unmodified official Flutter or independent C++ SDK support credit.",
+            "No new thresholds; each existing runner evaluates its unchanged checks.",
+            "No full permutation, performance acceptance, long soak or full P05/P06 PASS from these cases alone."
+          ],
+          "frozen_artifacts": [
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\e2ee_flutter_peer.exe",
+              "bytes": 91136,
+              "sha256": "35f92ec9efd14b3cd7516ceb80ac474c06d8ec9f2ba04b150b3bd2d8ad50dec6"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\libwebrtc.dll",
+              "bytes": 19998208,
+              "sha256": "34afa051f00940508d2d23c0961495327fb550f091dc14c6fbd1cd6c486bed67"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\flutter_webrtc_plugin.dll",
+              "bytes": 518144,
+              "sha256": "a386b8856327e4047167789f42f2cabc87b799b28961a6630141e4515a8eb0e4"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\data\\app.so",
+              "bytes": 5358512,
+              "sha256": "c6e6dcca615c3d455f332d4b8b29c6cf1fafbe3cea671e6d75bf6848cc63cdad"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\backend-provenance.json",
+              "bytes": 139923,
+              "sha256": "ae17e1fcf9f713eecb40d13ccc1f7c32b7ae57000a0a8c00566cdca71e47f18f"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_e2ee_room_peer.exe",
+              "bytes": 50119680,
+              "sha256": "1c1055e2e7038056f89d83707e21ef58eac34d0ac6d4bbf213ffa42cdc4f3f26"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_main_window_latency.exe",
+              "bytes": 107431424,
+              "sha256": "d3ad552e5695c9477ea6d8bdf350560b385d8164fc27c66ff27ccec1b6619a44"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\CMakeCache.txt",
+              "bytes": 31712,
+              "sha256": "ded0397f60c1910b6665eb25b4d26dfaa44d139b8f90719447f754f5ad619c52"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_interop.py",
+              "bytes": 41461,
+              "sha256": "cb42c3f76ee17ce0e7bc8078dbd48feca14c96cccac9fe5d540fa62429f11a93"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_product.py",
+              "bytes": 49405,
+              "sha256": "8196f32b1a6f69815df05ce31af8dd435114c0910f02fea3cf2d9db567e038f3"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\e2ee_flutter_workspace.py",
+              "bytes": 11081,
+              "sha256": "c8f1cbd14cf18d93c6e2bd711c68990e8c9fe81b657d385a6e39325a65e59247"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-current.json",
+              "bytes": 83,
+              "sha256": "851bd93ea390c9ecef9c7af0df98b091ca91e9bf1557c7e657217e461f5a74b8"
+            }
+          ],
+          "child_environment_overrides": {
+            "COHAVORA_PRIVATE_BUILD_ROOT": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+            "PYTHONDONTWRITEBYTECODE": "1"
+          },
+          "completed_at_utc": "2026-10-20T17:36:40.732112+00:00"
+        },
+        {
+          "schema": "fixed_derived_flutter_matrix_v1",
+          "status": "PASS_SCOPED",
+          "scope": "P05/P06 fixed Windows Native plus task-owned derived Flutter only",
+          "plan_origin": "new explicit parameters for this batch; retained historical four-case requirements, not recovered historical argv",
+          "historical_requirement_source": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\evidence\\e2ee\\S021-E2EE_IMPLEMENTATION_REPORT_20260930.md",
+          "historical_requirement_lines": {
+            "four_protocol_cases": 638,
+            "two_relay_codecs": 683
+          },
+          "historical_raw_four_results": "UNAVAILABLE - no historical argv equivalence claim",
+          "product_root": "E:\\vsSource\\WebRTC\\live-kit-test",
+          "private_root": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+          "backend_root": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend",
+          "native_build_root": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+          "controller": {
+            "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261020-01-control\\run_flutter_matrix.py",
+            "bytes": 12978,
+            "sha256": "4c5d8d9c7e4ae4e1d9351418c529a06bfa861e41d3e01498fac186d22385e44a"
+          },
+          "created_at_utc": "2026-10-20T17:38:39.374979+00:00",
+          "cases": [
+            {
+              "id": "protocol-h264-wrong-slot-recovery",
+              "runner": "interop",
+              "declaration": "Wrong-key zero-delivery interval followed by slot recovery and bidirectional media/data; failure tolerance 0 retains the existing explicit invalid-key recovery path.",
+              "flags": [
+                "--mode",
+                "on",
+                "--duration",
+                "60",
+                "--codec",
+                "h264",
+                "--key-action",
+                "slot",
+                "--initial-key",
+                "wrong",
+                "--failure-tolerance",
+                "0"
+              ],
+              "status": "PASS",
+              "argv": [
+                "C:\\python3\\python.exe",
+                "-B",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_interop.py",
+                "--product-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test",
+                "--backend-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend",
+                "--output-root",
+                "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173839Z-d6a9832147\\protocol-h264-wrong-slot-recovery\\runs",
+                "--interactive-desktop",
+                "--focus-source",
+                "--repaired-flutter",
+                "--video-source",
+                "window",
+                "--ratchet-window",
+                "16",
+                "--mode",
+                "on",
+                "--duration",
+                "60",
+                "--codec",
+                "h264",
+                "--key-action",
+                "slot",
+                "--initial-key",
+                "wrong",
+                "--failure-tolerance",
+                "0"
+              ],
+              "cwd": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+              "environment_overrides": {
+                "COHAVORA_PRIVATE_BUILD_ROOT": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+                "PYTHONDONTWRITEBYTECODE": "1"
+              },
+              "started_at_utc": "2026-10-20T17:38:39.538739+00:00",
+              "exit_code": 0,
+              "completed_at_utc": "2026-10-20T17:39:45.334659+00:00",
+              "console_log": {
+                "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173839Z-d6a9832147\\protocol-h264-wrong-slot-recovery\\console.log",
+                "bytes": 2516,
+                "sha256": "d32260a81a2985b36ebc5cf2e0de95f3866744756511b4ee364fdeceed8dd053"
+              },
+              "run_results": [
+                {
+                  "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-matrix\\20261020T173839Z-d6a9832147\\protocol-h264-wrong-slot-recovery\\runs\\on-e2ee-48e1acf12b604d42\\result.json",
+                  "bytes": 153799,
+                  "sha256": "93b341c385342ff4a310884a11c01781a1599c94204ef9e78b46087277e0c606",
+                  "status": "PASS",
+                  "failed_checks": []
+                }
+              ]
+            }
+          ],
+          "unmodified_official_flutter": "NOT_RUN by this matrix; separate upstream baseline/support conclusion remains unchanged",
+          "boundaries": [
+            "No camera capture, camera-content acceptance or physical mouth-to-ear measurement.",
+            "No cross-platform, unmodified official Flutter or independent C++ SDK support credit.",
+            "No new thresholds; each existing runner evaluates its unchanged checks.",
+            "No full permutation, performance acceptance, long soak or full P05/P06 PASS from these cases alone."
+          ],
+          "frozen_artifacts": [
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\e2ee_flutter_peer.exe",
+              "bytes": 91136,
+              "sha256": "35f92ec9efd14b3cd7516ceb80ac474c06d8ec9f2ba04b150b3bd2d8ad50dec6"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\libwebrtc.dll",
+              "bytes": 19998208,
+              "sha256": "34afa051f00940508d2d23c0961495327fb550f091dc14c6fbd1cd6c486bed67"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\flutter_webrtc_plugin.dll",
+              "bytes": 518144,
+              "sha256": "a386b8856327e4047167789f42f2cabc87b799b28961a6630141e4515a8eb0e4"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\data\\app.so",
+              "bytes": 5358512,
+              "sha256": "c6e6dcca615c3d455f332d4b8b29c6cf1fafbe3cea671e6d75bf6848cc63cdad"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-34afa051f009-app-c6e6dcca615c-inputs-40815fc82c0a\\backend-provenance.json",
+              "bytes": 139923,
+              "sha256": "ae17e1fcf9f713eecb40d13ccc1f7c32b7ae57000a0a8c00566cdca71e47f18f"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_e2ee_room_peer.exe",
+              "bytes": 50119680,
+              "sha256": "95ad158c2d35850ebb19488a54b32d735399b4b120b163bf2bebdbd11b8b9c37"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_main_window_latency.exe",
+              "bytes": 107431424,
+              "sha256": "d3ad552e5695c9477ea6d8bdf350560b385d8164fc27c66ff27ccec1b6619a44"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\CMakeCache.txt",
+              "bytes": 31712,
+              "sha256": "ded0397f60c1910b6665eb25b4d26dfaa44d139b8f90719447f754f5ad619c52"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_interop.py",
+              "bytes": 41461,
+              "sha256": "cb42c3f76ee17ce0e7bc8078dbd48feca14c96cccac9fe5d540fa62429f11a93"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2ee_product.py",
+              "bytes": 49405,
+              "sha256": "8196f32b1a6f69815df05ce31af8dd435114c0910f02fea3cf2d9db567e038f3"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\e2ee_flutter_workspace.py",
+              "bytes": 11081,
+              "sha256": "c8f1cbd14cf18d93c6e2bd711c68990e8c9fe81b657d385a6e39325a65e59247"
+            },
+            {
+              "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261020-01\\flutter-preflight\\backend\\flutter-repaired-current.json",
+              "bytes": 83,
+              "sha256": "851bd93ea390c9ecef9c7af0df98b091ca91e9bf1557c7e657217e461f5a74b8"
+            }
+          ],
+          "child_environment_overrides": {
+            "COHAVORA_PRIVATE_BUILD_ROOT": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020",
+            "PYTHONDONTWRITEBYTECODE": "1"
+          },
+          "completed_at_utc": "2026-10-20T17:39:45.352983+00:00"
+        }
+      ],
+      "runtime_case_attempts": [
+        {
+          "id": "protocol-h264-replace3-rpc",
+          "status": "PASS",
+          "detail": "H264/Opus bidirectional media and user/TextStream/RPC across three same-slot replacements, default ratchet window 16.",
+          "evidence_refs": [
+            "flutter_batch_1_case_1_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_1"
+        },
+        {
+          "id": "protocol-vp8-ratchet2-latejoin",
+          "status": "PASS",
+          "detail": "VP8/Opus bidirectional media and user/TextStream after an eight-second late join and across two explicit ratchets, default window 16.",
+          "evidence_refs": [
+            "flutter_batch_1_case_2_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_1"
+        },
+        {
+          "id": "protocol-h264-wrong-slot-recovery",
+          "status": "FAIL",
+          "detail": "Wrong-key zero-delivery interval followed by slot recovery and bidirectional media/data; failure tolerance 0 retains the existing explicit invalid-key recovery path.",
+          "evidence_refs": [
+            "flutter_batch_1_case_3_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_1"
+        },
+        {
+          "id": "protocol-h264-nativefull-replace-rpc",
+          "status": "PASS",
+          "detail": "Native full reconnect and same-slot key replacement in the same run, with post-generation bidirectional media/data and RPC.",
+          "evidence_refs": [
+            "flutter_batch_2_case_1_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_2"
+        },
+        {
+          "id": "relay-h264-marker",
+          "status": "PASS",
+          "detail": "Native synthetic CRC marker through Flutter decode/relay/re-encode back to Native; first returned decoded frame and marker sequence checks, H264.",
+          "evidence_refs": [
+            "flutter_batch_2_case_2_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_2"
+        },
+        {
+          "id": "relay-vp8-marker",
+          "status": "PASS",
+          "detail": "The independent VP8 controlled relay first-frame/CRC-marker/sequence case.",
+          "evidence_refs": [
+            "flutter_batch_2_case_3_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_2"
+        },
+        {
+          "id": "qt-h264-business-text-byte",
+          "status": "PASS",
+          "detail": "Real Qt/Coordinator and staged Flutter bidirectional media, chat/fragmented file and concurrent Text/Byte streams at epochs 4/6.",
+          "evidence_refs": [
+            "flutter_batch_2_case_4_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_2"
+        },
+        {
+          "id": "protocol-h264-wrong-slot-recovery",
+          "status": "PASS",
+          "detail": "Wrong-key zero-delivery interval followed by slot recovery and bidirectional media/data; failure tolerance 0 retains the existing explicit invalid-key recovery path.",
+          "evidence_refs": [
+            "flutter_batch_3_case_1_result_1"
+          ],
+          "matrix_evidence_ref": "flutter_matrix_3"
+        }
+      ],
+      "runtime_case_observations_passed": 7,
+      "status_detail": "固定Windows Native与任务所有的派生Flutter七格按各格实际终态记录；各batch分别留证，首批失败保留。新case观察与前批重测重叠，不累计作独立验收项或计划完成率。",
+      "fixture_key_recovery_repair": {
+        "root_cause": "wrong-slot恢复夹具原先只重装残留keys_，未重装实际Room绑定的packet_keys_；新增实际provider的SetSharedKey一行后，仅该case补跑PASS。",
+        "scope": "private/tests/runtime/probes/test_e2ee_room_peer.cpp；不改变加密协议或原判据。",
+        "provenance": "主任务已确认诊断、phase12 source/build/runtime身份与第三batch实际终态。",
+        "other_six_cases": "非wrong-slot分支未改变，保留各原run输入及证据；不合并运行时长或伪造同run。"
+      }
+    },
+    "annotation_diagnostic": {
+      "title": "批注探针崩溃：fixture根因诊断",
+      "plan_codes": [
+        "P11"
+      ],
+      "status": "FAIL",
+      "evidence_kind": "diagnostic",
+      "product_subgate_credit": 0,
+      "full_gate_credit": 0,
+      "scope": "M0 custom ProbeOverlay; does not instantiate the product AnnotationOverlayWindow and cannot alone close full product annotation acceptance",
+      "checks": [
+        {
+          "id": "source_mapping",
+          "status": "PASS",
+          "detail": "DISPLAY1 2560x1440 DPR1"
+        },
+        {
+          "id": "overlay_capture",
+          "status": "FAIL",
+          "detail": "155frames; marker0"
+        },
+        {
+          "id": "mouse_passthrough",
+          "status": "FAIL",
+          "detail": "fixture_not_topmost"
+        },
+        {
+          "id": "synthetic_ime",
+          "status": "PASS",
+          "detail": "preedit1/commit1/CJKtrue"
+        },
+        {
+          "id": "native_ime",
+          "status": "FAIL",
+          "detail": "installed1/attempted1/composition0/CJKcommit0"
+        },
+        {
+          "id": "candidate_visual_placement",
+          "status": "NOT_RUN",
+          "detail": "visual observation required"
+        }
+      ],
+      "root_cause": "The annotation probe omitted base::WinRT::Supported() which resolves the desktop toolkit dynamic WinRT imports. Its RoGetActivationFactory pointer remained null when capture became the first WinRT caller. Product main and other product fixtures already initialize these imports.",
+      "repair": "Add the existing product WinRT import initialization after QApplication and fail before capture if imports are unavailable.",
+      "repaired_source_sha256": "cf3742455423aa5cca784ced745f44782e29d44256df2bf3d61d5bceead4cb9f",
+      "evidence_refs": [
+        "annotation_failure",
+        "annotation_diagnosis",
+        "annotation_runtime_03",
+        "annotation_log_03",
+        "desktop_readiness_05",
+        "build_phase12"
+      ],
+      "parent_receipt": "Main task message, 2026-10-21: initial repair compile failed due to missing basic_types; include added, rebuild NOT_RUN.",
+      "remaining": [
+        "annotation04当前环境延期；不能由重建成功替代真实运行。",
+        "原生IME、候选框目视位置与完整产品overlay未闭环。",
+        "保留原marker/topmost及nativeIME失败，合成IME通过不代表真实IME通过。"
+      ],
+      "status_detail": "原AV修复后的annotation03仍exit1：marker0/155帧、fixture_not_topmost及nativeIME失败。phase12重建annotation目标PASS，未启动annotation04；当前前台PickerHost，重测按环境延期。",
+      "repair_observation": {
+        "build_status": "PASS",
+        "runtime_status": "FAIL",
+        "evidence_ref": "annotation_runtime_03",
+        "original_access_violation": "NOT_REPRODUCED_IN_RUNTIME_03"
+      },
+      "new_retry": {
+        "status": "DEFERRED",
+        "reason": "新annotation04需要可控foreground；前台PickerHost，未启动。",
+        "evidence_ref": "desktop_readiness_05"
+      }
+    },
+    "capture_backends": {
+      "title": "屏幕采集后端：四次失败保留",
+      "plan_codes": [
+        "P07"
+      ],
+      "status": "PARTIAL",
+      "evidence_kind": "runtime_failure",
+      "product_subgate_credit": 0,
+      "full_gate_credit": 0,
+      "scope": "原四次DXGI全屏失败与WGC/GDI窗口basic/complex/cost六格分别留证；同进程两个独立native Rooms经任务SFU接收，不授物理双端或全屏等价信用。",
+      "checks": [
+        {
+          "id": "capture-backends-01",
+          "status": "FAIL",
+          "exit_code": 1,
+          "failure_code": "remote_animated_screen_missing",
+          "binary_sha256": "29ff3c52da47a855c32ca57229f5c473e74d5cb8ae86e09d13af4e4de73034f1",
+          "pdb_age": 1,
+          "started_utc": "2026-10-20T15:30:27.441295+00:00",
+          "checks": {
+            "native_gate": false,
+            "binary_unchanged": true,
+            "stopped_joined": true,
+            "destroyed": true,
+            "no_close_failure": true,
+            "room_empty": true,
+            "service_unchanged": true,
+            "service_healthy": true
+          },
+          "evidence_ref": "capture_1",
+          "witness_ref": "capture_events_1"
+        },
+        {
+          "id": "capture-diagnosis-02",
+          "status": "FAIL",
+          "exit_code": 1,
+          "failure_code": "remote_animated_screen_missing",
+          "binary_sha256": "319541e13b7a80840125ea642072d00c42ef2cb7670d9e0cce54e97992d04438",
+          "pdb_age": 2,
+          "started_utc": "2026-10-20T15:38:12.589519+00:00",
+          "checks": {
+            "native_gate": false,
+            "binary_unchanged": true,
+            "stopped_joined": true,
+            "destroyed": true,
+            "no_close_failure": true,
+            "room_empty": true,
+            "service_unchanged": true,
+            "service_healthy": true
+          },
+          "evidence_ref": "capture_2",
+          "witness_ref": "capture_events_2"
+        },
+        {
+          "id": "capture-dxgi-repair-03",
+          "status": "FAIL",
+          "exit_code": 1,
+          "failure_code": "pattern_marker_occluded",
+          "binary_sha256": "a2d63cb6aed206d3f9e9fd4620a1433b88af60b63136ebd691cf191262e0e056",
+          "pdb_age": 3,
+          "started_utc": "2026-10-20T15:42:38.840762+00:00",
+          "checks": {
+            "native_gate": false,
+            "binary_unchanged": true,
+            "stopped_joined": false,
+            "destroyed": false,
+            "no_close_failure": true,
+            "room_empty": true,
+            "service_unchanged": true,
+            "service_healthy": true
+          },
+          "evidence_ref": "capture_3",
+          "witness_ref": "capture_events_3"
+        },
+        {
+          "id": "capture-desktop-diagnosis-04",
+          "status": "FAIL",
+          "exit_code": 1,
+          "failure_code": "pattern_marker_occluded",
+          "binary_sha256": "c6f3c22034e00b7394715277683698d4f281e575c434a33d7f1700891583fa76",
+          "pdb_age": 4,
+          "started_utc": "2026-10-20T15:50:26.199308+00:00",
+          "checks": {
+            "native_gate": false,
+            "binary_unchanged": true,
+            "stopped_joined": false,
+            "destroyed": false,
+            "no_close_failure": true,
+            "room_empty": true,
+            "service_unchanged": true,
+            "service_healthy": true
+          },
+          "evidence_ref": "capture_4",
+          "witness_ref": "capture_events_4"
+        },
+        {
+          "id": "wgc-window",
+          "status": "PASS",
+          "detail": "原采集/接收/清理判据；一个进程内两个独立native Rooms，非物理双端。",
+          "evidence_ref": "window_case_1"
+        },
+        {
+          "id": "gdi-window",
+          "status": "PASS",
+          "detail": "原采集/接收/清理判据；一个进程内两个独立native Rooms，非物理双端。",
+          "evidence_ref": "window_case_2"
+        },
+        {
+          "id": "complex-wgc-window",
+          "status": "PASS",
+          "detail": "原采集/接收/清理判据；一个进程内两个独立native Rooms，非物理双端。",
+          "evidence_ref": "window_case_3"
+        },
+        {
+          "id": "complex-gdi-window",
+          "status": "PASS",
+          "detail": "原采集/接收/清理判据；一个进程内两个独立native Rooms，非物理双端。",
+          "evidence_ref": "window_case_4"
+        },
+        {
+          "id": "cost-wgc-window",
+          "status": "PASS",
+          "detail": "测量完整；单核CPU占用增量9.62755个百分点、接收19.587FPS；无成本预算结论。",
+          "evidence_ref": "window_case_5"
+        },
+        {
+          "id": "cost-gdi-window",
+          "status": "PASS",
+          "detail": "测量完整；单核CPU占用增量15.4583个百分点、接收19.5545FPS；无成本预算结论。",
+          "evidence_ref": "window_case_6"
+        },
+        {
+          "id": "gdi-hot-50",
+          "status": "PASS",
+          "detail": "50轮原native功能判据；启用外部sampler，无skip/不降低FPS；不授长资源预算信用。",
+          "evidence_ref": "gdi_hot_summary_json"
+        }
+      ],
+      "latest_observation": "最后一次marker命中Shell_SystemDim，pattern窗口虽visible/paint但屏幕标记被遮挡，运行在采集有效性检查前拒绝。",
+      "root_cause_status": "MEASUREMENT_CHAIN_OBSTRUCTION_OBSERVED; product capture root cause not established",
+      "evidence_refs": [
+        "capture_1",
+        "capture_2",
+        "capture_3",
+        "capture_4",
+        "capture_events_4",
+        "window_matrix_index",
+        "window_case_1",
+        "window_case_2",
+        "window_case_3",
+        "window_case_4",
+        "window_case_5",
+        "window_case_6",
+        "gdi_hot_summary_json",
+        "gdi_hot_events_log",
+        "gdi_hot_resources_jsonl",
+        "gdi_hot_product-identity_json",
+        "gdi_hot_uia-actions_jsonl",
+        "desktop_readiness_05"
+      ],
+      "remaining": [
+        "全屏采集新重测当前环境延期，原四次实际FAIL保留。",
+        "窗口六格和GDI50分别通过，不据窗口路径通过推定全屏路径通过；cost两格无预算PASS。",
+        "P07 WGC1800资源和3600秒/100轮留后续阶段；物理显示器、DPI、GPU和人工画质矩阵未覆盖。"
+      ],
+      "runtime_case_observations_passed": 7,
+      "window_matrix": {
+        "status": "PASS",
+        "checks": [
+          {
+            "id": "wgc-window",
+            "status": "PASS",
+            "detail": "原采集/接收/清理判据；一个进程内两个独立native Rooms，非物理双端。",
+            "evidence_ref": "window_case_1"
+          },
+          {
+            "id": "gdi-window",
+            "status": "PASS",
+            "detail": "原采集/接收/清理判据；一个进程内两个独立native Rooms，非物理双端。",
+            "evidence_ref": "window_case_2"
+          },
+          {
+            "id": "complex-wgc-window",
+            "status": "PASS",
+            "detail": "原采集/接收/清理判据；一个进程内两个独立native Rooms，非物理双端。",
+            "evidence_ref": "window_case_3"
+          },
+          {
+            "id": "complex-gdi-window",
+            "status": "PASS",
+            "detail": "原采集/接收/清理判据；一个进程内两个独立native Rooms，非物理双端。",
+            "evidence_ref": "window_case_4"
+          },
+          {
+            "id": "cost-wgc-window",
+            "status": "PASS",
+            "detail": "测量完整；单核CPU占用增量9.62755个百分点、接收19.587FPS；无成本预算结论。",
+            "evidence_ref": "window_case_5"
+          },
+          {
+            "id": "cost-gdi-window",
+            "status": "PASS",
+            "detail": "测量完整；单核CPU占用增量15.4583个百分点、接收19.5545FPS；无成本预算结论。",
+            "evidence_ref": "window_case_6"
+          }
+        ],
+        "cost": {
+          "cost-wgc-window": {
+            "measurement_status": "PASS",
+            "budget_status": "NOT_APPLICABLE",
+            "no_cost_budget_asserted": true,
+            "measurement": {
+              "process": {
+                "warmup_seconds": 15,
+                "baseline_seconds": 10.0002,
+                "active_seconds": 30.0198,
+                "capture_frames": 600,
+                "remote_frames": 588,
+                "remote_valid_frames": 588,
+                "remote_small_frames": 0,
+                "capture_fps": 19.9868,
+                "remote_fps": 19.587,
+                "remote_valid_fps": 19.587,
+                "baseline_cpu_core_percent": 2.3437,
+                "active_cpu_core_percent": 11.9713,
+                "cpu_increment_core_percent": 9.62755,
+                "logical_processors": 28,
+                "remote_width": 800,
+                "remote_height": 600,
+                "remote_valid_width": 800,
+                "remote_valid_height": 600
+              },
+              "screen_rtp": {
+                "sender": {
+                  "seconds": 30.02,
+                  "layers": [
+                    {
+                      "id": "OT01V1768690676",
+                      "rid": "q",
+                      "codec": "video/VP8",
+                      "delta": {
+                        "frames_encoded": 89,
+                        "frames_sent": 89,
+                        "bytes_sent": 135488,
+                        "packets_sent": 218
+                      }
+                    },
+                    {
+                      "id": "OT01V2627148314",
+                      "rid": "h",
+                      "codec": "video/VP8",
+                      "delta": {
+                        "frames_encoded": 587,
+                        "frames_sent": 587,
+                        "bytes_sent": 1227076,
+                        "packets_sent": 1339
+                      }
+                    }
+                  ],
+                  "delta": {
+                    "frames_encoded": 676,
+                    "frames_sent": 676,
+                    "bytes_sent": 1362564,
+                    "packets_sent": 1557
+                  },
+                  "rates_per_second": {
+                    "frames_encoded": 22.51832111925383,
+                    "frames_sent": 22.51832111925383,
+                    "bytes_sent": 45388.540972684874,
+                    "packets_sent": 51.86542305129913
+                  }
+                },
+                "receiver": {
+                  "seconds": 30.02,
+                  "layers": [
+                    {
+                      "id": "IT01V2883041162",
+                      "rid": null,
+                      "codec": "video/VP8",
+                      "delta": {
+                        "frames_decoded": 588,
+                        "frames_received": 587,
+                        "bytes_received": 1227076,
+                        "packets_received": 1339
+                      }
+                    }
+                  ],
+                  "delta": {
+                    "frames_decoded": 588,
+                    "frames_received": 587,
+                    "bytes_received": 1227076,
+                    "packets_received": 1339
+                  },
+                  "rates_per_second": {
+                    "frames_decoded": 19.586942038640906,
+                    "frames_received": 19.55363091272485,
+                    "bytes_received": 40875.28314457029,
+                    "packets_received": 44.603597601598935
+                  }
+                }
+              },
+              "boundary": "CPU covers two native Rooms and the generated source in one process; RTP rates exclude protocol overhead. No cost budget is asserted."
+            },
+            "evidence_ref": "window_case_5"
+          },
+          "cost-gdi-window": {
+            "measurement_status": "PASS",
+            "budget_status": "NOT_APPLICABLE",
+            "no_cost_budget_asserted": true,
+            "measurement": {
+              "process": {
+                "warmup_seconds": 15,
+                "baseline_seconds": 10.0005,
+                "active_seconds": 30.0187,
+                "capture_frames": 601,
+                "remote_frames": 587,
+                "remote_valid_frames": 587,
+                "remote_small_frames": 0,
+                "capture_fps": 20.0208,
+                "remote_fps": 19.5545,
+                "remote_valid_fps": 19.5545,
+                "baseline_cpu_core_percent": 1.40618,
+                "active_cpu_core_percent": 16.8645,
+                "cpu_increment_core_percent": 15.4583,
+                "logical_processors": 28,
+                "remote_width": 800,
+                "remote_height": 600,
+                "remote_valid_width": 800,
+                "remote_valid_height": 600
+              },
+              "screen_rtp": {
+                "sender": {
+                  "seconds": 30.019,
+                  "layers": [
+                    {
+                      "id": "OT01V3432649521",
+                      "rid": "q",
+                      "codec": "video/VP8",
+                      "delta": {
+                        "frames_encoded": 89,
+                        "frames_sent": 89,
+                        "bytes_sent": 139711,
+                        "packets_sent": 227
+                      }
+                    },
+                    {
+                      "id": "OT01V4148867370",
+                      "rid": "h",
+                      "codec": "video/VP8",
+                      "delta": {
+                        "frames_encoded": 587,
+                        "frames_sent": 587,
+                        "bytes_sent": 1306364,
+                        "packets_sent": 1401
+                      }
+                    }
+                  ],
+                  "delta": {
+                    "frames_encoded": 676,
+                    "frames_sent": 676,
+                    "bytes_sent": 1446075,
+                    "packets_sent": 1628
+                  },
+                  "rates_per_second": {
+                    "frames_encoded": 22.519071254871914,
+                    "frames_sent": 22.519071254871914,
+                    "bytes_sent": 48171.99107232087,
+                    "packets_sent": 54.23231953096373
+                  }
+                },
+                "receiver": {
+                  "seconds": 30.019,
+                  "layers": [
+                    {
+                      "id": "IT01V2853853245",
+                      "rid": null,
+                      "codec": "video/VP8",
+                      "delta": {
+                        "frames_decoded": 587,
+                        "frames_received": 586,
+                        "bytes_received": 1304247,
+                        "packets_received": 1399
+                      }
+                    }
+                  ],
+                  "delta": {
+                    "frames_decoded": 587,
+                    "frames_received": 586,
+                    "bytes_received": 1304247,
+                    "packets_received": 1399
+                  },
+                  "rates_per_second": {
+                    "frames_decoded": 19.55428228788434,
+                    "frames_received": 19.52097005230021,
+                    "bytes_received": 43447.38332389487,
+                    "packets_received": 46.60381758219794
+                  }
+                }
+              },
+              "boundary": "CPU covers two native Rooms and the generated source in one process; RTP rates exclude protocol overhead. No cost budget is asserted."
+            },
+            "evidence_ref": "window_case_6"
+          }
+        },
+        "product_subgate_credit": 0,
+        "full_gate_credit": 0,
+        "runtime_case_observations_passed": 6
+      },
+      "status_detail": "WGC/GDI窗口basic、complex、cost六格PASS；cost两格仅表示测量完整、无预算结论。GDI原native50次切换及signal/full重连PASS，sampler exit0/98样本、soak0且resource_gate=NOT_APPLICABLE。原全屏marker失败保留，新全屏重测因PickerHost环境DEFERRED；未授1800/3600长门信用。",
+      "gdi_hot_observed_status": "PASS",
+      "gdi_hot": {
+        "summary": {
+          "status": "PASS",
+          "started_utc": "2026-10-20T17:45:50.711544+00:00",
+          "run_id": "quality-hot-a996d0403e03",
+          "gdi": true,
+          "soak_seconds": 0,
+          "collect_fps_failures": false,
+          "resource_sampling": true,
+          "pattern_interval_ms": "10",
+          "runner_sha256": "8b985c2d71b116c50588e4f3045f1c75fe85699722de55a83c9aa1510d73d26d",
+          "resource_input_kind": "generated_window_harness_phase_not_uia",
+          "binary_sha256": "62f02b37b273fd8461abe456f0962607d99ffead9aadf06fb6d0bfaf434c30f0",
+          "binary_identity": {
+            "configuration": "RelWithDebInfo",
+            "binary_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_screen_share_runtime.exe",
+            "binary_sha256": "62f02b37b273fd8461abe456f0962607d99ffead9aadf06fb6d0bfaf434c30f0",
+            "pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_screen_share_runtime.pdb",
+            "pdb_guid": "6c3d699a-cd2c-4829-9420-4842b283a17c",
+            "pdb_age": 5
+          },
+          "server": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce\n8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014  /livekit-server",
+          "inputs": {
+            "src/core/room.cpp": "00ee7a300c70264333cc22b9b7552269b8ce4fd0a38e8d6fc64d72ec7d9be0e7",
+            "src/core/screen_share_session.cpp": "05cf4517f392677e5000105c6776407733867f126de8ceadd80c2a372a674cb8",
+            "src/media/desktop_capture.cpp": "ef9e74d3c1ce232b96b000a17ff5691960eee2a54d99126b9422c909c7930766",
+            "src/core/local_video_track.cpp": "2dcece611492d095aaf99f19b278bcf5aa44c775531022a4ef70bd31878556f9",
+            "src/rtc/webrtc_manager.cpp": "01d534914461c5a32deff24b9489bb4b8c5e5257836e668ec5273ceef907d4c9",
+            "src/media/desktop_capture.h": "6a7333e8517bda263c942ec9932e5be279df40bb2419d3e6bf31dcdeb29a118c",
+            "src/media/screen_share_quality.h": "0ee9ff1e9089be7b900d26277af632579f60222adabc3f59c80e8331fab47c67",
+            "src/media/screen_capture_fallback.h": "884487f784533d081316b4ff5072d24de402accd7ebd571b23fcc22d432cabb4",
+            "src/media/wgc_window_capture.cpp": "4d8b06c8e8b98929ec12fe7feebed8b3fb002fae4d390627ed2d3d7ac3bc99de",
+            "src/media/wgc_window_capture.h": "48345c2cd01d6362160ed816325ea06144e8082ae3f78088fb800147140adf9c",
+            "tests/runtime/tools/product_acceptance/product_pilot_resources.ps1": "ff215f2f778228db08bd637cfed9bf4c536d1bb2fd54f4c39df4742e8ac7393a",
+            "tests/runtime/tools/screen_capture/analyze_screen_quality_soak.py": "6a9584c57b07503ccaff3627083149851f0521efef1cce29252d0e3128b34724",
+            "tests/runtime/tools/product_acceptance/product_external_limits.json": "86db233d6a72bd1d45dacd311ab0c9becf166ea29e719582a2f3ce48901c874d",
+            "tests/runtime/probes/test_screen_share_runtime.cpp": "465463e2ba0611a6628e892252e916df55900d345a8792c4fa0eba9509c08d63"
+          },
+          "process_identity": {
+            "run_id": "quality-hot-a996d0403e03",
+            "pid": 30672,
+            "start_ticks": 639281151514920271,
+            "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_screen_share_runtime.exe"
+          },
+          "exit_code": 0,
+          "resource_sampler_exit": 0,
+          "resource_collection": {
+            "status": "PASS",
+            "sampler_exit": 0,
+            "maximum_gap_seconds": 10,
+            "samples": 98,
+            "live_samples": 97,
+            "evidence_sha256": "a1816130481507cebcbd900e390f79ede3660926120d0ae641459ba14236c73a"
+          },
+          "binary_sha256_after": "62f02b37b273fd8461abe456f0962607d99ffead9aadf06fb6d0bfaf434c30f0",
+          "binary_unchanged": true,
+          "resource_gate": "NOT_APPLICABLE",
+          "scope": "native functional gate and external collection contract; six-resource growth verdict requires resource-analysis.json",
+          "finished_utc": "2026-10-20T17:47:39.117942+00:00"
+        },
+        "evidence_refs": [
+          "gdi_hot_summary_json",
+          "gdi_hot_events_log",
+          "gdi_hot_resources_jsonl",
+          "gdi_hot_product-identity_json",
+          "gdi_hot_uia-actions_jsonl"
+        ],
+        "full_gate_credit": 0,
+        "product_subgate_credit": 0,
+        "resource_budget_credit": 0,
+        "resource_scope": "外部采集合同与native50轮功能分别判断；此短门不是1800秒六预算或3600秒100轮通过。",
+        "native_observations": {
+          "switches": 50,
+          "reconnect": [
+            {
+              "reconnect": "signal",
+              "status": "PASS"
+            },
+            {
+              "reconnect": "full",
+              "status": "PASS"
+            }
+          ]
+        }
+      },
+      "fullscreen_retry": {
+        "status": "DEFERRED",
+        "reason": "全屏marker/foreground链路当前受PickerHost环境限制；未启动第五次全屏重测。",
+        "evidence_ref": "desktop_readiness_05"
+      }
+    },
+    "network_service_restart": {
+      "title": "新输入：服务重启恢复及原判据审计",
+      "plan_codes": [
+        "P02",
+        "P12",
+        "P17"
+      ],
+      "status": "PASS",
+      "evidence_kind": "runtime_subconditions",
+      "product_subgate_credit": 0,
+      "full_gate_credit": 0,
+      "scope": "同一台电脑的两个独立产品进程与任务专用SFU；仅service-restart单项。",
+      "checks": [
+        {
+          "id": "service-restart-runtime",
+          "status": "PASS"
+        },
+        {
+          "id": "checkpoint-diagnostic-correlation-audit",
+          "status": "PASS",
+          "detail": "187 revisions / 138820 metrics / 191 diagnostics / 1 episode"
+        },
+        {
+          "id": "original-evidence-identity",
+          "status": "PASS"
+        }
+      ],
+      "evidence_refs": [
+        "service_restart_runtime_02",
+        "service_restart_runtime_03",
+        "service_restart_case_03",
+        "service_restart_prepare_02",
+        "service_restart_audit_03"
+      ],
+      "remaining": [
+        "其余十项网络case未在新二进制重跑。",
+        "新支持包导出未执行；旧网络批次仍为PARTIAL。",
+        "不覆盖物理断网、独立端点或完整P02/P12/P17。"
+      ],
+      "status_detail": "根因是Room完整重启的新track SID未迁移到旧恢复slot。修补后新单run的视频与render各expected=1/recovered=1、VALID，audio为NOT_EXPECTED；187 checkpoint与191诊断连续，单episode原判据关联PASS。旧网络批次PARTIAL与其他未重跑case保留。",
+      "runtime_case_observations_passed": 1,
+      "audit_summary": {
+        "source_phase": "source-phase11-inputs.json",
+        "source_phase_sha256": "b70d675021238af80791cbf38d0cfe1fc24cb6f5c31eee8904a489931a4d5d20",
+        "runner_sha256": "9e49f968a8526dc9f34bfe16e567ef0f34938ff9b6e1a9fe9626e04ca838f28b",
+        "checkpoints": [
+          {
+            "status": "PASS",
+            "record_id": "cohavora-telemetry-v2-846404b0000d408d8b1966b0adb71306",
+            "anonymous_session_id": "846404b0000d408d8b1966b0adb71306",
+            "process_run_id": "c764bf88ddd31b95df9e7d9fe3354629",
+            "generation": 1,
+            "retained_revisions": 187,
+            "metric_rows": 138820,
+            "last_revision": 187,
+            "declared_pruned_revisions": 0,
+            "unexpected_missing": 0,
+            "duplicate_metrics": 0
+          }
+        ],
+        "diagnostics": {
+          "status": "PASS",
+          "process_run_id": "c764bf88ddd31b95df9e7d9fe3354629",
+          "events": 191,
+          "first_sequence": 1,
+          "last_sequence": 191,
+          "unexpected_missing": 0,
+          "duplicates": 0,
+          "terminal": "process.terminal",
+          "drain_result": "completed",
+          "session_terminals": [
+            {
+              "anonymous_session_id": "846404b0000d408d8b1966b0adb71306",
+              "terminal": "session.stopped"
+            }
+          ]
+        },
+        "correlation": {
+          "status": "PASS",
+          "missing": [],
+          "episodes": [
+            {
+              "operation_id": "reconnect_episode:1:9",
+              "anonymous_session_id": "846404b0000d408d8b1966b0adb71306",
+              "started_sequence": 76,
+              "terminal_sequence": 143,
+              "attempts": 1,
+              "recovery_milestones": 2,
+              "stopped_sequence": 189
+            }
+          ],
+          "command_anchor": null,
+          "scope": "Native operation/session pairing and driver UTC phase fences; explicit command anchor for signal/full reconnect.",
+          "server_native_operation_propagation": false
+        },
+        "stable_recovery_terminal": {
+          "anonymous_session_id": "846404b0000d408d8b1966b0adb71306",
+          "audio": {
+            "availability": "NOT_EXPECTED",
+            "expected": 0,
+            "recovered": 0
+          },
+          "expectation_changes": 0,
+          "generation": 1,
+          "media_timeouts": 0,
+          "observation_window_ms": 10000,
+          "operation": {
+            "degraded_success": 0,
+            "inflight": 0,
+            "started": 1,
+            "success": 1,
+            "terminal": 1,
+            "timeout": 0
+          },
+          "render": {
+            "availability": "VALID",
+            "expected": 1,
+            "recovered": 1
+          },
+          "signaling_ms": 1147,
+          "video": {
+            "availability": "VALID",
+            "expected": 1,
+            "recovered": 1
+          }
+        }
+      },
+      "root_cause": "完整Room重启后远端track取得新SID，恢复统计仍等待旧SID对应slot；实际新流已decode/render，旧恢复slot未迁移而不产生milestone。",
+      "repair_scope": "退役旧room generation，在完整advertised roster中用唯一逻辑身份迁移恢复slot；歧义/空身份拒绝迁移，保留原expected分母与原稳定窗口。"
+    },
+    "telemetry_performance": {
+      "title": "遥测日志性能与资源门",
+      "plan_codes": [
+        "P13"
+      ],
+      "status": "FAIL",
+      "evidence_kind": "runtime_subconditions",
+      "product_subgate_credit": 0,
+      "full_gate_credit": 0,
+      "scope": "优化前原冻结输入的正式OFF/ON配对与额外stage诊断分别留证；最终源码未重跑P13 paired，不拼接运行、不下调原门限。",
+      "checks": [
+        {
+          "id": "paired-windows",
+          "status": "PASS",
+          "detail": "4windows PASS"
+        },
+        {
+          "id": "paired-comparison",
+          "status": "FAIL",
+          "detail": "pair1 PASS; pair2 callback p99 +8.371385% exceeds5%; pair3 NOT_RUN"
+        },
+        {
+          "id": "stage-diagnostic",
+          "status": "FAIL",
+          "detail": "Diagnostic only; callback p99 +13.104524% exceeds5%"
+        },
+        {
+          "id": "resource-9000s",
+          "status": "DEFERRED",
+          "detail": "后续阶段"
+        }
+      ],
+      "evidence_refs": [
+        "telemetry_paired_index",
+        "telemetry_stage_summary",
+        "telemetry_stage_index"
+      ],
+      "remaining": [
+        "最终源码的P13 paired复测为NOT_RUN；本节旧正式FAIL不改写为最终工件的实测结果。",
+        "9000秒资源门留后续阶段。",
+        "stage中的copy增量观察不证明根因；工程通过不授P99预算通过。"
+      ],
+      "status_detail": "本节正式FAIL来自优化前原冻结输入：pair2 callback p99+8.371385%超过5%。额外stage诊断仍无正式信用。最终源码保留重复扫描优化，但未重跑P13 paired，latest_source_performance_retest=NOT_RUN；既不能称优化已解决，也不能称最终工件已复测FAIL。",
+      "pairs": [
+        {
+          "status": "PASS",
+          "cpu_increase_pp": 0.35122766608731376,
+          "working_set_increase_bytes": 15044608.0,
+          "callback_p99_increase_upper_percent": -16.792929292929294,
+          "actual_callback_fps": {
+            "off": 16.000265564573684,
+            "on": 16.001863002761237
+          },
+          "limits": {
+            "cpu_increase_pp": 1,
+            "working_set_increase_bytes": 33554432,
+            "callback_p99_increase_percent": 5,
+            "UI_batch_ms": 4,
+            "log_refresh_hz": 20,
+            "telemetry_refresh_hz": 1
+          }
+        },
+        {
+          "status": "FAIL",
+          "cpu_increase_pp": 0.33631367096302656,
+          "working_set_increase_bytes": 9560064.0,
+          "callback_p99_increase_upper_percent": 8.371385083713845,
+          "actual_callback_fps": {
+            "off": 15.998403485722838,
+            "on": 16.010118661274486
+          },
+          "limits": {
+            "cpu_increase_pp": 1,
+            "working_set_increase_bytes": 33554432,
+            "callback_p99_increase_percent": 5,
+            "UI_batch_ms": 4,
+            "log_refresh_hz": 20,
+            "telemetry_refresh_hz": 1
+          }
+        }
+      ],
+      "result_input_scope": "FAIL belongs to the original pre-optimization frozen formal pair2 run, not a performance retest of the final build.",
+      "latest_source_performance_retest": "NOT_RUN",
+      "optimization_conclusion": "本轮保留删除重复telemetry扫描的优化；工程验证通过不证明该优化解决P99超限，最终源码没有paired性能结论。"
+    },
+    "timing_ui": {
+      "title": "UI耗时与主题短诊断",
+      "plan_codes": [
+        "P03",
+        "P20"
+      ],
+      "status": "FAIL",
+      "evidence_kind": "runtime_subconditions",
+      "product_subgate_credit": 0,
+      "full_gate_credit": 0,
+      "scope": "现有独立desktop/foreground安全门下的短诊断；不授B14 Formal、qualification或P20信用。",
+      "checks": [
+        {
+          "id": "ui-timing-theme-01",
+          "status": "FAIL",
+          "detail": "DEDICATED_ACCOUNT_AND_MEETING_REQUIRED"
+        },
+        {
+          "id": "ui-timing-theme-02",
+          "status": "FAIL",
+          "detail": "PRODUCT_EVIDENCE_LOSS"
+        },
+        {
+          "id": "ui-timing-theme-03",
+          "status": "FAIL",
+          "detail": "DRIVER_FAILED"
+        }
+      ],
+      "evidence_refs": [
+        "ui_timing_summary_1",
+        "ui_timing_summary_2",
+        "ui_timing_summary_3",
+        "ui_timing_driver_03",
+        "ui_timing_run_03",
+        "desktop_readiness_05"
+      ],
+      "remaining": [
+        "有效join/leave/UI首绘样本仍为0，不能给出耗时分布。",
+        "UI04环境延期：前台PickerHost未消失；不授B14 Formal/qualification/P20信用。",
+        "P20正式8小时/100轮仍暂停，本批没有启动。"
+      ],
+      "status_detail": "原三次实际FAIL与0完成cycle保留。只读复核输入桌面有效，但前台process_name仍为PickerHost；PID从29128变8540仅表示进程实例变化，prior_pid比较false不证明遮挡消失。新UI04重测按环境延期，未启动。",
+      "new_retry": {
+        "status": "DEFERRED",
+        "reason": "Flutter夹具全部退出后前台仍为PickerHost，PID8540；未启动UI04，不操作系统窗口。",
+        "evidence_ref": "desktop_readiness_05"
+      }
+    }
+  },
+  "history": [
+    {
+      "entry": "network_audit",
+      "attempt": "audit-1",
+      "status": "FAIL",
+      "reason": "Initial auditor required media milestone for every network recovery; actual service-restart evidence remains PARTIAL",
+      "evidence_ref": "network_attempt_01"
+    },
+    {
+      "entry": "network_audit",
+      "attempt": "audit-2",
+      "status": "FAIL",
+      "reason": "Initial auditor required session.stopped for rejected admission; corrected to require paired explicit failure terminal",
+      "evidence_ref": "network_attempt_02"
+    },
+    {
+      "entry": "network_audit",
+      "attempt": "audit-3",
+      "status": "PARTIAL",
+      "reason": "Final offline audit retains the service-restart correlation gap.",
+      "evidence_ref": "network_attempt_03"
+    },
+    {
+      "entry": "flutter_build",
+      "attempt": "release-initial",
+      "status": "FAIL",
+      "reason": "Dart-only pub resolution omitted the generated Windows plugin links; the subsequent official Flutter pub resolution and Release retry passed.",
+      "evidence_ref": "flutter_reprepare"
+    },
+    {
+      "entry": "annotation_diagnostic",
+      "attempt": "annotation-runtime-01",
+      "status": "FAIL",
+      "exit_code": -1073741819,
+      "binary_sha256": "030014c009d6a37d90889ab3de687e2d00e8a466964c765b615e185fc2fdb21d",
+      "reason": "0xC0000005 in capture worker; fixture WinRT dynamic imports were not initialized.",
+      "evidence_ref": "annotation_failure"
+    },
+    {
+      "entry": "annotation_diagnostic",
+      "attempt": "repair-build-initial",
+      "status": "FAIL",
+      "reason": "First WinRT initialization repair build lacked base/basic_types.h; include has been added, rebuild remains NOT_RUN.",
+      "provenance": "Main task message, 2026-10-21; no product runtime credit."
+    },
+    {
+      "entry": "capture_backends",
+      "attempt": "capture-backends-01",
+      "status": "FAIL",
+      "reason": "remote_animated_screen_missing",
+      "evidence_ref": "capture_1"
+    },
+    {
+      "entry": "capture_backends",
+      "attempt": "capture-diagnosis-02",
+      "status": "FAIL",
+      "reason": "remote_animated_screen_missing",
+      "evidence_ref": "capture_2"
+    },
+    {
+      "entry": "capture_backends",
+      "attempt": "capture-dxgi-repair-03",
+      "status": "FAIL",
+      "reason": "pattern_marker_occluded",
+      "evidence_ref": "capture_3"
+    },
+    {
+      "entry": "capture_backends",
+      "attempt": "capture-desktop-diagnosis-04",
+      "status": "FAIL",
+      "reason": "pattern_marker_occluded",
+      "evidence_ref": "capture_4"
+    },
+    {
+      "entry": "engineering_validation",
+      "attempt": "telemetry-focused-03",
+      "status": "FAIL",
+      "reason": "4/5 passed; session_telemetry_test used the obsolete restart operation prefix. Two test expectations corrected to reconnect; focused04 rerun PASS.",
+      "evidence_ref": "telemetry_focused_3"
+    },
+    {
+      "entry": "network_service_restart",
+      "attempt": "service-restart-recovery-02",
+      "status": "FAIL",
+      "reason": "Dedicated SFU was on host network at precondition; failed before entering fault injection. prepare02 restored dedicated bridge; shared service unchanged.",
+      "evidence_ref": "service_restart_runtime_02"
+    },
+    {
+      "entry": "whiteboard_engineering",
+      "attempt": "whiteboard-long-load-01",
+      "status": "FAIL",
+      "reason": "Owned marker occluded after first share request; measured1.078s, all share/annotation cycle counts0. Original cleanup failure retained; independent restore02 passed.",
+      "evidence_ref": "whiteboard_long_result"
+    },
+    {
+      "entry": "annotation_diagnostic",
+      "attempt": "annotation-runtime-03",
+      "status": "FAIL",
+      "reason": "AV repaired; marker0/155frames, fixture_not_topmost and native IME failure remain.",
+      "evidence_ref": "annotation_runtime_03"
+    },
+    {
+      "entry": "telemetry_performance",
+      "attempt": "telemetry-paired-01",
+      "status": "FAIL",
+      "reason": "Pair2 callback p99 upper increase8.371385% > frozen5%; third pair not run.",
+      "evidence_ref": "telemetry_paired_index"
+    },
+    {
+      "entry": "telemetry_performance",
+      "attempt": "telemetry-stage-diagnostic-01",
+      "status": "FAIL",
+      "reason": "Diagnostic-only pair callback p99 upper increase13.104524%; full_gate_credit0.",
+      "evidence_ref": "telemetry_stage_summary"
+    },
+    {
+      "entry": "timing_ui",
+      "attempt": "ui-timing-theme-01",
+      "status": "FAIL",
+      "reason": "Dedicated session precondition rejected.",
+      "evidence_ref": "ui_timing_summary_1"
+    },
+    {
+      "entry": "timing_ui",
+      "attempt": "ui-timing-theme-02",
+      "status": "FAIL",
+      "reason": "Workspace inherited ACL denied diagnostic sink; corrected only for newly owned product-data root.",
+      "evidence_ref": "ui_timing_summary_2"
+    },
+    {
+      "entry": "timing_ui",
+      "attempt": "ui-timing-theme-03",
+      "status": "FAIL",
+      "reason": "Startup foreground timeout; cycles0; sink written1/failures0 after ACL repair; no system window manipulated.",
+      "evidence_ref": "ui_timing_summary_3"
+    },
+    {
+      "entry": "flutter_build",
+      "attempt": "20261020T172702Z-30d383740c/protocol-h264-wrong-slot-recovery",
+      "status": "FAIL",
+      "reason": "Wrong-key zero-delivery interval followed by slot recovery and bidirectional media/data; failure tolerance 0 retains the existing explicit invalid-key recovery path.",
+      "evidence_ref": "flutter_matrix_1"
+    }
+  ],
+  "evidence_files": {
+    "io_summary": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/io-summary.json",
+      "sha256": "4a9b8b8e1e92324ed696e01c783f8017738b6492b83a4596977727bcfdda9ca9",
+      "size_bytes": 3529,
+      "evidence_kind": "runtime_subconditions"
+    },
+    "io_disk_full": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/io-disk-full-01/runtime.stdout.txt",
+      "sha256": "5faa883f8c2ac0c3e111e61ebe32c2e3b3cfc9b3d89999a9916e4586713ffd81",
+      "size_bytes": 250,
+      "evidence_kind": "runtime_subcondition"
+    },
+    "io_disk_cleanup": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/io-disk-full-01/cleanup.json",
+      "sha256": "685a61ecae52189e11cb8f59614593d6f03b0586590cf074e2e43f2fcc20920b",
+      "size_bytes": 678,
+      "evidence_kind": "cleanup"
+    },
+    "io_oplock": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/io-oplock-01/runtime.stdout.txt",
+      "sha256": "1b840da2181ede930bdd262e9520d0d960147c8488642cae6046f75e900ef431",
+      "size_bytes": 540,
+      "evidence_kind": "runtime_subcondition"
+    },
+    "io_oplock_cleanup": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/io-oplock-01/cleanup.json",
+      "sha256": "bd22ac652e05f49d9f3b6122cbf7b48df7d90b014fd90c509ac0b537a8351012",
+      "size_bytes": 678,
+      "evidence_kind": "cleanup"
+    },
+    "io_sink_exit": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/io-sink-exit-01/results.json",
+      "sha256": "a42265b25bcf552314778348da8207b98c6b95aa4ddd3c3c668d0586773b3f84",
+      "size_bytes": 2566,
+      "evidence_kind": "runtime_subcondition"
+    },
+    "io_guard": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/io-guard-selftest.json",
+      "sha256": "363888038c628db86903554303a61dc5c5949c17febfe7e18563d1e7d09dba21",
+      "size_bytes": 114,
+      "evidence_kind": "engineering"
+    },
+    "network_index": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/network-audit/index.json",
+      "sha256": "1eff525cb30c5a96414a0d3941c9d1ed5ed97144ecbf5051ba24d0c3b1a92264",
+      "size_bytes": 723,
+      "evidence_kind": "offline_audit"
+    },
+    "network_attempt_01": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/network-audit/result.json",
+      "sha256": "a0dac82109b3e24723f430362cd9d3010b55c57b98b55a9659c4f6f0be477e30",
+      "size_bytes": 7604,
+      "evidence_kind": "offline_audit_history"
+    },
+    "network_attempt_02": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/network-audit/attempt-02/result.json",
+      "sha256": "250d21ff648efd49bdd6a4c867687e8599acf4e62786da163a672c4ac1d1afb1",
+      "size_bytes": 60827,
+      "evidence_kind": "offline_audit_history"
+    },
+    "network_attempt_03": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/network-audit/attempt-03/result.json",
+      "sha256": "3c50d9626fe24fd64dfa47c02e9b46390e45b2d5dcf1b8576d39dc03e3644351",
+      "size_bytes": 80067,
+      "evidence_kind": "offline_audit"
+    },
+    "network_validation": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/network-audit/validation.json",
+      "sha256": "57ed50f24e2ea0f6d82fcfce7a367229e4f1a3b409613957e1ca6a7dc1cdf9b5",
+      "size_bytes": 937,
+      "evidence_kind": "engineering"
+    },
+    "whiteboard_direct": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/whiteboard-direct-01/results.xml",
+      "sha256": "b7b41b8cc44e0d77a74e664a1ab1f47eea449d783de071d6e060ee9a3b443a9c",
+      "size_bytes": 2316,
+      "evidence_kind": "engineering"
+    },
+    "whiteboard_load_contract": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/whiteboard-load-preflight/attempt-02/preflight.json",
+      "sha256": "d5d0148b7350ffb8a4670d7087e576dba312a8ae4729fb756fcf4ea92a09b8a1",
+      "size_bytes": 2696,
+      "evidence_kind": "source_contract_only"
+    },
+    "whiteboard_load_validation": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/whiteboard-load-preflight/validation.json",
+      "sha256": "304e0f3dbac86935eb4c0dcdb3cecf401d91def4663ea32c0aa547297a1de760",
+      "size_bytes": 1537,
+      "evidence_kind": "engineering"
+    },
+    "flutter_preflight": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-preflight/preflight-before-wrapper-fetch.json",
+      "sha256": "83785fe53204b5ecf23853e7d8b4538b5f6c159c22803380f6009740348100c4",
+      "size_bytes": 23459,
+      "evidence_kind": "engineering_readiness",
+      "relocation_reason": "Original bytes preserved before backend recovery; SHA256 unchanged."
+    },
+    "flutter_plugin_state": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-preflight/plugin-state.json",
+      "sha256": "3420375c85c4d8645cfbb4db8277639096d7f5ad9b9fbdb63ace543361a55794",
+      "size_bytes": 7726,
+      "evidence_kind": "engineering"
+    },
+    "flutter_reprepare": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-preflight/reprepare-helper-fix.json",
+      "sha256": "7b654f59156a2ce548004776a59ff349c76b3b3c0133dc5a70d9bc8cbc9498bd",
+      "size_bytes": 1885,
+      "evidence_kind": "build_receipt_and_hashes"
+    },
+    "flutter_helper_tests": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-preflight/test-generated-eol-fix.log",
+      "sha256": "4ee42edeb688cf181b8b5588e592373a6bd2de2e1511092ca965fa6c81289600",
+      "size_bytes": 2674,
+      "evidence_kind": "engineering"
+    },
+    "flutter_analyze": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-preflight/dart-analyze.log",
+      "sha256": "e99b2a714447dddfdd7e8d2f1d90dbf2434464bf2b73e59226e3350ad95a321f",
+      "size_bytes": 911,
+      "evidence_kind": "environment_failure"
+    },
+    "flutter_recovery": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-preflight/backend-recovery-before-wrapper-fetch.md",
+      "sha256": "44b475fe193567d32538e00de3f6ab4fb069e4bc3137dd6d3dae64e8884f040f",
+      "size_bytes": 7699,
+      "evidence_kind": "dependency_recovery_design",
+      "relocation_reason": "Original bytes preserved before backend recovery; SHA256 unchanged."
+    },
+    "annotation_failure": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/annotation-runtime-01/result.json",
+      "sha256": "b0060220faa49512fb414788e88b7b4d31cf377c4120e0ca3c8c65806f46e579",
+      "size_bytes": 365,
+      "evidence_kind": "runtime_failure"
+    },
+    "annotation_diagnosis": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/annotation-runtime-02-debug/diagnosis.json",
+      "sha256": "d831db36d7dccae5287e20bf6f3f09410ede4d7e45ac65e79f39ef3f9c8f3b7a",
+      "size_bytes": 1954,
+      "evidence_kind": "diagnostic"
+    },
+    "capture_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-backends-01/dxgi-screen/result.json",
+      "sha256": "95e35f4d31007c9e4e2874934748ba7c411d6bf78ed102aa6d606567588848bd",
+      "size_bytes": 4169,
+      "evidence_kind": "runtime_failure"
+    },
+    "capture_events_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-backends-01/dxgi-screen/events.log",
+      "sha256": "5bce963a4ed3a8222b1885730348190b9504b10f9bb4b3694a114636b3ee35b5",
+      "size_bytes": 875,
+      "evidence_kind": "runtime_failure_witness"
+    },
+    "capture_2": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-diagnosis-02/dxgi-screen/result.json",
+      "sha256": "1a6dcb9ad62dba60b6610c8564702897282be62d49ab1fc49c2f664c0824ffac",
+      "size_bytes": 4172,
+      "evidence_kind": "runtime_failure"
+    },
+    "capture_events_2": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-diagnosis-02/dxgi-screen/events.log",
+      "sha256": "c3d1fddd0acb8073db225c62e4d6683c2f5b86ea6f26427e48da4ee30cc9c5b1",
+      "size_bytes": 1465,
+      "evidence_kind": "runtime_failure_witness"
+    },
+    "capture_3": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-dxgi-repair-03/dxgi-screen/result.json",
+      "sha256": "2d0244d85e16b8286e381a80acdc00b4ea4ea29522a6a727609a11facaefa394",
+      "size_bytes": 3401,
+      "evidence_kind": "runtime_failure"
+    },
+    "capture_events_3": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-dxgi-repair-03/dxgi-screen/events.log",
+      "sha256": "300cfe37b17e5fe75d805747ddc51c4d0580f6766766723418f1288df26bb73d",
+      "size_bytes": 556,
+      "evidence_kind": "runtime_failure_witness"
+    },
+    "capture_4": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-desktop-diagnosis-04/dxgi-screen/result.json",
+      "sha256": "194b36f9f7354b0547a4a17c5944819ea85833099854ef33b8bbb4248bd2ca5f",
+      "size_bytes": 3401,
+      "evidence_kind": "runtime_failure"
+    },
+    "capture_events_4": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-desktop-diagnosis-04/dxgi-screen/events.log",
+      "sha256": "dcb22bf23955271e147d04999fbcbd61b45e1d1b51273ff77f6e78bb9f2f013c",
+      "size_bytes": 1240,
+      "evidence_kind": "runtime_failure_witness"
+    },
+    "build_phase7": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/build-phase7-observation.json",
+      "sha256": "b00becf7c131bb38a815fb77b0ec41ac9bc11d449ee64fccba9590cafd2338c6",
+      "size_bytes": 4211,
+      "evidence_kind": "build_observation"
+    },
+    "build_phase8": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/build-phase8-observation.json",
+      "sha256": "674498ed3bb87accc4483069613f4f537d89831f409724dfd20c37dbb7e34c78",
+      "size_bytes": 4212,
+      "evidence_kind": "build_observation"
+    },
+    "build_phase10": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/build-phase10-observation.json",
+      "sha256": "93b2b83ab2323af08f0d493daeb9f44524b5c549a2362b113aa01cf110245eaf",
+      "size_bytes": 4792,
+      "evidence_kind": "build_observation"
+    },
+    "build_phase11": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/build-phase11-observation.json",
+      "sha256": "b49a69c56b72f16e521bb54528ce0d65fccde1415d7b4a5e8f0f4af5e0d5f337",
+      "size_bytes": 7478,
+      "evidence_kind": "build_observation"
+    },
+    "identity_source-phase11-inputs": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/source-phase11-inputs.json",
+      "sha256": "b70d675021238af80791cbf38d0cfe1fc24cb6f5c31eee8904a489931a4d5d20",
+      "size_bytes": 67222,
+      "evidence_kind": "input_identity"
+    },
+    "identity_runtime-inputs-172548": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/runtime-inputs-172548.json",
+      "sha256": "932da16d387595b1394a9fb10563e0c037dcb384f5a86235a29aa537f52bc621",
+      "size_bytes": 33674,
+      "evidence_kind": "input_identity"
+    },
+    "telemetry_focused_2": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/telemetry-focused-02/results.xml",
+      "sha256": "2092250e23f831605a3f071a6727fd235022ef2abb78063db6becfa1398167ef",
+      "size_bytes": 2895,
+      "evidence_kind": "engineering"
+    },
+    "telemetry_focused_3": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/telemetry-focused-03/results.xml",
+      "sha256": "8802fa1a696a2f0bbef31f9e0c1f16bb5099048518a096b646cb98d53473175a",
+      "size_bytes": 3076,
+      "evidence_kind": "engineering"
+    },
+    "telemetry_focused_4": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/telemetry-focused-04/results.xml",
+      "sha256": "0b6a39fc656217134c109953a696ea4dd37188c53664137f3c856aac192628cb",
+      "size_bytes": 465,
+      "evidence_kind": "engineering"
+    },
+    "service_restart_runtime_02": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/service-restart-recovery-02/index.json",
+      "sha256": "9916b5807abc409bc4f6cc2afa0d23e5ba3bb51726f519038cc8a9161d4356ff",
+      "size_bytes": 3103,
+      "evidence_kind": "runtime"
+    },
+    "service_restart_runtime_03": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/service-restart-recovery-03/index.json",
+      "sha256": "a7188084a5ea3c2db420a9bc93769ed3f7950fe63bb9efdc41f34f5fb9fbdfed",
+      "size_bytes": 3103,
+      "evidence_kind": "runtime"
+    },
+    "service_restart_case_03": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/service-restart-recovery-03/service-restart/result.json",
+      "sha256": "fbe86125e1c8ce6df4c60266971118e7835782950a7b8b357b9f416aade063aa",
+      "size_bytes": 34111,
+      "evidence_kind": "runtime"
+    },
+    "service_restart_prepare_02": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/service-restart-network-prepare-02/network.json",
+      "sha256": "ae192a8c56dcc2f299ece3d48fed5d11317924cff200dd8b4892b83bf5f04225",
+      "size_bytes": 812,
+      "evidence_kind": "runtime"
+    },
+    "service_restart_audit_03": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/service-restart-audit-03/result.json",
+      "sha256": "c410a2fad5909b7cecf3f1a7c8f2ef762e4da8d1009d43758e894f51e26330a3",
+      "size_bytes": 20895,
+      "evidence_kind": "runtime"
+    },
+    "whiteboard_long_index": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/whiteboard-long-load-01/index.json",
+      "sha256": "3a19d10bb703c8ef49da0d9b87cdf27cd5b7db7189f47a4aaee2a763593bbcde",
+      "size_bytes": 4336,
+      "evidence_kind": "runtime_failure"
+    },
+    "whiteboard_long_result": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/whiteboard-long-load-01/long-load/result.json",
+      "sha256": "dee5e5213f3ebccdc6ff59732411e7c3f6b780b475f68236abe7317b48c1814e",
+      "size_bytes": 16018,
+      "evidence_kind": "runtime_failure"
+    },
+    "whiteboard_restore_02": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/whiteboard-long-load-01-restore-host-02/network.json",
+      "sha256": "ac3683e554a239f4023dea97c4b7fe07608f059e6cf4c5084286c7ed37dd41ab",
+      "size_bytes": 546,
+      "evidence_kind": "cleanup"
+    },
+    "whiteboard_cleanup_fix": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/whiteboard-cleanup-fix-01/validation.json",
+      "sha256": "ab0811058ee62b6a46d1f53d6f12141e49e5bb007cf730da2f609e230f35656f",
+      "size_bytes": 1913,
+      "evidence_kind": "engineering"
+    },
+    "whiteboard_owned_source": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/whiteboard-owned-source-01/validation.json",
+      "sha256": "ddf23f35166562dcbcacaa426623f91b4b3e08d9f839269de872cb84bb9f9a57",
+      "size_bytes": 1464,
+      "evidence_kind": "source_contract_only"
+    },
+    "annotation_runtime_03": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/annotation-runtime-03/result.json",
+      "sha256": "4bb765bcf32450ca524022672a6e5fd1dba3a54b0e261b7b87f70104b6c31682",
+      "size_bytes": 499,
+      "evidence_kind": "runtime_failure"
+    },
+    "annotation_log_03": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/annotation-runtime-03/runtime.log",
+      "sha256": "d4aa7364caa484771abcd994b522fe04b274453522a6f8fb199120e0273ae68b",
+      "size_bytes": 553,
+      "evidence_kind": "runtime_failure_witness"
+    },
+    "telemetry_paired_index": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/telemetry-paired-01/index.json",
+      "sha256": "78697631a72867a0f01bb94a0470b312e51bbf0008ebacdb764899a56cd034cd",
+      "size_bytes": 4166,
+      "evidence_kind": "runtime_failure"
+    },
+    "telemetry_stage_summary": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/telemetry-stage-diagnostic-01/stage-summary.json",
+      "sha256": "00d19c03562a75d7e4223f4fd9c0a4834e06aa0242cef4de79480e17e7181a2a",
+      "size_bytes": 1641,
+      "evidence_kind": "diagnostic"
+    },
+    "telemetry_stage_index": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/telemetry-stage-diagnostic-01/index.json",
+      "sha256": "4ee20ebcd537b71b2f4e4d1d9a263af0ef9cd1088be41be36bb69388192c72aa",
+      "size_bytes": 3400,
+      "evidence_kind": "diagnostic"
+    },
+    "ui_timing_summary_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/ui-timing-theme-01/summary.json",
+      "sha256": "5026279a2a8bb5fa0b7f2c84d2092135510672a4fe904d6bdef0185e9cbe236c",
+      "size_bytes": 836,
+      "evidence_kind": "runtime_failure"
+    },
+    "ui_timing_summary_2": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/ui-timing-theme-02/summary.json",
+      "sha256": "5c7bb409df1d45de9b073a81373e80357cd48d5dee2a165d1489bcc0139e4ebd",
+      "size_bytes": 840,
+      "evidence_kind": "runtime_failure"
+    },
+    "ui_timing_summary_3": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/ui-timing-theme-03/summary.json",
+      "sha256": "0064d800fdbd32a25025c6bc8dd469b382e088baa34fa4c9b419d2c7ef299d09",
+      "size_bytes": 834,
+      "evidence_kind": "runtime_failure"
+    },
+    "ui_timing_driver_03": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/ui-timing-theme-03/uia/uia-result.json",
+      "sha256": "68e784ccf5a96f382bb3b61d6a4c4fbe0d1d209f02a2ceb9fecf71283670e605",
+      "size_bytes": 1536,
+      "evidence_kind": "runtime_failure"
+    },
+    "ui_timing_run_03": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/ui-timing-theme-03/run.json",
+      "sha256": "fbdf13392e84764fef695095d039fb2425e7cf6ec61ef135a56d4444debd1dd0",
+      "size_bytes": 1335,
+      "evidence_kind": "input_identity"
+    },
+    "flutter_preflight_current": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-preflight/preflight.json",
+      "sha256": "265ed7e410e1f36d9ed68d4580f46f6e303ba5edeb1e20d3019ff02d221831bf",
+      "size_bytes": 24719,
+      "evidence_kind": "engineering"
+    },
+    "flutter_backend_build": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-preflight/backend-build-01.json",
+      "sha256": "51fd66f61edbc564aa76cce8a998a6b83989dec5f5dfd4731da471235efb557d",
+      "size_bytes": 1716,
+      "evidence_kind": "engineering"
+    },
+    "flutter_backend_stage": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-preflight/backend-stage-01.json",
+      "sha256": "f00aae1cea963acc491b792a97ecf17dfbdc89a31863b003bfced006dee212b6",
+      "size_bytes": 1872,
+      "evidence_kind": "engineering"
+    },
+    "flutter_backend_handoff": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-preflight/backend-runtime-handoff.json",
+      "sha256": "2345eea2e4e74e18eebe7bce083646849eef232518d564e51e08c910aa6cd274",
+      "size_bytes": 8079,
+      "evidence_kind": "engineering"
+    },
+    "flutter_matrix_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-matrix/20261020T172702Z-30d383740c/summary.json",
+      "sha256": "b7a43804a98dde1dc1a2e1f3ca269e60c6a745d681b0100e679023c2351efb8e",
+      "size_bytes": 14304,
+      "evidence_kind": "runtime_observation"
+    },
+    "flutter_batch_1_case_1_result_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-matrix/20261020T172702Z-30d383740c/protocol-h264-replace3-rpc/runs/on-e2ee-95e89c0668984946/result.json",
+      "sha256": "5c4d43f647b3988690a1abcbb670a840725f437f45f3b3c04a370d348fed164f",
+      "size_bytes": 154985,
+      "evidence_kind": "runtime"
+    },
+    "flutter_batch_1_case_2_result_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-matrix/20261020T172702Z-30d383740c/protocol-vp8-ratchet2-latejoin/runs/on-e2ee-901f3fcfaadb4c09/result.json",
+      "sha256": "fe5b5e5c3acc074450b9f45562949ea91f26e07856dd9fcae70635ee8b460647",
+      "size_bytes": 154146,
+      "evidence_kind": "runtime"
+    },
+    "flutter_batch_1_case_3_result_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-matrix/20261020T172702Z-30d383740c/protocol-h264-wrong-slot-recovery/runs/on-e2ee-6c2d4f88047145e4/result.json",
+      "sha256": "3fb88d06b7808d8195dd0f39d86a81b583f009d700f3482fdf7b0e0caf5a082c",
+      "size_bytes": 153806,
+      "evidence_kind": "runtime"
+    },
+    "flutter_matrix_2": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-matrix/20261020T173222Z-018c650754/summary.json",
+      "sha256": "6ecb29ebfadb04c9f0c894d1eb5dd2a82225389e58253ed89a2f04031583615b",
+      "size_bytes": 15722,
+      "evidence_kind": "runtime_observation"
+    },
+    "flutter_batch_2_case_1_result_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-matrix/20261020T173222Z-018c650754/protocol-h264-nativefull-replace-rpc/runs/on-e2ee-b4934931ab0b4c6a/result.json",
+      "sha256": "635a9d58003c3ddce4d9017539baedc0c6ee7bd9ede05ce7a773ccb514cdbf09",
+      "size_bytes": 154180,
+      "evidence_kind": "runtime"
+    },
+    "flutter_batch_2_case_2_result_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-matrix/20261020T173222Z-018c650754/relay-h264-marker/runs/on-e2ee-671373d96ca242f0/result.json",
+      "sha256": "abf427c5b54bb1b9545158e023554133a54332a65c40dc63cb8158e8f13feec9",
+      "size_bytes": 153317,
+      "evidence_kind": "runtime"
+    },
+    "flutter_batch_2_case_3_result_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-matrix/20261020T173222Z-018c650754/relay-vp8-marker/runs/on-e2ee-e2a502161acc4834/result.json",
+      "sha256": "aa5801fd36e4f17ab108d29398f94105a17a2babb8964b3b7cd7d5da560255a0",
+      "size_bytes": 153316,
+      "evidence_kind": "runtime"
+    },
+    "flutter_batch_2_case_4_result_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-matrix/20261020T173222Z-018c650754/qt-h264-business-text-byte/runs/product-e2ee-401a52ba98f34047/result.json",
+      "sha256": "f0c0825e19fc4cd12cb902e344511a01aa90544386f0cde9c5fc10dbe3fd1d16",
+      "size_bytes": 11432,
+      "evidence_kind": "runtime"
+    },
+    "flutter_matrix_3": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-matrix/20261020T173839Z-d6a9832147/summary.json",
+      "sha256": "309bb5c7bbb327cb8b57796a1c30d6222aef433d51beb58e56b2b75e937bcacb",
+      "size_bytes": 8375,
+      "evidence_kind": "runtime_observation"
+    },
+    "flutter_batch_3_case_1_result_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/flutter-matrix/20261020T173839Z-d6a9832147/protocol-h264-wrong-slot-recovery/runs/on-e2ee-48e1acf12b604d42/result.json",
+      "sha256": "93b341c385342ff4a310884a11c01781a1599c94204ef9e78b46087277e0c606",
+      "size_bytes": 153799,
+      "evidence_kind": "runtime"
+    },
+    "window_matrix_index": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-window-05/index.json",
+      "sha256": "be7d994e29a3d370cf9a494a8d09738436f2759b7a142e7182597da3abb53033",
+      "size_bytes": 1271,
+      "evidence_kind": "runtime"
+    },
+    "window_case_1": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-window-05/wgc-window/result.json",
+      "sha256": "ae92289018262761475d546c130ac3da8efcd19255f0c9b1ed49f9cdcc5d77fa",
+      "size_bytes": 4663,
+      "evidence_kind": "runtime"
+    },
+    "window_case_2": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-window-05/gdi-window/result.json",
+      "sha256": "26c82e2f3ec2505381a119219effed3b27f4065ac62542f408744760cdf31581",
+      "size_bytes": 4162,
+      "evidence_kind": "runtime"
+    },
+    "window_case_3": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-window-05/complex-wgc-window/result.json",
+      "sha256": "4a762a0702a188a641e0785945f1dd89aac7ac7ba79b73479c51febb10a701d8",
+      "size_bytes": 5298,
+      "evidence_kind": "runtime"
+    },
+    "window_case_4": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-window-05/complex-gdi-window/result.json",
+      "sha256": "0e8d1872039173e5d6ab0b32b97180710664ae93515658fe47facd53dc850fa8",
+      "size_bytes": 4795,
+      "evidence_kind": "runtime"
+    },
+    "window_case_5": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-window-05/cost-wgc-window/result.json",
+      "sha256": "bddd7148f4756fdbb55e3467eda0d60b84ebe2fd81ec5203eeee60563cc429ba",
+      "size_bytes": 7533,
+      "evidence_kind": "runtime"
+    },
+    "window_case_6": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-window-05/cost-gdi-window/result.json",
+      "sha256": "661137113ec84d52e591d4364c02e1c6c98119ff5fcc269b0a232eae0a7a6c34",
+      "size_bytes": 7035,
+      "evidence_kind": "runtime"
+    },
+    "hot_runner_validation": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/hot-runner-validation.json",
+      "sha256": "e4d993c504516a2d5a1739e937b33738c66f6f6049052bd7583a49ddbb160b4a",
+      "size_bytes": 5132,
+      "evidence_kind": "engineering_transcribed_receipt"
+    },
+    "gdi_hot_summary_json": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-gdi-hot-50-01/summary.json",
+      "sha256": "bea24ecdcff826075c7ec7586cb88b332cdb3ef527f5c1f9c16363e487d06ff7",
+      "size_bytes": 3750,
+      "evidence_kind": "runtime_observation"
+    },
+    "gdi_hot_events_log": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-gdi-hot-50-01/events.log",
+      "sha256": "de965d7342535bf433458ce14d907a82ffff21fbef94e94c46925902612389ba",
+      "size_bytes": 20046,
+      "evidence_kind": "runtime_witness"
+    },
+    "gdi_hot_resources_jsonl": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-gdi-hot-50-01/resources.jsonl",
+      "sha256": "a1816130481507cebcbd900e390f79ede3660926120d0ae641459ba14236c73a",
+      "size_bytes": 79869,
+      "evidence_kind": "resource_collection_only"
+    },
+    "gdi_hot_product-identity_json": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-gdi-hot-50-01/product-identity.json",
+      "sha256": "479b61ca0ffc20aec26abb812b963763f41b3098aeebc888e6d0065ff446c0f4",
+      "size_bytes": 241,
+      "evidence_kind": "input_identity"
+    },
+    "gdi_hot_uia-actions_jsonl": {
+      "root": "private",
+      "path": "out/resource-completion-20261020-01/capture-gdi-hot-50-01/uia-actions.jsonl",
+      "sha256": "0cc0436f3a912bcedd27c6ef6c9d98d2b298646445bd8172fceb233eed9aa07f",
+      "size_bytes": 20330,
+      "evidence_kind": "generated_harness_phase_not_uia"
+    },
+    "owned_task_cleanup": {
+      "root": "product",
+      "path": "out/functional-media-retest-20261020-01-control/cleanup-resource-completion-20261020-01/audit.json",
+      "sha256": "10b368fb4885234d6704a6624616697f6f578a336d92ff06db818e0c78f93a8b",
+      "size_bytes": 12966,
+      "evidence_kind": "operational_cleanup"
+    },
+    "final_input_verification": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/final-input-verification.json",
+      "sha256": "71044421d663982b69b23b15d91751407e989087d6bfb0861acc3dca86444124",
+      "size_bytes": 781,
+      "evidence_kind": "identity_verification"
+    },
+    "identity_source_phase12": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/source-phase12-inputs.json",
+      "sha256": "d42aaead198d65d5539b288178b024ba641289ee70da8479751f2e0c059ab290",
+      "size_bytes": 67222,
+      "evidence_kind": "input_identity"
+    },
+    "build_phase12": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/build-phase12-observation.json",
+      "sha256": "6cc58780264c046e84812b0ddafadf67ff9db843792ed026a9d6334c15707b99",
+      "size_bytes": 8390,
+      "evidence_kind": "build_observation"
+    },
+    "identity_runtime_phase12": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/runtime-inputs-173831.json",
+      "sha256": "5054e0c46bdee1215cebb64c65628bd1b177109e74444a3650a531703b1f3ec0",
+      "size_bytes": 33992,
+      "evidence_kind": "input_identity"
+    },
+    "desktop_readiness_05": {
+      "root": "product",
+      "path": "out/resource-completion-20261020-01-control/desktop-readiness-05.json",
+      "sha256": "a870ad16bdbb54d6b897eda567735e0fd4fb1301a574f74e0f4eb2a399e28c71",
+      "size_bytes": 573,
+      "evidence_kind": "read_only_environment_observation"
+    },
+    "codec_reuse_report": {
+      "root": "product",
+      "path": "samples/acceptance/functional-media-retest-20261020-01.json",
+      "sha256": "35044ef9feed78e9df4113e99a80b66ef705eae9af80b0a56f768a47ac11ecb9",
+      "size_bytes": 1714525,
+      "evidence_kind": "historical_impact_scope_reuse"
+    }
+  },
+  "pending_runtime_updates": {
+    "status": "FINALIZED_BATCH_SNAPSHOT",
+    "entries": [],
+    "deferred": [
+      "P13_9000s",
+      "P07_WGC_1800_resource",
+      "P07_WGC_3600_100cycles",
+      "P11_1800_load",
+      {
+        "id": "timing_ui_04",
+        "status": "DEFERRED",
+        "reason": "ENVIRONMENT_FOREGROUND_PICKERHOST",
+        "runtime_started": false,
+        "evidence_ref": "desktop_readiness_05"
+      },
+      {
+        "id": "annotation_04",
+        "status": "DEFERRED",
+        "reason": "ENVIRONMENT_FOREGROUND_PICKERHOST",
+        "runtime_started": false,
+        "evidence_ref": "desktop_readiness_05"
+      },
+      {
+        "id": "fullscreen_capture_retry_05",
+        "status": "DEFERRED",
+        "reason": "ENVIRONMENT_FOREGROUND_PICKERHOST",
+        "runtime_started": false,
+        "evidence_ref": "desktop_readiness_05"
+      }
+    ],
+    "note": "长门按主任务本轮范围留后续阶段；原失败、冻结阈值及B14暂停约束不变。"
+  },
+  "updates": [
+    {
+      "revision": 1,
+      "utc": "2026-10-20T16:10:16.293665+00:00",
+      "status": "PARTIAL",
+      "final_snapshot": false,
+      "note": "初始草稿：只汇总当前批次已提供证据，保留全部FAIL历史，不修改计划和上一批报告。"
+    },
+    {
+      "revision": 2,
+      "utc": "2026-10-20T17:54:04.618596+00:00",
+      "status": "PARTIAL",
+      "final_snapshot": true,
+      "note": "追加当前批次实际终态、工程验证与后续阶段边界；原31份证据SHA256保留，两个Flutter历史条目仅重定位到同字节快照。"
+    }
+  ],
+  "engineering_validation": {
+    "full_gate_credit": 0,
+    "product_subgate_credit": 0,
+    "build_phase10": {
+      "status": "PASS",
+      "targets": 7,
+      "console_retention": "Tool exit0 observed; complete console not retained.",
+      "evidence_ref": "build_phase10"
+    },
+    "build_phase11": {
+      "status": "PASS",
+      "rebuilt_targets": 3,
+      "reused_product_targets": 6,
+      "description": "Test-only restart to reconnect prefix correction; phase10 product EXE/PDB identities unchanged.",
+      "evidence_ref": "build_phase11"
+    },
+    "focused": [
+      {
+        "id": "focused-02",
+        "evidence_ref": "telemetry_focused_2",
+        "status": "PASS",
+        "total": 5,
+        "passed": 5,
+        "seconds": 70.760017,
+        "cases": [
+          {
+            "name": "session_telemetry_test",
+            "status": "PASS",
+            "seconds": 3.53753
+          },
+          {
+            "name": "telemetry_report_test",
+            "status": "PASS",
+            "seconds": 33.9925
+          },
+          {
+            "name": "telemetry_throughput_test",
+            "status": "PASS",
+            "seconds": 32.0357
+          },
+          {
+            "name": "meeting_telemetry_ui_test",
+            "status": "PASS",
+            "seconds": 0.797129
+          },
+          {
+            "name": "meeting_subscription_telemetry_reconnect_test",
+            "status": "PASS",
+            "seconds": 0.397158
+          }
+        ]
+      },
+      {
+        "id": "focused-03",
+        "evidence_ref": "telemetry_focused_3",
+        "status": "FAIL",
+        "total": 5,
+        "passed": 4,
+        "seconds": 67.438579,
+        "cases": [
+          {
+            "name": "session_telemetry_test",
+            "status": "FAIL",
+            "seconds": 0.522229
+          },
+          {
+            "name": "telemetry_report_test",
+            "status": "PASS",
+            "seconds": 33.8434
+          },
+          {
+            "name": "telemetry_throughput_test",
+            "status": "PASS",
+            "seconds": 31.8694
+          },
+          {
+            "name": "meeting_telemetry_ui_test",
+            "status": "PASS",
+            "seconds": 0.87208
+          },
+          {
+            "name": "meeting_subscription_telemetry_reconnect_test",
+            "status": "PASS",
+            "seconds": 0.33147
+          }
+        ]
+      },
+      {
+        "id": "focused-04",
+        "evidence_ref": "telemetry_focused_4",
+        "status": "PASS",
+        "total": 1,
+        "passed": 1,
+        "seconds": 3.58711,
+        "cases": [
+          {
+            "name": "session_telemetry_test",
+            "status": "PASS",
+            "seconds": 3.58711
+          }
+        ]
+      }
+    ],
+    "evidence_refs": [
+      "build_phase7",
+      "build_phase8",
+      "build_phase10",
+      "build_phase11",
+      "identity_source-phase11-inputs",
+      "identity_runtime-inputs-172548",
+      "telemetry_focused_2",
+      "telemetry_focused_3",
+      "telemetry_focused_4",
+      "hot_runner_validation"
+    ],
+    "reuse_boundary": "focused03 retains 4PASS/1FAIL. Only the failed direct test reran as focused04 PASS; this is not a new five-test run.",
+    "hot_runner_contract": {
+      "status": "PASS_SCOPED_TOOL_CONTRACT",
+      "tests_passed": 14,
+      "evidence_ref": "hot_runner_validation",
+      "raw_output_retained": false,
+      "scope": "Hot-runner collection contract repair only; no screen, camera, room, media, 1800-second, one-hour or product acceptance credit.",
+      "product_case_credit": 0,
+      "selftest_temporary_sampler_files_retained": false
+    },
+    "final_input_verification": {
+      "evidence_ref": "final_input_verification",
+      "schema": "cohavora-final-input-verification-v1",
+      "status": "UNCHANGED",
+      "utc": "2026-10-20T17:49:52.152038+00:00",
+      "source_files": 553,
+      "runtime_files": 247,
+      "differences": [],
+      "source_snapshot": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261020-01-control\\source-phase12-inputs.json",
+        "sha256": "d42aaead198d65d5539b288178b024ba641289ee70da8479751f2e0c059ab290"
+      },
+      "runtime_snapshot": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261020-01-control\\runtime-inputs-173831.json",
+        "sha256": "5054e0c46bdee1215cebb64c65628bd1b177109e74444a3650a531703b1f3ec0"
+      },
+      "scope": "Current source and runtime inputs only; no new build, tests or runtime acceptance credit."
+    },
+    "codec_reuse": {
+      "status": "REUSED_BY_IMPACT_SCOPE",
+      "cases": 22,
+      "new_runtime_executed": false,
+      "runtime_case_observations_credit": 0,
+      "full_gate_credit": 0,
+      "scope": "编码22项按影响范围复用前批原run结果；本批没有新跑22项runtime，不追加到本批15个case观察，也不据此声称物理硬件矩阵完成。",
+      "evidence_ref": "codec_reuse_report"
+    },
+    "build_phase12": {
+      "status": "PASS",
+      "rebuilt_targets": 2,
+      "reused_targets": 8,
+      "description": "phase12 session35545：test_e2ee_room_peer及test_annotation_overlay_runtime两目标重建PASS；其余8目标按完整源码差异与EXE/PDB哈希复用。私有E2EE夹具仅新增实际packet provider的SetSharedKey一行，wrong-slot补跑PASS；其他六格分支输入未受影响而复用。",
+      "evidence_ref": "build_phase12",
+      "source_evidence_ref": "identity_source_phase12",
+      "runtime_evidence_ref": "identity_runtime_phase12"
+    }
+  },
+  "cleanup": {
+    "status": "CLEANED",
+    "evidence_ref": "owned_task_cleanup",
+    "full_gate_credit": 0,
+    "product_case_credit": 0,
+    "scope": "任务容器/专用bridge与匹配安全组规则已清理；共享服务及远端证据保留不变。"
+  },
+  "root_cause_catalog": [
+    {
+      "scope": "产品：full-restart恢复统计",
+      "cause": "完整Room重启后远端track取得新SID，旧SID恢复slot未迁移，虽已有新流decode/render却缺少恢复milestone。",
+      "outcome": "唯一逻辑身份及退役generation迁移修补后，单service-restart运行和原审计PASS；未关闭其余网络case。",
+      "evidence_refs": [
+        "service_restart_runtime_03",
+        "service_restart_audit_03"
+      ]
+    },
+    {
+      "scope": "测试夹具：E2EE wrong-slot恢复",
+      "cause": "恢复只更新残留keys_，未更新实际Room绑定的packet_keys_ provider。",
+      "outcome": "实际provider补SetSharedKey一行，第三batch该case PASS；原FAIL保留，其他六格按未受影响分支复用。",
+      "evidence_refs": [
+        "identity_source_phase12",
+        "build_phase12"
+      ]
+    },
+    {
+      "scope": "测试：operation前缀",
+      "cause": "新增断言仍期待restart，而实际恢复operation语义为reconnect。",
+      "outcome": "仅两处测试前缀修正；focused03原4PASS/1FAIL保留，focused04只补失败项PASS3.59秒，未声称新五项全跑。",
+      "evidence_refs": [
+        "telemetry_focused_3",
+        "telemetry_focused_4",
+        "build_phase11"
+      ]
+    },
+    {
+      "scope": "UI runner：诊断目录ACL",
+      "cause": "workspace继承Users/AuthUsers权限，不满足产品私有诊断sink的目录ACL要求。",
+      "outcome": "仅为新建owned product-data设置受保护ACL；第三次sink写入1/failure0，UI仍因foreground超时FAIL且0cycle。",
+      "evidence_refs": [
+        "ui_timing_summary_2",
+        "ui_timing_summary_3"
+      ]
+    },
+    {
+      "scope": "采样runner：采集合同",
+      "cause": "runner需与通用sampler的进程身份、phase schema/UTC及采集完整性合同一致；缺失或异常采样必须failclosed。",
+      "outcome": "绑定Popen handle身份并补严格合同，14/14工具自测通过；GDI短门采集PASS，1800秒六预算及3600秒长门仍DEFERRED。",
+      "evidence_refs": [
+        "hot_runner_validation"
+      ]
+    }
+  ]
+}

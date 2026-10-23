@@ -1,0 +1,148 @@
+{
+  "schema": "cohavora-p21-system-theme-safe-projection-v1",
+  "status": "PASS_SCOPED",
+  "plan_groups": [
+    "P21"
+  ],
+  "scope": "SETTINGS_WINDOW_SYSTEM_AND_THREE_MANUAL_MODES_WINDOWS_PREFERENCE_0_1",
+  "started_utc": "2026-10-21T14:47:53.341024+00:00",
+  "finished_utc": "2026-10-21T14:48:19.342494+00:00",
+  "binary_source_provenance": "INCREMENTAL_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_NOT_PROVEN",
+  "bound_input_count": 1304,
+  "independent_review": "PASS_SCOPED_READBACK",
+  "priming": {
+    "method": "visible_ui_selection",
+    "selected": "light",
+    "guardian_sequence": 0,
+    "rationale": "Create an actual theme change before testing the initial default System mode."
+  },
+  "rows": [
+    {
+      "selected": "system",
+      "preference": 0,
+      "effective": "dark",
+      "stored_selected": "system",
+      "expected_colorref": 3221540,
+      "actual_colorref": 3221540,
+      "pixel_matches": true,
+      "guardian_sequence": 1,
+      "direct_product_refresh": false
+    },
+    {
+      "selected": "system",
+      "preference": 1,
+      "effective": "light",
+      "stored_selected": "system",
+      "expected_colorref": 16777215,
+      "actual_colorref": 16777215,
+      "pixel_matches": true,
+      "guardian_sequence": 2,
+      "direct_product_refresh": false
+    },
+    {
+      "selected": "light",
+      "preference": 0,
+      "effective": "light",
+      "stored_selected": "light",
+      "expected_colorref": 16777215,
+      "actual_colorref": 16777215,
+      "pixel_matches": true,
+      "guardian_sequence": 3,
+      "direct_product_refresh": false
+    },
+    {
+      "selected": "light",
+      "preference": 1,
+      "effective": "light",
+      "stored_selected": "light",
+      "expected_colorref": 16777215,
+      "actual_colorref": 16777215,
+      "pixel_matches": true,
+      "guardian_sequence": 4,
+      "direct_product_refresh": false
+    },
+    {
+      "selected": "dark",
+      "preference": 0,
+      "effective": "dark",
+      "stored_selected": "dark",
+      "expected_colorref": 3221540,
+      "actual_colorref": 3221540,
+      "pixel_matches": true,
+      "guardian_sequence": 5,
+      "direct_product_refresh": false
+    },
+    {
+      "selected": "dark",
+      "preference": 1,
+      "effective": "dark",
+      "stored_selected": "dark",
+      "expected_colorref": 3221540,
+      "actual_colorref": 3221540,
+      "pixel_matches": true,
+      "guardian_sequence": 6,
+      "direct_product_refresh": false
+    },
+    {
+      "selected": "teal",
+      "preference": 0,
+      "effective": "teal",
+      "stored_selected": "teal",
+      "expected_colorref": 16646139,
+      "actual_colorref": 16646139,
+      "pixel_matches": true,
+      "guardian_sequence": 7,
+      "direct_product_refresh": false
+    },
+    {
+      "selected": "teal",
+      "preference": 1,
+      "effective": "teal",
+      "stored_selected": "teal",
+      "expected_colorref": 16646139,
+      "actual_colorref": 16646139,
+      "pixel_matches": true,
+      "guardian_sequence": 8,
+      "direct_product_refresh": false
+    }
+  ],
+  "strict_input_unchanged": true,
+  "strict_observation_count": 49,
+  "product_exit": 0,
+  "forced": 0,
+  "cleanup_complete": true,
+  "original_preference": {
+    "exists": true,
+    "kind": "DWord",
+    "value": 0
+  },
+  "final_preference": {
+    "exists": true,
+    "kind": "DWord",
+    "value": 0
+  },
+  "restoration": {
+    "external_value_preserved": false,
+    "guarantee": "best_effort_equality_guard; no_registry_value_compare_and_swap; same_value_ABA_unobservable",
+    "notification": "DELIVERED",
+    "reason": null,
+    "registry_restored": true,
+    "run_id": "9f9e833d0f8d449fac12cea0f65a9b89",
+    "status": "RESTORED",
+    "trigger": "controller_finally"
+  },
+  "guardian_exit_code": 0,
+  "residual_guardian": false,
+  "full_plan_gate_credit": 0,
+  "full_p21_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "not_covered": [
+    "Meeting media continuity",
+    "Full stage appearance matrix",
+    "Original frozen EXE first-window",
+    "Physical no-flash",
+    "Other malformed configuration formats",
+    "Final regression"
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "status": "PASS",
+  "budget_approved_before_measurement": {
+    "cpu_percentage_points": 10.0,
+    "private_memory_mib": 128.0,
+    "decoded_fps_loss_percent": 10.0
+  },
+  "order": [
+    "off",
+    "on",
+    "on",
+    "off"
+  ],
+  "trial_seconds": 100,
+  "warmup_seconds_after_last_join": 20,
+  "steady_window_seconds": 45,
+  "statistic": "mean of two trial p95 CPU/private-memory values; mean decoded frame rates",
+  "pcm_gap_histogram_bounds_us": [
+    5000,
+    10000,
+    15000,
+    20000,
+    30000,
+    50000,
+    100000,
+    250000,
+    1000000
+  ],
+  "audio_observation_scope": "actual decoded PCM callback interval histogram p95 upper bound; telemetry jitter-buffer delay p95; not mouth-to-ear latency or an approved audio-quality budget",
+  "load": "three RelWithDebInfo native products, H264 window share+microphone, initial chat/file/whiteboard; third late join",
+  "excludes": [
+    "camera load",
+    "synthetic source process CPU",
+    "long-term stability",
+    "latency acceptance",
+    "final E2EE completion"
+  ],
+  "tool_sha256": "2c0536b846068412a0a2ce511a880c5866c206808dec241d63279018a1edd108",
+  "launcher_sha256": "8196f32b1a6f69815df05ce31af8dd435114c0910f02fea3cf2d9db567e038f3",
+  "trials": [
+    {
+      "mode": "off",
+      "duration": 100,
+      "evidence": "private:out/functional-media-retest-20261020-01/e2ee-performance/performance-732012680fbb446b/trials/product-e2ee-1b7fc0c9b6934b66",
+      "verdict_sha256": "db8a3d3a6c7b6f694dfdd1fce68852599be2d6286c4a12c5edfe1464560ea501",
+      "status": "PASS",
+      "metrics": {
+        "publisher": {
+          "cpu_p95": 0.39022735832187,
+          "private_mib_p95": 160.62890625,
+          "decoded_fps": 6.049647289936601,
+          "samples": 269,
+          "window_seconds": 44.796,
+          "audio_jitter_buffer_delay_ms_p95": 46.000000000000036,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8850,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8850,
+          "pcm_tracks": 2
+        },
+        "receiver": {
+          "cpu_p95": 0.5313556054387852,
+          "private_mib_p95": 157.9296875,
+          "decoded_fps": 6.050457691448984,
+          "samples": 268,
+          "window_seconds": 44.79,
+          "audio_jitter_buffer_delay_ms_p95": 41.99999999999998,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8850,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8850,
+          "pcm_tracks": 2
+        },
+        "late": {
+          "cpu_p95": 0.5849584815784041,
+          "private_mib_p95": 160.52734375,
+          "decoded_fps": 6.142146826557473,
+          "samples": 266,
+          "window_seconds": 44.447,
+          "audio_jitter_buffer_delay_ms_p95": 59.9999999999999,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8850,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8850,
+          "pcm_tracks": 2
+        }
+      }
+    },
+    {
+      "mode": "on",
+      "duration": 100,
+      "evidence": "private:out/functional-media-retest-20261020-01/e2ee-performance/performance-732012680fbb446b/trials/product-e2ee-fbc22c2f8fc04050",
+      "verdict_sha256": "cd6bdbb73e2dce48cea0b112c8884c1ba609613291505aa6053cb6f90d22251e",
+      "status": "PASS",
+      "metrics": {
+        "publisher": {
+          "cpu_p95": 0.5316215651973202,
+          "private_mib_p95": 161.97265625,
+          "decoded_fps": 6.0488371054863626,
+          "samples": 268,
+          "window_seconds": 44.802,
+          "audio_jitter_buffer_delay_ms_p95": 59.99999999999981,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8750,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8750,
+          "pcm_tracks": 2
+        },
+        "receiver": {
+          "cpu_p95": 0.44625065129390057,
+          "private_mib_p95": 159.34765625,
+          "decoded_fps": 6.049242170584165,
+          "samples": 268,
+          "window_seconds": 44.799,
+          "audio_jitter_buffer_delay_ms_p95": 63.999999999999964,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8750,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8750,
+          "pcm_tracks": 2
+        },
+        "late": {
+          "cpu_p95": 0.4302396017421386,
+          "private_mib_p95": 158.06640625,
+          "decoded_fps": 6.096737907761529,
+          "samples": 267,
+          "window_seconds": 44.45,
+          "audio_jitter_buffer_delay_ms_p95": 30.00000000000019,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8750,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8750,
+          "pcm_tracks": 2
+        }
+      }
+    },
+    {
+      "mode": "on",
+      "duration": 100,
+      "evidence": "private:out/functional-media-retest-20261020-01/e2ee-performance/performance-732012680fbb446b/trials/product-e2ee-02ffe84a01c142fa",
+      "verdict_sha256": "98a6c6951c611b0361c5e059f11136f3623ed075eb30403ba404743ea0bdcbd3",
+      "status": "PASS",
+      "metrics": {
+        "publisher": {
+          "cpu_p95": 0.479513374585339,
+          "private_mib_p95": 159.45703125,
+          "decoded_fps": 6.026920243755441,
+          "samples": 269,
+          "window_seconds": 44.799,
+          "audio_jitter_buffer_delay_ms_p95": 25.555555555555472,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8850,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8850,
+          "pcm_tracks": 2
+        },
+        "receiver": {
+          "cpu_p95": 0.5018460726734352,
+          "private_mib_p95": 158.0859375,
+          "decoded_fps": 6.021006623107285,
+          "samples": 269,
+          "window_seconds": 44.843,
+          "audio_jitter_buffer_delay_ms_p95": 30.000000000000192,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8850,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8850,
+          "pcm_tracks": 2
+        },
+        "late": {
+          "cpu_p95": 0.5019476389353943,
+          "private_mib_p95": 157.83984375,
+          "decoded_fps": 6.072328175602735,
+          "samples": 267,
+          "window_seconds": 44.464,
+          "audio_jitter_buffer_delay_ms_p95": 30.00000000000011,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8700,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8700,
+          "pcm_tracks": 2
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "duration": 100,
+      "evidence": "private:out/functional-media-retest-20261020-01/e2ee-performance/performance-732012680fbb446b/trials/product-e2ee-dec9a7cd0e944183",
+      "verdict_sha256": "1d1a2a15dde958b82aa63a051748ec42232e36cbe3dc02aef979be7f53701c04",
+      "status": "PASS",
+      "metrics": {
+        "publisher": {
+          "cpu_p95": 0.5374565564836125,
+          "private_mib_p95": 160.43359375,
+          "decoded_fps": 6.065336157877132,
+          "samples": 269,
+          "window_seconds": 44.845,
+          "audio_jitter_buffer_delay_ms_p95": 41.99999999999998,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8900,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8900,
+          "pcm_tracks": 2
+        },
+        "receiver": {
+          "cpu_p95": 0.47831987976400475,
+          "private_mib_p95": 157.68359375,
+          "decoded_fps": 6.069938184820692,
+          "samples": 269,
+          "window_seconds": 44.811,
+          "audio_jitter_buffer_delay_ms_p95": 36.000000000000036,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8900,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8900,
+          "pcm_tracks": 2
+        },
+        "late": {
+          "cpu_p95": 0.6131948792157179,
+          "private_mib_p95": 154.34375,
+          "decoded_fps": 6.118546845124283,
+          "samples": 267,
+          "window_seconds": 44.455,
+          "audio_jitter_buffer_delay_ms_p95": 30.00000000000019,
+          "pcm_gap_p95_upper_ms": 15.0,
+          "pcm_interval_count": 8800,
+          "pcm_intervals_over_100ms": 0,
+          "pcm_frames": 8800,
+          "pcm_tracks": 2
+        }
+      }
+    },
+    {
+      "mode": "on",
+      "duration": 640,
+      "evidence": "private:out/functional-media-retest-20261020-01/e2ee-performance/performance-732012680fbb446b/trials/product-e2ee-af921818ac2341a9",
+      "verdict_sha256": "89e3474b2029834aa310c5976b91447858ba45a3770e1d83610e36a1e8f29d0a",
+      "status": "PASS"
+    }
+  ],
+  "comparison": {
+    "publisher": {
+      "cpu_delta_pp": 0.04172551248858836,
+      "private_memory_delta_mib": 0.18359375,
+      "decoded_fps_loss_percent": 0.32378169347814234,
+      "observations": {
+        "pcm_gap_p95_upper_delta_ms": 0.0,
+        "audio_jitter_buffer_delay_p95_delta_ms": -1.2222222222223635
+      },
+      "checks": {
+        "cpu": true,
+        "memory": true,
+        "fps": true
+      }
+    },
+    "receiver": {
+      "cpu_delta_pp": -0.03078938061772718,
+      "private_memory_delta_mib": 0.91015625,
+      "decoded_fps_loss_percent": 0.41374129269496907,
+      "observations": {
+        "pcm_gap_p95_upper_delta_ms": 0.0,
+        "audio_jitter_buffer_delay_p95_delta_ms": 8.000000000000071
+      },
+      "checks": {
+        "cpu": true,
+        "memory": true,
+        "fps": true
+      }
+    },
+    "late": {
+      "cpu_delta_pp": -0.13298306005829463,
+      "private_memory_delta_mib": 0.517578125,
+      "decoded_fps_loss_percent": 0.7473279307933622,
+      "observations": {
+        "pcm_gap_p95_upper_delta_ms": 0.0,
+        "audio_jitter_buffer_delay_p95_delta_ms": -14.999999999999893
+      },
+      "checks": {
+        "cpu": true,
+        "memory": true,
+        "fps": true
+      }
+    }
+  },
+  "performance_status": "PASS",
+  "observation": {
+    "status": "PASS",
+    "configured_seconds": 640,
+    "warmup_seconds_after_last_join": 20,
+    "common_available_seconds": 617.579,
+    "verified_seconds": 600,
+    "continuity_windows_per_peer": 60,
+    "evidence": "private:out/functional-media-retest-20261020-01/e2ee-performance/performance-732012680fbb446b/trials/product-e2ee-af921818ac2341a9",
+    "scope": "600 common seconds after warmup with per-track ten-second progress; no long-soak or 100-cycle claim"
+  }
+}

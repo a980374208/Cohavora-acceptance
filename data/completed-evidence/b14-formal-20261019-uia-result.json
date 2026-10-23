@@ -1,0 +1,32 @@
+﻿{
+    "schema":  1,
+    "run_id":  "9abbe7b7953240b68de789b548eba598",
+    "verdict":  "UIA_COMPLETE",
+    "reason":  "independent_witnesses_required",
+    "vs_heap_diagnostic":  false,
+    "heap_etw_diagnostic":  false,
+    "instrumented":  false,
+    "phase_memory_diagnostic":  false,
+    "desktop_input_policy":  "diagnostic",
+    "cycles_requested":  100,
+    "cycles_completed":  100,
+    "minimum_seconds":  28800,
+    "started_utc":  "2026-10-19T08:57:58.7001128Z",
+    "finished_utc":  "2026-10-19T16:58:22.0169380Z",
+    "ui_only":  true,
+    "product_first_live":  {
+                               "pid":  5152,
+                               "start_ticks":  639279970787665317,
+                               "executable":  "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+                               "run_clock_elapsed_origin_seconds":  2.5740227,
+                               "utc":  "2026-10-19T08:58:01.2754126Z",
+                               "clock_source":  "System.Diagnostics.Stopwatch",
+                               "origin_kind":  "first_live_requested"
+                           },
+    "product_first_live_identity_failure":  null,
+    "share_state_failure":  null,
+    "product_live_elapsed_seconds_before_close":  28819.7909505,
+    "product_lifetime_floor_required_seconds":  28800,
+    "retest":  false,
+    "smoke":  false
+}

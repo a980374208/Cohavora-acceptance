@@ -1,0 +1,808 @@
+{
+  "schema": "cohavora-consolidated-acceptance-plan-v1",
+  "revised_at": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "source": "data/report-input.json",
+  "scope": "统一维护后续验收计划，并追加各批次实际覆盖及未覆盖边界；不更改原结果、冻结门限或暂停约束。",
+  "policy": [
+    "一个主项对应一类验收目标；批次汇总、单用例和历史投影不重复计数。",
+    "同次执行可以共享准备与采集，但各子门按实际环境、codec、负载、证据和判定独立结论。",
+    "产品验收与辅助工具、诊断分开计数；离线、静态、夹具及诊断结果不授予产品正式通过。",
+    "保留原52条输入全文及旧ID映射；合并不代表补测完成，也不自动授权任何已暂停的runtime。",
+    "某一子门未执行、失败或证据缺失时，不以同组其他子门的PASS覆盖。"
+  ],
+  "timing_measurements": {
+    "definition_version": "2026-10-16-v1",
+    "applicability": "后续采集口径；不回填或重判历史run",
+    "availability_reasons": [
+      {
+        "id": "NOT_TRIGGERED",
+        "label": "未触发",
+        "description": "有效事件计数或记录表明该运行未观测到对应事件；例如重连episode计数为0，没有适用的恢复耗时样本。"
+      },
+      {
+        "id": "NOT_RETAINED",
+        "label": "未留存",
+        "description": "现存同run资料没有可关联的逐轮起终点或耗时值；不据此断言历史运行从未采集。"
+      },
+      {
+        "id": "DEFINITION_PENDING",
+        "label": "口径待明确",
+        "description": "现存同run资料无法确认当时固定的测量场景、起终点或有效样本规则；后续定义不追溯应用于历史运行。"
+      }
+    ],
+    "collection_policy": [
+      "起终点使用同一单调时钟；跨进程观察另存时钟域与关联方法，不直接相减墙钟时间。",
+      "原始记录关联同一run、cycle、session、operation与generation；过期generation、重复和late callback不产生新成功样本。",
+      "每轮每个声明场景只取一次有效终态；成功耗时分布仅使用完整成功样本，失败、超时和取消分别计数。",
+      "保留原始起终点、时钟信息、definition_version、场景、身份、结果与缺失原因，再生成均值、P50、P95和最大值。",
+      "未设置性能阈值仍记录有效数值；缺失值不按0毫秒计入，不用PASS、帧数、render interval或其他run补造耗时。",
+      "采集实现已接入现有诊断、UIA与runner链路；本次完整100轮已留存入会、离会及meeting首绘数据，collection_status为OBSERVATION_RECORDED，仅作耗时观测，不签发独立性能PASS，不更改原门限或暂停约束。"
+    ],
+    "definitions": [
+      {
+        "id": "join_ready",
+        "name": "入会耗时",
+        "group_ids": [
+          "T001",
+          "T003",
+          "T020"
+        ],
+        "start": "最终入会按钮handler受理本次请求的单调时间；排除打开及填写入会对话框的时间。",
+        "end": "同一次startup transaction已提交成功，用户选择的必要本地媒体已ready且状态为InMeeting，会议窗口已可见且对应Qt queued投影已应用；不处于启动或回滚状态。",
+        "rules": [
+          "按用户本次选择核对本地音视频ready；关闭的媒体不作为等待条件，远端首帧不纳入入会耗时。",
+          "终点同时满足startup成功提交、业务状态和界面投影，不能用Room连接成功、较早的InMeeting／meetingJoinedSuccessfully、窗口对象存在或UIA控件出现单独替代。",
+          "接收模式等startup为DegradedSuccess的结果使用独立场景／结果桶，不混入普通Success的成功耗时分布。",
+          "启动失败、超时、取消或回滚分别保留终态与已发生的起终点，不进入成功耗时分布。"
+        ],
+        "evidence": [
+          "按钮handler受理记录与同operation的startup成功提交终态、InMeeting状态记录。",
+          "同generation的窗口可见及Qt投影应用确认；保留本次音视频选择与ready结果。"
+        ],
+        "collection_status": "OBSERVATION_RECORDED"
+      },
+      {
+        "id": "leave_complete",
+        "name": "离会耗时",
+        "group_ids": [
+          "T001",
+          "T003",
+          "T020"
+        ],
+        "start": "用户确认离会的handler受理本次请求的单调时间；排除打开确认框与用户停留时间。",
+        "end": "同session的SessionStopped／meetingLeft对应关闭终态已确认，startup／发布等在途操作已收敛且native cleanup完成，会议窗口已关闭并回到可见的会前页面。",
+        "rules": [
+          "业务关闭、在途操作收敛、native cleanup与界面返回均须关联同session及generation；确认离会后的窗口close可早于stopRoomSession，不以Room断开、窗口关闭／隐藏或按钮消失单独判定终点。",
+          "不包含产品进程退出及操作系统内存回收；资源增长仍按既有独立释放窗口与门限判定。",
+          "离会失败、超时和取消分别计数，不进入成功耗时分布。"
+        ],
+        "evidence": [
+          "确认离会handler受理、同session的SessionStopped／meetingLeft对应关闭终态及在途操作终态记录。",
+          "native cleanup完成记录与同generation的会议窗口关闭、会前页面恢复可见确认。"
+        ],
+        "collection_status": "OBSERVATION_RECORDED"
+      },
+      {
+        "id": "ui_first_paint",
+        "name": "UI页面首绘耗时",
+        "group_ids": [
+          "T003",
+          "T020"
+        ],
+        "start": "用户打开目标页面的handler受理本次请求的单调时间。",
+        "end": "该operation对应的可见页面内容完成首个有效paint后，返回event loop的观察点。",
+        "rules": [
+          "settings与meeting等页面按scene分别统计；记录目标页面、operation与generation，不合并为一个首屏分布。",
+          "只计目标内容可见且有效的首个paint；占位、隐藏或过期页面的paint不能作为终点。",
+          "终点代表Qt内容首绘后的event loop观察点，不代表DWM呈现或用户已在显示器上看到像素。",
+          "应用进程启动首屏使用独立scene和独立起点定义，不混入同进程100轮页面打开样本；设置页既有SettingsPaint及视频首帧日志不能直接替代会议页面首绘。"
+        ],
+        "evidence": [
+          "打开页面handler受理记录及目标scene、operation、session与generation。",
+          "目标内容可见性、首个有效paint完成及随后event loop观察点的原始时间记录。"
+        ],
+        "collection_status": "OBSERVATION_RECORDED"
+      }
+    ]
+  },
+  "idle_memory_measurements": {
+    "definition_version": "2026-10-16-idle-v1",
+    "metrics": [
+      "working_set_bytes",
+      "private_bytes"
+    ],
+    "scenes": [
+      "initial_home_idle",
+      "post_leave_home_idle"
+    ],
+    "collection_status": "OBSERVATION_RECORDED",
+    "implementation_status": "IMPLEMENTED_OBSERVATION_RECORDED",
+    "group_ids": [
+      "T020"
+    ],
+    "scope": "后续同run、同PID/start_ticks的会前空闲状态绝对均值；首次入会前与离会后分组，不回填历史缺失值。",
+    "window": "首次会前10秒；离会后复用room_settled。每窗口剔除前5秒，至少3个有效样本、跨度至少2秒、相邻间隔不超过2.5秒。",
+    "validity": "会前页面可见且入会按钮可用、无会议窗口、2秒内同run原生probe、native_cleanup_pending=0；离会后还须session_complete。",
+    "aggregation": "保留逐次时间、状态、身份和bytes，按scene计算有效样本算术平均值及MiB；缺失或不足为UNKNOWN/null，不用增长、峰值或释放中位数代替。",
+    "implementation": "live-kit-test-local/tests/runtime/tools/product_acceptance/UI_TIMING_COLLECTION.md"
+  },
+  "groups": [
+    {
+      "id": "T001",
+      "plan_code": "P01",
+      "plan_kind": "product",
+      "title": "核心生命周期与异常回滚",
+      "domain": "核心与生命周期",
+      "originalIds": [
+        "T002",
+        "T004",
+        "T031"
+      ],
+      "description": "把核心回归、异常契约和音频引用环复现纳入同一生命周期目标，按变更影响选择直接门。",
+      "gates": [
+        "Room／Session／发布与取消发布：状态转换、generation、owner和thread归属一致，Qt投影不持有native lifetime。",
+        "取消、late callback、重复操作和启动失败：终态唯一、回滚完整，销毁后的回调不改写新会话。",
+        "音频source／track／factory／probe／Qt引用链：在相同冻结工件下配对复现与释放，直接lifetime断言成立。",
+        "入离会耗时：按timing_measurements中的join_ready／leave_complete关联业务终态、native cleanup与Qt投影，保存逐轮原始起终点及结果。"
+      ],
+      "conditions": [
+        "只运行受影响core或直接gate；输入及依赖等价的既有结论可复用。"
+      ],
+      "boundaries": [
+        "局部音频释放不关闭B14正式资源门",
+        "工程PASS不替代真实设备、实服或长稳",
+        "本轮16项工程门中的启动事务等直接生命周期证据见reports/product/functional-media-retest-20261020-01.html；仅适用已执行工程范围，音频引用链、真实设备、资源长稳及按定义采集的入离会耗时仍独立判定。",
+        "本批resource-completion-20261021-01阶段：两项audio lifetime直接门仅REUSED_BY_IMPACT_SCOPE，无新runtime或完整P01信用。"
+      ]
+    },
+    {
+      "id": "T002",
+      "plan_code": "P02",
+      "plan_kind": "product",
+      "title": "遥测功能、持久化与恢复",
+      "domain": "遥测与持久化",
+      "originalIds": [
+        "T001",
+        "T036",
+        "T040"
+      ],
+      "description": "统一事件、序列化、P2投影、导出与恢复；checkpoint缓存ABBA作为有条件的附属基准。",
+      "gates": [
+        "事件与P2-A／B／C投影：事件、序列化、管线、文件输出和桥接保持声明语义。",
+        "持久化与导出：状态、筛选和恢复后内容可回读，工程与实服结果分别记录。",
+        "独立信令恢复：重连后遥测状态和文件链可继续，缺失或重复不被静默忽略。",
+        "checkpoint缓存：仅在实现或benchmark输入变化时比较48／768段ABBA，核对逻辑I/O与JSON重解析。"
+      ],
+      "conditions": [
+        "ABBA只在缓存变更或性能决策需要时执行，不作为每次产品回归的额外固定任务。"
+      ],
+      "boundaries": [
+        "合成缓存基准不代表生产runtime收益",
+        "性能开销由独立配对性能主项判定",
+        "本轮遥测投影、报告与重连契约的直接工程证据及网络遥测观测见reports/product/functional-media-retest-20261020-01.html；网络遥测保持PARTIAL、full_gate_credit=0，导出回读、故障日志关联及缺失／重复审计尚未闭环，不授予完整恢复子门PASS。",
+        "本批resource-completion-20261020-01：新service-restart运行及原checkpoint/diagnostic/correlation审计PASS；旧11项网络审计仍PARTIAL，剩余十项未在新二进制重跑，完整主门信用0。",
+        "本批resource-completion-20261021-01阶段：旧service-restart生产导出/独立复盘、新网络九成功子集及独立TURN单case审计分别留证；九成功子集仍PARTIAL/full0；TURN02既有checkpoint/diagnostics/correlation范围保留，最新已完成封存源生产导出与独立回读为PASS_SCOPED（2026-10-21）：7文件SHA/size、93 revisions、61,104条导出指标及17条timeline逐项对源，16个原文件与45项telemetry/target输入及导出器EXE/PDB前后不变；来源data/completed-evidence/turn02-export-readback-20261021-scoped.json，追溯data/completed-evidence/turn02-export-readback-20261021-provenance.json。历史stability详情/session link、crash metadata及persistent loss summary四项缺失保留，未执行UI导出或故障后live-current，不回填旧运行输入身份，完整P02/P12/P17/Formal/P20信用0，原十项FAIL及terminal整体身份UNKNOWN不覆盖，不拼接完整恢复门。"
+      ]
+    },
+    {
+      "id": "T003",
+      "plan_code": "P03",
+      "plan_kind": "product",
+      "title": "界面流程、文件与真实I/O",
+      "domain": "界面与文件",
+      "originalIds": [
+        "T005",
+        "T006",
+        "T018",
+        "T024",
+        "T030"
+      ],
+      "description": "将B01、B02及其批次D明细合为一份矩阵，补充真实I/O和人工输入子门。",
+      "gates": [
+        "界面流程：settings、入会、会议工具栏／分页、日志及白板文件操作，在声明语言下完成且状态一致；页面首绘与入离会分别引用timing_measurements的ui_first_paint／join_ready／leave_complete。",
+        "主题外观与舞台：系统／浅色／深色／青绿四种模式下，已打开及新建的主窗、设置、菜单／弹层、图标／缓存图片和白板外围一致；舞台、视频格及留白在CPU／GPU后端已有静止画面时即时切换，视频／共享内容和白板页面／笔迹保持原色。",
+        "文件内容：JPEG、拒绝访问、页数替换、导出回读与像素／哈希判定；同一文件case只执行一次。",
+        "远端上传：离线拒绝、上传中断、回读和重试恢复分别验证，失败不残留错误状态。",
+        "真实I/O：受控磁盘满、oplock／慢I/O、驱动不响应及关停持久化／恢复按独立故障条件判定。",
+        "人工输入与辅助操作：键盘导航、中文IME及声明支持的屏幕阅读器完成实际功能。"
+      ],
+      "conditions": [
+        "普通UIA不能代替真实慢盘、磁盘满、IME或辅助技术子门；破坏性故障只在受控环境按既有授权执行。"
+      ],
+      "boundaries": [
+        "中英文界面与文件边界保留必要差异case，不以翻译一致推断功能通过",
+        "断电与系统级恢复另在物理环境主项判定",
+        "待执行的cpu-finite-content仅合并到本组既有主题外观与舞台子门：Qt CPU远端格在四主题下分别显示3个按序、无回绕的唯一合成编码帧，共12帧；每帧以源提交记录、接收端自然Paint身份及实际screen DC PNG恢复的编码闭合，native与桌面四点RGB精确匹配，并保持strict输入及完整clip遮挡校验。现有静帧合同与已完成结果保留；本项当前NOT_RUN，须先完成私有fixture／驱动、直接合同、受影响构建、独立审查及新profile。范围仅为有限时变内容自然Paint与桌面合成，不授平滑帧率、逐帧Present、物理scanout、publisher原色无损、正式媒体连续性或完整P03／Formal／P20信用。",
+        "主题工程、设置截图与CPU／DX11／桌面OpenGL静止切换的本轮结果见reports/product/theme-settings-20261016.html；真实会中音视频连续性及完整DPI／多显示器／辅助功能外观矩阵为NOT_RUN，分别留证，不由工程或视觉结果授予媒体runtime PASS。",
+        "本轮B01界面UIA 10项与B02文件／上传4项PASS，见reports/product/functional-media-retest-20261020-01.html；分别绑定报告中的实际UI工件，真实I/O、人工输入及完整主题矩阵未由此覆盖，页面首绘与入离会耗时另按定义判定。",
+        "本批resource-completion-20261020-01：受控磁盘满/恢复、oplock打开取消/恢复、诊断sink进程退出三项运行子条件PASS；真实物理慢盘/断电/人工输入/辅助功能未覆盖。原UI耗时主题三次FAIL、0cycle保留；夹具退场后前台PickerHost PID8540，新UI04按环境DEFERRED且未启动。",
+        "本批resource-completion-20261021-01桌面子门：ui-timing-theme=PASS_SCOPED, ui-smoke-export=PASS_SCOPED；最新完成ui-timing-theme-unblocked09（2026-10-21）三轮typed UI耗时仅OBSERVATION_ONLY、release_gate_issued=false，不新增性能门限；theme设置限定结果只归P21既有主题边界，不重复计项。最新完成ui-smoke-export-observed15（2026-10-21）strict短测3/3轮PASS，产品存活105.6158393秒（原最小50秒），自然退出码0；三次生产导出均独立回读PASS_SCOPED：21个清单文件、473771条指标、135条时间线事件，与同run压缩检查点及native事件逐项匹配。保留各包指标裁剪／字符串值省略，以及confirmed_crash_metadata与persistent_loss_summary缺失声明；不声称零持久化损失或故障复盘完整。strict输入时间戳全程未变；另90.047秒observer未记录事件且两个hook均注销，continuous_hook_coverage与历史输入来源仍UNKNOWN。来源data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json，追溯data/completed-evidence/ui-smoke-export-observed15-20261021-provenance.json；主题原来源data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json与data/completed-evidence/ui-terminal-20261021-provenance.json保留。旧FAIL仅作历史追溯，保留于原报告和既有证据；原gates/conditions/门限、完整P03/full-plan/Formal/P20信用0保留；媒体连续性、L3、长时内存、完整外观矩阵未覆盖。",
+        "最新完成p21-cpu-content-runtime17b（2026-10-22北京时间），仅归P03原主题舞台子门：一个远端Qt CPU静止视频格，浅色／深色／青绿／系统经真实SettingsDialog可见下拉选择，同一接收端解码图像、frame_token=34、room_generation=1、binding_epoch=2，主题revision=2／3／4／5各有单次自然Paint覆盖全部四点且前后身份／尺寸不变；16/16个实际screen DC桌面合成像素与接收端该帧RGB精确匹配，四点依次(249,2,0)／(0,254,14)／(11,0,248)／(132,128,138)，限定PASS_SCOPED。client DC返回无效值4294967295，不计其匹配；QRegion覆盖及解码RGB依赖已审且绑定哈希的native观察器，原日志未导出区域形状或QImage原始字节，不将独立回读表述为从原始字节重建图像。1331项输入全部独立回读；strict父采样309次、84个子驱动边界输入不变；两端自然退出0、forced0、native退休rooms_alive=0及cleanup_pending=0，清理完成、共享服务指纹未变、房间为空。该静帧范围不授媒体连续性、publisher原色无损、逐帧Present、物理scanout、共享／白板或完整CPU／GPU／DPI矩阵信用；传递性clean-build未证明，完整P03／full-plan／Formal／P20信用仍0。来源data/completed-evidence/p03-cpu-static-content17b-20261022-scoped.json，追溯data/completed-evidence/p03-cpu-static-content17b-20261022-provenance.json。"
+      ]
+    },
+    {
+      "id": "T004",
+      "plan_code": "P04",
+      "plan_kind": "product",
+      "title": "编码矩阵、选层与主备回退",
+      "domain": "媒体编码",
+      "originalIds": [
+        "T007",
+        "T008"
+      ],
+      "description": "共享媒体准备与基础采样，分别核对codec能力、尺寸选层和重发布／重连后的编码策略。",
+      "gates": [
+        "codec矩阵：Auto、VP8、H264、VP9-SVC、AV1及声明备用编码，实际requested／effective codec与预期一致。",
+        "尺寸与选层：原720／360、simulcast中／低层等负载逐项核对实际发布、RTP／解码增长和marker。",
+        "主备策略与重发布：prefer／regression／simulcast backup、手动重发布的选择及旧资源清理正确。",
+        "编码恢复：信令／完整重连分别覆盖simulcast、regression与allowlist，恢复后核对实际codec。",
+        "负向能力：disabled AV1和无视频交集等失败可解释并完成回滚。"
+      ],
+      "conditions": [
+        "网络注入可与网络主项共享一次执行，但编码策略与媒体恢复分别出结论。"
+      ],
+      "boundaries": [
+        "不同codec及SVC／simulcast不是可删的重复项",
+        "不以配置值代替实际编码与解码证据",
+        "本轮B03编码9格与B04策略／恢复／负向能力13项均PASS，见reports/product/functional-media-retest-20261020-01.html；以逐格实际codec、发布／接收及正常退出证据为界，不外推未运行设备、跨平台或物理故障条件。",
+        "本批resource-completion-20261021-01阶段：编码矩阵及策略22项仅REUSED_BY_IMPACT_SCOPE，未新增22项runtime，不授物理设备/跨平台信用。"
+      ]
+    },
+    {
+      "id": "T005",
+      "plan_code": "P05",
+      "plan_kind": "product",
+      "title": "跨SDK媒体与数据互通",
+      "domain": "跨SDK互通",
+      "originalIds": [
+        "T009"
+      ],
+      "description": "保留独立对端矩阵，避免把固定派生Flutter夹具等同于官方SDK或跨平台支持。",
+      "gates": [
+        "固定派生Flutter：冻结双方版本，验证当前C++双向媒体与数据的实际交付。",
+        "官方独立C++对端：按声明能力验证双向媒体、数据、退出与恢复。",
+        "未修复Flutter及其他平台：逐一确认版本、能力与结果，未具备条件的格子保持未跑。"
+      ],
+      "conditions": [
+        "只对产品实际声明的平台和SDK版本建立矩阵。"
+      ],
+      "boundaries": [
+        "派生fixture通过不授予官方Flutter或其他平台信用",
+        "原PARTIAL不因计划合并升级",
+        "本批resource-completion-20261020-01：固定Windows Native与任务所有的派生Flutter七个唯一case最新终态PASS；wrong-slot原FAIL及单格修补后的第三batch PASS分别留证，其他六格按各原输入复用。未修改官方SDK、独立C++ SDK及跨平台互通仍NOT_RUN；本批case观察与前批重测有重叠，不相加作计划完成率。",
+        "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 最新完成official-cpp-audio-windows01（2026-10-21）合成音频OFF／ON限定内容子门均PASS_SCOPED：60秒返回观察窗中，Native识别tone窗口599／599（总窗口均600；其他内容1／1、静音0／0），官方实际解码并回送tone窗口600／601（总窗口601／602；其他内容1／1、静音0／0），格式错误均0；ON的Native音频加密rx／tx输出均非0。两模式FIN／ACK、原DLL路径及哈希、97项输入绑定、两进程自然退出码0与清理均独立核对。新增逐窗诊断完整记录两方向全部窗口，无溢出；四条序列均仅首个100ms样本窗为other，后续完整窗均tone，尾部partial另存；不追判旧异常，不授连续性、主观音质、声学延迟或SDK进程内安全退休信用。来源data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json，追溯data/completed-evidence/official-cpp-audio-windows01-20261021-provenance.json；旧启动不确定记录保留。 原阈值及P05完整信用0不变。"
+      ]
+    },
+    {
+      "id": "T006",
+      "plan_code": "P06",
+      "plan_kind": "product",
+      "title": "E2EE协议、安全与实际媒体",
+      "domain": "E2EE",
+      "originalIds": [
+        "T010",
+        "T033"
+      ],
+      "description": "B06与Windows首发profile使用一份冻结矩阵，分别判定协议、安全、内容对应和加密性能。",
+      "gates": [
+        "协议与密钥：声明Windows opt-in profile、同slot换钥、错误恢复、data、Qt及退场契约成立。",
+        "实际媒体：VP8／H264等声明codec逐项核对双向内容、正确解密及受控relay返回的首帧／marker。",
+        "安全输出：实际持久化、导出、应用owned dump策略及限定敏感sink符合原边界。",
+        "性能与观察：同一冻结三端、同负载执行OFF／ON／ON／OFF配对及600秒功能观察。"
+      ],
+      "conditions": [
+        "Windows Native与固定Flutter Windows派生fixture分别绑定强身份；codec格子独立判定。"
+      ],
+      "boundaries": [
+        "跨平台、长期稳定性、摄像头成本和物理口到耳延迟不由此自动关闭",
+        "第三方历史内存与OS管理员边界按原声明保留",
+        "本轮Windows Native 7场景及后端默认／sender／receiver／track isolation 4项支持证据PASS，见reports/product/functional-media-retest-20261020-01.html；三端ABBA配对性能及600秒共同观察PASS，固定派生Flutter fixedstage／marker内容对应仍为NOT_RUN，不授予完整E2EE通过。",
+        "本批resource-completion-20261020-01：固定派生Flutter七格包含H264/VP8、换钥/RPC、ratchet/latejoin、wrong-slot恢复、nativefull、relay双codec marker及Qt业务text/byte实际范围，最新终态PASS；原wrong-slot FAIL保留。摄像头、物理口到耳、跨平台、长期稳定性和完整E2EE成本门未由此关闭，完整主门信用0。",
+        "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 最新完成official-cpp-audio-windows01（2026-10-21）合成音频OFF／ON限定内容子门均PASS_SCOPED：60秒返回观察窗中，Native识别tone窗口599／599（总窗口均600；其他内容1／1、静音0／0），官方实际解码并回送tone窗口600／601（总窗口601／602；其他内容1／1、静音0／0），格式错误均0；ON的Native音频加密rx／tx输出均非0。两模式FIN／ACK、原DLL路径及哈希、97项输入绑定、两进程自然退出码0与清理均独立核对。新增逐窗诊断完整记录两方向全部窗口，无溢出；四条序列均仅首个100ms样本窗为other，后续完整窗均tone，尾部partial另存；不追判旧异常，不授连续性、主观音质、声学延迟或SDK进程内安全退休信用。来源data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json，追溯data/completed-evidence/official-cpp-audio-windows01-20261021-provenance.json；旧启动不确定记录保留。 原阈值及P06完整信用0不变。"
+      ]
+    },
+    {
+      "id": "T007",
+      "plan_code": "P07",
+      "plan_kind": "product",
+      "title": "屏幕采集、共享质量与显示边界",
+      "domain": "屏幕共享",
+      "originalIds": [
+        "T011",
+        "T021",
+        "T022",
+        "T034"
+      ],
+      "description": "统一B07／B08、局部WGC生命周期及显示／主观质量矩阵；合并准备，保留各后端和长时子门。",
+      "gates": [
+        "采集与交付：DXGI／WGC／GDI的窗口／全屏、实帧故障回退、停止释放和会议媒体交付分别成立。",
+        "质量与成本：复杂内容capture／encode／decode、15／20／30 FPS、质量热切及重连按原负载与门限判定。",
+        "局部长时：GDI 50次热切、WGC 1800秒六资源门及WGC同进程至少1小时／100轮按各自范围执行或等价复用。",
+        "显示设备：双屏、负坐标、混合DPI、横竖屏、跨GPU／分辨率下的源身份、尺寸、坐标和鼠标正确。",
+        "人工画质：小字号、表格、滚动及运动视频的可读性、拖影、清晰度与延迟感按声明FPS确认。"
+      ],
+      "conditions": [
+        "较大同输入gate已覆盖较小gate时只执行一次；真实显示、后端及人工画质条件不能由UIA替代。"
+      ],
+      "boundaries": [
+        "局部WGC长稳不授予B14产品Formal信用",
+        "原各后端／窗口／全屏范围和时长不被合并后缩短",
+        "本批resource-completion-20261020-01：WGC/GDI窗口basic、complex、cost六格PASS；cost两格只表示测量完整，无预算PASS。GDI50切换及signal/full重连PASS，sampler98样本/exit0、soak0、resource_gate=NOT_APPLICABLE，非六资源长门。原四次DXGI FAIL保留，新全屏重测因前台PickerHost环境DEFERRED且未启动，不授全屏信用。最新已完成WGC子门（2026-10-21）：1800秒实服共享运行PASS、六资源后置分析PASS，来源data/completed-evidence/wgc-1800-20261021-summary.json及data/completed-evidence/wgc-1800-20261021-resource-analysis.json；独立WGC生命周期3600秒／100轮PASS，总耗时3693.813秒、退出码0、12项原判据均成立，来源data/completed-evidence/wgc-3600-100-20261021-result.json；两种负载及判据分别成立，不相互替代或授予产品Formal信用；物理显示器/DPI/GPU及人工画质未覆盖。",
+        "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 原阈值及P07完整信用0不变。",
+        "本批resource-completion-20261021-01桌面子门：capture-backends=PASS, capture-quality-fullscreen=PASS；原历史FAIL、原gates/conditions与完整信用0保留；M0不等于产品overlay/目视，单机多进程不等于物理多端。"
+      ]
+    },
+    {
+      "id": "T008",
+      "plan_code": "P08",
+      "plan_kind": "product",
+      "title": "真实音视频设备与声学体验",
+      "domain": "设备与音频",
+      "originalIds": [
+        "T012",
+        "T025"
+      ],
+      "description": "将设备客观行为与声学听感放在同一现场矩阵，短采集只作设备前置。",
+      "gates": [
+        "设备选择：当前产品摄像头／麦克风／扬声器的枚举、切换、稳定性、FPS和连续性成立。",
+        "失败处理：权限、占用及回滚逐端点验证，不以设备可打开推断完整产品矩阵通过。",
+        "独立音源：已知物理音源与可核验PCM支持内容对应，无法确认音源时保留SOURCE_NOT_CONFIRMED。",
+        "真实声学：回声／降噪／增益／双讲／串音／失真及可闻卡顿由实际环境和听感判定。"
+      ],
+      "conditions": [
+        "独立external-tone及现场矩阵保留原DEFERRED_BY_USER安排；本次整理不启动现场测试。"
+      ],
+      "boundaries": [
+        "HP／UGREEN短preflight不构成完整B09通过",
+        "物理端到端延迟由独立校准主项判定"
+      ]
+    },
+    {
+      "id": "T009",
+      "plan_code": "P09",
+      "plan_kind": "product",
+      "title": "网络、认证与服务恢复",
+      "domain": "网络与恢复",
+      "originalIds": [
+        "T013"
+      ],
+      "description": "保留B10原11项恢复矩阵，在同一隔离拓扑共享负载与采样。",
+      "gates": [
+        "网络退化：baseline、丢包、抖动和限速逐条件测实际音视频恢复与正常清理。",
+        "连接中断：断网、信令重连和完整重连分别验证Session状态、owner和媒体交付。",
+        "服务与认证：真实服务重启及auth recovery恢复业务，不仅观察连接状态。",
+        "路径：path switch与真实TURN relay有实际路径、媒体和退出证据。"
+      ],
+      "conditions": [
+        "使用隔离服务与冻结拓扑；与编码矩阵共享run时保留独立判据。"
+      ],
+      "boundaries": [
+        "软件注入不替代拔网线等物理故障",
+        "信令恢复不等同RTP或解码恢复",
+        "本轮B10网络11项PASS，见reports/product/functional-media-retest-20261020-01.html；结论限于报告冻结的隔离拓扑、软件注入、服务／认证恢复和实际路径证据，物理故障仍未覆盖，遥测导出及故障日志闭环另由P02／P12判定。",
+        "本批resource-completion-20261021-01阶段：原十项网络9PASS/TURN FAIL保留；HTTP与实际UDP出口不同根因确认后，按实际来源独立补TURN新run PASS，实际relay/udp、持续decoded与配置恢复成立。TURN单项审计PASS但汇总PARTIAL，不拼接九项或旧service-restart为新11项，完整信用0。"
+      ]
+    },
+    {
+      "id": "T010",
+      "plan_code": "P10",
+      "plan_kind": "product",
+      "title": "大会议容量、分页与固定负载长稳",
+      "domain": "容量与负载",
+      "originalIds": [
+        "T014",
+        "T045"
+      ],
+      "description": "B11容量与有条件的固定grid9长稳统一规划，保留负载、带宽和运行差异。",
+      "gates": [
+        "负载前置：恢复100路实际发布与完整音频／翻页条件，未到达负载即停止，长稳记NOT_RUN。",
+        "容量与收敛：核对实际订阅、RTP、解码／交付路数和分页收敛；固定16路低层300秒仅授予该短门范围。",
+        "混合长稳：高清层、音频、翻页、恢复及资源曲线按当前声明负载和冻结时长执行。",
+        "固定grid9：仅当定版仍要求该负载时执行当前版本长稳，保留实际活跃媒体、画质、音频、GPU与资源证据。"
+      ],
+      "conditions": [
+        "固定grid9是条件负载，不因曾有历史记录而额外强制重跑；3 Mbps与20 Mbps等环境分别冻结。"
+      ],
+      "boundaries": [
+        "原61／100发布失败与LONG_SOAK_NOT_RUN不被短门覆盖",
+        "低层300秒、固定grid9及B14生命周期是不同验收范围"
+      ]
+    },
+    {
+      "id": "T011",
+      "plan_code": "P11",
+      "plan_kind": "product",
+      "title": "白板、批注与协同负载",
+      "domain": "白板与批注",
+      "originalIds": [
+        "T015",
+        "T016",
+        "T023",
+        "T035"
+      ],
+      "description": "合并白板功能、批注对齐和B13负载规划；M5合成基准作为局部子门保留。",
+      "gates": [
+        "三产品进程实服：同时写、图片资产、迟加入、同步、重连、导出像素及authority正常／异常退场。",
+        "批注：跨DPI和质量切换后的连续画线／文字、缩放、预览与远端画面对齐。",
+        "网络与负载：100ms RTT／2%丢包、4书写者／8人、各50次批注与共享启停及30分钟书写。",
+        "局部确定性与4K合成：冻结白板依赖和测试工件，复核核心契约与原合成性能口径。"
+      ],
+      "conditions": [
+        "B12三进程与B13多人负载分别具备对应条件；人工对齐检查单独留结果。"
+      ],
+      "boundaries": [
+        "三独立进程不等于三台物理终端",
+        "M5 Debug合成数字不外推产品实服性能",
+        "本轮B12白板8项PASS，见reports/product/functional-media-retest-20261020-01.html；仅适用已运行协同、资产、同步、导出及authority退出范围，单机多进程不授予物理多端、批注矩阵、多端负载或长时同步通过。",
+        "本批resource-completion-20261020-01：白板工程三项PASS；1800秒负载尝试1.078秒因marker遮挡FAIL、0/50对，独立restore-host恢复PASS，cleanup工具19/19不授运行信用。annotation03修复AV后仍capture/click-through/nativeIME FAIL；phase12重建PASS而新annotation04因前台PickerHost环境DEFERRED且未启动，候选框目视与产品overlay未覆盖。完整1800秒负载留后续阶段。",
+        "本批resource-completion-20261021-01桌面子门：whiteboard-functional=PASS, annotation-runtime=PASS, whiteboard-1800-load=PASS；最新完成whiteboard-1800-fixed04（2026-10-21）：一机8个独立产品进程／4名书写者，同run实测1802.609秒，50对真实共享／批注启停（13／13／12／12），每写者361笔；自有SFU egress 50ms／2%丢包（双腿新增往返约100ms，不等于精确WAN RTT），八端最终文档收敛、迟加入及非authority退场后七端保留，自然退场8/8、forced=0、网络netem已清除；来源data/completed-evidence/whiteboard-1800-fixed04-20261021-result.json，追溯data/completed-evidence/whiteboard-1800-fixed04-20261021-provenance.json；旧FAIL保留于reports/product/resource-completion-20261021-01.html；原gates/conditions与完整P11/full-plan信用0保留；M0不等于产品overlay/目视，单机多进程不等于物理多端。"
+      ]
+    },
+    {
+      "id": "T012",
+      "plan_code": "P12",
+      "plan_kind": "product",
+      "title": "日志工业化与安全边界",
+      "domain": "日志与安全",
+      "originalIds": [
+        "T037",
+        "T038"
+      ],
+      "description": "日志工程、限定实服故障和独立安全finding共享安全边界清单，分别记录验收信用。",
+      "gates": [
+        "工程合同：LG本地门与8 producer合成入口验证typed safe summary、持久化及输出行为。",
+        "业务语义：raw detail在业务链完整保留，诊断sink只消费安全摘要，不因脱敏改变错误或恢复语义。",
+        "限定实服：真实信令故障的日志、关联及导出按原范围判定，未覆盖的UDP／RTP故障保持未跑。",
+        "安全finding：PR-SEC-001／IR-SEC-001按明确sink与已接受deferred runtime边界补核。"
+      ],
+      "conditions": [
+        "冻结logging、安全摘要与业务依赖；只复验受影响finding，不把旧39／39当当前开放数量。"
+      ],
+      "boundaries": [
+        "工程／合成结果与实服L3分别判定",
+        "已接受的延期runtime边界不因合并解除",
+        "本轮16项工程门中的诊断管线、日志脱敏等直接证据及网络遥测观测见reports/product/functional-media-retest-20261020-01.html；网络遥测保持PARTIAL、full_gate_credit=0，故障日志关联、导出回读及缺失／重复审计尚未闭环，不授予完整实服L3通过。",
+        "本批resource-completion-20261020-01：单service-restart新运行的诊断/持久化/关联审计PASS，旧网络批次仍PARTIAL；不升级为完整L3或全部日志安全PASS。",
+        "本批resource-completion-20261021-01阶段：九成功网络case、独立TURN及旧service-restart的限定诊断/关联/导出审计分别通过；九成功子集仍PARTIAL/full0；TURN02既有checkpoint/diagnostics/correlation范围保留，最新已完成封存源生产导出与独立回读为PASS_SCOPED（2026-10-21）：7文件SHA/size、93 revisions、61,104条导出指标及17条timeline逐项对源，16个原文件与45项telemetry/target输入及导出器EXE/PDB前后不变；来源data/completed-evidence/turn02-export-readback-20261021-scoped.json，追溯data/completed-evidence/turn02-export-readback-20261021-provenance.json。历史stability详情/session link、crash metadata及persistent loss summary四项缺失保留，未执行UI导出或故障后live-current，不回填旧运行输入身份，完整P02/P12/P17/Formal/P20信用0，不拼接。真实UI导出、UDP/RTP日志和既有延期边界继续保留。"
+      ]
+    },
+    {
+      "id": "T013",
+      "plan_code": "P13",
+      "plan_kind": "product",
+      "title": "遥测与日志的性能、资源开销",
+      "domain": "性能与资源",
+      "originalIds": [
+        "T017"
+      ],
+      "description": "保留B15同负载配对性能主门，避免用功能验收替代开销或长期资源结论。",
+      "gates": [
+        "三组OFF／ON配对：同负载比较CPU／内存、callback p99与UI批次，沿用原门限及窗口。",
+        "独立UIA干扰：20轮查询与退出观察分别核对干扰、资源和清理。",
+        "五轮同进程：join／leave后残余资源按原释放窗口判定。",
+        "9000秒资源长门：真实媒体／UI／持久化及配额证据完整，不拼接其他运行。"
+      ],
+      "conditions": [
+        "使用RelWithDebInfo冻结产品、telemetry／probe／driver及相同负载；相同输入已有完整覆盖时复用。"
+      ],
+      "boundaries": [
+        "负CPU差值不证明所有场景无开销",
+        "B15与B14的负载及资源门保持独立",
+        "本批resource-completion-20261020-01：优化前原冻结输入的正式pair2 callback p99+8.371385%超过5%而FAIL；额外stage诊断+13.104524%无正式信用。最终源码保留删除重复扫描优化，但未重跑P13 paired，latest_source_performance_retest=NOT_RUN；不声称优化解决，也不把旧FAIL当最终工件已复测FAIL。9000秒资源门留后续阶段；原门限和旧失败保留。",
+        "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 原阈值及P13完整信用0不变。"
+      ]
+    },
+    {
+      "id": "T014",
+      "plan_code": "P14",
+      "plan_kind": "product",
+      "title": "全新克隆、发行工件与安装升级",
+      "domain": "构建与发行",
+      "originalIds": [
+        "T019",
+        "T032",
+        "T041"
+      ],
+      "description": "整合产品独立构建、工件一致性与安装器矩阵，全新克隆和外机运行保留独立子门。",
+      "gates": [
+        "干净来源：人工全新克隆完成依赖、configure、build、启动与历史边界检查；未执行保持NOT_RUN。",
+        "产品／私有测试解耦：公开产品独立configure／build，私有bootstrap与受影响离线gate注册正确。",
+        "工件身份：EXE／DLL／PDB对应，受控故障符号可匹配；签名和归档单独核验。",
+        "安装与升级：安装器编译、Restart Manager、全新安装／升级／卸载、ACL及外机启动逐场景成立。"
+      ],
+      "conditions": [
+        "最终工件生成并冻结后执行发行矩阵；本次文档整理不触发构建、签名或发布。"
+      ],
+      "boundaries": [
+        "本地脏checkout build不等于全新克隆",
+        "安装器夹具不代替真实安装／升级／外机启动",
+        "新增完成p14-artifact-identity（2026-10-21）非最终工件的只读身份子门：UI15冻结EXE与PDB的GUID及age5匹配；src/render当前DX11／OpenGL两对DLL／PDB的GUID及age2分别匹配，各导出lk_render_get_api沿实际增量链接跳板后均能离线解析到对应backend.cpp源码行。原应用目录两份旧部署DLL为age1，与当前同GUID的age2 PDB配对均FAIL，原始失败保留；根因是旧部署DLL与本轮重新链接PDB属于不同链接代次，不回推UI15运行当时已错配，不把当前构建输出替换成旧部署通过。交换两PDB的真实负例2/2被GUID错配拒绝；输入前后SHA／大小／mtime不变。来源data/completed-evidence/p14-artifact-identity-20261021-scoped.json，追溯data/completed-evidence/p14-artifact-identity-20261021-provenance.json。仅授上述各自工件身份及两份当前renderer离线源码定位范围；RelWithDebInfo只核路径标记，binary_source_provenance仍NOT_VERIFIED；无产品／安装器执行，未授受控故障符号、最终冻结发行、签名、全新克隆、安装／升级／卸载／外机启动或完整P14/full-plan/Formal/P20信用，原门限与既有条件不变。"
+      ]
+    },
+    {
+      "id": "T015",
+      "plan_code": "P15",
+      "plan_kind": "product",
+      "title": "跨机延迟与独立物理校准",
+      "domain": "外部测量",
+      "originalIds": [
+        "T020"
+      ],
+      "description": "保留B18独立测量链，软件时钟基线与光学／声学端到端校准分别判定。",
+      "gates": [
+        "双机软件校时：修复并冻结双方输入，按现有10ms门核对校时误差。",
+        "跨机软件延迟：校准通过后再测实际媒体延迟，保留完整采样与强身份。",
+        "物理端到端：独立光学／声学装置完成校准与产品测量，设备缺失时保留DEFERRED。"
+      ],
+      "conditions": [
+        "先满足校准与独立设备条件；原物理测试延期安排继续有效。"
+      ],
+      "boundaries": [
+        "软件链通过不替代物理口到耳／玻璃到玻璃",
+        "原校时FAIL不因计划归并消失"
+      ]
+    },
+    {
+      "id": "T016",
+      "plan_code": "P16",
+      "plan_kind": "product",
+      "title": "物理环境变化与系统恢复",
+      "domain": "物理环境",
+      "originalIds": [
+        "T026"
+      ],
+      "description": "保留必须依赖现场硬件和系统会话的恢复矩阵，同一故障可共享设备、网络和共享观察。",
+      "gates": [
+        "真实热插拔：音视频／显示设备移除和恢复后，源身份、权限、媒体与资源状态正确。",
+        "物理断网：拔网线及恢复后的网络、Session与实际媒体恢复分别成立。",
+        "系统会话：锁屏／RDP／休眠唤醒后，采集、设备及业务状态符合声明行为。",
+        "断电恢复：在受控条件核对持久化、损坏恢复及再次启动。"
+      ],
+      "conditions": [
+        "现场／物理测试保留既有DEFERRED安排；本次整理不启动或授权断电等操作。"
+      ],
+      "boundaries": [
+        "软件fault injection及UIA不等同真实物理行为",
+        "共享一次执行时各领域判据和缺口单列"
+      ]
+    },
+    {
+      "id": "T017",
+      "plan_code": "P17",
+      "plan_kind": "product",
+      "title": "支持包与独立事故复盘",
+      "domain": "支持与诊断输出",
+      "originalIds": [
+        "T027"
+      ],
+      "description": "使用已有事故与最终支持包复盘，缺少材料时补证，不重复启动一次产品长测。",
+      "gates": [
+        "事故时间线：独立审阅者可从支持包重建关键状态、运行身份和事件顺序。",
+        "信息完整性：必要字段、缺失原因和安全输出边界可判断，不把unknown补成推测。",
+        "Release符号：包内工件身份与符号对应，声明故障可定位到足够粒度。"
+      ],
+      "conditions": [
+        "优先复用现存同输入支持包和事故证据；仅缺口需要补采。"
+      ],
+      "boundaries": [
+        "支持包可读不代表事故根因确认",
+        "独立复盘不被作者自检代替",
+        "本批resource-completion-20261020-01：旧支持包回读与新单service-restart证据关联分别留证；未执行新支持包导出及完整事故复盘，完整主门信用0。",
+        "本批resource-completion-20261021-01阶段：新支持包7工件SHA/size与严格8文件inventory、86449 metrics/110连续revision/26 timeline及EXE/PDB关联通过；bundle-first独立复盘信令/解码/渲染稳定恢复225.669/341.730/390.211ms成立。3条generation0事件仅按operation关联；audio NOT_EXPECTED、四项历史/crash/loss缺口及UI导出NOT_RUN保留，P17仍PARTIAL/full_gate_credit=0。"
+      ]
+    },
+    {
+      "id": "T018",
+      "plan_code": "P18",
+      "plan_kind": "product",
+      "title": "远控授权、暂停与安全释放",
+      "domain": "远程控制",
+      "originalIds": [
+        "T039"
+      ],
+      "description": "保留v2双方强身份和真实双机门，工程／用户反馈仅作各自范围依据。",
+      "gates": [
+        "常规桌面双机自动化：私有入口 invoke_product_remote_control.py 使用配置化双方与服务器，真实 UI 授权及独立窗口见证键鼠效果、暂停恢复、本地软件输入优先和持键安全释放；离线验证不计真实双机通过。",
+        "授权与本地优先：真实双方当前v2工件验证授权、权限边界和本地操作优先。",
+        "生命周期：暂停／恢复、自动开始及指定安全释放操作后状态和资源一致。",
+        "真实桌面：权限桌面、IME、多屏等声明条件逐项验证，长期行为单独留结果。"
+      ],
+      "conditions": [
+        "冻结双方工件；按用户既有现场条件与授权安排真实双机执行。",
+        "常规桌面入口的双方用户、会话及本机受保护账号来自配置；未配置或未实测保留NOT_RUN。"
+      ],
+      "boundaries": [
+        "USER_REPORTED_PASS保持用户反馈身份",
+        "focused／UI回归不授予真实双机或长稳通过",
+        "常规桌面自动化不覆盖管理员／安全桌面、物理键鼠优先、IME、多屏物理矩阵或长稳；完整P18单独判定"
+      ]
+    },
+    {
+      "id": "T019",
+      "plan_code": "P19",
+      "plan_kind": "product",
+      "title": "B14环境冻结与资格准入",
+      "domain": "B14资格",
+      "originalIds": [
+        "T042",
+        "T043"
+      ],
+      "description": "把Windows .151与本机音频修复后的资格入口合为一份流程，按host分别保留冻结输入和PILOT结论。",
+      "gates": [
+        "输入与环境：目标host的产品／工具／合同、强身份和完整环境冻结一致。",
+        "观测语义：global topology、all-node native／被动无参与、创建／持有／释放、未知值传播与cleanup均有完整证据。",
+        "摄像头二次入会：同一产品进程两周期均验证本代VideoSource／RTC分段计数、产品source 1发布和独立接收解码；首帧超时有失败终态及重试入口，离会释放完整。本项专项诊断不抵扣三次完整资格或Formal。",
+        "完整PILOT：每个待用环境在同一冻结输入下取得三次独立完整PILOT PASS；提前退出和失败如实保留。",
+        "交接Formal：只有对应环境的全部准入成立才转交一次完整Formal，READY仅表示资格就绪。"
+      ],
+      "conditions": [
+        "本机与Windows .151分别判定，不能互借PASS；原FAIL／PAUSED与未授权runtime边界保留。",
+        "本机AMD Crash Defender限时停服环境方案见reports/b14/b14-amd-bounded-service-plan-20261019.html：用户已授权，恢复故障gate已通过；最新摄像头二次入会诊断33/33 PASS，服务已恢复Running/Automatic；日志复制空文本已确认OLE剪贴板暂时无法打开的故障机制，并补齐有界重试、序号／代际取消及真实占用回归（2/2直接测试PASS），详见reports/b14/b14-clipboard-fix-20261019-01.html；历史原轮次具体占用者UNKNOWN；新输入软件gate（58/58原生及1/1 GPU工具发布）、完整退出前置、重新封存及三轮独立资格全部通过，schema2 full-media/GPU READY已签发；本轮Formal已完成100/100轮及28819.79秒产品存活，最终PASS_WITH_USER_EXCEPTION：99周期PASS，第52周期唯一整机NIC超限按用户明确授权接受（用户说明使用服务端RustDesk）；原始FAIL与测量值保留，其余逐周期、资源增长和最终检查通过，服务已恢复Running/Automatic，无剩余失败；既有DEFERRED与历史失败保留，见reports/b14/b14-clipboard-readmission-20261019-01.html；停服最多10小时；环境变化后重新封存及三轮资格，摄像头专项未闭环不得交接Formal。"
+      ],
+      "boundaries": [
+        "局部校准／静态门不等于完整PILOT",
+        "不能改变设备或负载后仍声称沿用正式基线"
+      ]
+    },
+    {
+      "id": "T020",
+      "plan_code": "P20",
+      "plan_kind": "product",
+      "title": "B14同进程8小时／100周期正式长稳",
+      "domain": "B14正式长稳",
+      "originalIds": [
+        "T044"
+      ],
+      "description": "独立保留正式发布门，资源、媒体、观测和归档必须来自同一冻结运行。",
+      "gates": [
+        "执行前置：明确资源增长与测量链，对应环境同输入三次完整PILOT通过，满足现有Formal执行条件。",
+        "固定生命周期：同一产品进程连续8小时／100轮，关联cycle与session强身份，全部必需阶段完成。",
+        "资源与媒体：按冻结释放窗口、GPU、音视频／共享连续性等门限独立判定，Private Bytes原64 MiB门限不变。",
+        "归档与完整性：遥测、日志、support bundle、质量和终态完整；按timing_measurements保留入离会及各scene首绘的逐轮起终点、版本与结果，丢失或缺项不得用其他run拼接。"
+      ],
+      "conditions": [
+        "正式长稳保持原暂停和单独执行授权边界；本次整理不启动。"
+      ],
+      "boundaries": [
+        "retry07原Formal FAIL及100.412109375 MiB增长保留",
+        "资格、诊断、固定grid和局部生命周期不能替代Formal",
+        "首帧／入会／离会等原缺失样本保持UNKNOWN",
+        "本批resource-completion-20261020-01：原短UI诊断三次FAIL、0完成cycle保留；新UI04因前台PickerHost环境DEFERRED而未启动。原Formal暂停不变，不授Formal/qualification/P20信用；8小时/100轮NOT_RUN。"
+      ]
+    },
+    {
+      "id": "T021",
+      "plan_code": "P21",
+      "plan_kind": "product",
+      "title": "软件更新与异步设置",
+      "domain": "更新与设置",
+      "originalIds": [
+        "T049"
+      ],
+      "description": "保留新增产品功能的受影响门，不再以旧整包通过数量当当前结果。",
+      "gates": [
+        "更新清单与服务：当前受影响协议、安全和错误路径的直接gate成立。",
+        "异步设置：状态投影、取消和生命周期按当前输入验证，不受late callback覆盖。",
+        "主题设置与恢复：系统／浅色／深色／青绿即时生效且记住所选模式，重启在首窗前恢复；系统模式响应Windows应用明暗变化，手动模式不被系统覆盖；无效配置回退系统。",
+        "产品链：同一冻结版本完成必要最终回归与实际runtime；未执行部分单列。"
+      ],
+      "conditions": [
+        "按实际源码影响选择affected build及直接gate；发布或上传继续服从既有明确授权范围。"
+      ],
+      "boundaries": [
+        "旧104／104或focused结果不自动继承",
+        "实现、静态验证与产品runtime分别记录",
+        "主题四模式、重启恢复、无效配置及自有HWND系统通知跟随工程回归PASS，见reports/product/theme-settings-20261016.html（独立工程范围保留）；最新完成ui-timing-theme-unblocked09（2026-10-21）主题设置限定子门PASS_SCOPED：浅色／深色／青绿／系统四模式settings像素、即时生效、持久化、同进程重开设置及自有HWND通知成立；Windows偏好未改变。新增完成theme-restart04（2026-10-21）设置页产品重启恢复子门PASS_SCOPED：浅色／深色／青绿／系统四对Write→自然退出→新进程Read共8个不同进程身份，持久值、当前选择项和原精确设置页像素均一致；Read不重新选择主题，全部自然退出码0、forced0、清理完成，全程1190次父进程采样及各步骤strict输入时间戳不变，Windows偏好保持深色。来源data/completed-evidence/theme-restart04-20261021-scoped.json，追溯data/completed-evidence/theme-restart04-20261021-provenance.json；原输入中止记录保留，来源UNKNOWN；复用UI15冻结工件，binary_source_provenance仍NOT_VERIFIED。新增完成theme-invalid02（2026-10-21）未支持主题值回退子门PASS_SCOPED：启动前在隔离INI写入acceptance-unsupported-theme并封存SHA，产品只执行Read、未选择主题，持久值自动规范为system，选择项为系统且实际设置页像素符合Windows深色偏好；自然退出码0、forced0、清理完成，17项绑定输入不变，155次父观察及子步骤strict输入均未变化。30秒辅助Raw观察另有测试结束后的3条鼠标消息，完整记录保留，测试窗口内0条；来源仍UNKNOWN。来源data/completed-evidence/theme-invalid02-20261021-scoped.json，追溯data/completed-evidence/theme-invalid02-20261021-provenance.json。新增完成theme-first-window02（2026-10-21）派生产品入口首窗子门PASS_SCOPED：同一当前源码快照的实际产品main加只读观察器，浅色／深色／青绿／系统各独立INI与进程；首个登录窗Show、窗口Paint及卡片Paint状态正确且有序，绘制后空白卡片边缘有效像素分别为16777215／3221540／16646139／3221540（系统跟随Windows深色）；4进程均LOGIN_REJECT自然退出0、forced0、清理完成，56次父观察和4337次子采样strict输入未变，1432项绑定输入在执行时及独立复核时匹配。工件为增量构建的专用观察版本，传递性clean-build来源未完全验证；原冻结EXE首窗、首次Paint实际扫描输出及物理无闪烁未观察／未测，不授予整门通过。来源data/completed-evidence/theme-first-window02-20261021-scoped.json，追溯data/completed-evidence/theme-first-window02-20261021-provenance.json。新增完成p21-system-theme-runtime16（2026-10-21）真实Windows应用明暗偏好子门PASS_SCOPED：同一当前增量产品进程完成系统／浅色／深色／青绿×Windows偏好0／1共8行；系统模式分别呈现深色／浅色，三个手动模式在两种系统偏好下保持自身颜色，8行选择标签、INI持久值、实际系统值与原64×42 DIP空白区域像素全部匹配。驱动先经可见UI切至Light以建立真实状态变化，未直接写INI；guardian为唯一系统偏好writer，驱动未直接通知或刷新产品；1304项绑定输入及完整产品／guardian身份独立复核，strict输入全程不变，产品自然退出码0、forced0、清理完成。系统原偏好0已恢复并读回，恢复广播DELIVERED，guardian自然退出0、无残留；48个保护根证据文件已逐项核SHA导出，原件保留。来源为当前源码增量构建，传递性clean-build来源未证明；来源data/completed-evidence/p21-system-theme16-20261021-scoped.json，追溯data/completed-evidence/p21-system-theme16-20261021-provenance.json。新增完成theme-configuration-seeds01（2026-10-21）两个配置子案例均PASS_SCOPED：显式空ui/theme自动规范为system；错误not-ui section中的theme=dark被保留且不影响缺省System，未新增ui/theme。均使用当前增量产品，只执行Read未重新选择主题；选择项为系统，实际设置页像素3221540，Windows偏好保持0，产品与driver自然退出0、forced0、清理完成，保留的strict输入观察未变。原终态各1325项绑定一致；后验各1324项匹配，唯一差异为执行后修改且未被配置路径调用的会中PS；原完整超集核验INCONCLUSIVE保留，调用范围独立核验通过，不声称当前全部pin一致。原unsupported-token案例独立保留；来源data/completed-evidence/theme-configuration-seeds01-20261021-scoped.json，追溯data/completed-evidence/theme-configuration-seeds01-20261021-provenance.json。新增完成p21-meeting-runtime04（2026-10-22北京时间）会中主题限定子门PASS_SCOPED：同一当前增量fixture通过真实SettingsDialog可见下拉及SelectionItem.Select切换浅色／深色／青绿／系统四模式，选择标签、隔离INI和设置页原精确像素匹配；关闭对话框后，实际DX11舞台安全留白像素依次为RGB(233,237,243)／(18,24,32)／(214,233,224)／(18,24,32)，系统跟随原Windows深色。四主题各切换前／操作期间／切换后共12个解码窗口均有变化视频和预期完整PCM窗口：共534帧、522次内容指纹变化、329/329个完整440Hz窗口；静音／other／invalid均0，另24000个尾窗样本未作完整窗口分类。原始最大视频／音频callback间隔分别80.7592／10.7821ms，未新增数值连续性门限。原生Present累计最大间隔624ms、stall计数2在首个before观察已存在，12次快照未增；保留原因UNKNOWN，不声称零stall。1319项绑定、原始窗口及进程身份独立回读；strict输入不变，两端自然退出0、forced0、清理完成，原共享服务指纹未变且房间为空。会议窗本身无设置按钮；fixture命令仅打开真实产品设置对话框。原生解码PCM不证明扬声器输出，scene_presented不证明逐帧Present；当前源码增量工件的传递性clean-build来源未证明。来源data/completed-evidence/p21-meeting-theme04-20261022-scoped.json，追溯data/completed-evidence/p21-meeting-theme04-20261022-provenance.json。新增完成p21-meeting-cpu05（2026-10-22北京时间）Qt CPU会中四主题限定子门PASS_SCOPED：同一增量fixture的独立两端进程，经真实SettingsDialog可见下拉选择浅色／深色／青绿／系统，选择标签、隔离INI及设置页像素匹配；关闭对话框后舞台安全留白实测依次RGB(233,237,243)／(18,24,32)／(214,233,224)／(18,24,32)。12个切换前／中／后窗口共531帧、519次内容变化、332/332个完整440Hz PCM窗口，静音／other／invalid均0；另11520尾窗样本未作完整分类，原始最大视频／音频callback间隔88.4716／10.5852ms，未新增数值连续性门限。实际／请求后端均qt-cpu、fallback=user-selected-cpu、GPU failure=none；12次均有可见远端tile持有解码图像及有效绑定render frame。scene_presented全部false，持图与舞台像素不证明CPU视频Paint／Present。1327项输入绑定、原始窗口和身份独立回读；strict输入未变，两端自然退出0、forced0、清理完成、共享服务指纹未变且房间为空。原生render累计最大间隔559ms、stall=1在首个before已存在，12次快照未增；原因UNKNOWN，不声称零stall或正式连续性通过，解码PCM不证明扬声器输出。会议窗没有设置按钮，fixture仅打开真实设置对话框；传递性clean-build与完整stage矩阵仍未证明。来源data/completed-evidence/p21-meeting-cpu05-20261022-scoped.json，追溯data/completed-evidence/p21-meeting-cpu05-20261022-provenance.json。新增完成p21-meeting-opengl05（2026-10-22北京时间）OpenGL模块（当前Qt为GLES构建）会中四主题限定子门PASS_SCOPED：同一增量fixture的独立两端进程，经真实SettingsDialog可见下拉选择浅色／深色／青绿／系统，选择标签、隔离INI及设置页像素匹配；关闭对话框后舞台安全留白实测依次RGB(233,237,243)／(18,24,32)／(214,233,224)／(18,24,32)。12个切换前／中／后窗口共534帧、522次内容变化、330/330个完整440Hz PCM窗口，静音／other／invalid均0；另21600尾窗样本未作完整分类，原始最大视频／音频callback间隔92.7983／10.6223ms，未新增数值连续性门限。实际／请求后端均opengl、fallback及GPU failure均none；12次当前提交scene呈现布尔均true。模块DLL已绑定，scene布尔不证明逐帧Present；当前Qt为OpenGLES2，不计桌面OpenGL会中信用。1327项输入绑定、原始窗口和身份独立回读；strict输入未变，两端自然退出0、forced0、清理完成、共享服务指纹未变且房间为空。原生render累计最大间隔991ms、stall=1在首个before已存在，12次快照未增；原因UNKNOWN，不声称零stall或正式连续性通过，解码PCM不证明扬声器输出。会议窗没有设置按钮，fixture仅打开真实设置对话框；传递性clean-build与完整stage矩阵仍未证明。来源data/completed-evidence/p21-meeting-opengl05-20261022-scoped.json，追溯data/completed-evidence/p21-meeting-opengl05-20261022-provenance.json。任意其他损坏INI／类型配置、无新增连续性门限下的正式媒体连续性判定及完整stage外观矩阵仍未覆盖。来源data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json，追溯data/completed-evidence/ui-terminal-20261021-provenance.json；主题仅在本既有边界计项，不复制为P03通过；不授予更新清单、异步设置或完整P21通过，原gates/conditions/门限与完整P21/full-plan/Formal/P20信用0保留。"
+      ]
+    },
+    {
+      "id": "T022",
+      "plan_code": "A01",
+      "plan_kind": "auxiliary",
+      "title": "自动化工具与判定器合同",
+      "domain": "辅助工具",
+      "originalIds": [
+        "T003"
+      ],
+      "description": "工具自身正确性作为执行前置，移出产品通过数量。",
+      "gates": [
+        "捕获排空：变更的helper在退出、取消及失败后完成owned cleanup。",
+        "调用合同：UIA JSONL caller与调度只消费实际输出，不补写成功结果。",
+        "判定器：正负例、证据缺失和状态边界正确，未变独立helper仅在等价证明后复用。"
+      ],
+      "conditions": [
+        "仅工具输入变化或执行前置缺失时运行；不因产品文档修订重复自测。"
+      ],
+      "boundaries": [
+        "工具PASS不计产品实服或正式验收信用"
+      ]
+    },
+    {
+      "id": "T023",
+      "plan_code": "A02",
+      "plan_kind": "auxiliary",
+      "title": "ETW测量链、证据合同与准入",
+      "domain": "辅助测量与诊断",
+      "originalIds": [
+        "T046",
+        "T047",
+        "T050",
+        "T051",
+        "T052"
+      ],
+      "description": "合并ETW观测、冻结合同、wrapper cleanup和离线反篡改工具入口；按缺口推进，不把每个诊断步骤列成产品测试。",
+      "gates": [
+        "离线证据合同：守恒与false_growth／false_idle_transient／dropped_unknown_bytes／subtract_unmatched_free／credit_upgrade五个负例成立；来源或脚本变化须重新核对。",
+        "analyzer完整逻辑：core／contract／receipt-adapter及STOP-return时钟接口在当前输入下成立，未变直接门按指纹复用。",
+        "owner与cleanup：Session4 wrapper按同run／identity／retained-handle实测退出与owned cleanup；native INVALID／null不得补写成有效。",
+        "捕获准入：沿用零loss、完整库存／topology／relation／ownership／phase与冻结预算，热窗口原8 GiB可用commit要求不放宽。",
+        "窗口归因：完整候选窗口的分配语义、模块／符号强身份和unknown完整保留；旧ETL补分析只授予离线范围信用。"
+      ],
+      "conditions": [
+        "当前四条限定工具结果作为原基准参考，不额外重复执行；新runtime继续依既有准入、冻结和授权条件。"
+      ],
+      "boundaries": [
+        "原loss／guard／BLOCKED／UNAVAILABLE事实保留，不自动重试或重新冻结",
+        "离线、wrapper或测量链PASS的qualification／formal credit为0",
+        "符号覆盖不等于根因确认"
+      ]
+    },
+    {
+      "id": "T024",
+      "plan_code": "A03",
+      "plan_kind": "auxiliary",
+      "title": "释放窗口内存归属与修复对照",
+      "domain": "辅助内存诊断",
+      "originalIds": [
+        "T048"
+      ],
+      "description": "把heap／页／PRIVATE commit归属和baseline／fixed比较作为一条诊断路线，保留根因未知与正式失败。",
+      "gates": [
+        "完整释放边界：同步取得库存、页和heap owner证据，核对未知第6 heap及页归属与增长关系。",
+        "同输入对照：baseline／fixed保持相同负载、释放窗口和强身份，消除前台／GPU等混杂。",
+        "收益与因果：资源差异、未知贡献和可归属部分分别报告；未闭环保持INCONCLUSIVE／UNKNOWN。"
+      ],
+      "conditions": [
+        "优先复用输入未变的既有ETL与结果；仅缺失的证据按既有有界路线补齐，不启动完整长稳。"
+      ],
+      "boundaries": [
+        "PCM超限独立判定",
+        "局部收益不关闭R181／B14正式资源门",
+        "系统缓存或夹具解释不能抵扣Formal增长或证明产品无泄漏"
+      ]
+    }
+  ],
+  "non_test_actions": [
+    {
+      "originalId": "T028",
+      "id": "archive-user-reported-results",
+      "kind": "archive",
+      "title": "归档已执行的用户反馈",
+      "reason": "C08描述的是证据归档动作，没有独立的执行步骤和判定门；移出测试数量。",
+      "destination": "现有用户反馈／历史证据归档；缺步骤、判定或输入不等价的白板／批注缺口转交T011。",
+      "coveredBy": [
+        "T011"
+      ],
+      "preserve": "保留USER_REPORTED身份，不补造日志或升级为独立已验证结果。"
+    },
+    {
+      "originalId": "T029",
+      "id": "covered-by-domain-plans",
+      "kind": "covered",
+      "title": "删除综合回归的重复执行入口",
+      "reason": "FINAL_20261002是各领域汇总，B01／B02／B03／B04／B07／B08／B10／B12／B15已在对应主项保留；不再额外跑一轮相同摘要。",
+      "destination": "按变更影响选择领域主项；跨模块风险依项目core gate，不追加重复的综合任务。",
+      "coveredBy": [
+        "T001",
+        "T003",
+        "T004",
+        "T007",
+        "T009",
+        "T011",
+        "T013"
+      ],
+      "preserve": "H031原综合回归结果及其版本边界继续保留。"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "cohavora-b14-user-provisional-disposition-v1",
+  "date": "2026-10-23",
+  "timezone": "Asia/Shanghai",
+  "status": "user_pass",
+  "display_status": "user_pass（用户暂定通过，接受当前未闭环风险）",
+  "authorization": "本对话2026-10-23明确要求：暂定此测试pass，后续继续定位未闭环残余并确定合理新门限。",
+  "run_id": "5653c962b41646c4aa1e4600fefa8e97",
+  "scope": "本次B14同进程100轮／8小时长稳验收的暂定处置；只接受尚未闭环的Private Bytes增长风险。不是新测量、泄漏修复结论或无例外Formal通过。",
+  "raw_verdict": "FAIL",
+  "raw_private_growth_mib": 95.869140625,
+  "frozen_private_growth_limit_mib": 64,
+  "user_reference_limit_mib": 68,
+  "reference_limit_status": "USER_REFERENCE_ONLY_NOT_A_NEW_FROZEN_GATE",
+  "history_data": "data/b14-historical-metrics.json",
+  "history_page": "reports/b14/b14-historical-metrics.html",
+  "original_report": "reports/b14/b14-clipboard-readmission-20261019-01.json",
+  "raw_completed_source": "data/completed-evidence/b14-formal-20261023-completed-scoped.json",
+  "historical_estimate": {
+    "run_id": "e7501e95039f4eb7ab23594a83fe82f0",
+    "origin": "本对话及关联B14／WPR堆诊断讨论中基于历史观察形成的估算；不是用户提供的新测量。",
+    "investigation_note": "data/b14-memory-investigation-note.json",
+    "retention_estimate": "历史约100 MB增长中，约62～90 MB被估算为堆提交页与碎片30～45 MB、WGC帧池16～20 MB、日志遥测10～15 MB及单例缓存等保留量。",
+    "unclosed_residual_estimate_mib": [
+      10,
+      38
+    ],
+    "attribution_status": "ESTIMATE_NOT_SAME_RUN_MUTUALLY_EXCLUSIVE_ACCOUNTING",
+    "unit_note": "分项MB沿用历史估算原文；10～38 MiB为本次讨论采用的残余估算量级。没有同run、同窗口且互斥的统一单位账本，不能直接相加抵扣或推出泄漏上界。",
+    "user_risk_assessment": "用户认为10～38 MiB规模较小、100轮／8小时负载在实际使用中很少出现，因此接受当前风险并暂定PASS。",
+    "evidence_conclusion": "现有证据不能确定为内存泄漏，也不能据此说明不存在内存泄漏；10～38 MiB仍是未闭环估算，尚未证明为真实泄漏量或其上限。"
+  },
+  "follow_up": [
+    "继续定位未闭环残余，统一MiB单位并对齐同run首末释放窗口。",
+    "按分配owner与生命周期区分正常保留、碎片和持续存活分配，排除堆页、WGC及日志维度的重复记账。",
+    "依据闭环后的实测分布和产品使用场景提出合理新门限；在未来重测前另行冻结，不追溯改写历史判定。"
+  ],
+  "preserved": {
+    "original_measurements": true,
+    "raw_failures": true,
+    "original_64_mib_gate": true,
+    "allocation_owner": "UNKNOWN",
+    "leak": "NOT_ESTABLISHED",
+    "new_threshold": "NOT_FROZEN",
+    "runtime": "NOT_RUN",
+    "full_gate_credit": 0,
+    "production_ready": false
+  }
+}

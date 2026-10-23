@@ -1,0 +1,78 @@
+﻿{
+    "schema":  2,
+    "run_id":  "9abbe7b7953240b68de789b548eba598",
+    "root":  "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b14-readmission-20261019-clipboard-fixed-01\\qualification\\formal-01",
+    "mode":  "Formal",
+    "seconds":  28800,
+    "cycles":  100,
+    "meeting_id":  "000000299",
+    "desktop_input_policy":  "diagnostic",
+    "share_seconds":  60,
+    "log_pair_seconds":  35,
+    "requires_context":  true,
+    "explicit_microphone_unmute":  true,
+    "gpu_budget_observer":  {
+                                "scope":  "calling_process_all_enumerated_hardware_adapters_all_nodes",
+                                "maximum_gap_ms":  2000,
+                                "required":  true
+                            },
+    "gpu_queue_observer":  {
+                               "scope":  "process_all_enumerated_hardware_adapters_all_scheduler_nodes",
+                               "maximum_gap_ms":  2000,
+                               "queue_bounds":  "FROZEN_B14_TEST",
+                               "required":  true
+                           },
+    "gpu_etw_observer":  {
+                             "scope":  "process_owned_device_context_scheduler_packet_lifecycle",
+                             "maximum_bytes":  34359738368,
+                             "storage_budget_status":  "FROZEN_B14_TEST",
+                             "mode":  "lossless realtime owner-filtered JSONL",
+                             "required":  true
+                         },
+    "server_provider":  "aliyun",
+    "server_instance_id":  "i-2zefof0rekjzkbyi8c7j",
+    "server_cpu":  2,
+    "server_memory_gib":  2,
+    "server_bandwidth_mbps":  3,
+    "collector_media_route":  {
+                                  "public_ip":  "123.56.225.164",
+                                  "private_ip":  "172.17.54.189",
+                                  "udp_port":  17882,
+                                  "tcp_port":  17881,
+                                  "server_config_sha256":  "adeea7210d4a05f07909c0c10fbb6460f24f129484963acebf6f58972208c66e"
+                              },
+    "load":  {
+                 "width":  160,
+                 "height":  90,
+                 "video_publishers":  10,
+                 "fps":  5,
+                 "simulcast":  false,
+                 "video_codec":  "VP8",
+                 "encryption_mode":  "off",
+                 "video_bps_each":  40000,
+                 "audio_bps":  24000
+             },
+    "gpu_queue_limits_sha256":  "91fbd7d818c5c3b329071f0fbdd5a465cb466af591fada1528de57b1e5a2fc08",
+    "collector_scheduler_policy":  {
+                                       "policy":  {
+                                                      "schema":  1,
+                                                      "status":  "FROZEN_B14_TEST",
+                                                      "diagnostic_only":  false,
+                                                      "scope":  "collector child and publisher descendants only",
+                                                      "scheduler":  {
+                                                                        "nice":  0,
+                                                                        "policy":  0
+                                                                    },
+                                                      "removed_capabilities":  [
+                                                                                   "CAP_SYS_NICE",
+                                                                                   "CAP_SYS_RESOURCE"
+                                                                               ],
+                                                      "no_new_privs":  true,
+                                                      "rtprio_limit":  [
+                                                                           0,
+                                                                           0
+                                                                       ]
+                                                  },
+                                       "sha256":  "5172714414535bb940b9db325419477b5c316d03944cc78768a0190a04f4c801"
+                                   }
+}

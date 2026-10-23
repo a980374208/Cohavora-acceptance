@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-20T23:34:02.312518+00:00",
+  "run_id": "quality-hot-e81887baf304",
+  "gdi": false,
+  "soak_seconds": 1800,
+  "collect_fps_failures": false,
+  "resource_sampling": true,
+  "pattern_interval_ms": "10",
+  "runner_sha256": "8b985c2d71b116c50588e4f3045f1c75fe85699722de55a83c9aa1510d73d26d",
+  "resource_input_kind": "generated_window_harness_phase_not_uia",
+  "binary_sha256": "62f02b37b273fd8461abe456f0962607d99ffead9aadf06fb6d0bfaf434c30f0",
+  "binary_identity": {
+    "configuration": "RelWithDebInfo",
+    "binary_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_screen_share_runtime.exe",
+    "binary_sha256": "62f02b37b273fd8461abe456f0962607d99ffead9aadf06fb6d0bfaf434c30f0",
+    "pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_screen_share_runtime.pdb",
+    "pdb_guid": "6c3d699a-cd2c-4829-9420-4842b283a17c",
+    "pdb_age": 5
+  },
+  "server": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce\n8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014  /livekit-server",
+  "inputs": {
+    "src/core/room.cpp": "00ee7a300c70264333cc22b9b7552269b8ce4fd0a38e8d6fc64d72ec7d9be0e7",
+    "src/core/screen_share_session.cpp": "05cf4517f392677e5000105c6776407733867f126de8ceadd80c2a372a674cb8",
+    "src/media/desktop_capture.cpp": "ef9e74d3c1ce232b96b000a17ff5691960eee2a54d99126b9422c909c7930766",
+    "src/core/local_video_track.cpp": "2dcece611492d095aaf99f19b278bcf5aa44c775531022a4ef70bd31878556f9",
+    "src/rtc/webrtc_manager.cpp": "01d534914461c5a32deff24b9489bb4b8c5e5257836e668ec5273ceef907d4c9",
+    "src/media/desktop_capture.h": "6a7333e8517bda263c942ec9932e5be279df40bb2419d3e6bf31dcdeb29a118c",
+    "src/media/screen_share_quality.h": "0ee9ff1e9089be7b900d26277af632579f60222adabc3f59c80e8331fab47c67",
+    "src/media/screen_capture_fallback.h": "884487f784533d081316b4ff5072d24de402accd7ebd571b23fcc22d432cabb4",
+    "src/media/wgc_window_capture.cpp": "4d8b06c8e8b98929ec12fe7feebed8b3fb002fae4d390627ed2d3d7ac3bc99de",
+    "src/media/wgc_window_capture.h": "48345c2cd01d6362160ed816325ea06144e8082ae3f78088fb800147140adf9c",
+    "tests/runtime/tools/product_acceptance/product_pilot_resources.ps1": "ff215f2f778228db08bd637cfed9bf4c536d1bb2fd54f4c39df4742e8ac7393a",
+    "tests/runtime/tools/screen_capture/analyze_screen_quality_soak.py": "6a9584c57b07503ccaff3627083149851f0521efef1cce29252d0e3128b34724",
+    "tests/runtime/tools/product_acceptance/product_external_limits.json": "86db233d6a72bd1d45dacd311ab0c9becf166ea29e719582a2f3ce48901c874d",
+    "tests/runtime/probes/test_screen_share_runtime.cpp": "465463e2ba0611a6628e892252e916df55900d345a8792c4fa0eba9509c08d63"
+  },
+  "process_identity": {
+    "run_id": "quality-hot-e81887baf304",
+    "pid": 30248,
+    "start_ticks": 639281360434364336,
+    "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_screen_share_runtime.exe"
+  },
+  "exit_code": 0,
+  "resource_sampler_exit": 0,
+  "resource_collection": {
+    "status": "PASS",
+    "sampler_exit": 0,
+    "maximum_gap_seconds": 10,
+    "soak_samples": 1753,
+    "complete_counter_samples": 1753,
+    "samples": 1851,
+    "live_samples": 1850,
+    "evidence_sha256": "b0c3335cb0b3bb248998ad9df4af30d362a0f213c04101c922402930182da16e"
+  },
+  "binary_sha256_after": "62f02b37b273fd8461abe456f0962607d99ffead9aadf06fb6d0bfaf434c30f0",
+  "binary_unchanged": true,
+  "resource_gate": "PENDING_ANALYSIS",
+  "scope": "native functional gate and external collection contract; six-resource growth verdict requires resource-analysis.json",
+  "finished_utc": "2026-10-21T00:05:59.536640+00:00"
+}

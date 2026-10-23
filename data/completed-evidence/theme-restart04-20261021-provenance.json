@@ -1,0 +1,560 @@
+{
+  "schema": "cohavora-theme-restart-provenance-v1",
+  "status": "SCOPED_COMPLETED_RESULT",
+  "created_utc": "2026-10-21T12:00:57.090502+00:00",
+  "source_references": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-restart04-audit.json",
+      "sha256": "79dfb0f3c4c4d0795e332d68e84a38b2486e552de76da19059592236558fbfcd",
+      "bytes": 35444
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-restart04-audit.py",
+      "sha256": "2fa73f92729601cb39614f7ec680428fee5f9432d0a05d32f2371390f07bd853",
+      "bytes": 9147
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\observe-theme-restart04.py",
+      "sha256": "e7f6655a776ccad6494fb580db468265a93fb690d097e7f36435f7810fed4a70",
+      "bytes": 5577
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\result.json",
+      "sha256": "a51a4c58ad4c837d4865bf2440fda95be4fa4dac69432b06ae56eff963ecbdc1",
+      "bytes": 45646
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\desktop\\theme_persistence_retest.py",
+      "sha256": "d69b886260583015cad5555e348e3e0e0691658e40c2c7d4b430846b98ee9254",
+      "bytes": 13677
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\desktop\\theme_persistence_retest.md",
+      "sha256": "2f0dcb3bc3d4c22850539b9e28801d05e17185b96d948778d0cbba5abc32d845",
+      "bytes": 1658
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\desktop\\product_uia_retest.py",
+      "sha256": "db9f1b873c0141a01d742c872f47900ffca26e6d0a66d33a337091830e919a64",
+      "bytes": 36969
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\meeting\\meeting_soak.py",
+      "sha256": "ce45172dd9b590c4482a74ed0066636eb9d7c80bf62d676c01e8a333263a772b",
+      "bytes": 46012
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\integration\\source_paths.py",
+      "sha256": "e90a6a62ab08e436510294d201985cceedd023cf38a364c9a59b634417ce99f2",
+      "bytes": 4533
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_desktop.ps1",
+      "sha256": "6fab2a0a12fd49ec19ad9b19ada14a20be9010a2fe1e70511a461bd1434c3201",
+      "bytes": 131130
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_desktop_evidence.ps1",
+      "sha256": "97023ed092eff34fff7ae2cd6c0a2fbd148f4833e9cfe1347fdd8c832cd2083a",
+      "bytes": 22122
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_timing_theme_steps.ps1",
+      "sha256": "41d4ddbeecb3b97ce7633cba514fb939e1fa8d020e5bd7a5b40f0e9f60ab9a9e",
+      "bytes": 19388
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_theme_persistence_steps.ps1",
+      "sha256": "62491ec68e7849752e51afeefe9a721067a2144c2294a38a40c62f7a4f04e69c",
+      "bytes": 5573
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\diagnostics\\heap_etw\\checkpoint_plan.ps1",
+      "sha256": "a435ca8a5aebbdf78538a7c94ba604210ba3c9d5574d4ef5b300b51437527d0b",
+      "bytes": 860
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\product_acceptance\\product_pilot_probe_tail.ps1",
+      "sha256": "ec39c7dc87d7c41ebc1186ad271b31e34954462f9c9b6c80c032a3b2e21241c8",
+      "bytes": 11058
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\selftests\\test_theme_persistence_retest.py",
+      "sha256": "afda74abb2a31b8311ba2d9a5aa9a2f0ee261edd6333c353ff0ba4cd8b45ad6e",
+      "bytes": 4579
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+      "sha256": "aa355c3c3f4a019c6c4aacb8514b0822c767616100b7b74248ad8ffc4049ae8c",
+      "bytes": 107361280
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.pdb",
+      "sha256": "0aa2f51734222793c18e4ed90ce433d1bb26d2e830cc99b6f97b7542b207c3c8",
+      "bytes": 915623936
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-restart-preparation01\\profile.json",
+      "sha256": "d30464784e69ddf39f031201acfc8963123b09a8da5d6d83883f92d817398038",
+      "bytes": 3787
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-restart-preparation02\\profile.json",
+      "sha256": "41b0358bc4cf9339a09a817ae820110daa70953d862a4abd53631a8b1d8b5f00",
+      "bytes": 4919
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\light-write-result.json",
+      "sha256": "edb1a585e7418f08c351341a9c646940bd780115482d4a76839a0070b17605ff",
+      "bytes": 4334
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-write\\theme-persistence-step.json",
+      "sha256": "8bd7cae201cdd88906de312077af7a98d8a34a38b32de9a69a9ae6e89aab6531",
+      "bytes": 3499
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-write\\product-identity.json",
+      "sha256": "57f4b20dbfc1df1ce872f2142fec7f7dd5d9552779b2def8438224687115d7d9",
+      "bytes": 259
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-write\\uia-result.json",
+      "sha256": "60a48e787473fb4dc21b285aed71efc200aeae43438e6e229787d10d6436eaaf",
+      "bytes": 1836
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-write\\process-exit.json",
+      "sha256": "efb0072bbbcbe61d17bc6792589e8e46d0cc2f507778e1067409b90fc3843b77",
+      "bytes": 147
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-write\\desktop-baseline.json",
+      "sha256": "8b4890ab6309e02f84d2210623f5ac968f0d7c9c655ac891b544ec36c3ae7472",
+      "bytes": 343
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-write\\desktop-observations.jsonl",
+      "sha256": "6a3bb3a8b2e7f6c13d953aa948805b17f155c279e1fe261c58dd636d86b49e7c",
+      "bytes": 9794
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-write\\uia-actions.jsonl",
+      "sha256": "c9baa02e1b7d39ef7f2518604c449511db59ebc595eebbaaf9eb5cbd9ad1275f",
+      "bytes": 2191
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-write\\theme-pixel-observations.jsonl",
+      "sha256": "c0b8f8cf9ef1d14170e2b681825ab8a002c820e0be31e8acce0cda5e2f61a637",
+      "bytes": 702
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-write\\theme-hwnd-bindings.jsonl",
+      "sha256": "73c727416a59c8f345a458e0b5a566d9b068d604d449b3d230bf7a2ad2acd20d",
+      "bytes": 257
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\light-read-result.json",
+      "sha256": "4d63109dbfb45680e24bf3c0ac24df1188e1073b1e3598582d14af436cab879a",
+      "bytes": 4333
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-read\\theme-persistence-step.json",
+      "sha256": "ae288518bfab1c1014245acd0ac6228ef42cdc400c15a92c3dcda60b5b660b8d",
+      "bytes": 3500
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-read\\product-identity.json",
+      "sha256": "665f76e8a3806f064788cb636d31577201ff8723e94fbc6969c0b4d25e231160",
+      "bytes": 259
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-read\\uia-result.json",
+      "sha256": "4f3560164eb782719728e1ee4949d1406a477427d265e1ca66aba3df2c4903fc",
+      "bytes": 1835
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-read\\process-exit.json",
+      "sha256": "79e585a3fb1cd0b6279ace86e3072fd794579afc8de0bb4784dd0752b0281294",
+      "bytes": 147
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-read\\desktop-baseline.json",
+      "sha256": "06fc9f48424ca1542de508922c56456ca0e4313ad2435d10d1eb2c0116f5cc91",
+      "bytes": 343
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-read\\desktop-observations.jsonl",
+      "sha256": "ad93f4f37740e5cda871094e0ce82e558a9bb614f408bd373d489dca461339de",
+      "bytes": 7178
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-read\\uia-actions.jsonl",
+      "sha256": "87fc2b851e6e87f497de05b83853b1833b5b2bccf1fd752bb64ddde20912d1af",
+      "bytes": 2200
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-read\\theme-pixel-observations.jsonl",
+      "sha256": "e7c49ee3f2df2c8f1c3075c219d1fb1b76efb36cd9585f63ebce9b7ff633ba6a",
+      "bytes": 701
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\light-read\\theme-hwnd-bindings.jsonl",
+      "sha256": "03bda44de267c1f62593afa94fb58d3deafecd4d8701d6b56ee4b1ed1c69c7d2",
+      "bytes": 255
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\dark-write-result.json",
+      "sha256": "ad6980b0f040d8d0edcba4ed58aad578a36e71a2b474744e01ba851911933629",
+      "bytes": 4334
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-write\\theme-persistence-step.json",
+      "sha256": "817fab9a9425190c3d3afe62e3fb6c0ff2b9d089e62ad74cdc92550f6a03e941",
+      "bytes": 3492
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-write\\product-identity.json",
+      "sha256": "6fdddcfb7bee3a95b06ff3861737e030c8c9ebbc7488022f5c82c62c92c6f1bc",
+      "bytes": 259
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-write\\uia-result.json",
+      "sha256": "852b87ebbf0feeed72657bb6d21c737aed5426b843af579d24f4e3d88d5d9a10",
+      "bytes": 1844
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-write\\process-exit.json",
+      "sha256": "70d03436038b8c4eb7c473358fa69239a8b4115d3931ee5076d41ddd0156e40a",
+      "bytes": 147
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-write\\desktop-baseline.json",
+      "sha256": "eb59b6f4030bd36ca0dbacb9a719d8bb58c871848952d5063de2d9c372361372",
+      "bytes": 343
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-write\\desktop-observations.jsonl",
+      "sha256": "6dcb7dda120b766be7e07ad835c765439fd261e32cdd1f67bd27e9e20627ee20",
+      "bytes": 9794
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-write\\uia-actions.jsonl",
+      "sha256": "c20f41decac05907c086a3119c8dbd9478cd8e505c9803e9fe40dfe06a417bc7",
+      "bytes": 2210
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-write\\theme-pixel-observations.jsonl",
+      "sha256": "ad44d591ebabb0524161c2d4e067c59ef7b6377535b547bb3079c07bed9ec078",
+      "bytes": 694
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-write\\theme-hwnd-bindings.jsonl",
+      "sha256": "d4da16c9f15c447660bbb5d804f4e2b60771b4754f225daac3b456623872f9d1",
+      "bytes": 255
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\dark-read-result.json",
+      "sha256": "1dd3f62beba829e7a3fde6f1a7dedb5ccc701678976f703ad073ab16a352f3f4",
+      "bytes": 4322
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-read\\theme-persistence-step.json",
+      "sha256": "1de801953562dc0658118b2778833c6837a1742acc814c0fc88b54c56ec6b250",
+      "bytes": 3491
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-read\\product-identity.json",
+      "sha256": "6f535bc32a7f2ebf12f94b7364e43966cd4045e65865d15caf6ec551df0e5ae8",
+      "bytes": 259
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-read\\uia-result.json",
+      "sha256": "27810bd219163c85c237962cd202b328b7ed4e9a40e98d78313ab46e09de008a",
+      "bytes": 1834
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-read\\process-exit.json",
+      "sha256": "de8e5f2055cb51111c441caf70dd141a60e17039d552c0ed0ba29460dcea4d29",
+      "bytes": 147
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-read\\desktop-baseline.json",
+      "sha256": "a2fe10e234f5325822cb95013ea195716a8c25cf8b4b4bd194e211d788b193d3",
+      "bytes": 343
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-read\\desktop-observations.jsonl",
+      "sha256": "448e68a4d39b7833cd51fef9b7ff4d7298dce6c226c7f19f0a8b6db3e06cdd24",
+      "bytes": 7178
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-read\\uia-actions.jsonl",
+      "sha256": "0a15a4aaad2a1d2b73096c45a26d09ec742537dd30eb0827287171136ce93947",
+      "bytes": 2209
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-read\\theme-pixel-observations.jsonl",
+      "sha256": "d982a510b2334826b29368cf36b3f5f5e38b17f73ea345d6d562f0d59b6d1a87",
+      "bytes": 695
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\dark-read\\theme-hwnd-bindings.jsonl",
+      "sha256": "650d85980503cc40f051d6752fdeb80b7c77f3e1aa68c20eee4601e418fca696",
+      "bytes": 257
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\teal-write-result.json",
+      "sha256": "e3e7611d04018d49aa8b61d81ec914c7ec60e60536cb56d05885265ef977efb4",
+      "bytes": 4330
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-write\\theme-persistence-step.json",
+      "sha256": "e7f5bbe3863ead1ed9f2479b40519f4393b180d8bb361bbc67d76e51fe9ee0c1",
+      "bytes": 3497
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-write\\product-identity.json",
+      "sha256": "e529e62208ef2adad162d756f9c0a7f14a2aeb71ca6b2c48a2cc42eb8875863b",
+      "bytes": 259
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-write\\uia-result.json",
+      "sha256": "45e0a09f9d1f9863af120abf9ac9867041fdd3dac3745559bb08ca23ef4db109",
+      "bytes": 1835
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-write\\process-exit.json",
+      "sha256": "cfa7bfba3423c5f04ede594767c74e64ad4fe2c169831371999ea3ac2b7c3cb7",
+      "bytes": 147
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-write\\desktop-baseline.json",
+      "sha256": "fd87b6a4ca362552b51dd706237f5bf19a6dd2703ff60559529b41c0392c6f2f",
+      "bytes": 343
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-write\\desktop-observations.jsonl",
+      "sha256": "ea6327f7400149ad7941edb90ba9e7aafffb6bfb3a601aaa59205f6758c328f2",
+      "bytes": 9794
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-write\\uia-actions.jsonl",
+      "sha256": "ad33c42253bde249ec7863a2c50624135d602282bf55a479d2db9902be239d5e",
+      "bytes": 2229
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-write\\theme-pixel-observations.jsonl",
+      "sha256": "c48190070e237835fa6f910ded8df3fb3b9b08170aa0a4668ad679e355d53086",
+      "bytes": 700
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-write\\theme-hwnd-bindings.jsonl",
+      "sha256": "6a8eccf7c9104a0fba16a55643e6be830803083695ee68510de7c86e551bd927",
+      "bytes": 257
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\teal-read-result.json",
+      "sha256": "0899335357c5e37f09b3ed72eb10834fbee95ee0f9c69053de04a4ba3a23da13",
+      "bytes": 4335
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-read\\theme-persistence-step.json",
+      "sha256": "2b8ea8a6c6513593bb6e10fb6eb3c159f7d683c9cc776d68f7f8d28eee67a21f",
+      "bytes": 3495
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-read\\product-identity.json",
+      "sha256": "2701e2b4f0120a7c18a24384c5eaf9783333cbe5b8aafbc4542640c794f91f3d",
+      "bytes": 259
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-read\\uia-result.json",
+      "sha256": "243a4ad601a100e8edcf764fb5b639e4dc01241bbef0a9d752fe551608ed0135",
+      "bytes": 1843
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-read\\process-exit.json",
+      "sha256": "2dc62ab82d6e0b10f8904c5955f909618e091565c94a44a30e91bf09a419b16a",
+      "bytes": 147
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-read\\desktop-baseline.json",
+      "sha256": "096f3a200fc5e9fb8f959ce3e7a7200b8d3e420bc39f22c8d3dbe5c561ede459",
+      "bytes": 343
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-read\\desktop-observations.jsonl",
+      "sha256": "257b3301f66a7cbc49357f0b5069845bf1a0bfbd59debe97e78e568f60fb57fc",
+      "bytes": 7178
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-read\\uia-actions.jsonl",
+      "sha256": "4abc656ed2ca838845742c66bb0bfa58ae907f6a166144e58436cff65c80e81d",
+      "bytes": 2199
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-read\\theme-pixel-observations.jsonl",
+      "sha256": "ef98ff9ee3c02e8c544863c3ec906eaebb5cb037396654dd3295538da7e62b94",
+      "bytes": 699
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\teal-read\\theme-hwnd-bindings.jsonl",
+      "sha256": "9a5b73c0f51a5a160ffd15c3f09b193b459e3bab3babc453655feb373e780369",
+      "bytes": 255
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\system-write-result.json",
+      "sha256": "90f1190ecb4cacd70ea756fd0ae9da98644e1faa6bf5009cf0f3459f18b4f246",
+      "bytes": 4338
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-write\\theme-persistence-step.json",
+      "sha256": "d1d5a25d37d63e8a525f0dac39f6b9c7eba34783b9421942bf625c0e26886fb6",
+      "bytes": 3495
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-write\\product-identity.json",
+      "sha256": "6cb0819b4dfc12a1792ddb135d0a546387fa2e7d92205d497b5e09519b5ae553",
+      "bytes": 258
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-write\\uia-result.json",
+      "sha256": "40681eaf34f41b3a90f1bdf1f6141a797bffdf6ba589b4d4febc12914caf75d8",
+      "bytes": 1845
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-write\\process-exit.json",
+      "sha256": "90756f3ddd95b0333e7ef9595f6249bcbc2a86dca2fbabb5d3555542e4f10604",
+      "bytes": 146
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-write\\desktop-baseline.json",
+      "sha256": "172429530377ac179a4b6d50c0d6a17cb2a97cb189b29bb03de418e1a0ed8dc2",
+      "bytes": 343
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-write\\desktop-observations.jsonl",
+      "sha256": "090bb53741c0d9a46989c4af9699eb8cd4165658647fb064e93e13fcfa5ad21a",
+      "bytes": 9778
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-write\\uia-actions.jsonl",
+      "sha256": "dd2a285935c03af90b007ec51b8bcfa8feffe01004a38e2dd716543997e6ee5f",
+      "bytes": 2205
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-write\\theme-pixel-observations.jsonl",
+      "sha256": "33639cf55f1c09eff59752d5cf6569ce66e77c37131190ae1f335a52b19f0bc3",
+      "bytes": 695
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-write\\theme-hwnd-bindings.jsonl",
+      "sha256": "703e38cb0f01792b3152fd5fe30e5f7875e8830597c9049aab89f0c91073a909",
+      "bytes": 254
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\system-read-result.json",
+      "sha256": "d45052e7951478217824a40329f057f70c9254a3b619510406412f1e4e2b067a",
+      "bytes": 4332
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-read\\theme-persistence-step.json",
+      "sha256": "f8602553408b05bf6e6abefd9e30b2f5c42c69971e891979aa67e7912d7627a2",
+      "bytes": 3498
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-read\\product-identity.json",
+      "sha256": "1a58c434cec5ebf68347ebad27370535b9882d4c54de3e8def5a831926bdefaf",
+      "bytes": 259
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-read\\uia-result.json",
+      "sha256": "bce2bc20689c5c34f0c4e4255ac443f151983f60d0811b8c0395ec914f34440a",
+      "bytes": 1835
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-read\\process-exit.json",
+      "sha256": "90ffbae09efe6e600a763d6ea55a793642ec93796d8b23393f074b4e7b74e73e",
+      "bytes": 147
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-read\\desktop-baseline.json",
+      "sha256": "eb3159538c36370b4518a20f5cfc6654df69446ad9763831aa7a774a6fffa3cc",
+      "bytes": 343
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-read\\desktop-observations.jsonl",
+      "sha256": "91cf88180372c491ff32b0143d05ef9a152a67101ff44a791ef08be3178ac5be",
+      "bytes": 7178
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-read\\uia-actions.jsonl",
+      "sha256": "28836ee56c561894ea3b89fdb159c29eb27c0caaf0eddf2b48486846d34a23ad",
+      "bytes": 2208
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-read\\theme-pixel-observations.jsonl",
+      "sha256": "a30ec942663034bfd658db79194fe572449ee507dc02a88a2d8251d7b00cf5fc",
+      "bytes": 696
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\steps\\system-read\\theme-hwnd-bindings.jsonl",
+      "sha256": "d8c90345ff59691ca1f46216f7464f790c581896038c9468751942b07f7e8057",
+      "bytes": 255
+    },
+    {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\cohavora-theme-restart-20261021-04\\profile\\Settings\\Cohavora\\Cohavora.ini",
+      "sha256": "e8cc8981f53c4e8359068fb2c21122740aafa8aeacbc84d9db50ae904b8c129c",
+      "bytes": 846
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-restart-input-observation04\\result.json",
+      "sha256": "e381faad3c8b4a8ceb31bbcccc0baca3b774b5b663abe89c39e5a4a90c328805",
+      "bytes": 834
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-restart-input-observation04\\input-origin\\receipt.json",
+      "sha256": "8fa955819c5affe195a458bc659f027f2306faf717824644961d1ad4c9b9d10b",
+      "bytes": 1504
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-restart-input-observation04\\desktop-baseline.json",
+      "sha256": "29fc469d6904aeb45c852d8ee4e44794a336a9e7dc0ab2fb7b790b00c207a602",
+      "bytes": 286
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-restart-input-observation04\\desktop-observations.jsonl",
+      "sha256": "7e5b0197f63349d63eba5d9cc6b01ff3ea6aa6b0567b136341eee0c2debe3860",
+      "bytes": 307951
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-restart-input-observation04\\raw.json",
+      "sha256": "49a8be05a21ae91f25507a5e47398b549b1b21d417bf89960465aaa546024907",
+      "bytes": 35510
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-restart-input-observation04\\input-origin\\events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "plan_update": {
+    "before_sha256": "16f8400dc276f5c61c9e21c8d86fb8433c9d02c5be1f857495ab2e156dded77a",
+    "after_sha256": "d90ae53127a8e9e426a00125a51a002173971c8bbd5548d1e0f8ff3bc03d05bb",
+    "group": "P21",
+    "boundary_index": 2,
+    "before": "主题四模式、重启恢复、无效配置及自有HWND系统通知跟随工程回归PASS，见reports/product/theme-settings-20261016.html（独立工程范围保留）；最新完成ui-timing-theme-unblocked09（2026-10-21）主题设置限定子门PASS_SCOPED：浅色／深色／青绿／系统四模式settings像素、即时生效、持久化、同进程重开设置及自有HWND通知成立；Windows偏好未改变，系统明暗往返、产品进程重启恢复、真实会中媒体连续性及完整stage外观矩阵NOT_RUN。来源data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json，追溯data/completed-evidence/ui-terminal-20261021-provenance.json；主题仅在本既有边界计项，不复制为P03通过；不授予更新清单、异步设置或完整P21通过，原gates/conditions/门限与完整P21/full-plan/Formal/P20信用0保留。",
+    "after": "主题四模式、重启恢复、无效配置及自有HWND系统通知跟随工程回归PASS，见reports/product/theme-settings-20261016.html（独立工程范围保留）；最新完成ui-timing-theme-unblocked09（2026-10-21）主题设置限定子门PASS_SCOPED：浅色／深色／青绿／系统四模式settings像素、即时生效、持久化、同进程重开设置及自有HWND通知成立；Windows偏好未改变。新增完成theme-restart04（2026-10-21）设置页产品重启恢复子门PASS_SCOPED：浅色／深色／青绿／系统四对Write→自然退出→新进程Read共8个不同进程身份，持久值、当前选择项和原精确设置页像素均一致；Read不重新选择主题，全部自然退出码0、forced0、清理完成，全程1190次父进程采样及各步骤strict输入时间戳不变，Windows偏好保持深色。来源data/completed-evidence/theme-restart04-20261021-scoped.json，追溯data/completed-evidence/theme-restart04-20261021-provenance.json；原输入中止记录保留，来源UNKNOWN；复用UI15冻结工件，binary_source_provenance仍NOT_VERIFIED。首窗绘制前恢复、系统明暗往返、无效配置产品runtime、真实会中媒体连续性及完整stage外观矩阵NOT_RUN。来源data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json，追溯data/completed-evidence/ui-terminal-20261021-provenance.json；主题仅在本既有边界计项，不复制为P03通过；不授予更新清单、异步设置或完整P21通过，原gates/conditions/门限与完整P21/full-plan/Formal/P20信用0保留。"
+  },
+  "safe_projection_sha256": "72595ec0c4e1723dee58faf43f873717c8f537df7d9ed4cbe61b2de81e324e9f",
+  "helper_sha256": "260d52f674ef8f7cdf39dff4cf0a7f168c96494b2e1a3680ff0cb5534fe535a4",
+  "report_update_runtime": "NOT_RUN",
+  "layout_and_thresholds_unchanged": true,
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "previous_completed_restart_result": "NONE; new settings-only subgate within P21",
+  "prior_theme09_and_engineering_report_retained": true,
+  "superseded_reports_to_archive": []
+}

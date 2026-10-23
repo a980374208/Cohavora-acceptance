@@ -1,0 +1,60 @@
+{
+  "schema": "cohavora-completed-repair-document-sources-v1",
+  "date": "2026-10-22",
+  "status": "COMPLETED_SCOPES_ONLY",
+  "evidence_completed_at": "2026-10-22T13:08:05.768808+08:00",
+  "sources": [
+    {
+      "path": "data/completed-evidence/repair-remote-output-20261022-receipt.json",
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/repair-wave-20261022/task2/receipt.json",
+      "sha256": "df26cd10a52d5adf80d84a7dd0107a495c1f5723eb6b5f152c640ace41f046ae",
+      "bytes": 5459
+    },
+    {
+      "path": "data/completed-evidence/repair-flutter-key-20261022-result.json",
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/repair-wave-20261022/task5/result.json",
+      "sha256": "fc5e500394f13cfbeb3244e5b33ba5711ccdd5782dd365f34a05f7c3539f03aa",
+      "bytes": 3339
+    },
+    {
+      "path": "data/completed-evidence/repair-flutter-dispose-20261022-result.json",
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/repair-wave-20261022/task6/result.json",
+      "sha256": "faf4b22379bf340df5103dd29ffceb56b0b14ee16cdc64662cea0d4f0a386b3d",
+      "bytes": 1698
+    },
+    {
+      "path": "data/completed-evidence/repair-native-clear-20261022-closeout.json",
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/repair-wave-20261022/task7-explicit-clear01/full-validation-20261022/closeout.json",
+      "sha256": "e5c2778f0677854b0d3b43d63aa4ec8e7c35769bca6f0598a445a22853542dc7",
+      "bytes": 18344
+    },
+    {
+      "path": "data/completed-evidence/repair-native-clear-20261022-runtime.json",
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/repair-wave-20261022/task7-explicit-clear01/full-validation-20261022/native/runtime-summary.json",
+      "sha256": "9a24e2ad8e35f12076126f4338585dcaa1cca74a348f8b28a3410c4170353ff0",
+      "bytes": 3370
+    },
+    {
+      "path": "data/completed-evidence/repair-artifact-identity-20261022-result.json",
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/repair-wave-20261022/task13-current-product01/result.json",
+      "sha256": "fe637c2043c8af9b95d1580e96f993344a1584136f7d6e56a786353b566b8cb3",
+      "bytes": 11309
+    },
+    {
+      "path": "data/completed-evidence/repair-completion-20261022-audit.json",
+      "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/repair-wave-20261022/completion-audit.json",
+      "sha256": "dee39bb34ec87b6eb404d8eaec618a9ee807e0ed6b74425c43609c4e13cc02c8",
+      "bytes": 12314
+    }
+  ],
+  "product_retest_executed_by_document_refresh": false,
+  "full_gate_credit": 0,
+  "excluded": [
+    "task5/6入会前中止及未执行的换钥/释放重测",
+    "task7本地0媒体帧的互通尝试",
+    "task8仅准备的实服重测",
+    "P13无新正式运行",
+    "P10无新容量运行",
+    "P15无新跨机精度运行"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema": "cohavora-portable-acceptance-report-v1",
   "entry": "index.html",
-  "revised_at": "2026-10-16T08:50:10.519Z",
+  "revised_at": "2026-10-23T08:41:20.072Z",
   "evidence_baseline": "2026-10-12T19:40:19.353Z",
   "generate": "node scripts/assemble.mjs",
   "verify": "node scripts/validate.mjs",
@@ -12,7 +12,8 @@
     "inputs": "限定工具门的直接输入快照，只校验不执行",
     "audit": "分类、原报告摘要、来源可用性及既有清理审计",
     "scripts": "本报告生成与校验脚本",
-    "audit/tooling": "本轮一次性迁移与提取工具的封存源码；日常生成/验证使用scripts目录入口"
+    "audit/tooling": "本轮一次性迁移与提取工具的封存源码；日常生成/验证使用scripts目录入口",
+    "reports": "当前保留的最新独立报告与同名JSON，按product／b14／memory／tooling分类"
   },
   "runtime": "NOT_RUN",
   "missing_source_policy": "原件缺失明确说明；保留封存摘要，不升级为当前有效。",
@@ -21,6 +22,8 @@
     "original": 52,
     "product_groups": 21,
     "auxiliary_groups": 3,
-    "historical_results_preserved": 44
-  }
+    "historical_results_preserved": 40
+  },
+  "catalog": "reports/index.html",
+  "maintenance": "README.md"
 }

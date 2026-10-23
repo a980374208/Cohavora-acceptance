@@ -1,0 +1,1476 @@
+{
+  "schema": "cohavora-p21-meeting-theme-scoped-v1",
+  "status": "PASS_SCOPED",
+  "created_utc": "2026-10-21T16:37:48.054415+00:00",
+  "completed_date": "2026-10-22",
+  "completed_timezone": "Asia/Shanghai",
+  "started_utc": "2026-10-21T16:30:31.720539+00:00",
+  "finished_utc": "2026-10-21T16:31:22.512798+00:00",
+  "scope": "REAL_SETTINGS_CONTROLS_DURING_SYNTHETIC_MEDIA",
+  "render_backend": "opengl",
+  "backend_scope": "QT5_OPENGLES_MODULE_CURRENT_SCENE_AND_STAGE_PIXEL",
+  "plan_groups": [
+    "P21"
+  ],
+  "receiver_identity": {
+    "schema": "cohavora-p21-meeting-identity-v1",
+    "pid": 35032,
+    "start_ticks": 639281970328558377,
+    "start_time_utc": "2026-10-21T16:30:32.8558377Z",
+    "executable_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.exe",
+    "executable_sha256": "85538f430d487b477f0081fb7ad3d10969e8ad271b9b7729a0d1daa508e877b3",
+    "session_id": 1,
+    "baseline_input_tick": 89441828
+  },
+  "cases": [
+    {
+      "theme": "light",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "浅色",
+        "selected_value": "浅色",
+        "stored_theme": "light",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_light",
+          "utc": "2026-10-21T16:30:43.5324142Z",
+          "product_pid": 35032,
+          "mode": "light",
+          "effective": "light",
+          "native_hwnd": 37618660,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 16777215,
+          "client_colorref": 4294967295,
+          "sample_colorref": 16777215,
+          "sample_valid": true,
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "stage": {
+        "status": "PASS_PIXEL",
+        "observation": "OBSERVED",
+        "reason": null,
+        "theme": "light",
+        "effective": "light",
+        "theme_revision": 2,
+        "observation_sequence": 19,
+        "root_hwnd": "6163160",
+        "hwnd": "45681500",
+        "physical_rect": {
+          "height": 582,
+          "width": 1120,
+          "x": 721,
+          "y": 440
+        },
+        "sample_point": {
+          "x": 1280,
+          "y": 510
+        },
+        "expected_colorref": 15986153,
+        "expected_rgb": [
+          233,
+          237,
+          243
+        ],
+        "client_colorref": 15986153,
+        "sample_colorref": 15986153,
+        "rgb": [
+          233,
+          237,
+          243
+        ],
+        "sample_valid": true,
+        "pixel_matches": true,
+        "measurement": "owned_foreground_surface_composited_pixel",
+        "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+      },
+      "windows": [
+        {
+          "label": "light-before",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 33,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97287260050300,
+            "frames": 34,
+            "last_callback_steady_ns": 97289331236000,
+            "maximum_callback_gap_ns": 92798300,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97289334684200,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 209,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97287249135400,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97289329105800,
+            "maximum_callback_gap_ns": 10622300,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97289334686500,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 4320,
+            "silent_windows": 0,
+            "tone_windows": 20,
+            "total_samples": 100320,
+            "total_windows": 20,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 100320,
+              "silent_windows": 0,
+              "tone_windows": 20,
+              "windows": 20
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 73,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 11.424652353133197,
+            "unique_render_submits": 71
+          }
+        },
+        {
+          "label": "light-during",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 65,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97289579268500,
+            "frames": 66,
+            "last_callback_steady_ns": 97293650520600,
+            "maximum_callback_gap_ns": 69919400,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97293687105100,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 413,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97289559201100,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97293679139700,
+            "maximum_callback_gap_ns": 10607700,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97293687107700,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 1440,
+            "silent_windows": 0,
+            "tone_windows": 41,
+            "total_samples": 198240,
+            "total_windows": 41,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 198240,
+              "silent_windows": 0,
+              "tone_windows": 41,
+              "windows": 41
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 140,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 12.812482619430538,
+            "unique_render_submits": 133
+          }
+        },
+        {
+          "label": "light-after",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 32,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97293966721100,
+            "frames": 33,
+            "last_callback_steady_ns": 97295968402300,
+            "maximum_callback_gap_ns": 70913000,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97296025685600,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 212,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97293909097500,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97296019142800,
+            "maximum_callback_gap_ns": 10621500,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97296025686500,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 960,
+            "silent_windows": 0,
+            "tone_windows": 21,
+            "total_samples": 101760,
+            "total_windows": 21,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 101760,
+              "silent_windows": 0,
+              "tone_windows": 21,
+              "windows": 21
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 177,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 13.46070585558807,
+            "unique_render_submits": 175
+          }
+        }
+      ],
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-meeting-opengl05/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "light"
+      }
+    },
+    {
+      "theme": "dark",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "深色",
+        "selected_value": "深色",
+        "stored_theme": "dark",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_dark",
+          "utc": "2026-10-21T16:30:53.6454756Z",
+          "product_pid": 35032,
+          "mode": "dark",
+          "effective": "dark",
+          "native_hwnd": 37749732,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 3221540,
+          "client_colorref": 4294967295,
+          "sample_colorref": 3221540,
+          "sample_valid": true,
+          "rgb": [
+            36,
+            40,
+            49
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "stage": {
+        "status": "PASS_PIXEL",
+        "observation": "OBSERVED",
+        "reason": null,
+        "theme": "dark",
+        "effective": "dark",
+        "theme_revision": 3,
+        "observation_sequence": 27,
+        "root_hwnd": "6163160",
+        "hwnd": "45681500",
+        "physical_rect": {
+          "height": 582,
+          "width": 1120,
+          "x": 721,
+          "y": 440
+        },
+        "sample_point": {
+          "x": 1280,
+          "y": 510
+        },
+        "expected_colorref": 2103314,
+        "expected_rgb": [
+          18,
+          24,
+          32
+        ],
+        "client_colorref": 2103314,
+        "sample_colorref": 2103314,
+        "rgb": [
+          18,
+          24,
+          32
+        ],
+        "sample_valid": true,
+        "pixel_matches": true,
+        "measurement": "owned_foreground_surface_composited_pixel",
+        "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+      },
+      "windows": [
+        {
+          "label": "dark-before",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 33,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97297346014100,
+            "frames": 34,
+            "last_callback_steady_ns": 97299408619200,
+            "maximum_callback_gap_ns": 67030200,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97299460308200,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 212,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97297349301800,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97299459725100,
+            "maximum_callback_gap_ns": 10614400,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97299460308900,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 960,
+            "silent_windows": 0,
+            "tone_windows": 21,
+            "total_samples": 101760,
+            "total_windows": 21,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 101760,
+              "silent_windows": 0,
+              "tone_windows": 21,
+              "windows": 21
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 232,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 13.986117849751965,
+            "unique_render_submits": 227
+          }
+        },
+        {
+          "label": "dark-during",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 65,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97299727364500,
+            "frames": 66,
+            "last_callback_steady_ns": 97303788691600,
+            "maximum_callback_gap_ns": 68175400,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97303807368800,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 412,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97299689177400,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97303799195300,
+            "maximum_callback_gap_ns": 10612200,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97303807371500,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 960,
+            "silent_windows": 0,
+            "tone_windows": 41,
+            "total_samples": 197760,
+            "total_windows": 41,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 197760,
+              "silent_windows": 0,
+              "tone_windows": 41,
+              "windows": 41
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 300,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 14.305015110872379,
+            "unique_render_submits": 296
+          }
+        },
+        {
+          "label": "dark-after",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 33,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97304033489200,
+            "frames": 34,
+            "last_callback_steady_ns": 97306096243200,
+            "maximum_callback_gap_ns": 67818500,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97306151855900,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 213,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97304029175600,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97306149145700,
+            "maximum_callback_gap_ns": 10590600,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97306151856700,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 1440,
+            "silent_windows": 0,
+            "tone_windows": 21,
+            "total_samples": 102240,
+            "total_windows": 21,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 102240,
+              "silent_windows": 0,
+              "tone_windows": 21,
+              "windows": 21
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 337,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 14.50427542265295,
+            "unique_render_submits": 334
+          }
+        }
+      ],
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-meeting-opengl05/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "dark"
+      }
+    },
+    {
+      "theme": "teal",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "青绿",
+        "selected_value": "青绿",
+        "stored_theme": "teal",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_teal",
+          "utc": "2026-10-21T16:31:03.7514116Z",
+          "product_pid": 35032,
+          "mode": "teal",
+          "effective": "teal",
+          "native_hwnd": 37880804,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 16646139,
+          "client_colorref": 4294967295,
+          "sample_colorref": 16646139,
+          "sample_valid": true,
+          "rgb": [
+            251,
+            255,
+            253
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "stage": {
+        "status": "PASS_PIXEL",
+        "observation": "OBSERVED",
+        "reason": null,
+        "theme": "teal",
+        "effective": "teal",
+        "theme_revision": 4,
+        "observation_sequence": 35,
+        "root_hwnd": "6163160",
+        "hwnd": "45681500",
+        "physical_rect": {
+          "height": 582,
+          "width": 1120,
+          "x": 721,
+          "y": 440
+        },
+        "sample_point": {
+          "x": 1280,
+          "y": 510
+        },
+        "expected_colorref": 14739926,
+        "expected_rgb": [
+          214,
+          233,
+          224
+        ],
+        "client_colorref": 14739926,
+        "sample_colorref": 14739926,
+        "rgb": [
+          214,
+          233,
+          224
+        ],
+        "sample_valid": true,
+        "pixel_matches": true,
+        "measurement": "owned_foreground_surface_composited_pixel",
+        "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+      },
+      "windows": [
+        {
+          "label": "teal-before",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 32,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97307532034600,
+            "frames": 33,
+            "last_callback_steady_ns": 97309533488100,
+            "maximum_callback_gap_ns": 69753700,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97309588287100,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 209,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97307499705900,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97309579157700,
+            "maximum_callback_gap_ns": 10586600,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97309588289900,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 4320,
+            "silent_windows": 0,
+            "tone_windows": 20,
+            "total_samples": 100320,
+            "total_windows": 20,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 100320,
+              "silent_windows": 0,
+              "tone_windows": 20,
+              "windows": 20
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 392,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 14.67303017818886,
+            "unique_render_submits": 386
+          }
+        },
+        {
+          "label": "teal-during",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 65,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97309851120400,
+            "frames": 66,
+            "last_callback_steady_ns": 97313908633100,
+            "maximum_callback_gap_ns": 69652900,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97313936570500,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 413,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97309809141600,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97313929251400,
+            "maximum_callback_gap_ns": 10601000,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97313936572700,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 1440,
+            "silent_windows": 0,
+            "tone_windows": 41,
+            "total_samples": 198240,
+            "total_windows": 41,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 198240,
+              "silent_windows": 0,
+              "tone_windows": 41,
+              "windows": 41
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 459,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 14.759940444417143,
+            "unique_render_submits": 457
+          }
+        },
+        {
+          "label": "teal-after",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 33,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97314161411600,
+            "frames": 34,
+            "last_callback_steady_ns": 97316223645500,
+            "maximum_callback_gap_ns": 67271400,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97316275966600,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 212,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97314159177300,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97316269110800,
+            "maximum_callback_gap_ns": 10599200,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97316275967300,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 960,
+            "silent_windows": 0,
+            "tone_windows": 21,
+            "total_samples": 101760,
+            "total_windows": 21,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 101760,
+              "silent_windows": 0,
+              "tone_windows": 21,
+              "windows": 21
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 496,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 14.836908919659884,
+            "unique_render_submits": 490
+          }
+        }
+      ],
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-meeting-opengl05/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "teal"
+      }
+    },
+    {
+      "theme": "system",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "系统",
+        "selected_value": "系统",
+        "stored_theme": "system",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_system",
+          "utc": "2026-10-21T16:31:13.8822983Z",
+          "product_pid": 35032,
+          "mode": "system",
+          "effective": "dark",
+          "native_hwnd": 38011876,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 3221540,
+          "client_colorref": 4294967295,
+          "sample_colorref": 3221540,
+          "sample_valid": true,
+          "rgb": [
+            36,
+            40,
+            49
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "stage": {
+        "status": "PASS_PIXEL",
+        "observation": "OBSERVED",
+        "reason": null,
+        "theme": "system",
+        "effective": "dark",
+        "theme_revision": 5,
+        "observation_sequence": 43,
+        "root_hwnd": "6163160",
+        "hwnd": "45681500",
+        "physical_rect": {
+          "height": 582,
+          "width": 1120,
+          "x": 721,
+          "y": 440
+        },
+        "sample_point": {
+          "x": 1280,
+          "y": 510
+        },
+        "expected_colorref": 2103314,
+        "expected_rgb": [
+          18,
+          24,
+          32
+        ],
+        "client_colorref": 2103314,
+        "sample_colorref": 2103314,
+        "rgb": [
+          18,
+          24,
+          32
+        ],
+        "sample_valid": true,
+        "pixel_matches": true,
+        "measurement": "owned_foreground_surface_composited_pixel",
+        "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+      },
+      "windows": [
+        {
+          "label": "system-before",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 33,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97317597035700,
+            "frames": 34,
+            "last_callback_steady_ns": 97319656648200,
+            "maximum_callback_gap_ns": 67271500,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97319711878500,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 212,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97317599310500,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97319709113000,
+            "maximum_callback_gap_ns": 10595400,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97319711879300,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 960,
+            "silent_windows": 0,
+            "tone_windows": 21,
+            "total_samples": 101760,
+            "total_windows": 21,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 101760,
+              "silent_windows": 0,
+              "tone_windows": 21,
+              "windows": 21
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 551,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 14.958651537398511,
+            "unique_render_submits": 545
+          }
+        },
+        {
+          "label": "system-during",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 65,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97319972443000,
+            "frames": 66,
+            "last_callback_steady_ns": 97324032882700,
+            "maximum_callback_gap_ns": 70992300,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97324087647000,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 415,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97319939196100,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97324079190400,
+            "maximum_callback_gap_ns": 10618900,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97324087650700,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 2400,
+            "silent_windows": 0,
+            "tone_windows": 41,
+            "total_samples": 199200,
+            "total_windows": 41,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 199200,
+              "silent_windows": 0,
+              "tone_windows": 41,
+              "windows": 41
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 619,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 15.039618371051072,
+            "unique_render_submits": 617
+          }
+        },
+        {
+          "label": "system-after",
+          "status": "PASS_OBSERVED_WINDOW",
+          "video": {
+            "content_changes": 33,
+            "content_definition": "sampled-luma-fnv64-16x16-change-only-v1",
+            "first_callback_steady_ns": 97324345367200,
+            "frames": 34,
+            "last_callback_steady_ns": 97326402785900,
+            "maximum_callback_gap_ns": 68570000,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97326431742200,
+            "omitted_records": 0
+          },
+          "audio": {
+            "callbacks": 213,
+            "definition": "tone440-pcm48k-mono-v1",
+            "first_callback_steady_ns": 97324309147600,
+            "invalid_frames": 0,
+            "last_callback_steady_ns": 97326429155100,
+            "maximum_callback_gap_ns": 10610200,
+            "monotonic_callback_clock": true,
+            "observed_steady_ns": 97326431743000,
+            "omitted_windows": 0,
+            "other_windows": 0,
+            "partial_samples": 1440,
+            "silent_windows": 0,
+            "tone_windows": 21,
+            "total_samples": 102240,
+            "total_windows": 21,
+            "totals": {
+              "invalid_frames": 0,
+              "other_windows": 0,
+              "samples": 102240,
+              "silent_windows": 0,
+              "tone_windows": 21,
+              "windows": 21
+            },
+            "window_samples": 4800
+          },
+          "ui": {
+            "banner_visible": false,
+            "preparing_media": false,
+            "reconnecting_banner": false,
+            "render_attached": 1,
+            "render_backend": "opengl",
+            "render_delivered": 656,
+            "render_fallback_reason": "none",
+            "render_gpu_failure": "none",
+            "render_requested_backend": "opengl",
+            "visible": true
+          },
+          "scene_presented": true,
+          "scene_observation": "current_submitted_scene_presented_boolean",
+          "cpu_frame_ready": false,
+          "cpu_frame_observation": "visible_remote_cpu_tile_holds_decoded_image_and_render_frame_not_presentation",
+          "cpu_tiles": [],
+          "cumulative_render": {
+            "render_maximum_interval_ms": 991,
+            "render_measurement_point": "opengl_swap_buffers",
+            "render_stall_count": 1,
+            "render_submit_fps": 15.087533344518935,
+            "unique_render_submits": 653
+          }
+        }
+      ],
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-meeting-opengl05/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "system"
+      }
+    }
+  ],
+  "summary": {
+    "observation_windows": 12,
+    "video_frames": 534,
+    "video_content_changes": 522,
+    "audio_callbacks": 3345,
+    "audio_total_samples": 1605600,
+    "audio_complete_windows": 330,
+    "audio_tone_windows": 330,
+    "audio_partial_samples": 21600,
+    "maximum_video_callback_gap_ns": 92798300,
+    "maximum_audio_callback_gap_ns": 10622300,
+    "render_snapshots": [
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 11.424652353133197,
+        "unique_render_submits": 71
+      },
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 12.812482619430538,
+        "unique_render_submits": 133
+      },
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 13.46070585558807,
+        "unique_render_submits": 175
+      },
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 13.986117849751965,
+        "unique_render_submits": 227
+      },
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 14.305015110872379,
+        "unique_render_submits": 296
+      },
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 14.50427542265295,
+        "unique_render_submits": 334
+      },
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 14.67303017818886,
+        "unique_render_submits": 386
+      },
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 14.759940444417143,
+        "unique_render_submits": 457
+      },
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 14.836908919659884,
+        "unique_render_submits": 490
+      },
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 14.958651537398511,
+        "unique_render_submits": 545
+      },
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 15.039618371051072,
+        "unique_render_submits": 617
+      },
+      {
+        "render_maximum_interval_ms": 991,
+        "render_measurement_point": "opengl_swap_buffers",
+        "render_stall_count": 1,
+        "render_submit_fps": 15.087533344518935,
+        "unique_render_submits": 653
+      }
+    ],
+    "continuity_threshold": "NO_NEW_THRESHOLD; RAW_INTERVALS_RETAINED",
+    "render_initial_maximum_interval_ms": 991,
+    "render_initial_stall_count": 1,
+    "render_counters_unchanged_across_windows": true,
+    "render_stall_cause": "UNKNOWN"
+  },
+  "strict_input": {
+    "policy": "strict",
+    "baseline": {
+      "session_id": 1,
+      "last_input_tick": 89441828,
+      "monotonic_ns": 97279421000000
+    },
+    "final": {
+      "session_id": 1,
+      "last_input_tick": 89441828,
+      "monotonic_ns": 97329015000000
+    },
+    "parent_samples": 712,
+    "continuous_hook_coverage": "UNKNOWN",
+    "input_origin": "UNKNOWN"
+  },
+  "bound_input_files": 1327,
+  "inputs_unchanged": true,
+  "cleanup": {
+    "status": "PASS",
+    "native_retirement": {
+      "receiver": {
+        "pid": 35032,
+        "exit_code": 0,
+        "retired": true,
+        "retirement": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792600280178
+        },
+        "status": "PASS"
+      },
+      "publisher": {
+        "pid": 13820,
+        "exit_code": 0,
+        "retired": true,
+        "retirement": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792600280391
+        },
+        "status": "PASS"
+      }
+    },
+    "forced_roles": [],
+    "failures": []
+  },
+  "cleanup_complete": true,
+  "shared_service": {
+    "configuration_mutated": false,
+    "service_unchanged": true,
+    "room_empty": true,
+    "before": {
+      "config_sha256": "adeea7210d4a05f07909c0c10fbb6460f24f129484963acebf6f58972208c66e",
+      "room": {
+        "empty_timeout": 72000,
+        "departure_timeout": 86400
+      },
+      "video": {},
+      "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+      "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+      "health_status": 200,
+      "participants_remaining": 0,
+      "publications_remaining": 0
+    },
+    "after": {
+      "config_sha256": "adeea7210d4a05f07909c0c10fbb6460f24f129484963acebf6f58972208c66e",
+      "room": {
+        "empty_timeout": 72000,
+        "departure_timeout": 86400
+      },
+      "video": {},
+      "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+      "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+      "health_status": 200,
+      "participants_remaining": 0,
+      "publications_remaining": 0
+    }
+  },
+  "source_provenance": "INCREMENTAL_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_NOT_PROVEN",
+  "physical_audio_output": "NOT_MEASURED",
+  "complete_stage_visual_matrix": "NOT_RUN",
+  "meeting_window_settings_button": "NOT_PRESENT",
+  "not_covered": [
+    "Physical audio output or acoustic delay",
+    "Per-frame video Paint/Present or complete content pixel preservation",
+    "Complete stage, control, DPI, multi-monitor or accessibility matrix",
+    "Desktop OpenGL meeting matrix",
+    "Audio partial tails do not form complete classified windows",
+    "Any new numerical continuity threshold",
+    "Transitive clean-build provenance, final regression or complete P21"
+  ],
+  "full_plan_gate_credit": 0,
+  "full_p21_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "provenance_file": "p21-meeting-opengl05-20261022-provenance.json",
+  "plan_note_zh": "新增完成p21-meeting-opengl05（2026-10-22北京时间）OpenGL模块（当前Qt为GLES构建）会中四主题限定子门PASS_SCOPED：同一增量fixture的独立两端进程，经真实SettingsDialog可见下拉选择浅色／深色／青绿／系统，选择标签、隔离INI及设置页像素匹配；关闭对话框后舞台安全留白实测依次RGB(233,237,243)／(18,24,32)／(214,233,224)／(18,24,32)。12个切换前／中／后窗口共534帧、522次内容变化、330/330个完整440Hz PCM窗口，静音／other／invalid均0；另21600尾窗样本未作完整分类，原始最大视频／音频callback间隔92.7983／10.6223ms，未新增数值连续性门限。实际／请求后端均opengl、fallback及GPU failure均none；12次当前提交scene呈现布尔均true。模块DLL已绑定，scene布尔不证明逐帧Present；当前Qt为OpenGLES2，不计桌面OpenGL会中信用。1327项输入绑定、原始窗口和身份独立回读；strict输入未变，两端自然退出0、forced0、清理完成、共享服务指纹未变且房间为空。原生render累计最大间隔991ms、stall=1在首个before已存在，12次快照未增；原因UNKNOWN，不声称零stall或正式连续性通过，解码PCM不证明扬声器输出。会议窗没有设置按钮，fixture仅打开真实设置对话框；传递性clean-build与完整stage矩阵仍未证明。来源data/completed-evidence/p21-meeting-opengl05-20261022-scoped.json，追溯data/completed-evidence/p21-meeting-opengl05-20261022-provenance.json。"
+}

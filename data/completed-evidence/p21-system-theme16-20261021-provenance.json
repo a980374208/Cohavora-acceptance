@@ -1,0 +1,52 @@
+{
+  "schema": "cohavora-p21-system-theme-provenance-v1",
+  "status": "SCOPED_COMPLETED_RESULT",
+  "created_utc": "2026-10-21T14:53:06.880240+00:00",
+  "source_references": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-system-theme-runtime16\\result.json",
+      "sha256": "3723495cde25ad6ecb3197d1c72f1de9d57e82178c6f02f9ad704be8585ac8c4",
+      "bytes": 245699
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-system-theme-runtime16-independent-readback.json",
+      "sha256": "a5019f2e5a2f28232db2e59d8afbaac7ce77e077a00a39d8cc81389a68c28012",
+      "bytes": 4733
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-system-theme-preparation16\\profile.json",
+      "sha256": "ccae277ef7babf6287f9f3ce09ee5d9ddd1bd5e498c5928610f47be063471bd1",
+      "bytes": 4605
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-system-theme-preparation16\\preparation.json",
+      "sha256": "2ee9c7e405cb94049a72ed812776fe5940a48bf044125a8410ba5921ef0e7174",
+      "bytes": 224326
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-system-theme-runtime16\\protected-evidence-export.json",
+      "sha256": "0e5d60a0bc301c46dc255918382b71e082041e10c35910a740458d47e7f46889",
+      "bytes": 8569
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\update_p21_system16_canonical.py",
+      "sha256": "c333847c5084767af33cfcf9eaaed22b99b7bb88860318b680cdc74fc27669e5",
+      "bytes": 6544
+    }
+  ],
+  "plan_update": {
+    "group": "P21",
+    "boundary_index": 2,
+    "before": "主题四模式、重启恢复、无效配置及自有HWND系统通知跟随工程回归PASS，见reports/product/theme-settings-20261016.html（独立工程范围保留）；最新完成ui-timing-theme-unblocked09（2026-10-21）主题设置限定子门PASS_SCOPED：浅色／深色／青绿／系统四模式settings像素、即时生效、持久化、同进程重开设置及自有HWND通知成立；Windows偏好未改变。新增完成theme-restart04（2026-10-21）设置页产品重启恢复子门PASS_SCOPED：浅色／深色／青绿／系统四对Write→自然退出→新进程Read共8个不同进程身份，持久值、当前选择项和原精确设置页像素均一致；Read不重新选择主题，全部自然退出码0、forced0、清理完成，全程1190次父进程采样及各步骤strict输入时间戳不变，Windows偏好保持深色。来源data/completed-evidence/theme-restart04-20261021-scoped.json，追溯data/completed-evidence/theme-restart04-20261021-provenance.json；原输入中止记录保留，来源UNKNOWN；复用UI15冻结工件，binary_source_provenance仍NOT_VERIFIED。新增完成theme-invalid02（2026-10-21）未支持主题值回退子门PASS_SCOPED：启动前在隔离INI写入acceptance-unsupported-theme并封存SHA，产品只执行Read、未选择主题，持久值自动规范为system，选择项为系统且实际设置页像素符合Windows深色偏好；自然退出码0、forced0、清理完成，17项绑定输入不变，155次父观察及子步骤strict输入均未变化。30秒辅助Raw观察另有测试结束后的3条鼠标消息，完整记录保留，测试窗口内0条；来源仍UNKNOWN。来源data/completed-evidence/theme-invalid02-20261021-scoped.json，追溯data/completed-evidence/theme-invalid02-20261021-provenance.json。新增完成theme-first-window02（2026-10-21）派生产品入口首窗子门PASS_SCOPED：同一当前源码快照的实际产品main加只读观察器，浅色／深色／青绿／系统各独立INI与进程；首个登录窗Show、窗口Paint及卡片Paint状态正确且有序，绘制后空白卡片边缘有效像素分别为16777215／3221540／16646139／3221540（系统跟随Windows深色）；4进程均LOGIN_REJECT自然退出0、forced0、清理完成，56次父观察和4337次子采样strict输入未变，1432项绑定输入在执行时及独立复核时匹配。工件为增量构建的专用观察版本，传递性clean-build来源未完全验证；原冻结EXE首窗、首次Paint实际扫描输出及物理无闪烁未观察／未测，不授予整门通过。来源data/completed-evidence/theme-first-window02-20261021-scoped.json，追溯data/completed-evidence/theme-first-window02-20261021-provenance.json。系统明暗往返、其他格式损坏配置产品runtime、真实会中媒体连续性及完整stage外观矩阵NOT_RUN。来源data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json，追溯data/completed-evidence/ui-terminal-20261021-provenance.json；主题仅在本既有边界计项，不复制为P03通过；不授予更新清单、异步设置或完整P21通过，原gates/conditions/门限与完整P21/full-plan/Formal/P20信用0保留。",
+    "after": "主题四模式、重启恢复、无效配置及自有HWND系统通知跟随工程回归PASS，见reports/product/theme-settings-20261016.html（独立工程范围保留）；最新完成ui-timing-theme-unblocked09（2026-10-21）主题设置限定子门PASS_SCOPED：浅色／深色／青绿／系统四模式settings像素、即时生效、持久化、同进程重开设置及自有HWND通知成立；Windows偏好未改变。新增完成theme-restart04（2026-10-21）设置页产品重启恢复子门PASS_SCOPED：浅色／深色／青绿／系统四对Write→自然退出→新进程Read共8个不同进程身份，持久值、当前选择项和原精确设置页像素均一致；Read不重新选择主题，全部自然退出码0、forced0、清理完成，全程1190次父进程采样及各步骤strict输入时间戳不变，Windows偏好保持深色。来源data/completed-evidence/theme-restart04-20261021-scoped.json，追溯data/completed-evidence/theme-restart04-20261021-provenance.json；原输入中止记录保留，来源UNKNOWN；复用UI15冻结工件，binary_source_provenance仍NOT_VERIFIED。新增完成theme-invalid02（2026-10-21）未支持主题值回退子门PASS_SCOPED：启动前在隔离INI写入acceptance-unsupported-theme并封存SHA，产品只执行Read、未选择主题，持久值自动规范为system，选择项为系统且实际设置页像素符合Windows深色偏好；自然退出码0、forced0、清理完成，17项绑定输入不变，155次父观察及子步骤strict输入均未变化。30秒辅助Raw观察另有测试结束后的3条鼠标消息，完整记录保留，测试窗口内0条；来源仍UNKNOWN。来源data/completed-evidence/theme-invalid02-20261021-scoped.json，追溯data/completed-evidence/theme-invalid02-20261021-provenance.json。新增完成theme-first-window02（2026-10-21）派生产品入口首窗子门PASS_SCOPED：同一当前源码快照的实际产品main加只读观察器，浅色／深色／青绿／系统各独立INI与进程；首个登录窗Show、窗口Paint及卡片Paint状态正确且有序，绘制后空白卡片边缘有效像素分别为16777215／3221540／16646139／3221540（系统跟随Windows深色）；4进程均LOGIN_REJECT自然退出0、forced0、清理完成，56次父观察和4337次子采样strict输入未变，1432项绑定输入在执行时及独立复核时匹配。工件为增量构建的专用观察版本，传递性clean-build来源未完全验证；原冻结EXE首窗、首次Paint实际扫描输出及物理无闪烁未观察／未测，不授予整门通过。来源data/completed-evidence/theme-first-window02-20261021-scoped.json，追溯data/completed-evidence/theme-first-window02-20261021-provenance.json。新增完成p21-system-theme-runtime16（2026-10-21）真实Windows应用明暗偏好子门PASS_SCOPED：同一当前增量产品进程完成系统／浅色／深色／青绿×Windows偏好0／1共8行；系统模式分别呈现深色／浅色，三个手动模式在两种系统偏好下保持自身颜色，8行选择标签、INI持久值、实际系统值与原64×42 DIP空白区域像素全部匹配。驱动先经可见UI切至Light以建立真实状态变化，未直接写INI；guardian为唯一系统偏好writer，驱动未直接通知或刷新产品；1304项绑定输入及完整产品／guardian身份独立复核，strict输入全程不变，产品自然退出码0、forced0、清理完成。系统原偏好0已恢复并读回，恢复广播DELIVERED，guardian自然退出0、无残留；48个保护根证据文件已逐项核SHA导出，原件保留。来源为当前源码增量构建，传递性clean-build来源未证明；来源data/completed-evidence/p21-system-theme16-20261021-scoped.json，追溯data/completed-evidence/p21-system-theme16-20261021-provenance.json。其他格式损坏配置产品runtime、真实会中媒体连续性及完整stage外观矩阵NOT_RUN。来源data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json，追溯data/completed-evidence/ui-terminal-20261021-provenance.json；主题仅在本既有边界计项，不复制为P03通过；不授予更新清单、异步设置或完整P21通过，原gates/conditions/门限与完整P21/full-plan/Formal/P20信用0保留。",
+    "before_sha256": "cd07882733148ae4ffe4948c8a168bc5ce76c4b548fe2e3a52e021e1db467ac1",
+    "after_sha256": "b19fd5ce5ac1de256497ea9612b52bc4972adaafc80aa2047033cc8e06b48cfd"
+  },
+  "safe_projection_sha256": "dadcaec1bc067cce684c8bcf644f01c1e8d296dcf5d8f8f7c9aafca6c73db820",
+  "layout_and_thresholds_unchanged": true,
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "superseded_reports_to_archive": [],
+  "prior_reports_with_independent_scopes_retained": true
+}

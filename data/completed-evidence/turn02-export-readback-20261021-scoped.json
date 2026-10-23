@@ -1,0 +1,79 @@
+{
+  "status": "PASS_SCOPED",
+  "started_utc": "2026-10-21T07:20:16.116795+00:00",
+  "finished_utc": "2026-10-21T07:20:19.043269+00:00",
+  "scope": "Closed TURN02 historical production export/readback only; no live media or UI action.",
+  "checks": {
+    "sealed_source_reuse": {
+      "status": "PASS",
+      "verified_files": 16,
+      "previous_audit_sha256": "cbb87c6ae233b411d7a97ecafdb51d5062bfbd9fad69e29ae4b228f1ddc8ce66",
+      "checkpoint_diagnostics_correlation": "REUSED_EQUIVALENT_INPUTS"
+    },
+    "exporter_provenance": {
+      "status": "PASS",
+      "binary_sha256": "243ad356ad3cbc7b29f3a796433ac289d1c2b0d59c6af912e9c3756f6fa0fc0d",
+      "pdb_sha256": "913da9a0459e7b83532a61859988e78f1cbd5de63bf11b9c3b145dcb8a434d5a",
+      "source_snapshot_sha256": "d42aaead198d65d5539b288178b024ba641289ee70da8479751f2e0c059ab290",
+      "runtime_snapshot_sha256": "5054e0c46bdee1215cebb64c65628bd1b177109e74444a3650a531703b1f3ec0",
+      "unchanged_scoped_source_inputs": 45,
+      "binding": "Historical phase12 exporter with unchanged telemetry/target inputs; not original TURN runtime identity."
+    },
+    "reused_predicates": {
+      "network_sha256": "58d6f452f553f192ad0c2e91299d20958925294f0ca31f965dc3f92a64abc05d",
+      "acl_helper_function_ast_sha256": "ee011045846e21ac2a815effa39eae55b55f8abb4db3013aec90cf193372c991"
+    },
+    "production_export_readback": {
+      "status": "PASS",
+      "manifest_sha256": "cb13ae9ef97007ac04bf2bbc3f1dd38190f67de42eab309dc10456bcb576214c",
+      "files_verified": 7,
+      "metric_rows": 61104,
+      "timeline_events": 17,
+      "retained_revisions": 93,
+      "raw_metric_rows": 64173,
+      "anonymous_session_process_generation_match": true,
+      "declared_missing": [
+        "historical_stability_run_detail",
+        "historical_stability_session_link",
+        "confirmed_crash_metadata",
+        "persistent_loss_summary"
+      ],
+      "raw_native_events": 105,
+      "unexpected_native_sequence_gaps": 0
+    },
+    "safe_output_observed": {
+      "status": "PASS_SCOPED",
+      "prohibited_pattern_hits": 0,
+      "upload_default_false": true,
+      "memory_dump_absent": true,
+      "injected_secret_fixture": "NOT_RUN",
+      "exhaustive_privacy_audit": "NOT_RUN"
+    }
+  },
+  "full_p02_credit": 0,
+  "full_p12_credit": 0,
+  "full_p17_credit": 0,
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "media_rerun": false,
+  "remote_attempted": false,
+  "ui_export_action": "NOT_RUN",
+  "live_current_export_after_fault": "NOT_RUN",
+  "original_turn_terminal_identity": "NOT_REPLACED",
+  "export_exit_code": 0,
+  "export_wall_seconds": 1.0619999999980791,
+  "original_evidence_unchanged": true,
+  "exporter_inputs_unchanged": true,
+  "not_covered": [
+    "Original media run terminal input identity is not backfilled",
+    "UI export action and live-current export after fault",
+    "Physical faults and UDP/RTP fault logging",
+    "Full P02/P12/P17/Formal/P20 acceptance",
+    "Stability/crash/loss evidence absent from the sealed source is not invented",
+    "Injected secret fixture and exhaustive privacy review"
+  ],
+  "schema": "cohavora-turn02-export-safe-scoped-v1",
+  "test_date": "2026-10-21",
+  "source_sha256": "369d07906ba4be9601e50768610efc75d64d51274ed0f091aa363ac5b26d6dcd"
+}

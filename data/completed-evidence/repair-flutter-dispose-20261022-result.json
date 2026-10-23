@@ -1,0 +1,44 @@
+{
+  "task": "task6",
+  "work_kind": "EXISTING_REPAIR_VALIDATION_COMPLETED",
+  "status": "PASS_OFFLINE_REGISTRY_GATE",
+  "root_cause": "peerConnectionClose erases peerconnections_; later peerConnectionDispose returns early on null PC before the UUID-based observer cleanup",
+  "existing_repair_reused": true,
+  "changed_files": [
+    "tests/runtime/selftests/flutter_dispose_cleanup/prepare.py",
+    "tests/runtime/selftests/flutter_dispose_cleanup/test.cpp.in"
+  ],
+  "gate": {
+    "ctest": "PASS 1/1 flutter_dispose_cleanup",
+    "ctest_total_seconds": 0.07,
+    "source": "fixed flutter_webrtc 1.6.0 original dispatch/callees/lookup extracted directly",
+    "build": "PASS Visual Studio 18 2026 x64 Release",
+    "cases": [
+      "baseline leak reproduced",
+      "closed PC observer cleanup",
+      "present PC registry cleanup",
+      "repeated and missing dispose idempotence",
+      "same-track-ID cross-PC and local-track isolation",
+      "invalid arguments preserved"
+    ]
+  },
+  "reuse": {
+    "full_plugin_build": "not rerun; no plugin source change",
+    "prepare_tool": "unchanged",
+    "patch": "unchanged",
+    "existing_provenance_selftests": "unchanged; not rerun"
+  },
+  "boundaries": {
+    "key_rotation": "NOT_IN_SCOPE",
+    "active_pc_native_observer_safety": "UNKNOWN; fixture proves registry semantics only",
+    "native_inflight_callback_drain": "UNKNOWN",
+    "service_desktop_interop": "NOT_RUN",
+    "acceptance_credit": 0,
+    "six_frame_content": "NOT_RUN; previous FAIL retained"
+  },
+  "evidence": [
+    "before-manifest.json",
+    "offline-gate/inputs.json",
+    "offline-gate/build/Testing/Temporary/LastTest.log"
+  ]
+}

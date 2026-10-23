@@ -1,0 +1,298 @@
+{
+  "schema": "cohavora-theme-configuration-seeds-provenance-v1",
+  "status": "SCOPED_COMPLETED_ORIGINAL_RUNTIME_WITH_UNUSED_POST_RUN_PIN_DRIFT",
+  "created_utc": "2026-10-21T15:55:42.799742+00:00",
+  "portable_projection": {
+    "path": "data/completed-evidence/theme-configuration-seeds01-20261021-scoped.json",
+    "sha256": "04c78a151a63efb23e7d680233aa7e37337c8d0fedfb4cf0d7a8f6b3dc208d7e",
+    "bytes": 9877
+  },
+  "source_references": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-runtime01-scope-audit.json",
+      "sha256": "c3486675b9f8012e94831454092e51924df53467d3c431011adaf393d0226492",
+      "bytes": 17198,
+      "kind": "independent-original-runtime-scope-audit"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-runtime01-independent-readback.json",
+      "sha256": "75b63765d1f36eb6133fc643f22f8d6d7b05958dd39e888db10f01bd9e08e7f4",
+      "bytes": 2025181,
+      "kind": "original-complete-current-hash-readback-preserved-inconclusive"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-preparation01\\build-receipt.json",
+      "sha256": "f247117b2d5cd6d8d24c76b79224cc3d62e4aaba5ff4983c9e4bebbf2126b0fc",
+      "bytes": 218513,
+      "kind": "affected-build-receipt"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-empty01\\result.json",
+      "sha256": "2d3884a59d4866125369086e44675e20263f9db6ac6a41062f1774922b0a41e4",
+      "bytes": 232080,
+      "kind": "actual-runtime-result",
+      "configuration_seed": "empty-value"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-preparation01\\empty-value-profile.json",
+      "sha256": "c9860377d0b4e9482744a9de7e60d02e13036c0755b98481c2533c9b497de7ec",
+      "bytes": 278249,
+      "kind": "frozen-runtime-profile",
+      "configuration_seed": "empty-value"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-empty01\\system-read-result.json",
+      "sha256": "a5d021edef26fca94ac8f69ddbd1e1442a1f9f2c813b8afde5d8da9c5000f7ea",
+      "bytes": 5461,
+      "kind": "raw-parent-step",
+      "configuration_seed": "empty-value"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-empty01\\steps\\system-read\\theme-persistence-step.json",
+      "sha256": "57233598ad22946800cca51f3a62c9dcdbd580f718c20658a6fdb4516a659e65",
+      "bytes": 4859,
+      "kind": "raw-theme-step",
+      "configuration_seed": "empty-value"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-empty01\\steps\\system-read\\product-identity.json",
+      "sha256": "ea93cdbb8ba9f6f575e049006f9e9d5150bfe32895b48868c8b2f57c82bbc0a8",
+      "bytes": 259,
+      "kind": "raw-product-identity",
+      "configuration_seed": "empty-value"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-empty01\\steps\\system-read\\process-exit.json",
+      "sha256": "7694292b1a34cfff0a46c0cc654208ba68be3722d01a466f44d6639ebd6ce0d6",
+      "bytes": 147,
+      "kind": "raw-natural-exit",
+      "configuration_seed": "empty-value"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-empty01\\steps\\system-read\\uia-result.json",
+      "sha256": "ab3ca8c7e7c9a7b46f0e586e3fb9275c8792d1f9b96184a63ba007ec5f5754cf",
+      "bytes": 1854,
+      "kind": "raw-driver-terminal",
+      "configuration_seed": "empty-value"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-empty01\\steps\\system-read\\desktop-observations.jsonl",
+      "sha256": "ab6e7f8ad5f9bd6cc858f3fe631fd3bcbb8a7863510c8e0bef8fc96a4a9f7c17",
+      "bytes": 7178,
+      "kind": "raw-strict-desktop-observations",
+      "configuration_seed": "empty-value"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-empty01\\steps\\system-read\\theme-pixel-observations.jsonl",
+      "sha256": "460ee1abcc66ef9decf32dd0200f02822e857142c28924cd9b41e1788ac928e7",
+      "bytes": 696,
+      "kind": "raw-owned-window-pixel",
+      "configuration_seed": "empty-value"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-empty01\\seeded-settings.ini",
+      "sha256": "fa0d5f450d4910e334583b3c1973a2f783bfd61e6edb71a35112df448cbdc4ac",
+      "bytes": 12,
+      "kind": "preserved-original-seed",
+      "configuration_seed": "empty-value"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-empty01\\profile\\Settings\\Cohavora\\Cohavora.ini",
+      "sha256": "e85d47231392a7cc5312cf6983fb706c64750a16abddbd6c92ec9de1e42c2316",
+      "bytes": 846,
+      "kind": "actual-final-isolated-ini",
+      "configuration_seed": "empty-value"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-section01\\result.json",
+      "sha256": "77fe2feadf661893dbe2f4448d9b4b097ae42eeecb786d17a3a87d717a9fcf26",
+      "bytes": 232071,
+      "kind": "actual-runtime-result",
+      "configuration_seed": "wrong-section"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-preparation01\\wrong-section-profile.json",
+      "sha256": "cf69147824246b9fd8fbb3e9ddf3c5238e59bc61bad22c2afc70535f41caa1f1",
+      "bytes": 278251,
+      "kind": "frozen-runtime-profile",
+      "configuration_seed": "wrong-section"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-section01\\system-read-result.json",
+      "sha256": "1da618f5a0974fc5d4dc544eedc9b88283efa2e33f4e7198533cb36ad7acf2ad",
+      "bytes": 5437,
+      "kind": "raw-parent-step",
+      "configuration_seed": "wrong-section"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-section01\\steps\\system-read\\theme-persistence-step.json",
+      "sha256": "141886bbeb8089197693d6f2421ca968e3e9f732588b49488b76b0d1129bb2a1",
+      "bytes": 4853,
+      "kind": "raw-theme-step",
+      "configuration_seed": "wrong-section"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-section01\\steps\\system-read\\product-identity.json",
+      "sha256": "58e2dc2bd7c6627afdc9e2c92faa57f29605e354381ba4930b8e49f04464dd92",
+      "bytes": 259,
+      "kind": "raw-product-identity",
+      "configuration_seed": "wrong-section"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-section01\\steps\\system-read\\process-exit.json",
+      "sha256": "7f77bfe6860ccd94260bb1d5163407c0d2483d4024eaa985a9d2ba3710e45c8c",
+      "bytes": 147,
+      "kind": "raw-natural-exit",
+      "configuration_seed": "wrong-section"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-section01\\steps\\system-read\\uia-result.json",
+      "sha256": "b8f0cbddf071a677c9acfe84351e64414431287742f378e3854048a00f83027a",
+      "bytes": 1836,
+      "kind": "raw-driver-terminal",
+      "configuration_seed": "wrong-section"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-section01\\steps\\system-read\\desktop-observations.jsonl",
+      "sha256": "77f4c2de5ca62d91411ec4f473c16450f9f500ef9f62a025565b16e0f49107d7",
+      "bytes": 7178,
+      "kind": "raw-strict-desktop-observations",
+      "configuration_seed": "wrong-section"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-section01\\steps\\system-read\\theme-pixel-observations.jsonl",
+      "sha256": "8919a2476bb7b5f50c93cfe1f1838ffe833e300fd1387120477586b7abd1e95a",
+      "bytes": 696,
+      "kind": "raw-owned-window-pixel",
+      "configuration_seed": "wrong-section"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-section01\\seeded-settings.ini",
+      "sha256": "351431c32a9f094086964586e31f38d63efe7362e2d2e4ee55d141fe8586d6c3",
+      "bytes": 20,
+      "kind": "preserved-original-seed",
+      "configuration_seed": "wrong-section"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\theme-configuration-section01\\profile\\Settings\\Cohavora\\Cohavora.ini",
+      "sha256": "fd9c4f9553338e8efe6186a49e4d80a28f8e40963bcb4964e2b9e17e451bbcd0",
+      "bytes": 848,
+      "kind": "actual-final-isolated-ini",
+      "configuration_seed": "wrong-section"
+    }
+  ],
+  "artifact_references": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+      "sha256": "0e398082c55c2d12ef302298930fa111a9f712b89a5754991651edf85244eca3",
+      "bytes": 107361280,
+      "independent_readback_match": true,
+      "binding_scope": "SAME_CURRENT_INCREMENTAL_PRODUCT_USED_BY_BOTH_CASES"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.pdb",
+      "sha256": "e0376c6a96d46517b1e24d8eab74aac6276b5d8713e95d2b2e089f0a76baedda",
+      "bytes": 915623936,
+      "independent_readback_match": true,
+      "binding_scope": "SAME_CURRENT_INCREMENTAL_PRODUCT_USED_BY_BOTH_CASES"
+    }
+  ],
+  "original_terminal_binding": {
+    "each_result_files": 1325,
+    "each_original_result_recorded_inputs_unchanged": true,
+    "historical_observation": "Original producer checks complete file SHA at terminal; no retrospective replacement of original hashes"
+  },
+  "later_readback": {
+    "status": "INCONCLUSIVE",
+    "each_result_matches": 1324,
+    "each_result_mismatches": 1,
+    "unique_runtime_bound_files": 1326,
+    "sole_changed_pin": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_p21_meeting_steps.ps1",
+    "frozen_sha256": "816c8d6cafbf3d5a4b80d68a4b72feee489131920dcd878de121b35afaeaf421",
+    "sha256_at_first_readback": "e1f46e431ad7497cb456d0beef881e7da6c26a58992359c4c29f8537e944bc91",
+    "sha256_at_scope_audit": "8c8af602a1563a1ad7f23a09dc701325c2ca3b99d178b0f56a4ea7a46d880d60",
+    "mtime_utc_at_scope_audit": "2026-10-21T15:47:12.770779+00:00",
+    "scope_audit_status": "PASS_SCOPED_ORIGINAL_SETTINGS_RUNTIME_ONLY",
+    "current_complete_binding_remains": "INCONCLUSIVE",
+    "justification": "Independent standalone meeting helper is absent from the configuration caller/import chain; mtime follows both exact natural exits; all other declared pins match prior full SHA and their metadata remains unchanged",
+    "prior_readback_preserved_unmodified": true,
+    "original_ps_snapshot": "NOT_REQUIRED_FOR_UNCALLED_SCOPE; no retroactive original-byte identity claim"
+  },
+  "executed_dependency_references": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\desktop\\theme_persistence_retest.py",
+      "sha256": "2d17598e64f58aaa8809e687c9556f24a37737fca03d727c9b25bbe951d0f483",
+      "bytes": 23538,
+      "matches_both_frozen_profiles": true,
+      "references_independent_meeting_script": false
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\desktop\\product_uia_retest.py",
+      "sha256": "db9f1b873c0141a01d742c872f47900ffca26e6d0a66d33a337091830e919a64",
+      "bytes": 36969,
+      "matches_both_frozen_profiles": true,
+      "references_independent_meeting_script": false
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_desktop.ps1",
+      "sha256": "2e7c0642827512afad6335f21c27f074335e8c6db895fafd50f81375c1d68e48",
+      "bytes": 132790,
+      "matches_both_frozen_profiles": true,
+      "references_independent_meeting_script": false
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_desktop_evidence.ps1",
+      "sha256": "97023ed092eff34fff7ae2cd6c0a2fbd148f4833e9cfe1347fdd8c832cd2083a",
+      "bytes": 22122,
+      "matches_both_frozen_profiles": true,
+      "references_independent_meeting_script": false
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_theme_persistence_steps.ps1",
+      "sha256": "bd91b3920456ed61ae26096b94a1610676b08e48fa63965ba22e211eebe3473d",
+      "bytes": 10335,
+      "matches_both_frozen_profiles": true,
+      "references_independent_meeting_script": false
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_timing_theme_steps.ps1",
+      "sha256": "41d4ddbeecb3b97ce7633cba514fb939e1fa8d020e5bd7a5b40f0e9f60ab9a9e",
+      "bytes": 19388,
+      "matches_both_frozen_profiles": true,
+      "references_independent_meeting_script": false
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\diagnostics\\heap_etw\\checkpoint_plan.ps1",
+      "sha256": "a435ca8a5aebbdf78538a7c94ba604210ba3c9d5574d4ef5b300b51437527d0b",
+      "bytes": 860,
+      "matches_both_frozen_profiles": true,
+      "references_independent_meeting_script": false
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\product_acceptance\\product_pilot_probe_tail.ps1",
+      "sha256": "ec39c7dc87d7c41ebc1186ad271b31e34954462f9c9b6c80c032a3b2e21241c8",
+      "bytes": 11058,
+      "matches_both_frozen_profiles": true,
+      "references_independent_meeting_script": false
+    }
+  ],
+  "build_receipt_provenance": "INCREMENTAL_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_NOT_PROVEN",
+  "evidence_policy": "Projection is self-contained data; absolute source paths are provenance metadata, not runtime dependencies. Original runtime results, original INCONCLUSIVE receipt, source evidence and original unsupported case remain unchanged.",
+  "limitations": [
+    "Finite empty-value and wrong-section cases only; arbitrary damaged INI/typed QVariant not covered",
+    "Original seed bytes preserved and final actual INI independently verified; pre-settings full INI bytes were not snapshotted, only raw state/hash retained",
+    "Only recorded original owned blank settings-surface pixel, not full-control contrast, first-paint scanout or physical no-flash",
+    "Parent full polling history not retained; no continuous hook coverage or historical input origin inferred",
+    "Incremental current-source build matched; transitive clean-build provenance not proven",
+    "Cleanup confirmed from exact same-run exit receipt and final resource observation; no current process enumeration performed",
+    "Meeting/media continuity, system light/dark roundtrip, full stage matrix, updates/async/final regression not credited by these two runs"
+  ],
+  "runtime_repeated": false,
+  "build_repeated": false,
+  "assemble_or_validation_run": false,
+  "original_results_and_plan": "UNCHANGED",
+  "full_plan_gate_credit": 0,
+  "full_p21_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0
+}

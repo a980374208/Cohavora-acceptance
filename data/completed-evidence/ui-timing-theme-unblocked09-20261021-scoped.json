@@ -1,0 +1,524 @@
+{
+  "schema": "cohavora-ui-timing-theme-safe-projection-v1",
+  "attempt": "ui-timing-theme-unblocked09",
+  "run_id": "b344f6bcdb1740f0952794c0669947ac",
+  "status": "PASS_SCOPED",
+  "recorded_process_identity": {
+    "run_id": "b344f6bcdb1740f0952794c0669947ac",
+    "pid": 29700,
+    "start_ticks": 639281574458229516,
+    "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe"
+  },
+  "started_utc": "2026-10-21T05:30:45.4453962Z",
+  "finished_utc": "2026-10-21T05:31:33.3889942Z",
+  "cycles_completed": 3,
+  "scope_assignment": {
+    "timing_observation": "P03",
+    "theme_settings": "P21"
+  },
+  "full_p03_credit": 0,
+  "full_p21_credit": 0,
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "qualification_credit": 0,
+  "p20_credit": 0,
+  "media_selection": {
+    "camera": false,
+    "microphone": false
+  },
+  "timing": {
+    "status": "OBSERVATION_ONLY",
+    "release_gate_issued": false,
+    "performance_thresholds_added": false,
+    "definition_version": "2026-10-16-v1",
+    "samples": [
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "6861a144951e4ce83a2ccf87bae8b8ce",
+        "cycle": null,
+        "cycle_id": null,
+        "metric": "ui_first_paint",
+        "scene": "settings",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57696555547,
+        "end_us": 57696642154,
+        "elapsed_us": 86607,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          6,
+          7
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "b52015ab25504ff1d3b7a35f176b89f2",
+        "cycle": null,
+        "cycle_id": null,
+        "metric": "ui_first_paint",
+        "scene": "settings",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57700468287,
+        "end_us": 57700522816,
+        "elapsed_us": 54529,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          11,
+          12
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "bcf1824a3888f2f5d8ef2b3171c063c6",
+        "cycle": null,
+        "cycle_id": null,
+        "metric": "ui_first_paint",
+        "scene": "settings",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57704267930,
+        "end_us": 57704321902,
+        "elapsed_us": 53972,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          16,
+          17
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "da477e96f26fa2c02821acce93cbf0ce",
+        "cycle": null,
+        "cycle_id": null,
+        "metric": "ui_first_paint",
+        "scene": "settings",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57708040642,
+        "end_us": 57708094091,
+        "elapsed_us": 53449,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          21,
+          22
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "3a6641337ac5c4087b3005c3fdfcd4d8",
+        "cycle": null,
+        "cycle_id": null,
+        "metric": "ui_first_paint",
+        "scene": "settings",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57711818795,
+        "end_us": 57711872516,
+        "elapsed_us": 53721,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          26,
+          27
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "0599499785ce5a6d3816a8613c5acab8",
+        "cycle": 1,
+        "cycle_id": "4ef9c0c5c29a4ae1ad51a8c296ffd7f9",
+        "metric": "join_ready",
+        "scene": "meeting",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57716468616,
+        "end_us": 57717248473,
+        "elapsed_us": 779857,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          31,
+          37,
+          86
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "aa5b1ab2b2611b61e8738033b06985fd",
+        "cycle": 1,
+        "cycle_id": "4ef9c0c5c29a4ae1ad51a8c296ffd7f9",
+        "metric": "ui_first_paint",
+        "scene": "meeting",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57716468651,
+        "end_us": 57716845770,
+        "elapsed_us": 377119,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          32,
+          38,
+          41
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "16c74408da2a6d18cfcd631ea5b94ec5",
+        "cycle": 1,
+        "cycle_id": "4ef9c0c5c29a4ae1ad51a8c296ffd7f9",
+        "metric": "leave_complete",
+        "scene": "meeting",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57719932884,
+        "end_us": 57722253580,
+        "elapsed_us": 2320696,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          88,
+          89,
+          94
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "22898919efeda766394455aa49f16121",
+        "cycle": 2,
+        "cycle_id": "c0c1bcabd9cf4ef5b0bc4ee82f584bf9",
+        "metric": "join_ready",
+        "scene": "meeting",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57725516652,
+        "end_us": 57726283674,
+        "elapsed_us": 767022,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          95,
+          101,
+          148
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "7952151c70d169029cbd97a50694d87e",
+        "cycle": 2,
+        "cycle_id": "c0c1bcabd9cf4ef5b0bc4ee82f584bf9",
+        "metric": "ui_first_paint",
+        "scene": "meeting",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57725516666,
+        "end_us": 57725780754,
+        "elapsed_us": 264088,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          96,
+          102,
+          105
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "88e4224d8fa9c2477c3748a01cef08b0",
+        "cycle": 2,
+        "cycle_id": "c0c1bcabd9cf4ef5b0bc4ee82f584bf9",
+        "metric": "leave_complete",
+        "scene": "meeting",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57728919588,
+        "end_us": 57731279887,
+        "elapsed_us": 2360299,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          150,
+          151,
+          156
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "61d3ed6dc4b6c3c49a20db47605f93d3",
+        "cycle": 3,
+        "cycle_id": "d360a9e316aa48dea30b19bb6da3eab3",
+        "metric": "join_ready",
+        "scene": "meeting",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57734475448,
+        "end_us": 57735184699,
+        "elapsed_us": 709251,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          157,
+          163,
+          210
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "4d057a966eaf07e7a9c47be4f09d426a",
+        "cycle": 3,
+        "cycle_id": "d360a9e316aa48dea30b19bb6da3eab3",
+        "metric": "ui_first_paint",
+        "scene": "meeting",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57734475465,
+        "end_us": 57734751945,
+        "elapsed_us": 276480,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          158,
+          164,
+          167
+        ]
+      },
+      {
+        "run_id": "b344f6bcdb1740f0952794c0669947ac",
+        "process_run_id": "fc38c4b0140728296f672ed4dc665d1c",
+        "pid": 29700,
+        "operation_id": "4d39ca7905dba0dc30f33a3a43989d91",
+        "cycle": 3,
+        "cycle_id": "d360a9e316aa48dea30b19bb6da3eab3",
+        "metric": "leave_complete",
+        "scene": "meeting",
+        "clock_domain": "process_steady_clock_us",
+        "begin_us": 57737885320,
+        "end_us": 57740185064,
+        "elapsed_us": 2299744,
+        "outcome": "success",
+        "valid": true,
+        "event_sequences": [
+          212,
+          213,
+          218
+        ]
+      }
+    ],
+    "summaries": [
+      {
+        "metric": "join_ready",
+        "scene": "meeting",
+        "outcome": "success",
+        "count": 3,
+        "valid_success_count": 3,
+        "mean_ms": 752.0433333333333,
+        "p50_ms": 767.022,
+        "p95_ms": 779.857,
+        "max_ms": 779.857
+      },
+      {
+        "metric": "leave_complete",
+        "scene": "meeting",
+        "outcome": "success",
+        "count": 3,
+        "valid_success_count": 3,
+        "mean_ms": 2326.913,
+        "p50_ms": 2320.696,
+        "p95_ms": 2360.299,
+        "max_ms": 2360.299
+      },
+      {
+        "metric": "ui_first_paint",
+        "scene": "meeting",
+        "outcome": "success",
+        "count": 3,
+        "valid_success_count": 3,
+        "mean_ms": 305.89566666666667,
+        "p50_ms": 276.48,
+        "p95_ms": 377.119,
+        "max_ms": 377.119
+      },
+      {
+        "metric": "ui_first_paint",
+        "scene": "settings",
+        "outcome": "success",
+        "count": 5,
+        "valid_success_count": 5,
+        "mean_ms": 60.4556,
+        "p50_ms": 53.972,
+        "p95_ms": 86.607,
+        "max_ms": 86.607
+      }
+    ],
+    "cycle_coverage": [
+      {
+        "cycle": 1,
+        "cycle_id": "4ef9c0c5c29a4ae1ad51a8c296ffd7f9",
+        "metric": "join_ready",
+        "samples": 1,
+        "complete_samples": 1,
+        "availability": "RECORDED"
+      },
+      {
+        "cycle": 1,
+        "cycle_id": "4ef9c0c5c29a4ae1ad51a8c296ffd7f9",
+        "metric": "leave_complete",
+        "samples": 1,
+        "complete_samples": 1,
+        "availability": "RECORDED"
+      },
+      {
+        "cycle": 1,
+        "cycle_id": "4ef9c0c5c29a4ae1ad51a8c296ffd7f9",
+        "metric": "ui_first_paint",
+        "samples": 1,
+        "complete_samples": 1,
+        "availability": "RECORDED"
+      },
+      {
+        "cycle": 2,
+        "cycle_id": "c0c1bcabd9cf4ef5b0bc4ee82f584bf9",
+        "metric": "join_ready",
+        "samples": 1,
+        "complete_samples": 1,
+        "availability": "RECORDED"
+      },
+      {
+        "cycle": 2,
+        "cycle_id": "c0c1bcabd9cf4ef5b0bc4ee82f584bf9",
+        "metric": "leave_complete",
+        "samples": 1,
+        "complete_samples": 1,
+        "availability": "RECORDED"
+      },
+      {
+        "cycle": 2,
+        "cycle_id": "c0c1bcabd9cf4ef5b0bc4ee82f584bf9",
+        "metric": "ui_first_paint",
+        "samples": 1,
+        "complete_samples": 1,
+        "availability": "RECORDED"
+      },
+      {
+        "cycle": 3,
+        "cycle_id": "d360a9e316aa48dea30b19bb6da3eab3",
+        "metric": "join_ready",
+        "samples": 1,
+        "complete_samples": 1,
+        "availability": "RECORDED"
+      },
+      {
+        "cycle": 3,
+        "cycle_id": "d360a9e316aa48dea30b19bb6da3eab3",
+        "metric": "leave_complete",
+        "samples": 1,
+        "complete_samples": 1,
+        "availability": "RECORDED"
+      },
+      {
+        "cycle": 3,
+        "cycle_id": "d360a9e316aa48dea30b19bb6da3eab3",
+        "metric": "ui_first_paint",
+        "samples": 1,
+        "complete_samples": 1,
+        "availability": "RECORDED"
+      }
+    ],
+    "scope": "Qt typed observation; not display presentation or media continuity."
+  },
+  "theme": {
+    "status": "PASS_SCOPED",
+    "states": [
+      {
+        "mode": "light",
+        "effective": "light",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "pixel_matches": true,
+        "persisted": true,
+        "reopened": true,
+        "owned_notifications_applied": true
+      },
+      {
+        "mode": "dark",
+        "effective": "dark",
+        "rgb": [
+          36,
+          40,
+          49
+        ],
+        "pixel_matches": true,
+        "persisted": true,
+        "reopened": true,
+        "owned_notifications_applied": true
+      },
+      {
+        "mode": "teal",
+        "effective": "teal",
+        "rgb": [
+          251,
+          255,
+          253
+        ],
+        "pixel_matches": true,
+        "persisted": true,
+        "reopened": true,
+        "owned_notifications_applied": true
+      },
+      {
+        "mode": "system",
+        "effective": "dark",
+        "rgb": [
+          36,
+          40,
+          49
+        ],
+        "pixel_matches": true,
+        "persisted": true,
+        "reopened": true,
+        "owned_notifications_applied": true
+      }
+    ],
+    "windows_preference_unchanged": true,
+    "system_light_dark_roundtrip": "NOT_RUN",
+    "product_restart_restoration": "NOT_RUN",
+    "media_continuity": "NOT_RUN",
+    "stage_visual_matrix": "NOT_RUN"
+  },
+  "desktop_input_observation": {
+    "records": 140,
+    "last_input_tick_unchanged": true,
+    "input_source": "UNKNOWN"
+  },
+  "idle_memory": {
+    "status": "UNKNOWN",
+    "valid_samples": 0,
+    "mean_bytes": null,
+    "release_gate_issued": false
+  },
+  "binary_input_revalidation": "NOT_RUN_REPORT_PREPARATION",
+  "media_acceptance": "NOT_RUN",
+  "l3_status": "NOT_RUN",
+  "preservation": "ALLOWLISTED_FIELDS_ONLY_NO_RAW_RECORDS_PROFILE_CREDENTIALS_OR_LOG_TEXT"
+}

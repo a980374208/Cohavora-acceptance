@@ -1,0 +1,8 @@
+{
+  "configuration": "RelWithDebInfo",
+  "binary_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\RelWithDebInfo\\test_e2e_media_runtime.exe",
+  "binary_sha256": "2a6e86f589ac3bfd927d89d33c0c0b2c72ca46ec3c6f273608336655f438ba84",
+  "pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\RelWithDebInfo\\test_e2e_media_runtime.pdb",
+  "pdb_guid": "48b78f55-3444-45ba-b243-9acb2e26aeb3",
+  "pdb_age": 1
+}

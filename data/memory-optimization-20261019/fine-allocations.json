@@ -1,0 +1,131 @@
+{
+  "baseline_source_sha256": "26eb8377312fe055b2913f67a621a6d5e4b13815f276eecc18f7b87e94642a35",
+  "case": "fine",
+  "equivalence": {
+    "manifest.json": {
+      "bytes": 423,
+      "sha256": "0180335665ba803ff05a89973613fbc5fed2021b2891a8a84ab5341f6463de1e"
+    },
+    "metrics.csv": {
+      "bytes": 1680607,
+      "sha256": "251d43af1694dab9fceb20e31a14515a3dfa8aa13eeac421f00fadf431d4b0eb"
+    },
+    "metrics.jsonl": {
+      "bytes": 3233590,
+      "sha256": "a7839e9efec55535c7da1364697feb0d50f110974b5195cdfad4f701c45f7035"
+    },
+    "session.json": {
+      "bytes": 566,
+      "sha256": "71653d709b311b35dd0251a18f54b6f430f0b227f098afd0dd15c9aa35415a86"
+    }
+  },
+  "executable_sha256": "5d3c541c87c47f2e336d555352bd021623c98d0241dddf150085d5fed8feb993",
+  "fixture_sha256": "d42cc06c967f8b176034ee85ef21150581dd2f27444e7710f252e9668e633429",
+  "invalid_utf8": {
+    "baseline_json_error_id": 316,
+    "candidate_json_error_id": 316
+  },
+  "layout": {
+    "baseline_dependency": "frozen cpp compiled against current product headers; require ABI-compatible unchanged owning fields",
+    "cpp_standard": 199711,
+    "msvc_full_version": 195035730,
+    "record_bytes": 8696,
+    "snapshot_bytes": 8320
+  },
+  "measurement": "C++ new requests only; excludes malloc/OS/allocator overhead; input and output verification excluded",
+  "observations": [
+    {
+      "allocation_calls": 1030669,
+      "cumulative_requested_bytes": 62375186,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 668550,
+      "variant": "baseline"
+    },
+    {
+      "allocation_calls": 163871,
+      "cumulative_requested_bytes": 8849362,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 479942,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 163871,
+      "cumulative_requested_bytes": 8849362,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 479942,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 1030669,
+      "cumulative_requested_bytes": 62375186,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 668550,
+      "variant": "baseline"
+    },
+    {
+      "allocation_calls": 1030669,
+      "cumulative_requested_bytes": 62375186,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 668550,
+      "variant": "baseline"
+    },
+    {
+      "allocation_calls": 163871,
+      "cumulative_requested_bytes": 8849362,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 479942,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 163871,
+      "cumulative_requested_bytes": 8849362,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 479942,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 1030669,
+      "cumulative_requested_bytes": 62375186,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 668550,
+      "variant": "baseline"
+    },
+    {
+      "allocation_calls": 1030669,
+      "cumulative_requested_bytes": 62375186,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 668550,
+      "variant": "baseline"
+    },
+    {
+      "allocation_calls": 163871,
+      "cumulative_requested_bytes": 8849362,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 479942,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 163871,
+      "cumulative_requested_bytes": 8849378,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 479958,
+      "variant": "candidate"
+    },
+    {
+      "allocation_calls": 1030669,
+      "cumulative_requested_bytes": 62375202,
+      "output_bytes": 4915310,
+      "peak_live_requested_bytes": 668566,
+      "variant": "baseline"
+    }
+  ],
+  "records": 8,
+  "retained_charge": {
+    "anonymous_id_capacity_charge": 48,
+    "corrected_estimate": 29152,
+    "fixed_snapshot_bytes": 8320,
+    "meaning": "accounting only; may retain more live records at the unchanged 8MiB cap",
+    "original_estimate": 37424
+  },
+  "scope": "OFFLINE_SYNTHETIC_NOT_FORMAL"
+}

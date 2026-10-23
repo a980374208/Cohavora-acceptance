@@ -1,0 +1,289 @@
+{
+  "schema": "cohavora-p21-meeting-theme-provenance-v1",
+  "status": "SCOPED_COMPLETED_RESULT",
+  "created_utc": "2026-10-21T16:37:47.936706+00:00",
+  "source_references": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\dark\\candidate.json",
+      "sha256": "eb79f97989119ce90971291050fa55e7bf828d0492c4101ffc4966a8f96ad845",
+      "bytes": 524
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\dark\\result.json",
+      "sha256": "d786b82987bbde966a82bad45bf0fe4e3896fea83ed5be3989843f7d56983cbc",
+      "bytes": 129168
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\dark\\sample.json",
+      "sha256": "0105358cc1449214c8c5749d82dee17508e7413dcc3868f440f64e9f57b86253",
+      "bytes": 8229
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\dark\\sample.json.observations.jsonl",
+      "sha256": "cbb1a82fcdb26f0bd674c1180d0f83043496b3ead2712d2b2b1bfc60381d7d84",
+      "bytes": 1937
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\dark\\sample.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\dark\\sample.stdout.log",
+      "sha256": "cdd0e9d03fde003e75fd0d31dfceda9604866882bbe394e04ae120121a7d97a0",
+      "bytes": 3230
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\dark\\select.json",
+      "sha256": "04a8231ed0009fc6baa73c2ef95143405544f340ae20e5b97c5d15e859e83d99",
+      "bytes": 29217
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\dark\\select.json.observations.jsonl",
+      "sha256": "e0bf39735190e2b0bb79e35d6980c63665629af8c3f04caadc2be2fc7aac339c",
+      "bytes": 7362
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\dark\\select.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\dark\\select.stdout.log",
+      "sha256": "acce88a0e524a78ab8d598e95d6e6d383264d16f2c9d8f312b8ee030a67cb4fb",
+      "bytes": 8902
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\light\\candidate.json",
+      "sha256": "5de11aa0451a6cd5bf1912e507d944d37a8b8aa6d264e53fc95457983667a79a",
+      "bytes": 528
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\light\\result.json",
+      "sha256": "939e4929f94385fa1ea61338bb3a0feba070a434ad73d32abc103442ee1d9ff4",
+      "bytes": 128405
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\light\\sample.json",
+      "sha256": "c044c5e530f2606d16261baf700fa565f78b0b46f9e184c5741dff9f634c29f9",
+      "bytes": 8250
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\light\\sample.json.observations.jsonl",
+      "sha256": "9b861660e7d9ac396f18aa0e3a2c2a411efabbaf32e5302ae5ed054a483b52a2",
+      "bytes": 1947
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\light\\sample.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\light\\sample.stdout.log",
+      "sha256": "2dbe669cce2a95a10c22c17bf4575170c7060e4ae2a77799151d2412f296be60",
+      "bytes": 3251
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\light\\select.json",
+      "sha256": "4a79237e23fa544e2e22b8b402ff712467a7795937395691437e9a31081db0a0",
+      "bytes": 29252
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\light\\select.json.observations.jsonl",
+      "sha256": "e5a28c1b26f3ca90df7084e75bc090eb6ba55c1d536476dea0a71d62fd3caebf",
+      "bytes": 7387
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\light\\select.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\light\\select.stdout.log",
+      "sha256": "55eb24d1a3d4b439e0f50f313d3684cfcf77049def9f9699084defcadb1e9090",
+      "bytes": 8937
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\publisher\\control.json",
+      "sha256": "6ce8aaaa8af7a6107a09acf39c8bda0ea58c2be6171d6928153b37ba32708b9a",
+      "bytes": 35
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\publisher\\events.jsonl",
+      "sha256": "d1ac2f839b047f884df7c3c58b5379f223e7bfba70f4661e682492f6cd69d1bd",
+      "bytes": 1062
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\publisher\\settings\\Cohavora\\Cohavora.ini",
+      "sha256": "124dbf9ff433b7a4668c7c99124ba2fce88bb50fa70d449a31ce8fb8cac86805",
+      "bytes": 718
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\receiver\\control.json",
+      "sha256": "198b7e7ee56c3e836f12f57ca7954a5a11cd82905a3a47c2f8fa8d9f3055bf79",
+      "bytes": 36
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\receiver\\events.jsonl",
+      "sha256": "8d542b57ba9a3a036e635841f87f8e0df5ed5c1a96ac144076673f6174784ff7",
+      "bytes": 348787
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\receiver\\settings\\Cohavora\\Cohavora.ini",
+      "sha256": "65ce33b1b591e937393c312b8990ba7992c9fabeceaccac5fde82b52db357ab5",
+      "bytes": 847
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\receiver-identity.json",
+      "sha256": "ab3551d17cb6b1032f40c818e55ba6c534d290fd637c86434504f9a281292b3f",
+      "bytes": 449
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\result.json",
+      "sha256": "0ea00e1247a449880e6384c68e1fb92c43633ad8b8b655e13b8621df65101413",
+      "bytes": 798809
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\strict-input.jsonl",
+      "sha256": "da5e92c7484db21e4ab15181995097dfb7a13279e7c9b2f77de7e3d8fe9eab57",
+      "bytes": 57200
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\system\\candidate.json",
+      "sha256": "5d084fbfbc249a41b6a4b6e9cf2b72255df7e025897b392bc643cfdea218a35e",
+      "bytes": 526
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\system\\result.json",
+      "sha256": "90d2ca69571024316e3c08087631a9fc142d43610866f6d06a324b9667eecb16",
+      "bytes": 128932
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\system\\sample.json",
+      "sha256": "8c819fc001b59b3886a460159ffe4a08242b7e32572a7401bcded41805a21199",
+      "bytes": 8235
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\system\\sample.json.observations.jsonl",
+      "sha256": "1609659899aa746ea0f1edbae89429bc11340c160f3550d00b04bfd065836f8c",
+      "bytes": 1939
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\system\\sample.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\system\\sample.stdout.log",
+      "sha256": "e3148965ae681c9453d35c60a5de7002cc132bf720767fde1ce5fd0048b9a550",
+      "bytes": 3236
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\system\\select.json",
+      "sha256": "a91ab3854cd6accfec2daab2f1a6ca2f19765b9c856807c6a73da5f51c1afc34",
+      "bytes": 29247
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\system\\select.json.observations.jsonl",
+      "sha256": "48d2b100b86a2d15b233382e771e4f4bec1d9bc7b57e645c4f40f5f7aba76fda",
+      "bytes": 7384
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\system\\select.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\system\\select.stdout.log",
+      "sha256": "964121b8e0db3c9d7685d78ee1b56d3a1493bb6fe074978a987b986e3be18b4a",
+      "bytes": 8932
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\teal\\candidate.json",
+      "sha256": "dbb433b3429c07ead46601720f4037b0e0be1251e82d66167c1ca869fd0c137d",
+      "bytes": 527
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\teal\\result.json",
+      "sha256": "638eb811c2c70aabb7bfa38f7769df7ac7370b741ea51544c22b0782dd43ef68",
+      "bytes": 128930
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\teal\\sample.json",
+      "sha256": "53f2236cf0d3cd5b81932e915d5a5fd1044e3b45cde43c7e4062e0f4dd6713eb",
+      "bytes": 8245
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\teal\\sample.json.observations.jsonl",
+      "sha256": "0466d2cc330e2048cb6048ffffba82d941ac89f246d82afd2a7ad1ab58dc7b34",
+      "bytes": 1945
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\teal\\sample.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\teal\\sample.stdout.log",
+      "sha256": "7a82ba382196e1fff9addbcab42f41ffe47a28f0b277f156468e4b430a8eb47a",
+      "bytes": 3246
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\teal\\select.json",
+      "sha256": "c0b1f6214ab871dd90a250e7c1e8109f57ffaa4d384bdd971ce78208c35a6de8",
+      "bytes": 29234
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\teal\\select.json.observations.jsonl",
+      "sha256": "5f69345698ef3d769860db480b6c583f35c1ae1ef2dfd6bab05e2c451fe9726f",
+      "bytes": 7374
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\teal\\select.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05\\teal\\select.stdout.log",
+      "sha256": "ece2d349c310aad21e1285b1283951866d23ea1445bb7f8d54f033127ed126b5",
+      "bytes": 8919
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05-readback05.json",
+      "sha256": "b2f1609f66007d9668e674a2c8dc4b613607b1c8211266b995293c687f78b22f",
+      "bytes": 45476
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-backend-preparation05\\cpu-profile.json",
+      "sha256": "826cec528f7c9a1a4393e0e70f1b270af6e0b0935f3002faf5c2deec7b24c944",
+      "bytes": 279527
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-backend-preparation05\\build-receipt.json",
+      "sha256": "361d7dd74b334b4c31699dabb806337c7c1ee23028d4b014ddade8f21abf7328",
+      "bytes": 217923
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-backend-preparation05\\changes.json",
+      "sha256": "f4cdf8f6a3fa589b78319325f5648881162997b32f1b2f2ded5a076d4c7ce75a",
+      "bytes": 758
+    }
+  ],
+  "unreadable_files": [],
+  "artifact": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.exe",
+    "sha256": "85538f430d487b477f0081fb7ad3d10969e8ad271b9b7729a0d1daa508e877b3",
+    "bytes": 107242496
+  },
+  "independent_audit": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-cpu05-readback05.json",
+    "sha256": "b2f1609f66007d9668e674a2c8dc4b613607b1c8211266b995293c687f78b22f",
+    "bytes": 45476
+  },
+  "raw_evidence": "RETAINED",
+  "source_provenance": "INCREMENTAL_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_NOT_PROVEN",
+  "full_plan_gate_credit": 0,
+  "full_p21_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0
+}

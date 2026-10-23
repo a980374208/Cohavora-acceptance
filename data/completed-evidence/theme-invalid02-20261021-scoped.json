@@ -1,0 +1,72 @@
+{
+  "schema": "cohavora-theme-invalid-safe-projection-v1",
+  "created_utc": "2026-10-21T12:11:18.343747+00:00",
+  "status": "PASS_SCOPED",
+  "run_id": "d8c40b7bc7974c07acfa6db507a14f59",
+  "completed_date": "2026-10-21",
+  "started_utc": "2026-10-21T12:08:58.471349+00:00",
+  "finished_utc": "2026-10-21T12:09:05.564350+00:00",
+  "seed_value": "acceptance-unsupported-theme",
+  "seed_preserved_sha256": "b69932d12d0294abcce09f39cd4f0ae5da65b44290c99b661501360cd16001c1",
+  "restored_stored_mode": "system",
+  "selected_label": "系统",
+  "system_preference": 0,
+  "effective_theme": "dark",
+  "actual_colorref": 3221540,
+  "product_identity": {
+    "run_id": "79a68a70affe401e89d8f17c8c9d4cb6",
+    "pid": 39500,
+    "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+    "start_ticks": 639281813392719017
+  },
+  "read_without_theme_selection": true,
+  "natural_exit_code": 0,
+  "forced": 0,
+  "cleanup_complete": true,
+  "strict_input": {
+    "policy": "strict",
+    "input_tick_unchanged": true,
+    "outer_samples": 155,
+    "observed_events": 0,
+    "continuous_hook_coverage": "UNKNOWN",
+    "previous_input_source": "UNKNOWN"
+  },
+  "auxiliary_raw_observation": {
+    "total_seconds": 29.9914358,
+    "total_raw_events": 3,
+    "total_changed_intervals": 9,
+    "product_window_raw_events": 0,
+    "product_window_samples": 125,
+    "full_evidence_retained": true,
+    "boundary": "30-second raw observation extends beyond the 7-second product case. All three raw headers occur after the case; full out-of-window observations remain in the source."
+  },
+  "bound_input_files": 17,
+  "binary_source_provenance": "NOT_VERIFIED; REUSED_UI15_FROZEN_BINARY",
+  "full_plan_gate_credit": 0,
+  "full_p21_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "scope": "Product settings-page fallback from one unsupported persisted theme value; isolated profile; no selection or Windows preference mutation.",
+  "not_covered": [
+    "First-window paint or theme restoration before first window",
+    "Any other malformed INI format",
+    "System light/dark roundtrip",
+    "Complete controls/stage visual matrix",
+    "Media continuity",
+    "Complete P21"
+  ],
+  "plan_groups": [
+    "P21"
+  ],
+  "first_window_before_settings": "NOT_RUN",
+  "system_light_dark_roundtrip": "NOT_RUN",
+  "previous_attempt": {
+    "status": "PARTIAL",
+    "reason": "Strict input changed before product identity; no functional verdict",
+    "input_source": "UNKNOWN",
+    "missing_birth_cleanup": "UNKNOWN",
+    "current_product_processes_observed": 0
+  },
+  "product_source_changed": false,
+  "product_build": "REUSED_UI15_FROZEN_BINARY; no product code change"
+}

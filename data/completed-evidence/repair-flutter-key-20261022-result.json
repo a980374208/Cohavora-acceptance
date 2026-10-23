@@ -1,0 +1,58 @@
+{
+  "task": "task5",
+  "date": "2026-10-22",
+  "status": "PASS_SOURCE_CONTRACT_GATE",
+  "work_kind": "CANDIDATE_NATIVE_SOURCE_PATCH_AND_DIRECT_REGRESSION",
+  "root_cause": "Pinned SetSharedKey already updates existing participant handlers. A decrypt operation holding an old KeySet can later unconditionally restore old material after failed ratchet, or commit an old ratchet result after concurrent same-slot replacement.",
+  "runtime_causality": "Source race deterministically reproduced; consistent with recorded remote-generation reversion, but fixed DLL and service causality not revalidated.",
+  "repair": [
+    "Remove redundant media/data failed-ratchet rollback because temporary derivation never changes handler state.",
+    "Compare held KeySet identity and commit ratchet material under one handler mutex.",
+    "Reject stale decryption failure metadata updates with the same KeySet guard."
+  ],
+  "changed_files": [
+    "tests/runtime/selftests/flutter_same_slot_key/prepare.py",
+    "tests/runtime/selftests/flutter_same_slot_key/test.cpp.in",
+    "tests/runtime/selftests/flutter_same_slot_key/native-key-generation.patch"
+  ],
+  "sha256": {
+    "tests/runtime/selftests/flutter_same_slot_key/prepare.py": "ad36d8939642658d2703cc061e7df435a5833613a0a62d5e0a0665fd72eb77d8",
+    "tests/runtime/selftests/flutter_same_slot_key/test.cpp.in": "27a4485e7d42a30c52906bbcf203b0c3eb5b799bb1d1006bb2519d073830d7bd",
+    "tests/runtime/selftests/flutter_same_slot_key/native-key-generation.patch": "133e7e3bfb0ee18bc01f358dd3da5f7937f0e6ad56d19daf71052b7c6aacee9b"
+  },
+  "gate": {
+    "build": "PASS Visual Studio 18 2026 x64 Release /m:1",
+    "ctest": "PASS 1/1 flutter_same_slot_key",
+    "test_seconds": 0.03,
+    "total_seconds": 0.05,
+    "reproducibility": "PASS reviewed patch, exact candidate source and generated fixture agree with fixed source hashes",
+    "fixture_support_fix": "Pointer-taking RAII MutexLock adapter corrected after initial fixture-only compilation failure.",
+    "scope": "Actual pinned provider/handler class bodies and original media/data rollback blocks; deterministic KDF substitute",
+    "cases": [
+      "original media and data rollback interleavings reproduce stale remote generation",
+      "two replacements propagate to existing handler objects",
+      "stale successful ratchet commit rejected",
+      "equal-material different-KeySet generation rejected",
+      "slot and handler isolation",
+      "stale failure metadata rejected",
+      "current failure tolerance and successful reset preserved",
+      "late participant inherits current shared key"
+    ]
+  },
+  "boundaries": {
+    "fixed_dll_rebuilt": "NOT_RUN",
+    "full_native_translation_unit_build": "NOT_RUN",
+    "aes_kdf": "NOT_RUN",
+    "service_desktop_interop": "NOT_RUN",
+    "original_12_predicates": "FAIL retained; no acceptance result rewritten",
+    "six_frame_content": "FAIL retained; independent gate",
+    "acceptance_credit": 0,
+    "plugin_set_shared_key_ignored_native_bool": "Confirmed independent defect; not changed in this task",
+    "global_cache_and_external_repositories": "UNCHANGED"
+  },
+  "evidence": [
+    "source-provenance.json",
+    "source-contract-gate/inputs.json",
+    "source-contract-gate/build/Testing/Temporary/LastTest.log"
+  ]
+}

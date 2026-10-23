@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "task": 2,
+  "date": "2026-10-22",
+  "scope": "remote_control_probe_nonblocking_output_only",
+  "implementation_status": "PASS",
+  "product_head_at_start": "cb10d689e53ad6adae13a2bfaf2a44af4a27a6a6",
+  "private_head_at_start": "58abbbcef8402194f53e6688790b5371d8d7cf37",
+  "root_cause": "RemoteControlUi tick synchronously performed probe filesystem metadata/open/write/commit before lease/focus/pause safety processing; a slow or blocked sink could delay the UI safety path.",
+  "implementation": [
+    "Shared media diagnostics compile gate defaults OFF and removes probe state/path/worker from OFF product translation unit.",
+    "UI tick first runs unchanged safety logic, then captures immutable JSON bytes. Worker alone performs QFileInfo/QSaveFile operations.",
+    "One process worker permit, one in-flight plus one replaceable pending snapshot, maximum 16384 bytes per snapshot; TrySubmit uses try_lock.",
+    "Close sets atomic stop and detaches without worker mutex or I/O join. Worker captures shared context and sink path values, never UI owner. A hung sink retains sole process permit, so replacement UI instances decline diagnostics.",
+    "Successful queue admissions advance observation sequence; overwritten or failed output may leave gaps. Existing endpoint reader accepts strict greater-than sequence."
+  ],
+  "builds": [
+    {
+      "diagnostics": 0,
+      "configure": "cmake -S E:/vsSource/WebRTC/live-kit-test -B E:/vsSource/WebRTC/live-kit-test-local/out/build/media-diagnostics-off-20261022 -DCOHAVORA_BUILD_QT_TESTS=ON",
+      "configure_exit": 0,
+      "build": "cmake --build E:/vsSource/WebRTC/live-kit-test-local/out/build/media-diagnostics-off-20261022 --config RelWithDebInfo --target test_remote_control_ui -- /m:2",
+      "build_exit": 0,
+      "tool_session": 72116
+    },
+    {
+      "diagnostics": 1,
+      "configure": "cmake -S E:/vsSource/WebRTC/live-kit-test -B E:/vsSource/WebRTC/live-kit-test-local/out/build/media-diagnostics-on-20261022 -DCOHAVORA_BUILD_QT_TESTS=ON",
+      "configure_exit": 0,
+      "build": "cmake --build E:/vsSource/WebRTC/live-kit-test-local/out/build/media-diagnostics-on-20261022 --config RelWithDebInfo --target test_remote_control_ui -- /m:2",
+      "build_exit": 0,
+      "tool_session": 20709
+    }
+  ],
+  "focused_gates": [
+    {
+      "diagnostics": 0,
+      "command": "E:/vsSource/WebRTC/live-kit-test-local/out/build/media-diagnostics-off-20261022/RelWithDebInfo/test_remote_control_ui.exe --probe-output-only",
+      "exit": 0,
+      "output": "REMOTE_CONTROL_PROBE_FOCUSED PASS diagnostics=0",
+      "log": "off-focused.log",
+      "cases": [
+        "Valid debug/environment opt-in creates no probe file and does not call diagnostic targets callback during hidden UI timer execution."
+      ]
+    },
+    {
+      "diagnostics": 1,
+      "command": "E:/vsSource/WebRTC/live-kit-test-local/out/build/media-diagnostics-on-20261022/RelWithDebInfo/test_remote_control_ui.exe --probe-output-only",
+      "exit": 0,
+      "output": "REMOTE_CONTROL_PROBE_FOCUSED PASS diagnostics=1",
+      "log": "on-focused.log",
+      "cases": [
+        "Blocked sink with 100 replacements retains exactly one pending value; delivers only first and newest; oversized snapshot rejected.",
+        "Actual hidden UI tick pauses controlling projection while sink remains blocked; stop and destruction return before release.",
+        "32 replacement UI objects decline writers while old blocked sink retains the sole process permit.",
+        "Late sink completion after owner destruction discards old pending snapshot and releases permit.",
+        "Throwing sink is isolated; UI remains idle and stop returns."
+      ]
+    }
+  ],
+  "object_scans": {
+    "on": "on-object-scan.json",
+    "off": "off-object-scan.json",
+    "scope": "Product remote_control_ui.obj compiled inside focused target. Entire test EXE intentionally contains OFF test environment strings and was not used as OFF exclusion proof."
+  },
+  "source_invariants": "source-invariants.json",
+  "before_snapshot": "before",
+  "diff_check": "PASS for owned tracked files; only existing LF-to-CRLF notices",
+  "files": [
+    {
+      "path": "E:/vsSource/WebRTC/live-kit-test/src/ui/remote_control_ui.cpp",
+      "sha256": "D74172C95C4EA642D1A62560556E5CDB8CC15E1A6CCAEA6E208AD1EF6DA54514"
+    },
+    {
+      "path": "E:/vsSource/WebRTC/live-kit-test/src/ui/remote_control_ui.h",
+      "sha256": "F79B82E39C528B1CDF076C3056F1182943C3A9E2C1A0D7D701814329567B5501"
+    },
+    {
+      "path": "E:/vsSource/WebRTC/live-kit-test/src/ui/remote_control_probe_writer.h",
+      "sha256": "2779938CCDA09594A887BC0E989D7BAB1FA7F9701BD4AA5E2CAA7D0FA992FBEF"
+    },
+    {
+      "path": "E:/vsSource/WebRTC/live-kit-test-local/tests/meeting/test_remote_control_ui.cpp",
+      "sha256": "E4EB8A987642EB653FC61EBA43CB5C793DA136E9EDF84643B47EB2E14C22486A"
+    }
+  ],
+  "limits": [
+    "No real foreground, native input, service, network, second-host, UNC disk, secure desktop, physical device, or long-soak run.",
+    "No hard elapsed latency bound claimed; gate establishes UI calls return while injected sink remains blocked.",
+    "Uninterruptible filesystem operation is not cancelled; process-wide one-worker permit bounds retained resources."
+  ],
+  "runtime_acceptance": "NOT_RUN",
+  "docs_changed": false,
+  "commit_or_push": false
+}

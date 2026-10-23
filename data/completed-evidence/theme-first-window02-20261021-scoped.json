@@ -1,0 +1,269 @@
+{
+  "schema": "cohavora-first-window-safe-projection-v1",
+  "created_utc": "2026-10-21T14:12:30.463403+00:00",
+  "status": "PASS_SCOPED",
+  "scope": "DERIVED_PRODUCT_ENTRY_FIRST_SHOW_PAINT_AND_POST_PAINT_PIXEL",
+  "started_utc": "2026-10-21T14:05:28.094913+00:00",
+  "finished_utc": "2026-10-21T14:05:38.321206+00:00",
+  "source_provenance": "INCREMENTAL_BUILD_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_PROVENANCE_NOT_FULLY_VERIFIED",
+  "bound_input_files": 1432,
+  "modes": [
+    {
+      "mode": "light",
+      "run_id": "324a019d5fa948fb8f1bbf520cdd9284",
+      "pid": 34852,
+      "start_ticks": "639281883284213230",
+      "first_show": {
+        "effective": "light",
+        "login_dialog": true,
+        "qpc": "885765459232",
+        "revision": "1",
+        "selected": "light",
+        "stored": "light"
+      },
+      "first_paint": {
+        "effective": "light",
+        "qpc": "885765595942",
+        "revision": "1",
+        "selected": "light",
+        "stored": "light"
+      },
+      "first_card_paint": {
+        "effective": "light",
+        "qpc": "885765598916",
+        "revision": "1",
+        "selected": "light",
+        "stored": "light"
+      },
+      "pixel": {
+        "blank_card_margin": true,
+        "card_height": 576,
+        "card_width": 436,
+        "card_x": 12,
+        "card_y": 288,
+        "colorref": 16777215,
+        "device_pixel_ratio": 1,
+        "owner_pid": 34852,
+        "qpc": "885768680780",
+        "sample_valid": true,
+        "screen_x": 1074,
+        "screen_y": 696,
+        "state": {
+          "effective": "light",
+          "qpc": "885768680639",
+          "revision": "1",
+          "selected": "light",
+          "stored": "light"
+        }
+      },
+      "strict_parent_observations": 15,
+      "strict_child_samples": 1084,
+      "strict_input_unchanged": true,
+      "inputs_unchanged_at_execution": true,
+      "product_exit": 0,
+      "forced": 0,
+      "cleanup_complete": true,
+      "windows_preference_before": 0,
+      "windows_preference_after": 0,
+      "settings_value_after": "light"
+    },
+    {
+      "mode": "dark",
+      "run_id": "29ca1ff24077477c863b4bc90160ae9c",
+      "pid": 29032,
+      "start_ticks": "639281883309500098",
+      "first_show": {
+        "effective": "dark",
+        "login_dialog": true,
+        "qpc": "885789931409",
+        "revision": "1",
+        "selected": "dark",
+        "stored": "dark"
+      },
+      "first_paint": {
+        "effective": "dark",
+        "qpc": "885790039780",
+        "revision": "1",
+        "selected": "dark",
+        "stored": "dark"
+      },
+      "first_card_paint": {
+        "effective": "dark",
+        "qpc": "885790042417",
+        "revision": "1",
+        "selected": "dark",
+        "stored": "dark"
+      },
+      "pixel": {
+        "blank_card_margin": true,
+        "card_height": 576,
+        "card_width": 436,
+        "card_x": 12,
+        "card_y": 288,
+        "colorref": 3221540,
+        "device_pixel_ratio": 1,
+        "owner_pid": 29032,
+        "qpc": "885793087749",
+        "sample_valid": true,
+        "screen_x": 1074,
+        "screen_y": 696,
+        "state": {
+          "effective": "dark",
+          "qpc": "885793087588",
+          "revision": "1",
+          "selected": "dark",
+          "stored": "dark"
+        }
+      },
+      "strict_parent_observations": 14,
+      "strict_child_samples": 1084,
+      "strict_input_unchanged": true,
+      "inputs_unchanged_at_execution": true,
+      "product_exit": 0,
+      "forced": 0,
+      "cleanup_complete": true,
+      "windows_preference_before": 0,
+      "windows_preference_after": 0,
+      "settings_value_after": "dark"
+    },
+    {
+      "mode": "teal",
+      "run_id": "99a559c924d948a786096996296ab092",
+      "pid": 35696,
+      "start_ticks": "639281883334114475",
+      "first_show": {
+        "effective": "teal",
+        "login_dialog": true,
+        "qpc": "885814439375",
+        "revision": "1",
+        "selected": "teal",
+        "stored": "teal"
+      },
+      "first_paint": {
+        "effective": "teal",
+        "qpc": "885814546077",
+        "revision": "1",
+        "selected": "teal",
+        "stored": "teal"
+      },
+      "first_card_paint": {
+        "effective": "teal",
+        "qpc": "885814549581",
+        "revision": "1",
+        "selected": "teal",
+        "stored": "teal"
+      },
+      "pixel": {
+        "blank_card_margin": true,
+        "card_height": 576,
+        "card_width": 436,
+        "card_x": 12,
+        "card_y": 288,
+        "colorref": 16646139,
+        "device_pixel_ratio": 1,
+        "owner_pid": 35696,
+        "qpc": "885817595741",
+        "sample_valid": true,
+        "screen_x": 1074,
+        "screen_y": 696,
+        "state": {
+          "effective": "teal",
+          "qpc": "885817595590",
+          "revision": "1",
+          "selected": "teal",
+          "stored": "teal"
+        }
+      },
+      "strict_parent_observations": 13,
+      "strict_child_samples": 1085,
+      "strict_input_unchanged": true,
+      "inputs_unchanged_at_execution": true,
+      "product_exit": 0,
+      "forced": 0,
+      "cleanup_complete": true,
+      "windows_preference_before": 0,
+      "windows_preference_after": 0,
+      "settings_value_after": "teal"
+    },
+    {
+      "mode": "system",
+      "run_id": "6af791a23ff24f9fbfe8cc31fd81c03a",
+      "pid": 33276,
+      "start_ticks": "639281883358354592",
+      "first_show": {
+        "effective": "dark",
+        "login_dialog": true,
+        "qpc": "885838807494",
+        "revision": "1",
+        "selected": "system",
+        "stored": "system"
+      },
+      "first_paint": {
+        "effective": "dark",
+        "qpc": "885838916879",
+        "revision": "1",
+        "selected": "system",
+        "stored": "system"
+      },
+      "first_card_paint": {
+        "effective": "dark",
+        "qpc": "885838919650",
+        "revision": "1",
+        "selected": "system",
+        "stored": "system"
+      },
+      "pixel": {
+        "blank_card_margin": true,
+        "card_height": 576,
+        "card_width": 436,
+        "card_x": 12,
+        "card_y": 288,
+        "colorref": 3221540,
+        "device_pixel_ratio": 1,
+        "owner_pid": 33276,
+        "qpc": "885842004753",
+        "sample_valid": true,
+        "screen_x": 1074,
+        "screen_y": 696,
+        "state": {
+          "effective": "dark",
+          "qpc": "885842004596",
+          "revision": "1",
+          "selected": "system",
+          "stored": "system"
+        }
+      },
+      "strict_parent_observations": 14,
+      "strict_child_samples": 1084,
+      "strict_input_unchanged": true,
+      "inputs_unchanged_at_execution": true,
+      "product_exit": 0,
+      "forced": 0,
+      "cleanup_complete": true,
+      "windows_preference_before": 0,
+      "windows_preference_after": 0,
+      "settings_value_after": "system"
+    }
+  ],
+  "full_plan_gate_credit": 0,
+  "full_p21_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "not_covered": [
+    "Original frozen product executable",
+    "Physical no-flash",
+    "Actual scanout of first Paint",
+    "Windows light/dark roundtrip",
+    "Meeting media continuity"
+  ],
+  "plan_groups": [
+    "P21"
+  ],
+  "instrumentation": "ACTUAL_PRODUCT_MAIN_WITH_OBSERVER",
+  "original_frozen_executable": "NOT_OBSERVED",
+  "physical_no_flash": "NOT_MEASURED",
+  "windows_light_dark_roundtrip": "NOT_RUN",
+  "media_continuity": "NOT_RUN",
+  "independent_review": "PASS_SCOPED_READBACK",
+  "product_source_changed_for_this_run": false
+}

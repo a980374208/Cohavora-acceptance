@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "phase": "soak",
+  "configuration": "RelWithDebInfo",
+  "binary_identity": {
+    "configuration": "RelWithDebInfo",
+    "binary_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.exe",
+    "binary_sha256": "9bd96faf9528d75fc1c5515e404c91ae715bf240844cdc2044cfda5b9a074a77",
+    "pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.pdb",
+    "pdb_guid": "1d32253b-9f9f-4f5a-a08d-e6f9ed4588a1",
+    "pdb_age": 8
+  },
+  "diagnostic_stage_timing": false,
+  "head": "cb10d689e53ad6adae13a2bfaf2a44af4a27a6a6",
+  "inputs": {
+    "integration/source_paths.py": "e90a6a62ab08e436510294d201985cceedd023cf38a364c9a59b634417ce99f2",
+    "src/core/room.cpp": "00ee7a300c70264333cc22b9b7552269b8ce4fd0a38e8d6fc64d72ec7d9be0e7",
+    "src/core/room.h": "fabbbfcd27b80b8ab511ffc2ec205f83fdabf2eabaaa5e38573cdae62d11258f",
+    "src/render/owned_i420_frame.cpp": "c18c296a231c0c46ae0bf73bd8f29f32ef658ff1c36b8a7d17ddf7aa29dd7c9b",
+    "src/render/owned_i420_frame.h": "accc386c2a9daf79cfa3230840910a82276f875e3ac5205b1f367935cba4c8d1",
+    "src/core/meeting_coordinator.cpp": "edf401982499a8c995d80e0390f46bdf1c8bc6e1e50fbca54206e76fa093ba7f",
+    "src/core/meeting_coordinator.h": "9e6b797cb5d9b8d70e4fb8ec73de5171d3d5bfb658669d95c177e21a659d6833",
+    "src/telemetry/session_telemetry.cpp": "7d901954b68db030a156108de42b2c6073a329a3c16fbf182937785317d66649",
+    "src/telemetry/telemetry_report.cpp": "72e4226311938403fae794e2f4ca9749af3282cd73cd4908ea030251bb7a2776",
+    "src/ui/meeting_log_console.cpp": "694067352e4ae3b8375b8376bef61c47b9c07bc5e929df74e67a69dcd02d60f1",
+    "src/ui/telemetry_panel_controller.h": "c657d028c1f76c1f61e520e155753a5de5320f259e4c37547059ff5664024597",
+    "src/ui/telemetry_panel_controller.cpp": "d506afe63c52f8c1d4e6a7843ba3e9edc1c46d5f76f8b1540361bc7c73fa0f14",
+    "tests/runtime/probes/b_file_product_runtime.h": "d961dd1a60aeb3759a46832bba05b7804dcd8b6ab92009036ed6995f5392af59",
+    "tests/runtime/probes/b_network_product_runtime.h": "0aa31e4ce919c10e4ebe2636050a71abec29317f7c3a45e9f05dbabf94af75ee",
+    "tests/runtime/probes/b_telemetry_product_runtime.h": "d658940c8deab615dfbcc410ceb78db614b9dbe10c6ac541256d6748a7885e70",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\product_acceptance\\run_b_acceptance_telemetry.py": "c58c169670e789d4c0bd4a4d7fb0fe376ab5381c641363e81d8e45d1d8f69a7d"
+  },
+  "windows": [
+    {
+      "name": "long-feature",
+      "status": "PASS",
+      "evidence": "long-feature/result.json"
+    }
+  ],
+  "pairs": [],
+  "finished_utc": "2026-10-20T23:32:46.591825+00:00"
+}

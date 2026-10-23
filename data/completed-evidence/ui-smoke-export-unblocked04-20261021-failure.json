@@ -1,0 +1,132 @@
+{
+  "schema": "cohavora-ui-smoke-export-safe-failure-v1",
+  "attempt": "ui-smoke-export-unblocked04",
+  "run_id": "eb74331cd1bc4b31bf11ba1bbdb80b39",
+  "status": "FAIL",
+  "recorded_process_identity": {
+    "run_id": "eb74331cd1bc4b31bf11ba1bbdb80b39",
+    "pid": 30512,
+    "start_ticks": 639281578220991518,
+    "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe"
+  },
+  "started_utc": "2026-10-21T05:37:02.0259702Z",
+  "finished_utc": "2026-10-21T05:37:05.9993577Z",
+  "cycles_requested": 3,
+  "cycles_completed": 0,
+  "driver_reason_code": "DEDICATED_DESKTOP_INPUT_ACTIVITY",
+  "summary_reason_code": "DRIVER_FAILED",
+  "export_content_validation": "NOT_RUN",
+  "media_acceptance": "NOT_RUN",
+  "l3_status": "NOT_RUN",
+  "full_p03_credit": 0,
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "qualification_credit": 0,
+  "p20_credit": 0,
+  "input_audit": {
+    "status": "OBSERVATION_ONLY",
+    "input_source": "UNKNOWN",
+    "root_cause": "UNKNOWN",
+    "api": "GetLastInputInfo",
+    "evidence_limit": "Session last-input timestamp changed; physical/injected origin cannot be distinguished.",
+    "user_interference_proven": false,
+    "product_send_input_execution_proven": false,
+    "foreground_product_during_ui_calls_and_tick_change": true,
+    "baseline_last_input_tick": 58043406,
+    "first_changed_last_input_tick": 58073093,
+    "last_ui_call_after": {
+      "utc": "2026-10-21T05:37:03.7554084Z",
+      "api": "Invoke",
+      "control_id": "primaryBtn",
+      "phase": "after",
+      "last_input_tick": 58043406,
+      "foreground_pid": 30512
+    },
+    "last_unchanged_sample": {
+      "utc": "2026-10-21T05:37:04.8575094Z",
+      "last_input_tick": 58043406,
+      "foreground_pid": 30512
+    },
+    "first_changed_sample": {
+      "utc": "2026-10-21T05:37:05.9693367Z",
+      "last_input_tick": 58073093,
+      "foreground_pid": 30512
+    },
+    "ui_call_boundaries": [
+      {
+        "call_id": "bccc6e0d73ed4dde9cb44578f985e0da",
+        "utc": "2026-10-21T05:37:03.5796849Z",
+        "api": "Value.SetValue",
+        "control_id": "loginAccount",
+        "phase": "before",
+        "last_input_tick": 58043406,
+        "foreground_pid": 30512
+      },
+      {
+        "call_id": "bccc6e0d73ed4dde9cb44578f985e0da",
+        "utc": "2026-10-21T05:37:03.5927743Z",
+        "api": "Value.SetValue",
+        "control_id": "loginAccount",
+        "phase": "after",
+        "last_input_tick": 58043406,
+        "foreground_pid": 30512
+      },
+      {
+        "call_id": "203f9f52f3ce4d0b96b89ccadd29e4eb",
+        "utc": "2026-10-21T05:37:03.6162256Z",
+        "api": "Value.SetValue",
+        "control_id": "loginPassword",
+        "phase": "before",
+        "last_input_tick": 58043406,
+        "foreground_pid": 30512
+      },
+      {
+        "call_id": "203f9f52f3ce4d0b96b89ccadd29e4eb",
+        "utc": "2026-10-21T05:37:03.6224755Z",
+        "api": "Value.SetValue",
+        "control_id": "loginPassword",
+        "phase": "after",
+        "last_input_tick": 58043406,
+        "foreground_pid": 30512
+      },
+      {
+        "call_id": "985fb6d724ed4b7f87a9fee4bc0fe082",
+        "utc": "2026-10-21T05:37:03.7032347Z",
+        "api": "Value.SetValue",
+        "control_id": "serverBaseUrl",
+        "phase": "before",
+        "last_input_tick": 58043406,
+        "foreground_pid": 30512
+      },
+      {
+        "call_id": "985fb6d724ed4b7f87a9fee4bc0fe082",
+        "utc": "2026-10-21T05:37:03.7129906Z",
+        "api": "Value.SetValue",
+        "control_id": "serverBaseUrl",
+        "phase": "after",
+        "last_input_tick": 58043406,
+        "foreground_pid": 30512
+      },
+      {
+        "call_id": "f1f97c8b2c4349c5b2cc6e81fdb2b5b5",
+        "utc": "2026-10-21T05:37:03.7475252Z",
+        "api": "Invoke",
+        "control_id": "primaryBtn",
+        "phase": "before",
+        "last_input_tick": 58043406,
+        "foreground_pid": 30512
+      },
+      {
+        "call_id": "f1f97c8b2c4349c5b2cc6e81fdb2b5b5",
+        "utc": "2026-10-21T05:37:03.7554084Z",
+        "api": "Invoke",
+        "control_id": "primaryBtn",
+        "phase": "after",
+        "last_input_tick": 58043406,
+        "foreground_pid": 30512
+      }
+    ]
+  },
+  "binary_input_revalidation": "NOT_RUN_REPORT_PREPARATION",
+  "preservation": "ALLOWLISTED_FIELDS_ONLY_NO_EXCEPTION_STACK_PROFILE_CREDENTIALS_OR_LOG_TEXT"
+}

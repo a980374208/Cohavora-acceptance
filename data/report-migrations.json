@@ -1,0 +1,632 @@
+{
+  "schema": "cohavora-report-layout-migration-v1",
+  "scope": "仅整理报告呈现路径；JSON原件、冻结门限和历史结论保持原字节。",
+  "records": [
+    {
+      "from": "b14-amd-bounded-service-plan-20261019.html",
+      "to": "reports/b14/b14-amd-bounded-service-plan-20261019.html",
+      "original_sha256": "64313b98c7f546d7706913929a32bc1ce59ecba1efdb6a9741057c02249e179e",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "5a454d47cc3497c474d9b682dbb31f65195bdd836e6541d154aa7891fb233ca2",
+      "companion": {
+        "from": "b14-amd-bounded-service-plan-20261019.json",
+        "to": "reports/b14/b14-amd-bounded-service-plan-20261019.json",
+        "sha256": "8396448b781afef854859f9f1ff52bfc9c48ce8c565ebee050ea5fa244cf47f1"
+      }
+    },
+    {
+      "from": "b14-amd-camera-rejoin-20261019-03-reviewed.html",
+      "to": "reports/b14/b14-amd-camera-rejoin-20261019-03-reviewed.html",
+      "original_sha256": "aa3dd3ea46d8cfba6ba5c7214ca874e4904d6941e50cf478e41613f4e089eae6",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "9e5caa7b39d06873b83e4204db66d64a43b088ae01e06bb71da58b77ae5f1566"
+    },
+    {
+      "from": "b14-amd-camera-rejoin-20261019-03.html",
+      "to": "reports/b14/b14-amd-camera-rejoin-20261019-03.html",
+      "original_sha256": "0df3fbc93878287443584a036d61a31bc8216c4f6c5d88553d4a4043f0bcc223",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "67d874c02e99a2890934edfe69a618ff0db38b8bfdee0a9c52d794149d976077"
+    },
+    {
+      "from": "b14-amd-readmission-20261019-03.html",
+      "to": "reports/b14/b14-amd-readmission-20261019-03.html",
+      "original_sha256": "09991aad3a150a3f2a6672ddf1ef1822044b02fdbbc0584be737c5a6b21d150f",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "e7124d798e5181a20161359038543cc6a2e927c135670e792cb1ac79ac4a3e75",
+      "companion": {
+        "from": "b14-amd-readmission-20261019-03.json",
+        "to": "reports/b14/b14-amd-readmission-20261019-03.json",
+        "sha256": "53df4703042d34e25b194a4ba0836db7b659beb71eb1e7c7487f1bfd2665176c"
+      }
+    },
+    {
+      "from": "b14-amd-readmission-20261019.html",
+      "to": "reports/b14/b14-amd-readmission-20261019.html",
+      "original_sha256": "2b9f10415bba50df172fe6e9c23de2f8511b7ec48bcfff52c235a4129cb9dbc2",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "84001431d516af2422abd39fdc8c8fcc21beffed07f95d022f20faf1a287b8b4",
+      "companion": {
+        "from": "b14-amd-readmission-20261019.json",
+        "to": "reports/b14/b14-amd-readmission-20261019.json",
+        "sha256": "123d273262472ec934ddabcec8b32818f7c592c3e7122a6fbb27851a55607676"
+      }
+    },
+    {
+      "from": "b14-amd-recovery-20261019.html",
+      "to": "reports/b14/b14-amd-recovery-20261019.html",
+      "original_sha256": "f0d5de212cd80518ffcf809b61a01a79951c21452effdbf788fb8d87af886fc7",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "8a77c939f7d2548ad9582999cf6b6fc04c9e866ecf20b098b39b812f0d79b449",
+      "companion": {
+        "from": "b14-amd-recovery-20261019.json",
+        "to": "reports/b14/b14-amd-recovery-20261019.json",
+        "sha256": "4f4c112b5679abc50e03def8cb7d90b51a04718f55b0c725bde6ce2e0b35f0e8"
+      }
+    },
+    {
+      "from": "b14-clipboard-fix-20261019-01.html",
+      "to": "reports/b14/b14-clipboard-fix-20261019-01.html",
+      "original_sha256": "23d330c7899a0066b363774fbafde923fda8f42b0282e38d79e86db612151d1d",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "679f3e35197ab7bf48c6a0771fda1ce23a986be9f928e9cfe468c7a4e1ae1b45",
+      "companion": {
+        "from": "b14-clipboard-fix-20261019-01.json",
+        "to": "reports/b14/b14-clipboard-fix-20261019-01.json",
+        "sha256": "1f849eb96f4aba21a3e57359a0bb32b0d9b0bf734c3f2fc377c4143298d699ae"
+      }
+    },
+    {
+      "from": "b14-clipboard-readmission-20261019-01.html",
+      "to": "reports/b14/b14-clipboard-readmission-20261019-01.html",
+      "original_sha256": "05af8dcf223c006d6a1cdf1cecc5b6c1e7b221f594e7ef108f6b2981acb055c6",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "f1d284832a0c0b52c4fb2fbe1528526f5a036ffd626861954f0828da7c7a23fe",
+      "companion": {
+        "from": "b14-clipboard-readmission-20261019-01.json",
+        "to": "reports/b14/b14-clipboard-readmission-20261019-01.json",
+        "sha256": "fad19ebf8d651dd42414cc488725cc588d392cb306fba2124d9efc02dad12e6c"
+      }
+    },
+    {
+      "from": "b14-credentials-fix-20261018-01.html",
+      "to": "reports/b14/b14-credentials-fix-20261018-01.html",
+      "original_sha256": "e737fdee5cb96d506cc500ae170b9068308d5dd4bee3e5a39cc7588e40097ad2",
+      "links_rebased": 58,
+      "unavailable_links": [],
+      "relocated_sha256": "8144314e413c3b7d2d02f84a03ae67f43289bb35ec0f95e507e83e1f825a8ac5"
+    },
+    {
+      "from": "b14-formal-20261019-camera-01.html",
+      "to": "reports/b14/b14-formal-20261019-camera-01.html",
+      "original_sha256": "32d36a6dab3071bd1b409211001b782a60baba7353be5586bb45fd296a9a01fb",
+      "links_rebased": 15,
+      "unavailable_links": [],
+      "relocated_sha256": "6853775ddaf7c49d232601e55a698dee597dfc5eb9555bda533c862c8d2dccf1",
+      "companion": {
+        "from": "b14-formal-20261019-camera-01.json",
+        "to": "reports/b14/b14-formal-20261019-camera-01.json",
+        "sha256": "b5fb2a6a5037c8392d2a75cce0347f69dbeb218e537ba5e8f622814ec3462e41"
+      }
+    },
+    {
+      "from": "b14-full-standard-20261020-01.html",
+      "to": "reports/b14/b14-full-standard-20261020-01.html",
+      "original_sha256": "5473dffd26f748516a7c4a69c965de529cc028d7346b0ec5f03393d750a567ff",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "ccac431aa490ace212c3740ecee9fff4e59824888733d33d04cdd1c41d1cceb2",
+      "companion": {
+        "from": "b14-full-standard-20261020-01.json",
+        "to": "reports/b14/b14-full-standard-20261020-01.json",
+        "sha256": "a57035e9c4c7ebd96e045161d49873ca78f73584566c418133b5435ccd5a1a91"
+      }
+    },
+    {
+      "from": "b14-handle-diagnostic-20261019.html",
+      "to": "reports/b14/b14-handle-diagnostic-20261019.html",
+      "original_sha256": "70aee52164aba46865f13ac2d1872174654c12095091965b551b63c8eb54b341",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "9005df8c5b9dcedf343b25f4449c2c64471a85defe6a6e142ad40ab4cd33b064",
+      "companion": {
+        "from": "b14-handle-diagnostic-20261019.json",
+        "to": "reports/b14/b14-handle-diagnostic-20261019.json",
+        "sha256": "1da0ac3e89a42264853b496a7a41ebce86cea6356ef910bc90902f13f2b09c89"
+      }
+    },
+    {
+      "from": "b14-handle-service-ab-20261019.html",
+      "to": "reports/b14/b14-handle-service-ab-20261019.html",
+      "original_sha256": "4c066934ea1501ddc7a3b408c6ea665cda9f95c1cbd5f0dd781e0a8813dd7b64",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "6cd303e1cc9b4568336abf1746a101215dc020a1ec3ea3575e97f14e729376ce",
+      "companion": {
+        "from": "b14-handle-service-ab-20261019.json",
+        "to": "reports/b14/b14-handle-service-ab-20261019.json",
+        "sha256": "9a68f0383ce3e1fb71a4d22df831a2489a8c4467c61421e685f723fa757414fe"
+      }
+    },
+    {
+      "from": "b14-longrun-20261018-01.html",
+      "to": "reports/b14/b14-longrun-20261018-01.html",
+      "original_sha256": "9af32363657f23b61f4da80cd5ade31a2b4cd4c46cb57d09403daf39c96a0b3c",
+      "links_rebased": 9,
+      "unavailable_links": [],
+      "relocated_sha256": "09941b1bf22c957e70ae15cdbfdcc4a07e71f2904cd07a1011fb1ab79e27f1ae"
+    },
+    {
+      "from": "b14-page-focus-fix-20261018-01.html",
+      "to": "reports/b14/b14-page-focus-fix-20261018-01.html",
+      "original_sha256": "431294b74d093c519329a1ca6b2f96a898ef39127ec902aa37bdb8fdb90a82e5",
+      "links_rebased": 62,
+      "unavailable_links": [],
+      "relocated_sha256": "c193684e889b1c721134c00855ecd07ca06063779d424853b894cf40093b610f"
+    },
+    {
+      "from": "b14-pid5152-metrics-20261020.html",
+      "to": "reports/b14/b14-pid5152-metrics-20261020.html",
+      "original_sha256": "aed3a59c4d152644f5bc2b8b71cf2a66157b6cfc0e3581944d01d3e0d6e6f819",
+      "links_rebased": 11,
+      "unavailable_links": [],
+      "relocated_sha256": "1aa027969648a98f0de3d786899b4cb9469ac0722cb5ce8d16dc59936d5c843d",
+      "companion": {
+        "from": "b14-pid5152-metrics-20261020.json",
+        "to": "reports/b14/b14-pid5152-metrics-20261020.json",
+        "sha256": "680936010d83ec0767208a45e36a3c6d6e4f875c8ccdd082be9b4b688b7ac14e"
+      }
+    },
+    {
+      "from": "b14-qualification-20261019-camera-01.html",
+      "to": "reports/b14/b14-qualification-20261019-camera-01.html",
+      "original_sha256": "288ef201f92d324ab038cdb6c1555a741fcbbedbc113ac307ba651de582582b1",
+      "links_rebased": 46,
+      "unavailable_links": [],
+      "relocated_sha256": "3d3520c3f4634e62ee993f6cf875c76f4507d4ec7c4b78d5f40019318ce0fd3f",
+      "companion": {
+        "from": "b14-qualification-20261019-camera-01.json",
+        "to": "reports/b14/b14-qualification-20261019-camera-01.json",
+        "sha256": "7a1fc179da14c4cbca8ed2aa61cf2c64bbe7e947e1537efec79adc672595b678"
+      }
+    },
+    {
+      "from": "b14-read-fix-20261018-01.html",
+      "to": "reports/b14/b14-read-fix-20261018-01.html",
+      "original_sha256": "82d20be2cb540d1cdc9cdc62174de1e88e3e1982a6d6428a21bf7976f1706cb6",
+      "links_rebased": 24,
+      "unavailable_links": [],
+      "relocated_sha256": "247e59910243763a3ed4eb4265d88dc917dcad8dd67dca1b871fea8e07917538"
+    },
+    {
+      "from": "b14-readmission-20261019-camera-01.html",
+      "to": "reports/b14/b14-readmission-20261019-camera-01.html",
+      "original_sha256": "87c7c489e2373e4692830c70af42640b82679a3c30243da84279e62f38a2f4fa",
+      "links_rebased": 26,
+      "unavailable_links": [],
+      "relocated_sha256": "091289327ac95b7c39a1c74022a0649e9d067e99cdb3d87a5be9dd055dd2b82d",
+      "companion": {
+        "from": "b14-readmission-20261019-camera-01.json",
+        "to": "reports/b14/b14-readmission-20261019-camera-01.json",
+        "sha256": "e190a83d7edb5306fa7143c73b9f7658440ea26a5c678826d070e769dbf2128c"
+      }
+    },
+    {
+      "from": "camera-startup-rejoin-20261019.html",
+      "to": "reports/product/camera-startup-rejoin-20261019.html",
+      "original_sha256": "4700a43b0b98fb241390cc1b8500d10cc62c89df800ee415d461f69f7e34492d",
+      "links_rebased": 20,
+      "unavailable_links": [],
+      "relocated_sha256": "4074e40c2cedfbcc84508a320a841758941a1a976eb73b6d8c46b59c67ea59d3",
+      "companion": {
+        "from": "camera-startup-rejoin-20261019.json",
+        "to": "reports/product/camera-startup-rejoin-20261019.json",
+        "sha256": "2bd55ad6c281014fe1214a358b3dd3afafbbbd81a5c8ae3cbba2b888ba599599"
+      }
+    },
+    {
+      "from": "frozen10-full-load-20261018-12.html",
+      "to": "reports/tooling/frozen10-full-load-20261018-12.html",
+      "original_sha256": "ba94fdb6b946a3fb43258cb9ac920fae634bc3c73255d70e697e44d4c26892e4",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "b420b7791f8d4c2a709e2e6734055766dcd2645cda6bcd0a07aad663ffc66170"
+    },
+    {
+      "from": "frozen10-sink-readonly-20261018-13.html",
+      "to": "reports/tooling/frozen10-sink-readonly-20261018-13.html",
+      "original_sha256": "1fc4f4b1be9db1e00b73e2e7f550af50598eb31f044a7505f7b33227d6b179d7",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "2a778385e1a6816b66a7425c958a2ae2fdaa38cb06a430bb6d07eeae486ddcaf"
+    },
+    {
+      "from": "functional-media-retest-20261020-01.html",
+      "to": "reports/product/functional-media-retest-20261020-01.html",
+      "original_sha256": "63a8f2f4e479ef692765a96814ac84461da73ac6c47baf0b1421c810a8930cb6",
+      "links_rebased": 1,
+      "unavailable_links": [],
+      "relocated_sha256": "c7b91b2e04d0e7942627825a17bd4343e7237104c2e9c7ece9bb8a1f85ff5870",
+      "companion": {
+        "from": "functional-media-retest-20261020-01.json",
+        "to": "reports/product/functional-media-retest-20261020-01.json",
+        "sha256": "35044ef9feed78e9df4113e99a80b66ef705eae9af80b0a56f768a47ac11ecb9"
+      }
+    },
+    {
+      "from": "gpu-real-admission-20261018-11.html",
+      "to": "reports/tooling/gpu-real-admission-20261018-11.html",
+      "original_sha256": "94611af727881c1704ce7baeaefd3e90028399162669aa99271b7ff1e658e47f",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "0e3da08debfd2695bbcee102bef94212cc3d1a6d807423c453f173ed5e8e15cf"
+    },
+    {
+      "from": "guardian-contract-20261018.html",
+      "to": "reports/tooling/guardian-contract-20261018.html",
+      "original_sha256": "1996772163fb807970e6c4c671f7632bcd0ce6f6d5499d829e0acae40b290a85",
+      "links_rebased": 3,
+      "unavailable_links": [],
+      "relocated_sha256": "6a2b8b08293b6a4bcc3fdbb689bcf771cafe2a9e931b15b168bc9ca22d86b55f"
+    },
+    {
+      "from": "heap-bstr-nocache-20261016.html",
+      "to": "reports/memory/heap-bstr-nocache-20261016.html",
+      "original_sha256": "033304a1ce8e61781f12cd581eb186886764e96e831d2b4b15cca85c58bece2e",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "930bf14badede9312ce19f0c9658edb45e3341c3036b4e844f9e0a113b10d2a0"
+    },
+    {
+      "from": "heap-client-exit-20261016.html",
+      "to": "reports/memory/heap-client-exit-20261016.html",
+      "original_sha256": "bd10ce30153fa8efd9423f4873c4df8f9b0fae517df2e7eebe16c58975d04b48",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "edfc3bb33f9bc1946af3dcd44ef7b7ec6d913109d7aac4d02de7d7fed2882dc9"
+    },
+    {
+      "from": "heap-com-proxy-owner-20261016.html",
+      "to": "reports/memory/heap-com-proxy-owner-20261016.html",
+      "original_sha256": "f790a432e6e2d6823b78e143733f6e6160300c3b387094bd2867df2e7c258c34",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "0557550d504b5f665cc85a4a922df77afb0beec7427c3995882e67c0055e1c26"
+    },
+    {
+      "from": "heap-eventmap-aging-20261016.html",
+      "to": "reports/memory/heap-eventmap-aging-20261016.html",
+      "original_sha256": "652edc761687f7db16bcf1eccd701f417e833956f11b58f0dfa343b59552565b",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "df08a64c978f2a0524c92bc795840b177631f845a0baa306dd5326a6f1a9cbfc"
+    },
+    {
+      "from": "heap-eventmap-aging-plan-20261016.html",
+      "to": "reports/memory/heap-eventmap-aging-plan-20261016.html",
+      "original_sha256": "ff0c17f2f56411d66cc4acba9bd7002394eabe09b4e06b7403322c6266b6ef76",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "72ffa88dcd9a5e8dfed893ee7d38358d9656a30f1e9533c64ad0cc7a8a902b12"
+    },
+    {
+      "from": "heap-eventmap-aging-result-20261016.html",
+      "to": "reports/memory/heap-eventmap-aging-result-20261016.html",
+      "original_sha256": "0c9cd421dcc8a8f44517ef8ae73744ab208214765f228621a829c50b711be9ad",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "7ef444c3fd8b1df73858795e1e5e2e0ddb7d87e05941a6bcec7b20c13371ac46"
+    },
+    {
+      "from": "heap-eventmap-cross-review-20261016.html",
+      "to": "reports/memory/heap-eventmap-cross-review-20261016.html",
+      "original_sha256": "f612cb36216cb6db150a955771d6af72b9db05b8c5a64d0bf7841e484c380f18",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "bbba81204b5dfab4ba9f1e18f6284ae94a8a273bda690009bc4a763283792ac3"
+    },
+    {
+      "from": "heap-eventmap-scheduling-20261016.html",
+      "to": "reports/memory/heap-eventmap-scheduling-20261016.html",
+      "original_sha256": "10fbc05f103bfd6fbfad87e771261d6c813f67f9803a058225381238b0c6d5b1",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "aa9b15c52bac7638ee30bff9e3c96ae9c93f5182b3665f0e6c9b7a2d0c39e7ec"
+    },
+    {
+      "from": "heap-gpu-ready-contract-20261018.html",
+      "to": "reports/memory/heap-gpu-ready-contract-20261018.html",
+      "original_sha256": "9888af7ee7ce66d157f05d5ad8abb9917e71a318bd530cba9bc5234457918087",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "98eb4ea68dd41701f8eb549cb6c4dc63c1bb6650c6cce0627e806ceca23be501"
+    },
+    {
+      "from": "heap-private-region-probe-20261016.html",
+      "to": "reports/memory/heap-private-region-probe-20261016.html",
+      "original_sha256": "db4d6ce4bffa13906ffb982aaa90a02b81e3951834304247daa88c515632d208",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "42321959232fe27958fed8b728f63d6c18b88d8f7db82a5171092faef6eb046b"
+    },
+    {
+      "from": "heap-product-postquery-idle-20261016.html",
+      "to": "reports/memory/heap-product-postquery-idle-20261016.html",
+      "original_sha256": "fe12649bf9c588d89471e8b243d50197d41e46e25e95f2342bd1b1c7be7c50e5",
+      "links_rebased": 0,
+      "unavailable_links": [
+        "result.html"
+      ],
+      "relocated_sha256": "97b4619c8ada02e92a020ef7b0c630aef4475b41c741924ffe42cb308b41b738"
+    },
+    {
+      "from": "heap-product-quiescent-20261016.html",
+      "to": "reports/memory/heap-product-quiescent-20261016.html",
+      "original_sha256": "8b70178479f115d126070d2036325817af4f841504057dd971ef975281b71fee",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "6c0f02582869ba771a35c56ce604827a8e0b35142f318cc585084f20033abdd0"
+    },
+    {
+      "from": "heap-product-quiescent-findings-20261016.html",
+      "to": "reports/memory/heap-product-quiescent-findings-20261016.html",
+      "original_sha256": "2642da7878d019d7fd3cd1e388bc6eaedeff42ff979bfe838d93fb3ee3840169",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "da5c7be42e948c111ae8188e7bce4ac82a15898711c4e1d9a5d568189092ae70"
+    },
+    {
+      "from": "heap-product-reassessment-20261016.html",
+      "to": "reports/memory/heap-product-reassessment-20261016.html",
+      "original_sha256": "7be76729f6a949f77750a146c5e129d8eb5c993fe94af2c23bbf2d5ef0046160",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "e200071d5ae0611d32105ab5e5a3a78b27ded1fec8fcdc5f2f6d979e6588e40a"
+    },
+    {
+      "from": "heap-product-region-result-20261016.html",
+      "to": "reports/memory/heap-product-region-result-20261016.html",
+      "original_sha256": "a34de5f0f5c2f43131d3980b3093123e8a0778b1fe2eacf257a5366678a24d62",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "e768e83f56ea4bd8d9d1b06794456632a013b272869bb1d5ff0b5ebd04f7a0c2"
+    },
+    {
+      "from": "heap-product-single-query-20261016.html",
+      "to": "reports/memory/heap-product-single-query-20261016.html",
+      "original_sha256": "84a34134590c0b141f470098e0136c58b332752b81c6f24cdd8c4b2e5604a40d",
+      "links_rebased": 0,
+      "unavailable_links": [
+        "result.html"
+      ],
+      "relocated_sha256": "01c199a6e02554547d33d6617e14377ffdee2bfe2221d9df95770834cdcecac0"
+    },
+    {
+      "from": "heap-product-system-symbols-20261016.html",
+      "to": "reports/memory/heap-product-system-symbols-20261016.html",
+      "original_sha256": "918296f85aa1e58fd7ce215b8d5dfbe9947632703a9ca4fb397dbf5c75618160",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "3122b76f1c96fa4938eb1c06fca1b9a5784f93d70506370c985281cbc3500c25"
+    },
+    {
+      "from": "heap-region-base-review-20261016.html",
+      "to": "reports/memory/heap-region-base-review-20261016.html",
+      "original_sha256": "4cb5234d5f994c15489bd02bc1d6d448f6cbb50391a31cfc02abbcd63caafd73",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "6971c41591737145ea80bc75a679211f78c4ee4e3636a83da4af59563f02a34b"
+    },
+    {
+      "from": "heap-release-prewindow-20261016.html",
+      "to": "reports/memory/heap-release-prewindow-20261016.html",
+      "original_sha256": "f347a235f67544ec90b6e67e096e1e9fee5c940566ffc3a4fcc93bad7cdf7d9c",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "7c1f59a5945a79ddbc71c4681cd0cd14801e00400baaf9d2b083442b7b3448e5"
+    },
+    {
+      "from": "heap-remaining-ownership-20261016.html",
+      "to": "reports/memory/heap-remaining-ownership-20261016.html",
+      "original_sha256": "f985c815d7ee4ac9c8fc1beba9d0a2422c650ea0857a3444667a22b77543712b",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "f4d5280a0fb26a67c75b28fe27b0a57309f2270df14562f921ae21d68d54b902"
+    },
+    {
+      "from": "heap-rpc-cache-20261016.html",
+      "to": "reports/memory/heap-rpc-cache-20261016.html",
+      "original_sha256": "9c94dc2997ac3ebe1a9878ec5dd9e07f03fcbd992b77318608f17307caf1d6c9",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "80134b4b795d4f92b8a81ad0bedd7244e2855d70935e7e8b659708615459db73"
+    },
+    {
+      "from": "heap-uia-provider-ownership-20261016.html",
+      "to": "reports/memory/heap-uia-provider-ownership-20261016.html",
+      "original_sha256": "da136e20937a87ee27d53fe4e660b7c46a45f479d12becb62e6c23967c56870e",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "f1c14ca535894e80ade0780fa80cf5ccbe6d1c12e0874d8270b8900688a62340"
+    },
+    {
+      "from": "memory-diagnostic-reuse-audit-20261018.html",
+      "to": "reports/memory/memory-diagnostic-reuse-audit-20261018.html",
+      "original_sha256": "7eb2e457573b5407f2e3d6a8bf8030ab077b99bbf72a035a9a1a6b9ced6eaa19",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "79304680ff66e2cdfc8628dd827ac5613b01a76f810a46f39e2fc75af0c0c623"
+    },
+    {
+      "from": "memory-optimization-20261019.html",
+      "to": "reports/memory/memory-optimization-20261019.html",
+      "original_sha256": "ccad002092d8b8be9f763da2eef9aad7a7c3207675d3c9e11a1f2b5e929e4661",
+      "links_rebased": 1,
+      "unavailable_links": [],
+      "relocated_sha256": "0e6a683df4b6f6ea447068e1520b570bd007a47ad521b880382c48d750ea609d"
+    },
+    {
+      "from": "phase-config-admission-20261018-02.html",
+      "to": "reports/tooling/phase-config-admission-20261018-02.html",
+      "original_sha256": "d9970976be48e50d6c3404c5e5025ee4d62693628d30a631831017b226870722",
+      "links_rebased": 4,
+      "unavailable_links": [],
+      "relocated_sha256": "dad88e4632fa126b0ecc1b4006aae183f6f150ac8e1cbadca196cd19c6970ecf"
+    },
+    {
+      "from": "phase-input-admission-20261018.html",
+      "to": "reports/tooling/phase-input-admission-20261018.html",
+      "original_sha256": "6aca7061dd848e9f6eed02fb577bb1b386fbc60617bf086536b48ef483bb6e5a",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "23dfc33c938bd036794df813b8472e198de001a8b758c3c876e99966fb0f647c"
+    },
+    {
+      "from": "phase-maintenance-promotion-20261018.html",
+      "to": "reports/tooling/phase-maintenance-promotion-20261018.html",
+      "original_sha256": "54b18fae5ff8b842f72661da3ae5e6fd6f1b26e599977e56991315ace91348f7",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "a39ff0801a375abe8e025eb89b74aa09b0f0f5188b224396dab9c9debf4d9985"
+    },
+    {
+      "from": "phase-pidfd-admission-20261018-06.html",
+      "to": "reports/tooling/phase-pidfd-admission-20261018-06.html",
+      "original_sha256": "22762b786b4fc658b3a118da4fd1fb5941ded51fff330ab7934485ee33377403",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "6d4a76a1905702b10646b2fa8dc375b620c8a75e0a06d3e14f63e770e2ff3d1f"
+    },
+    {
+      "from": "phase-pidfd-admission-20261018-07-executed.html",
+      "to": "reports/tooling/phase-pidfd-admission-20261018-07-executed.html",
+      "original_sha256": "416be65a79edbd8fee6a10f25f216de8da2e0ce1a1cc72726aa32234f73cb93e",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "847657cafa319c4b206e986c11471a6187b4b0d59700a0e7125fb428b181e2c0"
+    },
+    {
+      "from": "phase-pidfd-freeze-20261018-04.html",
+      "to": "reports/tooling/phase-pidfd-freeze-20261018-04.html",
+      "original_sha256": "57cdf2233b9fd3838b9a2a58ce6d6766c53644bac826668afdc7e6182123d98e",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "106b17ed835596831a2838bc72d5d9bdc578a3cdcb5dd2247ca62edb350c9c16"
+    },
+    {
+      "from": "phase-pidfd-runtime-20261018-08.html",
+      "to": "reports/tooling/phase-pidfd-runtime-20261018-08.html",
+      "original_sha256": "3d3ab0afcf35fbeb227e7f15060db13f4cb95204fdfc6bf728d36c1843724ca9",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "475bea1b3aea363c32fa0fd3fbcdd6f7f9df4951de9af71f481918507610f674"
+    },
+    {
+      "from": "pidfd-maintenance-20261018.html",
+      "to": "reports/tooling/pidfd-maintenance-20261018.html",
+      "original_sha256": "36fcb016fb4f94e81146ba8ede77e5a27f21a3b01a39be6a26443186f9ec0a66",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "36e70c13726ccf19e493c2d97e9fe91c0003ebba8767315eab904856e7bec5ac"
+    },
+    {
+      "from": "prepared-owner-freeze-20261018-19.html",
+      "to": "reports/tooling/prepared-owner-freeze-20261018-19.html",
+      "original_sha256": "3bd894a10903f0d388e653d78432bea90d077f5da90fcd33c019baddf7c776a4",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "5c5d966f46d6fb34f9f11996809262a767bbf4eb97814ca6f3d71e6cedb5d27b"
+    },
+    {
+      "from": "product-run-configuration-20261018.html",
+      "to": "reports/tooling/product-run-configuration-20261018.html",
+      "original_sha256": "08e3296e9a93df81c95f7cdc66fc19514f45268e05260293eeb2420377742056",
+      "links_rebased": 2,
+      "unavailable_links": [],
+      "relocated_sha256": "a05c37be71a6224784ca89dbd9c88bfebb94a7493cbfdb2f1ece1d33b7a8ff46"
+    },
+    {
+      "from": "resource-completion-20261020-01.html",
+      "to": "reports/product/resource-completion-20261020-01.html",
+      "original_sha256": "84092a208dd830f2d975fec42fa45ced61be8b754e052b486cb36fd1913c2223",
+      "links_rebased": 74,
+      "unavailable_links": [],
+      "relocated_sha256": "6510f129929a6a3f48a167791447d29f7984de057d6765b4def6055b5b47c5d3",
+      "companion": {
+        "from": "resource-completion-20261020-01.json",
+        "to": "reports/product/resource-completion-20261020-01.json",
+        "sha256": "ef49af2a78d24305a3de9ff0e39c3855ac3e0c42100eef930d7a63bd6ff2ad10"
+      }
+    },
+    {
+      "from": "resource-completion-20261021-01.html",
+      "to": "reports/product/resource-completion-20261021-01.html",
+      "original_sha256": "c79ce93866e7cf5be263f97627068e3f0f758f157b697415b85dc7f7b0f34f8e",
+      "links_rebased": 269,
+      "unavailable_links": [],
+      "relocated_sha256": "542338921141b188eb556d079b50fe4040fb543caddaeb7d1ce93814ae1446a4",
+      "companion": {
+        "from": "resource-completion-20261021-01.json",
+        "to": "reports/product/resource-completion-20261021-01.json",
+        "sha256": "911481e87f743f08b478a6dcb541338d762afae76cb26c8a4ddbc679bd452a48"
+      }
+    },
+    {
+      "from": "session-admission-fix-20261018-07.html",
+      "to": "reports/tooling/session-admission-fix-20261018-07.html",
+      "original_sha256": "04e3a6b17de67cb746a17cc4c2c957ff8cc68ecaab442a64b1a1f3739b8e6303",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "e9a6306c235b07dda6626f1a50ba2216324807047de518a689f68bbd780c4170"
+    },
+    {
+      "from": "tests-portability-audit-20261018.html",
+      "to": "reports/tooling/tests-portability-audit-20261018.html",
+      "original_sha256": "13061b2de96393b34dc3ae403c4166a05d846470ea6b491f141e0cda64f5573f",
+      "links_rebased": 11,
+      "unavailable_links": [],
+      "relocated_sha256": "fda73546c7be1b72c88c09df12f642f93e05d82cef768631beb2916e9fe3d7c3"
+    },
+    {
+      "from": "theme-settings-20261016.html",
+      "to": "reports/product/theme-settings-20261016.html",
+      "original_sha256": "27466158bb739e79db7c07a409a149a61157b7d7c65284cd9e2f1f5b0607f9c1",
+      "links_rebased": 6,
+      "unavailable_links": [],
+      "relocated_sha256": "73101f0eba990ce39577c12918b10871403558e6cafa14f2b73fa3dadcb0826a"
+    },
+    {
+      "from": "vs-native-export-298.html",
+      "to": "reports/memory/vs-native-export-298.html",
+      "original_sha256": "db1777612e9b16e0b6b8a57372408a8e7fc4715afe40e894c6eeb0223da5c6bc",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "e2cf53ef0420e21a575ffd3fe27e08478fafc6345a6f296ee349f27bb98d20ee"
+    },
+    {
+      "from": "vs-native-session-recovery-299.html",
+      "to": "reports/memory/vs-native-session-recovery-299.html",
+      "original_sha256": "3543d33800d834518623a15bbc2924e35b3dba5127e0ecb62ff17d5134fd3e12",
+      "links_rebased": 4,
+      "unavailable_links": [],
+      "relocated_sha256": "c4b71e436451fc8cd506a9b7630d2874e45cfc33f7b7d949fe841d57586cd20c"
+    },
+    {
+      "from": "worker-owner-freeze-20261018-16.html",
+      "to": "reports/tooling/worker-owner-freeze-20261018-16.html",
+      "original_sha256": "9ee2d04a1d70c255a12d87b382334cfadc5ece18abdb70a3f99728d0dccc7f04",
+      "links_rebased": 0,
+      "unavailable_links": [],
+      "relocated_sha256": "a42943604d481d4e666af1076cdc24d4faad2488bcbf948b10c915201bbde723"
+    }
+  ],
+  "revised_at": "2026-10-21"
+}

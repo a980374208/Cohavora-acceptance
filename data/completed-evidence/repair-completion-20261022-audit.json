@@ -1,0 +1,155 @@
+{
+  "schema": "repair-goal-completion-audit-v1",
+  "date": "2026-10-22",
+  "objective_complete": false,
+  "scope": "Audit of the original repair and one-round retest objective; not an additional acceptance plan or execution entry point",
+  "previous_goal_turn": "PROGRESS: source and tooling fixes, direct gates, evidence-bound root causes and explicit remaining gaps were delivered",
+  "source_of_truth": "Individual receipts plus current source/build/runtime evidence; summary PASS labels do not close original formal gates",
+  "requirements": [
+    {
+      "task": 1,
+      "state": "USER_COMPLETED_REUSED",
+      "proof": "media-diagnostics-isolation-20261022/verification.json and preserved configuration hashes"
+    },
+    {
+      "task": 2,
+      "state": "IMPLEMENTATION_DIRECT_GATE_PASS",
+      "proof": "task2/receipt.json",
+      "remaining": "Include its changed input set in the single final retest scope; do not repeat unchanged preliminary gates"
+    },
+    {
+      "task": 3,
+      "state": "USER_COMPLETED",
+      "remaining": "Reuse authoritative task3 evidence when final scope is frozen"
+    },
+    {
+      "task": 4,
+      "state": "USER_COMPLETED",
+      "remaining": "Reuse authoritative task4 evidence; zero-frame historical exit is not media acceptance"
+    },
+    {
+      "task": 5,
+      "state": "CURRENT_CANDIDATE_RUNTIME_ATTEMPT_FAILED_BEFORE_JOIN",
+      "proof": "task5-native-integration01/integration-result.json",
+      "remaining": "Replacement predicates not exercised: native operation_failed and Flutter join_failed; service ingress diagnosis pending. This is not evidence of replacement repair failure."
+    },
+    {
+      "task": 6,
+      "state": "DIRECT_GATE_AND_SAME_VERSION_INTEGRATION_PASS",
+      "proof": "task6/result.json; task5-native-integration01/integration-result.json",
+      "remaining": "Original disposal runtime retest NOT_RUN"
+    },
+    {
+      "task": 7,
+      "state": "FULL_MATCHING_LINK_AND_THREE_NATIVE_RUNTIME_PASS_LOCAL_INTEROP_FAIL_PREMEDIA",
+      "proof": "task7-explicit-clear01/full-validation-20261022/closeout.json",
+      "remaining": "Local original 60-second predicates FAIL3/70: both RTC sessions admitted but connection not established, zero media frames; exact cause UNKNOWN. Original cloud formal69/70 FAIL unchanged; E2E clear NOT_EXERCISED."
+    },
+    {
+      "task": 8,
+      "state": "FINAL_CANDIDATE_NATIVE_FFI_ABI_AND_PACKAGE_GATES_PASS",
+      "proof": "task8-continuation/receipt.json; task8-continuation/final-source-equivalence-r11.json; task8-continuation/package-r11/package.json",
+      "remaining": "Actual Room/service/device/network runtime NOT_RUN; derived package has zero official acceptance credit; DLL unload unsupported"
+    },
+    {
+      "task": 9,
+      "state": "UNKNOWN_CAUSE",
+      "proof": "task9/receipt.json",
+      "remaining": "Evidence-backed performance cause and repair; original threshold remains unchanged"
+    },
+    {
+      "task": 10,
+      "state": "EVIDENCE_TOOLING_AND_FULL_PUBLISHER_BUILD_PASS_ORIGINAL_CAUSE_UNKNOWN",
+      "proof": "task10/receipt.json; task10-fullbuild01/result.json",
+      "remaining": "Exact historical target identified; ten comparable fields match but config hash changed and full old semantics unavailable. Historical61/100 causeUNKNOWN. No current load run."
+    },
+    {
+      "task": 11,
+      "state": "EVIDENCE_TOOLING_FIXED_ORIGINAL_PRECISION_FAIL",
+      "proof": "task11/receipt.json",
+      "remaining": "Original trusted peer TCP22 timed out before host key/authentication. Current remote artifact identity UNKNOWN; local unchanged offline gates reused."
+    },
+    {
+      "task": 12,
+      "state": "WINDOW_SAMPLING_CHAIN_FIXED_PRODUCT_CAUSE_UNKNOWN",
+      "proof": "task12/receipt.json; task12/window-repair-receipt.json; task12/independent-review.json",
+      "remaining": "Current-candidate payload and exact Tencent config binding prepared. Original one-shot ADMINISTRATOR_REQUIRED fails in default and approved host environments; deployment/runtime NOT_RUN. No capture/UAC/remote mutation. PB/PCM causes remainUNKNOWN."
+    },
+    {
+      "task": 13,
+      "state": "TOOLING_AND_THREE_CURRENT_PRODUCT_PAIRS_ADMITTED",
+      "proof": "task13/receipt.json; task13-current-product01/result.json; task13-current-product01/staged/admitted-manifest.json",
+      "remaining": "Scoped product pair identity only; final SDK/Flutter artifacts and release qualification not covered; consumer must reverify frozen bytes"
+    }
+  ],
+  "final_retest": "Current closeout gates serialized: SFU8 fresh top-level tests PASS plus3 unchanged reused; Native11/12TU PASS and Room FAIL_TOOLCHAIN; Flutter16/16TU PASS,2 analyzer exit0 with residual warning,7/7 controlled-native Dart/widget PASS. Full product/media retest NOT_RUN.",
+  "freeze_and_stop": "STOPPED_AFTER_AUTHORIZED_MATCHING_FULL_LINK_AND_BOUNDED_LOCAL_VALIDATION; no further builds/runtime/deployment scheduled; original formal FAIL and prior closeout retained.",
+  "invariants": [
+    "No threshold relaxation",
+    "No retrospective conversion of old FAIL to PASS",
+    "No commit or push",
+    "No reference/vendor/global-cache source changes",
+    "No concurrent performance or shared-device measurements"
+  ],
+  "current_readiness_evidence": "task9-task12-readiness01/readiness.json",
+  "b11_retest_entrypoint_correction": "For the newly built task-owned PLI publisher, use b11_mixed_source.py identity validation and b11_mixed_run.py. The earlier readiness template b11_100_remote_run.py freeze-path selects the unchanged fixed official CLI validator and cannot admit this derived binary. No endpoint binding or execution performed.",
+  "continuation_progress": [
+    "Original isolated service restored from verified image/config/binary and health200; livekit existing service unchanged",
+    "Task12 PCM exact run/cycle resolved; original raw samples confirmed historically deleted; historical cause remains UNKNOWN",
+    "Task10/11 endpoint candidates audited; current unique workload/remote deployment binding still missing",
+    "Task5/6 bounded current-candidate symptom validation delegated; task8 and P13 preparation serialized behind it",
+    "Task5 attempted once: no connected or key_changed; task6 NOT_RUN; diagnosis receipt independently hashed 18 inputs",
+    "Exact historical 61/100 target identified and strict SSH readback succeeded; current server configuration hash differs from historical input",
+    "Same independent Tencent vantage: ECS17980 TCP timeout, main17880 HTTP200 in13ms; task-container localhost HTTP200; exact blocking layer remains UNKNOWN",
+    "Shared17980 ingress read-only audit complete: host listen/DNAT/allow rules present, counters0, publicpath timeout; cloud ingress or incomingSYN evidence missing. No rule changes.",
+    "Task11 original peer SSH unavailable; Task10 current config semantics audit completed without load. All three subagents completed.",
+    "Exact-ID/label guarded cleanup removed only this-turn created ECS container/network; main livekit running and original config hash unchanged.",
+    "Dependency correction from current runner source: P13 uses ECS17980; task12 PB/PCM uses independent Tencent original loopback17880/API11102. Task12 blocker is stale configuration freeze, not ECS ingress. Current-candidate admission preparation active.",
+    "Task7 direct source review found real Stop/drain/recreate and display completion APIs; two GPT6.1Sol ultra agents implementing private Native/Flutter primitives. Accurate SFU protocol module materialized and sum matched original lock.",
+    "Task12 current-candidate10-file payload prepared; original remote9scripts match LF-normalized maintained bytes. Admin false verified in both default and approved host environments. No remote deployment/capture.",
+    "Task7 three private implementation chains active: Native primitive, Flutter primitive, shared wire/media epoch and SFU coordination. All builds/runtime serialized byroot.",
+    "Task7 Flutter initial9realTU/4Dart compile-analyze passed for recorded hashes; root review then found pending-attachment/dispose/duplicate-bind races, fixes underway and oldPASS not reused for changed source.",
+    "Task7 exact Go schema generated; Native initialTU pass followed by CRT alignment link failure and diskfull interruption; direct runtime stillNOT_RUN at this checkpoint.",
+    "Task7 SDK copy accidentally followed recursive example plugin link into task-owned flutter-sdk copy and exhausted disk. Copy process exited; exact-path/reparse-checked cleanup removed only that failed copy, restoring29,563,355,136bytes. All writers paused during cleanup, then resumed. Original repositories/packages preserved. Future copy uses tracked manifest/link rejection/size guard.",
+    "Task7 Native realTrack/router/session21assertionsPASS after CRT alignment and capacity recovery; realdecoder/display runtime not covered. Default ModuleVideoCanvas/render-worker/DX11 clear-fence implementation now required and in progress.",
+    "Task7 pacer/DownTrack/Pion4real testsPASS; actual coordinator staleACK/token/mask negative test being added. NoSFU service/media runtime.",
+    "Flutter tools wrote two globalcache stamp metadata files during test launch; exactfiles/hashes recorded, not reverted without oldbytes. Test stopped with failing assertions retained; subsequent toolcache isolated into task-private verified792833945byte overlay."
+  ],
+  "continuation_evidence": [
+    "current-service-readback01.json",
+    "isolated-service-restore01.json",
+    "task10-11-endpoint-audit01.json",
+    "task12/pcm-provenance-audit01.json",
+    "task8-continuation/runtime-admission01.json",
+    "task5-6-runtime01/diagnosis-receipt01.json",
+    "task10-current-target-readback01/result.json",
+    "task10-current-target-readback01/route-probe-result02.json",
+    "task10-current-target-readback01/main-route-control-result01.json",
+    "task10-ecs-ingress-readonly01/receipt.json",
+    "task10-config-semantics01/assessment.json",
+    "task11-remote-admission01/receipt.json",
+    "isolated-service-cleanup01.log",
+    "task7-feasibility01/assessment.json",
+    "task7-feasibility01/implementation-plan.md",
+    "task7-explicit-clear01/protocol-source-admission01/receipt.json",
+    "task12-current-candidate01/permission-and-handoff-receipt.json",
+    "task7-explicit-clear01/flutter-direct-gate01/result.json",
+    "task7-explicit-clear01/go-protocol-generation-receipt.json",
+    "task7-explicit-clear01/candidate-v1/native-sdk/direct-gate/runtime-result.json",
+    "task7-explicit-clear01/flutter-sdk-copy-incident.json",
+    "task7-explicit-clear01/flutter-tool-global-stamp-incident.json",
+    "task7-explicit-clear01/flutter-tool-overlay-receipt.json",
+    "task7-explicit-clear01/go-rtc-gate02-receipt.json",
+    "task7-explicit-clear01/sfu-implementation-receipt.json",
+    "task7-explicit-clear01/candidate-v1/native-sdk/native-closeout.json",
+    "task7-explicit-clear01/flutter-closeout-receipt.json",
+    "repair-closeout.html",
+    "task7-explicit-clear01/full-validation-20261022/closeout.html"
+  ],
+  "user_closure_instruction": "\u5b8c\u6210\u5f53\u524d\u540e\u8fdb\u884c\u6536\u53e3\uff1a\u4ec5\u5b8c\u6210\u5f53\u524d\u4e09\u8def\u6b63\u5728\u7f16\u8f91\u7684\u4fee\u590d\u53ca\u4e00\u6b21\u6700\u5c0f\u9a8c\u8bc1\uff1b\u4e0d\u518d\u542f\u52a8\u5168\u91cf\u4ea7\u54c1\u6784\u5efa\u3001\u65b0\u670d\u52a1\u90e8\u7f72\u3001\u65b0\u8fd0\u884c\u6279\u6b21\u6216\u6269\u5927\u4fee\u590d\u3002\u6700\u7ec8\u6309\u5b9e\u9645\u5b8c\u6210/\u5c40\u90e8\u5b9e\u73b0/\u672a\u6267\u884c/\u963b\u585e\u5217\u9879\uff0c\u4fdd\u7559\u539fFAIL\u3002",
+  "closeout_time": "2026-10-22T10:57:09.3063584+08:00",
+  "prior_user_closeout": "FROZEN_AND_STOPPED_BY_USER_REQUEST_AFTER_CURRENT_WORK. All three agents stopped; no further build/deployment/runtime scheduled. Original full-repair objective incomplete, not declared complete.",
+  "resumed_validation": "task7-explicit-clear01/full-validation-20261022/progress.json",
+  "resumed_validation_closeout": "task7-explicit-clear01/full-validation-20261022/closeout.html",
+  "latest_scope_completed_utc": "2026-10-22T05:08:05.768808+00:00"
+}

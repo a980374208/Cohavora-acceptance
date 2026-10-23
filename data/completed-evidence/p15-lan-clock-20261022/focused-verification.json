@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "build_configuration": "RelWithDebInfo",
+  "checks": {
+    "affected_build": "PASS",
+    "ctest_e2e_measurement_test": "PASS",
+    "ctest_e2e_media_correlation_test": "PASS",
+    "python_runner_selftests": "PASS 25 tests including real Windows process exit evidence",
+    "native_to_python_independent_recalculation": "PASS 30 probes",
+    "clock_transport_selftest_after_gap_fix": "PASS on both Windows hosts",
+    "process_exit_evidence": "PASS 0/7/running/invalid handle"
+  },
+  "files": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\src\\telemetry\\e2e_measurement.h",
+      "sha256": "12e02fa82f61a652f19665b2e404476718ac3d4a9494f4a051e392fded1340ff"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\src\\telemetry\\e2e_measurement.cpp",
+      "sha256": "f64cfffe4e7e39f6e5e0c8a4620e74bc547fb08bd1013b93c538e566068dc624"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\telemetry\\test_e2e_measurement.cpp",
+      "sha256": "41e207fce838ad0816055e81c79e59c660b0739cd3c21a2ee0cbac50ce4fa33f"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\telemetry\\test_e2e_media_correlation.cpp",
+      "sha256": "e1cfc29261a1edae2265970b239771238eec8404b2a5ecf8bc71610ca563af26"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\probes\\test_e2e_media_runtime.cpp",
+      "sha256": "e329e3656e55f22ab72efed5915c1d728b9546df4c36c709e128422d4ed06f7f"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\RelWithDebInfo\\test_e2e_measurement.exe",
+      "sha256": "8f07b205bcfa71419167d21d9ffb43b0a4d0a39fb7c1b43589ea08940455d89c"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\RelWithDebInfo\\test_e2e_media_correlation.exe",
+      "sha256": "777b2332a1acf52d72cdeb9f86f2d35420fa447c00fe86199b602eaae332e525"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\RelWithDebInfo\\test_e2e_media_runtime.exe",
+      "sha256": "f48191626253f282522b04941bd8694b2941e7637fdb141b225933984da467b4"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\media\\invoke_e2e_crosshost.py",
+      "sha256": "56621bdcdabd89b6427562f48eda08b5afd9284c6dda8fc2436255c9449bd3e8"
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\selftests\\test_e2e_crosshost.py",
+      "sha256": "c066ba57df53f91856943e2c968bc92053f27524f6bc133f445f193b43a857c0"
+    }
+  ],
+  "runtime_status": "PASS_SOFTWARE_BASELINE_ONLY",
+  "scope": "offline verification only; no physical or product acceptance credit"
+}

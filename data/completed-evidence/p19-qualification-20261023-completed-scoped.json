@@ -1,0 +1,718 @@
+{
+  "schema": "cohavora-p19-qualification-completed-scoped-v1",
+  "status": "READY",
+  "finished_utc": "2026-10-22T18:07:13.027190+00:00",
+  "controller_id": "e4b0a73762e84cb9ace03afc5fcb22f3",
+  "evidence_root": "F:/CohavoraEvidence/b14-completion-20261023-01",
+  "controller_ready_snapshot": {
+    "path": "F:/CohavoraEvidence/b14-completion-20261023-01/report-ready-snapshot/b14-controller.json",
+    "sha256": "376d4a7a0b956fde0f80aeb6afab6e50e96f4ec80969bc0035d9f21c85a66395",
+    "bytes": 13490,
+    "original_live_path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/b14-controller.json"
+  },
+  "scope": "Current local direct-route frozen environment only; independent camera and other-host scopes retained.",
+  "qualification_passes": 3,
+  "completed_pilots": [
+    {
+      "pilot": "pilot-01",
+      "run_id": "c54e28392851480a9a25f0227656a802",
+      "verdict": "PILOT_PASS",
+      "check_counts": {
+        "PASS": 78
+      },
+      "check_names": [
+        "same_process_rejoin",
+        "external_cycle_review",
+        "cycle_1_uia_actions",
+        "cycle_1_dxgi_node0_budget_coverage",
+        "cycle_1_dxgi_all_nodes_budget_coverage",
+        "cycle_1_gpu_scheduler_packets_coverage",
+        "cycle_1_gpu_scheduler_packets_frozen_limits",
+        "cycle_1_gpu_queue_coverage",
+        "cycle_1_correlation",
+        "cycle_1_probe_coverage",
+        "cycle_1_resources_coverage",
+        "cycle_1_remote_coverage",
+        "cycle_1_audio_coverage",
+        "cycle_1_telemetry_no_loss",
+        "cycle_1_diagnostic_no_loss",
+        "cycle_1_revision_1_to_terminal",
+        "cycle_1_memory_checkpoint_final",
+        "cycle_1_native_cleanup_released",
+        "cycle_1_support_bundle",
+        "cycle_1_peer_join_leave",
+        "cycle_1_independent_screen_delivery",
+        "cycle_1_independent_video_buffers_released",
+        "cycle_1_backend_observed",
+        "cycle_1_inbound_audio_continuity",
+        "cycle_1_network_capacity",
+        "cycle_1_fixed_load_published",
+        "cycle_1_remote_errors",
+        "cycle_1_actual_rtp_decode_continuity",
+        "cycle_1_logging_performance",
+        "cycle_1_wddm_coverage",
+        "cycle_1_share_stop_resources",
+        "cycle_1_release_wddm_coverage",
+        "cycle_2_uia_actions",
+        "cycle_2_dxgi_node0_budget_coverage",
+        "cycle_2_dxgi_all_nodes_budget_coverage",
+        "cycle_2_gpu_scheduler_packets_coverage",
+        "cycle_2_gpu_scheduler_packets_frozen_limits",
+        "cycle_2_gpu_queue_coverage",
+        "cycle_2_correlation",
+        "cycle_2_probe_coverage",
+        "cycle_2_resources_coverage",
+        "cycle_2_remote_coverage",
+        "cycle_2_audio_coverage",
+        "cycle_2_telemetry_no_loss",
+        "cycle_2_diagnostic_no_loss",
+        "cycle_2_revision_1_to_terminal",
+        "cycle_2_memory_checkpoint_final",
+        "cycle_2_native_cleanup_released",
+        "cycle_2_support_bundle",
+        "cycle_2_peer_join_leave",
+        "cycle_2_independent_screen_delivery",
+        "cycle_2_independent_video_buffers_released",
+        "cycle_2_backend_observed",
+        "cycle_2_inbound_audio_continuity",
+        "cycle_2_network_capacity",
+        "cycle_2_fixed_load_published",
+        "cycle_2_remote_errors",
+        "cycle_2_actual_rtp_decode_continuity",
+        "cycle_2_logging_performance",
+        "cycle_2_wddm_coverage",
+        "cycle_2_share_stop_resources",
+        "cycle_2_release_wddm_coverage",
+        "audio_complete",
+        "remote_complete",
+        "isolated_load_lifecycle_complete",
+        "process_released",
+        "diagnostic_watcher_complete",
+        "diagnostic_privacy_schema",
+        "collector_scheduler_policy_complete",
+        "collector_local_route_complete",
+        "collectors_exited_normally",
+        "diagnostic_final_matches_continuous",
+        "normal_exit_and_no_windows_crash",
+        "minimum_duration",
+        "fixed_load_configuration",
+        "log_performance_complete",
+        "receiver_audio_rtp_stats",
+        "outbound_audio_pcm_continuity"
+      ],
+      "cycles_pass": 2,
+      "duration_seconds": 505.867958,
+      "reviewed_utc": "2026-10-22T17:48:11.058102+00:00",
+      "controller_completed_utc": "2026-10-22T17:48:19.840177+00:00",
+      "limitations": [
+        "wgc_handle_ownership",
+        "slow_disk",
+        "power_loss",
+        "real_crash_recovery",
+        "release_symbol_review",
+        "audio_pixel_quality",
+        "physical_multimonitor_coordinates",
+        "not_8_hours_or_100_lifecycles"
+      ],
+      "source_receipts": [
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-01/plan.json",
+          "sha256": "cd66f92146c5fab7fb53244d32db5c2a213a39624f6798ebf4edfb3cb509539d",
+          "bytes": 14094
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-01/executed-inputs.json",
+          "sha256": "bc1e532b76b690942f67d4c4e80c7daa414a97d61fb90827e4aa54f2ca08072b",
+          "bytes": 24728
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-01/runner-exit.json",
+          "sha256": "5b9b23e504cb886ae1f6577edcbc6dfe679f89ba5fa8be600edf50b9d69bc2ca",
+          "bytes": 213
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-01/pilot-review.json",
+          "sha256": "3971015d365f8e6c87948958c084c45020bc4c44d0a1ca2345e2bfe3674389c9",
+          "bytes": 1066495
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-01/external-review.json",
+          "sha256": "ac52793bdc214fc4fcacb0b192d9ef63591cf19a9ec5c7953a7bee5fdd215af3",
+          "bytes": 1166029
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-01/uia/uia-result.json",
+          "sha256": "66d201f50debc7d0bc7632b703497818861318d70467fb49003c0632bb85a4e2",
+          "bytes": 1429
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-01/collector-scheduler-policy.json",
+          "sha256": "5172714414535bb940b9db325419477b5c316d03944cc78768a0190a04f4c801",
+          "bytes": 305
+        }
+      ],
+      "audio_maximum_gap_ms": [
+        12.7521,
+        11.9545
+      ],
+      "network_peak_bps": [
+        950284.9454556198,
+        1102099.3447085537
+      ],
+      "network_samples_above_limit": [
+        0,
+        0
+      ]
+    },
+    {
+      "pilot": "pilot-02",
+      "run_id": "1619173098a24cd2a3a22b437a9bf34c",
+      "verdict": "PILOT_PASS",
+      "check_counts": {
+        "PASS": 78
+      },
+      "check_names": [
+        "same_process_rejoin",
+        "external_cycle_review",
+        "cycle_1_uia_actions",
+        "cycle_1_dxgi_node0_budget_coverage",
+        "cycle_1_dxgi_all_nodes_budget_coverage",
+        "cycle_1_gpu_scheduler_packets_coverage",
+        "cycle_1_gpu_scheduler_packets_frozen_limits",
+        "cycle_1_gpu_queue_coverage",
+        "cycle_1_correlation",
+        "cycle_1_probe_coverage",
+        "cycle_1_resources_coverage",
+        "cycle_1_remote_coverage",
+        "cycle_1_audio_coverage",
+        "cycle_1_telemetry_no_loss",
+        "cycle_1_diagnostic_no_loss",
+        "cycle_1_revision_1_to_terminal",
+        "cycle_1_memory_checkpoint_final",
+        "cycle_1_native_cleanup_released",
+        "cycle_1_support_bundle",
+        "cycle_1_peer_join_leave",
+        "cycle_1_independent_screen_delivery",
+        "cycle_1_independent_video_buffers_released",
+        "cycle_1_backend_observed",
+        "cycle_1_inbound_audio_continuity",
+        "cycle_1_network_capacity",
+        "cycle_1_fixed_load_published",
+        "cycle_1_remote_errors",
+        "cycle_1_actual_rtp_decode_continuity",
+        "cycle_1_logging_performance",
+        "cycle_1_wddm_coverage",
+        "cycle_1_share_stop_resources",
+        "cycle_1_release_wddm_coverage",
+        "cycle_2_uia_actions",
+        "cycle_2_dxgi_node0_budget_coverage",
+        "cycle_2_dxgi_all_nodes_budget_coverage",
+        "cycle_2_gpu_scheduler_packets_coverage",
+        "cycle_2_gpu_scheduler_packets_frozen_limits",
+        "cycle_2_gpu_queue_coverage",
+        "cycle_2_correlation",
+        "cycle_2_probe_coverage",
+        "cycle_2_resources_coverage",
+        "cycle_2_remote_coverage",
+        "cycle_2_audio_coverage",
+        "cycle_2_telemetry_no_loss",
+        "cycle_2_diagnostic_no_loss",
+        "cycle_2_revision_1_to_terminal",
+        "cycle_2_memory_checkpoint_final",
+        "cycle_2_native_cleanup_released",
+        "cycle_2_support_bundle",
+        "cycle_2_peer_join_leave",
+        "cycle_2_independent_screen_delivery",
+        "cycle_2_independent_video_buffers_released",
+        "cycle_2_backend_observed",
+        "cycle_2_inbound_audio_continuity",
+        "cycle_2_network_capacity",
+        "cycle_2_fixed_load_published",
+        "cycle_2_remote_errors",
+        "cycle_2_actual_rtp_decode_continuity",
+        "cycle_2_logging_performance",
+        "cycle_2_wddm_coverage",
+        "cycle_2_share_stop_resources",
+        "cycle_2_release_wddm_coverage",
+        "audio_complete",
+        "remote_complete",
+        "isolated_load_lifecycle_complete",
+        "process_released",
+        "diagnostic_watcher_complete",
+        "diagnostic_privacy_schema",
+        "collector_scheduler_policy_complete",
+        "collector_local_route_complete",
+        "collectors_exited_normally",
+        "diagnostic_final_matches_continuous",
+        "normal_exit_and_no_windows_crash",
+        "minimum_duration",
+        "fixed_load_configuration",
+        "log_performance_complete",
+        "receiver_audio_rtp_stats",
+        "outbound_audio_pcm_continuity"
+      ],
+      "cycles_pass": 2,
+      "duration_seconds": 504.21357,
+      "reviewed_utc": "2026-10-22T17:57:34.041789+00:00",
+      "controller_completed_utc": "2026-10-22T17:57:44.216505+00:00",
+      "limitations": [
+        "wgc_handle_ownership",
+        "slow_disk",
+        "power_loss",
+        "real_crash_recovery",
+        "release_symbol_review",
+        "audio_pixel_quality",
+        "physical_multimonitor_coordinates",
+        "not_8_hours_or_100_lifecycles"
+      ],
+      "source_receipts": [
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-02/plan.json",
+          "sha256": "7d77cec54c0bb93a1b7bab491dd3e00a70557df72595f08f5bd370cebdd92a51",
+          "bytes": 14094
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-02/executed-inputs.json",
+          "sha256": "bc1e532b76b690942f67d4c4e80c7daa414a97d61fb90827e4aa54f2ca08072b",
+          "bytes": 24728
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-02/runner-exit.json",
+          "sha256": "f6985f6fb8f36d2e354a6a86c8305cf893e1e5999341c8c5af0d1a15ef80d871",
+          "bytes": 213
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-02/pilot-review.json",
+          "sha256": "cb02d622a233f2e88617cad51d2b030fa69a5b95dc21fe6351a7277eadc3b187",
+          "bytes": 1066508
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-02/external-review.json",
+          "sha256": "2ee113de9f2c43f9fdd60443faf871e4fc36a7d50757f7cb7d522031bf9e92f1",
+          "bytes": 1166040
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-02/uia/uia-result.json",
+          "sha256": "96c46978f79953568c18627f7421daf3fcf33d035146a1b34dbc6746ff10fa26",
+          "bytes": 1436
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-02/collector-scheduler-policy.json",
+          "sha256": "5172714414535bb940b9db325419477b5c316d03944cc78768a0190a04f4c801",
+          "bytes": 305
+        }
+      ],
+      "audio_maximum_gap_ms": [
+        12.9871,
+        14.0109
+      ],
+      "network_peak_bps": [
+        983787.6549619391,
+        996069.7260052484
+      ],
+      "network_samples_above_limit": [
+        0,
+        0
+      ]
+    },
+    {
+      "pilot": "pilot-03",
+      "run_id": "227d281957284dc3bc87682c34bd423e",
+      "verdict": "PILOT_PASS",
+      "check_counts": {
+        "PASS": 78
+      },
+      "check_names": [
+        "same_process_rejoin",
+        "external_cycle_review",
+        "cycle_1_uia_actions",
+        "cycle_1_dxgi_node0_budget_coverage",
+        "cycle_1_dxgi_all_nodes_budget_coverage",
+        "cycle_1_gpu_scheduler_packets_coverage",
+        "cycle_1_gpu_scheduler_packets_frozen_limits",
+        "cycle_1_gpu_queue_coverage",
+        "cycle_1_correlation",
+        "cycle_1_probe_coverage",
+        "cycle_1_resources_coverage",
+        "cycle_1_remote_coverage",
+        "cycle_1_audio_coverage",
+        "cycle_1_telemetry_no_loss",
+        "cycle_1_diagnostic_no_loss",
+        "cycle_1_revision_1_to_terminal",
+        "cycle_1_memory_checkpoint_final",
+        "cycle_1_native_cleanup_released",
+        "cycle_1_support_bundle",
+        "cycle_1_peer_join_leave",
+        "cycle_1_independent_screen_delivery",
+        "cycle_1_independent_video_buffers_released",
+        "cycle_1_backend_observed",
+        "cycle_1_inbound_audio_continuity",
+        "cycle_1_network_capacity",
+        "cycle_1_fixed_load_published",
+        "cycle_1_remote_errors",
+        "cycle_1_actual_rtp_decode_continuity",
+        "cycle_1_logging_performance",
+        "cycle_1_wddm_coverage",
+        "cycle_1_share_stop_resources",
+        "cycle_1_release_wddm_coverage",
+        "cycle_2_uia_actions",
+        "cycle_2_dxgi_node0_budget_coverage",
+        "cycle_2_dxgi_all_nodes_budget_coverage",
+        "cycle_2_gpu_scheduler_packets_coverage",
+        "cycle_2_gpu_scheduler_packets_frozen_limits",
+        "cycle_2_gpu_queue_coverage",
+        "cycle_2_correlation",
+        "cycle_2_probe_coverage",
+        "cycle_2_resources_coverage",
+        "cycle_2_remote_coverage",
+        "cycle_2_audio_coverage",
+        "cycle_2_telemetry_no_loss",
+        "cycle_2_diagnostic_no_loss",
+        "cycle_2_revision_1_to_terminal",
+        "cycle_2_memory_checkpoint_final",
+        "cycle_2_native_cleanup_released",
+        "cycle_2_support_bundle",
+        "cycle_2_peer_join_leave",
+        "cycle_2_independent_screen_delivery",
+        "cycle_2_independent_video_buffers_released",
+        "cycle_2_backend_observed",
+        "cycle_2_inbound_audio_continuity",
+        "cycle_2_network_capacity",
+        "cycle_2_fixed_load_published",
+        "cycle_2_remote_errors",
+        "cycle_2_actual_rtp_decode_continuity",
+        "cycle_2_logging_performance",
+        "cycle_2_wddm_coverage",
+        "cycle_2_share_stop_resources",
+        "cycle_2_release_wddm_coverage",
+        "audio_complete",
+        "remote_complete",
+        "isolated_load_lifecycle_complete",
+        "process_released",
+        "diagnostic_watcher_complete",
+        "diagnostic_privacy_schema",
+        "collector_scheduler_policy_complete",
+        "collector_local_route_complete",
+        "collectors_exited_normally",
+        "diagnostic_final_matches_continuous",
+        "normal_exit_and_no_windows_crash",
+        "minimum_duration",
+        "fixed_load_configuration",
+        "log_performance_complete",
+        "receiver_audio_rtp_stats",
+        "outbound_audio_pcm_continuity"
+      ],
+      "cycles_pass": 2,
+      "duration_seconds": 504.962256,
+      "reviewed_utc": "2026-10-22T18:06:55.080788+00:00",
+      "controller_completed_utc": "2026-10-22T18:07:05.951155+00:00",
+      "limitations": [
+        "wgc_handle_ownership",
+        "slow_disk",
+        "power_loss",
+        "real_crash_recovery",
+        "release_symbol_review",
+        "audio_pixel_quality",
+        "physical_multimonitor_coordinates",
+        "not_8_hours_or_100_lifecycles"
+      ],
+      "source_receipts": [
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-03/plan.json",
+          "sha256": "29e137b80317c77c7eba4cd14732426fff1375770d48a63470bc6c2973bb54a3",
+          "bytes": 14094
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-03/executed-inputs.json",
+          "sha256": "bc1e532b76b690942f67d4c4e80c7daa414a97d61fb90827e4aa54f2ca08072b",
+          "bytes": 24728
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-03/runner-exit.json",
+          "sha256": "5549b774e3c4381f47e6dc61e2712df40751eea575d819724e5c647c6454a0cc",
+          "bytes": 213
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-03/pilot-review.json",
+          "sha256": "25744154344726cfe6faf751e777ff7c1487af0cff4610ffa353513269b96359",
+          "bytes": 1066485
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-03/external-review.json",
+          "sha256": "47fd191e8dadb0d4735382ce353dc44206fd256e34d0a992839a48f7da363702",
+          "bytes": 1166011
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-03/uia/uia-result.json",
+          "sha256": "f05c83dcb349063429033d58089fca34802a8a2be69d6b7ce8595bb6a4c9dabf",
+          "bytes": 1429
+        },
+        {
+          "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/pilot-03/collector-scheduler-policy.json",
+          "sha256": "5172714414535bb940b9db325419477b5c316d03944cc78768a0190a04f4c801",
+          "bytes": 305
+        }
+      ],
+      "audio_maximum_gap_ms": [
+        12.1052,
+        12.3641
+      ],
+      "network_peak_bps": [
+        1051284.1617271989,
+        1107166.3232282228
+      ],
+      "network_samples_above_limit": [
+        0,
+        0
+      ]
+    }
+  ],
+  "full_media_gpu_ready": true,
+  "group_status": "PARTIAL",
+  "full_gate_credit": 0,
+  "formal": "NOT_RUN",
+  "thresholds_changed": false,
+  "exceptions": [],
+  "source_receipts": [
+    {
+      "path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/release-gate.json",
+      "sha256": "04e441ac7c712097b2dc1d1f4a9aa49d7454cbe8cec040c3104751b6cbd5d56e",
+      "bytes": 1302229
+    },
+    {
+      "path": "F:/CohavoraEvidence/b14-completion-20261023-01/report-ready-snapshot/b14-controller.json",
+      "sha256": "376d4a7a0b956fde0f80aeb6afab6e50e96f4ec80969bc0035d9f21c85a66395",
+      "bytes": 13490,
+      "original_live_path": "F:/CohavoraEvidence/b14-completion-20261023-01/admission/b14-controller.json"
+    },
+    {
+      "path": "F:/CohavoraEvidence/b14-completion-20261023-01/report-ready-snapshot/environment-freeze.json",
+      "sha256": "724e2bf8d00b418e2fc1f1aa3bb1e6965076cc46c36cbf340ec46d42d5f2d1b9",
+      "bytes": 6024,
+      "original_live_path": "F:/CohavoraEvidence/b14-completion-20261023-01/environment-freeze.json"
+    },
+    {
+      "path": "F:/CohavoraEvidence/p19-direct-readmission-20261023-02/admission/software/current-validation.json",
+      "sha256": "2f678366f63ac273b90dd2583af0302814ae7db5f89e2c38fbba0ad787531397",
+      "bytes": 958451
+    },
+    {
+      "path": "F:/CohavoraEvidence/b14-completion-20261023-01/capacity-repair-reuse.json",
+      "sha256": "84829a37d1582fc4d17cfbcb82cd83495ade7d49d1914e08da035666bf98baa8",
+      "bytes": 1890
+    }
+  ],
+  "validation": {
+    "verdict": "PASS",
+    "current_source_release_gate": true,
+    "current_exit_regression_closed": true,
+    "current_exit_scope": "Current diagnostic Qt bridge regression and uninstrumented same-process two-cycle exit; historical crash closure is not reviewed.",
+    "historical_crash_review": "NOT_REVIEWED",
+    "historical_heap_root_cause": "UNKNOWN",
+    "qualification_credit": 0,
+    "formal_credit": 0,
+    "scope": "Current core/direct tests, GPU tool publication and byte-bound current exit review. Historical crash closure is not reviewed. No READY or media/GPU runtime closure."
+  },
+  "validation_reuse": {
+    "schema": "b14_capacity_repair_reuse_v1",
+    "utc": "2026-10-22T17:24:49.5587919Z",
+    "root_cause": "Menu and page-size helpers used three direct AppendAllText sinks bypassing the existing bounded UIA capacity writer.",
+    "fix_functions": [
+      "Write-ProductPageEvidence",
+      "Save-MenuObservation",
+      "Write-MenuPhase"
+    ],
+    "files": [
+      {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_desktop_evidence.ps1",
+        "sha256": "64328a9346e3f02d1e2def17f61814940ff90f2c64cfafddb952e24f08074d97"
+      },
+      {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\selftests\\test_product_uia_capacity.ps1",
+        "sha256": "ac9033af4d8cfdc4d132ad8d3ab204b215cabc9dedf47659d2da097c4bdc19ef"
+      }
+    ],
+    "offline_gate": "F:/CohavoraEvidence/p19-direct-readmission-20261023-02/tool-verification/final/reviewed.json",
+    "offline_checks": 97,
+    "offline_status": "PASS_REUSED_UNCHANGED_INPUTS",
+    "runtime_accounting_proof": "F:/CohavoraEvidence/p19-direct-readmission-20261023-02/capacity-fix-runtime-proof.json",
+    "prior_admission": "F:/CohavoraEvidence/p19-direct-readmission-20261023-02/admission/b14-controller.json",
+    "prior_admission_status": "FAILED_PILOT_01_NETWORK_CAPACITY",
+    "validation_to_import": "F:/CohavoraEvidence/p19-direct-readmission-20261023-02/admission/software/current-validation.json",
+    "validation_reuse": "1813 source and 1318 evidence hashes independently rechecked by focus_capacity_selftest agent",
+    "native_tests": "58/58 PASS_REUSED",
+    "gpu_tests": "1/1 PASS_REUSED",
+    "independent_exit": "2/2 cycles PASS_REUSED",
+    "new_scope": "Three fresh qualification pilots; if READY update report and then explicit 8h100 Formal under unchanged thresholds",
+    "threshold_changes": false,
+    "history_modified": false,
+    "product_source_changed_this_continuation": false
+  },
+  "camera": {
+    "status": "PARTIAL",
+    "source": "reports/b14/b14-amd-camera-rejoin-20261019-03-reviewed.html",
+    "scope": "Historical same-process two-cycle diagnostic only; native callbacks/source1/decoded delivery, pixel quality unmeasured; not raw DirectShow/conversion failures, encoder/RTP or injected hardware timeout."
+  },
+  "other_hosts": [
+    {
+      "host": "Windows .151",
+      "status": "PARTIAL",
+      "current_source": "UNKNOWN",
+      "scope": "42/42 bounded-device PROCESS_NODE query calibration does not prove current real-product all-node/global topology/passive absence/release or independent 3-of-3 qualification."
+    }
+  ],
+  "prior_failures_preserved": [
+    {
+      "root": "F:/CohavoraEvidence/p19-direct-readmission-20261023-02",
+      "status": "FAILED_PILOT_01_NETWORK_CAPACITY",
+      "retrospective_traffic_attribution": "UNKNOWN"
+    },
+    {
+      "source": "original same-name report pair retained byte-for-byte in presentation-before",
+      "status": "HISTORICAL_FAILURES_RETAINED"
+    }
+  ],
+  "history_archive": {
+    "base": "../../out/acceptance-history-20261021-latest-only/presentation-before",
+    "files": [
+      {
+        "path": "reports/b14/b14-full-standard-20261020-01.html",
+        "sha256": "ccac431aa490ace212c3740ecee9fff4e59824888733d33d04cdd1c41d1cceb2",
+        "bytes": 2617
+      },
+      {
+        "path": "reports/b14/b14-full-standard-20261020-01.json",
+        "sha256": "a57035e9c4c7ebd96e045161d49873ca78f73584566c418133b5435ccd5a1a91",
+        "bytes": 3032
+      }
+    ]
+  },
+  "plan_update": {
+    "previous_stage_status": {
+      "status": "BLOCKED",
+      "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+      "completed_scope": [
+        "既有环境/工具身份、局部只读校准和摄像头二次入会专项仅按原scope保留。"
+      ],
+      "remaining": [
+        "按host的all-node native/global topology及当前完整观测准入未闭环；本机非管理员ETW handle2查询AccessDenied、未开始capture。",
+        "同一冻结输入三次完整PILOT不由专项诊断抵扣；对应完整Formal资格未就绪。"
+      ],
+      "retained_failures": [],
+      "inconclusive": [],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data",
+        "resolution22"
+      ],
+      "full_gate_credit": 0,
+      "gates": [
+        {
+          "index": 0,
+          "definition": "输入与环境：目标host的产品／工具／合同、强身份和完整环境冻结一致。",
+          "status": "PARTIAL",
+          "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+        },
+        {
+          "index": 1,
+          "definition": "观测语义：global topology、all-node native／被动无参与、创建／持有／释放、未知值传播与cleanup均有完整证据。",
+          "status": "INCONCLUSIVE",
+          "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+        },
+        {
+          "index": 2,
+          "definition": "摄像头二次入会：同一产品进程两周期均验证本代VideoSource／RTC分段计数、产品source 1发布和独立接收解码；首帧超时有失败终态及重试入口，离会释放完整。本项专项诊断不抵扣三次完整资格或Formal。",
+          "status": "PARTIAL",
+          "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+        },
+        {
+          "index": 3,
+          "definition": "完整PILOT：每个待用环境在同一冻结输入下取得三次独立完整PILOT PASS；提前退出和失败如实保留。",
+          "status": "BLOCKED",
+          "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+        },
+        {
+          "index": 4,
+          "definition": "交接Formal：只有对应环境的全部准入成立才转交一次完整Formal，READY仅表示资格就绪。",
+          "status": "BLOCKED",
+          "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+        }
+      ],
+      "as_of": "2026-10-22T05:15:45.499477+08:00",
+      "stage_execution": "STOPPED_AFTER_CLOSURE",
+      "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+    },
+    "stage_status": {
+      "status": "PARTIAL",
+      "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+      "completed_scope": [
+        "本机direct冻结环境controller=e4b0a73762e84cb9ace03afc5fcb22f3：当前软件／工具及同进程退出前置按哈希复用，三次独立完整PILOT均为PILOT_PASS（每次2周期、78/78检查），release-gate READY／full_media_gpu_ready=true。仅该环境限定准入，不授完整P19或Formal信用。",
+        "本次真实检查覆盖合同内all-node预算、scheduler／queue／WDDM观测、UIA、固定负载、实际RTP／解码、音频连续性、整机NIC、诊断／遥测无丢失、释放与正常退出；仅三次短PILOT范围。",
+        "既有环境/工具身份、局部只读校准和摄像头二次入会专项仅按原scope保留。"
+      ],
+      "remaining": [
+        "其他host（含Windows .151）的当前真实产品强身份、global topology／all-node native／被动无参与／创建持有释放与cleanup仍需独立封存及三次完整PILOT；本机READY不外推。",
+        "摄像头二次入会独立专项仍PARTIAL：旧专项非本次完整资格信用；像素质量、原始DirectShow／转换失败、编码器／RTP及真实硬件首帧超时未闭环。",
+        "本次8小时／100周期Formal尚未启动；READY仅表示本机冻结环境资格就绪，不拼接历史Formal或任何阈值例外。"
+      ],
+      "retained_failures": [],
+      "inconclusive": [],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data",
+        "resolution22"
+      ],
+      "full_gate_credit": 0,
+      "gates": [
+        {
+          "index": 0,
+          "definition": "输入与环境：目标host的产品／工具／合同、强身份和完整环境冻结一致。",
+          "status": "PASS_SCOPED",
+          "interpretation": "PASS_SCOPED仅适用于本机direct冻结输入、当前验证导入及三PILOT绑定；其他host未通过。"
+        },
+        {
+          "index": 1,
+          "definition": "观测语义：global topology、all-node native／被动无参与、创建／持有／释放、未知值传播与cleanup均有完整证据。",
+          "status": "PASS_SCOPED",
+          "interpretation": "PASS_SCOPED仅覆盖本次三PILOT合同中实际GPU／身份／创建释放和cleanup检查；未知项及其他host不外推。"
+        },
+        {
+          "index": 2,
+          "definition": "摄像头二次入会：同一产品进程两周期均验证本代VideoSource／RTC分段计数、产品source 1发布和独立接收解码；首帧超时有失败终态及重试入口，离会释放完整。本项专项诊断不抵扣三次完整资格或Formal。",
+          "status": "PARTIAL",
+          "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+        },
+        {
+          "index": 3,
+          "definition": "完整PILOT：每个待用环境在同一冻结输入下取得三次独立完整PILOT PASS；提前退出和失败如实保留。",
+          "status": "PASS_SCOPED",
+          "interpretation": "本机同一冻结输入三次独立完整PILOT通过；不抵扣其他host的三轮资格。"
+        },
+        {
+          "index": 4,
+          "definition": "交接Formal：只有对应环境的全部准入成立才转交一次完整Formal，READY仅表示资格就绪。",
+          "status": "READY",
+          "interpretation": "READY仅适用于本机冻结环境，允许交接一次Formal；Formal本身仍NOT_RUN，整组信用0。"
+        }
+      ],
+      "as_of": "2026-10-22T18:07:13.027190+00:00",
+      "stage_execution": "COMPLETED_SCOPED_BATCH",
+      "evidence_catalog": "data/completed-evidence/p19-qualification-20261023-completed-scoped.json"
+    },
+    "other_plan_fields_changed": false
+  },
+  "preserved": {
+    "b14_cycle_summary_sha256": "fb0f17d5d91e5adc17d8dc96fc194b61e9f51d5f684e43aa74d5a7434745f24e",
+    "migration_manifest_sha256": "380844628d9ffde42c5b5ecd07e1463430d88b4d89d3519175b4ce39c5f7709d",
+    "frozen_plan_sha256": "51e074ead1b630a490f89e371dc9b10c347eebf2dd9dc794155621de70ffe820",
+    "closed_stage_sha256": "12813b3ed22cdf47a4da314977fd5cbf69d756954204b331428c9ddf687221c1",
+    "old_formal_unchanged": true,
+    "P20_status": "PAUSED"
+  },
+  "owner_at_report_snapshot": {
+    "pid": 43468,
+    "start_utc": "2026-10-22T17:38:36.5335873Z",
+    "alive": true
+  },
+  "product_retest_executed_by_document_refresh": false
+}

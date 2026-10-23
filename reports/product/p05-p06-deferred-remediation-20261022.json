@@ -1,0 +1,328 @@
+{
+  "schema": "cohavora-p05-p06-deferred-bugs-v1",
+  "title": "P05／P06 已知缺陷延期与后续修复方案",
+  "status": "DEFERRED",
+  "updated_utc": "2026-10-22T10:51:04+00:00",
+  "decision_at": "2026-10-22T18:51:04+08:00",
+  "decision_basis": "用户要求将P05／P06的FAIL改为DEFERRED，并记录bug原因及推荐修改方案，方便后续修改。",
+  "scope": "仅更新当前处置。两个共享bug、三条失败来源在P05／P06分别引用，不跨组重复计数；原实测FAIL、日期、输入、判据及原始证据保留。",
+  "execution": "NOT_RUN",
+  "acceptance_credit": 0,
+  "full_gate_credit": 0,
+  "production_ready": false,
+  "task7_policy": "整组实现保持排除；仅参考合同和独立证据，不整体恢复204文件，不继承局部门为端到端通过。",
+  "summary": {
+    "statement": "P05／P06当前组状态及原失败子门改为DEFERRED；每组3条失败来源显示当前暂缓、原实测FAIL。replace-two修复衍生PASS保留，不升级原official格。",
+    "shared_bug_count": 2,
+    "unique_failed_result_records": 3,
+    "diagnostic_runs_counted_as_product_results": 0,
+    "product_runtime": "NOT_RUN"
+  },
+  "case_dispositions": [
+    {
+      "result_id": "flutter-replace-two",
+      "bug_id": "BUG-FLUTTER-SAME-SLOT-KEY-REPLACE",
+      "status": "DEFERRED",
+      "original_status": "FAIL",
+      "plan_codes": [
+        "P05",
+        "P06"
+      ],
+      "source_path": "reports/product/resource-completion-20261021-01.json",
+      "source_locator": "/entries/official_flutter/latest_projection/cells/4/status",
+      "run_id": "e2ee-1622eafe5e764e76",
+      "attempt": "replace-two-relay02"
+    },
+    {
+      "result_id": "flutter-flutter-full",
+      "bug_id": "BUG-SFU-DECODER-CLEAR-DELIVERY",
+      "status": "DEFERRED",
+      "original_status": "FAIL",
+      "plan_codes": [
+        "P05",
+        "P06"
+      ],
+      "source_path": "reports/product/resource-completion-20261021-01.json",
+      "source_locator": "/entries/official_flutter/latest_projection/cells/12/status",
+      "run_id": "e2ee-80910d6e7f33488e",
+      "attempt": "flutter-full-relay03"
+    },
+    {
+      "result_id": "flutter-repair-derivative-flutter-full",
+      "bug_id": "BUG-SFU-DECODER-CLEAR-DELIVERY",
+      "status": "DEFERRED",
+      "original_status": "FAIL",
+      "plan_codes": [
+        "P05",
+        "P06"
+      ],
+      "source_path": "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+      "source_locator": "/cases/1/status",
+      "run_id": "e2ee-0770bdfb88004ca8",
+      "attempt": "flutter-original-failures-retest-20261022-01/flutter-full"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-FLUTTER-SAME-SLOT-KEY-REPLACE",
+      "title": "同slot二次换钥后媒体／数据恢复失败",
+      "status": "DEFERRED",
+      "symptoms": [
+        "原replace-two-relay02：两轮replace后12项媒体／数据恢复检查失败；marker内容检查通过，双方退出码0。",
+        "最新修复衍生run e2ee-4d6e67436a214ad9：66/66 PASS，478/478帧有效、无效0；仅task5/task6冻结修复产物，非pristine official。"
+      ],
+      "confirmed_cause": [
+        "固定版本SetSharedKey本来会更新既有participant handler，不能归因为共享密钥不传播。",
+        "持有旧KeySet的解密操作可在失败ratchet后无条件rollback旧材料，或在同slot换钥后提交旧ratchet结果，覆盖新KeySet。源码竞态已由确定性交错合同门复现。"
+      ],
+      "causality_boundary": "源码竞态已确认，与旧run的remote-generation回退一致；没有逐操作证据证明它是原run全部12项失败的唯一原因。修复衍生PASS同时采用task5/task6产物，不能单独闭环旧run因果。",
+      "recommended_changes": [
+        "保留SetSharedKey传播逻辑，删除临时派生并未改变handler状态时多余的media/data失败rollback。",
+        "在同一handler mutex内比较持有KeySet的对象身份再提交ratchet结果；身份不同则拒绝过期提交，同材料但不同KeySet也不属于同一代。",
+        "失败元数据更新采用相同身份检查，避免旧操作污染新代；保留当前失败容忍与成功复位语义。",
+        "优先复用私有tests/runtime/selftests/flutter_same_slot_key现有补丁、入口和有效证据，先核对来源与哈希；不重新实现或自动修改外部仓库。"
+      ],
+      "independent_boundaries": [
+        "task6 observer registry退出／释放修复与换钥竞态分开记录。",
+        "插件忽略native SetSharedKey布尔返回是独立确认缺陷，本记录不宣称已经修复或是12项失败的根因。",
+        "原official格仍保留FAIL证据；原格关闭与后续交付延期，不撤销修复衍生PASS。"
+      ],
+      "resume_conditions": [
+        "明确交付的Flutter SDK／plugin／engine版本、修复DLL来源和ABI，并明确具体源码范围。",
+        "未变化的源码合同门和衍生结果直接复用；输入变化后仅运行直接合同门、受影响构建及原replace-two场景。",
+        "两轮换钥后的媒体／数据恢复、严格marker、原失败检查、错误拒绝与退出清理满足原合同后，才更新同范围结果。"
+      ],
+      "evidence": [
+        "reports/product/resource-completion-20261021-01.json",
+        "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+        "data/completed-evidence/repair-flutter-key-20261022-result.json",
+        "data/completed-evidence/repair-flutter-dispose-20261022-result.json"
+      ]
+    },
+    {
+      "id": "BUG-SFU-DECODER-CLEAR-DELIVERY",
+      "title": "SFU清decoder补帧进入Native普通视频交付",
+      "status": "DEFERRED",
+      "symptoms": [
+        "原flutter-full-relay03：512帧中506有效、6异常，relay_marker_content_valid失败。",
+        "shared衍生run e2ee-0770bdfb88004ca8：69/70，522帧中516有效、6异常；首帧正确，完整重连和媒体／数据恢复检查通过，双方退出0。",
+        "隔离诊断run e2ee-6d63ce9849614878：69/70，508帧中502有效、6异常；6/6精确关联SFU Enqueue与Native input/output/copied-for-delivery。"
+      ],
+      "confirmed_cause": [
+        "隔离run中，Flutter退役旧relay后，SFU CloseWithFlush为清旧decoder/display缓存生成VP8 blank frame，经pacer Enqueue送出。",
+        "Native按SIF trailer走兼容路径，补帧进入decoder后又被普通视频sink复制和交付，触发严格marker失败。",
+        "异常对象是实际8×8 I420帧；null表示marker optional缺失，不是空callback或帧分配失败。",
+        "SIF trailer仅是兼容解密路径标记，不证明clear类型、publication授权、代际或E2EE认证成功。"
+      ],
+      "causality_boundary": "生产者因果只在18:03隔离run中逐帧确认；原80910与shared0770没有同运行生产者捕获，历史帧来源仍UNKNOWN／强候选，不追溯改判。诊断不新增产品验收项，信用0。",
+      "capture": {
+        "peer_run_id": "e2ee-6d63ce9849614878",
+        "capture_run_id": "79a15bf85d0345b58167c6755dab972a",
+        "started_beijing": "2026-10-22T18:02:12.063+08:00",
+        "finished_beijing": "2026-10-22T18:03:31.037+08:00",
+        "old_relay_track": "TR_VCGZaMNwbXNwav",
+        "new_relay_track": "TR_VCxR28sVuZGycX",
+        "ssrc": 3980938446,
+        "rtp_timestamps": [
+          1016172999,
+          1016176046,
+          1016179047,
+          1016182048,
+          1016185049,
+          1016188050
+        ],
+        "rtp_sequence_range": [
+          19896,
+          19901
+        ],
+        "payload_type": 96,
+        "marker": 1,
+        "payload_length": 78,
+        "binding_id": 4,
+        "binding_generation": 1,
+        "matched_frames": 6,
+        "server_events_received": 81,
+        "server_events_written": 81,
+        "zero_loss": true,
+        "timeline_beijing": {
+          "old_relay_retired": "2026-10-22T18:02:58.030+08:00",
+          "first_invalid_frame": "2026-10-22T18:02:58.194+08:00",
+          "last_invalid_frame": "2026-10-22T18:02:58.361+08:00",
+          "reconnected": "2026-10-22T18:02:59.483+08:00",
+          "new_relay_published": "2026-10-22T18:03:00.056+08:00"
+        }
+      },
+      "impact": [
+        "已确认补帧进入普通回调并造成内容验收失败；显示／录制／转发消费者若使用这些帧可能产生异常内容，实际屏幕表现本次未验证。",
+        "本次没有从6帧推导崩溃或持续断流；延期不表示修复或通过。"
+      ],
+      "recommendation": "优先评估A1严格退役并新建接收管线，以避免WebRTC分支维护，但必须证明实际隔离。必须保留快速复用或A1隔离无法证明时，转B显式clear＋epoch＋真实完成ACK。A2整订阅PC重建不作为常规局部修复。",
+      "options": [
+        {
+          "id": "A1",
+          "priority": "FIRST_FEASIBILITY_ONLY",
+          "name": "同一PeerConnection严格新建接收管线",
+          "estimated_change": "相对中等；WebRTC源码有条件可不改，目前未证明可行。",
+          "changes": [
+            "SFU同时禁止cached ReplaceTrack和AddTrack隐式复用；显式分配新transceiver，旧transceiver永久停止。",
+            "证明新MID对应独立receiver／receive stream／decoder；只换Track、MID或SSRC不构成证明。",
+            "隔离primary／RTX／FEC身份，证明包括无MID在内的迟到旧包不能进入新流。",
+            "撤销旧binding应用交付权并清CPU／GPU显示缓存；只有严格隔离策略协商成立后才有条件取消对应视频close-flush，保留其他客户端和音频行为。"
+          ],
+          "risks": [
+            "新MID仍可能匹配available transceiver，共享传输demux及RTX/FEC路径需要证明隔离。",
+            "增加重新协商和关键帧等待；频繁切换可能积累m-line和退休资源。"
+          ],
+          "stop_condition": "任一实际对象独立性、旧包隔离或显示退休条件不能证明，即停止将A1称为免改WebRTC方案；不得仅关闭reuse或flush交付。"
+        },
+        {
+          "id": "B",
+          "priority": "WHEN_FAST_REUSE_REQUIRED_OR_A1_UNPROVEN",
+          "name": "显式decoder-clear→各owner实际完成→匹配ACK后复用",
+          "estimated_change": "相对大；协议／SFU／Native／固定WebRTC／Qt均涉及，底层依赖与版本维护最深，可限制单轨切换。",
+          "changes": [
+            "认证信令和双向能力协商绑定server/session、transport、publication、receiver/MID、media epoch及request/sequence；本地复用TrackKey/MediaBindingKey。",
+            "SFU停止旧生产并排空pacer后发clear；跨信令／RTP无天然全序，复用必须逐包epoch准入并覆盖RTX/FEC，不能仅靠信令generation。",
+            "固定WebRTC提供异步transformer drain、真实receiver/decoder reset及sink完成契约；不能用Retire、解绑、Stop返回推定完成。",
+            "Qt CPU拒绝旧排队更新并清帧；GPU等待执行中旧场景退出与owner完成屏障，不以removeFrame擦map为完成。",
+            "全部要求组件完成才ACK，精确回显身份；超时／取消／销毁／重复／错代控制只有一个终态，失败禁止cache/reuse，等待不持Room/router锁。"
+          ],
+          "risks": [
+            "跨协议／线程状态机、提前ACK和取消重绑竞态；持续维护WebRTC和协议补丁。",
+            "ACK仅承诺软件管线清理、旧binding不再提交画面，不承诺物理屏幕scanout。"
+          ]
+        },
+        {
+          "id": "A2",
+          "priority": "NOT_RECOMMENDED_AS_LOCAL_FIX",
+          "name": "全新subscriber PeerConnection",
+          "estimated_change": "相对大，属于传输恢复架构调整；通常可使用公开WebRTC API。",
+          "changes": [
+            "新旧ICE/DTLS/SRTP及SFU transport incarnation独立，增加subscriber专属代际以拒绝旧callback。",
+            "恢复全部远端音视频、入站data channel及接收cryptor绑定；不等于必须重置E2EE密钥。",
+            "单PC模式下subscriber与publisher共用对象，重建影响发布侧；现有full restart属于全会话重建。"
+          ],
+          "risks": [
+            "影响整个订阅连接，ICE/DTLS恢复失败可能扩大中断。",
+            "新PC不能撤销旧管线退役前已经交付的blank，仍须撤销旧交付权和清显示缓存。"
+          ]
+        }
+      ],
+      "common_constraints": [
+        "禁止按8×8、图片签名、帧数、时间窗口、最近一次SIF或全局计数过滤。",
+        "禁止未证明等价隔离就移除SIF或全局关闭SFU flush；不得放宽marker内容门，不把控制补帧计作正常媒体／E2EE成功。",
+        "双轨、同SID/MID复用、SSRC变化、旧回调与decoder/display队列均须精确绑定身份。",
+        "task7整组保持排除，不整体恢复204文件；局部门不能继承为端到端ACK证明。",
+        "第一阶段只规划SFU→Native/WebRTC→Qt接收链；明确交付Flutter接收端支持时才扩大engine owner/drain实现。"
+      ],
+      "future_sequence": [
+        {
+          "order": 1,
+          "mode": "串行",
+          "work": "核对固定依赖和A1静态可行性，冻结退役／身份／完成合同；不启动产品。"
+        },
+        {
+          "order": 2,
+          "mode": "串行决策",
+          "work": "A1隔离条件可证才选A1；必须快速复用或A1不能证明时选择B，冻结协议及外部源码改动范围。"
+        },
+        {
+          "order": 3,
+          "mode": "并行",
+          "work": "公共API冻结后，SFU、Native/WebRTC、Qt各单写者实现，保留无关修改。"
+        },
+        {
+          "order": 4,
+          "mode": "串行",
+          "work": "集成、受影响构建及一个focused合同gate：双轨、旧RTP/RTX/FEC、旧callback、重复／乱序／错代控制、取消／销毁、CPU/GPU完成边界。"
+        },
+        {
+          "order": 5,
+          "mode": "串行",
+          "work": "原60秒完整重连合同同运行复测，原70项及marker判据不变；控制补帧不进普通回调，正常媒体持续，旧画面不复活。"
+        },
+        {
+          "order": 6,
+          "mode": "串行收口",
+          "work": "仅更新完成同范围结果；条件不足、失败或不明即停止，不追加全套、长稳或硬件矩阵。"
+        }
+      ],
+      "evidence": [
+        "reports/product/resource-completion-20261021-01.json",
+        "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+        "data/completed-evidence/flutter-full-rtp-sif-20261022-diagnosis.json",
+        "data/completed-evidence/flutter-full-rtp-sif-20261022-execution.json"
+      ],
+      "code_references": [
+        {
+          "path": "src/e2ee/frame_cryptor.cpp",
+          "line": 108,
+          "meaning": "Retire不是drain完成屏障；135附近SIF识别没有clear授权。"
+        },
+        {
+          "path": "src/core/room.cpp",
+          "line": 4780,
+          "meaning": "普通解码帧复制与交付。"
+        },
+        {
+          "path": "src/core/participant_event.h",
+          "line": 38,
+          "meaning": "复用TrackKey/MediaBindingKey身份。"
+        },
+        {
+          "path": "src/ui/render/module_video_canvas.cpp",
+          "line": 361,
+          "meaning": "removeFrame只擦缓存，执行中scene需要owner完成屏障。"
+        },
+        {
+          "path": "src/core/room.cpp",
+          "line": 11288,
+          "meaning": "现有full restart不是subscriber局部替换。"
+        },
+        {
+          "path": "F:/WebRTC/src/pc/sdp_offer_answer.cc",
+          "line": 4099,
+          "meaning": "新MID仍可能先寻找available transceiver。"
+        },
+        {
+          "path": "F:/WebRTC/src/api/rtp_receiver_interface.h",
+          "line": 129,
+          "meaning": "现有公开接口没有本合同所需clear/drain完成通知。"
+        }
+      ]
+    }
+  ],
+  "stop_policy": "本轮仅延期和方案留档，未启动源码修复、构建、产品重测或下一阶段。后续有效证据可复用即结束，条件不足、失败或不明即停止。",
+  "sources": [
+    {
+      "path": "data/completed-evidence/flutter-full-rtp-sif-20261022-diagnosis.json",
+      "sha256": "12b29fa9b92ec5fea51f281694ea6c64a3d46f9207c9685672108d49799121d2",
+      "bytes": 8282
+    },
+    {
+      "path": "data/completed-evidence/flutter-full-rtp-sif-20261022-execution.json",
+      "sha256": "b5f6391eb150426196362109f52afcec8557ccfc66a102de9466fbd0ea848360",
+      "bytes": 728
+    },
+    {
+      "path": "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+      "sha256": "971120bb413ed8d1f6c42525f49d2b088d371596acab495c5e48ac61850467e0",
+      "bytes": 10534
+    },
+    {
+      "path": "data/completed-evidence/repair-flutter-dispose-20261022-result.json",
+      "sha256": "faf4b22379bf340df5103dd29ffceb56b0b14ee16cdc64662cea0d4f0a386b3d",
+      "bytes": 1698
+    },
+    {
+      "path": "data/completed-evidence/repair-flutter-key-20261022-result.json",
+      "sha256": "fc5e500394f13cfbeb3244e5b33ba5711ccdd5782dd365f34a05f7c3539f03aa",
+      "bytes": 3339
+    },
+    {
+      "path": "reports/product/resource-completion-20261021-01.json",
+      "sha256": "911481e87f743f08b478a6dcb541338d762afae76cb26c8a4ddbc679bd452a48",
+      "bytes": 611975
+    }
+  ]
+}

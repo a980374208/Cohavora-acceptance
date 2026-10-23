@@ -1,0 +1,6 @@
+{
+  "status": "EXECUTED",
+  "exit_code": 0,
+  "stdout": "{\"probe_processes\":[],\"task_firewall_rules\":[],\"selected_udp_occupants\":[]}\r\n",
+  "stderr": ""
+}

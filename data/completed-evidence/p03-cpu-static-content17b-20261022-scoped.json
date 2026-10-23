@@ -1,0 +1,2312 @@
+{
+  "schema": "cohavora-p03-cpu-static-content-scoped-v1",
+  "status": "PASS_SCOPED",
+  "created_utc": "2026-10-21T17:23:42.275418+00:00",
+  "completed_date": "2026-10-22",
+  "completed_timezone": "Asia/Shanghai",
+  "started_utc": "2026-10-21T17:15:08.355885+00:00",
+  "finished_utc": "2026-10-21T17:15:40.213109+00:00",
+  "scope": "ONE_REMOTE_QT_CPU_STATIC_IMAGE_PAINT_AND_COMPOSITED_PIXELS_ACROSS_FOUR_THEMES",
+  "plan_groups": [
+    "P03"
+  ],
+  "render_backend": "cpu",
+  "backend_scope": "ONE_REMOTE_QT_CPU_STATIC_IMAGE_PAINT_AND_COMPOSITED_PIXELS",
+  "receiver_identity": {
+    "schema": "cohavora-p21-meeting-identity-v1",
+    "pid": 39044,
+    "start_ticks": 639281997098912700,
+    "start_time_utc": "2026-10-21T17:15:09.8912700Z",
+    "executable_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.exe",
+    "executable_sha256": "0f3bac4b7c12847836cdca18d55a0a2638503a32bef64718f16eca2e223c99cf",
+    "session_id": 1,
+    "baseline_input_tick": 89441828
+  },
+  "held_source": {
+    "delivery_scope": "one_capture_submission_receiver_confirmation_required",
+    "event": "p21_video_held",
+    "height": 360,
+    "pattern_id": "bt601-limited-i420-quadrants-640x360-v1",
+    "produced": 78,
+    "producer_running": false,
+    "quadrants_yuv": [
+      {
+        "index": 0,
+        "quadrant": "top_left",
+        "u": 90,
+        "v": 240,
+        "y": 81
+      },
+      {
+        "index": 1,
+        "quadrant": "top_right",
+        "u": 54,
+        "v": 34,
+        "y": 145
+      },
+      {
+        "index": 2,
+        "quadrant": "bottom_left",
+        "u": 240,
+        "v": 110,
+        "y": 41
+      },
+      {
+        "index": 3,
+        "quadrant": "bottom_right",
+        "u": 128,
+        "v": 128,
+        "y": 128
+      }
+    ],
+    "sequence": 2,
+    "source_i420_sha256": "a2a2ee54b7070acfe649550fc3b43eeacfe0ed37cbd7aea3b76c6f5d67972e2e",
+    "utc_ms": 1792602916159,
+    "width": 640
+  },
+  "static_content_identity": {
+    "key": "remote-camera/publisher",
+    "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+    "frame_token": "34",
+    "room_generation": "1",
+    "binding_epoch": "2",
+    "source_points": [
+      {
+        "x": 160,
+        "y": 90
+      },
+      {
+        "x": 480,
+        "y": 90
+      },
+      {
+        "x": 160,
+        "y": 225
+      },
+      {
+        "x": 480,
+        "y": 225
+      }
+    ],
+    "decoded_rgb": [
+      [
+        249,
+        2,
+        0
+      ],
+      [
+        0,
+        254,
+        14
+      ],
+      [
+        11,
+        0,
+        248
+      ],
+      [
+        132,
+        128,
+        138
+      ]
+    ]
+  },
+  "cases": [
+    {
+      "theme": "light",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "浅色",
+        "selected_value": "浅色",
+        "stored_theme": "light",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_light",
+          "utc": "2026-10-21T17:15:19.5804843Z",
+          "product_pid": 39044,
+          "mode": "light",
+          "effective": "light",
+          "native_hwnd": 9047574,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 16777215,
+          "client_colorref": 4294967295,
+          "sample_colorref": 16777215,
+          "sample_valid": true,
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "candidate": {
+        "aspect_fit_logical_rect": {
+          "height": 308,
+          "width": 547,
+          "x": 0,
+          "y": 0
+        },
+        "binding_epoch": "2",
+        "first_paint_observed": true,
+        "first_paint_scope": "historical_tile_fact_not_current_frame_presentation",
+        "frame_token": "34",
+        "has_logged_first_paint": true,
+        "hwnd": "30215244",
+        "image_bytes_per_line": 2560,
+        "image_dpr": 1,
+        "image_format": 5,
+        "image_hash_scope": "native_qimage_all_rows_including_stride_padding",
+        "image_height": 360,
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "image_width": 640,
+        "key": "remote-camera/publisher",
+        "observation_sequence": 17,
+        "paint_observation": {
+          "after_event_loop": true,
+          "all_content_points_covered": true,
+          "binding_epoch": "2",
+          "completed_event_count": 295,
+          "count": 261,
+          "covered_point_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "frame_token": "34",
+          "frame_token_after_event_loop": "34",
+          "has_logged_first_paint_after_event_loop": true,
+          "matching_paint_event_found": true,
+          "observation": "natural_tile_paint_event_then_queued_owner_observation",
+          "observed_event_count": 295,
+          "retained_covering_event_sequence": 261,
+          "retained_event_capacity": 17,
+          "retention": "bounded_ring_plus_one_latest_single_covering_event",
+          "ring_event_capacity": 16,
+          "room_generation": "1",
+          "same_frame_and_theme_after_event_loop": true,
+          "same_tile_size_after_event_loop": true,
+          "selection": "latest_single_completed_event_matching_current_theme_frame_size_and_covering_all_four_points",
+          "theme_revision": 2,
+          "theme_revision_after_event_loop": 2,
+          "tile_height": 308,
+          "tile_width": 548
+        },
+        "physical_rect": {
+          "height": 757,
+          "width": 1120,
+          "x": 721,
+          "y": 337
+        },
+        "pid": 39044,
+        "points": [
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "index": 0,
+            "quadrant": "top_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "index": 1,
+            "quadrant": "top_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "index": 2,
+            "quadrant": "bottom_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 193
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "index": 3,
+            "quadrant": "bottom_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 193
+            }
+          }
+        ],
+        "room_generation": "1",
+        "root_hwnd": "30215244",
+        "schema": "cohavora-p21-cpu-content-candidate-v1",
+        "theme": "light",
+        "theme_revision": 2,
+        "tile_logical_rect": {
+          "height": 308,
+          "width": 548,
+          "x": 564,
+          "y": 240
+        }
+      },
+      "content": {
+        "status": "PASS_CONTENT_PIXELS",
+        "reason": null,
+        "theme": "light",
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "frame_token": "34",
+        "room_generation": "1",
+        "binding_epoch": "2",
+        "theme_revision": 2,
+        "observation_sequence": 17,
+        "samples": [
+          {
+            "index": 0,
+            "sample_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "expected_colorref": 761,
+            "client_colorref": 4294967295,
+            "sample_colorref": 761,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 1,
+            "sample_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "expected_colorref": 982528,
+            "client_colorref": 4294967295,
+            "sample_colorref": 982528,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 2,
+            "sample_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "expected_colorref": 16252939,
+            "client_colorref": 4294967295,
+            "sample_colorref": 16252939,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 3,
+            "sample_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "expected_colorref": 9076868,
+            "client_colorref": 4294967295,
+            "sample_colorref": 9076868,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          }
+        ],
+        "physical_monitor": "NOT_MEASURED",
+        "per_frame_present": "NOT_MEASURED"
+      },
+      "post_sample_candidate": {
+        "aspect_fit_logical_rect": {
+          "height": 308,
+          "width": 547,
+          "x": 0,
+          "y": 0
+        },
+        "binding_epoch": "2",
+        "first_paint_observed": true,
+        "first_paint_scope": "historical_tile_fact_not_current_frame_presentation",
+        "frame_token": "34",
+        "has_logged_first_paint": true,
+        "hwnd": "30215244",
+        "image_bytes_per_line": 2560,
+        "image_dpr": 1,
+        "image_format": 5,
+        "image_hash_scope": "native_qimage_all_rows_including_stride_padding",
+        "image_height": 360,
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "image_width": 640,
+        "key": "remote-camera/publisher",
+        "observation_sequence": 18,
+        "paint_observation": {
+          "after_event_loop": true,
+          "all_content_points_covered": true,
+          "binding_epoch": "2",
+          "completed_event_count": 357,
+          "count": 261,
+          "covered_point_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "frame_token": "34",
+          "frame_token_after_event_loop": "34",
+          "has_logged_first_paint_after_event_loop": true,
+          "matching_paint_event_found": true,
+          "observation": "natural_tile_paint_event_then_queued_owner_observation",
+          "observed_event_count": 357,
+          "retained_covering_event_sequence": 261,
+          "retained_event_capacity": 17,
+          "retention": "bounded_ring_plus_one_latest_single_covering_event",
+          "ring_event_capacity": 16,
+          "room_generation": "1",
+          "same_frame_and_theme_after_event_loop": true,
+          "same_tile_size_after_event_loop": true,
+          "selection": "latest_single_completed_event_matching_current_theme_frame_size_and_covering_all_four_points",
+          "theme_revision": 2,
+          "theme_revision_after_event_loop": 2,
+          "tile_height": 308,
+          "tile_width": 548
+        },
+        "physical_rect": {
+          "height": 757,
+          "width": 1120,
+          "x": 721,
+          "y": 337
+        },
+        "pid": 39044,
+        "points": [
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "index": 0,
+            "quadrant": "top_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "index": 1,
+            "quadrant": "top_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "index": 2,
+            "quadrant": "bottom_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 193
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "index": 3,
+            "quadrant": "bottom_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 193
+            }
+          }
+        ],
+        "room_generation": "1",
+        "root_hwnd": "30215244",
+        "schema": "cohavora-p21-cpu-content-candidate-v1",
+        "theme": "light",
+        "theme_revision": 2,
+        "tile_logical_rect": {
+          "height": 308,
+          "width": 548,
+          "x": 564,
+          "y": 240
+        }
+      },
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-cpu-content-runtime17b/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "light"
+      },
+      "strict_child_observations": 34
+    },
+    {
+      "theme": "dark",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "深色",
+        "selected_value": "深色",
+        "stored_theme": "dark",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_dark",
+          "utc": "2026-10-21T17:15:24.4856678Z",
+          "product_pid": 39044,
+          "mode": "dark",
+          "effective": "dark",
+          "native_hwnd": 9178646,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 3221540,
+          "client_colorref": 4294967295,
+          "sample_colorref": 3221540,
+          "sample_valid": true,
+          "rgb": [
+            36,
+            40,
+            49
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "candidate": {
+        "aspect_fit_logical_rect": {
+          "height": 308,
+          "width": 547,
+          "x": 0,
+          "y": 0
+        },
+        "binding_epoch": "2",
+        "first_paint_observed": true,
+        "first_paint_scope": "historical_tile_fact_not_current_frame_presentation",
+        "frame_token": "34",
+        "has_logged_first_paint": true,
+        "hwnd": "30215244",
+        "image_bytes_per_line": 2560,
+        "image_dpr": 1,
+        "image_format": 5,
+        "image_hash_scope": "native_qimage_all_rows_including_stride_padding",
+        "image_height": 360,
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "image_width": 640,
+        "key": "remote-camera/publisher",
+        "observation_sequence": 22,
+        "paint_observation": {
+          "after_event_loop": true,
+          "all_content_points_covered": true,
+          "binding_epoch": "2",
+          "completed_event_count": 449,
+          "count": 443,
+          "covered_point_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "frame_token": "34",
+          "frame_token_after_event_loop": "34",
+          "has_logged_first_paint_after_event_loop": true,
+          "matching_paint_event_found": true,
+          "observation": "natural_tile_paint_event_then_queued_owner_observation",
+          "observed_event_count": 449,
+          "retained_covering_event_sequence": 443,
+          "retained_event_capacity": 17,
+          "retention": "bounded_ring_plus_one_latest_single_covering_event",
+          "ring_event_capacity": 16,
+          "room_generation": "1",
+          "same_frame_and_theme_after_event_loop": true,
+          "same_tile_size_after_event_loop": true,
+          "selection": "latest_single_completed_event_matching_current_theme_frame_size_and_covering_all_four_points",
+          "theme_revision": 3,
+          "theme_revision_after_event_loop": 3,
+          "tile_height": 308,
+          "tile_width": 548
+        },
+        "physical_rect": {
+          "height": 757,
+          "width": 1120,
+          "x": 721,
+          "y": 337
+        },
+        "pid": 39044,
+        "points": [
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "index": 0,
+            "quadrant": "top_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "index": 1,
+            "quadrant": "top_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "index": 2,
+            "quadrant": "bottom_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 193
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "index": 3,
+            "quadrant": "bottom_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 193
+            }
+          }
+        ],
+        "room_generation": "1",
+        "root_hwnd": "30215244",
+        "schema": "cohavora-p21-cpu-content-candidate-v1",
+        "theme": "dark",
+        "theme_revision": 3,
+        "tile_logical_rect": {
+          "height": 308,
+          "width": 548,
+          "x": 564,
+          "y": 240
+        }
+      },
+      "content": {
+        "status": "PASS_CONTENT_PIXELS",
+        "reason": null,
+        "theme": "dark",
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "frame_token": "34",
+        "room_generation": "1",
+        "binding_epoch": "2",
+        "theme_revision": 3,
+        "observation_sequence": 22,
+        "samples": [
+          {
+            "index": 0,
+            "sample_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "expected_colorref": 761,
+            "client_colorref": 4294967295,
+            "sample_colorref": 761,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 1,
+            "sample_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "expected_colorref": 982528,
+            "client_colorref": 4294967295,
+            "sample_colorref": 982528,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 2,
+            "sample_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "expected_colorref": 16252939,
+            "client_colorref": 4294967295,
+            "sample_colorref": 16252939,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 3,
+            "sample_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "expected_colorref": 9076868,
+            "client_colorref": 4294967295,
+            "sample_colorref": 9076868,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          }
+        ],
+        "physical_monitor": "NOT_MEASURED",
+        "per_frame_present": "NOT_MEASURED"
+      },
+      "post_sample_candidate": {
+        "aspect_fit_logical_rect": {
+          "height": 308,
+          "width": 547,
+          "x": 0,
+          "y": 0
+        },
+        "binding_epoch": "2",
+        "first_paint_observed": true,
+        "first_paint_scope": "historical_tile_fact_not_current_frame_presentation",
+        "frame_token": "34",
+        "has_logged_first_paint": true,
+        "hwnd": "30215244",
+        "image_bytes_per_line": 2560,
+        "image_dpr": 1,
+        "image_format": 5,
+        "image_hash_scope": "native_qimage_all_rows_including_stride_padding",
+        "image_height": 360,
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "image_width": 640,
+        "key": "remote-camera/publisher",
+        "observation_sequence": 23,
+        "paint_observation": {
+          "after_event_loop": true,
+          "all_content_points_covered": true,
+          "binding_epoch": "2",
+          "completed_event_count": 510,
+          "count": 443,
+          "covered_point_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "frame_token": "34",
+          "frame_token_after_event_loop": "34",
+          "has_logged_first_paint_after_event_loop": true,
+          "matching_paint_event_found": true,
+          "observation": "natural_tile_paint_event_then_queued_owner_observation",
+          "observed_event_count": 510,
+          "retained_covering_event_sequence": 443,
+          "retained_event_capacity": 17,
+          "retention": "bounded_ring_plus_one_latest_single_covering_event",
+          "ring_event_capacity": 16,
+          "room_generation": "1",
+          "same_frame_and_theme_after_event_loop": true,
+          "same_tile_size_after_event_loop": true,
+          "selection": "latest_single_completed_event_matching_current_theme_frame_size_and_covering_all_four_points",
+          "theme_revision": 3,
+          "theme_revision_after_event_loop": 3,
+          "tile_height": 308,
+          "tile_width": 548
+        },
+        "physical_rect": {
+          "height": 757,
+          "width": 1120,
+          "x": 721,
+          "y": 337
+        },
+        "pid": 39044,
+        "points": [
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "index": 0,
+            "quadrant": "top_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "index": 1,
+            "quadrant": "top_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "index": 2,
+            "quadrant": "bottom_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 193
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "index": 3,
+            "quadrant": "bottom_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 193
+            }
+          }
+        ],
+        "room_generation": "1",
+        "root_hwnd": "30215244",
+        "schema": "cohavora-p21-cpu-content-candidate-v1",
+        "theme": "dark",
+        "theme_revision": 3,
+        "tile_logical_rect": {
+          "height": 308,
+          "width": 548,
+          "x": 564,
+          "y": 240
+        }
+      },
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-cpu-content-runtime17b/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "dark"
+      },
+      "strict_child_observations": 34
+    },
+    {
+      "theme": "teal",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "青绿",
+        "selected_value": "青绿",
+        "stored_theme": "teal",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_teal",
+          "utc": "2026-10-21T17:15:29.3920211Z",
+          "product_pid": 39044,
+          "mode": "teal",
+          "effective": "teal",
+          "native_hwnd": 9309718,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 16646139,
+          "client_colorref": 4294967295,
+          "sample_colorref": 16646139,
+          "sample_valid": true,
+          "rgb": [
+            251,
+            255,
+            253
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "candidate": {
+        "aspect_fit_logical_rect": {
+          "height": 308,
+          "width": 547,
+          "x": 0,
+          "y": 0
+        },
+        "binding_epoch": "2",
+        "first_paint_observed": true,
+        "first_paint_scope": "historical_tile_fact_not_current_frame_presentation",
+        "frame_token": "34",
+        "has_logged_first_paint": true,
+        "hwnd": "30215244",
+        "image_bytes_per_line": 2560,
+        "image_dpr": 1,
+        "image_format": 5,
+        "image_hash_scope": "native_qimage_all_rows_including_stride_padding",
+        "image_height": 360,
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "image_width": 640,
+        "key": "remote-camera/publisher",
+        "observation_sequence": 27,
+        "paint_observation": {
+          "after_event_loop": true,
+          "all_content_points_covered": true,
+          "binding_epoch": "2",
+          "completed_event_count": 599,
+          "count": 599,
+          "covered_point_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "frame_token": "34",
+          "frame_token_after_event_loop": "34",
+          "has_logged_first_paint_after_event_loop": true,
+          "matching_paint_event_found": true,
+          "observation": "natural_tile_paint_event_then_queued_owner_observation",
+          "observed_event_count": 599,
+          "retained_covering_event_sequence": 599,
+          "retained_event_capacity": 17,
+          "retention": "bounded_ring_plus_one_latest_single_covering_event",
+          "ring_event_capacity": 16,
+          "room_generation": "1",
+          "same_frame_and_theme_after_event_loop": true,
+          "same_tile_size_after_event_loop": true,
+          "selection": "latest_single_completed_event_matching_current_theme_frame_size_and_covering_all_four_points",
+          "theme_revision": 4,
+          "theme_revision_after_event_loop": 4,
+          "tile_height": 308,
+          "tile_width": 548
+        },
+        "physical_rect": {
+          "height": 757,
+          "width": 1120,
+          "x": 721,
+          "y": 337
+        },
+        "pid": 39044,
+        "points": [
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "index": 0,
+            "quadrant": "top_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "index": 1,
+            "quadrant": "top_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "index": 2,
+            "quadrant": "bottom_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 193
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "index": 3,
+            "quadrant": "bottom_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 193
+            }
+          }
+        ],
+        "room_generation": "1",
+        "root_hwnd": "30215244",
+        "schema": "cohavora-p21-cpu-content-candidate-v1",
+        "theme": "teal",
+        "theme_revision": 4,
+        "tile_logical_rect": {
+          "height": 308,
+          "width": 548,
+          "x": 564,
+          "y": 240
+        }
+      },
+      "content": {
+        "status": "PASS_CONTENT_PIXELS",
+        "reason": null,
+        "theme": "teal",
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "frame_token": "34",
+        "room_generation": "1",
+        "binding_epoch": "2",
+        "theme_revision": 4,
+        "observation_sequence": 27,
+        "samples": [
+          {
+            "index": 0,
+            "sample_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "expected_colorref": 761,
+            "client_colorref": 4294967295,
+            "sample_colorref": 761,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 1,
+            "sample_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "expected_colorref": 982528,
+            "client_colorref": 4294967295,
+            "sample_colorref": 982528,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 2,
+            "sample_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "expected_colorref": 16252939,
+            "client_colorref": 4294967295,
+            "sample_colorref": 16252939,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 3,
+            "sample_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "expected_colorref": 9076868,
+            "client_colorref": 4294967295,
+            "sample_colorref": 9076868,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          }
+        ],
+        "physical_monitor": "NOT_MEASURED",
+        "per_frame_present": "NOT_MEASURED"
+      },
+      "post_sample_candidate": {
+        "aspect_fit_logical_rect": {
+          "height": 308,
+          "width": 547,
+          "x": 0,
+          "y": 0
+        },
+        "binding_epoch": "2",
+        "first_paint_observed": true,
+        "first_paint_scope": "historical_tile_fact_not_current_frame_presentation",
+        "frame_token": "34",
+        "has_logged_first_paint": true,
+        "hwnd": "30215244",
+        "image_bytes_per_line": 2560,
+        "image_dpr": 1,
+        "image_format": 5,
+        "image_hash_scope": "native_qimage_all_rows_including_stride_padding",
+        "image_height": 360,
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "image_width": 640,
+        "key": "remote-camera/publisher",
+        "observation_sequence": 28,
+        "paint_observation": {
+          "after_event_loop": true,
+          "all_content_points_covered": true,
+          "binding_epoch": "2",
+          "completed_event_count": 664,
+          "count": 599,
+          "covered_point_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "frame_token": "34",
+          "frame_token_after_event_loop": "34",
+          "has_logged_first_paint_after_event_loop": true,
+          "matching_paint_event_found": true,
+          "observation": "natural_tile_paint_event_then_queued_owner_observation",
+          "observed_event_count": 664,
+          "retained_covering_event_sequence": 599,
+          "retained_event_capacity": 17,
+          "retention": "bounded_ring_plus_one_latest_single_covering_event",
+          "ring_event_capacity": 16,
+          "room_generation": "1",
+          "same_frame_and_theme_after_event_loop": true,
+          "same_tile_size_after_event_loop": true,
+          "selection": "latest_single_completed_event_matching_current_theme_frame_size_and_covering_all_four_points",
+          "theme_revision": 4,
+          "theme_revision_after_event_loop": 4,
+          "tile_height": 308,
+          "tile_width": 548
+        },
+        "physical_rect": {
+          "height": 757,
+          "width": 1120,
+          "x": 721,
+          "y": 337
+        },
+        "pid": 39044,
+        "points": [
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "index": 0,
+            "quadrant": "top_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "index": 1,
+            "quadrant": "top_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "index": 2,
+            "quadrant": "bottom_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 193
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "index": 3,
+            "quadrant": "bottom_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 193
+            }
+          }
+        ],
+        "room_generation": "1",
+        "root_hwnd": "30215244",
+        "schema": "cohavora-p21-cpu-content-candidate-v1",
+        "theme": "teal",
+        "theme_revision": 4,
+        "tile_logical_rect": {
+          "height": 308,
+          "width": 548,
+          "x": 564,
+          "y": 240
+        }
+      },
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-cpu-content-runtime17b/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "teal"
+      },
+      "strict_child_observations": 34
+    },
+    {
+      "theme": "system",
+      "status": "PASS_SCOPED",
+      "selection": {
+        "status": "PASS_UIA",
+        "selection_method": "visible_popup_SelectionItem.Select",
+        "selected_label": "系统",
+        "selected_value": "系统",
+        "stored_theme": "system",
+        "settings_pixel": {
+          "run_id": "p21-meeting",
+          "operation_id": "select_system",
+          "utc": "2026-10-21T17:15:34.3585562Z",
+          "product_pid": 39044,
+          "mode": "system",
+          "effective": "dark",
+          "native_hwnd": 9440790,
+          "dpi": 96,
+          "dialog_bounds": [
+            791,
+            373,
+            1769,
+            1049
+          ],
+          "surface_bounds": [
+            809,
+            391,
+            1751,
+            1031
+          ],
+          "titlebar_bounds": [
+            810,
+            392,
+            1750,
+            441
+          ],
+          "title_bounds": [
+            1250,
+            392,
+            1282,
+            441
+          ],
+          "close_bounds": [
+            1710,
+            402,
+            1738,
+            430
+          ],
+          "sample_point": [
+            855,
+            415
+          ],
+          "sample_geometry": "original_64_42_DIP_verified_blank",
+          "measurement": "owned_composited_single_pixel",
+          "expected_colorref": 3221540,
+          "client_colorref": 4294967295,
+          "sample_colorref": 3221540,
+          "sample_valid": true,
+          "rgb": [
+            36,
+            40,
+            49
+          ],
+          "pixel_matches": true,
+          "status": "PASS",
+          "reason": null
+        }
+      },
+      "candidate": {
+        "aspect_fit_logical_rect": {
+          "height": 308,
+          "width": 547,
+          "x": 0,
+          "y": 0
+        },
+        "binding_epoch": "2",
+        "first_paint_observed": true,
+        "first_paint_scope": "historical_tile_fact_not_current_frame_presentation",
+        "frame_token": "34",
+        "has_logged_first_paint": true,
+        "hwnd": "30215244",
+        "image_bytes_per_line": 2560,
+        "image_dpr": 1,
+        "image_format": 5,
+        "image_hash_scope": "native_qimage_all_rows_including_stride_padding",
+        "image_height": 360,
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "image_width": 640,
+        "key": "remote-camera/publisher",
+        "observation_sequence": 32,
+        "paint_observation": {
+          "after_event_loop": true,
+          "all_content_points_covered": true,
+          "binding_epoch": "2",
+          "completed_event_count": 756,
+          "count": 721,
+          "covered_point_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "frame_token": "34",
+          "frame_token_after_event_loop": "34",
+          "has_logged_first_paint_after_event_loop": true,
+          "matching_paint_event_found": true,
+          "observation": "natural_tile_paint_event_then_queued_owner_observation",
+          "observed_event_count": 756,
+          "retained_covering_event_sequence": 721,
+          "retained_event_capacity": 17,
+          "retention": "bounded_ring_plus_one_latest_single_covering_event",
+          "ring_event_capacity": 16,
+          "room_generation": "1",
+          "same_frame_and_theme_after_event_loop": true,
+          "same_tile_size_after_event_loop": true,
+          "selection": "latest_single_completed_event_matching_current_theme_frame_size_and_covering_all_four_points",
+          "theme_revision": 5,
+          "theme_revision_after_event_loop": 5,
+          "tile_height": 308,
+          "tile_width": 548
+        },
+        "physical_rect": {
+          "height": 757,
+          "width": 1120,
+          "x": 721,
+          "y": 337
+        },
+        "pid": 39044,
+        "points": [
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "index": 0,
+            "quadrant": "top_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "index": 1,
+            "quadrant": "top_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "index": 2,
+            "quadrant": "bottom_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 193
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "index": 3,
+            "quadrant": "bottom_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 193
+            }
+          }
+        ],
+        "room_generation": "1",
+        "root_hwnd": "30215244",
+        "schema": "cohavora-p21-cpu-content-candidate-v1",
+        "theme": "system",
+        "theme_revision": 5,
+        "tile_logical_rect": {
+          "height": 308,
+          "width": 548,
+          "x": 564,
+          "y": 240
+        }
+      },
+      "content": {
+        "status": "PASS_CONTENT_PIXELS",
+        "reason": null,
+        "theme": "system",
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "frame_token": "34",
+        "room_generation": "1",
+        "binding_epoch": "2",
+        "theme_revision": 5,
+        "observation_sequence": 32,
+        "samples": [
+          {
+            "index": 0,
+            "sample_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "expected_colorref": 761,
+            "client_colorref": 4294967295,
+            "sample_colorref": 761,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 1,
+            "sample_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "expected_colorref": 982528,
+            "client_colorref": 4294967295,
+            "sample_colorref": 982528,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 2,
+            "sample_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "expected_colorref": 16252939,
+            "client_colorref": 4294967295,
+            "sample_colorref": 16252939,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          },
+          {
+            "index": 3,
+            "sample_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "expected_colorref": 9076868,
+            "client_colorref": 4294967295,
+            "sample_colorref": 9076868,
+            "pixel_matches": true,
+            "measurement": "owned_foreground_surface_composited_pixel",
+            "coordinate_space": "physical_pixels_per_monitor_v2_thread"
+          }
+        ],
+        "physical_monitor": "NOT_MEASURED",
+        "per_frame_present": "NOT_MEASURED"
+      },
+      "post_sample_candidate": {
+        "aspect_fit_logical_rect": {
+          "height": 308,
+          "width": 547,
+          "x": 0,
+          "y": 0
+        },
+        "binding_epoch": "2",
+        "first_paint_observed": true,
+        "first_paint_scope": "historical_tile_fact_not_current_frame_presentation",
+        "frame_token": "34",
+        "has_logged_first_paint": true,
+        "hwnd": "30215244",
+        "image_bytes_per_line": 2560,
+        "image_dpr": 1,
+        "image_format": 5,
+        "image_hash_scope": "native_qimage_all_rows_including_stride_padding",
+        "image_height": 360,
+        "image_sha256": "dde3384787e07f8593455089809d5d5634d5c14dba610e537994e7089efa7620",
+        "image_width": 640,
+        "key": "remote-camera/publisher",
+        "observation_sequence": 33,
+        "paint_observation": {
+          "after_event_loop": true,
+          "all_content_points_covered": true,
+          "binding_epoch": "2",
+          "completed_event_count": 818,
+          "count": 721,
+          "covered_point_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "frame_token": "34",
+          "frame_token_after_event_loop": "34",
+          "has_logged_first_paint_after_event_loop": true,
+          "matching_paint_event_found": true,
+          "observation": "natural_tile_paint_event_then_queued_owner_observation",
+          "observed_event_count": 818,
+          "retained_covering_event_sequence": 721,
+          "retained_event_capacity": 17,
+          "retention": "bounded_ring_plus_one_latest_single_covering_event",
+          "ring_event_capacity": 16,
+          "room_generation": "1",
+          "same_frame_and_theme_after_event_loop": true,
+          "same_tile_size_after_event_loop": true,
+          "selection": "latest_single_completed_event_matching_current_theme_frame_size_and_covering_all_four_points",
+          "theme_revision": 5,
+          "theme_revision_after_event_loop": 5,
+          "tile_height": 308,
+          "tile_width": 548
+        },
+        "physical_rect": {
+          "height": 757,
+          "width": 1120,
+          "x": 721,
+          "y": 337
+        },
+        "pid": 39044,
+        "points": [
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 0,
+              "g": 2,
+              "r": 249
+            },
+            "index": 0,
+            "quadrant": "top_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 654
+            },
+            "expected_rgb": {
+              "b": 14,
+              "g": 254,
+              "r": 0
+            },
+            "index": 1,
+            "quadrant": "top_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 90
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 77
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1422,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 248,
+              "g": 0,
+              "r": 11
+            },
+            "index": 2,
+            "quadrant": "bottom_left",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 160,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 137,
+              "y": 193
+            }
+          },
+          {
+            "blank_point": {
+              "x": 1695,
+              "y": 770
+            },
+            "expected_rgb": {
+              "b": 138,
+              "g": 128,
+              "r": 132
+            },
+            "index": 3,
+            "quadrant": "bottom_right",
+            "safe_content_point": true,
+            "source_flat_9x9": true,
+            "source_point": {
+              "x": 480,
+              "y": 225
+            },
+            "tile_logical_point": {
+              "x": 410,
+              "y": 193
+            }
+          }
+        ],
+        "room_generation": "1",
+        "root_hwnd": "30215244",
+        "schema": "cohavora-p21-cpu-content-candidate-v1",
+        "theme": "system",
+        "theme_revision": 5,
+        "tile_logical_rect": {
+          "height": 308,
+          "width": 548,
+          "x": 564,
+          "y": 240
+        }
+      },
+      "stored_settings": {
+        "contains_theme": true,
+        "file": "E:/vsSource/WebRTC/live-kit-test/out/resource-completion-20261021-01-control/diagnostic-retest-01/p21-cpu-content-runtime17b/receiver/settings/Cohavora/Cohavora.ini",
+        "isolated": true,
+        "status": 0,
+        "stored_theme": "system"
+      },
+      "strict_child_observations": 34
+    }
+  ],
+  "summary": {
+    "themes": 4,
+    "matching_composited_pixels": 16,
+    "single_covering_paint_events": 4,
+    "decoded_frame_identity_unchanged": true,
+    "client_dc": "INVALID_NO_CREDIT",
+    "parent_strict_observations": 309,
+    "child_observation_rows": 136,
+    "independently_checked_strict_driver_boundaries": 84
+  },
+  "strict_input": {
+    "policy": "strict",
+    "baseline": {
+      "session_id": 1,
+      "last_input_tick": 89441828,
+      "monotonic_ns": 99956046000000
+    },
+    "final": {
+      "session_id": 1,
+      "last_input_tick": 89441828,
+      "monotonic_ns": 99986687000000
+    },
+    "continuous_hook_coverage": "UNKNOWN",
+    "input_origin": "UNKNOWN"
+  },
+  "bound_input_files": 1331,
+  "inputs_unchanged": true,
+  "lifecycle": {
+    "receiver": {
+      "pid": 39044,
+      "started": {
+        "configuration": "RelWithDebInfo",
+        "event": "started",
+        "identity": "receiver",
+        "pid": 39044,
+        "utc_ms": 1792602910190
+      },
+      "retirement": {
+        "cleanup_pending": 0,
+        "event": "retired",
+        "rooms_alive": 0,
+        "rooms_observed": 1,
+        "utc_ms": 1792602937752
+      },
+      "exit_code": 0
+    },
+    "publisher": {
+      "pid": 30292,
+      "started": {
+        "configuration": "RelWithDebInfo",
+        "event": "started",
+        "identity": "publisher",
+        "pid": 30292,
+        "utc_ms": 1792602910908
+      },
+      "retirement": {
+        "cleanup_pending": 0,
+        "event": "retired",
+        "rooms_alive": 0,
+        "rooms_observed": 1,
+        "utc_ms": 1792602937972
+      },
+      "exit_code": 0
+    }
+  },
+  "cleanup": {
+    "status": "PASS",
+    "native_retirement": {
+      "receiver": {
+        "pid": 39044,
+        "exit_code": 0,
+        "retired": true,
+        "retirement": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792602937752
+        },
+        "status": "PASS"
+      },
+      "publisher": {
+        "pid": 30292,
+        "exit_code": 0,
+        "retired": true,
+        "retirement": {
+          "cleanup_pending": 0,
+          "event": "retired",
+          "rooms_alive": 0,
+          "rooms_observed": 1,
+          "utc_ms": 1792602937972
+        },
+        "status": "PASS"
+      }
+    },
+    "forced_roles": [],
+    "failures": []
+  },
+  "cleanup_complete": true,
+  "shared_service": {
+    "configuration_mutated": false,
+    "service_unchanged": true,
+    "room_empty": true,
+    "before": {
+      "config_sha256": "adeea7210d4a05f07909c0c10fbb6460f24f129484963acebf6f58972208c66e",
+      "room": {
+        "empty_timeout": 72000,
+        "departure_timeout": 86400
+      },
+      "video": {},
+      "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+      "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+      "health_status": 200,
+      "participants_remaining": 0,
+      "publications_remaining": 0
+    },
+    "after": {
+      "config_sha256": "adeea7210d4a05f07909c0c10fbb6460f24f129484963acebf6f58972208c66e",
+      "room": {
+        "empty_timeout": 72000,
+        "departure_timeout": 86400
+      },
+      "video": {},
+      "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+      "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+      "health_status": 200,
+      "participants_remaining": 0,
+      "publications_remaining": 0
+    }
+  },
+  "source_provenance": "INCREMENTAL_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_NOT_PROVEN",
+  "media_continuity": "NO_CREDIT_STATIC_SOURCE",
+  "observation_boundary": "Region coverage and decoded image samples rely on pinned reviewed native instrumentation; raw region shape and QImage bytes were not exported.",
+  "not_covered": [
+    "Per-frame Present, physical scanout or physical monitor pixels",
+    "Publisher original RGB losslessness or codec quality",
+    "Moving-media continuity",
+    "Screen sharing, whiteboard pages or strokes",
+    "Complete CPU/GPU/DPI/multi-monitor matrix",
+    "Transitive clean build, final regression or whole P03"
+  ],
+  "full_plan_gate_credit": 0,
+  "full_p03_credit": 0,
+  "full_p21_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "provenance_file": "p03-cpu-static-content17b-20261022-provenance.json",
+  "plan_note_zh": "最新完成p21-cpu-content-runtime17b（2026-10-22北京时间），仅归P03原主题舞台子门：一个远端Qt CPU静止视频格，浅色／深色／青绿／系统经真实SettingsDialog可见下拉选择，同一接收端解码图像、frame_token=34、room_generation=1、binding_epoch=2，主题revision=2／3／4／5各有单次自然Paint覆盖全部四点且前后身份／尺寸不变；16/16个实际screen DC桌面合成像素与接收端该帧RGB精确匹配，四点依次(249,2,0)／(0,254,14)／(11,0,248)／(132,128,138)，限定PASS_SCOPED。client DC返回无效值4294967295，不计其匹配；QRegion覆盖及解码RGB依赖已审且绑定哈希的native观察器，原日志未导出区域形状或QImage原始字节，不将独立回读表述为从原始字节重建图像。1331项输入全部独立回读；strict父采样309次、84个子驱动边界输入不变；两端自然退出0、forced0、native退休rooms_alive=0及cleanup_pending=0，清理完成、共享服务指纹未变、房间为空。该静帧范围不授媒体连续性、publisher原色无损、逐帧Present、物理scanout、共享／白板或完整CPU／GPU／DPI矩阵信用；传递性clean-build未证明，完整P03／full-plan／Formal／P20信用仍0。来源data/completed-evidence/p03-cpu-static-content17b-20261022-scoped.json，追溯data/completed-evidence/p03-cpu-static-content17b-20261022-provenance.json。"
+}

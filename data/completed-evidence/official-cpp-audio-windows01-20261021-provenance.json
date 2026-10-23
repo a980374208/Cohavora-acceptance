@@ -1,0 +1,101 @@
+{
+  "schema": "cohavora-audio-window-latest-provenance-v1",
+  "created_utc": "2026-10-21T13:14:25.835961+00:00",
+  "status": "LATEST_SAME_SCOPE_COMPLETED_CONTENT_SUBGATE",
+  "source_references": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\audio-windows01-audit.json",
+      "sha256": "dd5ab60e08fa99c750be015ae0178282da64e7e6b71096f7fa4a190c7dc4d8f7",
+      "bytes": 11721
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\audio-windows01-audit.py",
+      "sha256": "498a4afa5c610a04bfa742b7b753b7d62fcf32993c7406154038c87c5dfca039",
+      "bytes": 9635
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-window-preparation01\\profile.json",
+      "sha256": "4752d4c9936e13b864b46960eff3430d5b46c44e3b3faecee53f8ccddd36e933",
+      "bytes": 31725
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-windows01\\index.json",
+      "sha256": "041752ad983ce0644dcfa442089dada00d0dd48d349aa374b2cbdf8a9d52b01b",
+      "bytes": 21504
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\audio-window-off-analysis01.json",
+      "sha256": "f9e90bf143178f0a75ee6845e3a35035212bb0102484ac674e944a11204b8157",
+      "bytes": 2201
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-windows01\\off\\result.json",
+      "sha256": "236a7969c04efe6ac9e2eb8a96af521f370be2871de6117992ee292684414b3e",
+      "bytes": 2655
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-windows01\\off\\native.jsonl",
+      "sha256": "b7fdebf2ae261505a4e4bcb0264f0054085d353d0822684de95b6bddfd545cff",
+      "bytes": 232029
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-windows01\\off\\official.jsonl",
+      "sha256": "8e720fdd6d1035ee2eeafd922c82af01822062518f7b594f0a9f630e39a62898",
+      "bytes": 197372
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\audio-window-on-analysis01.json",
+      "sha256": "9423d73e2face574bacd75b1438c4ecb6057302447fbff2e96ccaacbc51e6530",
+      "bytes": 2199
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-windows01\\on\\result.json",
+      "sha256": "f2e3b6d3761030432b4d2c028f8c882d9952fb81bf2eab4cf3529e82ed74f09e",
+      "bytes": 2735
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-windows01\\on\\native.jsonl",
+      "sha256": "165b422bf2a268a846916d9e32e11cc45a4c7299b8d41ce5ea608802480537de",
+      "bytes": 283764
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-windows01\\on\\official.jsonl",
+      "sha256": "6449a403884b470782a9886cc64c86cfcf79b62ed7cbcdf14e23ac68996a3aae",
+      "bytes": 198109
+    }
+  ],
+  "previous_completed_evidence": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\data\\completed-evidence\\official-cpp-audio-content04-20261021-scoped.json",
+    "sha256": "662b7db66bf516ce264f793557af7e10655fb5023026e632f293688eec3ac597",
+    "bytes": 5202
+  },
+  "plan_update": {
+    "before_sha256": "13f87ad2bd2a5fec6f76b6e9c1b42777544f358a25693825801cf262c9c2785d",
+    "after_sha256": "b3627d40ba42ce25ac75710955be7f7ca08834c3b4f6f64897120d8ed2cdc391",
+    "updates": [
+      {
+        "group": "P05",
+        "boundary_index": 3,
+        "before": "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 最新完成official-cpp-audio-content04（2026-10-21）合成音频OFF／ON限定内容子门均PASS_SCOPED：60秒返回观察窗中，Native识别tone窗口599／570（总窗口均600；其他内容1／30、静音0／0），官方实际解码并回送tone窗口603／603（总窗口605／605；静音1／2、其他内容1／0），格式错误均0；ON的Native音频加密rx／tx输出均非0。两模式FIN／ACK、原DLL路径及哈希、86项输入绑定、两进程自然退出码0与清理均独立核对；全部静音和其他内容窗口保留，不授连续性、主观音质、声学延迟或SDK进程内安全退休信用。来源data/completed-evidence/official-cpp-audio-content04-20261021-scoped.json，追溯data/completed-evidence/official-cpp-audio-content04-20261021-provenance.json；旧启动不确定记录保留。 原阈值及P05完整信用0不变。",
+        "after": "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 最新完成official-cpp-audio-windows01（2026-10-21）合成音频OFF／ON限定内容子门均PASS_SCOPED：60秒返回观察窗中，Native识别tone窗口599／599（总窗口均600；其他内容1／1、静音0／0），官方实际解码并回送tone窗口600／601（总窗口601／602；其他内容1／1、静音0／0），格式错误均0；ON的Native音频加密rx／tx输出均非0。两模式FIN／ACK、原DLL路径及哈希、97项输入绑定、两进程自然退出码0与清理均独立核对。新增逐窗诊断完整记录两方向全部窗口，无溢出；四条序列均仅首个100ms样本窗为other，后续完整窗均tone，尾部partial另存；不追判旧异常，不授连续性、主观音质、声学延迟或SDK进程内安全退休信用。来源data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json，追溯data/completed-evidence/official-cpp-audio-windows01-20261021-provenance.json；旧启动不确定记录保留。 原阈值及P05完整信用0不变。"
+      },
+      {
+        "group": "P06",
+        "boundary_index": 4,
+        "before": "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 最新完成official-cpp-audio-content04（2026-10-21）合成音频OFF／ON限定内容子门均PASS_SCOPED：60秒返回观察窗中，Native识别tone窗口599／570（总窗口均600；其他内容1／30、静音0／0），官方实际解码并回送tone窗口603／603（总窗口605／605；静音1／2、其他内容1／0），格式错误均0；ON的Native音频加密rx／tx输出均非0。两模式FIN／ACK、原DLL路径及哈希、86项输入绑定、两进程自然退出码0与清理均独立核对；全部静音和其他内容窗口保留，不授连续性、主观音质、声学延迟或SDK进程内安全退休信用。来源data/completed-evidence/official-cpp-audio-content04-20261021-scoped.json，追溯data/completed-evidence/official-cpp-audio-content04-20261021-provenance.json；旧启动不确定记录保留。 原阈值及P06完整信用0不变。",
+        "after": "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 最新完成official-cpp-audio-windows01（2026-10-21）合成音频OFF／ON限定内容子门均PASS_SCOPED：60秒返回观察窗中，Native识别tone窗口599／599（总窗口均600；其他内容1／1、静音0／0），官方实际解码并回送tone窗口600／601（总窗口601／602；其他内容1／1、静音0／0），格式错误均0；ON的Native音频加密rx／tx输出均非0。两模式FIN／ACK、原DLL路径及哈希、97项输入绑定、两进程自然退出码0与清理均独立核对。新增逐窗诊断完整记录两方向全部窗口，无溢出；四条序列均仅首个100ms样本窗为other，后续完整窗均tone，尾部partial另存；不追判旧异常，不授连续性、主观音质、声学延迟或SDK进程内安全退休信用。来源data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json，追溯data/completed-evidence/official-cpp-audio-windows01-20261021-provenance.json；旧启动不确定记录保留。 原阈值及P06完整信用0不变。"
+      }
+    ]
+  },
+  "safe_projection_sha256": "d5670737fe38f8468b3d9c2de517f825bddad8403450cb303bc7d66df81d51c2",
+  "helper_sha256": "d17291f7b3d9582e2f1fa196462a6fcc05244951121e0546236fa9d962e04f59",
+  "original_cumulative_content_predicate_unchanged": true,
+  "layout_and_thresholds_unchanged": true,
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "audio_continuity": "NOT_EVALUATED",
+  "product_runtime": "NOT_RUN_REPORT_UPDATE_ONLY",
+  "superseded_standalone_reports": [],
+  "audit_retention": "Prior completed-evidence JSONs are supporting audit projections, not standalone reports; retained with raw evidence, no repeated current result."
+}

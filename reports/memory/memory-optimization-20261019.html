@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>内存成本与诊断工具优化 · 2026-10-19</title>
+<style>body{font:16px/1.65 system-ui,sans-serif;max-width:1200px;margin:32px auto;padding:0 24px;color:#182538;background:#f6f8fb}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #ced6e0;padding:10px;text-align:left;vertical-align:top}code{overflow-wrap:anywhere}.boundary{padding:16px;border-left:5px solid #a44916;background:#fff4df}.pass{color:#176436}.unknown{color:#8a4116}small{color:#465469}.table-wrap{overflow:auto}@media print{body{background:white;margin:0}table{font-size:12px}tr{break-inside:avoid}}</style>
+<nav data-report-navigation style="padding:12px 20px;background:#eef2f7;color:#1e293b;font:14px/1.7 sans-serif"><a href="../../index.html">验收首页</a> · <a href="../index.html">全部报告</a> · <a href="../../data/test-plan.json">统一测试计划</a><br>历史／阶段报告仅适用其记录的输入；包外证据属于本机附件，其他电脑可能不可用。</nav><h1>内存成本与诊断工具优化</h1><p>2026-10-19；产品 HEAD <code>495d441a9274d0cdc1529a40ecf03b37279fb806</code>；维护源 HEAD <code>58abbbcef8402194f53e6688790b5371d8d7cf37</code>。保留既有 dirty，本报告不授予运行权限。</p>
+<p class="boundary">原 B14 约 100.412 MiB 增长的根因仍为 UNKNOWN；本轮优化不构成泄漏解释或无泄漏证明。历史 FAIL、未知大小、配对异常、AMD 符号 BLOCKED 与覆盖盲区均保留。未启动产品、UIA、ETW、远端负载、注册、建会或符号下载。</p>
+<h2>实施前的行为与单一改变</h2>
+<table><tr><th>范围</th><th>现有行为 / 唯一改变</th><th>收益依据</th><th>风险与最小验证</th></tr>
+<tr><td>准备工具</td><td>注册前检查与注册共用错误归因；改为固定阶段与 NOT_SENT / SENT_UNKNOWN / CONFIRMED 状态，安全目录内尽力持久化终态。</td><td>避免尚未发送注册却被误报结果未知；保留建会底层安全阶段。</td><td>注册一次、resume 不重注册、敏感信息和目录 ownership；离线实际回执及调用计数。</td></tr>
+<tr><td>单次包装</td><td>外层通用能力仍在实验脚本；归并至维护源并复用现有配置、guardian 与 retained identity。</td><td>避免新版本漏传冻结 SID、错误参数编码或重复消费导致准入失败。</td><td>授权/哈希/身份/清理；真实入口搭配本地惰性 worker 的离线回归。</td></tr>
+<tr><td>导出</td><td>每记录构造指标 vector、每指标构造 JSON/dump 和 CSV 临时表示；移除逐行 JSON 树，复用 JSONL/CSV 缓冲，并为可变指标行预留容量。仍保留 BuildSafeMetricRows vector。</td><td>历史 293 三次导出相关 Private Bytes 增量约 9.79/1.92/1.89 MiB，末尾 idle 回落约 10 MiB，仅支持优先调查分配成本，不证明因果。本轮另用独立夹具证实请求分配成本下降。</td><td>schema、字段顺序、安全过滤、取消、错误和原子提交；同输入字节等价与独立分配夹具。</td></tr>
+<tr><td>日志</td><td>已有增量追加与 block 裁剪；移除每条持久 catName/HTML/fullText，按需生成，隐藏时延后 document/status/主题投影。</td><td>原字段加两种完整表示重复保留；隐藏时仍每 50ms 做 UI 投影。保留日志生产和有界缓存。</td><td>过滤、主题、复制、清屏、再显示、上限与时间片；独立 Qt 夹具验证，不作产品 UIA 结论。</td></tr>
+<tr><td>快照 / 面板 / 计费</td><td>CurrentRecords 已只复制 shared_ptr；SnapshotRetainedBytes 已包含全部字符串。仅省去发布前整份 PanelFrame 深复制，分离 Snapshot 固定与动态估算。</td><td>每次发布少一次 frame 深复制；移除嵌入 Snapshot 固定空间的重复计费，并补匿名 ID capacity。未实施 revision 跳过。</td><td>公开 frame 保持不可变；局部遥测测试。SSO capacity 继续保守计费，不猜布局；store 驱逐不证明外部 owner 已释放。</td></tr></table>
+
+<h2>实际修改与根因</h2>
+<p><strong>工具：</strong>注册前目标检查与实际注册共用异常分支，导致未派发也被报为注册结果不明；早期异常还缺少安全终态。现以 schema 2 分别记录注册和建会的 NOT_SENT / SENT_UNKNOWN / CONFIRMED；仅真正派发前落 REGISTRATION_REQUESTED。本地身份准备为 IDENTITY_PREPARED。只允许固定阶段、错误码、异常类型和数字 errno/winerror，避免原始异常、响应体、账号密码和 token 进入回执。安全私有目录建立且持有 lease 后才尽力写终态；没有安全输出目录、resume 未验证或 lease 忙时明确报告无法安全持久化，不寻找其他目录、不改旧 ACL。建会保留底层安全阶段；不确定结果恢复仍须经确认的 meeting ID。注册最多一次，resume 永不注册。</p>
+<p>外层单次包装归并到维护源，复用原 host/target/run 配置、guardian 和 retained process identity，未复制另一套编号执行框架。显式绑定冻结 SID/session、解释器和父计划哈希；授权校验后 CreateNew 单次消费，失败不重试；能力回执从冻结 manifest 解析，按保留句柄进行有界等待和 owned cleanup。修正跨部署根竞争检查、Windows PowerShell 5.1 的模块路径干扰、isolated Python 相邻模块导入，以及依赖 Python 3.11 file_digest 的兼容问题。</p>
+<p><strong>产品：</strong>导出逐行 JSON 树与 CSV 转义临时对象带来可避免的请求分配；现在复用已有 JSON 编码助手和缓冲。日志重复保留三份派生 QString，隐藏时仍投影 document/status；现在按需格式化并推迟投影。独立审查还发现隐藏全文复制后再切回旧主题会使记忆 palette 与实际文档不同步，已在全文复制投影前同步主题，并新增精确颜色回归。面板原在 BuildFrame 后整份复制以调整内存展示，现由私有 builder 在发布前调整，公开/已发布对象仍 immutable。</p>
+<p>保留日志 pending 2048 条/2 MiB、cache 5000 条/8 MiB、原 document cap，以及 drain 128 条/2 ms、render 128 条/4 ms。状态标签仅在文本实际变化时 setText；这不构成对 UIA 事件次数的判断。队列倍率与缓存预算不变，未删除指标、降低采样、跳过导出或改变产品负载。</p>
+
+<h2>同输入独立成本比较</h2>
+<p>使用修改前实际 dirty 源冻结基线，而非 HEAD：<code>26eb8377312fe055b2913f67a621a6d5e4b13815f276eecc18f7b87e94642a35</code>。旧函数体在独立 namespace 用当前未变 owning fields/ABI 编译；修改未触及 Snapshot/SafeTelemetryRecord 布局。基线生成单元 SHA256：<code>a7f7c15c0d86912660ab0c763f056946c12ee712138331c1e71a512e912ef491</code>。</p>
+<p>RelWithDebInfo；每类 8 records，暖机后 3 轮 ABBA，每实现 6 个观察。计时与 new 计数使用两个独立可执行文件，测量期间无本轮构建或其他测试并行。窗口包含完整 atomic exporter；输入构造、校验、输出清理在窗外。下表为均值；分布、可执行文件/输入哈希见 <a href="../../data/memory-optimization-20261019/results.json">结果 JSON</a> 和同目录六份原始 measurement JSON。</p>
+<div class="table-wrap"><table>
+<tr><th>输入</th><th>new 请求次数 旧 → 新</th><th>累计请求字节 旧 → 新</th><th>峰值存活请求字节 旧 → 新</th><th>完整导出耗时 ms 旧 → 新</th></tr>
+<tr><td>plain</td><td>293,909 → 35,743<br>减少 87.84%</td><td>17,086,364.7 → 2,122,660.7<br>减少 87.58%</td><td>191,254 → 151,630<br>减少 20.72%</td><td>23.489 → 10.609<br>减少 54.83%</td></tr>
+<tr><td>fine，1001 桶细直方图</td><td>1,030,669 → 163,871<br>减少 84.10%</td><td>62,375,188.7 → 8,849,364.7<br>减少 85.81%</td><td>668,552.7 → 479,944.7<br>减少 28.21%</td><td>80.137 → 34.564<br>减少 56.87%</td></tr>
+<tr><td>escaping，转义/脱敏/边界数值</td><td>295,711 → 38,305<br>减少 87.05%</td><td>17,229,164.7 → 2,361,124.7<br>减少 86.30%</td><td>193,686 → 154,126<br>减少 20.42%</td><td>24.153 → 10.496<br>减少 56.54%</td></tr>
+</table></div>
+<p class="boundary">以上仅为 C++ new 请求，不包括 malloc、allocator 元数据、碎片或 OS 提交页，不能换算完整产品 Private Bytes。JSON/CSV/reserve 为组合收益，未分别归因。短程文件缓存计时不能预测完整产品长稳。逐指标 rows/checkpoint 与 JSONL/CSV/session 字节等价均 PASS；manifest 经 JSON 解析、删除 created_utc_ms 后 compact dump 比较，结果 JSON 中其 bytes/SHA 为该规范化内容，不是原始 manifest 文件字节。预取消一致，无效 UTF-8 两版均抛 JSON error 316。既有 telemetry_report gate 继续覆盖错误和原子提交契约。</p>
+<table><tr><th>日志夹具：相同 1200 条输入</th><th>旧</th><th>新</th></tr>
+<tr><td>保守缓存 charge，字节</td><td>1,973,160</td><td>679,200（减少 65.58%）</td></tr>
+<tr><td>隐藏期间 document textChanged 次数</td><td>1200</td><td>0</td></tr>
+<tr><td>隐藏处理耗时，一次观察 μs</td><td>109,102</td><td>566</td></tr>
+<tr><td>恢复显示的完整文本</td><td colspan="2">均与同一 expected 文本完全一致</td></tr></table>
+<p>日志 charge 不是 heap/Private Bytes；耗时仅一次观察，隐藏成本被推迟到显示或显式复制，不代表总渲染成本消失。面板少一次整份 frame 深复制属于源码可确认成本，未单独计量其分配或产品内存收益。</p>
+
+<h2>内存计费修正</h2>
+<p>原 <code>sizeof(SafeTelemetryRecord) + SnapshotRetainedBytes</code> 重复计算嵌入 Snapshot 固定空间；拆分动态估算后，每条扣除本 ABI 的 <code>sizeof(Snapshot)=8320</code>，再计匿名 ID capacity+1（本夹具为 48）。plain 为 21,408 → 13,136 字节，fine 为 37,424 → 29,152 字节；独立旧公式 oracle 与实际 store status 相符。全部既有字符串/容器容量仍计入，SSO capacity 仍保守计费，不猜标准库内部布局。</p>
+<p class="boundary">这是计费准确性修复，不是实际内存下降。8 MiB cap 与队列安全限额未降；修正后可能保留更多 live records，使真实内存增加。没有利用账目变化宣称产品预算或 B14 PASS。</p>
+
+<h2>最小验证与复用</h2>
+<table><tr><th>Gate</th><th>实际结果</th><th>证据与限制</th></tr>
+<tr><td>prepared bootstrap</td><td class="pass">28/28 PASS，2.007 s</td><td>断言真实持久回执及受控远端调用次数。当时实际工具输出，未独立归档 stdout；最终输入未变，未重复。ACL/DPAPI 为 mock，真实权限/服务 NOT_RUN。</td></tr>
+<tr><td>single-attempt 真实入口离线回归</td><td class="pass">初轮 10/10 PASS，53.712 s；后续直接增量 3/3 PASS，4.733 s；兼容路径增量 PASS</td><td>C/E 异盘中文空格路径、独立 venv Python、替代服务/SSH 端口、argv、授权绑定、身份失配、异常退出、timeout、guardian UNKNOWN、单次消费。后续真实 -I 配置/helper、缺 file_digest 兼容与 known_hosts 漂移拒绝亦通过。最终聚合未重复跑。</td></tr>
+<tr><td>release manifest 合同</td><td class="pass">缺失/越界输入 PASS；真实 create/verify/drift PASS，6.931 s</td><td>新增依赖必须冻结。首次沙箱临时目录读取失败日志保留；改用 workspace 内新 TEMP/TMP 后同一失败子例通过，未改 ACL。</td></tr>
+<tr><td>telemetry_report_test</td><td class="pass">PASS，35.17 s</td><td>已覆盖输入未变，复用；不重复执行。</td></tr>
+<tr><td>telemetry_throughput_test</td><td class="pass">PASS，37.06 s</td><td>覆盖历史缓存/维护周期；按维护源 README 的直接影响规则补跑。</td></tr>
+<tr><td>diagnostic_qt_bridge_test / qt_log_redaction_test</td><td class="pass">PASS，5.26 / 2.43 s</td><td>隐藏缓存、再次显示、过滤、主题链、复制、清屏、selection/scroll、容量与脱敏。未改 writer/mirror/pending 丢弃机制，未重复 unrelated blocked-UI 10 秒 gate。</td></tr>
+<tr><td>meeting_telemetry_panel_test</td><td class="pass">PASS，6.18 s</td><td>新增已发布旧 frame 不被后续 publish 修改的断言，保留 freshness/history/controller 契约。</td></tr>
+<tr><td>两个成本夹具 × 三类输入</td><td class="pass">全部 PASS</td><td>同输入输出等价、预取消、UTF-8、独立计费 oracle 和六份 measurement 已留存。</td></tr>
+</table>
+<p>受影响 core/Qt/meeting libraries 与测试目标均以 RelWithDebInfo 编译链接成功；复用 <code>build-consolidation</code> 的现有私有 bootstrap，只为新增可选目标进行一次必要 configure。未构建发布用产品 EXE/PDB，未跑 Full CTest。MSBuild 按要求直接在获准环境运行。最后四项 CTest 组合日志为维护仓 <code>out/memory-optimization-final-gate-20261019.txt</code>，总计 51.88 s。</p>
+<p>本轮执行插曲原样记入结果 JSON：首个导出夹具 stdout 重定向父目录不存在，但完整 measurement 已生成且校验成功，直接复用；日志夹具误选静态构建未导入的 offscreen backend，已中止该独立进程，默认 Windows backend 通过。首次 release manifest 沙箱失败保留；两次获准环境请求因审批服务不可用未执行，最终采用可写 workspace TEMP/TMP 的安全替代通过。以上不改写历史产品或诊断结论。</p>
+
+<h2>新版本发布携带项与真实入口边界</h2>
+<p>本轮仅维护源代码和 release_inputs.json，<strong>未修改冻结 19 或旧实验记录，未生成新授权或新候选</strong>。新发布必须保持原目录结构，并由新冻结绑定全部内容哈希及 capability，不可向旧冻结补写后消费：</p>
+<ul>
+<li>新增 <code>invoke_product_single_attempt.ps1</code>、<code>product_single_attempt.py</code>、<code>product_single_attempt_local.ps1</code>，以及专用 <code>test_product_single_attempt.py</code>。</li>
+<li>本轮修改的 prepared、run-config、remote-transport 维护源；原 target/transport/meeting/shutdown/pidfd/session/guardian 与 worker 依赖；<code>integration/source_paths.py</code>、<code>tests/support/new_private_temp.ps1</code> 及 release_inputs.json 原声明范围。不要只复制单个入口。</li>
+<li>当前产品源码重建的匹配 EXE/PDB、音频/GPU collectors；Python 和其完整声明 runtime、PowerShell；父计划/manifest、run/target/known_hosts、prepared 与凭据策略源，以及 manifest 的 <code>external.pidfd_capability</code>。内容哈希不能替代 PDB identity、桌面资源或远端当前能力准入。</li>
+</ul>
+<p>真实 wrapper/config/native argv 已执行离线回归；正向 desktop/resource、ETW、remote、meeting 是冻结 fake 边界，另测真实 local 错 SID 提前拒绝及生成远端查询在本地 proc 夹具执行。未实测 Python 3.10 或完整 embedded ._pth 分发，只验证当前解释器 -I 与兼容路径。因此真实准入、产品 runtime、qualification、Formal 均未由本轮通过。</p>
+
+<h2>已完成、待验证、暂缓与 UNKNOWN</h2>
+<table><tr><th>状态</th><th>内容</th></tr>
+<tr><td>已优化 / 离线确认</td><td>导出临时分配与输出等价、日志缓存/隐藏投影、面板发布前深复制移除、retained charge 组合修正；工具安全终态及单次包装。</td></tr>
+<tr><td>已修但 runtime 待验证</td><td>真实服务/ACL/DPAPI/桌面/guardian/跨机准入；真实产品的日志显示、完整负载下分配与 Private Bytes、发布二进制依赖及当前 capability。</td></tr>
+<tr><td>暂缓</td><td>完整 snapshot 表示重构和 revision 跳过：worker 仍有必要快照深复制，面板刷新受时间/freshness/内存节奏影响，没有足够证据支持仅按 revision 跳过。CurrentRecords 已只复制共享指针，不重复优化。更大访客式 rows 流式化不在本轮继续扩展。</td></tr>
+<tr><td class="unknown">UNKNOWN / 保持</td><td>原 B14 增长根因；完整产品 Private Bytes 收益；store 外部 shared_ptr owner 寿命；历史未知大小、配对异常、AMD 符号 BLOCKED、覆盖盲区。EventMap 已有真实 Free 和约 50 KiB 平台，不细分；TLS 关联线程仍存活，不继续细分。</td></tr>
+</table>
+
+<h2>变更归属与停止点</h2>
+<p>产品仅 6 个源码文件：<code>src/telemetry/telemetry_report.cpp</code>、日志 console cpp/h、panel controller cpp、panel model cpp/h。telemetry_report 中原有 camera 指标 dirty hunk 保留。维护源本轮 20 个文件的路径与哈希列于结果 JSON，长期工具和夹具均位于 tests，不留在 F 盘实验或 out 作为唯一维护源；两份 README 更新入口、边界和成本测量说明。</p>
+<p>无关产品 dirty 的 10 个预先冻结文件 SHA256 全部保持不变；两个 HEAD 未变、无暂存、无提交或推送。维护仓其他既存 dirty 未纳入本轮交付。仅新增本报告及独立结果目录，未改既有 test-plan、原始 FAIL 或冻结材料。已完成代码与离线验证，停止在此。</p>
+<h2>唯一下一步建议</h2>
+<p>另行授权后，冻结可比的优化前后发布构建与工具依赖，在同一完整媒体/共享/日志负载、相同全部导出和释放/静置检查点进行真实产品对照，同时记录阶段 Private Bytes 与分配/释放。用对照判断本轮优化的产品效应，继续保留原 B14 FAIL；本轮不启动该对照。</p>
+</html>

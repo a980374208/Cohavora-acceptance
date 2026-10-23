@@ -1,0 +1,2207 @@
+{
+  "schema": "cohavora-frozen-acceptance-stage-closure-v1",
+  "created_utc": "2026-10-21T21:11:13.266871+00:00",
+  "status": "STAGE_CLOSED_PARTIAL",
+  "frozen_at": "2026-10-22T05:07:21.396912+08:00",
+  "scope": "24 existing groups and existing gate definitions; no new matrix, driver, runtime, or thresholds",
+  "authoritative_gate_source": "frozen-test-plan.json",
+  "counting": {
+    "groups": 24,
+    "product_groups": 21,
+    "auxiliary_groups": 3,
+    "group_mapped_original_records": 50,
+    "non_test_original_records": 2,
+    "total_original_records": 52
+  },
+  "status_policy": "Group status preserves any retained required FAIL; PARTIAL denotes completed bounded scopes plus unclosed required scope. BLOCKED/DEFERRED/PAUSED describe different remaining conditions. INCONCLUSIVE is not product FAIL or PASS. No local PASS upgrades whole-group credit.",
+  "caveats": [
+    "Evidence is reused as scoped in the existing current-resolution22 and completed reports; this audit does not independently rehash all build/runtime inputs.",
+    "Existing report-data retestRecords NOT_RUN is a baseline navigation field; later completed scopes are described separately and do not imply whole-group PASS.",
+    "The P03 runtime23 cleanup_complete=false arises because no peers were launched; it is not a leak finding. The final full input hash check was not reached after strict failed.",
+    "Original failures and superseded attempts remain traceable; only a completed same-scope result can supersede its displayed historical value.",
+    "Parent requested phase closure; no additional gate is proposed or executed."
+  ],
+  "groups": [
+    {
+      "id": "T001",
+      "plan_code": "P01",
+      "plan_kind": "product",
+      "title": "核心生命周期与异常回滚",
+      "original_ids": [
+        "T002",
+        "T004",
+        "T031"
+      ],
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "启动事务、会话/发布及异常回滚的直接工程范围；两项audio lifetime仅按影响范围复用。"
+        ],
+        "remaining": [
+          "相同最终冻结工件的完整runtime引用释放链和按定义关联的入离会耗时未完成。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "stage_report_reuse",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "Room／Session／发布与取消发布：状态转换、generation、owner和thread归属一致，Qt投影不持有native lifetime。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "取消、late callback、重复操作和启动失败：终态唯一、回滚完整，销毁后的回调不改写新会话。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "音频source／track／factory／probe／Qt引用链：在相同冻结工件下配对复现与释放，直接lifetime断言成立。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "入离会耗时：按timing_measurements中的join_ready／leave_complete关联业务终态、native cleanup与Qt投影，保存逐轮原始起终点及结果。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T002",
+      "plan_code": "P02",
+      "plan_kind": "product",
+      "title": "遥测功能、持久化与恢复",
+      "original_ids": [
+        "T001",
+        "T036",
+        "T040"
+      ],
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "遥测直接工程合同、限定service-restart/九成功网络子集/TURN审计。",
+          "TURN02封存源生产导出与回读：7文件、93 revisions、61104指标、17 timeline；UI15三次生产导出回读另按自己的run成立。"
+        ],
+        "remaining": [
+          "故障后live-current/UI导出及历史稳定性详情/session link、crash metadata、persistent loss summary缺口保留。",
+          "缓存benchmark仅在对应输入变化时按原合同执行；本次无新benchmark结果。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "turn_export",
+          "ui_export",
+          "stage_report_network",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "事件与P2-A／B／C投影：事件、序列化、管线、文件输出和桥接保持声明语义。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "持久化与导出：状态、筛选和恢复后内容可回读，工程与实服结果分别记录。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "独立信令恢复：重连后遥测状态和文件链可继续，缺失或重复不被静默忽略。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "checkpoint缓存：仅在实现或benchmark输入变化时比较48／768段ABBA，核对逻辑I/O与JSON重解析。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T003",
+      "plan_code": "P03",
+      "plan_kind": "product",
+      "title": "界面流程、文件与真实I/O",
+      "original_ids": [
+        "T005",
+        "T006",
+        "T018",
+        "T024",
+        "T030"
+      ],
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "B01 UIA10项、B02文件/上传4项；受控磁盘满/恢复、oplock取消/恢复及诊断sink退出三个独立I/O条件。",
+          "UI15 strict短测3/3轮和三次生产导出；UI09 typed耗时只为OBSERVATION_ONLY。",
+          "四主题Qt CPU静帧runtime17b：同帧/绑定/单次自然Paint身份及16个桌面合成像素闭合，限定PASS_SCOPED。"
+        ],
+        "remaining": [
+          "有限时变内容runtime23为INCONCLUSIVE：strict输入在peer启动前变化，0/12帧；本阶段不再重试。",
+          "完整CPU/GPU/DPI/多屏/白板内容原色矩阵、媒体连续性、L3、长时内存及人工键盘/IME/读屏未由这些短门关闭。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [
+          "P03_FINITE_CHANGING_CPU_CONTENT: P21_STRICT_INPUT_CHANGED; no product processes launched; no frame evidence."
+        ],
+        "evidence_refs": [
+          "functional_media",
+          "resource20",
+          "ui_export",
+          "ui_timing",
+          "p03_static",
+          "runtime23",
+          "runtime23_exec",
+          "raw_mouse23"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "界面流程：settings、入会、会议工具栏／分页、日志及白板文件操作，在声明语言下完成且状态一致；页面首绘与入离会分别引用timing_measurements的ui_first_paint／join_ready／leave_complete。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "主题外观与舞台：系统／浅色／深色／青绿四种模式下，已打开及新建的主窗、设置、菜单／弹层、图标／缓存图片和白板外围一致；舞台、视频格及留白在CPU／GPU后端已有静止画面时即时切换，视频／共享内容和白板页面／笔迹保持原色。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "文件内容：JPEG、拒绝访问、页数替换、导出回读与像素／哈希判定；同一文件case只执行一次。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "远端上传：离线拒绝、上传中断、回读和重试恢复分别验证，失败不残留错误状态。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 4,
+            "definition": "真实I/O：受控磁盘满、oplock／慢I/O、驱动不响应及关停持久化／恢复按独立故障条件判定。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 5,
+            "definition": "人工输入与辅助操作：键盘导航、中文IME及声明支持的屏幕阅读器完成实际功能。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T004",
+      "plan_code": "P04",
+      "plan_kind": "product",
+      "title": "编码矩阵、选层与主备回退",
+      "original_ids": [
+        "T007",
+        "T008"
+      ],
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "B03编码9格及B04策略/恢复/负向13项已按实际codec、发布/接收和退出成立；本批22项按影响范围复用，未新增运行。"
+        ],
+        "remaining": [
+          "只适用各格冻结输入和已运行逻辑拓扑；未运行硬件/设备、跨平台及物理故障矩阵不外推。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "stage_report_reuse"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "codec矩阵：Auto、VP8、H264、VP9-SVC、AV1及声明备用编码，实际requested／effective codec与预期一致。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "尺寸与选层：原720／360、simulcast中／低层等负载逐项核对实际发布、RTP／解码增长和marker。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "主备策略与重发布：prefer／regression／simulcast backup、手动重发布的选择及旧资源清理正确。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "编码恢复：信令／完整重连分别覆盖simulcast、regression与allowlist，恢复后核对实际codec。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 4,
+            "definition": "负向能力：disabled AV1和无视频交集等失败可解释并完成回滚。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T005",
+      "plan_code": "P05",
+      "plan_kind": "product",
+      "title": "跨SDK媒体与数据互通",
+      "original_ids": [
+        "T009"
+      ],
+      "stage_status": {
+        "status": "FAIL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "固定派生Flutter七格最新终态及其他独立格分别保留；官方C++数据12格、受控视频4格及OFF/ON合成音频内容已完成限定范围。"
+        ],
+        "remaining": [
+          "固定版本Flutter严格内容失败仍未关闭；诊断副本observer清理修复不等于修改或通过官方SDK。",
+          "官方C++ SDK缺callback-drain barrier，进程退出不能证明进程内安全退休；其他平台未跑。"
+        ],
+        "retained_failures": [
+          "最新Flutter独立格投影14 PASS/2 FAIL；原严格relay_marker_content_valid失败保留。",
+          "SFU六帧close-flush源码合同解释不改变原内容门限或剔除失败帧。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "stage_report_flutter",
+          "stage_report_cpp",
+          "official_audio",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "固定派生Flutter：冻结双方版本，验证当前C++双向媒体与数据的实际交付。",
+            "status": "FAIL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "官方独立C++对端：按声明能力验证双向媒体、数据、退出与恢复。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "未修复Flutter及其他平台：逐一确认版本、能力与结果，未具备条件的格子保持未跑。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T006",
+      "plan_code": "P06",
+      "plan_kind": "product",
+      "title": "E2EE协议、安全与实际媒体",
+      "original_ids": [
+        "T010",
+        "T033"
+      ],
+      "stage_status": {
+        "status": "FAIL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "Windows Native协议/换钥/data/Qt/退场及后端支持工程范围；三端ABBA与600秒观察按原工件成立。",
+          "固定派生Flutter的H264/VP8、换钥/RPC、ratchet/latejoin、wrong-slot恢复等独立成功格；官方C++视频和合成音频OFF/ON内容各自成立。"
+        ],
+        "remaining": [
+          "Flutter严格媒体内容失败未关闭，不能用Native/派生fixture成功替代。",
+          "摄像头成本、物理口到耳、跨平台、长期稳定性和完整SDK进程内退休边界仍未完成。"
+        ],
+        "retained_failures": [
+          "Flutter最新独立2个FAIL及六帧异常原严格判定保留。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "native_abba",
+          "stage_report_flutter",
+          "stage_report_cpp",
+          "official_audio",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "协议与密钥：声明Windows opt-in profile、同slot换钥、错误恢复、data、Qt及退场契约成立。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "实际媒体：VP8／H264等声明codec逐项核对双向内容、正确解密及受控relay返回的首帧／marker。",
+            "status": "FAIL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "安全输出：实际持久化、导出、应用owned dump策略及限定敏感sink符合原边界。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "性能与观察：同一冻结三端、同负载执行OFF／ON／ON／OFF配对及600秒功能观察。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T007",
+      "plan_code": "P07",
+      "plan_kind": "product",
+      "title": "屏幕采集、共享质量与显示边界",
+      "original_ids": [
+        "T011",
+        "T021",
+        "T022",
+        "T034"
+      ],
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "capture-backends与capture-quality-fullscreen桌面子门按各自实际范围完成；GDI50热切及signal/full重连完成。",
+          "WGC独立3600秒/100轮生命周期及1800秒实服六资源门均已完成，按各自负载复用。"
+        ],
+        "remaining": [
+          "物理多显示器、混合DPI、横竖屏、跨GPU及人工画质不由单机逻辑端点覆盖。",
+          "M0及生成图案不证明产品overlay目视或全部人工运动画质。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "stage_report_desktop",
+          "wgc3600",
+          "wgc1800",
+          "wgc1800_resources",
+          "gdi50"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "采集与交付：DXGI／WGC／GDI的窗口／全屏、实帧故障回退、停止释放和会议媒体交付分别成立。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "质量与成本：复杂内容capture／encode／decode、15／20／30 FPS、质量热切及重连按原负载与门限判定。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "局部长时：GDI 50次热切、WGC 1800秒六资源门及WGC同进程至少1小时／100轮按各自范围执行或等价复用。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "显示设备：双屏、负坐标、混合DPI、横竖屏、跨GPU／分辨率下的源身份、尺寸、坐标和鼠标正确。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 4,
+            "definition": "人工画质：小字号、表格、滚动及运动视频的可读性、拖影、清晰度与延迟感按声明FPS确认。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T008",
+      "plan_code": "P08",
+      "plan_kind": "product",
+      "title": "真实音视频设备与声学体验",
+      "original_ids": [
+        "T012",
+        "T025"
+      ],
+      "stage_status": {
+        "status": "BLOCKED",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "HP/UGREEN等短preflight只保留设备前置范围。"
+        ],
+        "remaining": [
+          "独立已知物理音源及可核验PCM来源未确认，不能由合成tone替代。",
+          "完整设备枚举/切换/权限占用矩阵及真实声学听感、双讲/串音/失真需对应端点与人工环境。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "设备选择：当前产品摄像头／麦克风／扬声器的枚举、切换、稳定性、FPS和连续性成立。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "失败处理：权限、占用及回滚逐端点验证，不以设备可打开推断完整产品矩阵通过。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "独立音源：已知物理音源与可核验PCM支持内容对应，无法确认音源时保留SOURCE_NOT_CONFIRMED。",
+            "status": "BLOCKED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "真实声学：回声／降噪／增益／双讲／串音／失真及可闻卡顿由实际环境和听感判定。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T009",
+      "plan_code": "P09",
+      "plan_kind": "product",
+      "title": "网络、认证与服务恢复",
+      "original_ids": [
+        "T013"
+      ],
+      "stage_status": {
+        "status": "FAIL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "原功能批次11项和新批九成功网络case各按原输入保留；独立TURN新run实际relay/udp、持续decoded和配置恢复成立。"
+        ],
+        "remaining": [
+          "新十项原批次整体FAIL/terminal身份UNKNOWN及cleanup failure不能由九项+独立TURN拼接成新批全通过。",
+          "物理断网、UDP/RTP日志及故障后live-current导出未完成。"
+        ],
+        "retained_failures": [
+          "resource-completion-20261021-01 network_runtime原FAIL保留；TURN单case补测PASS仅替换其明确独立范围。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "stage_report_network",
+          "turn_export",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "网络退化：baseline、丢包、抖动和限速逐条件测实际音视频恢复与正常清理。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "连接中断：断网、信令重连和完整重连分别验证Session状态、owner和媒体交付。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "服务与认证：真实服务重启及auth recovery恢复业务，不仅观察连接状态。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "路径：path switch与真实TURN relay有实际路径、媒体和退出证据。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T010",
+      "plan_code": "P10",
+      "plan_kind": "product",
+      "title": "大会议容量、分页与固定负载长稳",
+      "original_ids": [
+        "T014",
+        "T045"
+      ],
+      "stage_status": {
+        "status": "FAIL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "固定16路低层300秒短门仅按其原负载、订阅/解码与分页范围保留。"
+        ],
+        "remaining": [
+          "100路发布前置仅61/100，未达到完整音频/翻页负载；混合长稳保持LONG_SOAK_NOT_RUN。",
+          "当前最终版固定grid9长稳是否仍要求需定版条件，不与B14生命周期拼接。"
+        ],
+        "retained_failures": [
+          "原61/100实际发布失败。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "负载前置：恢复100路实际发布与完整音频／翻页条件，未到达负载即停止，长稳记NOT_RUN。",
+            "status": "FAIL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "容量与收敛：核对实际订阅、RTP、解码／交付路数和分页收敛；固定16路低层300秒仅授予该短门范围。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "混合长稳：高清层、音频、翻页、恢复及资源曲线按当前声明负载和冻结时长执行。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "固定grid9：仅当定版仍要求该负载时执行当前版本长稳，保留实际活跃媒体、画质、音频、GPU与资源证据。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T011",
+      "plan_code": "P11",
+      "plan_kind": "product",
+      "title": "白板、批注与协同负载",
+      "original_ids": [
+        "T015",
+        "T016",
+        "T023",
+        "T035"
+      ],
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "三产品进程白板B12八项、whiteboard-functional及annotation-runtime按实际范围完成。",
+          "1800-fixed04：一机8产品进程/4书写者、1802.609秒、50对共享/批注启停、每写者361笔，八端最终收敛，8/8自然退出、forced0且netem已清除。"
+        ],
+        "remaining": [
+          "单机多进程不等于物理多端；M0不覆盖产品overlay/候选框目视和跨DPI/多GPU完整人工对齐矩阵。",
+          "Debug合成4K数字不外推当前最终产品实服性能。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "whiteboard1800",
+          "whiteboard_b12",
+          "stage_report_desktop"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "三产品进程实服：同时写、图片资产、迟加入、同步、重连、导出像素及authority正常／异常退场。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "批注：跨DPI和质量切换后的连续画线／文字、缩放、预览与远端画面对齐。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "网络与负载：100ms RTT／2%丢包、4书写者／8人、各50次批注与共享启停及30分钟书写。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "局部确定性与4K合成：冻结白板依赖和测试工件，复核核心契约与原合成性能口径。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T012",
+      "plan_code": "P12",
+      "plan_kind": "product",
+      "title": "日志工业化与安全边界",
+      "original_ids": [
+        "T037",
+        "T038"
+      ],
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "工程typed safe summary/业务raw语义及限定sink直接合同；service-restart、九成功网络子集、独立TURN封存导出/回读各自成立。"
+        ],
+        "remaining": [
+          "限定实服不等于完整L3；故障后live-current/UI导出、UDP/RTP及既有接受的deferred runtime边界未关闭。",
+          "原历史stability/crash/loss字段缺失不得回填。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "resource20",
+          "turn_export",
+          "stage_report_network",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "工程合同：LG本地门与8 producer合成入口验证typed safe summary、持久化及输出行为。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "业务语义：raw detail在业务链完整保留，诊断sink只消费安全摘要，不因脱敏改变错误或恢复语义。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "限定实服：真实信令故障的日志、关联及导出按原范围判定，未覆盖的UDP／RTP故障保持未跑。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "安全finding：PR-SEC-001／IR-SEC-001按明确sink与已接受deferred runtime边界补核。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T013",
+      "plan_code": "P13",
+      "plan_kind": "product",
+      "title": "遥测与日志的性能、资源开销",
+      "original_ids": [
+        "T017"
+      ],
+      "stage_status": {
+        "status": "FAIL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "UIA20轮与5轮同进程残余分别完成；9000秒资源门独立PASS并复用。",
+          "panel-closed batch22八窗及独立回读完成，143693检查/0差异；同帧关联仅描述性诊断，不授性能信用。"
+        ],
+        "remaining": [
+          "原正式callback p99增幅+7.0146818923%超过5%，根因UNKNOWN；诊断ON/OFF两轮方向相反，不能改判。",
+          "正式后两对NOT_RUN及同最终工件性能复测未完成；本阶段停止，不再追加诊断或重复gate。"
+        ],
+        "retained_failures": [
+          "原正式P13 +7.0146818923% >5% FAIL；旧pair2 +8.371385%等独立历史失败保留。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "stage_report_performance",
+          "telemetry9000",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "三组OFF／ON配对：同负载比较CPU／内存、callback p99与UI批次，沿用原门限及窗口。",
+            "status": "FAIL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "独立UIA干扰：20轮查询与退出观察分别核对干扰、资源和清理。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "五轮同进程：join／leave后残余资源按原释放窗口判定。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "9000秒资源长门：真实媒体／UI／持久化及配额证据完整，不拼接其他运行。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T014",
+      "plan_code": "P14",
+      "plan_kind": "product",
+      "title": "全新克隆、发行工件与安装升级",
+      "original_ids": [
+        "T019",
+        "T032",
+        "T041"
+      ],
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "非最终工件只读EXE/PDB、当前renderer DLL/PDB身份及两处离线源码定位限定结果。",
+          "公开产品/私有工程解耦的既有工程证据仅按原输入复用。"
+        ],
+        "remaining": [
+          "最终来源/工件未收敛冻结，clean clone、签名、安装/升级/卸载、受控故障符号及外部Windows启动未执行。",
+          "当前旧部署renderer DLL age1与新PDB age2错配仍保留，不能替换旧DLL后回写历史通过。"
+        ],
+        "retained_failures": [
+          "旧部署DX11/OpenGL DLL与当前同GUID PDB的age错配；真实交换PDB负例为预期拒绝，不记产品FAIL。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "artifact_identity",
+          "resolution22",
+          "frozen_plan"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "干净来源：人工全新克隆完成依赖、configure、build、启动与历史边界检查；未执行保持NOT_RUN。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "产品／私有测试解耦：公开产品独立configure／build，私有bootstrap与受影响离线gate注册正确。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "工件身份：EXE／DLL／PDB对应，受控故障符号可匹配；签名和归档单独核验。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "安装与升级：安装器编译、Restart Manager、全新安装／升级／卸载、ACL及外机启动逐场景成立。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T015",
+      "plan_code": "P15",
+      "plan_kind": "product",
+      "title": "跨机延迟与独立物理校准",
+      "original_ids": [
+        "T020"
+      ],
+      "stage_status": {
+        "status": "FAIL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "只保留既有软件测量链和校准观察范围，未授跨机或物理端到端通过。"
+        ],
+        "remaining": [
+          "原双机软件校时FAIL未修复验证；当前一台Windows主机不具备双机独立端点。",
+          "独立共享时钟光学/声学装置缺失，物理测量DEFERRED。"
+        ],
+        "retained_failures": [
+          "原软件校时10ms门FAIL保留。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "双机软件校时：修复并冻结双方输入，按现有10ms门核对校时误差。",
+            "status": "FAIL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "跨机软件延迟：校准通过后再测实际媒体延迟，保留完整采样与强身份。",
+            "status": "BLOCKED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "物理端到端：独立光学／声学装置完成校准与产品测量，设备缺失时保留DEFERRED。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T016",
+      "plan_code": "P16",
+      "plan_kind": "product",
+      "title": "物理环境变化与系统恢复",
+      "original_ids": [
+        "T026"
+      ],
+      "stage_status": {
+        "status": "DEFERRED",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "软件fault injection/工程恢复仅在各自门引用，不计真实物理操作。"
+        ],
+        "remaining": [
+          "真实热插拔、拔网线、锁屏/RDP/休眠唤醒、受控断电及损坏恢复未在本阶段执行。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "真实热插拔：音视频／显示设备移除和恢复后，源身份、权限、媒体与资源状态正确。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "物理断网：拔网线及恢复后的网络、Session与实际媒体恢复分别成立。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "系统会话：锁屏／RDP／休眠唤醒后，采集、设备及业务状态符合声明行为。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "断电恢复：在受控条件核对持久化、损坏恢复及再次启动。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T017",
+      "plan_code": "P17",
+      "plan_kind": "product",
+      "title": "支持包与独立事故复盘",
+      "original_ids": [
+        "T027"
+      ],
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "独立bundle-first信令/解码/渲染时间线复盘；TURN封存源导出与UI15三包独立回读按各自run完成。",
+          "本机工件身份和renderer离线源码定位不替代真实事故符号链。"
+        ],
+        "remaining": [
+          "故障后live-current UI导出、confirmed crash metadata/persistent loss summary等缺项保留。",
+          "支持包可读不证明事故根因确认；完整Release受控故障及最终符号分发未执行。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "stage_report_network",
+          "turn_export",
+          "ui_export",
+          "artifact_identity",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "事故时间线：独立审阅者可从支持包重建关键状态、运行身份和事件顺序。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "信息完整性：必要字段、缺失原因和安全输出边界可判断，不把unknown补成推测。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "Release符号：包内工件身份与符号对应，声明故障可定位到足够粒度。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T018",
+      "plan_code": "P18",
+      "plan_kind": "product",
+      "title": "远控授权、暂停与安全释放",
+      "original_ids": [
+        "T039"
+      ],
+      "stage_status": {
+        "status": "DEFERRED",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "既有focused/UI工程证据和USER_REPORTED_PASS保持各自来源，不授真实双机自动化通过。"
+        ],
+        "remaining": [
+          "invoke_product_remote_control.py真实双方当前v2工件需第二Windows端点；常规桌面双机见证与安全桌面/IME/多屏/物理优先及长稳未执行。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "常规桌面双机自动化：私有入口 invoke_product_remote_control.py 使用配置化双方与服务器，真实 UI 授权及独立窗口见证键鼠效果、暂停恢复、本地软件输入优先和持键安全释放；离线验证不计真实双机通过。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "授权与本地优先：真实双方当前v2工件验证授权、权限边界和本地操作优先。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "生命周期：暂停／恢复、自动开始及指定安全释放操作后状态和资源一致。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "真实桌面：权限桌面、IME、多屏等声明条件逐项验证，长期行为单独留结果。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T019",
+      "plan_code": "P19",
+      "plan_kind": "product",
+      "title": "B14环境冻结与资格准入",
+      "original_ids": [
+        "T042",
+        "T043"
+      ],
+      "stage_status": {
+        "status": "BLOCKED",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "既有环境/工具身份、局部只读校准和摄像头二次入会专项仅按原scope保留。"
+        ],
+        "remaining": [
+          "按host的all-node native/global topology及当前完整观测准入未闭环；本机非管理员ETW handle2查询AccessDenied、未开始capture。",
+          "同一冻结输入三次完整PILOT不由专项诊断抵扣；对应完整Formal资格未就绪。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "输入与环境：目标host的产品／工具／合同、强身份和完整环境冻结一致。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "观测语义：global topology、all-node native／被动无参与、创建／持有／释放、未知值传播与cleanup均有完整证据。",
+            "status": "INCONCLUSIVE",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "摄像头二次入会：同一产品进程两周期均验证本代VideoSource／RTC分段计数、产品source 1发布和独立接收解码；首帧超时有失败终态及重试入口，离会释放完整。本项专项诊断不抵扣三次完整资格或Formal。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "完整PILOT：每个待用环境在同一冻结输入下取得三次独立完整PILOT PASS；提前退出和失败如实保留。",
+            "status": "BLOCKED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 4,
+            "definition": "交接Formal：只有对应环境的全部准入成立才转交一次完整Formal，READY仅表示资格就绪。",
+            "status": "BLOCKED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T020",
+      "plan_code": "P20",
+      "plan_kind": "product",
+      "title": "B14同进程8小时／100周期正式长稳",
+      "original_ids": [
+        "T044"
+      ],
+      "stage_status": {
+        "status": "PAUSED",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "历史retry07 100轮是原Formal运行；不计当前新工件8小时/100轮完成。"
+        ],
+        "remaining": [
+          "用户明确Formal暂停，本阶段禁止启动；当前版本8小时/100周期及最终回归均NOT_RUN。"
+        ],
+        "retained_failures": [
+          "retry07正式资源门FAIL：Private Bytes增长100.412109375MiB，原门限64MiB；100轮逐轮成功不覆盖最终资源失败。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "b14_summary",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "执行前置：明确资源增长与测量链，对应环境同输入三次完整PILOT通过，满足现有Formal执行条件。",
+            "status": "BLOCKED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "固定生命周期：同一产品进程连续8小时／100轮，关联cycle与session强身份，全部必需阶段完成。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "资源与媒体：按冻结释放窗口、GPU、音视频／共享连续性等门限独立判定，Private Bytes原64 MiB门限不变。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "归档与完整性：遥测、日志、support bundle、质量和终态完整；按timing_measurements保留入离会及各scene首绘的逐轮起终点、版本与结果，丢失或缺项不得用其他run拼接。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T021",
+      "plan_code": "P21",
+      "plan_kind": "product",
+      "title": "软件更新与异步设置",
+      "original_ids": [
+        "T049"
+      ],
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "update manifest/service、异步settings既有直接工程范围按影响复用。",
+          "四主题设置、重启、unsupported/empty/wrong-section回退、派生首窗、真实Windows偏好8行及DX11/CPU/当前GLES模块会中限定范围分别完成。"
+        ],
+        "remaining": [
+          "原冻结EXE首窗/物理无闪烁、桌面OpenGL会议矩阵、完整stage矩阵与正式连续性未证明。",
+          "当前工件增量构建，传递性clean-build来源未证明；最终工件产品链/最终回归未跑。",
+          "其他任意损坏INI/类型case并非本阶段新增执行项，不追加矩阵。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "theme_restart",
+          "theme_invalid",
+          "theme_first_window",
+          "theme_system",
+          "theme_seeds",
+          "meeting_theme",
+          "meeting_cpu",
+          "meeting_gles",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "更新清单与服务：当前受影响协议、安全和错误路径的直接gate成立。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "异步设置：状态投影、取消和生命周期按当前输入验证，不受late callback覆盖。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "主题设置与恢复：系统／浅色／深色／青绿即时生效且记住所选模式，重启在首窗前恢复；系统模式响应Windows应用明暗变化，手动模式不被系统覆盖；无效配置回退系统。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "产品链：同一冻结版本完成必要最终回归与实际runtime；未执行部分单列。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T022",
+      "plan_code": "A01",
+      "plan_kind": "auxiliary",
+      "title": "自动化工具与判定器合同",
+      "original_ids": [
+        "T003"
+      ],
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "变更工具的直接正负例/缺证据合同按各次冻结输入通过并复用；P03有限内容23项Python+PS7集合、实际WinPS5.1 stub/嵌入C#compile-only通过。",
+          "P13 bool合同14项及八窗实际数据类型回读完成；只授工具范围。"
+        ],
+        "remaining": [
+          "工具PASS不升级产品runtime/正式门；本阶段不重复未变工具，不新增判定器。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "resolution22",
+          "p03_offline",
+          "p03_winps",
+          "p03_source_review"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "捕获排空：变更的helper在退出、取消及失败后完成owned cleanup。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "调用合同：UIA JSONL caller与调度只消费实际输出，不补写成功结果。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "判定器：正负例、证据缺失和状态边界正确，未变独立helper仅在等价证明后复用。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T023",
+      "plan_code": "A02",
+      "plan_kind": "auxiliary",
+      "title": "ETW测量链、证据合同与准入",
+      "original_ids": [
+        "T046",
+        "T047",
+        "T050",
+        "T051",
+        "T052"
+      ],
+      "stage_status": {
+        "status": "INCONCLUSIVE",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "离线证据/analyzer/receipt-adapter、既有wrapper和符号合同按各原限定结果复用。"
+        ],
+        "remaining": [
+          "当前非管理员ETW查询handle2为AccessDenied，capture未开始；原loss/guard/BLOCKED/UNAVAILABLE不重写或自动重试。",
+          "完整zero-loss库存/topology/ownership/phase及8GiB热窗口准入未齐；符号覆盖不证明根因。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "离线证据合同：守恒与false_growth／false_idle_transient／dropped_unknown_bytes／subtract_unmatched_free／credit_upgrade五个负例成立；来源或脚本变化须重新核对。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "analyzer完整逻辑：core／contract／receipt-adapter及STOP-return时钟接口在当前输入下成立，未变直接门按指纹复用。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "owner与cleanup：Session4 wrapper按同run／identity／retained-handle实测退出与owned cleanup；native INVALID／null不得补写成有效。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "捕获准入：沿用零loss、完整库存／topology／relation／ownership／phase与冻结预算，热窗口原8 GiB可用commit要求不放宽。",
+            "status": "BLOCKED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 4,
+            "definition": "窗口归因：完整候选窗口的分配语义、模块／符号强身份和unknown完整保留；旧ETL补分析只授予离线范围信用。",
+            "status": "INCONCLUSIVE",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "T024",
+      "plan_code": "A03",
+      "plan_kind": "auxiliary",
+      "title": "释放窗口内存归属与修复对照",
+      "original_ids": [
+        "T048"
+      ],
+      "stage_status": {
+        "status": "INCONCLUSIVE",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "既有ETL、owner/页/heap离线分析和baseline/fixed局部观察按原输入复用。"
+        ],
+        "remaining": [
+          "第6heap/页/PRIVATE commit完整归属与增长因果未闭合；PCM超限独立保留。",
+          "局部资源收益不关闭R181/B14正式资源失败，不得以夹具/系统缓存解释推断产品无泄漏。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "完整释放边界：同步取得库存、页和heap owner证据，核对未知第6 heap及页归属与增长关系。",
+            "status": "INCONCLUSIVE",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "同输入对照：baseline／fixed保持相同负载、释放窗口和强身份，消除前台／GPU等混杂。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "收益与因果：资源差异、未知贡献和可归属部分分别报告；未闭环保持INCONCLUSIVE／UNKNOWN。",
+            "status": "INCONCLUSIVE",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ]
+      }
+    }
+  ],
+  "group_status_counts": {
+    "PARTIAL": 11,
+    "FAIL": 6,
+    "BLOCKED": 2,
+    "DEFERRED": 2,
+    "PAUSED": 1,
+    "INCONCLUSIVE": 2
+  },
+  "fixed_remaining": [
+    {
+      "id": "R01",
+      "groups": [
+        "P03",
+        "P21"
+      ],
+      "status": "INCONCLUSIVE",
+      "remaining": "有限时变内容及未完成桌面范围",
+      "reuse": "已完成UI15/CPU静帧/主题各独立范围复用",
+      "blocking_condition": "runtime23输入条件中止，0帧；用户其后报告已断开鼠标，冻结后不再探测或重试，当前ready未验证。",
+      "action": "STOP_THIS_STAGE_NO_RETRY",
+      "execute_now": false,
+      "maximum_additional_attempts_this_stage": 0,
+      "execution_command": null,
+      "command_disposition": "不执行：复用、条件不足、已失败/不明或明确暂停；本阶段没有符合规则的待执行最小gate。",
+      "pass_condition": "仅对应冻结清单原gate判据；局部PASS不代替完整门；门限不变。",
+      "stop_condition": "STOP_THIS_STAGE_NO_RETRY",
+      "historical_attempt_command": [
+        "C:/Users/Jiangbinbin/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+        "integration/run_private.py",
+        "tests/runtime/tools/desktop/p21_system_theme_retest.py",
+        "--scope",
+        "meeting-media",
+        "--execute",
+        "--profile",
+        "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23\\profile.json",
+        "--output",
+        "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-runtime23"
+      ]
+    },
+    {
+      "id": "R02",
+      "groups": [
+        "P13"
+      ],
+      "status": "FAIL",
+      "remaining": "正式callback p99性能失败及根因UNKNOWN",
+      "reuse": "9000s/UIA20/5周期资源PASS分别复用；batch22仅诊断",
+      "blocking_condition": "无稳定因果，不能用重复诊断改判",
+      "action": "STOP_NO_EXTRA_DIAGNOSTIC",
+      "execute_now": false,
+      "maximum_additional_attempts_this_stage": 0,
+      "execution_command": null,
+      "command_disposition": "不执行：复用、条件不足、已失败/不明或明确暂停；本阶段没有符合规则的待执行最小gate。",
+      "pass_condition": "仅对应冻结清单原gate判据；局部PASS不代替完整门；门限不变。",
+      "stop_condition": "STOP_NO_EXTRA_DIAGNOSTIC"
+    },
+    {
+      "id": "R03",
+      "groups": [
+        "P05",
+        "P06"
+      ],
+      "status": "FAIL",
+      "remaining": "Flutter严格媒体内容失败",
+      "reuse": "独立14个成功格、Native及官方C++内容范围分别复用",
+      "blocking_condition": "六帧异常原严格合同失败；官方依赖修复/正式 gate未关闭",
+      "action": "STOP_NO_FILTER_OR_UNCHANGED_RERUN",
+      "execute_now": false,
+      "maximum_additional_attempts_this_stage": 0,
+      "execution_command": null,
+      "command_disposition": "不执行：复用、条件不足、已失败/不明或明确暂停；本阶段没有符合规则的待执行最小gate。",
+      "pass_condition": "仅对应冻结清单原gate判据；局部PASS不代替完整门；门限不变。",
+      "stop_condition": "STOP_NO_FILTER_OR_UNCHANGED_RERUN"
+    },
+    {
+      "id": "R04",
+      "groups": [
+        "P05",
+        "P06"
+      ],
+      "status": "BLOCKED",
+      "remaining": "官方C++进程内安全退休",
+      "reuse": "数据/视频/音频内容及FIN/ACK/自然进程退出范围复用",
+      "blocking_condition": "固定SDK缺callback-drain barrier，需接口/外部依赖条件",
+      "action": "DEFER_NOT_EQUIVALENT_TO_PROCESS_EXIT",
+      "execute_now": false,
+      "maximum_additional_attempts_this_stage": 0,
+      "execution_command": null,
+      "command_disposition": "不执行：复用、条件不足、已失败/不明或明确暂停；本阶段没有符合规则的待执行最小gate。",
+      "pass_condition": "仅对应冻结清单原gate判据；局部PASS不代替完整门；门限不变。",
+      "stop_condition": "DEFER_NOT_EQUIVALENT_TO_PROCESS_EXIT"
+    },
+    {
+      "id": "R05",
+      "groups": [
+        "P02",
+        "P09",
+        "P12",
+        "P17"
+      ],
+      "status": "PARTIAL",
+      "remaining": "故障后live-current/UI导出与完整网络/事故链",
+      "reuse": "九成功子集、独立TURN、service-restart、封存导出各自复用",
+      "blocking_condition": "旧入口固定已撤17980，缺同run恢复驱动；不得故障注入共享服务或拼批次",
+      "action": "STOP_NO_NEW_DRIVER_OR_SERVICE_MUTATION",
+      "execute_now": false,
+      "maximum_additional_attempts_this_stage": 0,
+      "execution_command": null,
+      "command_disposition": "不执行：复用、条件不足、已失败/不明或明确暂停；本阶段没有符合规则的待执行最小gate。",
+      "pass_condition": "仅对应冻结清单原gate判据；局部PASS不代替完整门；门限不变。",
+      "stop_condition": "STOP_NO_NEW_DRIVER_OR_SERVICE_MUTATION"
+    },
+    {
+      "id": "R06",
+      "groups": [
+        "P14",
+        "P21"
+      ],
+      "status": "NOT_RUN",
+      "remaining": "最终工件、clean clone、签名、安装/升级/卸载、最终回归",
+      "reuse": "当前工件身份及离线源码定位、更新/settings工程范围复用",
+      "blocking_condition": "最终来源/工件未收敛冻结；外机部分另需Windows端点",
+      "action": "WAIT_FINAL_RELEASE_INPUT_NO_BUILD",
+      "execute_now": false,
+      "maximum_additional_attempts_this_stage": 0,
+      "execution_command": null,
+      "command_disposition": "不执行：复用、条件不足、已失败/不明或明确暂停；本阶段没有符合规则的待执行最小gate。",
+      "pass_condition": "仅对应冻结清单原gate判据；局部PASS不代替完整门；门限不变。",
+      "stop_condition": "WAIT_FINAL_RELEASE_INPUT_NO_BUILD"
+    },
+    {
+      "id": "R07",
+      "groups": [
+        "P08",
+        "P15",
+        "P16",
+        "P18"
+      ],
+      "status": "DEFERRED",
+      "remaining": "物理音源/光学声学、跨机、热插拔/会话/断电、真实双机远控",
+      "reuse": "仅既有preflight/软件/用户反馈/工程范围",
+      "blocking_condition": "独立设备、端点、物理操作及校准条件不足",
+      "action": "NO_SUBSTITUTE_WITH_SYNTHETIC_OR_SINGLE_HOST",
+      "execute_now": false,
+      "maximum_additional_attempts_this_stage": 0,
+      "execution_command": null,
+      "command_disposition": "不执行：复用、条件不足、已失败/不明或明确暂停；本阶段没有符合规则的待执行最小gate。",
+      "pass_condition": "仅对应冻结清单原gate判据；局部PASS不代替完整门；门限不变。",
+      "stop_condition": "NO_SUBSTITUTE_WITH_SYNTHETIC_OR_SINGLE_HOST"
+    },
+    {
+      "id": "R08",
+      "groups": [
+        "P10"
+      ],
+      "status": "FAIL",
+      "remaining": "100路容量前置及混合长稳",
+      "reuse": "16路低层300秒独立短门",
+      "blocking_condition": "原61/100未达到100路；长稳未开始",
+      "action": "STOP_NO_LOWER_LOAD_UPGRADE",
+      "execute_now": false,
+      "maximum_additional_attempts_this_stage": 0,
+      "execution_command": null,
+      "command_disposition": "不执行：复用、条件不足、已失败/不明或明确暂停；本阶段没有符合规则的待执行最小gate。",
+      "pass_condition": "仅对应冻结清单原gate判据；局部PASS不代替完整门；门限不变。",
+      "stop_condition": "STOP_NO_LOWER_LOAD_UPGRADE"
+    },
+    {
+      "id": "R09",
+      "groups": [
+        "P19",
+        "A02",
+        "A03"
+      ],
+      "status": "INCONCLUSIVE",
+      "remaining": "ETW准入/完整ownership与内存因果、三次完整PILOT",
+      "reuse": "既有冻结工具/ETL/局部诊断复用",
+      "blocking_condition": "当前非管理员handle2查询拒绝，完整topology/ownership未知；原门限不放宽",
+      "action": "STOP_NO_CAPTURE_OR_ADMIN_WORKAROUND",
+      "execute_now": false,
+      "maximum_additional_attempts_this_stage": 0,
+      "execution_command": null,
+      "command_disposition": "不执行：复用、条件不足、已失败/不明或明确暂停；本阶段没有符合规则的待执行最小gate。",
+      "pass_condition": "仅对应冻结清单原gate判据；局部PASS不代替完整门；门限不变。",
+      "stop_condition": "STOP_NO_CAPTURE_OR_ADMIN_WORKAROUND"
+    },
+    {
+      "id": "R10",
+      "groups": [
+        "P20"
+      ],
+      "status": "PAUSED",
+      "remaining": "8小时/100周期Formal",
+      "reuse": "历史retry07原FAIL仅历史证据，不授新Formal",
+      "blocking_condition": "用户明确暂停；资格/最终输入条件不满足",
+      "action": "DO_NOT_START",
+      "execute_now": false,
+      "maximum_additional_attempts_this_stage": 0,
+      "execution_command": null,
+      "command_disposition": "不执行：复用、条件不足、已失败/不明或明确暂停；本阶段没有符合规则的待执行最小gate。",
+      "pass_condition": "仅对应冻结清单原gate判据；局部PASS不代替完整门；门限不变。",
+      "stop_condition": "DO_NOT_START"
+    }
+  ],
+  "immediately_executable_existing_unfinished_gate": [],
+  "at_most_one_existing_gate_disposition": "NONE_THIS_STAGE; P03 already stopped INCONCLUSIVE and is not retried; all other clear available completed scopes reused or remaining conditions blocked/deferred/paused.",
+  "evidence": {
+    "frozen_plan": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\stage-closure-20261022\\frozen-test-plan.json",
+      "sha256": "51e074ead1b630a490f89e371dc9b10c347eebf2dd9dc794155621de70ffe820",
+      "digest_origin": "Parent recorded at freeze; not rehashed by this audit"
+    },
+    "resolution22": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\current-resolution22.json"
+    },
+    "report_data": {
+      "path": "E:/vsSource/WebRTC/live-kit-test/samples/acceptance/data/report-data.json",
+      "scope": "Curated source records; retestRecords NOT_RUN is navigation baseline and is not a substitute for later scoped completions"
+    },
+    "functional_media": {
+      "path": "samples/acceptance/reports/product/functional-media-retest-20261020-01.html"
+    },
+    "resource20": {
+      "path": "samples/acceptance/reports/product/resource-completion-20261020-01.json"
+    },
+    "stage_report_reuse": {
+      "path": "samples/acceptance/reports/product/resource-completion-20261021-01.json",
+      "locator": "entries.reuse"
+    },
+    "stage_report_network": {
+      "path": "samples/acceptance/reports/product/resource-completion-20261021-01.json",
+      "locator": "entries.network_runtime, entries.network_audit, entries.service_restart"
+    },
+    "stage_report_flutter": {
+      "path": "samples/acceptance/reports/product/resource-completion-20261021-01.json",
+      "locator": "entries.official_flutter"
+    },
+    "stage_report_cpp": {
+      "path": "samples/acceptance/reports/product/resource-completion-20261021-01.json",
+      "locator": "entries.official_cpp"
+    },
+    "stage_report_desktop": {
+      "path": "samples/acceptance/reports/product/resource-completion-20261021-01.json",
+      "locator": "entries.desktop_runtime; latest completed-evidence supersedes only the matching completed scope"
+    },
+    "stage_report_performance": {
+      "path": "samples/acceptance/reports/product/resource-completion-20261021-01.json",
+      "locator": "entries.telemetry_performance, entries.telemetry_lifecycle"
+    },
+    "runtime23": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-runtime23\\result.json"
+    },
+    "runtime23_exec": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-runtime23-execution-receipt.json"
+    },
+    "raw_mouse23": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\desktop-raw-mouse-finite23.json"
+    },
+    "p03_offline": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23\\offline-gate-receipt.json"
+    },
+    "p03_winps": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23\\winps-compatibility-receipt02.json"
+    },
+    "p03_source_review": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23\\source-review.json"
+    },
+    "b14_summary": {
+      "path": "samples/acceptance/data/b14-100-cycle-summary.json"
+    },
+    "official_audio": {
+      "path": "samples/acceptance/data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json"
+    },
+    "native_abba": {
+      "path": "samples/acceptance/data/completed-evidence/native-e2ee-abba-20261020-result.json"
+    },
+    "ui_export": {
+      "path": "samples/acceptance/data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json"
+    },
+    "ui_timing": {
+      "path": "samples/acceptance/data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json"
+    },
+    "p03_static": {
+      "path": "samples/acceptance/data/completed-evidence/p03-cpu-static-content17b-20261022-scoped.json"
+    },
+    "turn_export": {
+      "path": "samples/acceptance/data/completed-evidence/turn02-export-readback-20261021-scoped.json"
+    },
+    "wgc3600": {
+      "path": "samples/acceptance/data/completed-evidence/wgc-3600-100-20261021-result.json"
+    },
+    "wgc1800": {
+      "path": "samples/acceptance/data/completed-evidence/wgc-1800-20261021-summary.json"
+    },
+    "wgc1800_resources": {
+      "path": "samples/acceptance/data/completed-evidence/wgc-1800-20261021-resource-analysis.json"
+    },
+    "gdi50": {
+      "path": "samples/acceptance/data/completed-evidence/gdi-hot-50-20261021-summary.json"
+    },
+    "whiteboard1800": {
+      "path": "samples/acceptance/data/completed-evidence/whiteboard-1800-fixed04-20261021-result.json"
+    },
+    "whiteboard_b12": {
+      "path": "samples/acceptance/data/completed-evidence/whiteboard-b12-20261021-index.json"
+    },
+    "artifact_identity": {
+      "path": "samples/acceptance/data/completed-evidence/p14-artifact-identity-20261021-scoped.json"
+    },
+    "theme_restart": {
+      "path": "samples/acceptance/data/completed-evidence/theme-restart04-20261021-scoped.json"
+    },
+    "theme_invalid": {
+      "path": "samples/acceptance/data/completed-evidence/theme-invalid02-20261021-scoped.json"
+    },
+    "theme_first_window": {
+      "path": "samples/acceptance/data/completed-evidence/theme-first-window02-20261021-scoped.json"
+    },
+    "theme_system": {
+      "path": "samples/acceptance/data/completed-evidence/p21-system-theme16-20261021-scoped.json"
+    },
+    "theme_seeds": {
+      "path": "samples/acceptance/data/completed-evidence/theme-configuration-seeds01-20261021-scoped.json"
+    },
+    "meeting_theme": {
+      "path": "samples/acceptance/data/completed-evidence/p21-meeting-theme04-20261022-scoped.json"
+    },
+    "meeting_cpu": {
+      "path": "samples/acceptance/data/completed-evidence/p21-meeting-cpu05-20261022-scoped.json"
+    },
+    "meeting_gles": {
+      "path": "samples/acceptance/data/completed-evidence/p21-meeting-opengl05-20261022-scoped.json"
+    },
+    "telemetry9000": {
+      "path": "samples/acceptance/data/completed-evidence/telemetry-9000s-20261021-result.json"
+    }
+  },
+  "new_execution": {
+    "build": false,
+    "test": false,
+    "runtime": false,
+    "desktop": false,
+    "service": false,
+    "large_file_hash": false
+  },
+  "full_plan_gates_completed": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "final_regression": "NOT_RUN",
+  "production_ready": false,
+  "closed_at": "2026-10-22T05:15:45.499477+08:00",
+  "full_goal_complete": false,
+  "stop_after_closure": true,
+  "source_artifact_final_freeze": false,
+  "test_execution_after_freeze": "NOT_RUN",
+  "new_source_or_diagnostic_tool_changes_after_freeze": "NONE",
+  "freeze_manifest": "data/stage-freeze-20261022.json",
+  "frozen_plan": "data/stage-freeze-20261022-plan.json",
+  "source_changes": "data/stage-source-changes-20261022.json",
+  "source_inventory_original": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\stage-closure-20261022\\source-change-inventory.json",
+    "sha256": "303d3daf73e14b6a83edbb9aa36e37a434bd7bb5c3c6ad2a11374809b1846674",
+    "bytes": 137188
+  },
+  "cleanup": {
+    "schema": "cohavora-stage-cleanup-observation-v1",
+    "local_observed_utc": "2026-10-21T21:08:46.2001799Z",
+    "local_process_observation_tool_chunk": "bb97de",
+    "matching_process_count": 0,
+    "names_checked": [
+      "Cohavora",
+      "uia_entry_fixture",
+      "flutter_e2ee_peer",
+      "test_e2ee_room_peer",
+      "test_screen_share_runtime",
+      "test_desktop_capture_runtime",
+      "test_annotation_overlay_runtime"
+    ],
+    "active_runtime": null,
+    "latest_runtime": "p03-finite-content-runtime23",
+    "runtime_peer_launch": false,
+    "runtime_cleanup": "NOT_APPLICABLE_NO_PEERS_LAUNCHED",
+    "server_after_source": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-runtime23\\result.json",
+    "server_after_observed_utc": "2026-10-21T20:59:53.699221+00:00",
+    "service_fingerprint_unchanged": true,
+    "participants_remaining": 0,
+    "publications_remaining": 0,
+    "new_remote_probe_or_mutation": "NOT_RUN",
+    "original_evidence_preserved": true,
+    "scope": "Named local process absence observed once and existing same-run service after-state only; no claim of all system or cloud resources audited."
+  },
+  "p03_early_exit_readback": {
+    "source": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-readback23\\early-exit-readback.json",
+      "sha256": "7d094aa5f9c634649c67af4b288e7c4dc66a8c2a1d9092bb114b498152c5375c",
+      "bytes": 45134
+    },
+    "status": "EARLY_EXIT_READBACK_DIFFERENCES_NO_PRODUCT_GATE_COMPLETED",
+    "checks": 101,
+    "unexplained_differences": 1,
+    "acceptance_credit": 0,
+    "followup_only": "Profile versus runtime declared-input-map mismatch reported by completed independent readback; not investigated after freeze. No product failure or full pin mismatch inferred."
+  },
+  "input_condition": {
+    "last_measured_status": "BLOCKED_AT_RUNTIME23",
+    "measurement_source": {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\desktop-raw-mouse-finite23.json",
+      "sha256": "fe1ddf05f8cf905f9a48d141c31c97deaf4b81d01c672fc272b8bec54f51a28a",
+      "bytes": 83948
+    },
+    "user_later_report": "Mouse powered off or receiver unplugged after measurement.",
+    "after_user_report_probe": "NOT_RUN_BY_FREEZE_STOP_RULE",
+    "current_readiness": "UNVERIFIED"
+  },
+  "completed_ranges": [
+    {
+      "plan_code": "P01",
+      "scopes": [
+        "启动事务、会话/发布及异常回滚的直接工程范围；两项audio lifetime仅按影响范围复用。"
+      ],
+      "evidence_refs": [
+        "functional_media",
+        "stage_report_reuse",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P02",
+      "scopes": [
+        "遥测直接工程合同、限定service-restart/九成功网络子集/TURN审计。",
+        "TURN02封存源生产导出与回读：7文件、93 revisions、61104指标、17 timeline；UI15三次生产导出回读另按自己的run成立。"
+      ],
+      "evidence_refs": [
+        "functional_media",
+        "turn_export",
+        "ui_export",
+        "stage_report_network",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P03",
+      "scopes": [
+        "B01 UIA10项、B02文件/上传4项；受控磁盘满/恢复、oplock取消/恢复及诊断sink退出三个独立I/O条件。",
+        "UI15 strict短测3/3轮和三次生产导出；UI09 typed耗时只为OBSERVATION_ONLY。",
+        "四主题Qt CPU静帧runtime17b：同帧/绑定/单次自然Paint身份及16个桌面合成像素闭合，限定PASS_SCOPED。"
+      ],
+      "evidence_refs": [
+        "functional_media",
+        "resource20",
+        "ui_export",
+        "ui_timing",
+        "p03_static",
+        "runtime23",
+        "runtime23_exec",
+        "raw_mouse23"
+      ]
+    },
+    {
+      "plan_code": "P04",
+      "scopes": [
+        "B03编码9格及B04策略/恢复/负向13项已按实际codec、发布/接收和退出成立；本批22项按影响范围复用，未新增运行。"
+      ],
+      "evidence_refs": [
+        "functional_media",
+        "stage_report_reuse"
+      ]
+    },
+    {
+      "plan_code": "P05",
+      "scopes": [
+        "固定派生Flutter七格最新终态及其他独立格分别保留；官方C++数据12格、受控视频4格及OFF/ON合成音频内容已完成限定范围。"
+      ],
+      "evidence_refs": [
+        "stage_report_flutter",
+        "stage_report_cpp",
+        "official_audio",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P06",
+      "scopes": [
+        "Windows Native协议/换钥/data/Qt/退场及后端支持工程范围；三端ABBA与600秒观察按原工件成立。",
+        "固定派生Flutter的H264/VP8、换钥/RPC、ratchet/latejoin、wrong-slot恢复等独立成功格；官方C++视频和合成音频OFF/ON内容各自成立。"
+      ],
+      "evidence_refs": [
+        "functional_media",
+        "native_abba",
+        "stage_report_flutter",
+        "stage_report_cpp",
+        "official_audio",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P07",
+      "scopes": [
+        "capture-backends与capture-quality-fullscreen桌面子门按各自实际范围完成；GDI50热切及signal/full重连完成。",
+        "WGC独立3600秒/100轮生命周期及1800秒实服六资源门均已完成，按各自负载复用。"
+      ],
+      "evidence_refs": [
+        "functional_media",
+        "stage_report_desktop",
+        "wgc3600",
+        "wgc1800",
+        "wgc1800_resources",
+        "gdi50"
+      ]
+    },
+    {
+      "plan_code": "P08",
+      "scopes": [
+        "HP/UGREEN等短preflight只保留设备前置范围。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P09",
+      "scopes": [
+        "原功能批次11项和新批九成功网络case各按原输入保留；独立TURN新run实际relay/udp、持续decoded和配置恢复成立。"
+      ],
+      "evidence_refs": [
+        "functional_media",
+        "stage_report_network",
+        "turn_export",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P10",
+      "scopes": [
+        "固定16路低层300秒短门仅按其原负载、订阅/解码与分页范围保留。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P11",
+      "scopes": [
+        "三产品进程白板B12八项、whiteboard-functional及annotation-runtime按实际范围完成。",
+        "1800-fixed04：一机8产品进程/4书写者、1802.609秒、50对共享/批注启停、每写者361笔，八端最终收敛，8/8自然退出、forced0且netem已清除。"
+      ],
+      "evidence_refs": [
+        "functional_media",
+        "whiteboard1800",
+        "whiteboard_b12",
+        "stage_report_desktop"
+      ]
+    },
+    {
+      "plan_code": "P12",
+      "scopes": [
+        "工程typed safe summary/业务raw语义及限定sink直接合同；service-restart、九成功网络子集、独立TURN封存导出/回读各自成立。"
+      ],
+      "evidence_refs": [
+        "functional_media",
+        "resource20",
+        "turn_export",
+        "stage_report_network",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P13",
+      "scopes": [
+        "UIA20轮与5轮同进程残余分别完成；9000秒资源门独立PASS并复用。",
+        "panel-closed batch22八窗及独立回读完成，143693检查/0差异；同帧关联仅描述性诊断，不授性能信用。"
+      ],
+      "evidence_refs": [
+        "stage_report_performance",
+        "telemetry9000",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P14",
+      "scopes": [
+        "非最终工件只读EXE/PDB、当前renderer DLL/PDB身份及两处离线源码定位限定结果。",
+        "公开产品/私有工程解耦的既有工程证据仅按原输入复用。"
+      ],
+      "evidence_refs": [
+        "artifact_identity",
+        "resolution22",
+        "frozen_plan"
+      ]
+    },
+    {
+      "plan_code": "P15",
+      "scopes": [
+        "只保留既有软件测量链和校准观察范围，未授跨机或物理端到端通过。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data"
+      ]
+    },
+    {
+      "plan_code": "P16",
+      "scopes": [
+        "软件fault injection/工程恢复仅在各自门引用，不计真实物理操作。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P17",
+      "scopes": [
+        "独立bundle-first信令/解码/渲染时间线复盘；TURN封存源导出与UI15三包独立回读按各自run完成。",
+        "本机工件身份和renderer离线源码定位不替代真实事故符号链。"
+      ],
+      "evidence_refs": [
+        "stage_report_network",
+        "turn_export",
+        "ui_export",
+        "artifact_identity",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P18",
+      "scopes": [
+        "既有focused/UI工程证据和USER_REPORTED_PASS保持各自来源，不授真实双机自动化通过。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data"
+      ]
+    },
+    {
+      "plan_code": "P19",
+      "scopes": [
+        "既有环境/工具身份、局部只读校准和摄像头二次入会专项仅按原scope保留。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P20",
+      "scopes": [
+        "历史retry07 100轮是原Formal运行；不计当前新工件8小时/100轮完成。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "b14_summary",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P21",
+      "scopes": [
+        "update manifest/service、异步settings既有直接工程范围按影响复用。",
+        "四主题设置、重启、unsupported/empty/wrong-section回退、派生首窗、真实Windows偏好8行及DX11/CPU/当前GLES模块会中限定范围分别完成。"
+      ],
+      "evidence_refs": [
+        "theme_restart",
+        "theme_invalid",
+        "theme_first_window",
+        "theme_system",
+        "theme_seeds",
+        "meeting_theme",
+        "meeting_cpu",
+        "meeting_gles",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "A01",
+      "scopes": [
+        "变更工具的直接正负例/缺证据合同按各次冻结输入通过并复用；P03有限内容23项Python+PS7集合、实际WinPS5.1 stub/嵌入C#compile-only通过。",
+        "P13 bool合同14项及八窗实际数据类型回读完成；只授工具范围。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "resolution22",
+        "p03_offline",
+        "p03_winps",
+        "p03_source_review"
+      ]
+    },
+    {
+      "plan_code": "A02",
+      "scopes": [
+        "离线证据/analyzer/receipt-adapter、既有wrapper和符号合同按各原限定结果复用。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "A03",
+      "scopes": [
+        "既有ETL、owner/页/heap离线分析和baseline/fixed局部观察按原输入复用。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data",
+        "resolution22"
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "plan_code": "P05",
+      "failures": [
+        "最新Flutter独立格投影14 PASS/2 FAIL；原严格relay_marker_content_valid失败保留。",
+        "SFU六帧close-flush源码合同解释不改变原内容门限或剔除失败帧。"
+      ],
+      "evidence_refs": [
+        "stage_report_flutter",
+        "stage_report_cpp",
+        "official_audio",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P06",
+      "failures": [
+        "Flutter最新独立2个FAIL及六帧异常原严格判定保留。"
+      ],
+      "evidence_refs": [
+        "functional_media",
+        "native_abba",
+        "stage_report_flutter",
+        "stage_report_cpp",
+        "official_audio",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P09",
+      "failures": [
+        "resource-completion-20261021-01 network_runtime原FAIL保留；TURN单case补测PASS仅替换其明确独立范围。"
+      ],
+      "evidence_refs": [
+        "functional_media",
+        "stage_report_network",
+        "turn_export",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P10",
+      "failures": [
+        "原61/100实际发布失败。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P13",
+      "failures": [
+        "原正式P13 +7.0146818923% >5% FAIL；旧pair2 +8.371385%等独立历史失败保留。"
+      ],
+      "evidence_refs": [
+        "stage_report_performance",
+        "telemetry9000",
+        "resolution22"
+      ]
+    },
+    {
+      "plan_code": "P15",
+      "failures": [
+        "原软件校时10ms门FAIL保留。"
+      ],
+      "evidence_refs": [
+        "frozen_plan",
+        "report_data"
+      ]
+    }
+  ],
+  "followup_only": [
+    "P03 one declared-input-map difference: record only; no new diagnosis in this stage.",
+    "Diagnostic wiring, mixed dirty files and build/cache/artifact retention await separately scoped user decisions; preserve now."
+  ],
+  "fixed_stop_policy": {
+    "reused_valid_same_scope_evidence": "REUSE_AND_END_NO_BUILD_OR_TEST",
+    "condition_missing": "RECORD_BLOCKER_AND_END_NO_POLLING",
+    "ready_unrun_existing_minimal_gate": "AT_MOST_ONE_IF_PRESENT; audit found NONE",
+    "fail_or_inconclusive": "PRESERVE_RESULT_AND_END_NO_DIAGNOSTIC",
+    "new_soak_full_matrix_final_regression": "PROHIBITED_THIS_STAGE",
+    "restart": "NEW_EXPLICIT_USER_TASK_REQUIRED"
+  },
+  "report_html": "reports/product/stage-closure-20261022.html",
+  "historical_reports_preserved": "Original resource-completion report JSON and HTML restored exactly from pre-edit documentary snapshots; migration lock retained."
+}

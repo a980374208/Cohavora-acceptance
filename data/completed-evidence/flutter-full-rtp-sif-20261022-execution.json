@@ -1,0 +1,21 @@
+{
+  "status": "DIAGNOSTIC_RUN_TERMINAL",
+  "run_id": "79a15bf85d0345b58167c6755dab972a",
+  "started_utc": "2026-10-22T10:02:12.063927+00:00",
+  "acceptance_credit": 0,
+  "full_gate_credit": 0,
+  "original_acceptance_unchanged": true,
+  "peer_exit_code": 1,
+  "frozen_runtime_unchanged": true,
+  "producer_status": "DIAGNOSTIC_SFU_BLANK_FRAME_ENQUEUE_MATCHED",
+  "actual_producer": "SFU_BLANK_FRAME_PATH_THIS_CAPTURE",
+  "matched_frames": 6,
+  "invalid_frames": 6,
+  "reason_codes": [],
+  "peer_run_id": "e2ee-6d63ce9849614878",
+  "peer_verdict": "FAIL",
+  "local_fixtures_absent": true,
+  "cleanup_confirmed": true,
+  "receipt_persistence_errors": [],
+  "finished_utc": "2026-10-22T10:03:31.037108+00:00"
+}

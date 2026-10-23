@@ -1,0 +1,265 @@
+{
+  "schema": "task7_matching_full_link_local_runtime_closeout_v1",
+  "updated_utc": "2026-10-22T05:07:22.065002+00:00",
+  "scope": "LOCAL_DERIVED_IMPLEMENTATION_VALIDATION",
+  "acceptance_credit": 0,
+  "current_authorized_sequence_finished": true,
+  "scoped_result": "FAIL_OR_BLOCKED",
+  "room_compile": "PASS_ROOM_COMPILE_O2",
+  "sfu_build": "PASS_FULL_BINARY_BUILD",
+  "flutter_link": "FULL_LINK_COMPLETE_RUNTIME_NOT_RUN",
+  "native_link": "PASS_COMPLETE_PRODUCT_AND_FIXTURE_LINK",
+  "native_direct_runtime": "PASS_SCOPED_NATIVE_RUNTIME_ONLY",
+  "local_runtime": "FAIL_LOCAL_ORIGINAL_PREDICATES",
+  "original_predicates": {
+    "status": "FAIL",
+    "total": 70,
+    "passed": 3,
+    "failed": [
+      "flutter_closed",
+      "no_operation_failure",
+      "native_decoded_video",
+      "flutter_decoded_video",
+      "native_crypto_tx_video",
+      "native_crypto_rx_video",
+      "native_decoded_audio",
+      "flutter_decoded_audio",
+      "native_crypto_tx_audio",
+      "native_crypto_rx_audio",
+      "flutter_crypto_tx",
+      "flutter_crypto_rx",
+      "native_data_received",
+      "native_stream_received",
+      "flutter_data_received",
+      "flutter_stream_received",
+      "relay_first_decoded_frame_marker",
+      "relay_marker_content_valid",
+      "relay_marker_sequence_progress",
+      "native_required_channel_guard",
+      "product_state_tx_audio",
+      "product_state_tx_video",
+      "product_state_rx_audio",
+      "product_state_rx_video",
+      "native_observed_tx_audio_codec",
+      "flutter_observed_tx_audio_codec",
+      "flutter_crypto_tx_audio",
+      "native_observed_rx_audio_codec",
+      "flutter_observed_rx_audio_codec",
+      "flutter_crypto_rx_audio",
+      "native_observed_tx_video_codec",
+      "flutter_observed_tx_video_codec",
+      "flutter_crypto_tx_video",
+      "native_observed_rx_video_codec",
+      "flutter_observed_rx_video_codec",
+      "flutter_crypto_rx_video",
+      "reconnected",
+      "post_reconnect_tx_video",
+      "post_reconnect_rx_video",
+      "post_reconnect_tx_audio",
+      "post_reconnect_rx_audio",
+      "post_reconnect_data",
+      "post_reconnect_stream",
+      "flutter_post_reconnect_tx_audio",
+      "flutter_post_reconnect_tx_video",
+      "flutter_post_reconnect_rx_audio",
+      "flutter_post_reconnect_rx_video",
+      "flutter_post_reconnect_data_received",
+      "flutter_post_reconnect_stream_received",
+      "post_full_native_observed_tx_audio_codec",
+      "post_full_flutter_observed_tx_audio_codec",
+      "post_full_flutter_crypto_tx_audio",
+      "post_full_native_observed_rx_audio_codec",
+      "post_full_flutter_observed_rx_audio_codec",
+      "post_full_flutter_crypto_rx_audio",
+      "post_full_native_observed_tx_video_codec",
+      "post_full_flutter_observed_tx_video_codec",
+      "post_full_flutter_crypto_tx_video",
+      "post_full_native_observed_rx_video_codec",
+      "post_full_flutter_observed_rx_video_codec",
+      "post_full_flutter_crypto_rx_video",
+      "flutter_post_full_data_received",
+      "flutter_post_full_stream_received",
+      "flutter_post_full_growth_tx_audio",
+      "flutter_post_full_growth_rx_audio",
+      "flutter_post_full_growth_tx_video",
+      "flutter_post_full_growth_rx_video"
+    ]
+  },
+  "session": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02",
+  "direct_observations": {
+    "schema": "task7_direct_runtime_observations_v1",
+    "scope": "LOCAL_DERIVED_IMPLEMENTATION_VALIDATION",
+    "acceptance_credit": 0,
+    "original_result_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\interop\\on-e2ee-7d232d9ad0fb48ce\\result.json",
+    "original_result_sha256": "4c288904fec0ba2c5c88fb493fd3b850cd1b9970446efb8364b539f0e0f9f67d",
+    "original_predicate_status": "FAIL",
+    "malformed_event_lines": {
+      "native": 0,
+      "flutter": 0
+    },
+    "event_inputs": {
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\interop\\on-e2ee-7d232d9ad0fb48ce\\native.jsonl": "0bad5a8e88138a941cb752d91ecf917533aee48f6009fd35a700324b65120026",
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\interop\\on-e2ee-7d232d9ad0fb48ce\\flutter.jsonl": "5cf1a4fcc29c0f6951c19661b9e799ea141716ef89c04635eaad35fe2577929b"
+    },
+    "native_explicit_negotiation_observed": false,
+    "flutter_native_capability_replies": [
+      {
+        "version": 1,
+        "components": 63,
+        "expected_uri": true,
+        "actual_native_reply": true
+      }
+    ],
+    "flutter_texture_created_count": 0,
+    "flutter_bound_source_attachment_count": 0,
+    "flutter_first_frame_event_count": 0,
+    "flutter_bind_reply_codes": {},
+    "flutter_clear_reply_codes": {},
+    "flutter_widget_and_native_clear_success_count": 0,
+    "flutter_dispose_reply_count": 0,
+    "native_headless_bind_count": 0,
+    "native_headless_real_sink_drain_count": 0,
+    "sdk_final_ack_and_sfu_receipt": "NOT_OBSERVABLE_NO_DIRECT_HOOK",
+    "not_covered": [
+      "final display pixels",
+      "SDK owner fault injection",
+      "bit63 uint64 end-to-end",
+      "real GPU clear proven by headless owner",
+      "remote cloud service",
+      "formal acceptance replacement"
+    ]
+  },
+  "local_runtime_diagnosis": {
+    "schema": "local_runtime_failure_assessment_v1",
+    "scope": "THIS_LOCAL_DERIVED_RUN_ONLY",
+    "status": "FAIL_BEFORE_MEDIA_ESTABLISHMENT",
+    "formal_acceptance_credit": 0,
+    "exact_connection_root_cause": "UNKNOWN",
+    "confirmed_observations": [
+      "Owned SFU passed health and logged starting RTC sessions for both receiver and publisher with roomJoin grants.",
+      "Both advertised CAP_EXPLICIT_DECODER_CLEAR_V1 in SFU client metadata; actual Native negotiated-state event was never reached.",
+      "SFU removed both participants without an established connection; connectionType unknown.",
+      "Native fixture_operation_failed; Flutter join_failed type MediaConnectException and close_failed.",
+      "No decoded-media, display texture, first-frame, headless bind or clear-drain event was produced."
+    ],
+    "event_counts": {
+      "native": {
+        "starting": 1,
+        "operation_failed": 1,
+        "decode_counts": 1,
+        "closed": 1
+      },
+      "flutter": {
+        "starting": 1,
+        "explicit_decoder_clear_capabilities": 1,
+        "join_failed": 1,
+        "reconnect_requested": 1,
+        "close_failed": 1
+      }
+    },
+    "native_decode_counts": [
+      {
+        "event": "decode_counts",
+        "video_frames": 0
+      }
+    ],
+    "original_predicate_passed": [
+      "native_closed",
+      "process_exit",
+      "reconnect_requested"
+    ],
+    "original_predicates_total": 70,
+    "content_or_clear_failure_cause": "NOT_EXERCISED; this run cannot establish the cause of original formal relay-marker failure.",
+    "unproven_causes": [
+      "precise ICE/routing layer",
+      "effect of loopback-only service transport",
+      "any product clear-handshake implementation defect"
+    ],
+    "process_cleanup": {
+      "owned_service_stopped": true,
+      "original_peer_exit_codes": [
+        0,
+        0
+      ],
+      "approved_host_cim_readback": {
+        "exit_code": 0,
+        "matching_processes": 0,
+        "names": [
+          "livekit-server-task7.exe",
+          "test_e2ee_room_peer.exe",
+          "e2ee_flutter_peer.exe"
+        ]
+      },
+      "secret_scan": "PASS"
+    },
+    "stopped_after_this_run": true,
+    "evidence_sha256": {
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\result.json": "d57f7f8aa6c99da305179500ee9940ab7b02743874f4c7198db414462bed71cd",
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\interop\\on-e2ee-7d232d9ad0fb48ce\\result.json": "4c288904fec0ba2c5c88fb493fd3b850cd1b9970446efb8364b539f0e0f9f67d",
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\interop\\on-e2ee-7d232d9ad0fb48ce\\native.jsonl": "0bad5a8e88138a941cb752d91ecf917533aee48f6009fd35a700324b65120026",
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\interop\\on-e2ee-7d232d9ad0fb48ce\\flutter.jsonl": "5cf1a4fcc29c0f6951c19661b9e799ea141716ef89c04635eaad35fe2577929b",
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\sfu.log": "6b5abfb09b6440248f0638efea60a8fd43948d36ea0aa84f3c0fe20f74631ece",
+      "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\direct-observations.json": "d29d32721fc7d8f9b31e74a001e3fdd53a9a9b0b76418418023f6f3cd9944b29"
+    }
+  },
+  "root_cause": {
+    "Room_compile": "Clang22 correlated-propagation crashes while optimizing coroutine resume. Exact LLVM internal defect UNKNOWN; narrowed reference lifetime avoids observed trigger. Not a proven application runtime crash.",
+    "RTP_compile": "The new MediaBinding RTP enum was omitted from two exhaustive switches. Preserve it as immutable/non-volatile; /WX full compilation otherwise rejects the source.",
+    "derived_peer_compile": "Subscription ownership migration omitted StopRelayReturnObservation; repaired with a real shared subscription drain while keeping display owner alive.",
+    "derived_peer_header_dependency": "The derived headless display fixture used OwnedI420Frame::Ptr while only a forward declaration was visible through track.h. Added the defining owned_i420_frame.h directly; subsequent std::function diagnostics and MSVC internal error were secondary.",
+    "track_fixture_contract": "The old direct fixture omitted both frame MediaBindingFrameContext and the explicit RegisterMediaBinding(new token) call used by production UI. Aligned inputs and call order with production, preserving old assertions and adding rejection checks for untagged/wrong/retired tokens and registration before the clear barrier. Production admission was not changed; both initial fixture failures are retained.",
+    "local_service_configuration": "The first local preparation used unsupported rtc.bind_addresses and strict YAML parsing rejected it before peer launch. Corrected the maintained runner to use rtc.ips.includes for loopback UDP and disable the wildcard-only TCP mux; original failed session and binding retained.",
+    "render_target_dependencies": "The shared owned I420 frame header now references a WebRTC API, but production DX11/OpenGL targets lacked the corresponding dependency include closure. The task candidate production CMake must carry that dependency.",
+    "protocol_link_dependencies": "The new decoder-clear schema was already in PROTO_FILES and generated, but its .pb.cc/.pb.h were absent from PROTO_SRCS/PROTO_HDRS, causing 26 unresolved symbols at actual product link. Added the missing generated filenames to candidate production CMake without editing generated files.",
+    "historical_six_frames": "Earlier scoped diagnostic implicated synthetic-clear media; this local derived run does not retrospectively establish the cause of every original formal failure."
+  },
+  "retained": {
+    "original_formal_task7": "FAIL_69_OF_70_UNCHANGED",
+    "P13": "FAIL_+7.0146818923_PERCENT_GT_5_PERCENT; cause UNKNOWN",
+    "capacity": "Historical61/100; cause UNKNOWN; no new load run",
+    "clock": "Historical failure retained; no new cross-host precision run",
+    "long_soak_final_regression_release": "NOT_RESUMED",
+    "cloud17980_route": "NOT_RETESTED"
+  },
+  "limits": [
+    "Task-owned candidate and derived fixtures; no formal acceptance credit",
+    "SDK final ACK/SFU acceptance lacks a direct observation hook",
+    "DX11 adapter hardware versus WARP is not exposed; physical scanout not measured",
+    "SDK owner fault injection and high-bit uint64 end-to-end NOT_RUN",
+    "Local service uses loopback UDP only; TCP fallback NOT_RUN",
+    "No Qt product UI/media quality/performance/long-soak or release readiness claim"
+  ],
+  "cleanup": {
+    "owned_sfu_stopped": true,
+    "owned_sfu_exit_code": 1,
+    "ephemeral_credentials_persisted": false
+  },
+  "no_commit_or_push": true,
+  "main_product_source_edits_this_continuation": false,
+  "maintained_runtime_entry": "tests/runtime/tools/media/invoke_e2ee_interop.py --local-binding",
+  "tool_promotion_inherits_acceptance_credit": false,
+  "evidence_sha256": {
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\original-runtime-scope.json": "edfbbca082a63cdca59291271184372300926402102aba22df9148c5aa8665ec",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\sfu\\build-result.json": "9eb74213b7eb6d2725fc71efa1eeb5f4ce7e0036c24509464fa222fcc09b4e18",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\flutter\\build-receipt.json": "679a55b6b33c474b37b77824641d70bc95b669e946945f4f88810c630f29a2c0",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\native\\linked-artifacts.json": "5a820352628c8270349eb3216b2d65591036438ef512482d613d461558ee52aa",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\native\\runtime-summary.json": "9a24e2ad8e35f12076126f4338585dcaa1cca74a348f8b28a3410c4170353ff0",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\native\\input-freeze.json": "4080d90349feeab76a8dd4e335cac3d58026af4058c220991ffc19a6b4a34b64",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\native\\room-fix\\room-fix-result.json": "b9873fb0fe51ad43d60b37681809c54ac2224667ea519ecc4e2fb0b568d6e0c3",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\native\\source-completion\\render-cmake-include.json": "f3c57837ada90fc5ccd62809502f354ad2bfc49adde65944e93d2a76e8ea94aa",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\native\\source-completion\\decoder-proto-cmake.json": "c64f0142b84e30f381ca9d288d0130fc43613c1fe9c88312e317ba0f934bbd85",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\tool-promotion-receipt.json": "968a0da6f84741be86064c0d0993270b9056760ad894ef27698383bfd682bf7f",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\native-fixture-contract-review.json": "25333afda5532186223a7a2ea17ad7e5e4631d049773eaa8d1c29f180410a674",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime-plan.json": "53819071202811bef6bbe65598d809972a443e1b31d8a76097e6ece2e08deecb",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\local-config-fix-receipt.json": "247eccc36fbdcd054c77a377fabb0fad2fb9ddd90ed9c1e18980f83952a00444",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation01\\result.json": "9340785314e9a7f57c57038af5698578ffd663fe4f95bb5972602bb93c877cde",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\local-runtime-diagnosis.json": "25bc6301b8e3039c6abeb4d6482cb157e986d87bf4b0f2c5b55526187aee0925",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\native\\native-handoff.json": "0125bf45907b2f85598c11756b786166f06b277ee9584af6acc30fd2eb015afd",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\native\\runtime-file-closure.json": "e1ad5fbc40c4b0d4c192fd3fa6a9ea68d11e902f29d4f5465c26fbca16814bcc",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\native\\sdk-toolchain-binding.json": "c4f52283a21dbaba204f0584f5216e3d930244d65ae50a9be1ba875b5ce75a5d",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\admission-loopback\\binding.json": "adf0efd62e5e24c88eb7d025ac90dd81200836aa12b45dc028943b289d5ab68d",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\result.json": "d57f7f8aa6c99da305179500ee9940ab7b02743874f4c7198db414462bed71cd",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\interop\\on-e2ee-7d232d9ad0fb48ce\\result.json": "4c288904fec0ba2c5c88fb493fd3b850cd1b9970446efb8364b539f0e0f9f67d",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\runtime\\local-validation02\\direct-observations.json": "d29d32721fc7d8f9b31e74a001e3fdd53a9a9b0b76418418023f6f3cd9944b29"
+  }
+}

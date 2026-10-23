@@ -1,0 +1,254 @@
+{
+  "schema": "cohavora-p11-terminal-result-provenance-v1",
+  "status": "PASS_SCOPED",
+  "gate": "P11.whiteboard-1800-load",
+  "attempt": "whiteboard-1800-fixed04",
+  "prepared_at": "2026-10-21T05:45:23.224425+00:00",
+  "product_head": "cb10d689e53ad6adae13a2bfaf2a44af4a27a6a6",
+  "full_p11_credit": 0,
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "scope": "One computer, eight logical product peers and owned SFU. Pen commands and real screen/overlay lifecycle; no cross-DPI or subjective remote alignment credit.",
+  "contract": {
+    "seconds": 1800,
+    "roles": [
+      "publisher",
+      "writer1",
+      "writer2",
+      "writer3",
+      "reader1",
+      "reader2",
+      "reader3",
+      "late"
+    ],
+    "writers": [
+      "publisher",
+      "writer1",
+      "writer2",
+      "writer3"
+    ],
+    "independent_product_processes": 8,
+    "writer_count": 4,
+    "stroke_interval_seconds": 5,
+    "minimum_strokes_per_writer": 361,
+    "cycles_by_writer": {
+      "publisher": 13,
+      "writer1": 13,
+      "writer2": 12,
+      "writer3": 12
+    },
+    "total_share_annotation_cycles": 50,
+    "cycle_definition": "Each of 50 pairs: request real screen capture -> Active/published/binding/frame -> actual AnnotationOverlayWindow with a Qt Pen gesture -> overlay destroyed -> share Idle/unpublished/unbound.",
+    "cycle_order": "One share at a time, round-robin across all four writers; writing continues on all four.",
+    "network": {
+      "operation": "whiteboard-load",
+      "namespace": "task-owned isolated SFU container only",
+      "egress_delay_ms": 50,
+      "loss_percent": 2,
+      "added_non_authority_proposal_commit_roundtrip_ms": 100,
+      "actual_WAN_RTT": "Measured separately; netem two-leg delay is not an exact WAN RTT assertion"
+    },
+    "watchdog_seconds": 3000,
+    "late_join": "Eighth independent process joins after warm-up Pen strokes, before the 1800-second window",
+    "leave": "Non-authority late peer leaves after final eight-peer hash convergence; seven survivors must retain the document",
+    "scope": "One computer, eight logical product peers and owned SFU. Pen commands and real screen/overlay lifecycle; no cross-DPI or subjective remote alignment credit."
+  },
+  "verified": {
+    "measured_seconds": 1802.6089999999967,
+    "rounds": 361,
+    "writer_strokes": {
+      "publisher": 361,
+      "writer1": 361,
+      "writer2": 361,
+      "writer3": 361
+    },
+    "cycle_counts": {
+      "publisher": 13,
+      "writer1": 13,
+      "writer2": 12,
+      "writer3": 12
+    },
+    "complete_share_annotation_pairs": 50,
+    "natural_exit_count": 8,
+    "forced_process_count": 0,
+    "network_netem_cleared": true,
+    "final_document_sha256": "56edcbfbfbead7d9623c64d359323aa0d108788a73b56976eb8e1c658048fdb1",
+    "finished_utc": "2026-10-21T05:29:03.085176+00:00"
+  },
+  "source_index": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\whiteboard-1800-fixed04\\index.json",
+    "sha256": "5bba8388b52fa855750f336477b62904a9bd4b693d047f8abc8cbb1561ce8079",
+    "value": {
+      "status": "PASS",
+      "configuration": "RelWithDebInfo",
+      "binary_identity": {
+        "configuration": "RelWithDebInfo",
+        "binary_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.exe",
+        "binary_sha256": "13ef7bb4b07b22bb24731c901019255a4a4e810417bca17ca5dfd390de692f84",
+        "pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.pdb",
+        "pdb_guid": "1d32253b-9f9f-4f5a-a08d-e6f9ed4588a1",
+        "pdb_age": 15
+      },
+      "head": "cb10d689e53ad6adae13a2bfaf2a44af4a27a6a6",
+      "inputs": {
+        "integration/source_paths.py": "e90a6a62ab08e436510294d201985cceedd023cf38a364c9a59b634417ce99f2",
+        "src/core/meeting_coordinator.cpp": "edf401982499a8c995d80e0390f46bdf1c8bc6e1e50fbca54206e76fa093ba7f",
+        "src/core/meeting_session_runtime.h": "59187d415f8c62260cca3e07faed7891199f765e531da19f0b24159b1b30dfa6",
+        "src/core/room.cpp": "a4e9c0f4b0e4fcafb3b9f744b27a0bd72e5a65caeb15d51056e082431103859b",
+        "src/core/whiteboard/whiteboard_runtime.cpp": "b24fab2fbd467c09e36391fa36c4621181e9e53f3bc43c26ddcac94de304aaea",
+        "src/core/whiteboard/whiteboard_document.cpp": "7a4cad7386489bfb154166bc59049e95c65bafaef88beba4295faf99c1ae7f1e",
+        "src/ui/whiteboard/whiteboard_renderer.cpp": "41896d17dbdd9e068205f6fbfd30398f31e796307215ba848b76c8d5dcf3ed46",
+        "tests/uia/entry_fixture.cpp": "55602d9bb97c19e2f76851b4d567259481376c93c5921e004318a59b79581c27",
+        "tests/runtime/probes/b_file_product_runtime.h": "e612439381986ebedfa5a9a6749827ed34821351e95a3faf2de5cf13b3a959d2",
+        "tests/runtime/probes/b_whiteboard_product_runtime.h": "f6650246700061eddc7c5b2447e27d611ce33d573312137c5db123182ce876ad",
+        "tests/runtime/probes/owned_screen_pattern.h": "debdac8527e143bea989758ec90a021e20dd410ca21e8b83930fdc094e2d79a6",
+        "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\meeting\\run_b_acceptance_whiteboard.py": "65cee36ce6911b6eb14a96bb073cf3f191cde1218de0a3241b86bd7a7182572a",
+        "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\product_acceptance\\configure_b_acceptance_fault_network.py": "04ca51d7d2fc5204b780cdfed098cc554f1ea67174441e377aa6aa9c75eb98f9"
+      },
+      "rooms": [
+        {
+          "evidence": "long-load/result.json",
+          "sha256": "021c25321c4ec0ef4e3d00296ac691310af69d3711211c37190e0ec2d9e3dbe6",
+          "status": "PASS"
+        }
+      ],
+      "scope": "One computer, eight logical product peers and owned SFU. Pen commands and real screen/overlay lifecycle; no cross-DPI or subjective remote alignment credit.",
+      "case": "long-load",
+      "contract": {
+        "seconds": 1800,
+        "roles": [
+          "publisher",
+          "writer1",
+          "writer2",
+          "writer3",
+          "reader1",
+          "reader2",
+          "reader3",
+          "late"
+        ],
+        "writers": [
+          "publisher",
+          "writer1",
+          "writer2",
+          "writer3"
+        ],
+        "independent_product_processes": 8,
+        "writer_count": 4,
+        "stroke_interval_seconds": 5,
+        "minimum_strokes_per_writer": 361,
+        "cycles_by_writer": {
+          "publisher": 13,
+          "writer1": 13,
+          "writer2": 12,
+          "writer3": 12
+        },
+        "total_share_annotation_cycles": 50,
+        "cycle_definition": "Each of 50 pairs: request real screen capture -> Active/published/binding/frame -> actual AnnotationOverlayWindow with a Qt Pen gesture -> overlay destroyed -> share Idle/unpublished/unbound.",
+        "cycle_order": "One share at a time, round-robin across all four writers; writing continues on all four.",
+        "network": {
+          "operation": "whiteboard-load",
+          "namespace": "task-owned isolated SFU container only",
+          "egress_delay_ms": 50,
+          "loss_percent": 2,
+          "added_non_authority_proposal_commit_roundtrip_ms": 100,
+          "actual_WAN_RTT": "Measured separately; netem two-leg delay is not an exact WAN RTT assertion"
+        },
+        "watchdog_seconds": 3000,
+        "late_join": "Eighth independent process joins after warm-up Pen strokes, before the 1800-second window",
+        "leave": "Non-authority late peer leaves after final eight-peer hash convergence; seven survivors must retain the document",
+        "scope": "One computer, eight logical product peers and owned SFU. Pen commands and real screen/overlay lifecycle; no cross-DPI or subjective remote alignment credit."
+      },
+      "finished_utc": "2026-10-21T05:29:03.328050+00:00"
+    }
+  },
+  "source_result": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\whiteboard-1800-fixed04\\long-load\\result.json",
+    "sha256": "021c25321c4ec0ef4e3d00296ac691310af69d3711211c37190e0ec2d9e3dbe6",
+    "frozen_path": "data/completed-evidence/whiteboard-1800-fixed04-20261021-result.json",
+    "byte_count": 8777871,
+    "preservation": "EXACT_ORIGINAL_BYTES"
+  },
+  "immutable_previous_report": {
+    "path": "reports/product/resource-completion-20261021-01.html",
+    "sha256": "542338921141b188eb556d079b50fe4040fb543caddaeb7d1ce93814ae1446a4"
+  },
+  "plan_update": {
+    "path": "data/test-plan.json",
+    "before_sha256": "812d657657f23f429ed3aefa2d816b7cf21a0968a69701a5beaf8226ad954177",
+    "after_sha256": "38d2d689e75f4071a2bceb176294aeb0cf5f03fd43156348c677d557aad4cbc8",
+    "group": "P11",
+    "before": "本批resource-completion-20261021-01桌面子门：whiteboard-functional=PASS, annotation-runtime=PASS, whiteboard-1800-load=FAIL；原历史FAIL、原gates/conditions与完整信用0保留；M0不等于产品overlay/目视，单机多进程不等于物理多端。",
+    "after": "本批resource-completion-20261021-01桌面子门：whiteboard-functional=PASS, annotation-runtime=PASS, whiteboard-1800-load=PASS；最新完成whiteboard-1800-fixed04（2026-10-21）：一机8个独立产品进程／4名书写者，同run实测1802.609秒，50对真实共享／批注启停（13／13／12／12），每写者361笔；自有SFU egress 50ms／2%丢包（双腿新增往返约100ms，不等于精确WAN RTT），八端最终文档收敛、迟加入及非authority退场后七端保留，自然退场8/8、forced=0、网络netem已清除；来源data/completed-evidence/whiteboard-1800-fixed04-20261021-result.json，追溯data/completed-evidence/whiteboard-1800-fixed04-20261021-provenance.json；旧FAIL保留于reports/product/resource-completion-20261021-01.html；原gates/conditions与完整P11/full-plan信用0保留；M0不等于产品overlay/目视，单机多进程不等于物理多端。",
+    "preserved_original_ids": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T006",
+      "T007",
+      "T008",
+      "T009",
+      "T010",
+      "T011",
+      "T012",
+      "T013",
+      "T014",
+      "T015",
+      "T016",
+      "T017",
+      "T018",
+      "T019",
+      "T020",
+      "T021",
+      "T022",
+      "T023",
+      "T024",
+      "T025",
+      "T026",
+      "T027",
+      "T028",
+      "T029",
+      "T030",
+      "T031",
+      "T032",
+      "T033",
+      "T034",
+      "T035",
+      "T036",
+      "T037",
+      "T038",
+      "T039",
+      "T040",
+      "T041",
+      "T042",
+      "T043",
+      "T044",
+      "T045",
+      "T046",
+      "T047",
+      "T048",
+      "T049",
+      "T050",
+      "T051",
+      "T052"
+    ],
+    "only_one_boundary_changed": true
+  },
+  "guarded_files": {
+    "data/test-plan.json": "812d657657f23f429ed3aefa2d816b7cf21a0968a69701a5beaf8226ad954177",
+    "reports/product/resource-completion-20261021-01.json": "911481e87f743f08b478a6dcb541338d762afae76cb26c8a4ddbc679bd452a48",
+    "reports/product/resource-completion-20261021-01.html": "542338921141b188eb556d079b50fe4040fb543caddaeb7d1ce93814ae1446a4",
+    "data/report-migrations.json": "380844628d9ffde42c5b5ecd07e1463430d88b4d89d3519175b4ce39c5f7709d"
+  },
+  "helper_sha256": "08f2a0f73cb6c259402188604b769cfdde18f9e1816486d97718697394767aea",
+  "not_covered": [
+    "physical multi-device",
+    "cross-DPI subjective remote alignment",
+    "full P11",
+    "full-plan acceptance",
+    "new five-card metric or batch display"
+  ],
+  "generation": "No canonical resource report, migration record, threshold, gate, condition or card changed."
+}

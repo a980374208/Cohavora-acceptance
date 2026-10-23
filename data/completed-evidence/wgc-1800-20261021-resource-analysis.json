@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "run_id": "quality-hot-e81887baf304",
+  "duration_complete": true,
+  "sample_count": 180,
+  "baseline_window_seconds": [
+    60,
+    120
+  ],
+  "final_window_seconds": [
+    1748.503594,
+    1808.503594
+  ],
+  "resource_checks": {
+    "private_bytes": {
+      "status": "PASS",
+      "baseline_median": 732395520.0,
+      "final_median": 732356608,
+      "growth": -38912.0,
+      "limit": 67108864,
+      "slope_per_minute": 70432.93376079685,
+      "maximum": 759484416
+    },
+    "handles": {
+      "status": "PASS",
+      "baseline_median": 1042.0,
+      "final_median": 1035,
+      "growth": -7.0,
+      "limit": 64,
+      "slope_per_minute": -0.13136747634371504,
+      "maximum": 1043
+    },
+    "threads": {
+      "status": "PASS",
+      "baseline_median": 66.0,
+      "final_median": 64,
+      "growth": -2.0,
+      "limit": 8,
+      "slope_per_minute": -0.054085335928933574,
+      "maximum": 66
+    },
+    "cpu_pct": {
+      "status": "PASS",
+      "baseline_median": 3.5977734659299596,
+      "final_median": 3.4099532759412026,
+      "growth": -0.18782018998875705,
+      "limit": 2,
+      "slope_per_minute": -0.005031726555155723,
+      "maximum": 5.80676394437498
+    },
+    "gpu_dedicated_bytes": {
+      "status": "PASS",
+      "baseline_median": 104095744.0,
+      "final_median": 104095744,
+      "growth": 0.0,
+      "limit": 33554432,
+      "slope_per_minute": 0.0,
+      "maximum": 104095744
+    },
+    "gpu_shared_bytes": {
+      "status": "PASS",
+      "baseline_median": 34844672.0,
+      "final_median": 34844672,
+      "growth": 0.0,
+      "limit": 33554432,
+      "slope_per_minute": 0.0,
+      "maximum": 34844672
+    }
+  },
+  "decoded_fps": {
+    "minimum": 3.0,
+    "median": 15.5,
+    "maximum": 25.8
+  },
+  "counter_availability": [
+    "wddm_process_counters"
+  ],
+  "limits_sha256": "86db233d6a72bd1d45dacd311ab0c9becf166ea29e719582a2f3ce48901c874d",
+  "evidence_sha256": {
+    "summary.json": "33659a700dffeb8b0ea83eeb39fb515718dd4ac4d864f05d2689eaeda97a3e70",
+    "events.log": "cb6bce3426cd0534a709145ddf424422a5f66a7be239bb12424515a4fc451c30",
+    "resources.jsonl": "b0c3335cb0b3bb248998ad9df4af30d362a0f213c04101c922402930182da16e"
+  },
+  "boundary": "Generated pattern; continuous load; WDDM counters are not DXGI budgets or subjective quality."
+}

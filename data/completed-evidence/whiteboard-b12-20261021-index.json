@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "configuration": "RelWithDebInfo",
+  "binary_identity": {
+    "configuration": "RelWithDebInfo",
+    "binary_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.exe",
+    "binary_sha256": "0a7cd15c44d258fe9943bc9ff3b6e20a97173c197e6ef061aaed2602c8407ad7",
+    "pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.pdb",
+    "pdb_guid": "1d32253b-9f9f-4f5a-a08d-e6f9ed4588a1",
+    "pdb_age": 10
+  },
+  "head": "cb10d689e53ad6adae13a2bfaf2a44af4a27a6a6",
+  "inputs": {
+    "integration/source_paths.py": "e90a6a62ab08e436510294d201985cceedd023cf38a364c9a59b634417ce99f2",
+    "src/core/meeting_coordinator.cpp": "edf401982499a8c995d80e0390f46bdf1c8bc6e1e50fbca54206e76fa093ba7f",
+    "src/core/meeting_session_runtime.h": "59187d415f8c62260cca3e07faed7891199f765e531da19f0b24159b1b30dfa6",
+    "src/core/room.cpp": "00ee7a300c70264333cc22b9b7552269b8ce4fd0a38e8d6fc64d72ec7d9be0e7",
+    "src/core/whiteboard/whiteboard_runtime.cpp": "b24fab2fbd467c09e36391fa36c4621181e9e53f3bc43c26ddcac94de304aaea",
+    "src/core/whiteboard/whiteboard_document.cpp": "7a4cad7386489bfb154166bc59049e95c65bafaef88beba4295faf99c1ae7f1e",
+    "src/ui/whiteboard/whiteboard_renderer.cpp": "41896d17dbdd9e068205f6fbfd30398f31e796307215ba848b76c8d5dcf3ed46",
+    "tests/uia/entry_fixture.cpp": "cd5d557d3f298442a01890e7b156b75b68101017194b3e99773c4665056bd3ba",
+    "tests/runtime/probes/b_file_product_runtime.h": "d961dd1a60aeb3759a46832bba05b7804dcd8b6ab92009036ed6995f5392af59",
+    "tests/runtime/probes/b_whiteboard_product_runtime.h": "8e2f3a23d5dc758e21cd8548528a7db4b4a0ef6942d5e90c077ebfca97a6e761",
+    "tests/runtime/probes/owned_screen_pattern.h": "6665bd4d700e6c4ca921271374b69e1627b546c710c78e4552e80c1bb55d9102",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\meeting\\run_b_acceptance_whiteboard.py": "938a3fc325f3971234822288d295e9770214f415bc89150e0ffdcfb6ebb0289a"
+  },
+  "rooms": [
+    {
+      "evidence": "collaboration-and-leave/result.json",
+      "sha256": "79ce388d076bf7b5e05a0e5d424c2e371a490c2068a4a83088f1fe5fab9f2ed8",
+      "status": "PASS"
+    },
+    {
+      "evidence": "authority-disconnect/result.json",
+      "sha256": "ea3b8cde09b4490065b1b035d74e28991755be8d105cebca7cc20b3b95614da9",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Three separate product Coordinator processes. Public commands, real SFU data, immutable Qt projections and independent PNG pixels. Not three physical terminals or subjective visual alignment.",
+  "independent_cases": 8,
+  "finished_utc": "2026-10-21T01:44:36.174036+00:00"
+}

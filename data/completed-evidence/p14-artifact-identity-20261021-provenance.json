@@ -1,0 +1,246 @@
+{
+  "schema": "cohavora-p14-artifact-identity-provenance-v1",
+  "created_utc": "2026-10-21T12:45:04.113369+00:00",
+  "source_references": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\old-deployed\\result.json",
+      "sha256": "f0d2d75d9309a008b29c11e704f00ee78b7f40039fa6702a671be6db7002caa0",
+      "bytes": 19336
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\current-render-build02\\result.json",
+      "sha256": "8343a687a3d233fa67fd4ed2d7dc43de2b398644ae28dd31c2167661b69e7ff0",
+      "bytes": 13969
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\swapped-render-pdb-negative\\result.json",
+      "sha256": "18e926aacc77c507b50799ec75b456ffa6b2f297ac69b34c2e792aae2ec41abf",
+      "bytes": 14442
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\independent-audit.json",
+      "sha256": "42ff08e9f35f0670cee6b988dada8764a571a8b804bdeb823a8fc14b1cbc82e4",
+      "bytes": 8526
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\implementation-v1.py",
+      "sha256": "1301d43e2989e67ce5ff4bdd46ba84907f50a412ff09c88afe77c825f4457e13",
+      "bytes": 14191
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\review-fix-result.json",
+      "sha256": "c6ec6b7ab0aa05641055dc0fe2fb05aa183d452c2f59f9d655b4bb53e5785cd8",
+      "bytes": 3747
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\result.json",
+      "sha256": "fedbb09e02c14e52cedf74f9bd634ae8f8ee096ad1c714cbd02f0c77fb4a95da",
+      "bytes": 3978
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\audit-render-symbols01.py",
+      "sha256": "8f3dbc09386c30d0271219728debd67a5c7c2d9d6998dcefa22cbec81988a399",
+      "bytes": 4551
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\update-p14-artifact-canonical01.py",
+      "sha256": "41bc838faffe221cdebec188ba17a43ce89e70ba36d290cb3bdeeb003f933fa5",
+      "bytes": 6996
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\packaging\\verify_artifact_identity.py",
+      "sha256": "bf38ad8838048690689f2712482d7f8654d81c8b162dbc239255b1c4a3b12d9e",
+      "bytes": 14480
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\packaging\\test_verify_artifact_identity.py",
+      "sha256": "c4cb2d187726589d82ee5db2d6e5f391229787d7e60808fd32a534df9e42ac11",
+      "bytes": 7309
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\current-render-build\\dx11\\pdbutil.stdout.txt",
+      "sha256": "cb1a7a7824bb685ae6c95b311b07860d5dd1802e2f7121ea9d662d8a96468641",
+      "bytes": 471
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\current-render-build\\dx11\\readobj.stdout.txt",
+      "sha256": "b28cf0771a3ad649a6e4d1438f161397ae94bf5e153d9a98541d276e0de44f30",
+      "bytes": 1099
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\current-render-build\\opengl\\pdbutil.stdout.txt",
+      "sha256": "3b1b018ec060f584cbca8db24df38c89fa5e09050bbf38f168baef5d65b3497a",
+      "bytes": 471
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\current-render-build\\opengl\\readobj.stdout.txt",
+      "sha256": "885562fdb10fb2f69ca505677ab847c0d6daf52e130c31120f6f03b0447377db",
+      "bytes": 1103
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\current-render-build02\\dx11\\pdbutil.stdout.txt",
+      "sha256": "cb1a7a7824bb685ae6c95b311b07860d5dd1802e2f7121ea9d662d8a96468641",
+      "bytes": 471
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\current-render-build02\\dx11\\readobj.stdout.txt",
+      "sha256": "b28cf0771a3ad649a6e4d1438f161397ae94bf5e153d9a98541d276e0de44f30",
+      "bytes": 1099
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\current-render-build02\\opengl\\pdbutil.stdout.txt",
+      "sha256": "3b1b018ec060f584cbca8db24df38c89fa5e09050bbf38f168baef5d65b3497a",
+      "bytes": 471
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\current-render-build02\\opengl\\readobj.stdout.txt",
+      "sha256": "885562fdb10fb2f69ca505677ab847c0d6daf52e130c31120f6f03b0447377db",
+      "bytes": 1103
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\old-deployed\\app\\pdbutil.stdout.txt",
+      "sha256": "955ad736dca35997d3c73cfc280de299c083bee4e9138dfea5df006b5ad9e193",
+      "bytes": 474
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\old-deployed\\app\\readobj.stdout.txt",
+      "sha256": "33e8483eb27d5d7c19afd6a244ad2f3265d51ecf109c24935b5974b934e2c8e7",
+      "bytes": 1077
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\old-deployed\\dx11\\pdbutil.stdout.txt",
+      "sha256": "cb1a7a7824bb685ae6c95b311b07860d5dd1802e2f7121ea9d662d8a96468641",
+      "bytes": 471
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\old-deployed\\dx11\\readobj.stdout.txt",
+      "sha256": "2e0bd8837c03be646a6a5383408a032892dc9a79dde442417076ce635d849e59",
+      "bytes": 1106
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\old-deployed\\opengl\\pdbutil.stdout.txt",
+      "sha256": "3b1b018ec060f584cbca8db24df38c89fa5e09050bbf38f168baef5d65b3497a",
+      "bytes": 471
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\old-deployed\\opengl\\readobj.stdout.txt",
+      "sha256": "72f11a6218f3d1908cb121333756507adebe6df8b0bdf1a5b81bb6b1e751580c",
+      "bytes": 1110
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\swapped-render-pdb-negative\\dx11\\pdbutil.stdout.txt",
+      "sha256": "3b1b018ec060f584cbca8db24df38c89fa5e09050bbf38f168baef5d65b3497a",
+      "bytes": 471
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\swapped-render-pdb-negative\\dx11\\readobj.stdout.txt",
+      "sha256": "b28cf0771a3ad649a6e4d1438f161397ae94bf5e153d9a98541d276e0de44f30",
+      "bytes": 1099
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\swapped-render-pdb-negative\\opengl\\pdbutil.stdout.txt",
+      "sha256": "cb1a7a7824bb685ae6c95b311b07860d5dd1802e2f7121ea9d662d8a96468641",
+      "bytes": 471
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-artifact-identity01\\swapped-render-pdb-negative\\opengl\\readobj.stdout.txt",
+      "sha256": "885562fdb10fb2f69ca505677ab847c0d6daf52e130c31120f6f03b0447377db",
+      "bytes": 1103
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\dx11-body-symbol.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\dx11-body-symbol.stdout.log",
+      "sha256": "1882ceb53418a0e8e47898032bf74c9047e2d98eae242ef0f94929c608ef16de",
+      "bytes": 94
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\dx11-export-instruction.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\dx11-export-instruction.stdout.log",
+      "sha256": "4cac7720e2531d1021e78e7a584032fad3d11cbd72b88be01066196f6c3afcab",
+      "bytes": 301
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\dx11-export-symbol.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\dx11-export-symbol.stdout.log",
+      "sha256": "6853bd6887e92f399e606c46c92d199d12dfd7eba65352cbc6c8b7ad99d86420",
+      "bytes": 9
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\dx11-headers.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\dx11-headers.stdout.log",
+      "sha256": "042ae4c4384aef4ce8e087074c55a0d123191ade7d181e1b7da65dfadc0d101a",
+      "bytes": 2769
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\opengl-body-symbol.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\opengl-body-symbol.stdout.log",
+      "sha256": "ff3b130d13383e12f7981ac7d487d966d3e4569cba0abc816061457014341166",
+      "bytes": 96
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\opengl-export-instruction.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\opengl-export-instruction.stdout.log",
+      "sha256": "4392a7717b58df8a0ca9f91ed6d32e8d13496d2e797fb35979e778a1ac03dd79",
+      "bytes": 303
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\opengl-export-symbol.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\opengl-export-symbol.stdout.log",
+      "sha256": "6853bd6887e92f399e606c46c92d199d12dfd7eba65352cbc6c8b7ad99d86420",
+      "bytes": 9
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\opengl-headers.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p14-render-symbols01\\opengl-headers.stdout.log",
+      "sha256": "a123d926183c76f035c12a320a30dbf4d213fe9ee1e75adf955589d923796622",
+      "bytes": 2771
+    }
+  ],
+  "plan_update": {
+    "before_sha256": "e945d1549437a5a26a5444ecf848cb149443202460bd5ac7d08dbf789bffd748",
+    "after_sha256": "13f87ad2bd2a5fec6f76b6e9c1b42777544f358a25693825801cf262c9c2785d",
+    "group": "P14",
+    "appended_boundary": "新增完成p14-artifact-identity（2026-10-21）非最终工件的只读身份子门：UI15冻结EXE与PDB的GUID及age5匹配；src/render当前DX11／OpenGL两对DLL／PDB的GUID及age2分别匹配，各导出lk_render_get_api沿实际增量链接跳板后均能离线解析到对应backend.cpp源码行。原应用目录两份旧部署DLL为age1，与当前同GUID的age2 PDB配对均FAIL，原始失败保留；根因是旧部署DLL与本轮重新链接PDB属于不同链接代次，不回推UI15运行当时已错配，不把当前构建输出替换成旧部署通过。交换两PDB的真实负例2/2被GUID错配拒绝；输入前后SHA／大小／mtime不变。来源data/completed-evidence/p14-artifact-identity-20261021-scoped.json，追溯data/completed-evidence/p14-artifact-identity-20261021-provenance.json。仅授上述各自工件身份及两份当前renderer离线源码定位范围；RelWithDebInfo只核路径标记，binary_source_provenance仍NOT_VERIFIED；无产品／安装器执行，未授受控故障符号、最终冻结发行、签名、全新克隆、安装／升级／卸载／外机启动或完整P14/full-plan/Formal/P20信用，原门限与既有条件不变。"
+  },
+  "safe_projection_sha256": "cb17814f8ab59b0ef508a769496a115c3eb660924e4832b3a3c4ae7f0d84e56c",
+  "product_source_changed": false,
+  "final_release_claimed": false,
+  "layout_and_thresholds_unchanged": true,
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "prior_independent_scopes_retained": true,
+  "superseded_reports_to_archive": []
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "cohavora-turn02-export-safe-provenance-v1",
+  "status": "SCOPED_COMPLETED_RESULT",
+  "source_path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\turn-export-readback01\\result.json",
+  "source_sha256": "369d07906ba4be9601e50768610efc75d64d51274ed0f091aa363ac5b26d6dcd",
+  "source_bytes": 6818,
+  "raw_source_copy": false,
+  "no_duplicate_product_item": true,
+  "plan_update": [
+    {
+      "group": "P02",
+      "json_pointer": "/groups/1/boundaries/4",
+      "before": "本批resource-completion-20261021-01阶段：旧service-restart生产导出/独立复盘、新网络九成功子集及独立TURN单case审计分别留证；成功子集与TURN审计均PARTIAL/full0，原十项FAIL及terminal整体身份UNKNOWN不覆盖，不拼接完整恢复门。",
+      "after": "本批resource-completion-20261021-01阶段：旧service-restart生产导出/独立复盘、新网络九成功子集及独立TURN单case审计分别留证；九成功子集仍PARTIAL/full0；TURN02既有checkpoint/diagnostics/correlation范围保留，最新已完成封存源生产导出与独立回读为PASS_SCOPED（2026-10-21）：7文件SHA/size、93 revisions、61,104条导出指标及17条timeline逐项对源，16个原文件与45项telemetry/target输入及导出器EXE/PDB前后不变；来源data/completed-evidence/turn02-export-readback-20261021-scoped.json，追溯data/completed-evidence/turn02-export-readback-20261021-provenance.json。历史stability详情/session link、crash metadata及persistent loss summary四项缺失保留，未执行UI导出或故障后live-current，不回填旧运行输入身份，完整P02/P12/P17/Formal/P20信用0，原十项FAIL及terminal整体身份UNKNOWN不覆盖，不拼接完整恢复门。"
+    },
+    {
+      "group": "P12",
+      "json_pointer": "/groups/11/boundaries/4",
+      "before": "本批resource-completion-20261021-01阶段：九成功网络case、独立TURN及旧service-restart的限定诊断/关联/导出审计分别通过；子集与TURN审计汇总PARTIAL/full0，不拼接。真实UI导出、UDP/RTP日志和既有延期边界继续保留。",
+      "after": "本批resource-completion-20261021-01阶段：九成功网络case、独立TURN及旧service-restart的限定诊断/关联/导出审计分别通过；九成功子集仍PARTIAL/full0；TURN02既有checkpoint/diagnostics/correlation范围保留，最新已完成封存源生产导出与独立回读为PASS_SCOPED（2026-10-21）：7文件SHA/size、93 revisions、61,104条导出指标及17条timeline逐项对源，16个原文件与45项telemetry/target输入及导出器EXE/PDB前后不变；来源data/completed-evidence/turn02-export-readback-20261021-scoped.json，追溯data/completed-evidence/turn02-export-readback-20261021-provenance.json。历史stability详情/session link、crash metadata及persistent loss summary四项缺失保留，未执行UI导出或故障后live-current，不回填旧运行输入身份，完整P02/P12/P17/Formal/P20信用0，不拼接。真实UI导出、UDP/RTP日志和既有延期边界继续保留。"
+    }
+  ]
+}

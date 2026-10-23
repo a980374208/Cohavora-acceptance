@@ -28,7 +28,7 @@ export function consolidateTests(input) {
 
   data.retestRecords = plan.groups.map((group, index) => {
     assert.equal(group.id, 'T' + String(index + 1).padStart(3, '0'));
-    assert.ok(group.gates.length >= 3 && group.gates.length <= 5, 'Expected 3–5 independently judged gates');
+    assert.ok(group.gates.length >= 3 && group.gates.every(gate => typeof gate === 'string' && gate.trim()), 'Expected explicit independently judged gates');
     assert.ok(group.originalIds.length > 0);
     assert.ok(['product', 'auxiliary'].includes(group.plan_kind));
     const planCode = group.plan_kind === 'product'
@@ -49,6 +49,9 @@ export function consolidateTests(input) {
     }
     const referenceStatuses = unique(records.flatMap(record => record.reference_statuses || [record.status]));
     const environmentIds = unique(records.flatMap(record => record.environmentIds || []));
+    const stage = structuredClone(group.stage_status);
+    assert.ok(stage?.status && stage.as_of, 'Expected the frozen stage assessment for ' + planCode);
+    assert.equal(stage.full_gate_credit, 0, 'Stage assessment must not grant full-group acceptance credit');
     return {
       id: group.id,
       plan_code: planCode,
@@ -61,18 +64,21 @@ export function consolidateTests(input) {
       gates: [...group.gates],
       conditions: [...group.conditions],
       boundaries: [...group.boundaries],
-      status: 'NOT_RUN',
+      status: stage.status,
+      stage_status: stage,
+      full_gate_credit: stage.full_gate_credit,
       reference_statuses: referenceStatuses,
-      date: '本轮未执行',
+      date: stage.as_of,
       evidence_scope: group.plan_kind === 'product'
-        ? 'CONSOLIDATED_PRODUCT_ACCEPTANCE_PLAN_NOT_RUN'
-        : 'AUXILIARY_TOOL_OR_DIAGNOSTIC_PLAN_NOT_RUN',
+        ? (stage.stage_execution === 'COMPLETED_SCOPED_BATCH' ? 'PRODUCT_ACCEPTANCE_COMPLETED_SCOPE_ASSESSMENT' : 'PRODUCT_ACCEPTANCE_FROZEN_STAGE_ASSESSMENT')
+        : 'AUXILIARY_FROZEN_STAGE_ASSESSMENT',
       coverage: records.map(record => '原 ' + record.id + ' · ' + record.title + '；完整case、原重测原因与历史依据见 data/report-input.json。'),
       metrics: [],
-      sources: [],
+      sources: [plan.stage_freeze.stage_report_html, plan.stage_freeze.stage_report,
+        ...[stage.disposition_report, stage.disposition_source].filter(Boolean)],
       source_checks: [],
       environmentIds,
-      validity: '计划合并未重核产品输入等价，也未改变原结果或版本边界；当前执行状态为NOT_RUN。',
+      validity: (stage.stage_execution === 'DEFERRED_BY_USER_AFTER_CLOSURE' ? '当前处置按用户要求延期；原实测FAIL和冻结阶段留作历史。' : stage.stage_execution === 'COMPLETED_SCOPED_BATCH' ? '状态依据最新已完成同范围结果及剩余子门更新；原冻结阶段留作历史。' : '状态来自冻结阶段收口；') + '已完成范围、剩余子门、保留失败与未定结论分别保留，不授予整组通过。本次文档更新未新增测试执行，也未改变原结果或版本边界。',
       limitations: group.boundaries.join('；'),
       disposition: 'RETEST_REQUIRED',
       reason: group.description,
@@ -122,7 +128,9 @@ export function consolidateTests(input) {
     mapping,
     non_test_actions: structuredClone(plan.non_test_actions),
     policy: [...plan.policy],
-    execution: 'NOT_RUN',
+    execution: plan.stage_freeze.status,
+    stage_execution: 'STOPPED_AFTER_CLOSURE',
+    new_test_execution: 'NOT_RUN',
     historical_results_changed: false,
     current_tool_results_changed: false,
     thresholds_changed: false

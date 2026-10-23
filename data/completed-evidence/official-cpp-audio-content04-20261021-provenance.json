@@ -1,0 +1,84 @@
+{
+  "schema": "cohavora-official-audio-content-provenance-v1",
+  "status": "SCOPED_COMPLETED_RESULT",
+  "created_utc": "2026-10-21T11:33:25.123749+00:00",
+  "source_references": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\audio-content04-audit.json",
+      "sha256": "a3543996308914d416574499fb44c5662549cc84c799cfd82c820f77aeef3f31",
+      "bytes": 6604
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\audio-content04-audit.py",
+      "sha256": "52bc1b2590c1a855ac2e27e07b3328663a51487eadbe1e112494438da4527ec2",
+      "bytes": 8194
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-preparation04\\profile.json",
+      "sha256": "a68e481b2e0ee2d9a636f35904faba678b2f9bb0491d4750e3b50cadd7173a62",
+      "bytes": 24388
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-content04\\index.json",
+      "sha256": "7ba8bff036bdf54efb56ad5f74f9e8b6dfdce5b0cc256cdf909301c1f1f61263",
+      "bytes": 19223
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-content04\\off\\result.json",
+      "sha256": "ef62a0b13925ed1ebb6b7c3c2a295ceb5117d0a32f298e1d9fe84700b5383640",
+      "bytes": 2642
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-content04\\off\\native.jsonl",
+      "sha256": "1f0890630675ad4dd98a91e828ed67b8ad1f57505402a225fe033de2729b751b",
+      "bytes": 48909
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-content04\\off\\official.jsonl",
+      "sha256": "e5751fcbb872972c3b3c7dfb743ca2aaf0123f6cb1769f6d9e763d65ef990c8c",
+      "bytes": 13148
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-content04\\on\\result.json",
+      "sha256": "ea6453f5238aa435b3166938ab86580caeddf659ecd7625571cde8cc0f2d6f56",
+      "bytes": 2723
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-content04\\on\\native.jsonl",
+      "sha256": "1aae4b63ddc4f5ce157a493e167fd3c2afa61512eaa188485f10fc26dcbffd76",
+      "bytes": 100634
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-cpp-audio-content04\\on\\official.jsonl",
+      "sha256": "52cbeb87e0b24f0d543afdc03ea4cfaf0c62b65914f567455be3037ce361f3f2",
+      "bytes": 13543
+    }
+  ],
+  "plan_update": {
+    "before_sha256": "1eed4b58a6e2f1246b11f006d5b41fb2697413ab34c49c0dddff696ba5a7b90f",
+    "after_sha256": "16f8400dc276f5c61c9e21c8d86fb8433c9d02c5be1f857495ab2e156dded77a",
+    "updates": [
+      {
+        "group": "P05",
+        "boundary_index": 3,
+        "before": "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 原阈值及P05完整信用0不变。",
+        "after": "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 最新完成official-cpp-audio-content04（2026-10-21）合成音频OFF／ON限定内容子门均PASS_SCOPED：60秒返回观察窗中，Native识别tone窗口599／570（总窗口均600；其他内容1／30、静音0／0），官方实际解码并回送tone窗口603／603（总窗口605／605；静音1／2、其他内容1／0），格式错误均0；ON的Native音频加密rx／tx输出均非0。两模式FIN／ACK、原DLL路径及哈希、86项输入绑定、两进程自然退出码0与清理均独立核对；全部静音和其他内容窗口保留，不授连续性、主观音质、声学延迟或SDK进程内安全退休信用。来源data/completed-evidence/official-cpp-audio-content04-20261021-scoped.json，追溯data/completed-evidence/official-cpp-audio-content04-20261021-provenance.json；旧启动不确定记录保留。 原阈值及P05完整信用0不变。"
+      },
+      {
+        "group": "P06",
+        "boundary_index": 4,
+        "before": "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 原阈值及P06完整信用0不变。",
+        "after": "本批resource-completion-20261021-01阶段：历史FAIL/INCONCLUSIVE及原始判据保留；P13原9000秒资源子门PASS，P07原1800秒六资源子门PASS。Flutter最新独立格{\"PASS\": 14, \"FAIL\": 2}；C++新数据格{\"PASS\": 12}、受控视频格{\"PASS\": 4}。跨run仅作逐格投影，不拼接完整门；原P99正式FAIL保留，完整门信用0，P20 Formal暂停。 最新完成official-cpp-audio-content04（2026-10-21）合成音频OFF／ON限定内容子门均PASS_SCOPED：60秒返回观察窗中，Native识别tone窗口599／570（总窗口均600；其他内容1／30、静音0／0），官方实际解码并回送tone窗口603／603（总窗口605／605；静音1／2、其他内容1／0），格式错误均0；ON的Native音频加密rx／tx输出均非0。两模式FIN／ACK、原DLL路径及哈希、86项输入绑定、两进程自然退出码0与清理均独立核对；全部静音和其他内容窗口保留，不授连续性、主观音质、声学延迟或SDK进程内安全退休信用。来源data/completed-evidence/official-cpp-audio-content04-20261021-scoped.json，追溯data/completed-evidence/official-cpp-audio-content04-20261021-provenance.json；旧启动不确定记录保留。 原阈值及P06完整信用0不变。"
+      }
+    ]
+  },
+  "safe_projection_sha256": "662b7db66bf516ce264f793557af7e10655fb5023026e632f293688eec3ac597",
+  "helper_sha256": "f8630becf74320b630f28dd0882cfd43ced449c88bd3819d94273d30aa5e6356",
+  "product_runtime": "NOT_RUN_REPORT_UPDATE_ONLY",
+  "layout_and_thresholds_unchanged": true,
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "previous_completed_audio_result": "NONE; new bounded subgate within existing P05/P06",
+  "prior_reports_with_independent_scopes_retained": true
+}

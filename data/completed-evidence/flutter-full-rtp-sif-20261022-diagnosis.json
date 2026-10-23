@@ -1,0 +1,247 @@
+{
+  "schema": "same_run_rtp_sif_capture_summary_v1",
+  "status": "DIAGNOSTIC_SFU_BLANK_FRAME_ENQUEUE_MATCHED",
+  "actual_producer": "SFU_BLANK_FRAME_PATH_THIS_CAPTURE",
+  "acceptance_credit": 0,
+  "full_gate_credit": 0,
+  "peer_run_id": "e2ee-6d63ce9849614878",
+  "capture_run_id": "79a15bf85d0345b58167c6755dab972a",
+  "started_beijing": "2026-10-22T18:02:12.063+08:00",
+  "finished_beijing": "2026-10-22T18:03:31.037+08:00",
+  "scope": "ONE_ISOLATED_60_SECOND_FLUTTER_FULL_RECONNECT_WITH_TASK7_EXCLUDED",
+  "root_cause": "SFU_CLOSE_WITH_FLUSH_VP8_BLANK_FRAMES_DELIVERED_BY_NATIVE_SIF_COMPATIBILITY_AS_VIDEO",
+  "causal_chain": [
+    "Flutter retires old relay before full reconnect",
+    "SFU closes old downtrack and generates VP8 blank frames",
+    "Dedicated blank-frame Enqueue",
+    "Exact SSRC/RTP timestamp joins to Native SIF input/output/delivery",
+    "Decoded 8x8 frames fail unchanged marker content gate"
+  ],
+  "peer_verdict": "FAIL",
+  "passed_checks": 69,
+  "total_checks": 70,
+  "failed_checks": [
+    "relay_marker_content_valid"
+  ],
+  "video_frames": 508,
+  "valid_frames": 502,
+  "invalid_frames": 6,
+  "matched_frames": 6,
+  "server_event_counts": {
+    "close": 12,
+    "enqueue": 51,
+    "vp8": 18
+  },
+  "server_events_received": 81,
+  "server_events_written": 81,
+  "zero_loss": true,
+  "native_loss_counters": {
+    "overflow": 0,
+    "contention": 0,
+    "observation_retention_overflow": 0,
+    "marker_overflow": 0
+  },
+  "old_relay_track": "TR_VCGZaMNwbXNwav",
+  "new_relay_track": "TR_VCxR28sVuZGycX",
+  "timeline_beijing": {
+    "old_relay_retired": "2026-10-22T18:02:58.030+08:00",
+    "first_invalid_frame": "2026-10-22T18:02:58.194+08:00",
+    "last_invalid_frame": "2026-10-22T18:02:58.361+08:00",
+    "reconnected": "2026-10-22T18:02:59.483+08:00",
+    "new_relay_published": "2026-10-22T18:03:00.056+08:00"
+  },
+  "matches": [
+    {
+      "ssrc": 3980938446,
+      "rtp_timestamp": 1016172999,
+      "binding_id": 4,
+      "binding_generation": 1,
+      "native_sequences": {
+        "input": 777,
+        "output": 778,
+        "copied_for_delivery": 781
+      },
+      "enqueue": {
+        "line": 17,
+        "event": "enqueue",
+        "trace_seconds": "4006412.099511",
+        "ssrc": 3980938446,
+        "timestamp": 1016172999,
+        "sequence": 19896,
+        "marker": 1,
+        "payload_type": 96,
+        "payload_length": 78,
+        "downtrack_ssrc": 3980938446
+      },
+      "prior_close_line": 15,
+      "prior_vp8_line": 16
+    },
+    {
+      "ssrc": 3980938446,
+      "rtp_timestamp": 1016176046,
+      "binding_id": 4,
+      "binding_generation": 1,
+      "native_sequences": {
+        "input": 779,
+        "output": 780,
+        "copied_for_delivery": 784
+      },
+      "enqueue": {
+        "line": 31,
+        "event": "enqueue",
+        "trace_seconds": "4006412.133378",
+        "ssrc": 3980938446,
+        "timestamp": 1016176046,
+        "sequence": 19897,
+        "marker": 1,
+        "payload_type": 96,
+        "payload_length": 78,
+        "downtrack_ssrc": 3980938446
+      },
+      "prior_close_line": 25,
+      "prior_vp8_line": 28
+    },
+    {
+      "ssrc": 3980938446,
+      "rtp_timestamp": 1016179047,
+      "binding_id": 4,
+      "binding_generation": 1,
+      "native_sequences": {
+        "input": 782,
+        "output": 783,
+        "copied_for_delivery": 787
+      },
+      "enqueue": {
+        "line": 37,
+        "event": "enqueue",
+        "trace_seconds": "4006412.165595",
+        "ssrc": 3980938446,
+        "timestamp": 1016179047,
+        "sequence": 19898,
+        "marker": 1,
+        "payload_type": 96,
+        "payload_length": 78,
+        "downtrack_ssrc": 3980938446
+      },
+      "prior_close_line": 25,
+      "prior_vp8_line": 36
+    },
+    {
+      "ssrc": 3980938446,
+      "rtp_timestamp": 1016182048,
+      "binding_id": 4,
+      "binding_generation": 1,
+      "native_sequences": {
+        "input": 785,
+        "output": 786,
+        "copied_for_delivery": 790
+      },
+      "enqueue": {
+        "line": 44,
+        "event": "enqueue",
+        "trace_seconds": "4006412.198902",
+        "ssrc": 3980938446,
+        "timestamp": 1016182048,
+        "sequence": 19899,
+        "marker": 1,
+        "payload_type": 96,
+        "payload_length": 78,
+        "downtrack_ssrc": 3980938446
+      },
+      "prior_close_line": 25,
+      "prior_vp8_line": 42
+    },
+    {
+      "ssrc": 3980938446,
+      "rtp_timestamp": 1016185049,
+      "binding_id": 4,
+      "binding_generation": 1,
+      "native_sequences": {
+        "input": 788,
+        "output": 789,
+        "copied_for_delivery": 793
+      },
+      "enqueue": {
+        "line": 53,
+        "event": "enqueue",
+        "trace_seconds": "4006412.232373",
+        "ssrc": 3980938446,
+        "timestamp": 1016185049,
+        "sequence": 19900,
+        "marker": 1,
+        "payload_type": 96,
+        "payload_length": 78,
+        "downtrack_ssrc": 3980938446
+      },
+      "prior_close_line": 25,
+      "prior_vp8_line": 50
+    },
+    {
+      "ssrc": 3980938446,
+      "rtp_timestamp": 1016188050,
+      "binding_id": 4,
+      "binding_generation": 1,
+      "native_sequences": {
+        "input": 791,
+        "output": 792,
+        "copied_for_delivery": 794
+      },
+      "enqueue": {
+        "line": 60,
+        "event": "enqueue",
+        "trace_seconds": "4006412.265376",
+        "ssrc": 3980938446,
+        "timestamp": 1016188050,
+        "sequence": 19901,
+        "marker": 1,
+        "payload_type": 96,
+        "payload_length": 78,
+        "downtrack_ssrc": 3980938446
+      },
+      "prior_close_line": 25,
+      "prior_vp8_line": 59
+    }
+  ],
+  "cleanup_confirmed": true,
+  "shared_unchanged": true,
+  "shared_health": 200,
+  "service_guard_exit": {
+    "reason": "EXPLICIT_CLEANUP_COMPLETE",
+    "pid": 744249
+  },
+  "cloud_rules_added": 0,
+  "cloud_rules_removed": 0,
+  "preexisting_rules_preserved": true,
+  "task7_still_excluded": true,
+  "builds_run": 0,
+  "product_source_changes": 0,
+  "product_test_attempts": 1,
+  "offline_tests": {
+    "baseline_runtime": 7,
+    "isolated_service": 2,
+    "orchestration": 4
+  },
+  "historical_run_0770_attribution": "STRONG_CANDIDATE_NOT_RETROSPECTIVELY_CONFIRMED",
+  "limitations": [
+    "This capture only; no automatic attribution of historical frames.",
+    "SFU blank-frame generation/enqueue and exact receiver RTP/signature chain; not authenticated media, wire capture or product PASS."
+  ],
+  "evidence_sha256": {
+    "execution.json": "b5f6391eb150426196362109f52afcec8557ccfc66a102de9466fbd0ea848360",
+    "producer-diagnosis.json": "1d5ed4d93883a84070cc88f9d487e303b6e33cf9c98b8a9bbd01258a4ee6de6b",
+    "trace-captured.json": "942af778cef7ba89b46c2ca8dd8c0025b26bc5dbe3de51bae0d7b94f6338df63",
+    "service-prepared.json": "e30fcff2cdb2a23221517fbd4acdf6a5df00a207b6e36ab74a5e0fb719395a6f",
+    "service-cleanup.json": "da7b6cef4c962e8cf32527d9196f62c51aeb891a489b0e3eb33dce3dc65236fc",
+    "cloud-before.json": "b5a8dfd495f12a59b9b7c799c31f99b1a926ddc7c7d0d2575356b38a3b247440",
+    "cloud-applied.json": "aa187555b6f10f0100b7029dbeefd1819844671bdba63e7c6a56439b39aef35f",
+    "cloud-cleanup.json": "3c640e40dc149abd7cf1383376b0e3fff613e89ee19cef1c17ee78476eb2ca01",
+    "local-process-before.json": "165920a934ff9f148d56d46799d8ef7f2251244d2841467d109c0cd23fefc5d7",
+    "local-process-after.json": "165920a934ff9f148d56d46799d8ef7f2251244d2841467d109c0cd23fefc5d7",
+    "plan.json": "4d4a8a5e09a26473e3c6900c5644a0991e0bb0395c6faf7689cbe92c63da6ad4",
+    "peer-command.json": "7f11a3f1e909dd6889e638a77743abfa28d407053328abda4d1e68552df4f7d8",
+    "peer-verdict.json": "87724a25ffe338e6332a0361cc8c21f380dc71a9785f930edb520b45285b56e1",
+    "peer/on-e2ee-6d63ce9849614878/flutter.jsonl": "1fd3c90a59f8b3f6a8d87c230b1b03cdcd6af41693bfc05a5988060bb4b88474",
+    "peer/on-e2ee-6d63ce9849614878/native.jsonl": "c0ee69dcb772c37390dbb664c0c1fa19a98caf1d1bc7c209fe6f874f020bbb03",
+    "peer/on-e2ee-6d63ce9849614878/result.json": "cf98ba1bd4b533b55249b8149849eb372242a4839be49215c0fd7ce782f0f24b"
+  }
+}

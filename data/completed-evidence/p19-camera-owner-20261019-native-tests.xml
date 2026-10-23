@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="(empty)"
+	tests="58"
+	failures="1"
+	disabled="0"
+	skipped="0"
+	hostname=""
+	time="161"
+	timestamp="2026-10-19T14:40:37"
+	>
+	<testcase name="diagnostic_pipeline_test" classname="diagnostic_pipeline_test" time="40.4307" status="run">
+		<properties>
+			<property name="cmake_labels" value="LOGGING_LG2;LOGGING_LG3;LOGGING_LG4;LOGGING_LG5;LOGGING_LG7"/>
+		</properties>
+		<system-out>detach_close_ms=5013
+detach_close_ms=5003
+SETTINGS_EVENTS: zero durations, counts, cache and failure persist PASS
+CONCURRENT_ADMISSION: mixed producers persist contiguous order PASS
+quota_multiprocess_peak_bytes=118139410 concurrent_rotation_bytes=106735890 after_rotation_bytes=94382176
+quota_killed_writer_bytes=104418221 recovery_bytes=104418516
+</system-out>
+	</testcase>
+	<testcase name="stability_ledger_test" classname="stability_ledger_test" time="0.0908421" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;LOGGING_LG5;TELEMETRY_S6"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="telemetry_report_test" classname="telemetry_report_test" time="30.4647" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;LOGGING_LG1;LOGGING_LG4;LOGGING_LG5;LOGGING_LG6;SECURITY_REGRESSION;TELEMETRY_S7;TELEMETRY_S7_ACCEPTANCE"/>
+		</properties>
+		<system-out>history_close boundary=before elapsed_ms=216
+history_close boundary=after elapsed_ms=209
+history_close final_manifest_failure=PASS old_revision_preserved retry=PASS
+history_close post_replace_failure=PASS disk_commit_preserved
+history_close callback_elapsed_ms=5008
+</system-out>
+	</testcase>
+	<testcase name="e2e_measurement_test" classname="e2e_measurement_test" time="0.0125155" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;TELEMETRY_S8A"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="e2e_media_correlation_test" classname="e2e_media_correlation_test" time="0.0165321" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;TELEMETRY_S8B"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="screen_share_quality_test" classname="screen_share_quality_test" time="0.0134986" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;SCREEN_SHARE_QUALITY_FOCUSED"/>
+		</properties>
+		<system-out>screen share policy, deadlines and live fallback FPS PASS
+</system-out>
+	</testcase>
+	<testcase name="screen_share_session_test" classname="screen_share_session_test" time="4.17064" status="run">
+		<properties>
+			<property name="cmake_labels" value="ANNOTATION_FOCUSED;CORE_REGRESSION;REMOTE_CONTROL_FOCUSED"/>
+		</properties>
+		<system-out>SCREEN_SHARE_SESSION: lifecycle, source mapping, resolution and in-flight teardown PASS
+</system-out>
+	</testcase>
+	<testcase name="e2ee_backend_unavailable_test" classname="e2ee_backend_unavailable_test" time="0.0211083" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>E2EE_BACKEND_UNAVAILABLE PASS: rejected before manager creation or connect
+</system-out>
+	</testcase>
+	<testcase name="single_pc_negotiation_test" classname="single_pc_negotiation_test" time="0.379981" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>Single-PC media-section negotiation and publication: 14 cases PASS
+</system-out>
+	</testcase>
+	<testcase name="camera_owner_remediation_test" classname="camera_owner_remediation_test" time="0.411162" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;LOGGING_LG1;LOGGING_LG3"/>
+		</properties>
+		<system-out>[CPPQT-002] A alive timeout reaches GUI once
+[CPPQT-002] A first frame success reaches GUI once
+[CPPQT-002] immediate completion runs outside manager mutex
+[CPPQT-002] B timeout selected then Window deleted
+[CPPQT-002] B queued result deleted before GUI drain
+[CPPQT-002] C old Window completion cannot affect new Window
+[CPPQT-002] D queued timeout rejected by session invalidation
+[CPPQT-002] D session invalidation rejects later timeout
+[CPPQT-002] newer request epoch rejects old completion
+[CPPQT-002] capture Stop stays owned while deleted Window leaves Qt responsive
+[CPPQT-002] preparation waits off Qt; admission runs once after readiness
+[CPPQT-002] closing during device preparation cancels admission without waiting
+[CPPQT-002] session invalidation revokes already queued preparation completion
+[CPPQT-002] unexpected preparation failure never starts admission
+[CPPQT-002] disabled entry does not request devices; later enable prepares only that device
+[CPPQT-002] leave during deferred device startup rejects la...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="diagnostic_qt_bridge_test" classname="diagnostic_qt_bridge_test" time="1.22085" status="fail">
+		<failure message="Failed"/>
+		<properties>
+			<property name="cmake_labels" value="LOGGING_LG2;LOGGING_LG5;LOGGING_LG6;LOGGING_LG7"/>
+		</properties>
+		<system-out>TEST_CHECK failed: QApplication::clipboard()-&gt;text() == view-&gt;toPlainText() (E:\vsSource\WebRTC\live-kit-test-local\tests\telemetry\test_diagnostic_qt_bridge.cpp:200)
+</system-out>
+	</testcase>
+	<testcase name="log_redaction_test" classname="log_redaction_test" time="0.021329" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="connection_log_redaction_test" classname="connection_log_redaction_test" time="0.0461128" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;LOGGING_LG7"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="websocket_tls_verification_test" classname="websocket_tls_verification_test" time="0.521569" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>PASS trusted DNS header
+PASS wrong DNS header
+PASS untrusted CA header
+PASS expired leaf header
+PASS wrong IP header
+PASS trusted IP header
+PASS trusted DNS query
+PASS wrong DNS query
+PASS untrusted CA query
+PASS expired leaf query
+PASS wrong IP query
+PASS trusted IP query
+PASS native HTTPS trusted
+PASS native HTTPS wrong host
+PASS native HTTPS untrusted CA
+PASS native HTTPS oversized declaration
+PASS native HTTPS body deadline
+PR_SEC_008_HTTPS_CASES_EXECUTED=5 PASSED=5 FAILED=0
+</system-out>
+	</testcase>
+	<testcase name="qt_log_redaction_test" classname="qt_log_redaction_test" time="1.99414" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;LOGGING_LG2;LOGGING_LG7;SECURITY_REGRESSION"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="always_active_checks_test" classname="always_active_checks_test" time="0.0709829" status="run">
+		<properties>
+			<property name="cmake_labels" value="ASSERTION_REGRESSION;CORE_REGRESSION"/>
+		</properties>
+		<system-out>-- Always-active checks: true, exactly-once side effect, and intentional failure verified
+</system-out>
+	</testcase>
+	<testcase name="signaling_tests" classname="signaling_tests" time="15.7469" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;PR_SEC_006_FOCUSED"/>
+		</properties>
+		<system-out>=== LiveKit C++ Signaling tests ===
+TestWebSocketFrameLengthAdmission PASSED!
+MockServer: StartAccept called, waiting on port 59058
+MockServer: async_accept callback triggered, ec=The operation completed successfully.
+MockServer: Accepted connection, reading...
+MockServer: StartAccept called, waiting on port 59058
+MockServer: Got request: GET /rtc HTTP/1.1
+MockServer: Handling GET /rtc, validation_status=200
+MockServer: Switching protocols 101 written
+MockServer: StartAccept called, waiting on port 59060
+MockServer: async_accept callback triggered, ec=[NON-UTF-8-BYTE-0xD3][NON-UTF-8-BYTE-0xC9][NON-UTF-8-BYTE-0xD3][NON-UTF-8-BYTE-0xDA][NON-UTF-8-BYTE-0xCF]߳[NON-UTF-8-BYTE-0xCC][NON-UTF-8-BYTE-0xCD]˳[NON-UTF-8-BYTE-0xF6][NON-UTF-8-BYTE-0xBB][NON-UTF-8-BYTE-0xF2]Ӧ[NON-UTF-8-BYTE-0xD3]ó[NON-UTF-8-BYTE-0xCC][NON-UTF-8-BYTE-0xD0][NON-UTF-8-BYTE-0xF2][NON-UTF-8-BYTE-0xC7][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7][NON-UTF-8-BYTE-0xF3][NON-UTF-8-BYTE-0xA3][NON-UTF-8-BYTE-0xAC][NON-UTF-8-BYTE-0xD2][NON-UTF-8-BYTE-0xD1][NON-UTF-8-BYTE-0xD6][NON-UTF-8-BYTE-0xD0]ֹ I/O [NON-UTF-8-BYTE-0xB2][NON-UTF-8-BYTE-0xD9][NON-UTF-8-BYTE-0xD7][NON-UTF-8-BYTE-0xF7][NON-UTF-8-BYTE-0xA1][NON-UTF-8-BYTE-0xA3]
+MockServer: accept error: [NON-UTF-8-BYTE-0xD3][NON-UTF-8-BYTE-0xC9][NON-UTF-8-BYTE-0xD3][NON-UTF-8-BYTE-0xDA][NON-UTF-8-BYTE-0xCF]߳[NON-UTF-8-BYTE-0xCC][NON-UTF-8-BYTE-0xCD]˳[NON-UTF-8-BYTE-0xF6][NON-UTF-8-BYTE-0xBB][NON-UTF-8-BYTE-0xF2]Ӧ[NON-UTF-8-BYTE-0xD3]ó[NON-UTF-8-BYTE-0xCC][NON-UTF-8-BYTE-0xD0][NON-UTF-8-BYTE-0xF2][NON-UTF-8-BYTE-0xC7][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7][NON-UTF-8-BYTE-0xF3][NON-UTF-8-BYTE-0xA3][NON-UTF-8-BYTE-0xAC][NON-UTF-8-BYTE-0xD2][NON-UTF-8-BYTE-0xD1][NON-UTF-8-BYTE-0xD6][NON-UTF-8-BYTE-0xD0]ֹ I/O [NON-UTF-8-BYTE-0xB2][NON-UTF-8-BYTE-0xD9][NON-UTF-8-BYTE-0xD7][NON-UTF-8-BYTE-0xF7][NON-UTF-8-BYTE-0xA1][NON-UTF-8-BYTE-0xA3]
+MockServer: async_accept callback triggered, ec=The operation completed successfully.
+MockServer: Accepted connection, reading...
+MockServer: StartAccept called, waiting on port 59060
+MockServer: Got request: GET /rtc HTTP/1.1
+MockServer: Handling GET /rtc, validation_status=200
+MockServer: Switching protocols 101 written
+MockServer: StartAccept ...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="signaling_url_policy_test" classname="signaling_url_policy_test" time="1.54069" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;PR_SEC_006_FOCUSED"/>
+		</properties>
+		<system-out>PASS native HTTP coalesced body / keep-alive
+PASS native HTTP empty / keep-alive
+PASS native HTTP status and business detail
+PASS native HTTP EOF JSON
+PASS native HTTP body exactly at cap / length
+PASS native HTTP body exactly at cap / EOF
+PASS native HTTP body cap plus one / EOF
+PASS native HTTP declared oversized / header only
+PASS native HTTP declared oversized / header only
+PASS native HTTP declared oversized / header only
+PASS native HTTP declared oversized / header only
+PASS native HTTP header exactly at cap
+PASS native HTTP header cap plus one
+PASS native HTTP unterminated oversized header
+PASS native HTTP stalled header
+PASS native HTTP stalled EOF body
+PASS native HTTP stalled declared body
+PASS native HTTP one deadline across header and body
+PASS native HTTP slow header cannot renew deadline
+PASS native HTTP TLS handshake stall
+PASS native HTTP external cancellation
+PASS native HTTP truncated declared body
+PASS native HTTP malformed content length
+PASS native HTTP conflicting content lengths
+PASS na...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="room_state_events_test" classname="room_state_events_test" time="0.0197895" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>[SUCCESS] Room server state-event closure tests passed.
+</system-out>
+	</testcase>
+	<testcase name="remote_publication_lifecycle_test" classname="remote_publication_lifecycle_test" time="0.0229535" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>[SUCCESS] Remote publication lifecycle tests passed.
+</system-out>
+	</testcase>
+	<testcase name="publication_catalog_test" classname="publication_catalog_test" time="0.0123002" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>publication catalog contract tests passed
+</system-out>
+	</testcase>
+	<testcase name="video_demand_policy_test" classname="video_demand_policy_test" time="0.0188649" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>video demand policy contract tests passed
+</system-out>
+	</testcase>
+	<testcase name="local_unpublish_transaction_test" classname="local_unpublish_transaction_test" time="0.0186506" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;LOGGING_LG3"/>
+		</properties>
+		<system-out>[SUCCESS] Local unpublish protocol gate and transaction validation passed.
+</system-out>
+	</testcase>
+	<testcase name="unpublish_lifetime_remediation_test" classname="unpublish_lifetime_remediation_test" time="0.0201757" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;LOGGING_LG3"/>
+		</properties>
+		<system-out>[RUN] unpublish lifetime: live-participant
+[PASS] unpublish lifetime: live-participant
+[RUN] unpublish lifetime: live-room
+[PASS] unpublish lifetime: live-room
+[RUN] unpublish lifetime: temporaries
+[PASS] unpublish lifetime: temporaries
+[RUN] unpublish lifetime: suspended-mutation
+[PASS] unpublish lifetime: suspended-mutation
+[RUN] unpublish lifetime: invalid
+[PASS] unpublish lifetime: invalid
+[RUN] unpublish lifetime: duplicate
+[PASS] unpublish lifetime: duplicate
+[RUN] unpublish lifetime: boundary-failures
+[PASS] unpublish lifetime: boundary-failures
+[RUN] unpublish lifetime: generation
+[PASS] unpublish lifetime: generation
+[RUN] unpublish lifetime: default-native-boundary
+[PASS] unpublish lifetime: default-native-boundary
+[SUCCESS] unpublish lifetime groups executed=9
+</system-out>
+	</testcase>
+	<testcase name="audio_subscription_lifetime_test" classname="audio_subscription_lifetime_test" time="0.0992369" status="run">
+		<properties>
+			<property name="cmake_labels" value="AUDIO_LIFETIME;CORE_REGRESSION"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="audio_source_lifetime_test" classname="audio_source_lifetime_test" time="0.0477363" status="run">
+		<properties>
+			<property name="cmake_labels" value="AUDIO_LIFETIME;CORE_REGRESSION"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="stream_writer_lifetime_remediation_test" classname="stream_writer_lifetime_remediation_test" time="0.0204069" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>[RUN] stream writer lifetime: empty-text
+[PASS] stream writer lifetime: empty-text
+[RUN] stream writer lifetime: empty-byte
+[PASS] stream writer lifetime: empty-byte
+[RUN] stream writer lifetime: explicit
+[PASS] stream writer lifetime: explicit
+[RUN] stream writer lifetime: chunks
+[PASS] stream writer lifetime: chunks
+[RUN] stream writer lifetime: routing
+[PASS] stream writer lifetime: routing
+[RUN] stream writer lifetime: unwind
+[PASS] stream writer lifetime: unwind
+[RUN] stream writer lifetime: explicit-exceptions
+[PASS] stream writer lifetime: explicit-exceptions
+[RUN] stream writer lifetime: destructor-exceptions
+[PASS] stream writer lifetime: destructor-exceptions
+[RUN] stream writer lifetime: room-factory
+Stream writer finalization failed during destruction (exception).
+Stream writer finalization failed during destruction (exception).
+Stream writer finalization failed during destruction (exception).
+Stream writer finalization failed during destruction (exception).
+[PASS] stream writer lifetime: room-fac...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="audio_playout_warmup_test" classname="audio_playout_warmup_test" time="0.0170856" status="run">
+		<properties>
+			<property name="cmake_labels" value="ASSERTION_REGRESSION"/>
+		</properties>
+		<system-out>Audio playout warmup tests PASSED!
+</system-out>
+	</testcase>
+	<testcase name="stress_lifecycle_test" classname="stress_lifecycle_test" time="43.969" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>========================================================
+  LiveKit Native C++ SDK Lifecycle &amp; Reconnect Stress Harness
+========================================================
+[STRESS TEST 1] Starting Rapid Connect/Disconnect (100 Iterations)...
+  -&gt; Completed 25 / 100 rapid connect-disconnect cycles...
+  -&gt; Completed 50 / 100 rapid connect-disconnect cycles...
+  -&gt; Completed 75 / 100 rapid connect-disconnect cycles...
+  -&gt; Completed 100 / 100 rapid connect-disconnect cycles...
+[PASS] Test 1: 100 Rapid Connect/Disconnect Cycles Finished with Zero Crashes/Deadlocks!
+[STRESS TEST 2] Starting Sudden Drop &amp; Soft Reconnect Test...
+[PASS] Test 2: Sudden Drop &amp; Soft Reconnect (SyncState) Successfully Verified!
+[STRESS TEST 3] Starting Hard Reconnect Fallback Test...
+[PASS] Test 3: Hard Reconnect Fallback Verified!
+[PASS] Server RECONNECT action forced full restart.
+[PASS] Same-identity SID replacement retired old media and rejected late updates.
+[STRESS TEST 4] Starting Concurrent Event &amp; Destruction Race Test...
+[P...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="dshow_capture_test" classname="dshow_capture_test" time="0.021198" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>[2026-10-19 14:42:58.789] [info] [DShowVideoCapture] Requested 1280x720, selected supported 1320x960 (NV12)
+[2026-10-19 14:42:58.789] [warning] [DShowVideoCapture] Supported format rejected, hr=0x80040200
+[2026-10-19 14:42:58.789] [info] [DShowVideoCapture] Requested 1280x720, selected supported 640x480 (NV12)
+[2026-10-19 14:42:58.789] [info] [DShowVideoCapture] Requested 1280x720, selected supported 1320x960 (MJPEG)
+DSHOW_FORMAT_CONTRACT PASS: supported mode, rejection fallback, both headers, short buffer
+DSHOW_GRAPH_OWNER PASS: one MTA creates, stops and releases COM graph interfaces
+==================================================
+ Running DirectShow Video Capture Tests           
+==================================================
+[Test 1] Enumerating DirectShow Video Input Devices...
+  Found 0 Video Capture Devices:
+  Hardware enumeration deferred (use --camera-runtime).
+[Test 2] Testing Pixel Color Space Converters (YUY2, RGB24, NV12 -&gt; RGBA)...
+  -&gt; [Test 2 PASSED] Color space conversions and flip log...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="http_owner_remediation_test" classname="http_owner_remediation_test" time="1.44017" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;LOGGING_LG3;PR_SEC_002_FOCUSED"/>
+		</properties>
+		<system-out>[CASE 1] application busy during Join and late completion
+[CASE 2] application busy during Token and late completion
+[CASE 3] application busy during Create and late completion
+[CASE 4] application busy releases on dialog cancellation
+[CASE 5] failed meeting retains reservation through window cleanup
+[CASE 6] Required recovery superseded inside transfer cancellation
+[CASE 7] Required media status current
+[CASE 8] Required media status coalesced
+[CASE 9] Required media status late-reconnect
+[CASE 10] Required media status late-recovery
+[CASE 11] Required media status stale-native
+[CASE 12] Required media status closed-queue
+[CASE 13] Required recovery success
+[CASE 14] Required recovery supersede
+[CASE 15] Required recovery cancel
+[CASE 16] Required recovery stale-native
+[CASE 17] Required recovery late-ui
+[CASE 18] Required recovery closed-queue
+[CASE 19] Required unsupported codec rejects all admission APIs before network
+[CASE 20] Encryption codec admission entry 0 required 0
+[CASE 21] Encryption codec admi...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="meeting_session_runtime_test" classname="meeting_session_runtime_test" time="0.177114" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;TELEMETRY_S1"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="participant_snapshot_remediation_test" classname="participant_snapshot_remediation_test" time="0.370216" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;LOGGING_LG3;LOGGING_LG6"/>
+		</properties>
+		<system-out>LATE_JOIN_NEGOTIATION server-media-sections-driven PASS
+P4_METADATA_MEDIA_POLICY PASS
+PHASE_E_VIEWPORT_REPLAY pre-runtime intent/publication-after-runtime/successor-generation/stale-runtime-rejection PASS
+completed-leave: started=1 completed=1 failed=0 messages=0
+transfer-reentry boundary=3 action=0 PASS
+transfer-reentry boundary=0 action=1 PASS
+transfer-reentry boundary=0 action=2 PASS
+transfer-reentry boundary=1 action=1 PASS
+transfer-reentry boundary=1 action=2 PASS
+transfer-reentry boundary=2 action=1 PASS
+transfer-reentry boundary=2 action=2 PASS
+transfer-reentry boundary=3 action=1 PASS
+transfer-reentry boundary=3 action=2 PASS
+transfer-reentry boundary=4 action=1 PASS
+transfer-reentry boundary=4 action=2 PASS
+transfer-reentry boundary=2 action=3 PASS
+transfer-reentry boundary=3 action=3 PASS
+roster-reentry replacement=0 action=1 PASS
+roster-reentry replacement=0 action=2 PASS
+roster-reentry replacement=1 action=1 PASS
+roster-reentry replacement=1 action=2 PASS
+retired-instance-cancellation PASS
+data-ef...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="meeting_device_discovery_test" classname="meeting_device_discovery_test" time="0.524074" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;SETTINGS_FOCUSED"/>
+		</properties>
+		<system-out>MEETING_DEVICE_DISCOVERY PASS popup_before_camera_result_ms=15.319 native_devices=NOT_RUN
+</system-out>
+	</testcase>
+	<testcase name="meeting_ui_grid_test" classname="meeting_ui_grid_test" time="0.443948" status="run">
+		<properties>
+			<property name="cmake_labels" value="ASSERTION_REGRESSION;CORE_REGRESSION;UI_CONTRACT_FOCUSED"/>
+		</properties>
+		<system-out>AK_WINDOW_PHASE fixture-constructed
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_PHASE cleanup-listener-reset
+AK_WINDOW_PHASE cleanup-observer-reset
+AK_WINDOW_PHASE cleanup-runtime-reset
+AK_WINDOW_PHASE cleanup-room-reset
+AK_WINDOW_PHASE cleanup-fixture-body-complete
+AK_WINDOW_PHASE fixture-constructed
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_P...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="meeting_recovery_ux_test" classname="meeting_recovery_ux_test" time="0.205605" status="run">
+		<properties>
+			<property name="cmake_labels" value="ASSERTION_REGRESSION;CORE_REGRESSION;UI_CONTRACT_FOCUSED"/>
+		</properties>
+		<system-out>AK_WINDOW_PHASE fixture-constructed
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_PHASE cleanup-listener-reset
+AK_WINDOW_PHASE cleanup-observer-reset
+AK_WINDOW_PHASE cleanup-runtime-reset
+AK_WINDOW_PHASE cleanup-room-reset
+AK_WINDOW_PHASE cleanup-fixture-body-complete
+RECOVERY_UX_CONTRACT PASS: production banner, timer, control locking and share-stop exception
+</system-out>
+	</testcase>
+	<testcase name="meeting_entry_media_contract_test" classname="meeting_entry_media_contract_test" time="0.235476" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>ENTRY_MEDIA_CONTRACT ordinary-join starts=1 source_identity_and_delivery=PASS
+ENTRY_MEDIA_CONTRACT rejoin-after-leave starts=1 source_identity_and_delivery=PASS
+ENTRY_MEDIA_CONTRACT manual-direct starts=1 source_identity_and_delivery=PASS
+ENTRY_MEDIA_CONTRACT already-starting starts=1 source_identity_and_delivery=PASS
+ENTRY_MEDIA_CONTRACT device_free=PASS sfu_publish=NOT_RUN
+AK_WINDOW_PHASE alive-late-begin
+AK_WINDOW_PHASE fixture-constructed
+AK_CASE_F4 alive-late/real-VideoTrack/Room/adapter/Window/CPU-frame PASS
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_PHASE cleanup-listener-reset
+AK_WINDOW_PHASE cleanup-observer-reset
+AK_WINDOW_PHASE cleanup-runtime-reset
+AK_WINDOW_PHASE ...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="meeting_audio_preferences_test" classname="meeting_audio_preferences_test" time="0.232552" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>AUDIO_PREFERENCES_CONTRACT startup/live/reset/retired=PASS devices=NOT_RUN
+</system-out>
+	</testcase>
+	<testcase name="meeting_local_media_state_test" classname="meeting_local_media_state_test" time="0.181717" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>AK_WINDOW_PHASE fixture-constructed
+AK_WINDOW_PHASE fixture-constructed
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_PHASE cleanup-listener-reset
+AK_WINDOW_PHASE cleanup-observer-reset
+AK_WINDOW_PHASE cleanup-runtime-reset
+AK_WINDOW_PHASE cleanup-room-reset
+AK_WINDOW_PHASE cleanup-fixture-body-complete
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_P...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="meeting_toolbar_accessibility_test" classname="meeting_toolbar_accessibility_test" time="0.406661" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>AK_WINDOW_PHASE fixture-constructed
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_PHASE cleanup-listener-reset
+AK_WINDOW_PHASE cleanup-observer-reset
+AK_WINDOW_PHASE cleanup-runtime-reset
+AK_WINDOW_PHASE cleanup-room-reset
+AK_WINDOW_PHASE cleanup-fixture-body-complete
+</system-out>
+	</testcase>
+	<testcase name="meeting_chat_log_privacy_test" classname="meeting_chat_log_privacy_test" time="0.801198" status="run">
+		<properties>
+			<property name="cmake_labels" value="LOGGING_LG1;SECURITY_REGRESSION"/>
+		</properties>
+		<system-out>AK_WINDOW_PHASE fixture-constructed
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_PHASE cleanup-listener-reset
+AK_WINDOW_PHASE cleanup-observer-reset
+AK_WINDOW_PHASE cleanup-runtime-reset
+AK_WINDOW_PHASE cleanup-room-reset
+AK_WINDOW_PHASE cleanup-fixture-body-complete
+CHAT_LOG_THEME PASS: literal placeholders/HTML, role colors, repeated switches, cached filter rebuild, selection and reading position
+</system-out>
+	</testcase>
+	<testcase name="meeting_subscription_telemetry_reconnect_test" classname="meeting_subscription_telemetry_reconnect_test" time="0.298665" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;LOGGING_LG3;TELEMETRY_S2"/>
+		</properties>
+		<system-out>AK_WINDOW_PHASE fixture-constructed
+S2_SUBSCRIPTION_TELEMETRY in-flight/resume-SyncState-success/unique-terminal PASS
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_PHASE cleanup-listener-reset
+AK_WINDOW_PHASE cleanup-observer-reset
+AK_WINDOW_PHASE cleanup-runtime-reset
+AK_WINDOW_PHASE cleanup-room-reset
+AK_WINDOW_PHASE cleanup-fixture-body-complete
+</system-out>
+	</testcase>
+	<testcase name="meeting_remote_media_plan_test" classname="meeting_remote_media_plan_test" time="0.438549" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>AK_WINDOW_PHASE fixture-constructed
+PHASE_C_POLICY single/source-refresh/main-ceil/pin-4K/grid-floor/grid-2K-cap/screen-MEDIUM-top/actual-TrackSettings PASS external-media=NOT_RUN
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_PHASE cleanup-listener-reset
+AK_WINDOW_PHASE cleanup-observer-reset
+AK_WINDOW_PHASE cleanup-runtime-reset
+AK_WINDOW_PHASE cleanup-room-reset
+AK_WINDOW_PHASE cleanup-fixture-body-complete
+AK_WINDOW_PHASE fixture-constructed
+PHASE_C_ROOM auto-subscribe-false/empty-connect/settings-before-subscribe/deselect-before-select/zero-reset/latest-revision/soft+full-recovery PASS external-sfu=NOT_RUN
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cle...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="meeting_video_viewport_render_lease_test" classname="meeting_video_viewport_render_lease_test" time="0.313395" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>AK_WINDOW_PHASE fixture-constructed
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_PHASE cleanup-listener-reset
+AK_WINDOW_PHASE cleanup-observer-reset
+AK_WINDOW_PHASE cleanup-runtime-reset
+AK_WINDOW_PHASE cleanup-room-reset
+AK_WINDOW_PHASE cleanup-fixture-body-complete
+AK_WINDOW_PHASE fixture-constructed
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_P...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="meeting_receiver_sid_rebind_test" classname="meeting_receiver_sid_rebind_test" time="0.165763" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>AK_WINDOW_PHASE fixture-constructed
+RECEIVER_SID_REBIND reused-rtc-id/old-sink-retired/new-sink-frames/idempotent PASS
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_PHASE cleanup-listener-reset
+AK_WINDOW_PHASE cleanup-observer-reset
+AK_WINDOW_PHASE cleanup-runtime-reset
+AK_WINDOW_PHASE cleanup-room-reset
+AK_WINDOW_PHASE cleanup-fixture-body-complete
+</system-out>
+	</testcase>
+	<testcase name="meeting_moderation_contract_test" classname="meeting_moderation_contract_test" time="0.299288" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>AK_WINDOW_PHASE fixture-constructed
+AK_WINDOW_PHASE fixture-constructed
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_PHASE cleanup-listener-reset
+AK_WINDOW_PHASE cleanup-observer-reset
+AK_WINDOW_PHASE cleanup-runtime-reset
+AK_WINDOW_PHASE cleanup-room-reset
+AK_WINDOW_PHASE cleanup-fixture-body-complete
+AK_WINDOW_PHASE cleanup-disconnect-window-bindings
+AK_WINDOW_PHASE cleanup-window-reset
+AK_WINDOW_PHASE cleanup-remove-room-listeners
+AK_WINDOW_PHASE cleanup-pending-owner-work
+AK_WINDOW_PHASE cleanup-coordinator-reset
+AK_WINDOW_PHASE cleanup-event-values-clear
+AK_WINDOW_PHASE cleanup-room-disconnect
+AK_WINDOW_PHASE cleanup-native-drain
+AK_WINDOW_PHASE cleanup-qt-drain
+AK_WINDOW_P...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="meeting_startup_transaction_test" classname="meeting_startup_transaction_test" time="0.0130722" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;LOGGING_LG3"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="dx11_renderer_lifecycle_test" classname="dx11_renderer_lifecycle_test" time="0.0237277" status="run">
+		<properties/>
+		<system-out>[TestDx11RendererLifecycle] forced failure and repeated cleanup passed
+</system-out>
+	</testcase>
+	<testcase name="video_render_router_test" classname="video_render_router_test" time="0.0190897" status="run">
+		<properties/>
+		<system-out>[VideoRenderRouterTest] PASS
+</system-out>
+	</testcase>
+	<testcase name="qt_cpu_video_renderer_test" classname="qt_cpu_video_renderer_test" time="0.0238518" status="run">
+		<properties/>
+		<system-out>[QtCpuVideoRendererTest] PASS
+</system-out>
+	</testcase>
+	<testcase name="video_render_session_stress_test" classname="video_render_session_stress_test" time="0.0275541" status="run">
+		<properties/>
+		<system-out>[VideoRenderSessionStressTest] PASS: 18000 submitted, 15848 replaced, 2152 rendered
+</system-out>
+	</testcase>
+	<testcase name="debug_login_options_test" classname="debug_login_options_test" time="0.0216301" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;PR_SEC_004_FOCUSED"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="session_credentials_test" classname="session_credentials_test" time="9.1022" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;PR_SEC_002_FOCUSED"/>
+		</properties>
+		<system-out>SETTINGS MIGRATION PASS: first, repeat, new-value priority, write fallback, encrypted session
+MEETING SECURITY PREFERENCES PASS: split legacy migration, explicit-key priority, independent reload
+AUDIO PREFERENCES PASS: defaults, legacy ANS, independent 3A combinations, default speaker restore
+SCREEN SHARE PREFERENCES PASS: legacy values, appended 2160p, range normalization and reload
+PUBLIC AUTH PASS: login/logout state, signal-before-callback, exactly once, failures, request credentials
+PUBLIC INVALID DATA PASS: null, absent, array, scalar, parse error, server error, operation ID, auth preservation
+PUBLIC ORDERING PASS: replacement, late logout, cancellation, server change, signal reentry/destruction
+PUBLIC LOGOUT BOUNDARIES PASS: server/auth replacement, signal reentry/destruction, server result preservation
+CREDENTIAL LENGTH ENTRY POINTS PASS: boundaries, raw password, no request/auth mutation, pending login
+CREDENTIAL LENGTH UI PASS: login/register 4/5/12/13 accounts, 5/6/16/17 passwords, account trim
+STO...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="update_manifest_test" classname="update_manifest_test" time="0.0314988" status="run">
+		<properties>
+			<property name="cmake_labels" value="UPDATES_FOCUSED"/>
+		</properties>
+		<system-out>PASS: 161/161 update manifest checks
+</system-out>
+	</testcase>
+	<testcase name="update_service_test" classname="update_service_test" time="0.705783" status="run">
+		<properties>
+			<property name="cmake_labels" value="UPDATES_FOCUSED"/>
+		</properties>
+		<system-out>PASS: 136/136 update service checks
+</system-out>
+	</testcase>
+	<testcase name="settings_async_test" classname="settings_async_test" time="2.29478" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;SETTINGS_FOCUSED"/>
+		</properties>
+		<system-out>screen_share_menu physical=2560x1440 choices=5
+Settings async, theme choices, cache, cancellation, security scope/key lifetime, preferences and diagnostic persistence PASS
+</system-out>
+	</testcase>
+	<testcase name="meeting_catalog_test" classname="meeting_catalog_test" time="0.42928" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION"/>
+		</properties>
+		<system-out>MEETING TYPES PASS: repeat write boundary, wire values, nested schema, int64, PATCH presence
+MEETING HTTP PASS: typed paths, identity injection, request shape, cancellation, parse errors
+MEETING CATALOG PASS: stale/duplicate callbacks, snapshots, write serialization, account and lifetime guards
+MEETING LIST MODEL PASS: deduplication, ordering, grouping, search, creator history boundary
+MEETING CATALOG TESTS PASSED
+</system-out>
+	</testcase>
+	<testcase name="render_module_fallback_test" classname="render_module_fallback_test" time="0.326769" status="run">
+		<properties>
+			<property name="cmake_labels" value="CORE_REGRESSION;RENDER_MODULE_FOCUSED"/>
+		</properties>
+		<system-out>PRODUCTION_MODULE_FALLBACK PASS: explicit CPU, missing module, ABI rejection, initialization failure, CPU fallback, unload
+</system-out>
+	</testcase>
+</testsuite>

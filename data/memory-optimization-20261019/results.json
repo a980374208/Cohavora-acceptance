@@ -1,0 +1,513 @@
+{
+  "schema": "memory_optimization_offline_v1",
+  "created_utc": "2026-10-19T04:51:28.894248+00:00",
+  "scope": "OFFLINE_SYNTHETIC_NOT_FORMAL",
+  "product_head": "495d441a9274d0cdc1529a40ecf03b37279fb806",
+  "maintenance_head": "58abbbcef8402194f53e6688790b5371d8d7cf37",
+  "configuration": "RelWithDebInfo",
+  "export": [
+    {
+      "case": "plain",
+      "fixture_sha256": "d5edc0aff95e49f88ca62111d055b11d99e2b541e4874f8d2f34a94202a0880e",
+      "equivalence": {
+        "manifest.json": {
+          "bytes": 423,
+          "sha256": "0180335665ba803ff05a89973613fbc5fed2021b2891a8a84ab5341f6463de1e"
+        },
+        "metrics.csv": {
+          "bytes": 432231,
+          "sha256": "efec68fe725d2b556d617051ace004243bc2d41e653ae4aeb0f6818c4eac9381"
+        },
+        "metrics.jsonl": {
+          "bytes": 904134,
+          "sha256": "1c90b3cee9c6f3c588263eff645fe914c2a79a52cb082b66a45efcc982a84428"
+        },
+        "session.json": {
+          "bytes": 566,
+          "sha256": "71653d709b311b35dd0251a18f54b6f430f0b227f098afd0dd15c9aa35415a86"
+        }
+      },
+      "retained_charge": {
+        "anonymous_id_capacity_charge": 48,
+        "corrected_estimate": 13136,
+        "fixed_snapshot_bytes": 8320,
+        "meaning": "accounting only; may retain more live records at the unchanged 8MiB cap",
+        "original_estimate": 21408
+      },
+      "invalid_utf8": {
+        "baseline_json_error_id": 316,
+        "candidate_json_error_id": 316
+      },
+      "variants": {
+        "baseline": {
+          "elapsed_ms": {
+            "mean": 23.489216666666668,
+            "median": 23.25305,
+            "min": 23.0815,
+            "max": 24.1222,
+            "samples": 6
+          },
+          "allocation_calls": {
+            "mean": 293909,
+            "median": 293909.0,
+            "min": 293909,
+            "max": 293909,
+            "samples": 6
+          },
+          "cumulative_requested_bytes": {
+            "mean": 17086364.666666668,
+            "median": 17086362.0,
+            "min": 17086362,
+            "max": 17086378,
+            "samples": 6
+          },
+          "peak_live_requested_bytes": {
+            "mean": 191254,
+            "median": 191254.0,
+            "min": 191254,
+            "max": 191254,
+            "samples": 6
+          },
+          "output_bytes": 1337478
+        },
+        "candidate": {
+          "elapsed_ms": {
+            "mean": 10.6094,
+            "median": 10.6569,
+            "min": 10.0663,
+            "max": 10.9877,
+            "samples": 6
+          },
+          "allocation_calls": {
+            "mean": 35743,
+            "median": 35743.0,
+            "min": 35743,
+            "max": 35743,
+            "samples": 6
+          },
+          "cumulative_requested_bytes": {
+            "mean": 2122660.6666666665,
+            "median": 2122658.0,
+            "min": 2122658,
+            "max": 2122674,
+            "samples": 6
+          },
+          "peak_live_requested_bytes": {
+            "mean": 151630,
+            "median": 151630.0,
+            "min": 151630,
+            "max": 151630,
+            "samples": 6
+          },
+          "output_bytes": 1337478
+        }
+      },
+      "reduction_percent": {
+        "elapsed_ms": 54.83289140477936,
+        "allocation_calls": 87.83875281124429,
+        "cumulative_requested_bytes": 87.57687367630805,
+        "peak_live_requested_bytes": 20.717998054942644
+      }
+    },
+    {
+      "case": "fine",
+      "fixture_sha256": "d42cc06c967f8b176034ee85ef21150581dd2f27444e7710f252e9668e633429",
+      "equivalence": {
+        "manifest.json": {
+          "bytes": 423,
+          "sha256": "0180335665ba803ff05a89973613fbc5fed2021b2891a8a84ab5341f6463de1e"
+        },
+        "metrics.csv": {
+          "bytes": 1680607,
+          "sha256": "251d43af1694dab9fceb20e31a14515a3dfa8aa13eeac421f00fadf431d4b0eb"
+        },
+        "metrics.jsonl": {
+          "bytes": 3233590,
+          "sha256": "a7839e9efec55535c7da1364697feb0d50f110974b5195cdfad4f701c45f7035"
+        },
+        "session.json": {
+          "bytes": 566,
+          "sha256": "71653d709b311b35dd0251a18f54b6f430f0b227f098afd0dd15c9aa35415a86"
+        }
+      },
+      "retained_charge": {
+        "anonymous_id_capacity_charge": 48,
+        "corrected_estimate": 29152,
+        "fixed_snapshot_bytes": 8320,
+        "meaning": "accounting only; may retain more live records at the unchanged 8MiB cap",
+        "original_estimate": 37424
+      },
+      "invalid_utf8": {
+        "baseline_json_error_id": 316,
+        "candidate_json_error_id": 316
+      },
+      "variants": {
+        "baseline": {
+          "elapsed_ms": {
+            "mean": 80.13688333333333,
+            "median": 80.3636,
+            "min": 78.1587,
+            "max": 81.6768,
+            "samples": 6
+          },
+          "allocation_calls": {
+            "mean": 1030669,
+            "median": 1030669.0,
+            "min": 1030669,
+            "max": 1030669,
+            "samples": 6
+          },
+          "cumulative_requested_bytes": {
+            "mean": 62375188.666666664,
+            "median": 62375186.0,
+            "min": 62375186,
+            "max": 62375202,
+            "samples": 6
+          },
+          "peak_live_requested_bytes": {
+            "mean": 668552.6666666666,
+            "median": 668550.0,
+            "min": 668550,
+            "max": 668566,
+            "samples": 6
+          },
+          "output_bytes": 4915310
+        },
+        "candidate": {
+          "elapsed_ms": {
+            "mean": 34.56355,
+            "median": 34.6581,
+            "min": 32.5239,
+            "max": 36.1414,
+            "samples": 6
+          },
+          "allocation_calls": {
+            "mean": 163871,
+            "median": 163871.0,
+            "min": 163871,
+            "max": 163871,
+            "samples": 6
+          },
+          "cumulative_requested_bytes": {
+            "mean": 8849364.666666666,
+            "median": 8849362.0,
+            "min": 8849362,
+            "max": 8849378,
+            "samples": 6
+          },
+          "peak_live_requested_bytes": {
+            "mean": 479944.6666666667,
+            "median": 479942.0,
+            "min": 479942,
+            "max": 479958,
+            "samples": 6
+          },
+          "output_bytes": 4915310
+        }
+      },
+      "reduction_percent": {
+        "elapsed_ms": 56.869360820745676,
+        "allocation_calls": 84.10052111783706,
+        "cumulative_requested_bytes": 85.81268472956816,
+        "peak_live_requested_bytes": 28.211389977752933
+      }
+    },
+    {
+      "case": "escaping",
+      "fixture_sha256": "163acc8a1760ed64e62882f6a1bfbd86b1f866902bcd939086bef7f53569f336",
+      "equivalence": {
+        "manifest.json": {
+          "bytes": 423,
+          "sha256": "0180335665ba803ff05a89973613fbc5fed2021b2891a8a84ab5341f6463de1e"
+        },
+        "metrics.csv": {
+          "bytes": 442023,
+          "sha256": "d583ebcf3f9688a3dc9b484d7833efd2d66f4407f0ecf7c181d1ab102fb3c446"
+        },
+        "metrics.jsonl": {
+          "bytes": 913922,
+          "sha256": "3a3f373574291ccbcb2a295da024056bcf69cdc5cf62f76cbc92079dec602199"
+        },
+        "session.json": {
+          "bytes": 570,
+          "sha256": "3b85ec0d4210ea0bfb32fd9ded44bc7bf4c2d3e5d6591ed51341c3af5b526b66"
+        }
+      },
+      "retained_charge": {
+        "anonymous_id_capacity_charge": 48,
+        "corrected_estimate": 13376,
+        "fixed_snapshot_bytes": 8320,
+        "meaning": "accounting only; may retain more live records at the unchanged 8MiB cap",
+        "original_estimate": 21648
+      },
+      "invalid_utf8": {
+        "baseline_json_error_id": 316,
+        "candidate_json_error_id": 316
+      },
+      "variants": {
+        "baseline": {
+          "elapsed_ms": {
+            "mean": 24.153116666666666,
+            "median": 24.16415,
+            "min": 23.3966,
+            "max": 24.7742,
+            "samples": 6
+          },
+          "allocation_calls": {
+            "mean": 295711,
+            "median": 295711.0,
+            "min": 295711,
+            "max": 295711,
+            "samples": 6
+          },
+          "cumulative_requested_bytes": {
+            "mean": 17229164.666666668,
+            "median": 17229162.0,
+            "min": 17229162,
+            "max": 17229178,
+            "samples": 6
+          },
+          "peak_live_requested_bytes": {
+            "mean": 193686,
+            "median": 193686.0,
+            "min": 193686,
+            "max": 193686,
+            "samples": 6
+          },
+          "output_bytes": 1357062
+        },
+        "candidate": {
+          "elapsed_ms": {
+            "mean": 10.49645,
+            "median": 10.46855,
+            "min": 9.9884,
+            "max": 11.0478,
+            "samples": 6
+          },
+          "allocation_calls": {
+            "mean": 38305,
+            "median": 38305.0,
+            "min": 38305,
+            "max": 38305,
+            "samples": 6
+          },
+          "cumulative_requested_bytes": {
+            "mean": 2361124.6666666665,
+            "median": 2361122.0,
+            "min": 2361122,
+            "max": 2361138,
+            "samples": 6
+          },
+          "peak_live_requested_bytes": {
+            "mean": 154126,
+            "median": 154126.0,
+            "min": 154126,
+            "max": 154126,
+            "samples": 6
+          },
+          "output_bytes": 1357062
+        }
+      },
+      "reduction_percent": {
+        "elapsed_ms": 56.54204736862807,
+        "allocation_calls": 87.04647442942603,
+        "cumulative_requested_bytes": 86.29576817943621,
+        "peak_live_requested_bytes": 20.424811292504362
+      }
+    }
+  ],
+  "baseline": {
+    "source": "E:\\vsSource\\WebRTC\\live-kit-test\\src\\telemetry\\telemetry_report.cpp",
+    "source_sha256": "26eb8377312fe055b2913f67a621a6d5e4b13815f276eecc18f7b87e94642a35",
+    "snapshot": "telemetry_report.cpp.snapshot",
+    "generated_sha256": "a7f7c15c0d86912660ab0c763f056946c12ee712138331c1e71a512e912ef491",
+    "boundary": "struct TelemetryHistoryStore::WorkerContext final {",
+    "scope": "Original helpers, metric rows, checkpoint and complete atomic export; excludes worker/store",
+    "generation_newline": "explicit LF bytes; raw source snapshot unchanged",
+    "first_generated_evidence": "baseline_export.first-generated.cpp.snapshot"
+  },
+  "console": {
+    "baseline": {
+      "rows": 1200,
+      "cache_charge_bytes": 1973160,
+      "hidden_document_changes": 1200,
+      "hidden_elapsed_us": 109102,
+      "output_equal": true
+    },
+    "candidate": {
+      "rows": 1200,
+      "cache_charge_bytes": 679200,
+      "hidden_document_changes": 0,
+      "hidden_elapsed_us": 566,
+      "output_equal": true
+    },
+    "cache_charge_reduction_percent": 65.57805753208052
+  },
+  "gates": [
+    {
+      "name": "prepared_bootstrap",
+      "result": "PASS",
+      "tests": 28,
+      "seconds": 2.007,
+      "evidence": "Agent actual tool output; no separately archived stdout; final inputs unchanged"
+    },
+    {
+      "name": "single_attempt_full_initial",
+      "result": "PASS",
+      "tests": 10,
+      "seconds": 53.712,
+      "evidence": "Agent actual tool output; later added scenarios tested incrementally; final aggregate not rerun"
+    },
+    {
+      "name": "single_attempt_direct_incremental",
+      "result": "PASS",
+      "tests": 3,
+      "seconds": 4.733,
+      "evidence": "Agent actual tool output"
+    },
+    {
+      "name": "single_attempt_python_compatibility",
+      "result": "PASS",
+      "evidence": "Incremental real -I run config, helper admission, missing file_digest and known_hosts drift paths; Python 3.10/complete embedded distribution NOT_RUN"
+    },
+    {
+      "name": "telemetry_report_test",
+      "result": "PASS",
+      "tests": 1,
+      "seconds": 35.17,
+      "evidence": "Actual tool output; reused unchanged inputs"
+    },
+    {
+      "name": "final_qt_panel_throughput",
+      "result": "PASS",
+      "tests": 4,
+      "seconds": 51.88,
+      "evidence": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\memory-optimization-final-gate-20261019.txt"
+    },
+    {
+      "name": "release_manifest_missing_input_and_escape",
+      "result": "PASS",
+      "evidence": "Actual tool output"
+    },
+    {
+      "name": "release_manifest_real_create_verify_and_drift",
+      "result": "PASS",
+      "seconds": 6.931,
+      "evidence": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\memory-optimization-release-manifest-workspace-20261019.txt"
+    }
+  ],
+  "inputs": {
+    "product": {
+      "src/telemetry/telemetry_report.cpp": "72e4226311938403fae794e2f4ca9749af3282cd73cd4908ea030251bb7a2776",
+      "src/ui/meeting_log_console.cpp": "0107e9333930436449e2f8e99edd3b144e86581e2d7dc7c8c2879be0d7a4979f",
+      "src/ui/meeting_log_console.h": "6a24a9224c573b0a9a9aad56c6a8f5c7653fb2491c07fbbe9a4698401eaf1da5",
+      "src/ui/telemetry_panel_controller.cpp": "d506afe63c52f8c1d4e6a7843ba3e9edc1c46d5f76f8b1540361bc7c73fa0f14",
+      "src/ui/telemetry_panel_model.cpp": "c31acbf66437c9a48141f47bf1eaf3eff3331ae48f07c78b082a140626453d68",
+      "src/ui/telemetry_panel_model.h": "a6c0475cc57c1e95791c9472bb9e38bb06dc671fc1fa6efd78f54b081d26cd75"
+    },
+    "maintenance": {
+      "tests/README.md": "b3068a40ad211f822968d578ba145b99f55e0dd2c9161a8928334ce310807fe5",
+      "tests/cmake/NativeTests.cmake": "f602913fbe6e4183405a2dd3c6730ffc043d6dda3a789539fb529fad4b16f1b9",
+      "tests/runtime/tools/diagnostics/heap_phase/README.md": "89f746070bf9cbbfb67e6e4dadd3752acb5bc12007c1f73a29f5fa5311408d73",
+      "tests/runtime/tools/diagnostics/heap_phase/release_inputs.json": "6f950b45f8d751d82b48d390be603171f513f54cc662656e28a7ef125366b3b4",
+      "tests/runtime/tools/product_acceptance/new_product_prepared.py": "0107475a83c84201992e03bd1ae5548cbf97ce6470dc46b73b888231331ea9a6",
+      "tests/runtime/tools/product_acceptance/product_run_config.py": "03e62cca64ea888859f278745450989a5fb79cb6697306896eafd3e2d8e99a41",
+      "tests/runtime/tools/product_acceptance/product_remote_transport.py": "6393a010135ad381c8d78768344365af3ef0597d8e319e15b3cb735a1962e618",
+      "tests/runtime/tools/product_acceptance/invoke_product_single_attempt.ps1": "ee21906753479507a7105dfa0e652bc071ddac770e2ad8dcccae96e5e53136f9",
+      "tests/runtime/tools/product_acceptance/product_single_attempt.py": "479fac144ca55e78b7718e0c52e2f904fccd5fa699dae3cbdb5ccdc55ad66b18",
+      "tests/runtime/tools/product_acceptance/product_single_attempt_local.ps1": "b84e6d41d4c128db5060ecca4360295640b94b35c1d5721642b3ebf689c2ab5f",
+      "tests/runtime/selftests/test_product_prepared_bootstrap.py": "db8123136d27bef8b8c465bba45dabeea013ac75e4ba72e51e67534d34299b08",
+      "tests/runtime/selftests/test_product_run_config.py": "58ad8b397de27403ce02e88e0bba38a26fc41fc44ec9fbd996bdcc651ad29c8c",
+      "tests/runtime/selftests/test_product_single_attempt.py": "808d8c30ed0f91d1f0ed290540f4c07ed6eea81042702ea7dff6387da76fba2b",
+      "tests/telemetry/freeze_export_baseline.py": "cfcc26f9600add63ff92debd5f931215ce39b3ae09a772ad7ef319b6c027b3f8",
+      "tests/telemetry/telemetry_export_allocations.h": "4f2fc3b20e42842aa9663d008ccd38b1d661ea8eedd6c2eb8eca8afda964c6f5",
+      "tests/telemetry/telemetry_export_baseline.h": "3b501a271eb5cce9dc33cf05ac460aae166f5252c4aa20f7c84edd0a67323525",
+      "tests/telemetry/test_telemetry_export_cost.cpp": "7db07db08843a1b58a01f946199aad08fca9a4e12b6811fd89606307183a0912",
+      "tests/telemetry/test_telemetry_panel.cpp": "67a75f3c3f2c125811ae94038c978ea3a8f201969caf9c337a3f3fe0edba7bf9",
+      "tests/telemetry/test_diagnostic_qt_bridge.cpp": "55618bf052cee97ef68c19bfdde30acff0a59934a5bc7e0b5c9ddd0b9590d03e",
+      "tests/security/test_qt_log_redaction.cpp": "74f73c17fcea094c98d8f4740e3021d6ff23e69a7f2b3126d6508bff66b09593"
+    }
+  },
+  "unrelated_product_inputs": [
+    {
+      "path": ".gitignore",
+      "sha256": "a6b4a174ba92a27f02a00f6c16ee5332e0689b69fd08a368765343244d69f57d",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/pilot_diagnostics_probe.h",
+      "sha256": "d9562caf7a9da1bc40305134d86b33648eb741009d6ec49f3acace1c466bd724",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/meeting_coordinator.cpp",
+      "sha256": "edf401982499a8c995d80e0390f46bdf1c8bc6e1e50fbca54206e76fa093ba7f",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/room.cpp",
+      "sha256": "2e813f8a568a11db4ec7357c58c48bd789dc53e89ba531660cb5f69ebe86942c",
+      "unchanged": true
+    },
+    {
+      "path": "src/media/camera_source_manager.cpp",
+      "sha256": "713fdc6ac7175a44e2a81fce91d24757e2ec9b0f5529cd701f8a23a56d228bb9",
+      "unchanged": true
+    },
+    {
+      "path": "src/media/camera_source_manager.h",
+      "sha256": "047ba73587dd5b41eb031a598da57fb5b36949d04eab92d056c87be5c4b305cd",
+      "unchanged": true
+    },
+    {
+      "path": "src/telemetry/session_telemetry.cpp",
+      "sha256": "8558a04468819bd699b5faacfdc4133a265bda451a627ee5cd554249f2c602d3",
+      "unchanged": true
+    },
+    {
+      "path": "src/telemetry/session_telemetry.h",
+      "sha256": "4501faa9ad3157c6ca4d5181713b2e842d34552a6f85bc927de05952f680d86d",
+      "unchanged": true
+    },
+    {
+      "path": "src/ui/meeting_room_window.cpp",
+      "sha256": "36de3624d447890a8f04a1b0e65d1f5abc7004d98bdb8f04fd70686f4a44e87d",
+      "unchanged": true
+    },
+    {
+      "path": "src/ui/translations/cohavora_zh_CN.ts",
+      "sha256": "60e8b9de7af23f1a5003e9dc4daac77313425e7a1fa8b13011ded2a89c503f4b",
+      "unchanged": true
+    }
+  ],
+  "not_run": [
+    "product executable launch",
+    "UIA",
+    "ETW",
+    "remote load",
+    "registration",
+    "meeting creation",
+    "symbol download",
+    "full CTest",
+    "long stability",
+    "real Windows ACL/DPAPI",
+    "Python 3.10/full embedded distribution"
+  ],
+  "limitations": [
+    "C++ new request bytes exclude malloc, allocator overhead, fragmentation and OS pages; not product Private Bytes",
+    "JSON/CSV/reserve changes measured together, no per-change attribution",
+    "Retained charge corrects duplicated fixed Snapshot accounting; unchanged cap may retain more records; SSO capacities remain conservative",
+    "CurrentRecords already copies shared_ptr; external owners UNKNOWN; snapshot deep-copy/revision redesign deferred",
+    "Original B14 100.412109375 MiB remains unexplained; no leak-freedom claim",
+    "Positive desktop/resource, ETW, remote and meeting admission use frozen fake boundaries in offline wrapper tests"
+  ],
+  "incidents": [
+    "First plain-cost stdout redirection parent did not yet exist; complete measurement.json passed fixture validation and was reused, no duplicate measurement",
+    "Direct console offscreen attempt interrupted; this static Qt test imports Windows integration, native default then passed; no product run",
+    "Release manifest first sandbox temp read failed; automatic approval service unavailable twice, no command executed there; same failing case passed using new workspace TEMP/TMP without ACL changes; original failure log retained"
+  ],
+  "equivalence_digest_semantics": {
+    "manifest.json": "Parsed JSON; created_utc_ms removed; compact dump; bytes and SHA256 describe normalized content, not original file bytes",
+    "session.json/metrics.jsonl/metrics.csv": "Raw bytes compared and hashed"
+  }
+}

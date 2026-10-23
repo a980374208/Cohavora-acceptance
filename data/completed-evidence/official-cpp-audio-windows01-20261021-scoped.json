@@ -1,0 +1,288 @@
+{
+  "created_utc": "2026-10-21T13:12:49.642005+00:00",
+  "status": "PASS_SCOPED",
+  "cases": [
+    {
+      "mode": "off",
+      "run_id": "cpp-audio-c6ff93507d204b8c987c140f490b0f56",
+      "status": "PASS_SCOPED",
+      "started_utc": "2026-10-21T13:09:00.245946+00:00",
+      "finished_utc": "2026-10-21T13:10:03.096758+00:00",
+      "measurement_elapsed_ms": 60007,
+      "content": {
+        "native": {
+          "samples": 2880960,
+          "windows": 600,
+          "tone_windows": 599,
+          "silent_windows": 0,
+          "other_windows": 1,
+          "invalid_frames": 0
+        },
+        "official": {
+          "samples": 2889120,
+          "windows": 601,
+          "tone_windows": 600,
+          "silent_windows": 0,
+          "other_windows": 1,
+          "invalid_frames": 0,
+          "relayed_samples": 2889120
+        }
+      },
+      "conservative_inside_window_bounds": {
+        "native": {
+          "tone_window_lower_bound": 569,
+          "first_snapshot_ms": 1792588143906,
+          "last_snapshot_ms": 1792588200980,
+          "method": "same-host system-clock correlation; counter delta minus one boundary window"
+        },
+        "official": {
+          "tone_window_lower_bound": 579,
+          "first_snapshot_ms": 1792588144026,
+          "last_snapshot_ms": 1792588202020,
+          "method": "same-host system-clock correlation; counter delta minus one boundary window"
+        }
+      },
+      "native_audio_crypto_output": {},
+      "exit_codes": [
+        0,
+        0
+      ],
+      "forced_processes": 0,
+      "cleanup_complete": true,
+      "window_sequence_diagnostic": {
+        "native": {
+          "status": "COMPLETE_SEQUENCE_OBSERVED",
+          "acceptance_credit": 0,
+          "audio_continuity": "NOT_EVALUATED",
+          "total_windows": 600,
+          "recorded_windows": 600,
+          "omitted_windows": 0,
+          "partial_samples": 960,
+          "invalid_frames": 0,
+          "retained_class_counts": {
+            "tone": 599,
+            "silent": 0,
+            "other": 1
+          },
+          "spans": [
+            {
+              "classification": "other",
+              "first_sequence": 0,
+              "end_sequence_exclusive": 1
+            },
+            {
+              "classification": "tone",
+              "first_sequence": 1,
+              "end_sequence_exclusive": 600
+            }
+          ],
+          "maximum_callback_gap_ns": 10670300,
+          "maximum_complete_window_callback_gap_ns": 10670300,
+          "trailing_callback_to_observation_ns": 105945300,
+          "clock_scope": "Process-local callback arrival times; no cross-process subtraction, no fabricated missing PCM."
+        },
+        "official": {
+          "status": "COMPLETE_SEQUENCE_OBSERVED",
+          "acceptance_credit": 0,
+          "audio_continuity": "NOT_EVALUATED",
+          "total_windows": 601,
+          "recorded_windows": 601,
+          "omitted_windows": 0,
+          "partial_samples": 4320,
+          "invalid_frames": 0,
+          "retained_class_counts": {
+            "tone": 600,
+            "silent": 0,
+            "other": 1
+          },
+          "spans": [
+            {
+              "classification": "other",
+              "first_sequence": 0,
+              "end_sequence_exclusive": 1
+            },
+            {
+              "classification": "tone",
+              "first_sequence": 1,
+              "end_sequence_exclusive": 601
+            }
+          ],
+          "maximum_callback_gap_ns": 43306200,
+          "maximum_complete_window_callback_gap_ns": 43306200,
+          "trailing_callback_to_observation_ns": 14862800,
+          "clock_scope": "Process-local callback arrival times; no cross-process subtraction, no fabricated missing PCM."
+        }
+      },
+      "loaded_module_binding": "MATCHED_ORIGINAL_PATH_AND_SHA256"
+    },
+    {
+      "mode": "on",
+      "run_id": "cpp-audio-6ffc5bfd367545c495190bac95187590",
+      "status": "PASS_SCOPED",
+      "started_utc": "2026-10-21T13:10:03.098262+00:00",
+      "finished_utc": "2026-10-21T13:11:05.685746+00:00",
+      "measurement_elapsed_ms": 60007,
+      "content": {
+        "native": {
+          "samples": 2880960,
+          "windows": 600,
+          "tone_windows": 599,
+          "silent_windows": 0,
+          "other_windows": 1,
+          "invalid_frames": 0
+        },
+        "official": {
+          "samples": 2891520,
+          "windows": 602,
+          "tone_windows": 601,
+          "silent_windows": 0,
+          "other_windows": 1,
+          "invalid_frames": 0,
+          "relayed_samples": 2891520
+        }
+      },
+      "conservative_inside_window_bounds": {
+        "native": {
+          "tone_window_lower_bound": 571,
+          "first_snapshot_ms": 1792588206536,
+          "last_snapshot_ms": 1792588263740,
+          "method": "same-host system-clock correlation; counter delta minus one boundary window"
+        },
+        "official": {
+          "tone_window_lower_bound": 579,
+          "first_snapshot_ms": 1792588206663,
+          "last_snapshot_ms": 1792588264658,
+          "method": "same-host system-clock correlation; counter delta minus one boundary window"
+        }
+      },
+      "native_audio_crypto_output": {
+        "rx": 2950,
+        "tx": 2800
+      },
+      "exit_codes": [
+        0,
+        0
+      ],
+      "forced_processes": 0,
+      "cleanup_complete": true,
+      "window_sequence_diagnostic": {
+        "native": {
+          "status": "COMPLETE_SEQUENCE_OBSERVED",
+          "acceptance_credit": 0,
+          "audio_continuity": "NOT_EVALUATED",
+          "total_windows": 600,
+          "recorded_windows": 600,
+          "omitted_windows": 0,
+          "partial_samples": 960,
+          "invalid_frames": 0,
+          "retained_class_counts": {
+            "tone": 599,
+            "silent": 0,
+            "other": 1
+          },
+          "spans": [
+            {
+              "classification": "other",
+              "first_sequence": 0,
+              "end_sequence_exclusive": 1
+            },
+            {
+              "classification": "tone",
+              "first_sequence": 1,
+              "end_sequence_exclusive": 600
+            }
+          ],
+          "maximum_callback_gap_ns": 10673500,
+          "maximum_complete_window_callback_gap_ns": 10673500,
+          "trailing_callback_to_observation_ns": 108757400,
+          "clock_scope": "Process-local callback arrival times; no cross-process subtraction, no fabricated missing PCM."
+        },
+        "official": {
+          "status": "COMPLETE_SEQUENCE_OBSERVED",
+          "acceptance_credit": 0,
+          "audio_continuity": "NOT_EVALUATED",
+          "total_windows": 602,
+          "recorded_windows": 602,
+          "omitted_windows": 0,
+          "partial_samples": 1920,
+          "invalid_frames": 0,
+          "retained_class_counts": {
+            "tone": 601,
+            "silent": 0,
+            "other": 1
+          },
+          "spans": [
+            {
+              "classification": "other",
+              "first_sequence": 0,
+              "end_sequence_exclusive": 1
+            },
+            {
+              "classification": "tone",
+              "first_sequence": 1,
+              "end_sequence_exclusive": 602
+            }
+          ],
+          "maximum_callback_gap_ns": 31584900,
+          "maximum_complete_window_callback_gap_ns": 31584900,
+          "trailing_callback_to_observation_ns": 633900,
+          "clock_scope": "Process-local callback arrival times; no cross-process subtraction, no fabricated missing PCM."
+        }
+      },
+      "loaded_module_binding": "MATCHED_ORIGINAL_PATH_AND_SHA256"
+    }
+  ],
+  "bound_input_files": 97,
+  "full_plan_gate_credit": 0,
+  "plan_groups": [
+    "P05",
+    "P06"
+  ],
+  "audio_continuity": "NOT_EVALUATED",
+  "acoustic_latency": "NOT_RUN",
+  "sdk_in_process_retirement": "NOT_VERIFIED",
+  "scope": "Frozen 60-second returned-audio content-presence subgate; all silent/other windows preserved.",
+  "caveats": [
+    "Official forward counter includes startup/tail; interior cumulative counter bounds independently exceed 500.",
+    "Interior correlation uses the same Windows host system clock; it is not physical or cross-host timing.",
+    "Current per-window diagnostic cannot explain or reclassify the historical audio04 30 other-content windows; no continuity, subjective quality, or full E2EE credit."
+  ],
+  "schema": "cohavora-official-audio-content-safe-projection-v1",
+  "completed_date": "2026-10-21",
+  "full_p05_credit": 0,
+  "full_p06_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "definition": {
+    "name": "tone440-pcm48k-mono-v1",
+    "sample_rate": 48000,
+    "channels": 1,
+    "window_samples": 4800,
+    "minimum_rms": 100,
+    "minimum_tone_energy_fraction": 0.85,
+    "returned_observation_seconds": 60,
+    "minimum_tone_windows_each_direction": 500,
+    "all_windows_retained": true,
+    "invalid_frames_required": 0
+  },
+  "fixture": "Native explicit bindings + unmodified fixed official C++ SDK; two processes on one Windows host",
+  "preparation_failures_preserved": [
+    "content01: DLL loader exit 0xC0000135; missing module UNKNOWN",
+    "content02: relative child evidence path; exit2; Native not started",
+    "content03: SDK not initialized before AudioSource; exit2; Native not started"
+  ],
+  "sdk_or_product_source_changed": false,
+  "not_covered": [
+    "Complete P05/P06 or product E2EE",
+    "Audio continuity, subjective quality, physical mouth-to-ear delay",
+    "Cross-host/platform and long stability",
+    "SDK in-process callback retirement, key rotation or reconnect in this audio subgate"
+  ],
+  "observer_source_changed": true,
+  "window_sequence_scope": "Additional bounded diagnostic only; all first, silent, other, partial and omitted windows retained. No continuity verdict.",
+  "previous_same_scope_result": {
+    "path": "data/completed-evidence/official-cpp-audio-content04-20261021-scoped.json",
+    "sha256": "662b7db66bf516ce264f793557af7e10655fb5023026e632f293688eec3ac597",
+    "retention": "Historical supporting audit evidence only; no duplicate result in the current plan projection."
+  }
+}

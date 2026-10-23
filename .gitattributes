@@ -1,0 +1,2 @@
+# Preserve frozen report and evidence bytes so Git keeps recorded hashes valid.
+* -text

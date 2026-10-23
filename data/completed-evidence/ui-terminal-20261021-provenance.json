@@ -1,0 +1,183 @@
+{
+  "schema": "cohavora-ui-terminal-safe-provenance-v1",
+  "status": "SCOPED_TERMINAL_RESULTS",
+  "terminal_finished_utc": "2026-10-21T05:37:05.9993577Z",
+  "source_references": {
+    "theme_summary": {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021\\ui-timing-theme-unblocked09\\summary.json",
+      "sha256": "c2f40dc485f1f41ad2274dc1b402673907482687db680347f9a88971cde43f82",
+      "byte_count": 1292,
+      "preservation": "HASH_REFERENCE_ONLY_NO_ORIGINAL_COPY"
+    },
+    "theme_uia": {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021\\ui-timing-theme-unblocked09\\uia\\uia-result.json",
+      "sha256": "25b6bc0454b2272a756c56c5ead4682ed46979094bbaf67cb8b04a7e0da5113b",
+      "byte_count": 1843,
+      "preservation": "HASH_REFERENCE_ONLY_NO_ORIGINAL_COPY"
+    },
+    "theme_modes": {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021\\ui-timing-theme-unblocked09\\uia\\theme-result.json",
+      "sha256": "547a933cbd473ed3b6bbf3c15ed14f4d15241e374723e2b9a090c054cdf04a9d",
+      "byte_count": 2502,
+      "preservation": "HASH_REFERENCE_ONLY_NO_ORIGINAL_COPY"
+    },
+    "theme_timing": {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021\\ui-timing-theme-unblocked09\\ui-timing-review.json",
+      "sha256": "09a9018d6233278dce76ae939e1ee60307dc9fdab53ddef35798c8275192ef9b",
+      "byte_count": 63125,
+      "preservation": "HASH_REFERENCE_ONLY_NO_ORIGINAL_COPY"
+    },
+    "theme_desktop": {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021\\ui-timing-theme-unblocked09\\uia\\desktop-observations.jsonl",
+      "sha256": "19e5da35561bb15fb693f8e4ef672c43a0faaf24612b9cd255f1c21776076106",
+      "byte_count": 67822,
+      "preservation": "HASH_REFERENCE_ONLY_NO_ORIGINAL_COPY"
+    },
+    "theme_identity": {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021\\ui-timing-theme-unblocked09\\uia\\product-identity.json",
+      "sha256": "56106f7a5d57132b58c4893d82aad457f57feedbcc05aefa056ca57e5ea770e6",
+      "byte_count": 259,
+      "preservation": "HASH_REFERENCE_ONLY_NO_ORIGINAL_COPY"
+    },
+    "smoke_summary": {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021\\ui-smoke-export-unblocked04\\summary.json",
+      "sha256": "3035dc1d13029c76cd89c06fc38fff4226934012bbcb5a258203a84096e24a86",
+      "byte_count": 726,
+      "preservation": "HASH_REFERENCE_ONLY_NO_ORIGINAL_COPY"
+    },
+    "smoke_uia": {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021\\ui-smoke-export-unblocked04\\uia\\uia-result.json",
+      "sha256": "c13843c15f4eebdd6ef8213db4e0d908fc9df0f9004326611b520fdfb5409b80",
+      "byte_count": 1922,
+      "preservation": "HASH_REFERENCE_ONLY_NO_ORIGINAL_COPY"
+    },
+    "smoke_desktop": {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021\\ui-smoke-export-unblocked04\\uia\\desktop-observations.jsonl",
+      "sha256": "0d8e9b41b2cfb849a8a853c0974c4a06d8957169e2cb2944b81d79bf27aec330",
+      "byte_count": 5953,
+      "preservation": "HASH_REFERENCE_ONLY_NO_ORIGINAL_COPY"
+    },
+    "smoke_identity": {
+      "path": "C:\\Users\\Jiangbinbin\\AppData\\Local\\Temp\\lk-ui-20261021\\ui-smoke-export-unblocked04\\uia\\product-identity.json",
+      "sha256": "6a6c40d9cea64ed74d19baade30e0fc3a5ae4e9deaaec5d876547ed11602f077",
+      "byte_count": 259,
+      "preservation": "HASH_REFERENCE_ONLY_NO_ORIGINAL_COPY"
+    }
+  },
+  "scope_assignment": {
+    "P03": [
+      "typed_timing_observation",
+      "smoke_export_failure"
+    ],
+    "P21": [
+      "theme_settings_scoped"
+    ]
+  },
+  "no_duplicate_test_item": true,
+  "full_p03_credit": 0,
+  "full_p21_credit": 0,
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "qualification_credit": 0,
+  "p20_credit": 0,
+  "input_source": "UNKNOWN",
+  "safe_projection_basis": "Explicit field allowlists; originals only referenced by SHA/size. No profile, credentials, logs, raw_records or exception stack copied.",
+  "plan_update": {
+    "path": "data/test-plan.json",
+    "before_sha256": "38d2d689e75f4071a2bceb176294aeb0cf5f03fd43156348c677d557aad4cbc8",
+    "after_sha256": "a0bac742ff85070bbfcdab9ea40404695465ba1ae17de3309f0ec1f1a44cf1ad",
+    "boundaries": [
+      {
+        "group": "P03",
+        "json_pointer": "/groups/2/boundaries/5",
+        "before": "本批resource-completion-20261021-01桌面子门：ui-timing-theme=FAIL, ui-smoke-export=FAIL；原历史FAIL、原gates/conditions与完整信用0保留；M0不等于产品overlay/目视，单机多进程不等于物理多端。",
+        "after": "本批resource-completion-20261021-01桌面子门：ui-timing-theme=PASS_SCOPED, ui-smoke-export=FAIL；最新完成ui-timing-theme-unblocked09（2026-10-21）三轮typed UI耗时仅OBSERVATION_ONLY、release_gate_issued=false，不新增性能门限；theme设置限定结果只归P21既有主题边界，不重复计项。ui-smoke-export-unblocked04终态FAIL、0/3轮，DEDICATED_DESKTOP_INPUT_ACTIVITY；GetLastInputInfo仅证实session输入时间变化，输入来源UNKNOWN，未证明用户操作或产品SendInput执行；导出内容回读NOT_RUN。来源data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json与data/completed-evidence/ui-smoke-export-unblocked04-20261021-failure.json，追溯data/completed-evidence/ui-terminal-20261021-provenance.json；旧历史FAIL保留于reports/product/resource-completion-20261021-01.html；原gates/conditions/门限、完整P03/full-plan/Formal/P20信用0保留，媒体连续性及完整外观矩阵未覆盖。"
+      },
+      {
+        "group": "P21",
+        "json_pointer": "/groups/20/boundaries/2",
+        "before": "主题四模式、重启恢复、无效配置及自有HWND系统通知跟随工程回归PASS，见reports/product/theme-settings-20261016.html；人工修改Windows应用明暗偏好与真实会中切换连续性为NOT_RUN，不继承历史设置或界面门的PASS。",
+        "after": "主题四模式、重启恢复、无效配置及自有HWND系统通知跟随工程回归PASS，见reports/product/theme-settings-20261016.html（独立工程范围保留）；最新完成ui-timing-theme-unblocked09（2026-10-21）主题设置限定子门PASS_SCOPED：浅色／深色／青绿／系统四模式settings像素、即时生效、持久化、同进程重开设置及自有HWND通知成立；Windows偏好未改变，系统明暗往返、产品进程重启恢复、真实会中媒体连续性及完整stage外观矩阵NOT_RUN。来源data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json，追溯data/completed-evidence/ui-terminal-20261021-provenance.json；主题仅在本既有边界计项，不复制为P03通过；不授予更新清单、异步设置或完整P21通过，原gates/conditions/门限与完整P21/full-plan/Formal/P20信用0保留。"
+      }
+    ],
+    "only_two_existing_boundaries_changed": true,
+    "preserved_original_ids": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T006",
+      "T007",
+      "T008",
+      "T009",
+      "T010",
+      "T011",
+      "T012",
+      "T013",
+      "T014",
+      "T015",
+      "T016",
+      "T017",
+      "T018",
+      "T019",
+      "T020",
+      "T021",
+      "T022",
+      "T023",
+      "T024",
+      "T025",
+      "T026",
+      "T027",
+      "T028",
+      "T029",
+      "T030",
+      "T031",
+      "T032",
+      "T033",
+      "T034",
+      "T035",
+      "T036",
+      "T037",
+      "T038",
+      "T039",
+      "T040",
+      "T041",
+      "T042",
+      "T043",
+      "T044",
+      "T045",
+      "T046",
+      "T047",
+      "T048",
+      "T049",
+      "T050",
+      "T051",
+      "T052"
+    ]
+  },
+  "immutable_previous_report": {
+    "path": "reports/product/resource-completion-20261021-01.html",
+    "sha256": "542338921141b188eb556d079b50fe4040fb543caddaeb7d1ce93814ae1446a4"
+  },
+  "guarded_files": {
+    "data/test-plan.json": "38d2d689e75f4071a2bceb176294aeb0cf5f03fd43156348c677d557aad4cbc8",
+    "data/report-migrations.json": "380844628d9ffde42c5b5ecd07e1463430d88b4d89d3519175b4ce39c5f7709d",
+    "reports/product/resource-completion-20261021-01.json": "911481e87f743f08b478a6dcb541338d762afae76cb26c8a4ddbc679bd452a48",
+    "reports/product/resource-completion-20261021-01.html": "542338921141b188eb556d079b50fe4040fb543caddaeb7d1ce93814ae1446a4"
+  },
+  "helper_sha256": "341ff8a32d48861a2ffb4ac42e1ffc61e3d6e08af0a6907d269bc552492646c3",
+  "not_covered": [
+    "complete P03",
+    "complete P21",
+    "full plan",
+    "Formal/P20",
+    "export content/readback",
+    "physical/injected input origin",
+    "media continuity",
+    "system light/dark roundtrip",
+    "product restart restoration",
+    "complete stage/DPI/accessibility matrix"
+  ],
+  "generation": "No canonical report, migration ledger, gate, condition, threshold, card or execution entry changes."
+}

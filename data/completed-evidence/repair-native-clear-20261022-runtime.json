@@ -1,0 +1,88 @@
+{
+  "status": "PASS_SCOPED_NATIVE_RUNTIME_ONLY",
+  "formal_task7": "FAIL_69_OF_70_UNCHANGED",
+  "end_to_end_epoch": "NOT_RUN",
+  "full_frame_marker_predicate": "NOT_RUN",
+  "replacement": "NOT_RUN",
+  "fullreconnect": "NOT_RUN",
+  "physical_scanout": "NOT_MEASURED",
+  "input_set_sha256": "4bfebb24e15e177227594a8b1e583a9b96c7d4b84734bbbb6329fb24d21957e0",
+  "adapter_kind": "UNKNOWN",
+  "gpu_scope": "Production default DX11 module upload/present/remove/clear/fence/cancel/unload; actual module GPU query completes",
+  "sdk_ack": "NOT_OBSERVABLE",
+  "sfu_receipt": "NOT_OBSERVABLE",
+  "fixtures": [
+    {
+      "name": "track-router-runtime",
+      "command": [
+        "T:\\full-validation-20261022\\native\\sdk-build\\RelWithDebInfo\\task7_track_router_fixture.exe"
+      ],
+      "cwd": "T:\\full-validation-20261022\\native\\sdk-build\\RelWithDebInfo",
+      "capacity_before": {
+        "free_bytes": 18017615872,
+        "native_output_bytes": 6311225335,
+        "reserve_bytes": 5368709120,
+        "native_limit_bytes": 8589934592
+      },
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.14,
+      "capacity_after": {
+        "free_bytes": 18017615872,
+        "native_output_bytes": 6311225335,
+        "reserve_bytes": 5368709120,
+        "native_limit_bytes": 8589934592
+      }
+    },
+    {
+      "name": "room-pc-dc-wait-runtime",
+      "command": [
+        "T:\\full-validation-20261022\\native\\sdk-build\\RelWithDebInfo\\task7_room_wait_fixture.exe"
+      ],
+      "cwd": "T:\\full-validation-20261022\\native\\sdk-build\\RelWithDebInfo",
+      "capacity_before": {
+        "free_bytes": 18017615872,
+        "native_output_bytes": 6311225335,
+        "reserve_bytes": 5368709120,
+        "native_limit_bytes": 8589934592
+      },
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.329,
+      "capacity_after": {
+        "free_bytes": 18017615872,
+        "native_output_bytes": 6311225335,
+        "reserve_bytes": 5368709120,
+        "native_limit_bytes": 8589934592
+      }
+    },
+    {
+      "name": "default-module-gpu-runtime",
+      "command": [
+        "T:\\full-validation-20261022\\native\\sdk-build\\RelWithDebInfo\\task7_gpu_clear_fence.exe",
+        "T:\\full-validation-20261022\\native\\sdk-build\\src\\render\\RelWithDebInfo\\cohavora-render-dx11.dll"
+      ],
+      "cwd": "T:\\full-validation-20261022\\native\\sdk-build\\RelWithDebInfo",
+      "capacity_before": {
+        "free_bytes": 18017611776,
+        "native_output_bytes": 6311225335,
+        "reserve_bytes": 5368709120,
+        "native_limit_bytes": 8589934592
+      },
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.188,
+      "capacity_after": {
+        "free_bytes": 18017611776,
+        "native_output_bytes": 6311225335,
+        "reserve_bytes": 5368709120,
+        "native_limit_bytes": 8589934592
+      }
+    }
+  ],
+  "fixture_repairs": [
+    "Synthetic frames now carry exact explicit token and nonzero media epoch; untagged/wrong/old tokens are rejected",
+    "Replacement uses production RegisterMediaBinding before reattach; registration cannot bypass pending clear"
+  ],
+  "evidence": "Both earlier Track fixture failures and inputs retained under failures/track-router-runtime-01 and -02; all original assertions remain"
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "task_container_removed": true,
+  "removed_container_id": "f3484bced4bced929945afde219ae03720741bb43d7e452c0de50e7112b9833d",
+  "foreign_rooms_observed": false,
+  "active_participants": 0,
+  "shared_service_id": "945da43f115b19614a1e5b8097b5e3d3635e951ee171dd3c0173ed1f35144de5",
+  "shared_service_running": true,
+  "original_service_config_unchanged": true,
+  "security_group_changes": 0,
+  "created_utc": "2026-10-22T12:15:10.127834+00:00"
+}

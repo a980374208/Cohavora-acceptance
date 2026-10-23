@@ -1,0 +1,1995 @@
+{
+  "status": "PASS",
+  "room": "b12-12ab8ca2ae7e4cfea5cb4482bc4dc226",
+  "cases": {
+    "simultaneous-write": {
+      "status": "PASS",
+      "observations": {
+        "publisher": {
+          "actor": "actor-28acdd794aaea0b5",
+          "asset_hashes": {},
+          "authority": "publisher",
+          "can_admin": true,
+          "can_edit": true,
+          "command_sequence": 7,
+          "document": {
+            "active": "page-1",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "1",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "ed62b48ff742d631eb22a47cc70b83e0edc7258ba65044920218cfd2a8d8a344",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 2,
+          "state": 1,
+          "utc_ms": 1792547035985,
+          "writers_open": true
+        },
+        "receiver": {
+          "actor": "actor-a3bd48ebc86810e6",
+          "asset_hashes": {},
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": true,
+          "command_sequence": 7,
+          "document": {
+            "active": "page-1",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "1",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "ed62b48ff742d631eb22a47cc70b83e0edc7258ba65044920218cfd2a8d8a344",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 2,
+          "state": 1,
+          "utc_ms": 1792547036098,
+          "writers_open": true
+        }
+      },
+      "submission_witnesses": {
+        "publisher": {
+          "event": "board_proposed",
+          "id": "publisher-simultaneous",
+          "sequence": 6,
+          "utc_ms": 1792547035887
+        },
+        "receiver": {
+          "event": "board_proposed",
+          "id": "receiver-simultaneous",
+          "sequence": 6,
+          "utc_ms": 1792547035887
+        }
+      },
+      "submission_skew_ms": 0
+    },
+    "image-import": {
+      "status": "PASS",
+      "observations": {
+        "publisher": {
+          "actor": "actor-28acdd794aaea0b5",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": true,
+          "can_edit": true,
+          "command_sequence": 9,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "85ea400cbe6f675e232d0d823b2c2d7a081b39e76bdfbd61353ee3516e22305b",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 3,
+          "state": 1,
+          "utc_ms": 1792547036326,
+          "writers_open": true
+        },
+        "receiver": {
+          "actor": "actor-a3bd48ebc86810e6",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": true,
+          "command_sequence": 8,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "85ea400cbe6f675e232d0d823b2c2d7a081b39e76bdfbd61353ee3516e22305b",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 3,
+          "state": 1,
+          "utc_ms": 1792547036419,
+          "writers_open": true
+        }
+      }
+    },
+    "late-join": {
+      "status": "PASS",
+      "observations": {
+        "publisher": {
+          "actor": "actor-28acdd794aaea0b5",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": true,
+          "can_edit": true,
+          "command_sequence": 10,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "85ea400cbe6f675e232d0d823b2c2d7a081b39e76bdfbd61353ee3516e22305b",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 3,
+          "state": 1,
+          "utc_ms": 1792547037170,
+          "writers_open": true
+        },
+        "receiver": {
+          "actor": "actor-a3bd48ebc86810e6",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": true,
+          "command_sequence": 9,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "85ea400cbe6f675e232d0d823b2c2d7a081b39e76bdfbd61353ee3516e22305b",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 3,
+          "state": 1,
+          "utc_ms": 1792547037289,
+          "writers_open": true
+        },
+        "late": {
+          "actor": "actor-e6222c26b787b7df",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": true,
+          "command_sequence": 2,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "85ea400cbe6f675e232d0d823b2c2d7a081b39e76bdfbd61353ee3516e22305b",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 3,
+          "state": 1,
+          "utc_ms": 1792547037386,
+          "writers_open": true
+        }
+      },
+      "existing_image_page_and_asset_recovered": true
+    },
+    "sync": {
+      "status": "PASS",
+      "observations": {
+        "publisher": {
+          "actor": "actor-28acdd794aaea0b5",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": true,
+          "can_edit": true,
+          "command_sequence": 11,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [
+                  {
+                    "author": "actor-e6222c26b787b7df",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-image-annotation",
+                    "kind": 3,
+                    "points": [
+                      [
+                        100,
+                        10
+                      ],
+                      [
+                        130,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "08c9874a6862c580d95f556f61f8da0b2e507bb5a4797283dbe49ee85c496a33",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 4,
+          "state": 1,
+          "utc_ms": 1792547037608,
+          "writers_open": true
+        },
+        "receiver": {
+          "actor": "actor-a3bd48ebc86810e6",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": true,
+          "command_sequence": 10,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [
+                  {
+                    "author": "actor-e6222c26b787b7df",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-image-annotation",
+                    "kind": 3,
+                    "points": [
+                      [
+                        100,
+                        10
+                      ],
+                      [
+                        130,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "08c9874a6862c580d95f556f61f8da0b2e507bb5a4797283dbe49ee85c496a33",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 4,
+          "state": 1,
+          "utc_ms": 1792547037729,
+          "writers_open": true
+        },
+        "late": {
+          "actor": "actor-e6222c26b787b7df",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": true,
+          "command_sequence": 4,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [
+                  {
+                    "author": "actor-e6222c26b787b7df",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-image-annotation",
+                    "kind": 3,
+                    "points": [
+                      [
+                        100,
+                        10
+                      ],
+                      [
+                        130,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "08c9874a6862c580d95f556f61f8da0b2e507bb5a4797283dbe49ee85c496a33",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 4,
+          "state": 1,
+          "utc_ms": 1792547037822,
+          "writers_open": true
+        }
+      }
+    },
+    "reconnect": {
+      "status": "PASS",
+      "observations": {
+        "publisher": {
+          "actor": "actor-28acdd794aaea0b5",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": true,
+          "can_edit": true,
+          "command_sequence": 14,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [
+                  {
+                    "author": "actor-e6222c26b787b7df",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-image-annotation",
+                    "kind": 3,
+                    "points": [
+                      [
+                        100,
+                        10
+                      ],
+                      [
+                        130,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-after-reconnect",
+                    "kind": 3,
+                    "points": [
+                      [
+                        180,
+                        10
+                      ],
+                      [
+                        210,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "5ce5507c86b7174f42f60c9d9ced870481cc8cac84cc0978742a83c9e1dbc422",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 5,
+          "state": 1,
+          "utc_ms": 1792547039169,
+          "writers_open": true
+        },
+        "receiver": {
+          "actor": "actor-a3bd48ebc86810e6",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": true,
+          "command_sequence": 15,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [
+                  {
+                    "author": "actor-e6222c26b787b7df",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-image-annotation",
+                    "kind": 3,
+                    "points": [
+                      [
+                        100,
+                        10
+                      ],
+                      [
+                        130,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-after-reconnect",
+                    "kind": 3,
+                    "points": [
+                      [
+                        180,
+                        10
+                      ],
+                      [
+                        210,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "5ce5507c86b7174f42f60c9d9ced870481cc8cac84cc0978742a83c9e1dbc422",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 5,
+          "state": 1,
+          "utc_ms": 1792547039293,
+          "writers_open": true
+        },
+        "late": {
+          "actor": "actor-e6222c26b787b7df",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": true,
+          "command_sequence": 7,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [
+                  {
+                    "author": "actor-e6222c26b787b7df",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-image-annotation",
+                    "kind": 3,
+                    "points": [
+                      [
+                        100,
+                        10
+                      ],
+                      [
+                        130,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-after-reconnect",
+                    "kind": 3,
+                    "points": [
+                      [
+                        180,
+                        10
+                      ],
+                      [
+                        210,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "5ce5507c86b7174f42f60c9d9ced870481cc8cac84cc0978742a83c9e1dbc422",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 5,
+          "state": 1,
+          "utc_ms": 1792547039383,
+          "writers_open": true
+        }
+      },
+      "reconnecting": {
+        "event": "state",
+        "state": 6,
+        "utc_ms": 1792547037950
+      },
+      "command_sequence": 11,
+      "post_recovery_commit": true
+    },
+    "export": {
+      "status": "PASS",
+      "observations": {
+        "publisher": {
+          "actor": "actor-28acdd794aaea0b5",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": true,
+          "can_edit": true,
+          "command_sequence": 14,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [
+                  {
+                    "author": "actor-e6222c26b787b7df",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-image-annotation",
+                    "kind": 3,
+                    "points": [
+                      [
+                        100,
+                        10
+                      ],
+                      [
+                        130,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-after-reconnect",
+                    "kind": 3,
+                    "points": [
+                      [
+                        180,
+                        10
+                      ],
+                      [
+                        210,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "5ce5507c86b7174f42f60c9d9ced870481cc8cac84cc0978742a83c9e1dbc422",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 5,
+          "state": 1,
+          "utc_ms": 1792547039169,
+          "writers_open": true
+        },
+        "receiver": {
+          "actor": "actor-a3bd48ebc86810e6",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": true,
+          "command_sequence": 15,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [
+                  {
+                    "author": "actor-e6222c26b787b7df",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-image-annotation",
+                    "kind": 3,
+                    "points": [
+                      [
+                        100,
+                        10
+                      ],
+                      [
+                        130,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-after-reconnect",
+                    "kind": 3,
+                    "points": [
+                      [
+                        180,
+                        10
+                      ],
+                      [
+                        210,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "5ce5507c86b7174f42f60c9d9ced870481cc8cac84cc0978742a83c9e1dbc422",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 5,
+          "state": 1,
+          "utc_ms": 1792547039293,
+          "writers_open": true
+        },
+        "late": {
+          "actor": "actor-e6222c26b787b7df",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": true,
+          "command_sequence": 7,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [
+                  {
+                    "author": "actor-e6222c26b787b7df",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-image-annotation",
+                    "kind": 3,
+                    "points": [
+                      [
+                        100,
+                        10
+                      ],
+                      [
+                        130,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-after-reconnect",
+                    "kind": 3,
+                    "points": [
+                      [
+                        180,
+                        10
+                      ],
+                      [
+                        210,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "5ce5507c86b7174f42f60c9d9ced870481cc8cac84cc0978742a83c9e1dbc422",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 5,
+          "state": 1,
+          "utc_ms": 1792547039383,
+          "writers_open": true
+        }
+      },
+      "exports": {
+        "publisher": {
+          "file": "publisher/export-15.png",
+          "sha256": "d1de98d956fa16838893b24db0e41c693fa10424ec8223e5202cd4a27183e764",
+          "pixel_sha256": "f372d7fdd42cb03af660e20c4ddf44b05477c049f49bc59bb348cc53ec05bd52"
+        },
+        "receiver": {
+          "file": "receiver/export-16.png",
+          "sha256": "d1de98d956fa16838893b24db0e41c693fa10424ec8223e5202cd4a27183e764",
+          "pixel_sha256": "f372d7fdd42cb03af660e20c4ddf44b05477c049f49bc59bb348cc53ec05bd52"
+        },
+        "late": {
+          "file": "late/export-8.png",
+          "sha256": "d1de98d956fa16838893b24db0e41c693fa10424ec8223e5202cd4a27183e764",
+          "pixel_sha256": "f372d7fdd42cb03af660e20c4ddf44b05477c049f49bc59bb348cc53ec05bd52"
+        }
+      },
+      "independent_decoder": "Pillow RGB pixel readback"
+    },
+    "authority-leave": {
+      "status": "PASS",
+      "observations": {
+        "receiver": {
+          "actor": "actor-a3bd48ebc86810e6",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": false,
+          "command_sequence": 19,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [
+                  {
+                    "author": "actor-e6222c26b787b7df",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-image-annotation",
+                    "kind": 3,
+                    "points": [
+                      [
+                        100,
+                        10
+                      ],
+                      [
+                        130,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-after-reconnect",
+                    "kind": 3,
+                    "points": [
+                      [
+                        180,
+                        10
+                      ],
+                      [
+                        210,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "5ce5507c86b7174f42f60c9d9ced870481cc8cac84cc0978742a83c9e1dbc422",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 5,
+          "state": 3,
+          "utc_ms": 1792547042604,
+          "writers_open": true
+        },
+        "late": {
+          "actor": "actor-e6222c26b787b7df",
+          "asset_hashes": {
+            "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887"
+          },
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": false,
+          "command_sequence": 11,
+          "document": {
+            "active": "b12-image-page",
+            "id": "board-80f57dee10dc49a266f0375955fac376",
+            "interactionEpoch": "2",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              },
+              {
+                "backgroundAssetId": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+                "epoch": "1",
+                "height": 180,
+                "id": "b12-image-page",
+                "objects": [
+                  {
+                    "author": "actor-e6222c26b787b7df",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-image-annotation",
+                    "kind": 3,
+                    "points": [
+                      [
+                        100,
+                        10
+                      ],
+                      [
+                        130,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-after-reconnect",
+                    "kind": 3,
+                    "points": [
+                      [
+                        180,
+                        10
+                      ],
+                      [
+                        210,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 320
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "5ce5507c86b7174f42f60c9d9ced870481cc8cac84cc0978742a83c9e1dbc422",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 5,
+          "state": 3,
+          "utc_ms": 1792547042694,
+          "writers_open": true
+        }
+      },
+      "read_only_proposals_preserved_document": true
+    }
+  },
+  "started_utc": "2026-10-21T01:43:45.046264+00:00",
+  "server_before": {
+    "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+    "room": {
+      "departure_timeout": 20,
+      "empty_timeout": 60
+    },
+    "video": {
+      "codec_regression_threshold": 1
+    },
+    "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+    "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+    "health_status": 200,
+    "participants_remaining": 0,
+    "publications_remaining": 0
+  },
+  "room_preparation": {
+    "metadata_sha256": "7115ad017e41c4d62d843db4ee055297a563b75761fc983df63997b01d8c03f7",
+    "room_sid": "RM_Tf9Wo4xmt4aK"
+  },
+  "input_png": {
+    "sha256": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+    "width": 320,
+    "height": 180
+  },
+  "lifecycle": {
+    "publisher": {
+      "pid": 22652,
+      "started": {
+        "configuration": "RelWithDebInfo",
+        "event": "started",
+        "identity": "publisher",
+        "pid": 22652,
+        "utc_ms": 1792547032745
+      },
+      "retirement": {
+        "cleanup_pending": 0,
+        "event": "retired",
+        "rooms_alive": 0,
+        "rooms_observed": 1,
+        "utc_ms": 1792547042822
+      },
+      "exit_code": 0
+    },
+    "receiver": {
+      "pid": 31420,
+      "started": {
+        "configuration": "RelWithDebInfo",
+        "event": "started",
+        "identity": "receiver",
+        "pid": 31420,
+        "utc_ms": 1792547033518
+      },
+      "retirement": {
+        "cleanup_pending": 0,
+        "event": "retired",
+        "rooms_alive": 0,
+        "rooms_observed": 1,
+        "utc_ms": 1792547043006
+      },
+      "exit_code": 0
+    },
+    "late": {
+      "pid": 11000,
+      "started": {
+        "configuration": "RelWithDebInfo",
+        "event": "started",
+        "identity": "late",
+        "pid": 11000,
+        "utc_ms": 1792547036686
+      },
+      "retirement": {
+        "cleanup_pending": 0,
+        "event": "retired",
+        "rooms_alive": 0,
+        "rooms_observed": 1,
+        "utc_ms": 1792547043222
+      },
+      "exit_code": 0
+    }
+  },
+  "server_after": {
+    "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+    "room": {
+      "departure_timeout": 20,
+      "empty_timeout": 60
+    },
+    "video": {
+      "codec_regression_threshold": 1
+    },
+    "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+    "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+    "health_status": 200,
+    "participants_remaining": 0,
+    "publications_remaining": 0
+  },
+  "events_sha256": {
+    "publisher": "02ac07dce39a4a38f0d0b4d976b8c0fafbd59da7a2da1fc595296144851c4775",
+    "receiver": "a5dd9ad2c15a1c0b74c6f10a5eb892adf580f53f4fac34a8469413f7b0c202ff",
+    "late": "f2b8296da83ef32669b2480c81480df4e3c850eb734dd5a55dfbed1ed247587e"
+  },
+  "finished_utc": "2026-10-21T01:44:04.184353+00:00"
+}

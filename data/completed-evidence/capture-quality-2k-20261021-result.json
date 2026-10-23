@@ -1,0 +1,142 @@
+{
+  "status": "PASS",
+  "case": "complex-wgc-screen",
+  "run_id": "capture-1518e671257643deadef4041552867b9",
+  "started_utc": "2026-10-21T02:03:13.896388+00:00",
+  "configuration": "RelWithDebInfo",
+  "binary_identity": {
+    "configuration": "RelWithDebInfo",
+    "binary_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_screen_share_runtime.exe",
+    "binary_sha256": "62f02b37b273fd8461abe456f0962607d99ffead9aadf06fb6d0bfaf434c30f0",
+    "pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\test_screen_share_runtime.pdb",
+    "pdb_guid": "6c3d699a-cd2c-4829-9420-4842b283a17c",
+    "pdb_age": 5
+  },
+  "inputs": {
+    "integration/source_paths.py": "e90a6a62ab08e436510294d201985cceedd023cf38a364c9a59b634417ce99f2",
+    "src/media/desktop_capture.cpp": "ef9e74d3c1ce232b96b000a17ff5691960eee2a54d99126b9422c909c7930766",
+    "src/media/desktop_capture.h": "6a7333e8517bda263c942ec9932e5be279df40bb2419d3e6bf31dcdeb29a118c",
+    "src/media/screen_capture_fallback.h": "884487f784533d081316b4ff5072d24de402accd7ebd571b23fcc22d432cabb4",
+    "src/media/screen_share_quality.h": "0ee9ff1e9089be7b900d26277af632579f60222adabc3f59c80e8331fab47c67",
+    "src/core/room.cpp": "00ee7a300c70264333cc22b9b7552269b8ce4fd0a38e8d6fc64d72ec7d9be0e7",
+    "src/core/screen_share_session.cpp": "05cf4517f392677e5000105c6776407733867f126de8ceadd80c2a372a674cb8",
+    "src/core/local_video_track.cpp": "2dcece611492d095aaf99f19b278bcf5aa44c775531022a4ef70bd31878556f9",
+    "src/rtc/webrtc_manager.cpp": "01d534914461c5a32deff24b9489bb4b8c5e5257836e668ec5273ceef907d4c9",
+    "tests/runtime/probes/test_screen_share_runtime.cpp": "465463e2ba0611a6628e892252e916df55900d345a8792c4fa0eba9509c08d63",
+    "tests/runtime/probes/share_quality_probe.h": "4f8c661a8993fce7fdcea8264c7a617e50d55e6f211340128ba34b4aa15bd59c"
+  },
+  "runner_sha256": "ad386edc19fc3621c52d39c0d681d21a66e40da0d67da7db7c63b84ad261bdd3",
+  "receiver_topology": "two_distinct_native_Rooms_in_one_process",
+  "head": "cb10d689e53ad6adae13a2bfaf2a44af4a27a6a6",
+  "server_before": {
+    "participants": 0,
+    "running": true,
+    "container_id": "945da43f115b19614a1e5b8097b5e3d3635e951ee171dd3c0173ed1f35144de5",
+    "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+    "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+    "config_sha256": "adeea7210d4a05f07909c0c10fbb6460f24f129484963acebf6f58972208c66e",
+    "health": 200
+  },
+  "pid": 31076,
+  "exit_code": 0,
+  "capture_events": [
+    {
+      "capture_id": 1,
+      "epoch_ms": 1792548206127,
+      "phase": "created",
+      "thread_id": 31516,
+      "capturer_id": 0
+    },
+    {
+      "capture_id": 1,
+      "epoch_ms": 1792548206127,
+      "phase": "started",
+      "thread_id": 31516,
+      "capturer_id": 0
+    },
+    {
+      "capture_id": 1,
+      "epoch_ms": 1792548206235,
+      "phase": "backend_frame",
+      "thread_id": 31516,
+      "capturer_id": 1
+    },
+    {
+      "capture_id": 1,
+      "epoch_ms": 1792548254323,
+      "phase": "session_closed",
+      "thread_id": 31516,
+      "capturer_id": 0
+    },
+    {
+      "capture_id": 1,
+      "epoch_ms": 1792548254323,
+      "phase": "frame_pool_closed",
+      "thread_id": 31516,
+      "capturer_id": 0
+    },
+    {
+      "capture_id": 1,
+      "epoch_ms": 1792548254335,
+      "phase": "d3d_released",
+      "thread_id": 31516,
+      "capturer_id": 0
+    },
+    {
+      "capture_id": 1,
+      "epoch_ms": 1792548254335,
+      "phase": "destroyed",
+      "thread_id": 31516,
+      "capturer_id": 0
+    },
+    {
+      "capture_id": 1,
+      "epoch_ms": 1792548254335,
+      "phase": "joined",
+      "thread_id": 26516,
+      "capturer_id": 0
+    }
+  ],
+  "server_after": {
+    "participants": 0,
+    "running": true,
+    "container_id": "945da43f115b19614a1e5b8097b5e3d3635e951ee171dd3c0173ed1f35144de5",
+    "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+    "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+    "config_sha256": "adeea7210d4a05f07909c0c10fbb6460f24f129484963acebf6f58972208c66e",
+    "health": 200
+  },
+  "checks": {
+    "native_gate": true,
+    "binary_unchanged": true,
+    "stopped_joined": true,
+    "destroyed": true,
+    "no_close_failure": true,
+    "room_empty": true,
+    "service_unchanged": true,
+    "service_healthy": true,
+    "quality_gate": true,
+    "requested_backend_used": true,
+    "wgc_released": true
+  },
+  "quality": [
+    {
+      "height": 1440,
+      "min_i420_psnr_db": 45.61952840220541,
+      "min_luma_ssim": 0.9972994428578399,
+      "min_text_luma_psnr_db": 41.0715519452983,
+      "samples": 30,
+      "scope": "owned text/color/scrolling pattern stretched to capture dimensions; production capture/publish/decode",
+      "status": "PASS",
+      "thresholds": {
+        "luma_ssim": 0.95,
+        "psnr_db": 30,
+        "text_psnr_db": 30
+      },
+      "unmatched_or_stale": 0,
+      "warmup_seconds": 15,
+      "width": 2560
+    }
+  ],
+  "finished_utc": "2026-10-21T02:04:17.330689+00:00"
+}

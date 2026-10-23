@@ -810,5 +810,987 @@
     "portable_path": "evidence/b14/S050-limits.json",
     "status": "SAME_RUN_FROZEN_LIMITS_COPY",
     "resolved_from": "E:/vsSource/WebRTC/live-kit-test/out/b14-qualification-20261010/retry-07/formal-8h100/runtime/limits.json"
+  },
+  "reports/product/resource-completion-20261021-01.json": {
+    "original_path": "reports/product/resource-completion-20261021-01.json",
+    "portable_path": "reports/product/resource-completion-20261021-01.json",
+    "sha256": "911481e87f743f08b478a6dcb541338d762afae76cb26c8a4ddbc679bd452a48",
+    "bytes": 611975,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "reports/product/resource-completion-20261021-01.html": {
+    "original_path": "reports/product/resource-completion-20261021-01.html",
+    "portable_path": "reports/product/resource-completion-20261021-01.html",
+    "sha256": "542338921141b188eb556d079b50fe4040fb543caddaeb7d1ce93814ae1446a4",
+    "bytes": 375345,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "reports/product/functional-media-retest-20261020-01.json": {
+    "original_path": "reports/product/functional-media-retest-20261020-01.json",
+    "portable_path": "reports/product/functional-media-retest-20261020-01.json",
+    "sha256": "35044ef9feed78e9df4113e99a80b66ef705eae9af80b0a56f768a47ac11ecb9",
+    "bytes": 1714525,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "reports/product/functional-media-retest-20261020-01.html": {
+    "original_path": "reports/product/functional-media-retest-20261020-01.html",
+    "portable_path": "reports/product/functional-media-retest-20261020-01.html",
+    "sha256": "c7b91b2e04d0e7942627825a17bd4343e7237104c2e9c7ece9bb8a1f85ff5870",
+    "bytes": 117838,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "reports/b14/b14-clipboard-readmission-20261019-01.json": {
+    "original_path": "reports/b14/b14-clipboard-readmission-20261019-01.json",
+    "portable_path": "reports/b14/b14-clipboard-readmission-20261019-01.json",
+    "sha256": "d94bda9c3caaef24b3d71e430fb1eb252ebcae3aa86cf4cc33c04dacfe471f1a",
+    "bytes": 14672,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "reports/b14/b14-clipboard-readmission-20261019-01.html": {
+    "original_path": "reports/b14/b14-clipboard-readmission-20261019-01.html",
+    "portable_path": "reports/b14/b14-clipboard-readmission-20261019-01.html",
+    "sha256": "fcb7fb4596ccaea84c0ee8cb255d581ed6ca3895a5ddabfa900a60c47fbac5ff",
+    "bytes": 4297,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/functional-media-retest-20261020-01/e2ee-performance/performance-732012680fbb446b/result.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\functional-media-retest-20261020-01\\e2ee-performance\\performance-732012680fbb446b\\result.json",
+    "portable_path": "data/completed-evidence/native-e2ee-abba-20261020-result.json",
+    "sha256": "acc37eb1a92d48754aaec61106bf99ab2331cd45ea8c1dc5af0fe8333340786e",
+    "bytes": 10552,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/native-e2ee-abba-20261020-result.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\functional-media-retest-20261020-01\\e2ee-performance\\performance-732012680fbb446b\\result.json",
+    "portable_path": "data/completed-evidence/native-e2ee-abba-20261020-result.json",
+    "sha256": "acc37eb1a92d48754aaec61106bf99ab2331cd45ea8c1dc5af0fe8333340786e",
+    "bytes": 10552,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/wgc-3600-100-01/result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/wgc-3600-100-01/result.json",
+    "portable_path": "data/completed-evidence/wgc-3600-100-20261021-result.json",
+    "sha256": "bdb7af49e884fb25a035b9c2f3a166076d3f5da2af6d3ed1a869cd22e3373bbb",
+    "bytes": 25340,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/wgc-3600-100-20261021-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/wgc-3600-100-01/result.json",
+    "portable_path": "data/completed-evidence/wgc-3600-100-20261021-result.json",
+    "sha256": "bdb7af49e884fb25a035b9c2f3a166076d3f5da2af6d3ed1a869cd22e3373bbb",
+    "bytes": 25340,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/wgc-1800-resource-01/resource-analysis.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/wgc-1800-resource-01/resource-analysis.json",
+    "portable_path": "data/completed-evidence/wgc-1800-20261021-resource-analysis.json",
+    "sha256": "f510b71c5cf1bea8a254cb9c3d1d52b0f32562efabe2535b4725db49399c2d82",
+    "bytes": 2398,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/wgc-1800-20261021-resource-analysis.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/wgc-1800-resource-01/resource-analysis.json",
+    "portable_path": "data/completed-evidence/wgc-1800-20261021-resource-analysis.json",
+    "sha256": "f510b71c5cf1bea8a254cb9c3d1d52b0f32562efabe2535b4725db49399c2d82",
+    "bytes": 2398,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/wgc-1800-resource-01/summary.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/wgc-1800-resource-01/summary.json",
+    "portable_path": "data/completed-evidence/wgc-1800-20261021-summary.json",
+    "sha256": "33659a700dffeb8b0ea83eeb39fb515718dd4ac4d864f05d2689eaeda97a3e70",
+    "bytes": 3826,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/wgc-1800-20261021-summary.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/wgc-1800-resource-01/summary.json",
+    "portable_path": "data/completed-evidence/wgc-1800-20261021-summary.json",
+    "sha256": "33659a700dffeb8b0ea83eeb39fb515718dd4ac4d864f05d2689eaeda97a3e70",
+    "bytes": 3826,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/telemetry-soak-01/long-feature/result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-soak-01/long-feature/result.json",
+    "portable_path": "data/completed-evidence/telemetry-9000s-20261021-result.json",
+    "sha256": "aa8cc6fbdde7df80a05b8e917c6dac205983c4c4f77aaef34ee4bba0eda7f3dd",
+    "bytes": 101358,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/telemetry-9000s-20261021-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-soak-01/long-feature/result.json",
+    "portable_path": "data/completed-evidence/telemetry-9000s-20261021-result.json",
+    "sha256": "aa8cc6fbdde7df80a05b8e917c6dac205983c4c4f77aaef34ee4bba0eda7f3dd",
+    "bytes": 101358,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/telemetry-soak-01/index.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-soak-01/index.json",
+    "portable_path": "data/completed-evidence/telemetry-9000s-20261021-index.json",
+    "sha256": "3a7a9a2c1947d77a6551ef161119ab28e74a2c87066abb4d936c67310cb13233",
+    "bytes": 2751,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/telemetry-9000s-20261021-index.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-soak-01/index.json",
+    "portable_path": "data/completed-evidence/telemetry-9000s-20261021-index.json",
+    "sha256": "3a7a9a2c1947d77a6551ef161119ab28e74a2c87066abb4d936c67310cb13233",
+    "bytes": 2751,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/whiteboard-functional-desktop11/index.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/whiteboard-functional-desktop11/index.json",
+    "portable_path": "data/completed-evidence/whiteboard-b12-20261021-index.json",
+    "sha256": "4244b399b50a98e124d849b66ab596e7256f25fe99161f3f2b00be384284e905",
+    "bytes": 2744,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/whiteboard-b12-20261021-index.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/whiteboard-functional-desktop11/index.json",
+    "portable_path": "data/completed-evidence/whiteboard-b12-20261021-index.json",
+    "sha256": "4244b399b50a98e124d849b66ab596e7256f25fe99161f3f2b00be384284e905",
+    "bytes": 2744,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/whiteboard-functional-desktop11/collaboration-and-leave/result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/whiteboard-functional-desktop11/collaboration-and-leave/result.json",
+    "portable_path": "data/completed-evidence/whiteboard-b12-20261021-collaboration-and-leave.json",
+    "sha256": "79ce388d076bf7b5e05a0e5d424c2e371a490c2068a4a83088f1fe5fab9f2ed8",
+    "bytes": 65546,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/whiteboard-b12-20261021-collaboration-and-leave.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/whiteboard-functional-desktop11/collaboration-and-leave/result.json",
+    "portable_path": "data/completed-evidence/whiteboard-b12-20261021-collaboration-and-leave.json",
+    "sha256": "79ce388d076bf7b5e05a0e5d424c2e371a490c2068a4a83088f1fe5fab9f2ed8",
+    "bytes": 65546,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/whiteboard-functional-desktop11/authority-disconnect/result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/whiteboard-functional-desktop11/authority-disconnect/result.json",
+    "portable_path": "data/completed-evidence/whiteboard-b12-20261021-authority-disconnect.json",
+    "sha256": "ea3b8cde09b4490065b1b035d74e28991755be8d105cebca7cc20b3b95614da9",
+    "bytes": 7758,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/whiteboard-b12-20261021-authority-disconnect.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/whiteboard-functional-desktop11/authority-disconnect/result.json",
+    "portable_path": "data/completed-evidence/whiteboard-b12-20261021-authority-disconnect.json",
+    "sha256": "ea3b8cde09b4490065b1b035d74e28991755be8d105cebca7cc20b3b95614da9",
+    "bytes": 7758,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/b14-formal-20261023-completed-scoped.json": {
+    "portable_path": "data/completed-evidence/b14-formal-20261023-completed-scoped.json",
+    "status": "COMPLETED_SAME_SCOPE_SOURCE"
+  },
+  "data/completed-evidence/b14-formal-20261023-completed-scoped.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\data\\completed-evidence\\b14-formal-20261023-completed-scoped.json",
+    "portable_path": "data/completed-evidence/b14-formal-20261023-completed-scoped.json",
+    "sha256": "98efe6c0c638d95144092817862e6d51496d43ec00aab8cdb3db963b49e694f8",
+    "bytes": 733177,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/b14-formal-20261023-ui-timing-scoped.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\data\\completed-evidence\\b14-formal-20261023-ui-timing-scoped.json",
+    "portable_path": "data/completed-evidence/b14-formal-20261023-ui-timing-scoped.json",
+    "sha256": "4e5f040e253bec89326479d2e8664bc84fccd1dd6a7a3b3737d40aee0b17e214",
+    "bytes": 2059808,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/b14-formal-20261023-ui-timing-scoped.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test\\samples\\acceptance\\data\\completed-evidence\\b14-formal-20261023-ui-timing-scoped.json",
+    "portable_path": "data/completed-evidence/b14-formal-20261023-ui-timing-scoped.json",
+    "sha256": "4e5f040e253bec89326479d2e8664bc84fccd1dd6a7a3b3737d40aee0b17e214",
+    "bytes": 2059808,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/b14-user-disposition-20261023.json": {
+    "original_path": "data/b14-user-disposition-20261023.json",
+    "portable_path": "data/b14-user-disposition-20261023.json",
+    "sha256": "a351efea402b714414b29fe5634d8102e428055efe19aa07d7a4a972c0b3c86b",
+    "bytes": 3010,
+    "status": "DOCUMENT_DISPOSITION_OR_HISTORICAL_SUMMARY"
+  },
+  "data/b14-historical-metrics.json": {
+    "original_path": "data/b14-historical-metrics.json",
+    "portable_path": "data/b14-historical-metrics.json",
+    "sha256": "7d87ec335f7c62bef5d4e7b2047aba09164f8db310818956142d51436e3f3398",
+    "bytes": 592434,
+    "status": "DOCUMENT_DISPOSITION_OR_HISTORICAL_SUMMARY"
+  },
+  "reports/b14/b14-historical-metrics.html": {
+    "original_path": "reports/b14/b14-historical-metrics.html",
+    "portable_path": "reports/b14/b14-historical-metrics.html",
+    "sha256": "15e06fb97f92c4d3e0ef37ffacd49c00cbe84571fd5c0b517eb45f74b40eb4f0",
+    "bytes": 52926,
+    "status": "DOCUMENT_DISPOSITION_OR_HISTORICAL_SUMMARY"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/native-e2ee-abba-20261020-result.json": {
+    "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\functional-media-retest-20261020-01\\e2ee-performance\\performance-732012680fbb446b\\result.json",
+    "portable_path": "data/completed-evidence/native-e2ee-abba-20261020-result.json",
+    "sha256": "acc37eb1a92d48754aaec61106bf99ab2331cd45ea8c1dc5af0fe8333340786e",
+    "bytes": 10552,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/gdi-hot-50-20261021-summary.json": {
+    "original_path": "data/completed-evidence/gdi-hot-50-20261021-summary.json",
+    "portable_path": "data/completed-evidence/gdi-hot-50-20261021-summary.json",
+    "sha256": "bea24ecdcff826075c7ec7586cb88b332cdb3ef527f5c1f9c16363e487d06ff7",
+    "bytes": 3750,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/gdi-hot-50-20261021-events.log": {
+    "portable_path": "data/completed-evidence/gdi-hot-50-20261021-events.log",
+    "status": "COMPLETED_SAME_SCOPE_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/wgc-1800-20261021-resource-analysis.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/wgc-1800-resource-01/resource-analysis.json",
+    "portable_path": "data/completed-evidence/wgc-1800-20261021-resource-analysis.json",
+    "sha256": "f510b71c5cf1bea8a254cb9c3d1d52b0f32562efabe2535b4725db49399c2d82",
+    "bytes": 2398,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/wgc-3600-100-20261021-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/wgc-3600-100-01/result.json",
+    "portable_path": "data/completed-evidence/wgc-3600-100-20261021-result.json",
+    "sha256": "bdb7af49e884fb25a035b9c2f3a166076d3f5da2af6d3ed1a869cd22e3373bbb",
+    "bytes": 25340,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/whiteboard-b12-20261021-collaboration-and-leave.json": {
+    "portable_path": "data/completed-evidence/whiteboard-b12-20261021-collaboration-and-leave.json",
+    "status": "COMPLETED_SAME_SCOPE_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/whiteboard-b12-20261021-authority-disconnect.json": {
+    "portable_path": "data/completed-evidence/whiteboard-b12-20261021-authority-disconnect.json",
+    "status": "COMPLETED_SAME_SCOPE_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/telemetry-9000s-20261021-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-soak-01/long-feature/result.json",
+    "portable_path": "data/completed-evidence/telemetry-9000s-20261021-result.json",
+    "sha256": "aa8cc6fbdde7df80a05b8e917c6dac205983c4c4f77aaef34ee4bba0eda7f3dd",
+    "bytes": 101358,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/stage-closure-20261022.json": {
+    "original_path": "data/stage-closure-20261022.json",
+    "portable_path": "data/stage-closure-20261022.json",
+    "sha256": "12813b3ed22cdf47a4da314977fd5cbf69d756954204b331428c9ddf687221c1",
+    "bytes": 96544,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/stage-closure-20261022.json": {
+    "original_path": "data/stage-closure-20261022.json",
+    "portable_path": "data/stage-closure-20261022.json",
+    "sha256": "12813b3ed22cdf47a4da314977fd5cbf69d756954204b331428c9ddf687221c1",
+    "bytes": 96544,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "reports/product/stage-closure-20261022.json": {
+    "original_path": "reports/product/stage-closure-20261022.json",
+    "portable_path": "reports/product/stage-closure-20261022.json",
+    "sha256": "b72a00b897d899ba89aa9bf68003742a6da83b2787ddc22d469da56390e9c544",
+    "bytes": 946,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/stage-closure-20261022.json": {
+    "original_path": "reports/product/stage-closure-20261022.json",
+    "portable_path": "reports/product/stage-closure-20261022.json",
+    "sha256": "b72a00b897d899ba89aa9bf68003742a6da83b2787ddc22d469da56390e9c544",
+    "bytes": 946,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "reports/product/stage-closure-20261022.html": {
+    "original_path": "reports/product/stage-closure-20261022.html",
+    "portable_path": "reports/product/stage-closure-20261022.html",
+    "sha256": "c9c840f208a0ecaa91263069444b89edc6d3375359aea5dce0e556d8ce7646e8",
+    "bytes": 18683,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/stage-closure-20261022.html": {
+    "original_path": "reports/product/stage-closure-20261022.html",
+    "portable_path": "reports/product/stage-closure-20261022.html",
+    "sha256": "c9c840f208a0ecaa91263069444b89edc6d3375359aea5dce0e556d8ce7646e8",
+    "bytes": 18683,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/repair-validation-20261022-sources.json": {
+    "original_path": "data/completed-evidence/repair-validation-20261022-sources.json",
+    "portable_path": "data/completed-evidence/repair-validation-20261022-sources.json",
+    "sha256": "cb2375b840a0739d73824dcfbef5ab83cbefdb4e8f6f064fcbf549985a96574a",
+    "bytes": 2833,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/repair-validation-20261022-sources.json": {
+    "original_path": "data/completed-evidence/repair-validation-20261022-sources.json",
+    "portable_path": "data/completed-evidence/repair-validation-20261022-sources.json",
+    "sha256": "cb2375b840a0739d73824dcfbef5ab83cbefdb4e8f6f064fcbf549985a96574a",
+    "bytes": 2833,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/repair-remote-output-20261022-receipt.json": {
+    "original_path": "data/completed-evidence/repair-remote-output-20261022-receipt.json",
+    "portable_path": "data/completed-evidence/repair-remote-output-20261022-receipt.json",
+    "sha256": "df26cd10a52d5adf80d84a7dd0107a495c1f5723eb6b5f152c640ace41f046ae",
+    "bytes": 5459,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/repair-remote-output-20261022-receipt.json": {
+    "original_path": "data/completed-evidence/repair-remote-output-20261022-receipt.json",
+    "portable_path": "data/completed-evidence/repair-remote-output-20261022-receipt.json",
+    "sha256": "df26cd10a52d5adf80d84a7dd0107a495c1f5723eb6b5f152c640ace41f046ae",
+    "bytes": 5459,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/repair-flutter-key-20261022-result.json": {
+    "original_path": "data/completed-evidence/repair-flutter-key-20261022-result.json",
+    "portable_path": "data/completed-evidence/repair-flutter-key-20261022-result.json",
+    "sha256": "fc5e500394f13cfbeb3244e5b33ba5711ccdd5782dd365f34a05f7c3539f03aa",
+    "bytes": 3339,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/repair-flutter-key-20261022-result.json": {
+    "original_path": "data/completed-evidence/repair-flutter-key-20261022-result.json",
+    "portable_path": "data/completed-evidence/repair-flutter-key-20261022-result.json",
+    "sha256": "fc5e500394f13cfbeb3244e5b33ba5711ccdd5782dd365f34a05f7c3539f03aa",
+    "bytes": 3339,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/repair-flutter-dispose-20261022-result.json": {
+    "original_path": "data/completed-evidence/repair-flutter-dispose-20261022-result.json",
+    "portable_path": "data/completed-evidence/repair-flutter-dispose-20261022-result.json",
+    "sha256": "faf4b22379bf340df5103dd29ffceb56b0b14ee16cdc64662cea0d4f0a386b3d",
+    "bytes": 1698,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/repair-flutter-dispose-20261022-result.json": {
+    "original_path": "data/completed-evidence/repair-flutter-dispose-20261022-result.json",
+    "portable_path": "data/completed-evidence/repair-flutter-dispose-20261022-result.json",
+    "sha256": "faf4b22379bf340df5103dd29ffceb56b0b14ee16cdc64662cea0d4f0a386b3d",
+    "bytes": 1698,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/repair-native-clear-20261022-closeout.json": {
+    "original_path": "data/completed-evidence/repair-native-clear-20261022-closeout.json",
+    "portable_path": "data/completed-evidence/repair-native-clear-20261022-closeout.json",
+    "sha256": "e5c2778f0677854b0d3b43d63aa4ec8e7c35769bca6f0598a445a22853542dc7",
+    "bytes": 18344,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/repair-native-clear-20261022-closeout.json": {
+    "original_path": "data/completed-evidence/repair-native-clear-20261022-closeout.json",
+    "portable_path": "data/completed-evidence/repair-native-clear-20261022-closeout.json",
+    "sha256": "e5c2778f0677854b0d3b43d63aa4ec8e7c35769bca6f0598a445a22853542dc7",
+    "bytes": 18344,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/repair-native-clear-20261022-runtime.json": {
+    "original_path": "data/completed-evidence/repair-native-clear-20261022-runtime.json",
+    "portable_path": "data/completed-evidence/repair-native-clear-20261022-runtime.json",
+    "sha256": "9a24e2ad8e35f12076126f4338585dcaa1cca74a348f8b28a3410c4170353ff0",
+    "bytes": 3370,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/repair-native-clear-20261022-runtime.json": {
+    "original_path": "data/completed-evidence/repair-native-clear-20261022-runtime.json",
+    "portable_path": "data/completed-evidence/repair-native-clear-20261022-runtime.json",
+    "sha256": "9a24e2ad8e35f12076126f4338585dcaa1cca74a348f8b28a3410c4170353ff0",
+    "bytes": 3370,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/repair-artifact-identity-20261022-result.json": {
+    "original_path": "data/completed-evidence/repair-artifact-identity-20261022-result.json",
+    "portable_path": "data/completed-evidence/repair-artifact-identity-20261022-result.json",
+    "sha256": "fe637c2043c8af9b95d1580e96f993344a1584136f7d6e56a786353b566b8cb3",
+    "bytes": 11309,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/repair-artifact-identity-20261022-result.json": {
+    "original_path": "data/completed-evidence/repair-artifact-identity-20261022-result.json",
+    "portable_path": "data/completed-evidence/repair-artifact-identity-20261022-result.json",
+    "sha256": "fe637c2043c8af9b95d1580e96f993344a1584136f7d6e56a786353b566b8cb3",
+    "bytes": 11309,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/repair-completion-20261022-audit.json": {
+    "original_path": "data/completed-evidence/repair-completion-20261022-audit.json",
+    "portable_path": "data/completed-evidence/repair-completion-20261022-audit.json",
+    "sha256": "dee39bb34ec87b6eb404d8eaec618a9ee807e0ed6b74425c43609c4e13cc02c8",
+    "bytes": 12314,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/repair-completion-20261022-audit.json": {
+    "original_path": "data/completed-evidence/repair-completion-20261022-audit.json",
+    "portable_path": "data/completed-evidence/repair-completion-20261022-audit.json",
+    "sha256": "dee39bb34ec87b6eb404d8eaec618a9ee807e0ed6b74425c43609c4e13cc02c8",
+    "bytes": 12314,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p09-network-eleven-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+    "sha256": "734c81afac28a8d98b4106d1224da8db81e26616048e89ddeb2336d9ffc47ce7",
+    "bytes": 19560,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p09-network-eleven-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+    "sha256": "734c81afac28a8d98b4106d1224da8db81e26616048e89ddeb2336d9ffc47ce7",
+    "bytes": 19560,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p13-performance-paired-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p13-performance-paired-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p13-performance-paired-20261022-scoped.json",
+    "sha256": "a01b52d31d18ec6d903629d8bae53f0f9c632f43950aab941d517617366f1772",
+    "bytes": 30749,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p13-performance-paired-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p13-performance-paired-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p13-performance-paired-20261022-scoped.json",
+    "sha256": "a01b52d31d18ec6d903629d8bae53f0f9c632f43950aab941d517617366f1772",
+    "bytes": 30749,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "reports/product/p15-lan-clock-20261022.json": {
+    "original_path": "reports/product/p15-lan-clock-20261022.json",
+    "portable_path": "reports/product/p15-lan-clock-20261022.json",
+    "sha256": "e15019fbe1e2735160f2fa930cd291525fb8b3a4d60561827ab871da6e18dd4d",
+    "bytes": 12451,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/p15-lan-clock-20261022.json": {
+    "original_path": "reports/product/p15-lan-clock-20261022.json",
+    "portable_path": "reports/product/p15-lan-clock-20261022.json",
+    "sha256": "e15019fbe1e2735160f2fa930cd291525fb8b3a4d60561827ab871da6e18dd4d",
+    "bytes": 12451,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p19-qualification-20261023-completed-scoped.json": {
+    "original_path": "data/completed-evidence/p19-qualification-20261023-completed-scoped.json",
+    "portable_path": "data/completed-evidence/p19-qualification-20261023-completed-scoped.json",
+    "sha256": "1e25d0e5605887c58dcd762c0b435f601c77098be43d40b8bed379ae5086a26b",
+    "bytes": 30867,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p19-qualification-20261023-completed-scoped.json": {
+    "original_path": "data/completed-evidence/p19-qualification-20261023-completed-scoped.json",
+    "portable_path": "data/completed-evidence/p19-qualification-20261023-completed-scoped.json",
+    "sha256": "1e25d0e5605887c58dcd762c0b435f601c77098be43d40b8bed379ae5086a26b",
+    "bytes": 30867,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p19-camera-rejoin-20261023-scoped.json": {
+    "original_path": "data/completed-evidence/p19-camera-rejoin-20261023-scoped.json",
+    "portable_path": "data/completed-evidence/p19-camera-rejoin-20261023-scoped.json",
+    "sha256": "34901059ff8ca19bed519dea4b1b29e09e51af89fede7fa9e18012ef0c7b3896",
+    "bytes": 2707,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p19-camera-rejoin-20261023-scoped.json": {
+    "original_path": "data/completed-evidence/p19-camera-rejoin-20261023-scoped.json",
+    "portable_path": "data/completed-evidence/p19-camera-rejoin-20261023-scoped.json",
+    "sha256": "34901059ff8ca19bed519dea4b1b29e09e51af89fede7fa9e18012ef0c7b3896",
+    "bytes": 2707,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p19-camera-rejoin-20261019-review.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-readmission-20261019-amd-stop-03/camera-rejoin-review-02.json",
+    "portable_path": "data/completed-evidence/p19-camera-rejoin-20261019-review.json",
+    "sha256": "21f858b9ed3f72c9cddac83e41bc810d7902d106b3c3a0000912baadd2bb1a86",
+    "bytes": 36695,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p19-camera-rejoin-20261019-review.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-readmission-20261019-amd-stop-03/camera-rejoin-review-02.json",
+    "portable_path": "data/completed-evidence/p19-camera-rejoin-20261019-review.json",
+    "sha256": "21f858b9ed3f72c9cddac83e41bc810d7902d106b3c3a0000912baadd2bb1a86",
+    "bytes": 36695,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-readmission-20261019-amd-stop-03/camera-rejoin-review-02.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-readmission-20261019-amd-stop-03/camera-rejoin-review-02.json",
+    "portable_path": "data/completed-evidence/p19-camera-rejoin-20261019-review.json",
+    "sha256": "21f858b9ed3f72c9cddac83e41bc810d7902d106b3c3a0000912baadd2bb1a86",
+    "bytes": 36695,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p19-camera-owner-20261019-native-tests.xml": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-readmission-20261019-amd-stop-03/software/native-tests.xml",
+    "portable_path": "data/completed-evidence/p19-camera-owner-20261019-native-tests.xml",
+    "sha256": "a4d6e6747d1c8d5fe3c5096c4f1257a5d7bf3f4540f1ef9754c9d6a8c365cfc6",
+    "bytes": 41195,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p19-camera-owner-20261019-native-tests.xml": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-readmission-20261019-amd-stop-03/software/native-tests.xml",
+    "portable_path": "data/completed-evidence/p19-camera-owner-20261019-native-tests.xml",
+    "sha256": "a4d6e6747d1c8d5fe3c5096c4f1257a5d7bf3f4540f1ef9754c9d6a8c365cfc6",
+    "bytes": 41195,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/out/b14-readmission-20261019-amd-stop-03/software/native-tests.xml": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test/out/b14-readmission-20261019-amd-stop-03/software/native-tests.xml",
+    "portable_path": "data/completed-evidence/p19-camera-owner-20261019-native-tests.xml",
+    "sha256": "a4d6e6747d1c8d5fe3c5096c4f1257a5d7bf3f4540f1ef9754c9d6a8c365cfc6",
+    "bytes": 41195,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/flutter-full-rtp-sif-20261022-diagnosis.json": {
+    "original_path": "data/completed-evidence/flutter-full-rtp-sif-20261022-diagnosis.json",
+    "portable_path": "data/completed-evidence/flutter-full-rtp-sif-20261022-diagnosis.json",
+    "sha256": "12b29fa9b92ec5fea51f281694ea6c64a3d46f9207c9685672108d49799121d2",
+    "bytes": 8282,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/flutter-full-rtp-sif-20261022-diagnosis.json": {
+    "original_path": "data/completed-evidence/flutter-full-rtp-sif-20261022-diagnosis.json",
+    "portable_path": "data/completed-evidence/flutter-full-rtp-sif-20261022-diagnosis.json",
+    "sha256": "12b29fa9b92ec5fea51f281694ea6c64a3d46f9207c9685672108d49799121d2",
+    "bytes": 8282,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/flutter-full-rtp-sif-20261022-execution.json": {
+    "original_path": "data/completed-evidence/flutter-full-rtp-sif-20261022-execution.json",
+    "portable_path": "data/completed-evidence/flutter-full-rtp-sif-20261022-execution.json",
+    "sha256": "b5f6391eb150426196362109f52afcec8557ccfc66a102de9466fbd0ea848360",
+    "bytes": 728,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/flutter-full-rtp-sif-20261022-execution.json": {
+    "original_path": "data/completed-evidence/flutter-full-rtp-sif-20261022-execution.json",
+    "portable_path": "data/completed-evidence/flutter-full-rtp-sif-20261022-execution.json",
+    "sha256": "b5f6391eb150426196362109f52afcec8557ccfc66a102de9466fbd0ea848360",
+    "bytes": 728,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "reports/product/p05-p06-deferred-remediation-20261022.json": {
+    "original_path": "reports/product/p05-p06-deferred-remediation-20261022.json",
+    "portable_path": "reports/product/p05-p06-deferred-remediation-20261022.json",
+    "sha256": "88e43976b6d94c817ca94c6840bba64fbad3da26683df24b49184ba19f7f4e98",
+    "bytes": 17999,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/p05-p06-deferred-remediation-20261022.json": {
+    "original_path": "reports/product/p05-p06-deferred-remediation-20261022.json",
+    "portable_path": "reports/product/p05-p06-deferred-remediation-20261022.json",
+    "sha256": "88e43976b6d94c817ca94c6840bba64fbad3da26683df24b49184ba19f7f4e98",
+    "bytes": 17999,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "reports/product/p05-p06-deferred-remediation-20261022.html": {
+    "original_path": "reports/product/p05-p06-deferred-remediation-20261022.html",
+    "portable_path": "reports/product/p05-p06-deferred-remediation-20261022.html",
+    "sha256": "dfc6f2384bc5107f662dda55de4c69dfc327236d83d3cd30bc17a3b5c7c7f83b",
+    "bytes": 16882,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/p05-p06-deferred-remediation-20261022.html": {
+    "original_path": "reports/product/p05-p06-deferred-remediation-20261022.html",
+    "portable_path": "reports/product/p05-p06-deferred-remediation-20261022.html",
+    "sha256": "dfc6f2384bc5107f662dda55de4c69dfc327236d83d3cd30bc17a3b5c7c7f83b",
+    "bytes": 16882,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json",
+    "sha256": "d5670737fe38f8468b3d9c2de517f825bddad8403450cb303bc7d66df81d51c2",
+    "bytes": 10140,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json",
+    "sha256": "d5670737fe38f8468b3d9c2de517f825bddad8403450cb303bc7d66df81d51c2",
+    "bytes": 10140,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json",
+    "sha256": "81e42e236db538a32f48aa34cfc3a79ca10e74cfa0becbbac55210e99872e06a",
+    "bytes": 37607,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json",
+    "sha256": "81e42e236db538a32f48aa34cfc3a79ca10e74cfa0becbbac55210e99872e06a",
+    "bytes": 37607,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json",
+    "sha256": "5919a2caf74a6bfaddb1390a7748ea3c4a93e1bdaffc99cd1770c77838c9e4ac",
+    "bytes": 14765,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json",
+    "sha256": "5919a2caf74a6bfaddb1390a7748ea3c4a93e1bdaffc99cd1770c77838c9e4ac",
+    "bytes": 14765,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/turn02-export-readback-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/turn02-export-readback-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/turn02-export-readback-20261021-scoped.json",
+    "sha256": "d314b7a765ff82ab670f8847ce50600de9da52a50048892a3f6d830a0f45b90a",
+    "bytes": 3286,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/turn02-export-readback-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/turn02-export-readback-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/turn02-export-readback-20261021-scoped.json",
+    "sha256": "d314b7a765ff82ab670f8847ce50600de9da52a50048892a3f6d830a0f45b90a",
+    "bytes": 3286,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p03-cpu-static-content17b-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p03-cpu-static-content17b-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p03-cpu-static-content17b-20261022-scoped.json",
+    "sha256": "d625300b5393b2979dba13995141a7733b6a03cb5c7cbd3b62bc30526705f938",
+    "bytes": 69493,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p03-cpu-static-content17b-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p03-cpu-static-content17b-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p03-cpu-static-content17b-20261022-scoped.json",
+    "sha256": "d625300b5393b2979dba13995141a7733b6a03cb5c7cbd3b62bc30526705f938",
+    "bytes": 69493,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p14-artifact-identity-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/p14-artifact-identity-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/p14-artifact-identity-20261021-scoped.json",
+    "sha256": "cb17814f8ab59b0ef508a769496a115c3eb660924e4832b3a3c4ae7f0d84e56c",
+    "bytes": 5801,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p14-artifact-identity-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/p14-artifact-identity-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/p14-artifact-identity-20261021-scoped.json",
+    "sha256": "cb17814f8ab59b0ef508a769496a115c3eb660924e4832b3a3c4ae7f0d84e56c",
+    "bytes": 5801,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/theme-restart04-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/theme-restart04-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/theme-restart04-20261021-scoped.json",
+    "sha256": "72595ec0c4e1723dee58faf43f873717c8f537df7d9ed4cbe61b2de81e324e9f",
+    "bytes": 9126,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/theme-restart04-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/theme-restart04-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/theme-restart04-20261021-scoped.json",
+    "sha256": "72595ec0c4e1723dee58faf43f873717c8f537df7d9ed4cbe61b2de81e324e9f",
+    "bytes": 9126,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/theme-invalid02-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/theme-invalid02-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/theme-invalid02-20261021-scoped.json",
+    "sha256": "c4cd995f7663b4f3c07c48ee7d9acd38751d0407d30221e79a589c54c6a6e499",
+    "bytes": 2726,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/theme-invalid02-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/theme-invalid02-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/theme-invalid02-20261021-scoped.json",
+    "sha256": "c4cd995f7663b4f3c07c48ee7d9acd38751d0407d30221e79a589c54c6a6e499",
+    "bytes": 2726,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/theme-first-window02-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/theme-first-window02-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/theme-first-window02-20261021-scoped.json",
+    "sha256": "68316b785c677a60759ad988a10737ee5e4950116702ae818bf2cd47366cc1ff",
+    "bytes": 7491,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/theme-first-window02-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/theme-first-window02-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/theme-first-window02-20261021-scoped.json",
+    "sha256": "68316b785c677a60759ad988a10737ee5e4950116702ae818bf2cd47366cc1ff",
+    "bytes": 7491,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/theme-configuration-seeds01-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/theme-configuration-seeds01-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/theme-configuration-seeds01-20261021-scoped.json",
+    "sha256": "04c78a151a63efb23e7d680233aa7e37337c8d0fedfb4cf0d7a8f6b3dc208d7e",
+    "bytes": 9877,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/theme-configuration-seeds01-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/theme-configuration-seeds01-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/theme-configuration-seeds01-20261021-scoped.json",
+    "sha256": "04c78a151a63efb23e7d680233aa7e37337c8d0fedfb4cf0d7a8f6b3dc208d7e",
+    "bytes": 9877,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p21-system-theme16-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/p21-system-theme16-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/p21-system-theme16-20261021-scoped.json",
+    "sha256": "dadcaec1bc067cce684c8bcf644f01c1e8d296dcf5d8f8f7c9aafca6c73db820",
+    "bytes": 4109,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p21-system-theme16-20261021-scoped.json": {
+    "original_path": "data/completed-evidence/p21-system-theme16-20261021-scoped.json",
+    "portable_path": "data/completed-evidence/p21-system-theme16-20261021-scoped.json",
+    "sha256": "dadcaec1bc067cce684c8bcf644f01c1e8d296dcf5d8f8f7c9aafca6c73db820",
+    "bytes": 4109,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p21-meeting-theme04-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p21-meeting-theme04-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p21-meeting-theme04-20261022-scoped.json",
+    "sha256": "2dfaeb31d8a0cab6e0b1b2f0e1eed301e4c849d721005ada8d9b4eb234db3bdc",
+    "bytes": 41152,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p21-meeting-theme04-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p21-meeting-theme04-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p21-meeting-theme04-20261022-scoped.json",
+    "sha256": "2dfaeb31d8a0cab6e0b1b2f0e1eed301e4c849d721005ada8d9b4eb234db3bdc",
+    "bytes": 41152,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p21-meeting-cpu05-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p21-meeting-cpu05-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p21-meeting-cpu05-20261022-scoped.json",
+    "sha256": "5b5e25ca210ed37d003387ea088ced6bf9114d93eb34e5c7c0e008bdf8e9a639",
+    "bytes": 68778,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p21-meeting-cpu05-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p21-meeting-cpu05-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p21-meeting-cpu05-20261022-scoped.json",
+    "sha256": "5b5e25ca210ed37d003387ea088ced6bf9114d93eb34e5c7c0e008bdf8e9a639",
+    "bytes": 68778,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/p21-meeting-opengl05-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p21-meeting-opengl05-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p21-meeting-opengl05-20261022-scoped.json",
+    "sha256": "ab9ef5c0b20ee8c1c255f3e39b038bdc900a669ff4b7786b559f15aaf374f469",
+    "bytes": 52406,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p21-meeting-opengl05-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/p21-meeting-opengl05-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/p21-meeting-opengl05-20261022-scoped.json",
+    "sha256": "ab9ef5c0b20ee8c1c255f3e39b038bdc900a669ff4b7786b559f15aaf374f469",
+    "bytes": 52406,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/resource-completion-20261021-01.json": {
+    "original_path": "reports/product/resource-completion-20261021-01.json",
+    "portable_path": "reports/product/resource-completion-20261021-01.json",
+    "sha256": "911481e87f743f08b478a6dcb541338d762afae76cb26c8a4ddbc679bd452a48",
+    "bytes": 611975,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/whiteboard-1800-fixed04-20261021-result.json": {
+    "original_path": "data/completed-evidence/whiteboard-1800-fixed04-20261021-result.json",
+    "portable_path": "data/completed-evidence/whiteboard-1800-fixed04-20261021-result.json",
+    "sha256": "021c25321c4ec0ef4e3d00296ac691310af69d3711211c37190e0ec2d9e3dbe6",
+    "bytes": 8777871,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/whiteboard-1800-fixed04-20261021-result.json": {
+    "original_path": "data/completed-evidence/whiteboard-1800-fixed04-20261021-result.json",
+    "portable_path": "data/completed-evidence/whiteboard-1800-fixed04-20261021-result.json",
+    "sha256": "021c25321c4ec0ef4e3d00296ac691310af69d3711211c37190e0ec2d9e3dbe6",
+    "bytes": 8777871,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/telemetry-paired-first-20261021-index.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/index.json",
+    "portable_path": "data/completed-evidence/telemetry-paired-first-20261021-index.json",
+    "sha256": "271e7c548683b555ff02b3b6132e77328e9437f1a74ba4f5820f9ff8dddbe27e",
+    "bytes": 3401,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/telemetry-paired-first-20261021-index.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/index.json",
+    "portable_path": "data/completed-evidence/telemetry-paired-first-20261021-index.json",
+    "sha256": "271e7c548683b555ff02b3b6132e77328e9437f1a74ba4f5820f9ff8dddbe27e",
+    "bytes": 3401,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/index.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/index.json",
+    "portable_path": "data/completed-evidence/telemetry-paired-first-20261021-index.json",
+    "sha256": "271e7c548683b555ff02b3b6132e77328e9437f1a74ba4f5820f9ff8dddbe27e",
+    "bytes": 3401,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/telemetry-paired-first-20261021-off-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/1-off/result.json",
+    "portable_path": "data/completed-evidence/telemetry-paired-first-20261021-off-result.json",
+    "sha256": "8d447c2cbed41f422a09cd581e404b647c0b29bebcfc956d34c908a25d2deee2",
+    "bytes": 25207,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/telemetry-paired-first-20261021-off-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/1-off/result.json",
+    "portable_path": "data/completed-evidence/telemetry-paired-first-20261021-off-result.json",
+    "sha256": "8d447c2cbed41f422a09cd581e404b647c0b29bebcfc956d34c908a25d2deee2",
+    "bytes": 25207,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/1-off/result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/1-off/result.json",
+    "portable_path": "data/completed-evidence/telemetry-paired-first-20261021-off-result.json",
+    "sha256": "8d447c2cbed41f422a09cd581e404b647c0b29bebcfc956d34c908a25d2deee2",
+    "bytes": 25207,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/telemetry-paired-first-20261021-on-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/1-on/result.json",
+    "portable_path": "data/completed-evidence/telemetry-paired-first-20261021-on-result.json",
+    "sha256": "a219249e010b2b526a0bc1a1a631133aa896461e32f2719bac2ef5fdaee6309d",
+    "bytes": 26142,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/telemetry-paired-first-20261021-on-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/1-on/result.json",
+    "portable_path": "data/completed-evidence/telemetry-paired-first-20261021-on-result.json",
+    "sha256": "a219249e010b2b526a0bc1a1a631133aa896461e32f2719bac2ef5fdaee6309d",
+    "bytes": 26142,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/1-on/result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/telemetry-paired-01/1-on/result.json",
+    "portable_path": "data/completed-evidence/telemetry-paired-first-20261021-on-result.json",
+    "sha256": "a219249e010b2b526a0bc1a1a631133aa896461e32f2719bac2ef5fdaee6309d",
+    "bytes": 26142,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/capture-quality-2k-20261021-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/capture-quality-fullscreen-unblocked01/complex-wgc-screen/result.json",
+    "portable_path": "data/completed-evidence/capture-quality-2k-20261021-result.json",
+    "sha256": "2da4b1453628daebf6e8bf96d06d8b62187b3af266dd948a211d79e1616d96b8",
+    "bytes": 5298,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/capture-quality-2k-20261021-result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/capture-quality-fullscreen-unblocked01/complex-wgc-screen/result.json",
+    "portable_path": "data/completed-evidence/capture-quality-2k-20261021-result.json",
+    "sha256": "2da4b1453628daebf6e8bf96d06d8b62187b3af266dd948a211d79e1616d96b8",
+    "bytes": 5298,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test-local/out/resource-completion-20261021-01/capture-quality-fullscreen-unblocked01/complex-wgc-screen/result.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/capture-quality-fullscreen-unblocked01/complex-wgc-screen/result.json",
+    "portable_path": "data/completed-evidence/capture-quality-2k-20261021-result.json",
+    "sha256": "2da4b1453628daebf6e8bf96d06d8b62187b3af266dd948a211d79e1616d96b8",
+    "bytes": 5298,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/functional-media-retest-20261020-01.json": {
+    "original_path": "reports/product/functional-media-retest-20261020-01.json",
+    "portable_path": "reports/product/functional-media-retest-20261020-01.json",
+    "sha256": "35044ef9feed78e9df4113e99a80b66ef705eae9af80b0a56f768a47ac11ecb9",
+    "bytes": 1714525,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "reports/product/resource-completion-20261020-01.json": {
+    "original_path": "reports/product/resource-completion-20261020-01.json",
+    "portable_path": "reports/product/resource-completion-20261020-01.json",
+    "sha256": "ef49af2a78d24305a3de9ff0e39c3855ac3e0c42100eef930d7a63bd6ff2ad10",
+    "bytes": 153072,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/resource-completion-20261020-01.json": {
+    "original_path": "reports/product/resource-completion-20261020-01.json",
+    "portable_path": "reports/product/resource-completion-20261020-01.json",
+    "sha256": "ef49af2a78d24305a3de9ff0e39c3855ac3e0c42100eef930d7a63bd6ff2ad10",
+    "bytes": 153072,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
+  "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+    "sha256": "971120bb413ed8d1f6c42525f49d2b088d371596acab495c5e48ac61850467e0",
+    "bytes": 10534,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json": {
+    "original_path": "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+    "portable_path": "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+    "sha256": "971120bb413ed8d1f6c42525f49d2b088d371596acab495c5e48ac61850467e0",
+    "bytes": 10534,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/wgc-1800-20261021-summary.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/wgc-1800-resource-01/summary.json",
+    "portable_path": "data/completed-evidence/wgc-1800-20261021-summary.json",
+    "sha256": "33659a700dffeb8b0ea83eeb39fb515718dd4ac4d864f05d2689eaeda97a3e70",
+    "bytes": 3826,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/completed-evidence/gdi-hot-50-20261021-summary.json": {
+    "original_path": "data/completed-evidence/gdi-hot-50-20261021-summary.json",
+    "portable_path": "data/completed-evidence/gdi-hot-50-20261021-summary.json",
+    "sha256": "bea24ecdcff826075c7ec7586cb88b332cdb3ef527f5c1f9c16363e487d06ff7",
+    "bytes": 3750,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/whiteboard-b12-20261021-index.json": {
+    "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/whiteboard-functional-desktop11/index.json",
+    "portable_path": "data/completed-evidence/whiteboard-b12-20261021-index.json",
+    "sha256": "4244b399b50a98e124d849b66ab596e7256f25fe99161f3f2b00be384284e905",
+    "bytes": 2744,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/report-input.json": {
+    "original_path": "data/report-input.json",
+    "portable_path": "data/report-input.json",
+    "sha256": "34c8c1cf5300a94eb93b398c02fa2847ea231c5f5ec5d9aa9e659e1ae01cc772",
+    "bytes": 397096,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/report-input.json": {
+    "original_path": "data/report-input.json",
+    "portable_path": "data/report-input.json",
+    "sha256": "34c8c1cf5300a94eb93b398c02fa2847ea231c5f5ec5d9aa9e659e1ae01cc772",
+    "bytes": 397096,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/b14/b14-clipboard-readmission-20261019-01.json": {
+    "original_path": "reports/b14/b14-clipboard-readmission-20261019-01.json",
+    "portable_path": "reports/b14/b14-clipboard-readmission-20261019-01.json",
+    "sha256": "d94bda9c3caaef24b3d71e430fb1eb252ebcae3aa86cf4cc33c04dacfe471f1a",
+    "bytes": 14672,
+    "status": "COMPLETED_RESULT_SOURCE"
+  },
+  "data/b14-100-cycle-summary.json": {
+    "original_path": "data/b14-100-cycle-summary.json",
+    "portable_path": "data/b14-100-cycle-summary.json",
+    "sha256": "eec6af6b95304217d48dd554c79ef26e0d5d5e03dbd944734af2cc5c27509f0f",
+    "bytes": 120978,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/b14-100-cycle-summary.json": {
+    "original_path": "data/b14-100-cycle-summary.json",
+    "portable_path": "data/b14-100-cycle-summary.json",
+    "sha256": "eec6af6b95304217d48dd554c79ef26e0d5d5e03dbd944734af2cc5c27509f0f",
+    "bytes": 120978,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/b14-user-disposition-20261023.json": {
+    "original_path": "data/b14-user-disposition-20261023.json",
+    "portable_path": "data/b14-user-disposition-20261023.json",
+    "sha256": "a351efea402b714414b29fe5634d8102e428055efe19aa07d7a4a972c0b3c86b",
+    "bytes": 3010,
+    "status": "DOCUMENT_DISPOSITION_OR_HISTORICAL_SUMMARY"
   }
 }

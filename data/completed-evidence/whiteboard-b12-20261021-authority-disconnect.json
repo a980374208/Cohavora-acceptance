@@ -1,0 +1,250 @@
+{
+  "status": "PASS",
+  "room": "b12-ae2853a675fa4bfd8cc25d56c9bfa391",
+  "cases": {
+    "authority-disconnect": {
+      "status": "PASS",
+      "observations": {
+        "receiver": {
+          "actor": "actor-a3bd48ebc86810e6",
+          "asset_hashes": {},
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": false,
+          "command_sequence": 71,
+          "document": {
+            "active": "page-1",
+            "id": "board-119dc1ac9aa13b81ecf34fdbf7662480",
+            "interactionEpoch": "1",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "915a172a1f04071d21320bd71e2b5b1a4e4c497936958d63f3bce1813f2cbae7",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 2,
+          "state": 3,
+          "utc_ms": 1792547074574,
+          "writers_open": true
+        },
+        "late": {
+          "actor": "actor-e6222c26b787b7df",
+          "asset_hashes": {},
+          "authority": "publisher",
+          "can_admin": false,
+          "can_edit": false,
+          "command_sequence": 64,
+          "document": {
+            "active": "page-1",
+            "id": "board-119dc1ac9aa13b81ecf34fdbf7662480",
+            "interactionEpoch": "1",
+            "owner": "actor-28acdd794aaea0b5",
+            "pages": [
+              {
+                "backgroundAssetId": "",
+                "epoch": "1",
+                "height": 1080,
+                "id": "page-1",
+                "objects": [
+                  {
+                    "author": "actor-28acdd794aaea0b5",
+                    "color": 16729105,
+                    "fontSize": 28,
+                    "id": "object-publisher-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        20,
+                        10
+                      ],
+                      [
+                        50,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  },
+                  {
+                    "author": "actor-a3bd48ebc86810e6",
+                    "color": 2271812,
+                    "fontSize": 28,
+                    "id": "object-receiver-simultaneous",
+                    "kind": 3,
+                    "points": [
+                      [
+                        90,
+                        10
+                      ],
+                      [
+                        120,
+                        40
+                      ]
+                    ],
+                    "text": "",
+                    "width": 4
+                  }
+                ],
+                "width": 1920
+              }
+            ],
+            "version": 2
+          },
+          "document_sha256": "915a172a1f04071d21320bd71e2b5b1a4e4c497936958d63f3bce1813f2cbae7",
+          "event": "board_projection",
+          "locked": false,
+          "sequence": 2,
+          "state": 3,
+          "utc_ms": 1792547074694,
+          "writers_open": true
+        }
+      },
+      "read_only_proposals_preserved_document": true
+    }
+  },
+  "started_utc": "2026-10-21T01:44:04.268354+00:00",
+  "server_before": {
+    "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+    "room": {
+      "departure_timeout": 20,
+      "empty_timeout": 60
+    },
+    "video": {
+      "codec_regression_threshold": 1
+    },
+    "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+    "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+    "health_status": 200,
+    "participants_remaining": 0,
+    "publications_remaining": 0
+  },
+  "room_preparation": {
+    "metadata_sha256": "9951a946f3b60c410142b8944c1752c183c6cd9f2e24121bfe024ca70dc8897d",
+    "room_sid": "RM_LMemcJvHF6QY"
+  },
+  "input_png": {
+    "sha256": "5a9a4359a77d6830003058fc692c04916422c11e4fb0b1ab6ec907465708b887",
+    "width": 320,
+    "height": 180
+  },
+  "lifecycle": {
+    "publisher": {
+      "pid": 10092,
+      "started": {
+        "configuration": "RelWithDebInfo",
+        "event": "started",
+        "identity": "publisher",
+        "pid": 10092,
+        "utc_ms": 1792547045804
+      },
+      "expected_process_termination": true,
+      "exit_code": 1
+    },
+    "receiver": {
+      "pid": 23004,
+      "started": {
+        "configuration": "RelWithDebInfo",
+        "event": "started",
+        "identity": "receiver",
+        "pid": 23004,
+        "utc_ms": 1792547046442
+      },
+      "retirement": {
+        "cleanup_pending": 0,
+        "event": "retired",
+        "rooms_alive": 0,
+        "rooms_observed": 1,
+        "utc_ms": 1792547074915
+      },
+      "exit_code": 0
+    },
+    "late": {
+      "pid": 24140,
+      "started": {
+        "configuration": "RelWithDebInfo",
+        "event": "started",
+        "identity": "late",
+        "pid": 24140,
+        "utc_ms": 1792547049648
+      },
+      "retirement": {
+        "cleanup_pending": 0,
+        "event": "retired",
+        "rooms_alive": 0,
+        "rooms_observed": 1,
+        "utc_ms": 1792547075131
+      },
+      "exit_code": 0
+    }
+  },
+  "server_after": {
+    "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+    "room": {
+      "departure_timeout": 20,
+      "empty_timeout": 60
+    },
+    "video": {
+      "codec_regression_threshold": 1
+    },
+    "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+    "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+    "health_status": 200,
+    "participants_remaining": 0,
+    "publications_remaining": 0
+  },
+  "events_sha256": {
+    "publisher": "2e18088f8b2ee19e925cf8c38e49f155b8a31dd5139945a36421d01433c00029",
+    "receiver": "ce1fd2168923c65bb0641463d0ac94cf61e8bdc33d40d1a0001e0e207a3b9242",
+    "late": "f0f81966da8566c123dfffb6feaea778b254e9e15668b92391872f918d1ab61f"
+  },
+  "finished_utc": "2026-10-21T01:44:36.091002+00:00"
+}

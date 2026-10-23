@@ -1,0 +1,862 @@
+{
+  "status": "PASS",
+  "binary_identity": {
+    "configuration": "RelWithDebInfo",
+    "binary_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\RelWithDebInfo\\uia_entry_fixture.exe",
+    "binary_sha256": "e3d6076b5518fa18c97f8ecc81de0a34098ec2dc5f6a18676e06846c8e022bf3",
+    "pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\RelWithDebInfo\\uia_entry_fixture.pdb",
+    "pdb_guid": "a676e871-4699-4551-9ee9-cda1b6a09552",
+    "pdb_age": 1
+  },
+  "head": "cb10d689e53ad6adae13a2bfaf2a44af4a27a6a6",
+  "inputs": {
+    "integration/source_paths.py": "e90a6a62ab08e436510294d201985cceedd023cf38a364c9a59b634417ce99f2",
+    "src/core/room.cpp": "3edbfbf969595135ab8f7f4dbe7024a2545b677a396a59215a23f90a31b67363",
+    "src/core/room.h": "fabbbfcd27b80b8ab511ffc2ec205f83fdabf2eabaaa5e38573cdae62d11258f",
+    "src/render/owned_i420_frame.cpp": "c773be1a5cc01d210c7b51c8ba4d217cff4617a3448965d515c4111d94c04f24",
+    "src/render/owned_i420_frame.h": "accc386c2a9daf79cfa3230840910a82276f875e3ac5205b1f367935cba4c8d1",
+    "src/core/meeting_coordinator.cpp": "edf401982499a8c995d80e0390f46bdf1c8bc6e1e50fbca54206e76fa093ba7f",
+    "src/core/meeting_coordinator.h": "9e6b797cb5d9b8d70e4fb8ec73de5171d3d5bfb658669d95c177e21a659d6833",
+    "src/telemetry/session_telemetry.cpp": "1afc15e770410261d09a355d3889adaa202d039305082a570ee0f6744ebf2014",
+    "src/telemetry/telemetry_report.cpp": "72e4226311938403fae794e2f4ca9749af3282cd73cd4908ea030251bb7a2776",
+    "src/ui/meeting_log_console.cpp": "694067352e4ae3b8375b8376bef61c47b9c07bc5e929df74e67a69dcd02d60f1",
+    "src/ui/telemetry_panel_controller.h": "c657d028c1f76c1f61e520e155753a5de5320f259e4c37547059ff5664024597",
+    "src/ui/telemetry_panel_controller.cpp": "d506afe63c52f8c1d4e6a7843ba3e9edc1c46d5f76f8b1540361bc7c73fa0f14",
+    "tests/runtime/probes/b_file_product_runtime.h": "fa3817dbf67441b486dbb9504c546a33093812bf9805069e676fc4a6b6c6d606",
+    "tests/runtime/probes/b_network_product_runtime.h": "ea1e0852bf34945f67e913cd15f60a9d19635d79b6eedbbe4c546d781d6eb270",
+    "tests/runtime/probes/b_telemetry_product_runtime.h": "49facbdbe2810b9f34813159f50bbb6dc2de573270957455f4bdd3190ffce429",
+    "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\product_acceptance\\run_b_acceptance_telemetry.py": "50537a43a7d6c656854772ddf694a11ddb8c47099d17dd6c6e829774b1b0ade5"
+  },
+  "pairs": [
+    {
+      "status": "PASS",
+      "cpu_increase_pp": 0.386523922248836,
+      "working_set_increase_bytes": 12484608.0,
+      "callback_p99_increase_upper_percent": -11.436950146627566,
+      "actual_callback_fps": {
+        "off": 16.00026611669217,
+        "on": 15.995605785715474
+      },
+      "limits": {
+        "cpu_increase_pp": 1,
+        "working_set_increase_bytes": 33554432,
+        "callback_p99_increase_percent": 5,
+        "UI_batch_ms": 4,
+        "log_refresh_hz": 20,
+        "telemetry_refresh_hz": 1
+      }
+    },
+    {
+      "status": "PASS",
+      "cpu_increase_pp": 0.29702174261488945,
+      "working_set_increase_bytes": 11005952.0,
+      "callback_p99_increase_upper_percent": -6.758620689655171,
+      "actual_callback_fps": {
+        "off": 15.991080937167201,
+        "on": 16.007704953421566
+      },
+      "limits": {
+        "cpu_increase_pp": 1,
+        "working_set_increase_bytes": 33554432,
+        "callback_p99_increase_percent": 5,
+        "UI_batch_ms": 4,
+        "log_refresh_hz": 20,
+        "telemetry_refresh_hz": 1
+      }
+    },
+    {
+      "status": "PASS",
+      "cpu_increase_pp": 0.31407074741347263,
+      "working_set_increase_bytes": 13543424.0,
+      "callback_p99_increase_upper_percent": -16.260162601626014,
+      "actual_callback_fps": {
+        "off": 16.0010645198849,
+        "on": 15.995339547270307
+      },
+      "limits": {
+        "cpu_increase_pp": 1,
+        "working_set_increase_bytes": 33554432,
+        "callback_p99_increase_percent": 5,
+        "UI_batch_ms": 4,
+        "log_refresh_hz": 20,
+        "telemetry_refresh_hz": 1
+      }
+    }
+  ],
+  "finished_utc": "2026-10-22T08:49:06.878305+00:00",
+  "schema": "cohavora-p13-performance-paired-completed-scoped-v1",
+  "paired_status": "PASS",
+  "cleanup_status": "PASS",
+  "input_identity_status": "PASS",
+  "environment_restore_status": "PASS",
+  "security_group_restore_status": "PASS",
+  "requested_pairs": 3,
+  "completed_pairs": 3,
+  "remaining_pairs": 0,
+  "remaining_pairs_status": "NOT_APPLICABLE",
+  "requested_seconds": 60,
+  "planned_order": [
+    [
+      "off",
+      "on"
+    ],
+    [
+      "on",
+      "off"
+    ],
+    [
+      "off",
+      "on"
+    ]
+  ],
+  "stop_reason": "ALL_REQUESTED_PAIRS_COMPLETED",
+  "full_P13_gate_credit": 0,
+  "closed_utc": "2026-10-22T08:52:40.945203+00:00",
+  "diagnostic_stage_timing": false,
+  "diagnostic_environment_policy": "CLEARED_ALL_B_TELEMETRY_ENVIRONMENT_BEFORE_LAUNCH",
+  "windows": [
+    {
+      "status": "PASS",
+      "mode": "off",
+      "requested_seconds": 60,
+      "summary": {
+        "samples": 62,
+        "duration_s": 60.124,
+        "cpu_pct": 0.17077801115789273,
+        "working_set_median": 140718080.0,
+        "private_median": 109815808.0,
+        "telemetry_memory_peak": 18704,
+        "callback_frames": 962,
+        "measured_start_ms": 1792658302702,
+        "measured_end_ms": 1792658362826
+      },
+      "callback_p99": {
+        "samples": 964,
+        "lower_ns": 68200,
+        "upper_ns": 68300
+      },
+      "persistence_close": {
+        "diagnostic_completed": true,
+        "disk_unknown": false,
+        "event": "telemetry_store_closed",
+        "history_completed": true,
+        "utc_ms": 1792658378485
+      },
+      "lifecycle": {
+        "receiver": {
+          "pid": 27092,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "receiver",
+            "pid": 27092,
+            "utc_ms": 1792658268295
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658378616
+          },
+          "exit_code": 0
+        },
+        "publisher": {
+          "pid": 15724,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "publisher",
+            "pid": 15724,
+            "utc_ms": 1792658269139
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658378800
+          },
+          "exit_code": 0
+        }
+      },
+      "server_before": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "server_after": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "finished_utc": "2026-10-22T08:39:39.791717+00:00",
+      "name": "1-off",
+      "evidence": "1-off/result.json",
+      "ui_batch_maximum_ms": 0.7918,
+      "ui_batch_samples": 963,
+      "telemetry_refresh_samples": 60,
+      "stage_timing_enabled": false,
+      "diagnostic_artifacts_absent": true
+    },
+    {
+      "status": "PASS",
+      "mode": "on",
+      "requested_seconds": 60,
+      "summary": {
+        "samples": 62,
+        "duration_s": 60.079,
+        "cpu_pct": 0.5573019334067287,
+        "working_set_median": 153202688.0,
+        "private_median": 122273792.0,
+        "telemetry_memory_peak": 7958937,
+        "callback_frames": 961,
+        "measured_start_ms": 1792658415861,
+        "measured_end_ms": 1792658475940
+      },
+      "callback_p99": {
+        "samples": 964,
+        "lower_ns": 60300,
+        "upper_ns": 60400
+      },
+      "persistence_close": {
+        "diagnostic_completed": true,
+        "disk_unknown": false,
+        "event": "telemetry_store_closed",
+        "history_completed": true,
+        "utc_ms": 1792658491593
+      },
+      "lifecycle": {
+        "receiver": {
+          "pid": 34052,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "receiver",
+            "pid": 34052,
+            "utc_ms": 1792658381387
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658491719
+          },
+          "exit_code": 0
+        },
+        "publisher": {
+          "pid": 24852,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "publisher",
+            "pid": 24852,
+            "utc_ms": 1792658382137
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658491936
+          },
+          "exit_code": 0
+        }
+      },
+      "server_before": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "server_after": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "finished_utc": "2026-10-22T08:41:32.908632+00:00",
+      "name": "1-on",
+      "evidence": "1-on/result.json",
+      "ui_batch_maximum_ms": 0.0556,
+      "ui_batch_samples": 963,
+      "telemetry_refresh_samples": 60,
+      "stage_timing_enabled": false,
+      "diagnostic_artifacts_absent": true
+    },
+    {
+      "status": "PASS",
+      "mode": "on",
+      "requested_seconds": 60,
+      "summary": {
+        "samples": 63,
+        "duration_s": 60.221,
+        "cpu_pct": 0.5050222750962526,
+        "working_set_median": 153694208,
+        "private_median": 120573952,
+        "telemetry_memory_peak": 7924105,
+        "callback_frames": 964,
+        "measured_start_ms": 1792658529360,
+        "measured_end_ms": 1792658589581
+      },
+      "callback_p99": {
+        "samples": 965,
+        "lower_ns": 67500,
+        "upper_ns": 67600
+      },
+      "persistence_close": {
+        "diagnostic_completed": true,
+        "disk_unknown": false,
+        "event": "telemetry_store_closed",
+        "history_completed": true,
+        "utc_ms": 1792658605191
+      },
+      "lifecycle": {
+        "receiver": {
+          "pid": 38616,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "receiver",
+            "pid": 38616,
+            "utc_ms": 1792658494480
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658605280
+          },
+          "exit_code": 0
+        },
+        "publisher": {
+          "pid": 41464,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "publisher",
+            "pid": 41464,
+            "utc_ms": 1792658495228
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658605500
+          },
+          "exit_code": 0
+        }
+      },
+      "server_before": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "server_after": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "finished_utc": "2026-10-22T08:43:26.448671+00:00",
+      "name": "2-on",
+      "evidence": "2-on/result.json",
+      "ui_batch_maximum_ms": 0.0924,
+      "ui_batch_samples": 964,
+      "telemetry_refresh_samples": 60,
+      "stage_timing_enabled": false,
+      "diagnostic_artifacts_absent": true
+    },
+    {
+      "status": "PASS",
+      "mode": "off",
+      "requested_seconds": 60,
+      "summary": {
+        "samples": 62,
+        "duration_s": 60.096,
+        "cpu_pct": 0.20800053248136316,
+        "working_set_median": 142688256.0,
+        "private_median": 109821952.0,
+        "telemetry_memory_peak": 18704,
+        "callback_frames": 961,
+        "measured_start_ms": 1792658642435,
+        "measured_end_ms": 1792658702531
+      },
+      "callback_p99": {
+        "samples": 963,
+        "lower_ns": 72500,
+        "upper_ns": 72600
+      },
+      "persistence_close": {
+        "diagnostic_completed": true,
+        "disk_unknown": false,
+        "event": "telemetry_store_closed",
+        "history_completed": true,
+        "utc_ms": 1792658718223
+      },
+      "lifecycle": {
+        "receiver": {
+          "pid": 24852,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "receiver",
+            "pid": 24852,
+            "utc_ms": 1792658608036
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658718310
+          },
+          "exit_code": 0
+        },
+        "publisher": {
+          "pid": 24112,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "publisher",
+            "pid": 24112,
+            "utc_ms": 1792658608891
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658718546
+          },
+          "exit_code": 0
+        }
+      },
+      "server_before": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "server_after": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "finished_utc": "2026-10-22T08:45:19.505846+00:00",
+      "name": "2-off",
+      "evidence": "2-off/result.json",
+      "ui_batch_maximum_ms": 0.2568,
+      "ui_batch_samples": 963,
+      "telemetry_refresh_samples": 60,
+      "stage_timing_enabled": false,
+      "diagnostic_artifacts_absent": true
+    },
+    {
+      "status": "PASS",
+      "mode": "off",
+      "requested_seconds": 60,
+      "summary": {
+        "samples": 62,
+        "duration_s": 60.121,
+        "cpu_pct": 0.18935028644614313,
+        "working_set_median": 141524992.0,
+        "private_median": 110966784.0,
+        "telemetry_memory_peak": 18704,
+        "callback_frames": 962,
+        "measured_start_ms": 1792658755520,
+        "measured_end_ms": 1792658815641
+      },
+      "callback_p99": {
+        "samples": 964,
+        "lower_ns": 73800,
+        "upper_ns": 73900
+      },
+      "persistence_close": {
+        "diagnostic_completed": true,
+        "disk_unknown": false,
+        "event": "telemetry_store_closed",
+        "history_completed": true,
+        "utc_ms": 1792658831296
+      },
+      "lifecycle": {
+        "receiver": {
+          "pid": 40616,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "receiver",
+            "pid": 40616,
+            "utc_ms": 1792658721089
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658831425
+          },
+          "exit_code": 0
+        },
+        "publisher": {
+          "pid": 38012,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "publisher",
+            "pid": 38012,
+            "utc_ms": 1792658721959
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658831643
+          },
+          "exit_code": 0
+        }
+      },
+      "server_before": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "server_after": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "finished_utc": "2026-10-22T08:47:12.622826+00:00",
+      "name": "3-off",
+      "evidence": "3-off/result.json",
+      "ui_batch_maximum_ms": 0.0554,
+      "ui_batch_samples": 963,
+      "telemetry_refresh_samples": 60,
+      "stage_timing_enabled": false,
+      "diagnostic_artifacts_absent": true
+    },
+    {
+      "status": "PASS",
+      "mode": "on",
+      "requested_seconds": 60,
+      "summary": {
+        "samples": 62,
+        "duration_s": 60.08,
+        "cpu_pct": 0.5034210338596158,
+        "working_set_median": 155068416.0,
+        "private_median": 125173760.0,
+        "telemetry_memory_peak": 7924073,
+        "callback_frames": 961,
+        "measured_start_ms": 1792658869531,
+        "measured_end_ms": 1792658929611
+      },
+      "callback_p99": {
+        "samples": 963,
+        "lower_ns": 61700,
+        "upper_ns": 61800
+      },
+      "persistence_close": {
+        "diagnostic_completed": true,
+        "disk_unknown": false,
+        "event": "telemetry_store_closed",
+        "history_completed": true,
+        "utc_ms": 1792658945268
+      },
+      "lifecycle": {
+        "receiver": {
+          "pid": 36240,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "receiver",
+            "pid": 36240,
+            "utc_ms": 1792658834213
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658945357
+          },
+          "exit_code": 0
+        },
+        "publisher": {
+          "pid": 39244,
+          "started": {
+            "configuration": "RelWithDebInfo",
+            "event": "started",
+            "identity": "publisher",
+            "pid": 39244,
+            "utc_ms": 1792658835000
+          },
+          "retirement": {
+            "cleanup_pending": 0,
+            "event": "retired",
+            "rooms_alive": 0,
+            "rooms_observed": 1,
+            "utc_ms": 1792658945591
+          },
+          "exit_code": 0
+        }
+      },
+      "server_before": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "server_after": {
+        "config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+        "room": {
+          "departure_timeout": 20,
+          "empty_timeout": 60
+        },
+        "video": {
+          "codec_regression_threshold": 1
+        },
+        "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+        "binary": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+        "health_status": 200,
+        "participants_remaining": 0,
+        "publications_remaining": 0
+      },
+      "finished_utc": "2026-10-22T08:49:06.774751+00:00",
+      "name": "3-on",
+      "evidence": "3-on/result.json",
+      "ui_batch_maximum_ms": 0.1342,
+      "ui_batch_samples": 964,
+      "telemetry_refresh_samples": 60,
+      "stage_timing_enabled": false,
+      "diagnostic_artifacts_absent": true
+    }
+  ],
+  "root_cause": "UNKNOWN",
+  "environment_restore": {
+    "status": "PASS",
+    "removed_task_container_id": "4ddbc44badc58005ceb9a3c1833d6285eef1798a1368c9900cec682cb3d0ebc9",
+    "removed_bridge_id": "6329b2d9f0cf11de922b70b5276a8990a19c936661ec368e46539f7c9880c0d3",
+    "participants_remaining": 0,
+    "publications_remaining": 0,
+    "original_config_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+    "original_config_unchanged": true,
+    "shared_service_unchanged": true,
+    "shared_health_status": 200,
+    "temporary_backup_removed": true
+  },
+  "security_group_restore": {
+    "status": "PASS",
+    "removed": [
+      {
+        "group": "sg-2ze7bhxbiac0jdfgws8k",
+        "rule_id": "sgr-2zedqdpopy4muuh37t0b"
+      },
+      {
+        "group": "sg-2ze7bhxbiac0jdfgws8k",
+        "rule_id": "sgr-2zeeaxdwa2nxk2tbuoj2"
+      }
+    ],
+    "original_rule_ids_preserved": true,
+    "remaining_added_rule_ids": [],
+    "missing_original_rule_ids": [],
+    "unrelated_current_rule_ids_preserved": true
+  },
+  "scope": "本轮同一RelWithDebInfo工件、每侧60秒，三对OFF/ON及六个窗口均按原门限PASS。仅更新该60秒配对子门；更早每侧180秒三对、UIA20轮、5轮残余和独立9000秒资源门保留各自范围，不授完整P13通过。",
+  "root_cause_detail": "本轮未复现原性能超限，未追加诊断或源码修改；既有历史失败根因仍UNKNOWN，不据本轮PASS推断原因已解决。",
+  "historical_failures": [
+    {
+      "status": "FAIL",
+      "callback_p99_increase_upper_percent": 7.014681892332786,
+      "source": "data/completed-evidence/telemetry-paired-first-20261021-index.json",
+      "original_verdict_preserved": true
+    },
+    {
+      "status": "FAIL",
+      "callback_p99_increase_upper_percent": 8.371385,
+      "scope": "earlier independent pair2",
+      "original_verdict_preserved": true
+    }
+  ],
+  "evidence": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p13-performance-retest-20261022-03\\paired\\index.json",
+      "relative_path": "paired/index.json",
+      "sha256": "be996fcbd84f76b74a1c37b7b915620c707f0d7eeb6172c8cfded00cfd33ec18",
+      "bytes": 4888
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p13-performance-retest-20261022-03\\paired\\1-off\\result.json",
+      "relative_path": "paired/1-off/result.json",
+      "sha256": "d0b9aa6b7498318f0b7953938680bff372b31ac1026922c6a7565140fed2873b",
+      "bytes": 26356
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p13-performance-retest-20261022-03\\paired\\1-on\\result.json",
+      "relative_path": "paired/1-on/result.json",
+      "sha256": "2165c80015375186696be41fdc1e39a158119e38ead2aec0c0615b7d3e595924",
+      "bytes": 26537
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p13-performance-retest-20261022-03\\paired\\2-on\\result.json",
+      "relative_path": "paired/2-on/result.json",
+      "sha256": "bd888ef4d15699ba9b8584c31ecb24ad496bfeeb4cdc3e2c5c67034b1dc7b0d5",
+      "bytes": 26857
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p13-performance-retest-20261022-03\\paired\\2-off\\result.json",
+      "relative_path": "paired/2-off/result.json",
+      "sha256": "5545ceed400befe12caf53f15758f3f47f0a5988b2d719c8de01cfaca2cb9922",
+      "bytes": 26685
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p13-performance-retest-20261022-03\\paired\\3-off\\result.json",
+      "relative_path": "paired/3-off/result.json",
+      "sha256": "8def939dadfd337f542ec58cd0588e02d4b6be50e6b8bc4de29b6b48ac90125c",
+      "bytes": 26385
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p13-performance-retest-20261022-03\\paired\\3-on\\result.json",
+      "relative_path": "paired/3-on/result.json",
+      "sha256": "1fae44fbbe620de4cc104d4ce8c5ab684e6689a507a6a9df9ec908a1ca91e600",
+      "bytes": 27352
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p13-performance-retest-20261022-03\\terminal-identity.json",
+      "relative_path": "terminal-identity.json",
+      "sha256": "c9d583fcf06e8c79b9675880d55b987f530a333da56684f3b8dd7ad12b00e4d6",
+      "bytes": 1111
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p13-performance-retest-20261022-03\\environment-restore.json",
+      "relative_path": "environment-restore.json",
+      "sha256": "23ca7c610c5f1659a77a6bde8d4ff2ac619c48c0b9b631d4391db1864a63d694",
+      "bytes": 523
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p13-performance-retest-20261022-03\\security-group-restore.json",
+      "relative_path": "security-group-restore.json",
+      "sha256": "543d3381621faee018e32f55c4f666436c1ce6b612e875678baf1dcb79968e4e",
+      "bytes": 413
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p13-performance-retest-20261022-03\\local-admission.json",
+      "relative_path": "local-admission.json",
+      "sha256": "a3458897bb6c03f95064a321351b3bd2c7735dc7600bc5c8939e312fd29d2229",
+      "bytes": 2515
+    }
+  ],
+  "limitations": [
+    "仅核对正式runner记录的16项输入与EXE哈希；不代表完整编译依赖身份审计。",
+    "更早180秒三对、UIA20轮、5轮同进程残余及9000秒资源门未重测，保留各自输入与原结论。",
+    "本轮未修改产品源码、未构建、未恢复task7 stash。"
+  ]
+}

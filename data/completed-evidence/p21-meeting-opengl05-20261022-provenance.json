@@ -1,0 +1,289 @@
+{
+  "schema": "cohavora-p21-meeting-theme-provenance-v1",
+  "status": "SCOPED_COMPLETED_RESULT",
+  "created_utc": "2026-10-21T16:37:48.054415+00:00",
+  "source_references": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\dark\\candidate.json",
+      "sha256": "ebf3435f459ec71c7c13d742f2789be82226befe05b93fa2b3677bee3ecf0b02",
+      "bytes": 418
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\dark\\result.json",
+      "sha256": "8aa3fe50aa4b93d5a3f3c10a3e022a6ff798aa5e5dd3fc9ccff51987e25e5a9d",
+      "bytes": 125349
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\dark\\sample.json",
+      "sha256": "87270e5cc1220abcd0e24ab1c19b7d1fe1822d7613fcfe846c91f631fef5c2ba",
+      "bytes": 8217
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\dark\\sample.json.observations.jsonl",
+      "sha256": "f4543baf4e9cae68128eb8347fe7614c61ee4c7aaabfbfc919ccb7f3bd5e5c94",
+      "bytes": 1931
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\dark\\sample.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\dark\\sample.stdout.log",
+      "sha256": "62a5f3ef297100d3fe461bc1d4d931c06154fd1c2c171cfe7fea39c7e3ca4649",
+      "bytes": 3218
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\dark\\select.json",
+      "sha256": "7d200bc22f2cb5af4a73db6e3aaa1fded191bf0c7b90f417044763aa62e584e5",
+      "bytes": 29233
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\dark\\select.json.observations.jsonl",
+      "sha256": "da0f224171422afa382235822379c3741e149d43074e5a592af5305dbdab70b0",
+      "bytes": 7377
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\dark\\select.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\dark\\select.stdout.log",
+      "sha256": "a5ebb446afa2eddeef3363cbc8409dd4f3521ba47d724499a835907acfebf69a",
+      "bytes": 8918
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\light\\candidate.json",
+      "sha256": "938bd6e77c80909bce4650ca7cccfc7d713588c345ddda7ba94b99a23ad8c671",
+      "bytes": 422
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\light\\result.json",
+      "sha256": "a8396aac2a3d15a63387b6f4bdd8d6e81127e68f6ed31789e0a1c1d8375b479a",
+      "bytes": 124577
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\light\\sample.json",
+      "sha256": "1ad59411c5af61bbd5451706e1b2514a4e48bc08d3ac35dd393b44d201fff3e3",
+      "bytes": 8240
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\light\\sample.json.observations.jsonl",
+      "sha256": "ca5fc4276f2126ebeab8f75bde58a8d5f5399b2e5410c7a8d607b322c1bf5127",
+      "bytes": 1942
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\light\\sample.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\light\\sample.stdout.log",
+      "sha256": "761e8f3730677f8aae171b3023a3a03e2b441797b9e50a5ac6ba4c734b7a0462",
+      "bytes": 3241
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\light\\select.json",
+      "sha256": "ff35a3dc0f263390a0099fb1e4805ff77c3b705ccc9ee46b44ef6211305a3991",
+      "bytes": 29268
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\light\\select.json.observations.jsonl",
+      "sha256": "59a27b669c1be397006a390af9c5bb5d47e7cb683ad7d404da0e75e80309795c",
+      "bytes": 7402
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\light\\select.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\light\\select.stdout.log",
+      "sha256": "f918ecf938ebfa40e041136f960a75b253f99e1d81887f4ca47ee9bd55f09259",
+      "bytes": 8953
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\publisher\\control.json",
+      "sha256": "6ce8aaaa8af7a6107a09acf39c8bda0ea58c2be6171d6928153b37ba32708b9a",
+      "bytes": 35
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\publisher\\events.jsonl",
+      "sha256": "d037602170a217b495e31a2bbd42860ccdb9c8324365e107162dff7520741a0b",
+      "bytes": 1065
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\publisher\\settings\\Cohavora\\Cohavora.ini",
+      "sha256": "124dbf9ff433b7a4668c7c99124ba2fce88bb50fa70d449a31ce8fb8cac86805",
+      "bytes": 718
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\receiver\\control.json",
+      "sha256": "67a1d670751a101d532c27dc51003da5c33c7ed4fa15dc9366184a88b371696f",
+      "bytes": 36
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\receiver\\events.jsonl",
+      "sha256": "73065831d7173b6a12fe2d0eac068e2fd8e168848daca5794d7cf991d1f7fcbd",
+      "bytes": 305056
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\receiver\\settings\\Cohavora\\Cohavora.ini",
+      "sha256": "65ce33b1b591e937393c312b8990ba7992c9fabeceaccac5fde82b52db357ab5",
+      "bytes": 847
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\receiver-identity.json",
+      "sha256": "4090962980a3985ba95c06f837294bdbc9a42974aac3743298b94037bb432853",
+      "bytes": 449
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\result.json",
+      "sha256": "611c396a83e75aac49a22618f25edc085dafc33e0f19b0c9a45a59c8a352d3d5",
+      "bytes": 781286
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\strict-input.jsonl",
+      "sha256": "25ba9a29e50aab4042d7d8a34fca941e7736701c414ca6d73ec384dbf97086e7",
+      "bytes": 56960
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\system\\candidate.json",
+      "sha256": "b39d386f085ed39034ce5d35476ece4cab353d32ef73d22cab32b8d8eaec295d",
+      "bytes": 420
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\system\\result.json",
+      "sha256": "f2aac9d2b445aa235651fc1217c8a51ed1a3a37e1296a40410ad4ff70f8a266b",
+      "bytes": 125411
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\system\\sample.json",
+      "sha256": "9fc86fbb96ebab171ee26c396b8a6fec3f43be1e911630a32dafd3b6fa04b69a",
+      "bytes": 8223
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\system\\sample.json.observations.jsonl",
+      "sha256": "edef1a244b28040d3f633fd09f75150f337a6d433a2e87108e588f7cd4541fe7",
+      "bytes": 1933
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\system\\sample.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\system\\sample.stdout.log",
+      "sha256": "d4be4d8f3c035d222a4645478a4ea554e1659d2f8e6fc58fe64464d6f41eba47",
+      "bytes": 3224
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\system\\select.json",
+      "sha256": "a381c708fe226e9016c6ef24f56f751777be1dd7e3b028903158af167720724e",
+      "bytes": 29263
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\system\\select.json.observations.jsonl",
+      "sha256": "540c01f2eefd8010a6377e469221b7150b5f79095f8842d6002fdd0678580454",
+      "bytes": 7399
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\system\\select.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\system\\select.stdout.log",
+      "sha256": "2d498fb8bf62ae5f625d5b67a1f20804e117c776249fd677ebaa18f61ecf8c33",
+      "bytes": 8948
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\teal\\candidate.json",
+      "sha256": "7f4a871f531d61212125553a47d74c995722c953a82ebe53a138d90a2e180f22",
+      "bytes": 421
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\teal\\result.json",
+      "sha256": "156e2361f66b8724549fbf756bdfa922ccb79fcda79cda5fd517ea4e7de03553",
+      "bytes": 124545
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\teal\\sample.json",
+      "sha256": "f6d3475a0eb3fdb81ef7a117c0b6bcdd65bf980d3341e88241261bff3611c1e1",
+      "bytes": 8235
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\teal\\sample.json.observations.jsonl",
+      "sha256": "ab4a604d41657255cf4620823464daa8f4e9df7a8fed4e1862cd844d8fe621ee",
+      "bytes": 1940
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\teal\\sample.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\teal\\sample.stdout.log",
+      "sha256": "886c057ead683edaf17b2cc3bc6f9a8f6435ecc1502d80ae87673f0e4f5b995e",
+      "bytes": 3236
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\teal\\select.json",
+      "sha256": "c9477e56de06bd4a17b3af5b2969acafcc38094f50b88e5fab4e6d40f1d06b87",
+      "bytes": 29248
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\teal\\select.json.observations.jsonl",
+      "sha256": "b6c46e777301ea4c531bcb642c35615853557d5c2540670bc6d6dcddcd481ad8",
+      "bytes": 7387
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\teal\\select.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05\\teal\\select.stdout.log",
+      "sha256": "5e55d1ff143c39fdce432b7b07621998c0ff60bc3dbe8b11d310c568967f15c9",
+      "bytes": 8933
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05-readback05.json",
+      "sha256": "5e84390223c250e94efa8918e0ac1b648a6189d6187dc2be6f3922ec408f2f50",
+      "bytes": 30799
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-backend-preparation05\\opengl-profile.json",
+      "sha256": "23defb4297aea4d0bfe5edbead5ce1af2ec67793a4060a1f9b2fe342ccf50486",
+      "bytes": 279542
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-backend-preparation05\\build-receipt.json",
+      "sha256": "361d7dd74b334b4c31699dabb806337c7c1ee23028d4b014ddade8f21abf7328",
+      "bytes": 217923
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-backend-preparation05\\changes.json",
+      "sha256": "f4cdf8f6a3fa589b78319325f5648881162997b32f1b2f2ded5a076d4c7ce75a",
+      "bytes": 758
+    }
+  ],
+  "unreadable_files": [],
+  "artifact": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\RelWithDebInfo\\uia_entry_fixture.exe",
+    "sha256": "85538f430d487b477f0081fb7ad3d10969e8ad271b9b7729a0d1daa508e877b3",
+    "bytes": 107242496
+  },
+  "independent_audit": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-opengl05-readback05.json",
+    "sha256": "5e84390223c250e94efa8918e0ac1b648a6189d6187dc2be6f3922ec408f2f50",
+    "bytes": 30799
+  },
+  "raw_evidence": "RETAINED",
+  "source_provenance": "INCREMENTAL_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_NOT_PROVEN",
+  "full_plan_gate_credit": 0,
+  "full_p21_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0
+}

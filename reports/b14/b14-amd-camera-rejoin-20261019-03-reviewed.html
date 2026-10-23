@@ -1,0 +1,597 @@
+<!doctype html><html lang='zh-CN'><meta charset='utf-8'><title>摄像头二次入会专项验证</title><style>body{max-width:1200px;margin:28px auto;padding:0 20px;background:#f5f7fb;color:#172332;font:15px/1.6 system-ui}table{border-collapse:collapse;width:100%;background:white}td,th{border:1px solid #d8e0ea;padding:9px;text-align:left;vertical-align:top}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;font:12px/1.45 ui-monospace,monospace}.PASS{color:#187540;font-weight:700}.FAIL{color:#b12727;font-weight:700}</style><nav data-report-navigation style="padding:12px 20px;background:#eef2f7;color:#1e293b;font:14px/1.7 sans-serif"><a href="../../index.html">验收首页</a> · <a href="../index.html">全部报告</a> · <a href="../../data/test-plan.json">统一测试计划</a><br>历史／阶段报告仅适用其记录的输入；包外证据属于本机附件，其他电脑可能不可用。</nav><h1>摄像头二次入会专项验证：PASS</h1><p>run_id：299e0e35cb1f4bad9417c2ecaedbe091。同进程两周期专项诊断；qualification-excluded，B14 资格信用为 0，Formal 为 NOT_RUN。</p><p>机器可读收据：<a href='file:///E:/vsSource/WebRTC/live-kit-test/out/b14-readmission-20261019-amd-stop-03/camera-rejoin-review-02.json'>camera-rejoin-review.json</a>。原始证据 SHA-256 见该收据 inputs。</p><table><tr><th>检查</th><th>结果</th><th>证据摘要</th></tr><tr><td>qualification_excluded</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;mode&quot;: &quot;Pilot&quot;,
+  &quot;marker_present&quot;: true,
+  &quot;b14_credit&quot;: false
+}</pre></td></tr><tr><td>two_cycles_planned</td><td class='PASS'>PASS</td><td><pre>2</pre></td></tr><tr><td>run_identity_consistent</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;remote_rows&quot;: 2551,
+  &quot;probe_rows&quot;: 503
+}</pre></td></tr><tr><td>same_product_process</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;pid&quot;: 23492,
+  &quot;start_ticks&quot;: 639279893812092917,
+  &quot;process_run_ids&quot;: [
+    &quot;cfc74a7cb39a09b97cedc4a08e53b83f&quot;
+  ]
+}</pre></td></tr><tr><td>uia_two_cycles_completed</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;verdict&quot;: &quot;PILOT_COMPLETE&quot;,
+  &quot;cycles_requested&quot;: 2,
+  &quot;cycles_completed&quot;: 2
+}</pre></td></tr><tr><td>product_normal_exit</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;pid&quot;: 23492,
+  &quot;exit_code&quot;: 0
+}</pre></td></tr><tr><td>uia_observer_fences</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;actions&quot;: 32,
+  &quot;accepted_fences&quot;: 32
+}</pre></td></tr><tr><td>cycle_1_join_leave</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;counts&quot;: [
+    1,
+    1,
+    1,
+    1
+  ]
+}</pre></td></tr><tr><td>cycle_1_action_order</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;join_requested_utc&quot;: &quot;2026-10-19T06:50:02.8807868Z&quot;,
+  &quot;leave_observed_utc&quot;: &quot;2026-10-19T06:53:45.0943350Z&quot;
+}</pre></td></tr><tr><td>cycle_1_product_identity</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;matching_authenticated_joins&quot;: 1,
+  &quot;test_cycle&quot;: null,
+  &quot;method&quot;: &quot;acknowledged_uia_operation_salted_identity_time_fence&quot;,
+  &quot;load_identity_prefix_excluded&quot;: &quot;pilot-299e0e35&quot;
+}</pre></td></tr><tr><td>cycle_1_remote_leave</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;matching_peer_leaves&quot;: 1
+}</pre></td></tr><tr><td>cycle_1_observer_identity</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;in_meeting_remote_rows&quot;: 1087
+}</pre></td></tr><tr><td>cycle_1_camera_sfu_publication</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;samples&quot;: 202,
+  &quot;camera_present_samples&quot;: 202,
+  &quot;camera_sids&quot;: [
+    &quot;TR_VCj5wFxdKJGj4C&quot;
+  ],
+  &quot;source&quot;: 1,
+  &quot;kind&quot;: &quot;video&quot;,
+  &quot;identity_method&quot;: &quot;authenticated_product_only&quot;
+}</pre></td></tr><tr><td>cycle_1_camera_independent_decode</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;streams&quot;: [
+    {
+      &quot;sid&quot;: &quot;TR_VCj5wFxdKJGj4C&quot;,
+      &quot;samples&quot;: 202,
+      &quot;first_sample_frames&quot;: 50,
+      &quot;last_sample_frames&quot;: 3407,
+      &quot;terminal_frames&quot;: 3433,
+      &quot;terminal_buffers_released&quot;: 3433,
+      &quot;all_stream_samples&quot;: 206,
+      &quot;last_sample_counters&quot;: {
+        &quot;frames&quot;: 3424,
+        &quot;frames_observed&quot;: 3424,
+        &quot;buffers_released&quot;: 3424
+      },
+      &quot;terminal_counters&quot;: {
+        &quot;frames&quot;: 3433,
+        &quot;frames_observed&quot;: 3433,
+        &quot;buffers_released&quot;: 3433
+      },
+      &quot;last_sample_utc_ms&quot;: 1792392822789,
+      &quot;terminal_utc_ms&quot;: 1792392823367,
+      &quot;progress&quot;: true,
+      &quot;same_sid&quot;: true,
+      &quot;terminal_after_last_sample&quot;: true,
+      &quot;terminal_counters_not_regressed&quot;: true,
+      &quot;terminal_buffer_accounting&quot;: true,
+      &quot;subscribed&quot;: true
+    }
+  ],
+  &quot;scope&quot;: &quot;native decoded-frame callbacks; camera source1; pixel quality unmeasured&quot;
+}</pre></td></tr><tr><td>cycle_1_camera_pipeline</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;active_valid_samples&quot;: 202,
+  &quot;active_invalid_samples&quot;: 0,
+  &quot;publication_scopes&quot;: [
+    [
+      1,
+      2
+    ]
+  ],
+  &quot;progress&quot;: {
+    &quot;source_frames&quot;: {
+      &quot;first&quot;: 68,
+      &quot;last&quot;: 3424,
+      &quot;minimum&quot;: 68,
+      &quot;maximum&quot;: 3424,
+      &quot;nondecreasing&quot;: true,
+      &quot;increases&quot;: 201
+    },
+    &quot;rtc_input_frames&quot;: {
+      &quot;first&quot;: 61,
+      &quot;last&quot;: 3417,
+      &quot;minimum&quot;: 61,
+      &quot;maximum&quot;: 3417,
+      &quot;nondecreasing&quot;: true,
+      &quot;increases&quot;: 201
+    },
+    &quot;rtc_output_frames&quot;: {
+      &quot;first&quot;: 61,
+      &quot;last&quot;: 3417,
+      &quot;minimum&quot;: 61,
+      &quot;maximum&quot;: 3417,
+      &quot;nondecreasing&quot;: true,
+      &quot;increases&quot;: 201
+    },
+    &quot;rtc_dropped_frames&quot;: {
+      &quot;first&quot;: 0,
+      &quot;last&quot;: 0,
+      &quot;minimum&quot;: 0,
+      &quot;maximum&quot;: 0,
+      &quot;nondecreasing&quot;: true,
+      &quot;increases&quot;: 0
+    }
+  },
+  &quot;first_active&quot;: {
+    &quot;revision&quot;: 156,
+    &quot;source_utc_ms&quot;: 1792392620774,
+    &quot;session_generation&quot;: 1,
+    &quot;active&quot;: true,
+    &quot;room_generation&quot;: 1,
+    &quot;publication_epoch&quot;: 2,
+    &quot;source_frames&quot;: 68,
+    &quot;rtc_input_frames&quot;: 61,
+    &quot;rtc_output_frames&quot;: 61,
+    &quot;rtc_dropped_frames&quot;: 0
+  },
+  &quot;last_active&quot;: {
+    &quot;revision&quot;: 1480,
+    &quot;source_utc_ms&quot;: 1792392821822,
+    &quot;session_generation&quot;: 1,
+    &quot;active&quot;: true,
+    &quot;room_generation&quot;: 1,
+    &quot;publication_epoch&quot;: 2,
+    &quot;source_frames&quot;: 3424,
+    &quot;rtc_input_frames&quot;: 3417,
+    &quot;rtc_output_frames&quot;: 3417,
+    &quot;rtc_dropped_frames&quot;: 0
+  },
+  &quot;availability_counts&quot;: {
+    &quot;camera.pipeline.active:VALID&quot;: 202,
+    &quot;camera.pipeline.publication_epoch:VALID&quot;: 202,
+    &quot;camera.pipeline.room_generation:VALID&quot;: 202,
+    &quot;camera.pipeline.rtc_dropped_frames:VALID&quot;: 202,
+    &quot;camera.pipeline.rtc_input_frames:VALID&quot;: 202,
+    &quot;camera.pipeline.rtc_output_frames:VALID&quot;: 202,
+    &quot;camera.pipeline.source_frames:VALID&quot;: 202
+  },
+  &quot;terminal&quot;: {
+    &quot;required&quot;: false,
+    &quot;valid_samples&quot;: 0,
+    &quot;invalid_samples&quot;: 0,
+    &quot;first&quot;: null,
+    &quot;last&quot;: null,
+    &quot;active_after_inactive&quot;: false
+  }
+}</pre></td></tr><tr><td>cycle_1_checkpoint_terminal</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;anonymous_session_id&quot;: &quot;719b38f98b5247cf967bcc5ae19877f0&quot;,
+  &quot;session_generation&quot;: 1,
+  &quot;last_committed_revision&quot;: 1496,
+  &quot;session_complete&quot;: true,
+  &quot;missing_revisions&quot;: 0,
+  &quot;integrity&quot;: {
+    &quot;segment_count&quot;: 23,
+    &quot;status&quot;: &quot;complete&quot;
+  }
+}</pre></td></tr><tr><td>cycle_1_bundle_camera_counters</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;matching_bundles&quot;: 1,
+  &quot;files_hash_verified&quot;: true,
+  &quot;camera_pipeline&quot;: {
+    &quot;active_valid_samples&quot;: 110,
+    &quot;active_invalid_samples&quot;: 0,
+    &quot;publication_scopes&quot;: [
+      [
+        1,
+        2
+      ]
+    ],
+    &quot;progress&quot;: {
+      &quot;source_frames&quot;: {
+        &quot;first&quot;: 3139,
+        &quot;last&quot;: 3452,
+        &quot;minimum&quot;: 3139,
+        &quot;maximum&quot;: 3452,
+        &quot;nondecreasing&quot;: true,
+        &quot;increases&quot;: 38
+      },
+      &quot;rtc_input_frames&quot;: {
+        &quot;first&quot;: 3132,
+        &quot;last&quot;: 3445,
+        &quot;minimum&quot;: 3132,
+        &quot;maximum&quot;: 3445,
+        &quot;nondecreasing&quot;: true,
+        &quot;increases&quot;: 38
+      },
+      &quot;rtc_output_frames&quot;: {
+        &quot;first&quot;: 3132,
+        &quot;last&quot;: 3445,
+        &quot;minimum&quot;: 3132,
+        &quot;maximum&quot;: 3445,
+        &quot;nondecreasing&quot;: true,
+        &quot;increases&quot;: 38
+      },
+      &quot;rtc_dropped_frames&quot;: {
+        &quot;first&quot;: 0,
+        &quot;last&quot;: 0,
+        &quot;minimum&quot;: 0,
+        &quot;maximum&quot;: 0,
+        &quot;nondecreasing&quot;: true,
+        &quot;increases&quot;: 0
+      }
+    },
+    &quot;first_active&quot;: {
+      &quot;revision&quot;: 1379,
+      &quot;source_utc_ms&quot;: 1792392804747,
+      &quot;session_generation&quot;: 1,
+      &quot;active&quot;: true,
+      &quot;room_generation&quot;: 1,
+      &quot;publication_epoch&quot;: 2,
+      &quot;source_frames&quot;: 3139,
+      &quot;rtc_input_frames&quot;: 3132,
+      &quot;rtc_output_frames&quot;: 3132,
+      &quot;rtc_dropped_frames&quot;: 0
+    },
+    &quot;last_active&quot;: {
+      &quot;revision&quot;: 1488,
+      &quot;source_utc_ms&quot;: 1792392823516,
+      &quot;session_generation&quot;: 1,
+      &quot;active&quot;: true,
+      &quot;room_generation&quot;: 1,
+      &quot;publication_epoch&quot;: 2,
+      &quot;source_frames&quot;: 3452,
+      &quot;rtc_input_frames&quot;: 3445,
+      &quot;rtc_output_frames&quot;: 3445,
+      &quot;rtc_dropped_frames&quot;: 0
+    },
+    &quot;availability_counts&quot;: {
+      &quot;camera.pipeline.active:VALID&quot;: 118,
+      &quot;camera.pipeline.publication_epoch:VALID&quot;: 118,
+      &quot;camera.pipeline.room_generation:VALID&quot;: 118,
+      &quot;camera.pipeline.rtc_dropped_frames:VALID&quot;: 118,
+      &quot;camera.pipeline.rtc_input_frames:VALID&quot;: 118,
+      &quot;camera.pipeline.rtc_output_frames:VALID&quot;: 118,
+      &quot;camera.pipeline.source_frames:VALID&quot;: 118
+    },
+    &quot;terminal&quot;: {
+      &quot;required&quot;: true,
+      &quot;valid_samples&quot;: 8,
+      &quot;invalid_samples&quot;: 0,
+      &quot;first&quot;: {
+        &quot;revision&quot;: 1489,
+        &quot;source_utc_ms&quot;: 1792392823639,
+        &quot;session_generation&quot;: 1,
+        &quot;active&quot;: false,
+        &quot;room_generation&quot;: 1,
+        &quot;publication_epoch&quot;: 2,
+        &quot;source_frames&quot;: 3453,
+        &quot;rtc_input_frames&quot;: 3446,
+        &quot;rtc_output_frames&quot;: 3446,
+        &quot;rtc_dropped_frames&quot;: 0
+      },
+      &quot;last&quot;: {
+        &quot;revision&quot;: 1496,
+        &quot;source_utc_ms&quot;: 1792392823961,
+        &quot;session_generation&quot;: 1,
+        &quot;active&quot;: false,
+        &quot;room_generation&quot;: 1,
+        &quot;publication_epoch&quot;: 2,
+        &quot;source_frames&quot;: 3453,
+        &quot;rtc_input_frames&quot;: 3446,
+        &quot;rtc_output_frames&quot;: 3446,
+        &quot;rtc_dropped_frames&quot;: 0
+      },
+      &quot;active_after_inactive&quot;: false,
+      &quot;session_generation_matches&quot;: true,
+      &quot;publication_scope_matches&quot;: true,
+      &quot;after_last_active&quot;: true,
+      &quot;counters_not_regressed&quot;: true,
+      &quot;subsequent_inactive_frozen&quot;: true
+    }
+  },
+  &quot;last_committed_revision&quot;: 1496
+}</pre></td></tr><tr><td>cycle_2_join_leave</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;counts&quot;: [
+    1,
+    1,
+    1,
+    1
+  ]
+}</pre></td></tr><tr><td>cycle_2_action_order</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;join_requested_utc&quot;: &quot;2026-10-19T06:54:03.1030314Z&quot;,
+  &quot;leave_observed_utc&quot;: &quot;2026-10-19T06:57:45.3400624Z&quot;
+}</pre></td></tr><tr><td>cycle_2_product_identity</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;matching_authenticated_joins&quot;: 1,
+  &quot;test_cycle&quot;: null,
+  &quot;method&quot;: &quot;acknowledged_uia_operation_salted_identity_time_fence&quot;,
+  &quot;load_identity_prefix_excluded&quot;: &quot;pilot-299e0e35&quot;
+}</pre></td></tr><tr><td>cycle_2_remote_leave</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;matching_peer_leaves&quot;: 1
+}</pre></td></tr><tr><td>cycle_2_observer_identity</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;in_meeting_remote_rows&quot;: 1093
+}</pre></td></tr><tr><td>cycle_2_camera_sfu_publication</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;samples&quot;: 203,
+  &quot;camera_present_samples&quot;: 203,
+  &quot;camera_sids&quot;: [
+    &quot;TR_VCqDQ6vnNoEGzr&quot;
+  ],
+  &quot;source&quot;: 1,
+  &quot;kind&quot;: &quot;video&quot;,
+  &quot;identity_method&quot;: &quot;authenticated_product_only&quot;
+}</pre></td></tr><tr><td>cycle_2_camera_independent_decode</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;streams&quot;: [
+    {
+      &quot;sid&quot;: &quot;TR_VCqDQ6vnNoEGzr&quot;,
+      &quot;samples&quot;: 203,
+      &quot;first_sample_frames&quot;: 36,
+      &quot;last_sample_frames&quot;: 3373,
+      &quot;terminal_frames&quot;: 3397,
+      &quot;terminal_buffers_released&quot;: 3397,
+      &quot;all_stream_samples&quot;: 206,
+      &quot;last_sample_counters&quot;: {
+        &quot;frames&quot;: 3389,
+        &quot;frames_observed&quot;: 3389,
+        &quot;buffers_released&quot;: 3389
+      },
+      &quot;terminal_counters&quot;: {
+        &quot;frames&quot;: 3397,
+        &quot;frames_observed&quot;: 3397,
+        &quot;buffers_released&quot;: 3397
+      },
+      &quot;last_sample_utc_ms&quot;: 1792393063055,
+      &quot;terminal_utc_ms&quot;: 1792393063565,
+      &quot;progress&quot;: true,
+      &quot;same_sid&quot;: true,
+      &quot;terminal_after_last_sample&quot;: true,
+      &quot;terminal_counters_not_regressed&quot;: true,
+      &quot;terminal_buffer_accounting&quot;: true,
+      &quot;subscribed&quot;: true
+    }
+  ],
+  &quot;scope&quot;: &quot;native decoded-frame callbacks; camera source1; pixel quality unmeasured&quot;
+}</pre></td></tr><tr><td>cycle_2_camera_pipeline</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;active_valid_samples&quot;: 203,
+  &quot;active_invalid_samples&quot;: 0,
+  &quot;publication_scopes&quot;: [
+    [
+      1,
+      2
+    ]
+  ],
+  &quot;progress&quot;: {
+    &quot;source_frames&quot;: {
+      &quot;first&quot;: 52,
+      &quot;last&quot;: 3421,
+      &quot;minimum&quot;: 52,
+      &quot;maximum&quot;: 3421,
+      &quot;nondecreasing&quot;: true,
+      &quot;increases&quot;: 202
+    },
+    &quot;rtc_input_frames&quot;: {
+      &quot;first&quot;: 46,
+      &quot;last&quot;: 3415,
+      &quot;minimum&quot;: 46,
+      &quot;maximum&quot;: 3415,
+      &quot;nondecreasing&quot;: true,
+      &quot;increases&quot;: 202
+    },
+    &quot;rtc_output_frames&quot;: {
+      &quot;first&quot;: 46,
+      &quot;last&quot;: 3415,
+      &quot;minimum&quot;: 46,
+      &quot;maximum&quot;: 3415,
+      &quot;nondecreasing&quot;: true,
+      &quot;increases&quot;: 202
+    },
+    &quot;rtc_dropped_frames&quot;: {
+      &quot;first&quot;: 0,
+      &quot;last&quot;: 0,
+      &quot;minimum&quot;: 0,
+      &quot;maximum&quot;: 0,
+      &quot;nondecreasing&quot;: true,
+      &quot;increases&quot;: 0
+    }
+  },
+  &quot;first_active&quot;: {
+    &quot;revision&quot;: 154,
+    &quot;source_utc_ms&quot;: 1792392859976,
+    &quot;session_generation&quot;: 2,
+    &quot;active&quot;: true,
+    &quot;room_generation&quot;: 1,
+    &quot;publication_epoch&quot;: 2,
+    &quot;source_frames&quot;: 52,
+    &quot;rtc_input_frames&quot;: 46,
+    &quot;rtc_output_frames&quot;: 46,
+    &quot;rtc_dropped_frames&quot;: 0
+  },
+  &quot;last_active&quot;: {
+    &quot;revision&quot;: 1503,
+    &quot;source_utc_ms&quot;: 1792393061835,
+    &quot;session_generation&quot;: 2,
+    &quot;active&quot;: true,
+    &quot;room_generation&quot;: 1,
+    &quot;publication_epoch&quot;: 2,
+    &quot;source_frames&quot;: 3421,
+    &quot;rtc_input_frames&quot;: 3415,
+    &quot;rtc_output_frames&quot;: 3415,
+    &quot;rtc_dropped_frames&quot;: 0
+  },
+  &quot;availability_counts&quot;: {
+    &quot;camera.pipeline.active:VALID&quot;: 203,
+    &quot;camera.pipeline.publication_epoch:VALID&quot;: 203,
+    &quot;camera.pipeline.room_generation:VALID&quot;: 203,
+    &quot;camera.pipeline.rtc_dropped_frames:VALID&quot;: 203,
+    &quot;camera.pipeline.rtc_input_frames:VALID&quot;: 203,
+    &quot;camera.pipeline.rtc_output_frames:VALID&quot;: 203,
+    &quot;camera.pipeline.source_frames:VALID&quot;: 203
+  },
+  &quot;terminal&quot;: {
+    &quot;required&quot;: false,
+    &quot;valid_samples&quot;: 0,
+    &quot;invalid_samples&quot;: 0,
+    &quot;first&quot;: null,
+    &quot;last&quot;: null,
+    &quot;active_after_inactive&quot;: false
+  }
+}</pre></td></tr><tr><td>cycle_2_checkpoint_terminal</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;anonymous_session_id&quot;: &quot;95dcb397dee2442d897bab716e7cd657&quot;,
+  &quot;session_generation&quot;: 2,
+  &quot;last_committed_revision&quot;: 1519,
+  &quot;session_complete&quot;: true,
+  &quot;missing_revisions&quot;: 0,
+  &quot;integrity&quot;: {
+    &quot;segment_count&quot;: 22,
+    &quot;status&quot;: &quot;complete&quot;
+  }
+}</pre></td></tr><tr><td>cycle_2_bundle_camera_counters</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;matching_bundles&quot;: 1,
+  &quot;files_hash_verified&quot;: true,
+  &quot;camera_pipeline&quot;: {
+    &quot;active_valid_samples&quot;: 107,
+    &quot;active_invalid_samples&quot;: 0,
+    &quot;publication_scopes&quot;: [
+      [
+        1,
+        2
+      ]
+    ],
+    &quot;progress&quot;: {
+      &quot;source_frames&quot;: {
+        &quot;first&quot;: 3151,
+        &quot;last&quot;: 3452,
+        &quot;minimum&quot;: 3151,
+        &quot;maximum&quot;: 3452,
+        &quot;nondecreasing&quot;: true,
+        &quot;increases&quot;: 36
+      },
+      &quot;rtc_input_frames&quot;: {
+        &quot;first&quot;: 3145,
+        &quot;last&quot;: 3446,
+        &quot;minimum&quot;: 3145,
+        &quot;maximum&quot;: 3446,
+        &quot;nondecreasing&quot;: true,
+        &quot;increases&quot;: 36
+      },
+      &quot;rtc_output_frames&quot;: {
+        &quot;first&quot;: 3145,
+        &quot;last&quot;: 3446,
+        &quot;minimum&quot;: 3145,
+        &quot;maximum&quot;: 3446,
+        &quot;nondecreasing&quot;: true,
+        &quot;increases&quot;: 37
+      },
+      &quot;rtc_dropped_frames&quot;: {
+        &quot;first&quot;: 0,
+        &quot;last&quot;: 0,
+        &quot;minimum&quot;: 0,
+        &quot;maximum&quot;: 0,
+        &quot;nondecreasing&quot;: true,
+        &quot;increases&quot;: 0
+      }
+    },
+    &quot;first_active&quot;: {
+      &quot;revision&quot;: 1405,
+      &quot;source_utc_ms&quot;: 1792393045639,
+      &quot;session_generation&quot;: 2,
+      &quot;active&quot;: true,
+      &quot;room_generation&quot;: 1,
+      &quot;publication_epoch&quot;: 2,
+      &quot;source_frames&quot;: 3151,
+      &quot;rtc_input_frames&quot;: 3145,
+      &quot;rtc_output_frames&quot;: 3145,
+      &quot;rtc_dropped_frames&quot;: 0
+    },
+    &quot;last_active&quot;: {
+      &quot;revision&quot;: 1511,
+      &quot;source_utc_ms&quot;: 1792393063702,
+      &quot;session_generation&quot;: 2,
+      &quot;active&quot;: true,
+      &quot;room_generation&quot;: 1,
+      &quot;publication_epoch&quot;: 2,
+      &quot;source_frames&quot;: 3452,
+      &quot;rtc_input_frames&quot;: 3446,
+      &quot;rtc_output_frames&quot;: 3446,
+      &quot;rtc_dropped_frames&quot;: 0
+    },
+    &quot;availability_counts&quot;: {
+      &quot;camera.pipeline.active:VALID&quot;: 115,
+      &quot;camera.pipeline.publication_epoch:VALID&quot;: 115,
+      &quot;camera.pipeline.room_generation:VALID&quot;: 115,
+      &quot;camera.pipeline.rtc_dropped_frames:VALID&quot;: 115,
+      &quot;camera.pipeline.rtc_input_frames:VALID&quot;: 115,
+      &quot;camera.pipeline.rtc_output_frames:VALID&quot;: 115,
+      &quot;camera.pipeline.source_frames:VALID&quot;: 115
+    },
+    &quot;terminal&quot;: {
+      &quot;required&quot;: true,
+      &quot;valid_samples&quot;: 8,
+      &quot;invalid_samples&quot;: 0,
+      &quot;first&quot;: {
+        &quot;revision&quot;: 1512,
+        &quot;source_utc_ms&quot;: 1792393063848,
+        &quot;session_generation&quot;: 2,
+        &quot;active&quot;: false,
+        &quot;room_generation&quot;: 1,
+        &quot;publication_epoch&quot;: 2,
+        &quot;source_frames&quot;: 3452,
+        &quot;rtc_input_frames&quot;: 3446,
+        &quot;rtc_output_frames&quot;: 3446,
+        &quot;rtc_dropped_frames&quot;: 0
+      },
+      &quot;last&quot;: {
+        &quot;revision&quot;: 1519,
+        &quot;source_utc_ms&quot;: 1792393064101,
+        &quot;session_generation&quot;: 2,
+        &quot;active&quot;: false,
+        &quot;room_generation&quot;: 1,
+        &quot;publication_epoch&quot;: 2,
+        &quot;source_frames&quot;: 3452,
+        &quot;rtc_input_frames&quot;: 3446,
+        &quot;rtc_output_frames&quot;: 3446,
+        &quot;rtc_dropped_frames&quot;: 0
+      },
+      &quot;active_after_inactive&quot;: false,
+      &quot;session_generation_matches&quot;: true,
+      &quot;publication_scope_matches&quot;: true,
+      &quot;after_last_active&quot;: true,
+      &quot;counters_not_regressed&quot;: true,
+      &quot;subsequent_inactive_frozen&quot;: true
+    }
+  },
+  &quot;last_committed_revision&quot;: 1519
+}</pre></td></tr><tr><td>distinct_native_sessions_in_order</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;sessions&quot;: [
+    &quot;719b38f98b5247cf967bcc5ae19877f0&quot;,
+    &quot;95dcb397dee2442d897bab716e7cd657&quot;
+  ]
+}</pre></td></tr><tr><td>collectors_cleanup</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;collector_count&quot;: 4,
+  &quot;cleanup_errors&quot;: []
+}</pre></td></tr><tr><td>remote_cleanup</td><td class='PASS'>PASS</td><td><pre>{
+  &quot;status&quot;: &quot;COMPLETE&quot;,
+  &quot;terminal&quot;: true,
+  &quot;cleanup_complete&quot;: true,
+  &quot;actual_cleanup&quot;: {
+    &quot;rule_check_codes&quot;: [
+      1,
+      1
+    ],
+    &quot;cgroup_present&quot;: false
+  }
+}</pre></td></tr><tr><td>original_identity_external-review_json</td><td class='PASS'>PASS</td><td><pre>null</pre></td></tr><tr><td>original_identity_pilot-review_json</td><td class='PASS'>PASS</td><td><pre>null</pre></td></tr><tr><td>original_identity_runner-exit_json</td><td class='PASS'>PASS</td><td><pre>null</pre></td></tr></table><h2>原始验收结论（保留）</h2><pre>{
+  &quot;external-review.json&quot;: {
+    &quot;verdict&quot;: &quot;PASS_WITH_DEFERRED&quot;,
+    &quot;exit_code&quot;: 0,
+    &quot;non_pass_checks&quot;: {}
+  },
+  &quot;pilot-review.json&quot;: {
+    &quot;verdict&quot;: &quot;PILOT_PASS&quot;,
+    &quot;exit_code&quot;: null,
+    &quot;non_pass_checks&quot;: {}
+  },
+  &quot;runner-exit.json&quot;: {
+    &quot;verdict&quot;: &quot;EVIDENCE_COMPLETE&quot;,
+    &quot;exit_code&quot;: 0,
+    &quot;non_pass_checks&quot;: {}
+  }
+}</pre><h2>证据边界</h2><ul><li>VideoSource counters count converted frame entry, not raw DirectShow callbacks or conversion failures.</li><li>RTC output means OnFrame delivery, not encoder output or RTP delivery.</li><li>Independent receiver counters prove decoded camera callbacks and buffer release, not pixel quality.</li><li>This review does not change any original gate, threshold, FAIL, or qualification status.</li><li>First-frame timeout negative behavior requires the separate deterministic tests; no injected hardware timeout is claimed.</li></ul></html>

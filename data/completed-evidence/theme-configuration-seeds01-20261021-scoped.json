@@ -1,0 +1,247 @@
+{
+  "schema": "cohavora-theme-configuration-seeds-safe-projection-v1",
+  "created_utc": "2026-10-21T15:55:42.799742+00:00",
+  "completed_date": "2026-10-21",
+  "status": "PASS_SCOPED",
+  "scope": "Two finite isolated configuration seeds, original completed product settings-only Read; independent scope audit preserves post-run unused-pin drift",
+  "plan_groups": [
+    "P21"
+  ],
+  "cases": [
+    {
+      "configuration_seed": "empty-value",
+      "status": "PASS_SCOPED",
+      "run_id": "0ec13fa239e8421db599aa3108de1f95",
+      "started_utc": "2026-10-21T15:40:17.510190+00:00",
+      "finished_utc": "2026-10-21T15:40:25.371992+00:00",
+      "supervisor_window_seconds": 7.861802,
+      "driver_window_seconds": 5.9843,
+      "product_live_seconds_before_close": 2.6169217999999996,
+      "original_lifetime_floor_seconds": 1,
+      "original_utf8_ini": "[ui]\ntheme=\n",
+      "seed_preserved_sha256": "fa0d5f450d4910e334583b3c1973a2f783bfd61e6edb71a35112df448cbdc4ac",
+      "actual_final_ini_sha256": "e85d47231392a7cc5312cf6983fb706c64750a16abddbd6c92ec9de1e42c2316",
+      "persistence_contract": "NORMALIZE_EXPLICIT_EMPTY_TO_SYSTEM",
+      "actual_final_configuration": {
+        "theme_key_exists": true,
+        "theme_value": "system",
+        "wrong_section_key_exists": false,
+        "wrong_section_value": null
+      },
+      "recorded_before_and_after_configuration_matches_final": true,
+      "read_without_theme_selection": true,
+      "selected_label": "系统",
+      "windows_preference_before": 0,
+      "windows_preference_after": 0,
+      "pixel": {
+        "mode": "system",
+        "effective": "dark",
+        "native_hwnd": 21695564,
+        "dpi": 96,
+        "dialog_bounds": [
+          790,
+          357,
+          1768,
+          1033
+        ],
+        "surface_bounds": [
+          808,
+          375,
+          1750,
+          1015
+        ],
+        "sample_point": [
+          854,
+          399
+        ],
+        "sample_geometry": "original_64_42_DIP_verified_blank",
+        "measurement": "owned_composited_single_pixel",
+        "sample_colorref": 3221540,
+        "expected_colorref": 3221540,
+        "rgb": [
+          36,
+          40,
+          49
+        ],
+        "sample_valid": true,
+        "pixel_matches": true,
+        "status": "PASS"
+      },
+      "product_identity": {
+        "run_id": "601d824e80924363a392a8b625bab635",
+        "pid": 39280,
+        "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+        "start_ticks": "639281940187510961"
+      },
+      "driver_exit_code": 0,
+      "natural_exit_code": 0,
+      "forced": 0,
+      "cleanup_complete": true,
+      "strict_input": {
+        "policy": "strict",
+        "input_tick_unchanged": true,
+        "last_input_tick": 89441828,
+        "driver_baseline_plus_observations": 17,
+        "driver_observation_rows": 16,
+        "ui_call_boundary_samples": 10,
+        "ui_calls": 5,
+        "parent_retained_samples": 3,
+        "parent_full_sample_history": "NOT_RETAINED",
+        "continuous_hook_coverage": "UNKNOWN",
+        "input_origin": "UNKNOWN"
+      },
+      "input_binding": {
+        "profile_files": 1324,
+        "original_terminal_files_including_profile": 1325,
+        "original_terminal_hashes_unchanged": true,
+        "original_terminal_observation": "RECORDED_BY_ORIGINAL_RUN; all pinned hashes checked at terminal",
+        "later_complete_readback_matches": 1324,
+        "later_complete_readback_mismatches": 1,
+        "later_complete_readback_status": "INCONCLUSIVE",
+        "sole_mismatch": "product_p21_meeting_steps.ps1; unused common-profile superset pin modified after natural exit",
+        "executed_dependency_scope": "PASS_SCOPED; 8 called-chain files match both frozen profiles"
+      },
+      "binary_source_provenance": "INCREMENTAL_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_NOT_PROVEN",
+      "full_plan_gate_credit": 0,
+      "full_p21_credit": 0,
+      "formal_credit": 0,
+      "p20_credit": 0
+    },
+    {
+      "configuration_seed": "wrong-section",
+      "status": "PASS_SCOPED",
+      "run_id": "cefc890ed90244ddbe9c568c772fb803",
+      "started_utc": "2026-10-21T15:40:44.834656+00:00",
+      "finished_utc": "2026-10-21T15:40:52.173645+00:00",
+      "supervisor_window_seconds": 7.338989,
+      "driver_window_seconds": 5.612991,
+      "product_live_seconds_before_close": 2.6122678,
+      "original_lifetime_floor_seconds": 1,
+      "original_utf8_ini": "[not-ui]\ntheme=dark\n",
+      "seed_preserved_sha256": "351431c32a9f094086964586e31f38d63efe7362e2d2e4ee55d141fe8586d6c3",
+      "actual_final_ini_sha256": "fd9c4f9553338e8efe6186a49e4d80a28f8e40963bcb4964e2b9e17e451bbcd0",
+      "persistence_contract": "MISSING_KEY_DEFAULT_WITHOUT_THEME_WRITE",
+      "actual_final_configuration": {
+        "theme_key_exists": false,
+        "theme_value": null,
+        "wrong_section_key_exists": true,
+        "wrong_section_value": "dark"
+      },
+      "recorded_before_and_after_configuration_matches_final": true,
+      "read_without_theme_selection": true,
+      "selected_label": "系统",
+      "windows_preference_before": 0,
+      "windows_preference_after": 0,
+      "pixel": {
+        "mode": "system",
+        "effective": "dark",
+        "native_hwnd": 21761100,
+        "dpi": 96,
+        "dialog_bounds": [
+          790,
+          357,
+          1768,
+          1033
+        ],
+        "surface_bounds": [
+          808,
+          375,
+          1750,
+          1015
+        ],
+        "sample_point": [
+          854,
+          399
+        ],
+        "sample_geometry": "original_64_42_DIP_verified_blank",
+        "measurement": "owned_composited_single_pixel",
+        "sample_colorref": 3221540,
+        "expected_colorref": 3221540,
+        "rgb": [
+          36,
+          40,
+          49
+        ],
+        "sample_valid": true,
+        "pixel_matches": true,
+        "status": "PASS"
+      },
+      "product_identity": {
+        "run_id": "3fb44458b3c544529f728d36e71f6023",
+        "pid": 37120,
+        "executable": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.exe",
+        "start_ticks": "639281940456350975"
+      },
+      "driver_exit_code": 0,
+      "natural_exit_code": 0,
+      "forced": 0,
+      "cleanup_complete": true,
+      "strict_input": {
+        "policy": "strict",
+        "input_tick_unchanged": true,
+        "last_input_tick": 89441828,
+        "driver_baseline_plus_observations": 17,
+        "driver_observation_rows": 16,
+        "ui_call_boundary_samples": 10,
+        "ui_calls": 5,
+        "parent_retained_samples": 3,
+        "parent_full_sample_history": "NOT_RETAINED",
+        "continuous_hook_coverage": "UNKNOWN",
+        "input_origin": "UNKNOWN"
+      },
+      "input_binding": {
+        "profile_files": 1324,
+        "original_terminal_files_including_profile": 1325,
+        "original_terminal_hashes_unchanged": true,
+        "original_terminal_observation": "RECORDED_BY_ORIGINAL_RUN; all pinned hashes checked at terminal",
+        "later_complete_readback_matches": 1324,
+        "later_complete_readback_mismatches": 1,
+        "later_complete_readback_status": "INCONCLUSIVE",
+        "sole_mismatch": "product_p21_meeting_steps.ps1; unused common-profile superset pin modified after natural exit",
+        "executed_dependency_scope": "PASS_SCOPED; 8 called-chain files match both frozen profiles"
+      },
+      "binary_source_provenance": "INCREMENTAL_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_NOT_PROVEN",
+      "full_plan_gate_credit": 0,
+      "full_p21_credit": 0,
+      "formal_credit": 0,
+      "p20_credit": 0
+    }
+  ],
+  "build": {
+    "status": "PASS_AFFECTED_BUILD",
+    "configuration": "RelWithDebInfo",
+    "independently_matched_source_inputs": 1289,
+    "independently_matched_outputs": 4,
+    "source_provenance": "INCREMENTAL_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_NOT_PROVEN",
+    "transitive_clean_build_provenance": "NOT_PROVEN"
+  },
+  "post_run_unused_pin_drift": {
+    "frozen_sha256": "816c8d6cafbf3d5a4b80d68a4b72feee489131920dcd878de121b35afaeaf421",
+    "sha256_at_first_independent_readback": "e1f46e431ad7497cb456d0beef881e7da6c26a58992359c4c29f8537e944bc91",
+    "sha256_at_scope_audit": "8c8af602a1563a1ad7f23a09dc701325c2ca3b99d178b0f56a4ea7a46d880d60",
+    "mtime_utc_at_scope_audit": "2026-10-21T15:47:12.770779+00:00",
+    "later_than_both_natural_exits": true,
+    "script": "product_p21_meeting_steps.ps1",
+    "called_by_configuration_chain": false,
+    "original_inconclusive_readback": "PRESERVED_UNCHANGED",
+    "current_complete_superset_binding": "INCONCLUSIVE; no all-file match promotion"
+  },
+  "does_not_supersede": "theme-invalid02-20261021-scoped.json; original unsupported token is a separate completed case",
+  "provenance_file": "theme-configuration-seeds01-20261021-provenance.json",
+  "not_covered": [
+    "Original unsupported-token case is not rerun or replaced",
+    "Arbitrary malformed INI or typed QVariant",
+    "Full pre-settings INI bytes were not snapshotted; raw state/hash and preserved original seed retained",
+    "First-window paint, actual first scanout or physical no-flash",
+    "Full controls or stage visual matrix",
+    "System light/dark roundtrip",
+    "Meeting/media continuity",
+    "Updates, asynchronous-settings runtime or final regression",
+    "Transitive clean-build provenance",
+    "Complete P21, full plan, Formal or P20"
+  ],
+  "full_plan_gate_credit": 0,
+  "full_p21_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0
+}

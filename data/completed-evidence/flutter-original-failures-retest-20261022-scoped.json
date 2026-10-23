@@ -1,0 +1,273 @@
+{
+  "schema": "cohavora-flutter-original-failures-retest-scoped-v1",
+  "status": "FAIL",
+  "closed_utc": "2026-10-22T09:20:15.946404+00:00",
+  "scope": "TASK5_TASK6_FROZEN_RUNTIME_TASK7_EXCLUDED_ORIGINAL_SHARED_SERVICE_SCENARIOS",
+  "execution_order": [
+    "replace-two",
+    "flutter-full"
+  ],
+  "execution_policy": "SERIAL_ONE_RUN_PER_SCENARIO",
+  "cases": [
+    {
+      "id": "replace-two",
+      "status": "PASS",
+      "run_id": "e2ee-4d6e67436a214ad9",
+      "requested_seconds": 60,
+      "observed_at_utc": "2026-10-22T09:16:35.629004Z",
+      "check_count": 66,
+      "passed_checks": 66,
+      "failed_checks": [],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "marker": {
+        "video_frames": 478,
+        "valid": 478,
+        "invalid": 0,
+        "first_frame_correct": true,
+        "invalid_observations": {
+          "acceptance_credit": 0,
+          "null": {
+            "count": 0,
+            "first": null,
+            "last": null,
+            "size_8x8_count": 0
+          },
+          "probe": {
+            "count": 0,
+            "first": null,
+            "last": null,
+            "size_8x8_count": 0
+          },
+          "schema": "cohavora-relay-marker-invalid-diagnostic-v1",
+          "scope": "DIAGNOSTIC_ONLY_NO_ACCEPTANCE_CREDIT",
+          "sequence": {
+            "count": 0,
+            "first": null,
+            "last": null,
+            "size_8x8_count": 0
+          }
+        }
+      },
+      "key_action": "replace",
+      "key_rounds": 2,
+      "reconnect": "none",
+      "reconnect_events": [],
+      "operation_failures": 0,
+      "flutter_state_errors": 0,
+      "source": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\flutter-original-failures-retest-20261022-01\\replace-two\\on-e2ee-4d6e67436a214ad9\\result.json",
+        "sha256": "5e4454b9bbdee2d9084f64ad4675c23e710d6cb1e7fe04e35f7b8c84c3f7b898"
+      },
+      "native_events": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\flutter-original-failures-retest-20261022-01\\replace-two\\on-e2ee-4d6e67436a214ad9\\native.jsonl",
+        "sha256": "2555ad749228f694c607db09b3d0aba475294171552309b744dbbea47f61ccb5"
+      },
+      "flutter_events": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\flutter-original-failures-retest-20261022-01\\replace-two\\on-e2ee-4d6e67436a214ad9\\flutter.jsonl",
+        "sha256": "2c5d44c2f5f9333407c0dda4ba9ef0bb89bc5926e3053688c9707b7802370381"
+      },
+      "acceptance_credit": 0,
+      "full_gate_credit": 0,
+      "thresholds": "UNCHANGED_ORIGINAL_INTEROP_CHECKS"
+    },
+    {
+      "id": "flutter-full",
+      "status": "FAIL",
+      "run_id": "e2ee-0770bdfb88004ca8",
+      "requested_seconds": 60,
+      "observed_at_utc": "2026-10-22T09:18:02.472456Z",
+      "check_count": 70,
+      "passed_checks": 69,
+      "failed_checks": [
+        "relay_marker_content_valid"
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "marker": {
+        "video_frames": 522,
+        "valid": 516,
+        "invalid": 6,
+        "first_frame_correct": true,
+        "invalid_observations": {
+          "acceptance_credit": 0,
+          "null": {
+            "count": 6,
+            "first": {
+              "decoded_ordinal": 266,
+              "fixture_generation": 1,
+              "height": 8,
+              "key_epoch": 0,
+              "observed_native_generation": 1,
+              "room_binding_serial": 0,
+              "subscription_id": 1,
+              "subscription_native_generation": 1,
+              "time_ms": 1792660652613,
+              "timestamp_us": 157700320000,
+              "width": 8
+            },
+            "last": {
+              "decoded_ordinal": 271,
+              "fixture_generation": 1,
+              "height": 8,
+              "key_epoch": 0,
+              "observed_native_generation": 1,
+              "room_binding_serial": 0,
+              "subscription_id": 1,
+              "subscription_native_generation": 1,
+              "time_ms": 1792660652777,
+              "timestamp_us": 157700484000,
+              "width": 8
+            },
+            "size_8x8_count": 6
+          },
+          "probe": {
+            "count": 0,
+            "first": null,
+            "last": null,
+            "size_8x8_count": 0
+          },
+          "schema": "cohavora-relay-marker-invalid-diagnostic-v1",
+          "scope": "DIAGNOSTIC_ONLY_NO_ACCEPTANCE_CREDIT",
+          "sequence": {
+            "count": 0,
+            "first": null,
+            "last": null,
+            "size_8x8_count": 0
+          }
+        }
+      },
+      "key_action": "none",
+      "key_rounds": 1,
+      "reconnect": "flutter-full",
+      "reconnect_events": [
+        {
+          "event": "reconnect_requested",
+          "time_utc": "2026-10-22T09:17:32.437826Z",
+          "generation": 1
+        },
+        {
+          "event": "reconnecting",
+          "time_utc": "2026-10-22T09:17:32.465460Z",
+          "generation": 1
+        },
+        {
+          "event": "reconnected",
+          "time_utc": "2026-10-22T09:17:34.093710Z",
+          "generation": 1
+        }
+      ],
+      "operation_failures": 0,
+      "flutter_state_errors": 0,
+      "source": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\flutter-original-failures-retest-20261022-01\\flutter-full\\on-e2ee-0770bdfb88004ca8\\result.json",
+        "sha256": "284867a04d82783604731db5312dd392414bab091db938e2678db6d1d0147c26"
+      },
+      "native_events": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\flutter-original-failures-retest-20261022-01\\flutter-full\\on-e2ee-0770bdfb88004ca8\\native.jsonl",
+        "sha256": "6be1e8d709f7f8b34dac7f9dbda07842f078b022dbdce7cd758fc4bb62f704cf"
+      },
+      "flutter_events": {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\flutter-original-failures-retest-20261022-01\\flutter-full\\on-e2ee-0770bdfb88004ca8\\flutter.jsonl",
+        "sha256": "9bd5208cedfd8dddeb016a8edfbd3dd5074da6226a39f54901b0faefc3d9ee8c"
+      },
+      "acceptance_credit": 0,
+      "full_gate_credit": 0,
+      "thresholds": "UNCHANGED_ORIGINAL_INTEROP_CHECKS"
+    }
+  ],
+  "counts": {
+    "PASS": 1,
+    "FAIL": 1
+  },
+  "original_results": [
+    {
+      "scenario": "replace-two",
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-flutter-replace-two-relay02\\on-e2ee-1622eafe5e764e76\\result.json",
+      "sha256": "169cee4f0d007d47e003e1cbe8e2177b0d0d30c58069aad1ceda3176bdfab920",
+      "status": "FAIL",
+      "failed_checks": [
+        "native_post_key_rx_video",
+        "flutter_post_key_data_received",
+        "flutter_post_key_stream_received",
+        "flutter_post_key_rx_audio",
+        "flutter_post_key_tx_video",
+        "flutter_post_key_rx_video",
+        "epoch2_native_post_key_rx_video",
+        "epoch2_flutter_post_key_data_received",
+        "epoch2_flutter_post_key_stream_received",
+        "epoch2_flutter_post_key_rx_audio",
+        "epoch2_flutter_post_key_tx_video",
+        "epoch2_flutter_post_key_rx_video"
+      ]
+    },
+    {
+      "scenario": "flutter-full",
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\resource-completion-20261021-01\\official-flutter-flutter-full-relay03\\on-e2ee-80910d6e7f33488e\\result.json",
+      "sha256": "53b74c9503f0755696bb18cbc5ebf09adcc70a2177cfc2d940d820d5ab0ce974",
+      "status": "FAIL",
+      "failed_checks": [
+        "relay_marker_content_valid"
+      ]
+    }
+  ],
+  "original_fail_retention": "PRESERVED_HASH_MATCH",
+  "baseline_manifest": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\repair-wave-20261022\\task7-explicit-clear01\\full-validation-20261022\\ab-baseline\\baseline-manifest.json",
+    "sha256": "766077c20492dc09b109bd8c6bc1055dcfef63a87282f41d00a1bbf4985443cb"
+  },
+  "task7_restored": false,
+  "acceptance_credit": 0,
+  "full_gate_credit": 0,
+  "formal_official_projection": "14 PASS / 2 FAIL UNCHANGED",
+  "pristine_official_dependencies_verified": false,
+  "native_artifact_provenance": "REUSED_FROZEN_RUNTIME_NOT_A_NEW_BUILD",
+  "environment": {
+    "service_before": {
+      "container": "livekit",
+      "id": "945da43f115b19614a1e5b8097b5e3d3635e951ee171dd3c0173ed1f35144de5",
+      "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+      "running": true,
+      "started_at": "2026-10-11T04:20:09.597066802Z",
+      "http_status": 200
+    },
+    "service_after": {
+      "container": "/livekit",
+      "id": "945da43f115b19614a1e5b8097b5e3d3635e951ee171dd3c0173ed1f35144de5",
+      "image": "sha256:37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+      "running": true,
+      "started_at": "2026-10-11T04:20:09.597066802Z",
+      "http_status": 200,
+      "observed_at_utc": "2026-10-22T09:18:45.993722+00:00"
+    },
+    "shared_service_identity_and_health": "PASS_UNCHANGED",
+    "test_server_changes": "NONE",
+    "cleanup_status": "PASS",
+    "residual_processes": []
+  },
+  "root_cause": {
+    "replace-two": "Original post-key recovery symptom not reproduced with frozen task5/task6 repaired runtime; no new root cause determination",
+    "flutter-full": "UNKNOWN; six invalid 8x8 decoded frames reproduced; concrete producer not established in this retest"
+  },
+  "stop_reason": "BOTH_AUTHORIZED_SCENARIOS_COMPLETED_NO_ADDITIONAL_DIAGNOSIS",
+  "tooling_validation": {
+    "new_contract_tests": "5/5 PASS",
+    "existing_local_contract_tests": "18/18 PASS",
+    "existing_interop_verdict_tests": "18/18 PASS",
+    "independent_review": "NO_FINDINGS",
+    "rebuild": "NOT_RUN_FROZEN_ARTIFACT_REUSE",
+    "reason": "Original build-only cl.exe missing; original strict build admission unchanged; independent complete frozen runtime admission used"
+  },
+  "tool_inputs": {
+    "tests/runtime/tools/media/invoke_e2ee_interop.py": "edcdc032ed326c153ef6d1834649ce48b9e20a6472d6104fca9bd6728beac8ce",
+    "tests/runtime/tools/media/baseline_retest_runtime.py": "f45b646ff482e8cd1d4955c7de7a1cc37104e83ffa7750548fc94d0249e04914"
+  },
+  "run_config_inputs": {
+    "replace-two": "754ba4a3eb8dc0ef9620ad5df11cb53020fb7ab0edc3f6b66c255cc991c35512",
+    "flutter-full": "b86d94ca49f5fca1b2c7fabeb82c9960c020b7d314cf9dfecfadd283f75606c2"
+  }
+}

@@ -1,0 +1,2648 @@
+{
+  "schema": "cohavora-stage-source-change-inventory-v1",
+  "status": "STAGE_CLOSURE_INVENTORY_ONLY",
+  "created_utc": "2026-10-21T21:10:56.672451+00:00",
+  "owner": "/root/p03_finite_review23",
+  "user_constraint": "冻结计划、阶段收口；不再源码/工具扩建，不新增诊断或运行。",
+  "scope": "现有Git dirty名称/stat、current-resolution22修复证据、P03 preparation23与未完成runtime23；只写本清单JSON/Markdown。",
+  "product": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test",
+    "head": "cb10d689e53ad6adae13a2bfaf2a44af4a27a6a6",
+    "status_entries": 16,
+    "tracked_modified_entries": 13,
+    "untracked_status_entries": 3,
+    "staged_numstat": "",
+    "tracked_diff_total": {
+      "files": 13,
+      "added": 592,
+      "deleted": 27
+    },
+    "status_read_limit": "Git warned that the user-level ignore file was inaccessible; status/diff commands still exited 0. Untracked directories stay collapsed; ignored files are not enumerated.",
+    "entries": [
+      {
+        "path": ".gitignore",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 1,
+          "deleted": 0
+        },
+        "purpose": "仓库/代理配置或验收子仓库既有状态；保留，不属于本清单源码归因范围"
+      },
+      {
+        "path": "AGENTS.md",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 4,
+          "deleted": 0
+        },
+        "purpose": "仓库/代理配置或验收子仓库既有状态；保留，不属于本清单源码归因范围"
+      },
+      {
+        "path": "samples/acceptance",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 0,
+          "deleted": 0
+        },
+        "directory_status_collapsed": true,
+        "purpose": "仓库/代理配置或验收子仓库既有状态；保留，不属于本清单源码归因范围"
+      },
+      {
+        "path": "src/core/room.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 113,
+          "deleted": 8
+        },
+        "purpose": "混合范围：远端媒体恢复身份/generation退役、E2EE媒体帧跟踪及callback阶段诊断接线",
+        "existing_evidence_boundary": "current-resolution22.json / sfu_contract, p13_actual_worker_profiling_18b；本清单未将全部hunk逐项归因",
+        "p03_modified": false
+      },
+      {
+        "path": "src/e2ee/frame_cryptor.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 46,
+          "deleted": 4
+        },
+        "purpose": "E2EE收发binding与媒体帧有界诊断跟踪",
+        "existing_evidence_boundary": "current-resolution22.json / sfu_contract, flutter_dispose, e2ee_six_frame_contract_boundary16；只引用既有诊断范围",
+        "p03_modified": false
+      },
+      {
+        "path": "src/e2ee/frame_cryptor.h",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 8,
+          "deleted": 1
+        },
+        "purpose": "E2EE媒体帧跟踪接口与观察身份",
+        "existing_evidence_boundary": "同frame_cryptor.cpp；本清单未独立验证全部dirty",
+        "p03_modified": false
+      },
+      {
+        "path": "src/render/owned_i420_frame.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 16,
+          "deleted": 2
+        },
+        "purpose": "OwnedI420Frame存储复用/转换/分配/平面复制阶段的opt-in诊断计量",
+        "existing_evidence_boundary": "current-resolution22.json / p13_thread_cycle_diagnostic, p13_actual_worker_profiling_18b",
+        "p03_modified": false
+      },
+      {
+        "path": "src/telemetry/session_telemetry.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 132,
+          "deleted": 9
+        },
+        "purpose": "混合范围：远端媒体generation/可用性投影与telemetry snapshot阶段诊断",
+        "existing_evidence_boundary": "current-resolution22.json / p13_actual_worker_profiling_18b, p13_panel_closed_diagnostic22；不是全部dirty的独立验收",
+        "p03_modified": false
+      },
+      {
+        "path": "src/telemetry/session_telemetry.h",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 23,
+          "deleted": 3
+        },
+        "purpose": "远端媒体generation退役事件/恢复身份和telemetry状态接口",
+        "existing_evidence_boundary": "同session_telemetry.cpp；未按全部hunk重新审查",
+        "p03_modified": false
+      },
+      {
+        "path": "src/ui/remote_control_ui.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 231,
+          "deleted": 0
+        },
+        "purpose": "远控UI测试probe、物理显示坐标观察及可访问菜单/动作定位",
+        "existing_evidence_boundary": "进入P03前已dirty；用途由现有接口名归类，本清单未取得覆盖全部hunk的独立验证",
+        "p03_modified": false
+      },
+      {
+        "path": "src/ui/remote_control_ui.h",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 6,
+          "deleted": 0
+        },
+        "purpose": "远控UI opt-in probe的声明/缓存字段",
+        "existing_evidence_boundary": "同remote_control_ui.cpp；保持已有改动",
+        "p03_modified": false
+      },
+      {
+        "path": "src/ui/sidebar_widget.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 11,
+          "deleted": 0
+        },
+        "purpose": "主界面设置入口的可访问定位及布局接线",
+        "existing_evidence_boundary": "进入P03前已dirty；本清单未独立验证完整Qt呈现/交互",
+        "p03_modified": false
+      },
+      {
+        "path": "src/ui/sidebar_widget.h",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 1,
+          "deleted": 0
+        },
+        "purpose": "设置入口控件成员声明",
+        "existing_evidence_boundary": "同sidebar_widget.cpp；本轮P03未修改",
+        "p03_modified": false
+      },
+      {
+        "path": ".codex/",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "directory_status_collapsed": true,
+        "purpose": "仓库/代理配置或验收子仓库既有状态；保留，不属于本清单源码归因范围"
+      },
+      {
+        "path": "src/e2ee/media_frame_trace.h",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 3628,
+        "purpose": "新增未跟踪的有界媒体帧诊断记录类型",
+        "existing_evidence_boundary": "既有E2EE/SFU诊断资料；不等于正式E2EE完整门通过",
+        "p03_modified": false
+      },
+      {
+        "path": "src/telemetry/callback_phase_diagnostic.h",
+        "git_status": "??",
+        "provenance": "PREEXISTING_P03_DIRTY; P13_18B_SUBCHANGE_EXPLICITLY_RECORDED; WHOLE_FILE_NOT_ATTRIBUTED",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 31064,
+        "purpose": "新增未跟踪的callback与snapshot诊断计量；18b包含worker TLS profiling owner修复",
+        "existing_evidence_boundary": "current-resolution22.json / p13_worker_profile_driver_repair18b及其changes/offline/build/runtime引用",
+        "p03_modified": false
+      }
+    ]
+  },
+  "private": {
+    "path": "E:\\vsSource\\WebRTC\\live-kit-test-local",
+    "head": "58abbbcef8402194f53e6688790b5371d8d7cf37",
+    "status_entries": 181,
+    "tracked_modified_entries": 74,
+    "untracked_status_entries": 107,
+    "staged_numstat": "",
+    "tracked_diff_total": {
+      "files": 74,
+      "added": 8566,
+      "deleted": 671
+    },
+    "status_read_limit": "Git warned that the user-level ignore file was inaccessible; status/diff commands still exited 0. Untracked directories stay collapsed; ignored files are not enumerated.",
+    "entries": [
+      {
+        "path": "tests/README.md",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 31,
+          "deleted": 0
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/cmake/NativeTests.cmake",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 31,
+          "deleted": 0
+        },
+        "purpose_group": "BUILD_PACKAGING_INTEGRATION",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/media/camera/test_camera_switch_transaction.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 264,
+          "deleted": 1
+        },
+        "purpose_group": "MEETING_SECURITY_CAMERA_TESTS",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/meeting/test_participant_snapshot_remediation.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 472,
+          "deleted": 6
+        },
+        "purpose_group": "MEETING_SECURITY_CAMERA_TESTS",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/meeting/test_remote_control_ui.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 123,
+          "deleted": 1
+        },
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/packaging/manual_test_guide.html",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 16,
+          "deleted": 0
+        },
+        "purpose_group": "BUILD_PACKAGING_INTEGRATION",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/e2ee_peer/CMakeLists.txt",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 80,
+          "deleted": 3
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/io/invoke_real_io.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 6,
+          "deleted": 5
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/b_file_product_runtime.h",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 95,
+          "deleted": 17
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/b_network_product_runtime.h",
+        "git_status": " M",
+        "provenance": "P03_AUTHORIZED_DELTA_FROM_DECLARED_BEFORE_SNAPSHOT",
+        "independent_validation": "Existing frozen P03 source review, offline gate and affected fixture build; runtime23 incomplete, no content acceptance.",
+        "tracked_diff_against_HEAD": {
+          "added": 772,
+          "deleted": 12
+        },
+        "purpose_group": "P03_FINITE_FIXTURE_DRIVER_CONTRACT",
+        "p03_delta_changed": true,
+        "p03_before_sha256": "a3aced273f8dd873cece3743a67e1314481c1cef843254d676cf2cb5591d5df1",
+        "p03_after_sha256": "ea1e0852bf34945f67e913cd15f60a9d19635d79b6eedbbe4c546d781d6eb270"
+      },
+      {
+        "path": "tests/runtime/probes/b_telemetry_product_runtime.h",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 37,
+          "deleted": 2
+        },
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/b_whiteboard_product_runtime.h",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 306,
+          "deleted": 6
+        },
+        "purpose_group": "SCREEN_WHITEBOARD_CAPTURE",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/e2ee_output_evidence.h",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 48,
+          "deleted": 12
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/e2ee_product_runtime.h",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 39,
+          "deleted": 7
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/test_annotation_overlay_runtime.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 7,
+          "deleted": 0
+        },
+        "purpose_group": "SCREEN_WHITEBOARD_CAPTURE",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/test_e2ee_backend.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 62,
+          "deleted": 0
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/test_e2ee_room_peer.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 325,
+          "deleted": 11
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/test_screen_share_runtime.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 156,
+          "deleted": 2
+        },
+        "purpose_group": "SCREEN_WHITEBOARD_CAPTURE",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/test_stream_delivery_runtime.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 264,
+          "deleted": 6
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_e2ee_flutter_initialization.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 38,
+          "deleted": 0
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_phase_memory.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 4,
+          "deleted": 0
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_acceptance_preflight.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 7,
+          "deleted": 0
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_prepared_bootstrap.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 219,
+          "deleted": 1
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_release_qualification.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 2,
+          "deleted": 2
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_remote_transport.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 5,
+          "deleted": 3
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_run_config.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 29,
+          "deleted": 0
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_target_binding.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 47,
+          "deleted": 8
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_toggle_evidence.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 5,
+          "deleted": 0
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_uia_retest.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 203,
+          "deleted": 4
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_video_page_size.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 109,
+          "deleted": 20
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/manual_test_guide.html",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 16,
+          "deleted": 1
+        },
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/product_uia_retest.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 216,
+          "deleted": 17
+        },
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/diagnostics/heap_phase/README.md",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 60,
+          "deleted": 0
+        },
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/diagnostics/heap_phase/release_inputs.json",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 4,
+          "deleted": 0
+        },
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/diagnostics/manual_test_guide.html",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 6,
+          "deleted": 0
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/e2ee_flutter_workspace.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 347,
+          "deleted": 10
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/flutter_e2ee_peer/lib/main.dart",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 378,
+          "deleted": 29
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/invoke_e2ee_interop.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 106,
+          "deleted": 15
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/invoke_e2ee_interop.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 79,
+          "deleted": 11
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/invoke_e2ee_performance.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 9,
+          "deleted": 5
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/invoke_e2ee_product.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 38,
+          "deleted": 18
+        },
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/manual_test_guide.html",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 15,
+          "deleted": 0
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/meeting/run_b_acceptance_whiteboard.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 467,
+          "deleted": 14
+        },
+        "purpose_group": "SCREEN_WHITEBOARD_CAPTURE",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/b14_current_prerequisite/B14_MANUAL.md",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 71,
+          "deleted": 5
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/configure_b_acceptance_fault_network.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 9,
+          "deleted": 5
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/configure_b_acceptance_turn.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 108,
+          "deleted": 39
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/continue_product_acceptance.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 57,
+          "deleted": 27
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/invoke_product_external.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 38,
+          "deleted": 8
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/manual_test_guide.html",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 16,
+          "deleted": 3
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/new_product_prepared.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 302,
+          "deleted": 64
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/product_remote_transport.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 4,
+          "deleted": 1
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/product_run_config.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 7,
+          "deleted": 1
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/release_product_acceptance.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 18,
+          "deleted": 4
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/run_b14_acceptance.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 40,
+          "deleted": 90
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/run_b_acceptance_codec.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 2,
+          "deleted": 0
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/run_b_acceptance_files.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 5,
+          "deleted": 2
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/run_b_acceptance_network.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 584,
+          "deleted": 17
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/run_b_acceptance_recovery.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 2,
+          "deleted": 1
+        },
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/run_b_acceptance_telemetry.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 361,
+          "deleted": 30
+        },
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/screen_capture/invoke_screen_quality_hot_runtime.py",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 197,
+          "deleted": 54
+        },
+        "purpose_group": "SCREEN_WHITEBOARD_CAPTURE",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/security/test_qt_log_redaction.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 2,
+          "deleted": 0
+        },
+        "purpose_group": "MEETING_SECURITY_CAMERA_TESTS",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/security/test_session_credentials.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 83,
+          "deleted": 32
+        },
+        "purpose_group": "MEETING_SECURITY_CAMERA_TESTS",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/telemetry/test_diagnostic_pipeline.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 10,
+          "deleted": 2
+        },
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/telemetry/test_diagnostic_qt_bridge.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 331,
+          "deleted": 1
+        },
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/telemetry/test_session_telemetry.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 316,
+          "deleted": 2
+        },
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/telemetry/test_telemetry_panel.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 7,
+          "deleted": 0
+        },
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/telemetry/test_telemetry_report.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 100,
+          "deleted": 0
+        },
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/ui/test_main_window_latency.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 2,
+          "deleted": 0
+        },
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/uia/entry_fixture.cpp",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 7,
+          "deleted": 0
+        },
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/uia/meeting_steps.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 6,
+          "deleted": 2
+        },
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/uia/product_desktop.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 273,
+          "deleted": 22
+        },
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/uia/product_desktop_evidence.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 49,
+          "deleted": 7
+        },
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/uia/settings_steps.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 9,
+          "deleted": 2
+        },
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/uia/test_product_locator.ps1",
+        "git_status": " M",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "tracked_diff_against_HEAD": {
+          "added": 7,
+          "deleted": 1
+        },
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": ".cache/",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "directory_status_collapsed": true,
+        "purpose_group": "LOCAL_CACHE_UNATTRIBUTED",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "integration/evidence_retention_policy.json",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 14779,
+        "purpose_group": "BUILD_PACKAGING_INTEGRATION",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "integration/templates/p18-desktop-run.example.json",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 1264,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/cmake/FirstWindowProbe.cmake",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 1432,
+        "purpose_group": "BUILD_PACKAGING_INTEGRATION",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/packaging/test_verify_artifact_identity.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 7309,
+        "purpose_group": "BUILD_PACKAGING_INTEGRATION",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/packaging/verify_artifact_identity.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 14480,
+        "purpose_group": "BUILD_PACKAGING_INTEGRATION",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/e2ee_peer/profile.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 4636,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/e2ee_peer/record_inputs.cmake",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 3593,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/io/real_io_volume_guard.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 1289,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/io/test_real_io_volume_guard.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 2653,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/audio_tone_probe.h",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 6469,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/b_callback_phase_diagnostic.h",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 20537,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/owned_screen_pattern.h",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 10752,
+        "purpose_group": "SCREEN_WHITEBOARD_CAPTURE",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/probes/product_first_window_probe.cpp",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 7670,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_b14_controller.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 15859,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_b_acceptance_network_audit.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 34958,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_b_acceptance_runner_scope.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 16756,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_b_acceptance_whiteboard_load.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 34155,
+        "purpose_group": "SCREEN_WHITEBOARD_CAPTURE",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_cpu_etw_control.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 24360,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_cpu_etw_native.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 9914,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_cpu_etw_parser.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 8802,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_cpu_etw_plan.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 1698,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_e2ee_cpp_profile.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 7099,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_e2ee_frame_trace.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 15311,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_e2ee_native_inputs.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 8717,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_e2ee_official_profile.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 29842,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_e2ee_offline_restore.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 2008,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_first_window_observation.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 4582,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_flutter_dispose_diagnostic.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 4364,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_mouse_input_inventory.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 2272,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_official_audio_content.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 6348,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p03_finite_content.py",
+        "git_status": "??",
+        "provenance": "P03_AUTHORIZED_DELTA_FROM_DECLARED_BEFORE_SNAPSHOT",
+        "independent_validation": "Existing frozen P03 source review, offline gate and affected fixture build; runtime23 incomplete, no content acceptance.",
+        "bytes": 16916,
+        "purpose_group": "P03_FINITE_FIXTURE_DRIVER_CONTRACT",
+        "p03_delta_changed": true,
+        "p03_before_sha256": null,
+        "p03_after_sha256": "43612a555d802123abb55510766fc95d0e170f8dc06b6fda8985e79409f09759"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p13_cycle_runner_terminal.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 9551,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p13_factorial_contract.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 71074,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p13_thread_profile_semantics.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 2285,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p13_worker_profile_contract.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 21674,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p18_desktop_automation.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 16493,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p18_desktop_bridge.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 9473,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p18_desktop_endpoint.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 6840,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p21_cpu_content.py",
+        "git_status": "??",
+        "provenance": "P03_FROZEN_UNCHANGED_INPUT; PREEXISTING_FILE",
+        "independent_validation": "Existing frozen P03 source review, offline gate and affected fixture build; runtime23 incomplete, no content acceptance.",
+        "bytes": 4109,
+        "purpose_group": "P03_FINITE_FIXTURE_DRIVER_CONTRACT",
+        "p03_delta_changed": false,
+        "p03_before_sha256": "b2f02685d02ca67848d11279bc25cada60c0ec9bf27415687598e9280e012116",
+        "p03_after_sha256": "b2f02685d02ca67848d11279bc25cada60c0ec9bf27415687598e9280e012116"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p21_cpu_content_steps.ps1",
+        "git_status": "??",
+        "provenance": "P03_AUTHORIZED_DELTA_FROM_DECLARED_BEFORE_SNAPSHOT",
+        "independent_validation": "Existing frozen P03 source review, offline gate and affected fixture build; runtime23 incomplete, no content acceptance.",
+        "bytes": 7419,
+        "purpose_group": "P03_FINITE_FIXTURE_DRIVER_CONTRACT",
+        "p03_delta_changed": true,
+        "p03_before_sha256": "cd3e8b4b1ab75dedabdf8da5ffc086c8d25512155c58fd9401f5a9bb33dc2129",
+        "p03_after_sha256": "0fc9baaba1c8d14907469563f12ac79d3680a2298f7633b3b30138d7e2a8433c"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p21_meeting_theme.py",
+        "git_status": "??",
+        "provenance": "P03_FROZEN_UNCHANGED_INPUT; PREEXISTING_FILE",
+        "independent_validation": "Existing frozen P03 source review, offline gate and affected fixture build; runtime23 incomplete, no content acceptance.",
+        "bytes": 13233,
+        "purpose_group": "P03_FINITE_FIXTURE_DRIVER_CONTRACT",
+        "p03_delta_changed": false,
+        "p03_before_sha256": "63cb82243589d076137d91a1ec3a9e11026ff1c4bdbf8e5e88e1d047cc95a684",
+        "p03_after_sha256": "63cb82243589d076137d91a1ec3a9e11026ff1c4bdbf8e5e88e1d047cc95a684"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p21_system_theme_hash.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 2598,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p21_system_theme_retest.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 18472,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_p21_theme_transition.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 4786,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_p21_meeting_steps.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 21976,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_remote_inputs.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 5750,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_single_attempt.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 21007,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_stage_timing.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 3444,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_product_ui_input_boundary.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 6241,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_screen_quality_hot_runtime.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 9264,
+        "purpose_group": "SCREEN_WHITEBOARD_CAPTURE",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_sfu_blank_frame_trace.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 2822,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_sfu_frame_producer.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 3486,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_sfu_uprobe_calibration.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 6206,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_theme_configuration_seed_steps.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 5123,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_theme_configuration_seeds.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 11176,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/selftests/test_theme_persistence_retest.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 8057,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/first_window_observation.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 10036,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/inspect_mouse_input.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 10867,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/mouse_input_inventory.md",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 1425,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/p03_finite_content.py",
+        "git_status": "??",
+        "provenance": "P03_AUTHORIZED_DELTA_FROM_DECLARED_BEFORE_SNAPSHOT",
+        "independent_validation": "Existing frozen P03 source review, offline gate and affected fixture build; runtime23 incomplete, no content acceptance.",
+        "bytes": 15732,
+        "purpose_group": "P03_FINITE_FIXTURE_DRIVER_CONTRACT",
+        "p03_delta_changed": true,
+        "p03_before_sha256": null,
+        "p03_after_sha256": "6fe3622617295f75a3b92d63e96dcb22ce1f0e0f19d698772f49e2e47e7e4a59"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/p21_meeting_theme.py",
+        "git_status": "??",
+        "provenance": "P03_AUTHORIZED_DELTA_FROM_DECLARED_BEFORE_SNAPSHOT",
+        "independent_validation": "Existing frozen P03 source review, offline gate and affected fixture build; runtime23 incomplete, no content acceptance.",
+        "bytes": 33294,
+        "purpose_group": "P03_FINITE_FIXTURE_DRIVER_CONTRACT",
+        "p03_delta_changed": true,
+        "p03_before_sha256": "dbb7a7e0d79dfe3a61a2919b7407205d8eda316d37a0458a73526aab8f08abb3",
+        "p03_after_sha256": "871ba1072ee4bf3528778ca1c098812c6361c1f440ae52b6e3cbd415583059d0"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/p21_system_theme_retest.md",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 7809,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/p21_system_theme_retest.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 30076,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/theme_persistence_retest.md",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 5331,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/theme_persistence_retest.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 23538,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/desktop/ui_input_origin.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 25669,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/diagnostics/cpu_etw/",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "directory_status_collapsed": true,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/diagnostics/sfu_blank_frame_trace.md",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 2749,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/diagnostics/sfu_blank_frame_trace.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 12090,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/diagnostics/sfu_uprobe_calibration.md",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 2109,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/diagnostics/sfu_uprobe_calibration.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 19306,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/diagnose_e2ee_frame_trace.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 21457,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/diagnose_sfu_frame_producer.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 7122,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/flutter_dispose_diagnostic.md",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 3050,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/flutter_e2ee_peer/lib/borrowed_relay_source.dart",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 4687,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/flutter_webrtc_1_6_0_dispose.patch",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 585,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/official_audio_relay/",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "directory_status_collapsed": true,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/prepare_flutter_dispose_diagnostic.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 14789,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/media/restore_e2ee_flutter_backend.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 22100,
+        "purpose_group": "E2EE_FLUTTER_SFU_AUDIO",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/P18_DESKTOP.md",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 4683,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/b14_amd_service_guard.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 9797,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/invoke_product_remote_control.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 23457,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/invoke_product_single_attempt.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 8523,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/p13_cycles_contract.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 53432,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/p13_thread_native_calibration/",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "directory_status_collapsed": true,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/p13_thread_profiling_probe.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 15750,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/p13_worker_profile_diagnostic.md",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 12946,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/p18_desktop_bridge.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 20975,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/p18_desktop_contract.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 9697,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/p18_desktop_endpoint.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 27680,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/p18_desktop_native.cs",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 15101,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/product_b14_controller.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 26841,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/product_remote_inputs.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 4890,
+        "purpose_group": "REMOTE_CONTROL_P18",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/product_single_attempt.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 14946,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/product_single_attempt_local.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 4177,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/product_stage_timing.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 3194,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/runtime/tools/product_acceptance/test_b14_amd_service_guard.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 4368,
+        "purpose_group": "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/telemetry/freeze_export_baseline.py",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 3182,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/telemetry/telemetry_export_allocations.h",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 4247,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/telemetry/telemetry_export_baseline.h",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 648,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/telemetry/test_telemetry_export_cost.cpp",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 14311,
+        "purpose_group": "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/uia/product_input_origin.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 9157,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/uia/product_p21_meeting_steps.ps1",
+        "git_status": "??",
+        "provenance": "P03_AUTHORIZED_DELTA_FROM_DECLARED_BEFORE_SNAPSHOT",
+        "independent_validation": "Existing frozen P03 source review, offline gate and affected fixture build; runtime23 incomplete, no content acceptance.",
+        "bytes": 43258,
+        "purpose_group": "P03_FINITE_FIXTURE_DRIVER_CONTRACT",
+        "p03_delta_changed": true,
+        "p03_before_sha256": "fd5ef13d024543706cc1629bc0cba591bc0b6f6b1422b80e3e66218a12ab5007",
+        "p03_after_sha256": "50462eab62839c0d160a5fc8f6fdb49d82d438a1edf0c92b7baccdb88554a193"
+      },
+      {
+        "path": "tests/uia/product_p21_theme_steps.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 10920,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/uia/product_theme_persistence_steps.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 10335,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      },
+      {
+        "path": "tests/uia/product_timing_theme_steps.ps1",
+        "git_status": "??",
+        "provenance": "PREEXISTING_DIRTY_OR_UNATTRIBUTED; NOT_CLAIMED_AS_P03_CHANGE",
+        "independent_validation": "NOT_PERFORMED_BY_THIS_INVENTORY",
+        "bytes": 19388,
+        "purpose_group": "UI_THEME_DESKTOP_INPUT",
+        "purpose_basis": "路径和既有收据用途归类，非本次新诊断；不把全文件dirty归为本轮修改"
+      }
+    ]
+  },
+  "private_purpose_groups": {
+    "ACCEPTANCE_RUNNERS_GUIDES_AND_OTHER_EXISTING_DIRTY": [
+      "tests/README.md",
+      "tests/runtime/io/invoke_real_io.ps1",
+      "tests/runtime/probes/b_file_product_runtime.h",
+      "tests/runtime/probes/test_stream_delivery_runtime.cpp",
+      "tests/runtime/selftests/test_phase_memory.ps1",
+      "tests/runtime/selftests/test_product_acceptance_preflight.ps1",
+      "tests/runtime/selftests/test_product_prepared_bootstrap.py",
+      "tests/runtime/selftests/test_product_release_qualification.py",
+      "tests/runtime/selftests/test_product_remote_transport.py",
+      "tests/runtime/selftests/test_product_run_config.py",
+      "tests/runtime/selftests/test_product_target_binding.ps1",
+      "tests/runtime/selftests/test_product_toggle_evidence.ps1",
+      "tests/runtime/selftests/test_product_uia_retest.py",
+      "tests/runtime/selftests/test_product_video_page_size.ps1",
+      "tests/runtime/tools/diagnostics/manual_test_guide.html",
+      "tests/runtime/tools/media/manual_test_guide.html",
+      "tests/runtime/tools/product_acceptance/b14_current_prerequisite/B14_MANUAL.md",
+      "tests/runtime/tools/product_acceptance/configure_b_acceptance_fault_network.py",
+      "tests/runtime/tools/product_acceptance/configure_b_acceptance_turn.py",
+      "tests/runtime/tools/product_acceptance/continue_product_acceptance.ps1",
+      "tests/runtime/tools/product_acceptance/invoke_product_external.ps1",
+      "tests/runtime/tools/product_acceptance/manual_test_guide.html",
+      "tests/runtime/tools/product_acceptance/new_product_prepared.py",
+      "tests/runtime/tools/product_acceptance/product_remote_transport.py",
+      "tests/runtime/tools/product_acceptance/product_run_config.py",
+      "tests/runtime/tools/product_acceptance/release_product_acceptance.py",
+      "tests/runtime/tools/product_acceptance/run_b14_acceptance.ps1",
+      "tests/runtime/tools/product_acceptance/run_b_acceptance_codec.py",
+      "tests/runtime/tools/product_acceptance/run_b_acceptance_files.py",
+      "tests/runtime/tools/product_acceptance/run_b_acceptance_network.py",
+      "tests/runtime/tools/product_acceptance/run_b_acceptance_recovery.py",
+      "tests/runtime/io/real_io_volume_guard.ps1",
+      "tests/runtime/io/test_real_io_volume_guard.ps1",
+      "tests/runtime/selftests/test_b14_controller.py",
+      "tests/runtime/selftests/test_b_acceptance_network_audit.py",
+      "tests/runtime/selftests/test_b_acceptance_runner_scope.py",
+      "tests/runtime/selftests/test_product_single_attempt.py",
+      "tests/runtime/selftests/test_product_stage_timing.ps1",
+      "tests/runtime/tools/product_acceptance/b14_amd_service_guard.ps1",
+      "tests/runtime/tools/product_acceptance/invoke_product_single_attempt.ps1",
+      "tests/runtime/tools/product_acceptance/product_b14_controller.py",
+      "tests/runtime/tools/product_acceptance/product_single_attempt.py",
+      "tests/runtime/tools/product_acceptance/product_single_attempt_local.ps1",
+      "tests/runtime/tools/product_acceptance/product_stage_timing.ps1",
+      "tests/runtime/tools/product_acceptance/test_b14_amd_service_guard.ps1"
+    ],
+    "BUILD_PACKAGING_INTEGRATION": [
+      "tests/cmake/NativeTests.cmake",
+      "tests/packaging/manual_test_guide.html",
+      "integration/evidence_retention_policy.json",
+      "tests/cmake/FirstWindowProbe.cmake",
+      "tests/packaging/test_verify_artifact_identity.py",
+      "tests/packaging/verify_artifact_identity.py"
+    ],
+    "MEETING_SECURITY_CAMERA_TESTS": [
+      "tests/media/camera/test_camera_switch_transaction.cpp",
+      "tests/meeting/test_participant_snapshot_remediation.cpp",
+      "tests/security/test_qt_log_redaction.cpp",
+      "tests/security/test_session_credentials.cpp"
+    ],
+    "REMOTE_CONTROL_P18": [
+      "tests/meeting/test_remote_control_ui.cpp",
+      "integration/templates/p18-desktop-run.example.json",
+      "tests/runtime/selftests/test_p18_desktop_automation.py",
+      "tests/runtime/selftests/test_p18_desktop_bridge.ps1",
+      "tests/runtime/selftests/test_p18_desktop_endpoint.ps1",
+      "tests/runtime/selftests/test_product_remote_inputs.ps1",
+      "tests/runtime/tools/product_acceptance/P18_DESKTOP.md",
+      "tests/runtime/tools/product_acceptance/invoke_product_remote_control.py",
+      "tests/runtime/tools/product_acceptance/p18_desktop_bridge.ps1",
+      "tests/runtime/tools/product_acceptance/p18_desktop_contract.py",
+      "tests/runtime/tools/product_acceptance/p18_desktop_endpoint.ps1",
+      "tests/runtime/tools/product_acceptance/p18_desktop_native.cs",
+      "tests/runtime/tools/product_acceptance/product_remote_inputs.ps1"
+    ],
+    "E2EE_FLUTTER_SFU_AUDIO": [
+      "tests/runtime/e2ee_peer/CMakeLists.txt",
+      "tests/runtime/probes/e2ee_output_evidence.h",
+      "tests/runtime/probes/e2ee_product_runtime.h",
+      "tests/runtime/probes/test_e2ee_backend.cpp",
+      "tests/runtime/probes/test_e2ee_room_peer.cpp",
+      "tests/runtime/selftests/test_e2ee_flutter_initialization.py",
+      "tests/runtime/tools/media/e2ee_flutter_workspace.py",
+      "tests/runtime/tools/media/flutter_e2ee_peer/lib/main.dart",
+      "tests/runtime/tools/media/invoke_e2ee_interop.ps1",
+      "tests/runtime/tools/media/invoke_e2ee_interop.py",
+      "tests/runtime/tools/media/invoke_e2ee_performance.py",
+      "tests/runtime/tools/media/invoke_e2ee_product.py",
+      "tests/runtime/e2ee_peer/profile.ps1",
+      "tests/runtime/e2ee_peer/record_inputs.cmake",
+      "tests/runtime/probes/audio_tone_probe.h",
+      "tests/runtime/selftests/test_e2ee_cpp_profile.ps1",
+      "tests/runtime/selftests/test_e2ee_frame_trace.py",
+      "tests/runtime/selftests/test_e2ee_native_inputs.py",
+      "tests/runtime/selftests/test_e2ee_official_profile.py",
+      "tests/runtime/selftests/test_e2ee_offline_restore.py",
+      "tests/runtime/selftests/test_flutter_dispose_diagnostic.py",
+      "tests/runtime/selftests/test_official_audio_content.py",
+      "tests/runtime/selftests/test_sfu_blank_frame_trace.py",
+      "tests/runtime/selftests/test_sfu_frame_producer.py",
+      "tests/runtime/selftests/test_sfu_uprobe_calibration.py",
+      "tests/runtime/tools/diagnostics/sfu_blank_frame_trace.md",
+      "tests/runtime/tools/diagnostics/sfu_blank_frame_trace.py",
+      "tests/runtime/tools/diagnostics/sfu_uprobe_calibration.md",
+      "tests/runtime/tools/diagnostics/sfu_uprobe_calibration.py",
+      "tests/runtime/tools/media/diagnose_e2ee_frame_trace.py",
+      "tests/runtime/tools/media/diagnose_sfu_frame_producer.py",
+      "tests/runtime/tools/media/flutter_dispose_diagnostic.md",
+      "tests/runtime/tools/media/flutter_e2ee_peer/lib/borrowed_relay_source.dart",
+      "tests/runtime/tools/media/flutter_webrtc_1_6_0_dispose.patch",
+      "tests/runtime/tools/media/official_audio_relay/",
+      "tests/runtime/tools/media/prepare_flutter_dispose_diagnostic.py",
+      "tests/runtime/tools/media/restore_e2ee_flutter_backend.py"
+    ],
+    "P03_FINITE_FIXTURE_DRIVER_CONTRACT": [
+      "tests/runtime/probes/b_network_product_runtime.h",
+      "tests/runtime/selftests/test_p03_finite_content.py",
+      "tests/runtime/selftests/test_p21_cpu_content.py",
+      "tests/runtime/selftests/test_p21_cpu_content_steps.ps1",
+      "tests/runtime/selftests/test_p21_meeting_theme.py",
+      "tests/runtime/tools/desktop/p03_finite_content.py",
+      "tests/runtime/tools/desktop/p21_meeting_theme.py",
+      "tests/uia/product_p21_meeting_steps.ps1"
+    ],
+    "TELEMETRY_P13_AND_DIAGNOSTIC_TOOLING": [
+      "tests/runtime/probes/b_telemetry_product_runtime.h",
+      "tests/runtime/tools/diagnostics/heap_phase/README.md",
+      "tests/runtime/tools/diagnostics/heap_phase/release_inputs.json",
+      "tests/runtime/tools/product_acceptance/run_b_acceptance_telemetry.py",
+      "tests/telemetry/test_diagnostic_pipeline.cpp",
+      "tests/telemetry/test_diagnostic_qt_bridge.cpp",
+      "tests/telemetry/test_session_telemetry.cpp",
+      "tests/telemetry/test_telemetry_panel.cpp",
+      "tests/telemetry/test_telemetry_report.cpp",
+      "tests/runtime/probes/b_callback_phase_diagnostic.h",
+      "tests/runtime/selftests/test_cpu_etw_control.py",
+      "tests/runtime/selftests/test_cpu_etw_native.py",
+      "tests/runtime/selftests/test_cpu_etw_parser.py",
+      "tests/runtime/selftests/test_cpu_etw_plan.py",
+      "tests/runtime/selftests/test_p13_cycle_runner_terminal.py",
+      "tests/runtime/selftests/test_p13_factorial_contract.py",
+      "tests/runtime/selftests/test_p13_thread_profile_semantics.py",
+      "tests/runtime/selftests/test_p13_worker_profile_contract.py",
+      "tests/runtime/tools/diagnostics/cpu_etw/",
+      "tests/runtime/tools/product_acceptance/p13_cycles_contract.py",
+      "tests/runtime/tools/product_acceptance/p13_thread_native_calibration/",
+      "tests/runtime/tools/product_acceptance/p13_thread_profiling_probe.py",
+      "tests/runtime/tools/product_acceptance/p13_worker_profile_diagnostic.md",
+      "tests/telemetry/freeze_export_baseline.py",
+      "tests/telemetry/telemetry_export_allocations.h",
+      "tests/telemetry/telemetry_export_baseline.h",
+      "tests/telemetry/test_telemetry_export_cost.cpp"
+    ],
+    "SCREEN_WHITEBOARD_CAPTURE": [
+      "tests/runtime/probes/b_whiteboard_product_runtime.h",
+      "tests/runtime/probes/test_annotation_overlay_runtime.cpp",
+      "tests/runtime/probes/test_screen_share_runtime.cpp",
+      "tests/runtime/tools/meeting/run_b_acceptance_whiteboard.py",
+      "tests/runtime/tools/screen_capture/invoke_screen_quality_hot_runtime.py",
+      "tests/runtime/probes/owned_screen_pattern.h",
+      "tests/runtime/selftests/test_b_acceptance_whiteboard_load.py",
+      "tests/runtime/selftests/test_screen_quality_hot_runtime.py"
+    ],
+    "UI_THEME_DESKTOP_INPUT": [
+      "tests/runtime/tools/desktop/manual_test_guide.html",
+      "tests/runtime/tools/desktop/product_uia_retest.py",
+      "tests/ui/test_main_window_latency.cpp",
+      "tests/uia/entry_fixture.cpp",
+      "tests/uia/meeting_steps.ps1",
+      "tests/uia/product_desktop.ps1",
+      "tests/uia/product_desktop_evidence.ps1",
+      "tests/uia/settings_steps.ps1",
+      "tests/uia/test_product_locator.ps1",
+      "tests/runtime/probes/product_first_window_probe.cpp",
+      "tests/runtime/selftests/test_first_window_observation.py",
+      "tests/runtime/selftests/test_mouse_input_inventory.py",
+      "tests/runtime/selftests/test_p21_system_theme_hash.ps1",
+      "tests/runtime/selftests/test_p21_system_theme_retest.py",
+      "tests/runtime/selftests/test_p21_theme_transition.ps1",
+      "tests/runtime/selftests/test_product_p21_meeting_steps.ps1",
+      "tests/runtime/selftests/test_product_ui_input_boundary.ps1",
+      "tests/runtime/selftests/test_theme_configuration_seed_steps.ps1",
+      "tests/runtime/selftests/test_theme_configuration_seeds.py",
+      "tests/runtime/selftests/test_theme_persistence_retest.py",
+      "tests/runtime/tools/desktop/first_window_observation.py",
+      "tests/runtime/tools/desktop/inspect_mouse_input.py",
+      "tests/runtime/tools/desktop/mouse_input_inventory.md",
+      "tests/runtime/tools/desktop/p21_system_theme_retest.md",
+      "tests/runtime/tools/desktop/p21_system_theme_retest.py",
+      "tests/runtime/tools/desktop/theme_persistence_retest.md",
+      "tests/runtime/tools/desktop/theme_persistence_retest.py",
+      "tests/runtime/tools/desktop/ui_input_origin.py",
+      "tests/uia/product_input_origin.ps1",
+      "tests/uia/product_p21_theme_steps.ps1",
+      "tests/uia/product_theme_persistence_steps.ps1",
+      "tests/uia/product_timing_theme_steps.ps1"
+    ],
+    "LOCAL_CACHE_UNATTRIBUTED": [
+      ".cache/"
+    ]
+  },
+  "p03_attribution": {
+    "product_source_changes": 0,
+    "changed_private_files": 6,
+    "frozen_inputs": 8,
+    "files": [
+      {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\probes\\b_network_product_runtime.h",
+        "changed": true,
+        "before_sha256": "a3aced273f8dd873cece3743a67e1314481c1cef843254d676cf2cb5591d5df1",
+        "after_sha256": "ea1e0852bf34945f67e913cd15f60a9d19635d79b6eedbbe4c546d781d6eb270"
+      },
+      {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\desktop\\p21_meeting_theme.py",
+        "changed": true,
+        "before_sha256": "dbb7a7e0d79dfe3a61a2919b7407205d8eda316d37a0458a73526aab8f08abb3",
+        "after_sha256": "871ba1072ee4bf3528778ca1c098812c6361c1f440ae52b6e3cbd415583059d0"
+      },
+      {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\uia\\product_p21_meeting_steps.ps1",
+        "changed": true,
+        "before_sha256": "fd5ef13d024543706cc1629bc0cba591bc0b6f6b1422b80e3e66218a12ab5007",
+        "after_sha256": "50462eab62839c0d160a5fc8f6fdb49d82d438a1edf0c92b7baccdb88554a193"
+      },
+      {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\selftests\\test_p21_cpu_content.py",
+        "changed": false,
+        "before_sha256": "b2f02685d02ca67848d11279bc25cada60c0ec9bf27415687598e9280e012116",
+        "after_sha256": "b2f02685d02ca67848d11279bc25cada60c0ec9bf27415687598e9280e012116"
+      },
+      {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\selftests\\test_p21_cpu_content_steps.ps1",
+        "changed": true,
+        "before_sha256": "cd3e8b4b1ab75dedabdf8da5ffc086c8d25512155c58fd9401f5a9bb33dc2129",
+        "after_sha256": "0fc9baaba1c8d14907469563f12ac79d3680a2298f7633b3b30138d7e2a8433c"
+      },
+      {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\selftests\\test_p21_meeting_theme.py",
+        "changed": false,
+        "before_sha256": "63cb82243589d076137d91a1ec3a9e11026ff1c4bdbf8e5e88e1d047cc95a684",
+        "after_sha256": "63cb82243589d076137d91a1ec3a9e11026ff1c4bdbf8e5e88e1d047cc95a684"
+      },
+      {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\tools\\desktop\\p03_finite_content.py",
+        "changed": true,
+        "before_sha256": null,
+        "after_sha256": "6fe3622617295f75a3b92d63e96dcb22ce1f0e0f19d698772f49e2e47e7e4a59"
+      },
+      {
+        "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\tests\\runtime\\selftests\\test_p03_finite_content.py",
+        "changed": true,
+        "before_sha256": null,
+        "after_sha256": "43612a555d802123abb55510766fc95d0e170f8dc06b6fda8985e79409f09759"
+      }
+    ],
+    "rule": "Git相对HEAD的全文件diff不是本轮P03增量；仅changes.json的before/after范围归本轮。未列入manifest的dirty不归因于P03。"
+  },
+  "existing_recorded_fixes": [
+    {
+      "resolution_key": "driver_repair",
+      "recorded_evidence": {
+        "scope": "PRIVATE_TEST_DRIVER_ONLY",
+        "root_cause": "Unattended startup SetForegroundWindow can be rejected; replacing login with main window can leave the product behind another foreground window.",
+        "change": "One owned-window startup request with bounded AttachThreadInput/finally detach; focus admission also after login-to-main transition, before any meeting workflow.",
+        "limitation": "Final UI15 did not exercise the queue-attach branch because both startup windows were already foreground; earlier startup14 and direct compilation/invalid-window checks cover their recorded scope only.",
+        "no_input_injection": true,
+        "no_foreground_lock_setting_change": true,
+        "strict_contract_unchanged": true,
+        "verification": "Existing parse, embedded C# compile, invalid-window rejection and strict single-submit boundary PASS reused; exact driver hash also frozen by successful UI15."
+      },
+      "reuse_boundary": "既有current-resolution22结论，仅盘点复用；本清单未重跑或新增归因"
+    },
+    {
+      "resolution_key": "p21_meeting_driver_repairs",
+      "recorded_evidence": {
+        "hash_dependency": "runtime02 entry boundary CommandNotFoundException at Get-FileHash; replaced with local .NET SHA256; actual original PSModulePath not retained",
+        "window_discovery": "runtime03 failed strict unique Window match; locator now includes role descendants and preserves runtime identity uniqueness",
+        "build_receipt": {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-meeting-preparation01\\build-receipt.json",
+          "sha256": "f247117b2d5cd6d8d24c76b79224cc3d62e4aaba5ff4983c9e4bebbf2126b0fc",
+          "bytes": 218513
+        },
+        "native_build": "REUSED_UNCHANGED_AFTER_PS_ONLY_FIXES"
+      },
+      "reuse_boundary": "既有current-resolution22结论，仅盘点复用；本清单未重跑或新增归因"
+    },
+    {
+      "resolution_key": "p21_backend_fixture_repairs",
+      "recorded_evidence": {
+        "build_receipt": {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-backend-preparation05\\build-receipt.json",
+          "sha256": "361d7dd74b334b4c31699dabb806337c7c1ee23028d4b014ddade8f21abf7328",
+          "bytes": 217923
+        },
+        "observation": "OpenGL nonvirtual inspection now dispatches to the GL worker; CPU retains a separate held-image observation and root surface stage point",
+        "compile_repair": "Explicit int coordinates disambiguate Win32 LONG to QJsonValue",
+        "successful_build_chunks": [
+          "1645c1",
+          "f5c2be"
+        ],
+        "offline_gate": {
+          "tool_chunk": "d66e95",
+          "tests": 9,
+          "exit_code": 0
+        }
+      },
+      "reuse_boundary": "既有current-resolution22结论，仅盘点复用；本清单未重跑或新增归因"
+    },
+    {
+      "resolution_key": "cpu_content_fixture_repair17",
+      "recorded_evidence": {
+        "scope": "PRIVATE_TEST_DRIVER_AND_OBSERVER_ONLY",
+        "root_cause": "High-frequency partial Paint events evicted the last full four-point Paint from a 16-entry ring, yielding false INCONCLUSIVE.",
+        "change": "Keep the existing bounded ring plus one latest single covering event; revalidate current theme/frame/binding/size and four points. No union across Paint regions.",
+        "build_receipt": {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p21-cpu-content-preparation17b\\build-receipt.json",
+          "sha256": "17c9b64bf9f99844d1f202e6d8f0eb9ee3903e3941ff689be286ebaefe0d7699",
+          "bytes": 218228
+        },
+        "successful_build_chunks": [
+          "7c135d",
+          "8ab545"
+        ],
+        "verification": {
+          "existing_python_tests": 9,
+          "new_python_contract_tests": 5,
+          "new_ps_content_contract": "PASS",
+          "existing_ps_helper_gate": "PASS",
+          "runtime": "PASS_SCOPED_RUNTIME17B"
+        },
+        "claim_boundary": "Single CPU static decoded image and four owned desktop-composited pixels per theme; no moving media, per-frame Present or physical scanout claim."
+      },
+      "reuse_boundary": "既有current-resolution22结论，仅盘点复用；本清单未重跑或新增归因"
+    },
+    {
+      "resolution_key": "p13_wait_bitmap_semantics_repair17",
+      "recorded_evidence": {
+        "receipt": {
+          "path": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p13-profile-semantics17\\result.json",
+          "sha256": "9611d4bebb285d08458e8218eaf57cd71c52887c8a96a868eae5322abc61adf4",
+          "bytes": 5154
+        },
+        "status": "PASS_OFFLINE_SEMANTICS_ONLY",
+        "root_cause": "WaitReasonBitMap is an interval bitmap since the preceding read, not a cumulative set; subtracting first bits loses repeated reasons.",
+        "derived_change": "Use the second read bitmap as the interval; retain raw first/second.",
+        "offline_tests": 3,
+        "native_runs": 0,
+        "builds": 0,
+        "original_evidence_unchanged": true,
+        "original_formal": "FAIL_UNCHANGED +7.0146818923 percent >5 percent",
+        "root_cause_of_formal_fail": "UNKNOWN",
+        "acceptance_credit": 0,
+        "formal_credit": 0
+      },
+      "reuse_boundary": "既有current-resolution22结论，仅盘点复用；本清单未重跑或新增归因"
+    },
+    {
+      "resolution_key": "p13_worker_profile_driver_repair18b",
+      "recorded_evidence": {
+        "scope": "OPT_IN_DIAGNOSTIC_DRIVER_ONLY",
+        "confirmed_defect": "Old controller-thread Enable targeted another worker and violated the official current-thread requirement; its cross-thread Disable design also violated the same-enabling-thread requirement.",
+        "error_50_boundary": "The old error 50 alone did not exclude platform factors. The corrected same-worker API path succeeded in this new observed run.",
+        "change": "Worker TLS owns Enable and warmup; Stop withdraws recording; worker final-reads, disables once and queries clear; controller waits for acquired ack before terminal plain fields and real-handle closure. Runner keeps media active until cleanup acknowledgement.",
+        "offline_gate": "PASS 9 worker contract tests plus 1 existing cycle terminal regression; reused unchanged successful inputs.",
+        "source_review": "NO_REMAINING_CONFIRMED_FINDINGS",
+        "affected_build": "PASS",
+        "runtime": "COLLECTED_DIAGNOSTIC",
+        "original_failed_attempt": "PRESERVED_UNCHANGED_IN_RUNTIME18_AND_RESOLUTION18",
+        "formal_root_cause": "UNKNOWN"
+      },
+      "reuse_boundary": "既有current-resolution22结论，仅盘点复用；本清单未重跑或新增归因"
+    },
+    {
+      "resolution_key": "p13_boolean_driver_repair22",
+      "recorded_evidence": {
+        "status": "REPAIRED_FOCUSED_14_PASS_COMPLETE_EIGHT_WINDOW_RUNTIME_VERIFIED",
+        "root_cause": "Private Python sampling and stop-ack validators required int for native bool; synthetic fixtures repeated the wrong type.",
+        "correction": "Strict bool; OFF false; ON unused stop-cache bool type only. Real OFF/ON native JSON fixture projections reject integer 0/1.",
+        "native_changes": false,
+        "original_failed_windows": "PRESERVED_UNMODIFIED",
+        "original_formal_performance_root_cause": "UNKNOWN"
+      },
+      "reuse_boundary": "既有current-resolution22结论，仅盘点复用；本清单未重跑或新增归因"
+    },
+    {
+      "resolution_key": "flutter_dispose",
+      "recorded_evidence": {
+        "status": "DIAGNOSTIC_OBSERVER_CLEANUP_REPAIR_VERIFIED",
+        "root_cause": "close removes peerconnections_ entry; subsequent dispose skips observer cleanup when PC is absent",
+        "repair": {
+          "scope": "TASK_OWNED_DIAGNOSTIC_PLUGIN_ONLY",
+          "disposed_observers_removed": 4,
+          "reconnect_observer_counts": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "old_ended_candidates": 0,
+          "checks_true": 69,
+          "checks_total": 70,
+          "status": "FAIL",
+          "false_checks": [
+            "relay_marker_content_valid"
+          ],
+          "full_gate_credit": 0
+        },
+        "remaining": "SIX_CONTENT_INVALID_FRAMES_AND_PRISTINE_OFFICIAL_DEPENDENCY_GATE_NOT_CLOSED",
+        "original_sdk_and_cache": "UNCHANGED"
+      },
+      "reuse_boundary": "既有current-resolution22结论，仅盘点复用；本清单未重跑或新增归因"
+    },
+    {
+      "resolution_key": "p03_finite_content_preparation23",
+      "recorded_evidence": {
+        "scope": "私有夹具/驱动/纯契约扩展；不是产品src修复",
+        "changed_files": 6,
+        "frozen_files": 8,
+        "offline": "PASS_OFFLINE_ONLY",
+        "python_cases": 23,
+        "powershell7_sets": 1,
+        "powershell51": "PASS_OFFLINE_WINPS51_ONLY",
+        "affected_build": "PASS_AFFECTED_BUILD",
+        "build_target": "uia_entry_fixture",
+        "configuration": "RelWithDebInfo",
+        "build_provenance": "INCREMENTAL_CURRENT_SOURCE_SNAPSHOT; TRANSITIVE_CLEAN_BUILD_NOT_PROVEN",
+        "source_review": "PASS_SCOPED_QT_SOURCE_REVIEW",
+        "review_addendum": "PASS_SCOPED_WINPS51_BINDING_ADDENDUM"
+      },
+      "reuse_boundary": "复用现有收据；runtime23未完成，不计正式门或完整P03通过"
+    }
+  ],
+  "p03_runtime_boundary": {
+    "status": "INCONCLUSIVE",
+    "reason_code": "P21_STRICT_INPUT_CHANGED",
+    "execution_status": "EXIT_1_STRICT_INPUT_CHANGED_BEFORE_PEER_LAUNCH",
+    "exit_code": 1,
+    "product_processes_launched": false,
+    "cases_completed": 0,
+    "frames_completed": 0,
+    "cleanup": "NOT_APPLICABLE_NO_PEERS_LAUNCHED",
+    "service_unchanged": true,
+    "room_empty": true,
+    "final_inputs_unchanged": "NOT_EVALUATED_POSTCHECK_STOPPED_AT_STRICT_INPUT",
+    "inference": "双端尚未启动即因strict input变化停止；未观察任何有限内容帧，不是产品媒体失败结论，也不是P03通过。",
+    "next_execution": "本阶段冻结，不安排新桌面复测。"
+  },
+  "remaining_formal_boundaries": {
+    "P13": "原formal +7.0146818923% >5% FAIL不变；根因UNKNOWN；18b/22仅诊断数据和driver修复，不能替代正式门。",
+    "E2EE_Flutter": "观察器dispose诊断修复有证据；六个内容异常帧及pristine官方依赖门仍未关闭；不放宽认证/原内容门。",
+    "P03": "保留runtime17b静态子门已完成数据；新finite runtime23未完成；完整P03 credit0。",
+    "P20": "FORMAL_PAUSED_NOT_STARTED",
+    "final_regression": "NOT_RUN"
+  },
+  "cleanup_review_candidates": [
+    {
+      "topic": "产品中的诊断接线归属",
+      "paths": [
+        "src/core/room.cpp",
+        "src/e2ee/frame_cryptor.cpp",
+        "src/e2ee/frame_cryptor.h",
+        "src/e2ee/media_frame_trace.h",
+        "src/render/owned_i420_frame.cpp",
+        "src/telemetry/session_telemetry.cpp",
+        "src/telemetry/session_telemetry.h",
+        "src/telemetry/callback_phase_diagnostic.h"
+      ],
+      "later_review": "后续由用户决定是否单独评审诊断开关/接口归属；混合文件先按hunk核对，现有代码与证据保留。",
+      "action_now": "NONE"
+    },
+    {
+      "topic": "Qt测试probe和可访问定位",
+      "paths": [
+        "src/ui/remote_control_ui.cpp",
+        "src/ui/remote_control_ui.h",
+        "src/ui/sidebar_widget.cpp",
+        "src/ui/sidebar_widget.h"
+      ],
+      "later_review": "后续由用户决定保留范围及所需UI验证；本阶段不移除、不回退。",
+      "action_now": "NONE"
+    },
+    {
+      "topic": "私有夹具/driver混合历史改动",
+      "paths": [
+        "tests/runtime/probes/b_network_product_runtime.h",
+        "tests/runtime/tools/desktop/p21_meeting_theme.py",
+        "tests/uia/product_p21_meeting_steps.ps1",
+        "tests/runtime/tools/product_acceptance/p13_cycles_contract.py"
+      ],
+      "later_review": "保留before/after和原失败证据；未来若用户要求提交或整理，按授权scope/hunk区分本轮和已有dirty。",
+      "action_now": "NONE"
+    },
+    {
+      "topic": "构建缓存、旧工件保全与失败runtime资料",
+      "paths": [
+        "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23\\artifact-preservation-receipt.json",
+        "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23",
+        "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-runtime23",
+        "E:\\vsSource\\WebRTC\\live-kit-test-local\\.cache"
+      ],
+      "later_review": "后续仅在用户决定保留策略、审计引用与工件恢复需求后评审；本阶段不删目录、缓存、工件或失败证据。",
+      "action_now": "NONE"
+    },
+    {
+      "topic": "其他未归因dirty与配置/指南",
+      "paths": [
+        ".gitignore",
+        "AGENTS.md",
+        ".codex/",
+        "samples/acceptance",
+        "private other dirty entries listed in this inventory"
+      ],
+      "later_review": "保留无关改动；本清单不授权回退、删除、提交、上传或发布。",
+      "action_now": "NONE"
+    }
+  ],
+  "evidence_paths": {
+    "current_resolution": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\current-resolution22.json",
+    "p03_changes": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23\\changes.json",
+    "offline": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23\\offline-gate-receipt.json",
+    "winps51": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23\\winps-compatibility-receipt02.json",
+    "build": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23\\build-receipt.json",
+    "source_review": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23\\source-review.json",
+    "review_addendum": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-preparation23\\source-review-addendum.json",
+    "runtime_execution": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-runtime23-execution-receipt.json",
+    "runtime_result": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\resource-completion-20261021-01-control\\diagnostic-retest-01\\p03-finite-content-runtime23\\result.json"
+  },
+  "this_inventory_actions": {
+    "source_modified": false,
+    "plan_modified": false,
+    "html_modified": false,
+    "tests_run": false,
+    "build_run": false,
+    "runtime_run": false,
+    "new_diagnosis": false,
+    "large_hash_audit": false,
+    "staging_or_commits": false,
+    "cleanup_performed": false
+  },
+  "limits": [
+    "用途归类依据现有差分接口/路径和已记录修复说明，不是全项目审查。",
+    "现有收据的hash作为历史引用保留；本阶段未重新hash大型profile/EXE/PDB/runtime index或全部源码。",
+    "本清单不为未归因dirty补造作者、时间、根因或独立验证结论；staged为空不表示工作区干净。"
+  ],
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0
+}

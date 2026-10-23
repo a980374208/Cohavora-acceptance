@@ -1,0 +1,166 @@
+{
+  "schema": "cohavora-p14-artifact-identity-safe-v1",
+  "status": "PARTIAL",
+  "completed_date": "2026-10-21",
+  "created_utc": "2026-10-21T12:45:04.113369+00:00",
+  "plan_groups": [
+    "P14"
+  ],
+  "old_deployment": {
+    "status": "FAIL_ARTIFACT_IDENTITY",
+    "artifacts": [
+      {
+        "id": "app",
+        "status": "PASS_SCOPED_ARTIFACT_IDENTITY",
+        "codeview": {
+          "guid": "D2A8DB9C-4A09-40F8-B807-C82BB393FF2F",
+          "age": 5,
+          "embedded_pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\app\\RelWithDebInfo\\Cohavora.pdb",
+          "embedded_pdb_name": "Cohavora.pdb",
+          "format": "COFF-x86-64",
+          "signature": "RSDS"
+        },
+        "pdb_summary": {
+          "guid": "D2A8DB9C-4A09-40F8-B807-C82BB393FF2F",
+          "age": 5,
+          "has_debug_info": true,
+          "is_stripped": false
+        },
+        "errors": []
+      },
+      {
+        "id": "dx11",
+        "status": "FAIL_ARTIFACT_IDENTITY",
+        "codeview": {
+          "guid": "B6355A66-A256-4ED8-A577-1FE99563C7EB",
+          "age": 1,
+          "embedded_pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\render\\RelWithDebInfo\\cohavora-render-dx11.pdb",
+          "embedded_pdb_name": "cohavora-render-dx11.pdb",
+          "format": "COFF-x86-64",
+          "signature": "RSDS"
+        },
+        "pdb_summary": {
+          "guid": "B6355A66-A256-4ED8-A577-1FE99563C7EB",
+          "age": 2,
+          "has_debug_info": true,
+          "is_stripped": false
+        },
+        "errors": [
+          "CodeView/PDB age mismatch: 1 != 2"
+        ]
+      },
+      {
+        "id": "opengl",
+        "status": "FAIL_ARTIFACT_IDENTITY",
+        "codeview": {
+          "guid": "30E00881-7947-46ED-9390-76F6D3DF1ECA",
+          "age": 1,
+          "embedded_pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\render\\RelWithDebInfo\\cohavora-render-opengl.pdb",
+          "embedded_pdb_name": "cohavora-render-opengl.pdb",
+          "format": "COFF-x86-64",
+          "signature": "RSDS"
+        },
+        "pdb_summary": {
+          "guid": "30E00881-7947-46ED-9390-76F6D3DF1ECA",
+          "age": 2,
+          "has_debug_info": true,
+          "is_stripped": false
+        },
+        "errors": [
+          "CodeView/PDB age mismatch: 1 != 2"
+        ]
+      }
+    ],
+    "temporal_boundary": "Current pairing only. Old deployed DLLs were not replaced; do not infer historical UI15 mismatch."
+  },
+  "current_renderer_build": {
+    "status": "PASS_SCOPED_ARTIFACT_IDENTITY",
+    "artifacts": [
+      {
+        "id": "dx11",
+        "status": "PASS_SCOPED_ARTIFACT_IDENTITY",
+        "codeview": {
+          "guid": "B6355A66-A256-4ED8-A577-1FE99563C7EB",
+          "age": 2,
+          "embedded_pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\render\\RelWithDebInfo\\cohavora-render-dx11.pdb",
+          "embedded_pdb_name": "cohavora-render-dx11.pdb",
+          "format": "COFF-x86-64",
+          "signature": "RSDS"
+        },
+        "pdb_summary": {
+          "guid": "B6355A66-A256-4ED8-A577-1FE99563C7EB",
+          "age": 2,
+          "has_debug_info": true,
+          "is_stripped": false
+        },
+        "errors": []
+      },
+      {
+        "id": "opengl",
+        "status": "PASS_SCOPED_ARTIFACT_IDENTITY",
+        "codeview": {
+          "guid": "30E00881-7947-46ED-9390-76F6D3DF1ECA",
+          "age": 2,
+          "embedded_pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-functional-media-20261020\\src\\render\\RelWithDebInfo\\cohavora-render-opengl.pdb",
+          "embedded_pdb_name": "cohavora-render-opengl.pdb",
+          "format": "COFF-x86-64",
+          "signature": "RSDS"
+        },
+        "pdb_summary": {
+          "guid": "30E00881-7947-46ED-9390-76F6D3DF1ECA",
+          "age": 2,
+          "has_debug_info": true,
+          "is_stripped": false
+        },
+        "errors": []
+      }
+    ]
+  },
+  "negative_control": {
+    "status": "PASS_EXPECTED_REJECTION",
+    "real_swapped_pdb_pairs": 2,
+    "rejection": "GUID mismatch; raw FAIL_ARTIFACT_IDENTITY retained"
+  },
+  "offline_renderer_symbols": {
+    "status": "PASS_SCOPED_OFFLINE_SOURCE_LOOKUP",
+    "rows": [
+      {
+        "backend": "dx11",
+        "export": "lk_render_get_api",
+        "export_rva": "0x42a5",
+        "body_rva": "0xd050",
+        "initial_export_lookup": "??:0:0",
+        "resolved_function": "lk_render_get_api",
+        "source_filename": "dx11_backend.cpp",
+        "source_line": 271,
+        "source_sha256": "b49b11fdabd6167f0d44a781a7b884be2feb388ac1eb47fb5586b6c5dad9e83f"
+      },
+      {
+        "backend": "opengl",
+        "export": "lk_render_get_api",
+        "export_rva": "0x4043",
+        "body_rva": "0xe6d0",
+        "initial_export_lookup": "??:0:0",
+        "resolved_function": "lk_render_get_api",
+        "source_filename": "opengl_backend.cpp",
+        "source_line": 280,
+        "source_sha256": "ac28a5e673ac875566e97a0b1effe57fc8921dea4181f3d82ea694f58c34b612"
+      }
+    ]
+  },
+  "inputs_unchanged": true,
+  "binary_source_provenance": "NOT_VERIFIED",
+  "product_execution": "NOT_RUN",
+  "installer_execution": "NOT_RUN",
+  "controlled_fault": "NOT_RUN",
+  "configuration_flags": "NOT_ATTESTED",
+  "final_release": "NOT_RUN",
+  "clean_clone": "NOT_RUN",
+  "signature": "NOT_RUN",
+  "install_upgrade_uninstall": "NOT_RUN",
+  "external_windows": "NOT_RUN",
+  "full_plan_gate_credit": 0,
+  "formal_credit": 0,
+  "p20_credit": 0,
+  "tool_repair": "Final input-binding failure now revokes all child PASS statuses. Original stable cases remain valid; fixed tool current-render-build02 passed. Changed-input negative assertion strengthened."
+}

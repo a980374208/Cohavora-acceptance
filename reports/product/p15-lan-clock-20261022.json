@@ -1,0 +1,258 @@
+{
+  "schema": "cohavora-p15-clock-retest-v1",
+  "title": "P15 双机软件校时：局域网直连，媒体经阿里云 SFU",
+  "status": "PASS",
+  "scope": "dual_windows_lan_clock_and_synthetic_media_software_submit_baseline",
+  "run_id": "b18-20261022T131227Z-3bf2e7fe37e5",
+  "started_utc": "2026-10-22T13:12:27.282107+00:00",
+  "finished_utc": "2026-10-22T13:12:58.094374+00:00",
+  "finished_beijing": "2026-10-22T21:12:58+08:00",
+  "metrics": {
+    "requested_probes": 30,
+    "marker_matched": 30,
+    "marker_timeouts": 0,
+    "accepted_clock_exchanges": 55,
+    "valid_one_way_samples": 30,
+    "uncertain_probes": 0,
+    "gate_us": 10000,
+    "clock_uncertainty_us": 2898,
+    "clock_uncertainty_p95_us": 2894,
+    "clock_uncertainty_mean_us": 2736.167,
+    "independently_reproduced_max_us": 2898,
+    "best_rtt_us": 1259,
+    "rtt_min_us": 1259,
+    "rtt_max_us": 3922,
+    "minimum_calibration_span_us": 3798547,
+    "expired_clock_requests": 1
+  },
+  "clock_route": "lan_udp",
+  "clock_configuration": {
+    "route": "lan_udp",
+    "endpoints": {
+      "publisher": {
+        "local": "192.168.31.17:57990",
+        "remote": "192.168.31.151:57991"
+      },
+      "receiver": {
+        "local": "192.168.31.151:57991",
+        "remote": "192.168.31.17:57990"
+      }
+    },
+    "model": "affine_interval_v1",
+    "shared_clock_ground_truth": false,
+    "manage_remote_clock_firewall": true
+  },
+  "server": {
+    "server_transport": "aliyun_workbench",
+    "server_instance_id": "i-2zefof0rekjzkbyi8c7j",
+    "server_region": "cn-beijing",
+    "server_service": "b-acceptance",
+    "server_target_config_sha256": "4de720534aefec95c9b76a4be33503684fd8c172db7a7d0b39d46b4045c82731",
+    "server_endpoint": "ws://123.56.225.164:17980",
+    "server_health_status": 200,
+    "server_container": "cohavora-b-acceptance-20261001",
+    "server_container_id": "7d9224e712a98ac25f5eaca62e49689502d10bf6c6a809c41e2d9d7e513719bd",
+    "server_yaml_sha256": "d73e516aa44f5617d7e791dc740c4b10726d278a439132e78961ff6aae2bfecf",
+    "server_image_sha256": "37f99d42ec76fe8747295f3cde4d411a78cfc0e7d52019f313a53a05f3d624ce",
+    "server_binary_sha256": "8d9e645d2854e76298fc4110ed0f5149180f8e3a8c58777763d5956064f7c014",
+    "server_port": 17980,
+    "server_rtc_tcp_port": 17981,
+    "server_rtc_udp_port": 17982,
+    "server_rtc_node_ip": "123.56.225.164"
+  },
+  "binary": {
+    "configuration": "RelWithDebInfo",
+    "binary_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\RelWithDebInfo\\test_e2e_media_runtime.exe",
+    "binary_sha256": "f48191626253f282522b04941bd8694b2941e7637fdb141b225933984da467b4",
+    "pdb_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\build-debug\\RelWithDebInfo\\test_e2e_media_runtime.pdb",
+    "pdb_guid": "48b78f55-3444-45ba-b243-9acb2e26aeb3",
+    "pdb_age": 3
+  },
+  "validation": {
+    "cleanup_confirmed": true,
+    "evidence_complete": true,
+    "binary_unchanged": true,
+    "environment_cleanup_status": "PASS",
+    "publisher_process_exit_code": 0,
+    "receiver_process_exit_code": 0,
+    "receiver_exit_source": "GetExitCodeProcess_original_handle",
+    "independent_recalculation_status": "PASS",
+    "watchdogs_triggered": false,
+    "all_baseline_checks": {
+      "exit_codes": true,
+      "terminal_states": true,
+      "terminal_reasons": true,
+      "phase": true,
+      "markers": true,
+      "clock": true,
+      "one_way_samples": true,
+      "physical_truth_unavailable": true,
+      "codec": true,
+      "mode": true,
+      "dimensions": true,
+      "media_counters": true,
+      "clock_route_binding": true
+    }
+  },
+  "root_cause": "原映射固定复用拟合误差，未按事件时刻计算斜率不确定度随外推距离的增长。原SFU校时的半RTT下限已超过10ms；本轮LAN替换校时路径，不追判历史WAN／SFU分项或真实时钟误差。",
+  "model_condition": "测量窗内近似仿射且时间戳精度预算成立；因果约束不假定网络方向对称，不用1000ppm政策裁窄区间。非95%置信区间，也不是未来频率wander的严格保证。",
+  "historical": {
+    "status": "FAIL",
+    "uncertainty_us": 41258,
+    "valid_one_way_samples": "0/30",
+    "retained": true,
+    "root_cause": "UNKNOWN",
+    "source": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\b09-b18-crosshost-20261009-run01\\report.json",
+    "source_sha256": "a09448d1be9750c0a42b24a6705c04ba34aebf027220de95806e7f581305d210"
+  },
+  "previous_aliyun": {
+    "status": "FAIL",
+    "uncertainty_us": 26496,
+    "retained": true,
+    "run_id": "b18-20261022T121324Z-927a6e8d318a",
+    "root_cause": {
+      "confirmed": "本轮所选SFU可靠数据校时路径的保守不确定度超过原门限。最小扣除远端处理时间后的RTT为49.419ms，单是ceil(RTT/2)+1us项最低24.711ms已超过10ms；按max(abs(offset residual)+sample bound)复算并向上取整为26.496ms，与Native输出一致。",
+      "unknown": [
+        "各段WAN基础时延、SFU处理、排队和调度各自占比",
+        "方向不对称和真实物理时钟误差",
+        "历史41.258ms失败的具体根因"
+      ],
+      "calculation_defect_demonstrated": false,
+      "uncertainty_is_actual_clock_error": false
+    },
+    "archived_files": [
+      {
+        "path": "reports/product/p15-clock-aliyun-retest-20261022.html",
+        "sha256": "fffb62e7183dacc353c2a372bb9ac59fdf2f3f8a3afd616000c4ea3f63346d02",
+        "bytes": 7413
+      },
+      {
+        "path": "reports/product/p15-clock-aliyun-retest-20261022.json",
+        "sha256": "58a3df3e5b658a0176811c0e868842553ca25ef79205b416444cbb1dbc8b6891",
+        "bytes": 8873
+      }
+    ],
+    "archive_root": "E:\\vsSource\\WebRTC\\live-kit-test\\out\\acceptance-history-20261021-latest-only"
+  },
+  "implementation": {
+    "model": "affine_interval_v1",
+    "minimum_span_us": 3000000,
+    "fixed_warmup_us": 4000000,
+    "refresh_interval_us": 250000,
+    "pending_ttl_us": 1000000,
+    "uncertainty": "max(Ufit, causal interval at now/decode/render)",
+    "stop_rule": "首次gap／model／事件预算失效即FAIL，不清样本等待通过",
+    "additional_fixes": [
+      "最后ACK停止timer前增加owner派发时刻同步gap检查",
+      "持有原进程句柄，确认退出后GetExitCodeProcess取证；旧null保留UNKNOWN"
+    ]
+  },
+  "tool_validation": {
+    "status": "PASS",
+    "python_tests": 25,
+    "cpp_tests": 2,
+    "native_fixture_independent_probes": 30,
+    "scope": "offline only; no acceptance credit"
+  },
+  "artifacts": {
+    "binary-identity.json": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/binary-identity.json",
+      "sha256": "500a0ade4836a547077046ba1646453fd3ef7492b12e09cdc196ed21f6f52a7a",
+      "bytes": 440,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\binary-identity.json"
+    },
+    "environment-cleanup.json": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/environment-cleanup.json",
+      "sha256": "bb32bd9a32f9d5f96dccf774df0a6607320fef6fcfb5554996ba8f3ad9785d8b",
+      "bytes": 325,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\environment-cleanup.json"
+    },
+    "focused-verification.json": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/focused-verification.json",
+      "sha256": "424d967cc2f71ca1da0d6978dbf2da8b2ad6caf0aa0f07add4ca06791b42e2d5",
+      "bytes": 2746,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\focused-verification.json"
+    },
+    "local-after.json": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/local-after.json",
+      "sha256": "e23fffd458fcc6118cc32f26900e588b95e657bef774304aeceb9afbcce6f780",
+      "bytes": 64,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\local-after.json"
+    },
+    "publisher.started.json": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/publisher.started.json",
+      "sha256": "edad9dbb24558fba93a405cb9d594635d7efd7659c5a9e9a187de8789e078094",
+      "bytes": 1330,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\publisher.started.json"
+    },
+    "publisher.stderr.log": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/publisher.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\publisher.stderr.log"
+    },
+    "publisher.stdout.log": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/publisher.stdout.log",
+      "sha256": "4f0dddab50cce02dd0f9c9164f1d119a030cc177a50c33929b5fffc21d640268",
+      "bytes": 69087,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\publisher.stdout.log"
+    },
+    "receiver.finished.json": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/receiver.finished.json",
+      "sha256": "0c16707f26d8a43e2bc0d52ec374ecafd09c3899bdcc6f6dfb7b101a8ca50af5",
+      "bytes": 588,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\receiver.finished.json"
+    },
+    "receiver.ssh-result.json": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/receiver.ssh-result.json",
+      "sha256": "d455c3083a1245425fc4d73369aa4183e29ae1d0b3d9254d19ed8242d5547cf6",
+      "bytes": 5025,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\receiver.ssh-result.json"
+    },
+    "receiver.started.json": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/receiver.started.json",
+      "sha256": "df0b9fd4e6abbdbc19f974f3c542d02a249ff9d146ec6a57385192108b58e49e",
+      "bytes": 1909,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\receiver.started.json"
+    },
+    "receiver.stderr.log": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/receiver.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\receiver.stderr.log"
+    },
+    "receiver.stdout.log": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/receiver.stdout.log",
+      "sha256": "cf66ba1969de8d27ab934be6b3d745aa2561337cf8c1745e56fb14778fc7f011",
+      "bytes": 926,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\receiver.stdout.log"
+    },
+    "remote-after.json": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/remote-after.json",
+      "sha256": "dfeaeeae345d5cd4f05fab7928e5c469dfdddf4e6265604f0a38e68326e411c1",
+      "bytes": 168,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\remote-after.json"
+    },
+    "report.json": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/report.json",
+      "sha256": "50fe9cba7bac94bb2acb93099c2ac0dc003a829a8640182fa1dabcf39ba0b7ff",
+      "bytes": 67485,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\report.json"
+    },
+    "test-config.json": {
+      "path": "data/completed-evidence/p15-lan-clock-20261022/test-config.json",
+      "sha256": "60bd989b7ca2980e336b3b96529ffa960aa195eef48f95e33f31f1550aba3d58",
+      "bytes": 2529,
+      "original_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p15-lan-clock-20261022-01\\test-config.json"
+    }
+  },
+  "full_gate_credit": 0,
+  "group_status": "PARTIAL",
+  "synthetic_media_software_submit": "PASS",
+  "cross_host_media_latency": "NOT_RUN_REAL_PRODUCT_PATH",
+  "physical_measurement": "NOT_RUN",
+  "physical_plan_disposition": "DEFERRED",
+  "product_source_modified_by_this_task": true,
+  "additional_runtime_after_completion": false,
+  "recommendation": "本轮限定校时与合成媒体基线完成后停止；真实产品跨机媒体及独立物理测量待具备输入后单独执行。"
+}

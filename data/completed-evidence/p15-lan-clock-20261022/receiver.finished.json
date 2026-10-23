@@ -1,0 +1,16 @@
+{
+  "exit_code": 0,
+  "exit_code_source": "GetExitCodeProcess_original_handle",
+  "timed_out": false,
+  "exit_code_reason": "process_exit_confirmed",
+  "binary_sha256_after": "f48191626253f282522b04941bd8694b2941e7637fdb141b225933984da467b4",
+  "exit_code_status": "KNOWN",
+  "clock_firewall": {
+    "status": "REMOVED_OWNED_RULE",
+    "name": "cohavora-e2e-clock-b18-20261022T131227Z-3bf2e7fe37e5",
+    "instance_id": "cohavora-e2e-clock-b18-20261022T131227Z-3bf2e7fe37e5"
+  },
+  "status": "EXECUTED",
+  "cleanup": "ALREADY_EXITED",
+  "final_cleanup": "ALREADY_EXITED"
+}
