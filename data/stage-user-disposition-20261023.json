@@ -1,0 +1,41 @@
+{
+  "schema": "cohavora-stage-user-release-disposition-v1",
+  "date": "2026-10-23",
+  "status": "USER_APPROVED_RELEASE",
+  "stage_status": "PARTIAL",
+  "version": "0.0.1",
+  "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
+  "release_approval": {
+    "status": "APPROVED_BY_USER",
+    "version": "0.0.1",
+    "approved_by": "USER",
+    "basis": "当前剩余待测试项用户评估无较大或严重问题",
+    "publication_status": "NOT_EXECUTED"
+  },
+  "deferred_groups": [
+    {
+      "plan_code": "P08",
+      "original_status": "BLOCKED",
+      "status": "DEFERRED",
+      "gate_dispositions": [
+        {"index": 2, "original_status": "BLOCKED", "status": "DEFERRED"}
+      ]
+    },
+    {
+      "plan_code": "P10",
+      "original_status": "FAIL",
+      "status": "DEFERRED",
+      "gate_dispositions": [
+        {"index": 0, "original_status": "FAIL", "status": "DEFERRED"}
+      ]
+    }
+  ],
+  "preserved": {
+    "full_plan_gates_completed": 0,
+    "final_regression_status": "NOT_RUN",
+    "raw_test_verdicts_unchanged": true,
+    "frozen_stage_source": "data/stage-closure-20261022.json",
+    "product_runtime": "NOT_RUN"
+  },
+  "scope": "按用户决定更新当前延期处置与0.0.1发版批准；本次仅更新报告，未新增测试或执行发布。"
+}

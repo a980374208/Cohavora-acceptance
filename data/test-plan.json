@@ -1,6 +1,6 @@
 {
   "schema": "cohavora-consolidated-acceptance-plan-v1",
-  "revised_at": "2026-10-22T18:51:04+08:00",
+  "revised_at": "2026-10-23T14:18:57.123Z",
   "timezone": "Asia/Shanghai",
   "source": "data/report-input.json",
   "scope": "统一维护后续验收计划，并追加各批次实际覆盖及未覆盖边界；不更改原结果、冻结门限或暂停约束。",
@@ -771,8 +771,8 @@
         "物理端到端延迟由独立校准主项判定"
       ],
       "stage_status": {
-        "status": "BLOCKED",
-        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "status": "DEFERRED",
+        "scope": "Current user deferral; original assessment and executed verdicts retained, no whole-group test PASS",
         "completed_scope": [
           "HP/UGREEN等短preflight只保留设备前置范围。"
         ],
@@ -804,8 +804,9 @@
           {
             "index": 2,
             "definition": "独立音源：已知物理音源与可核验PCM支持内容对应，无法确认音源时保留SOURCE_NOT_CONFIRMED。",
-            "status": "BLOCKED",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "DEFERRED",
+            "interpretation": "用户决定延期；原判定BLOCKED及对应未测／失败证据保留，未新增测试。",
+            "original_status": "BLOCKED"
           },
           {
             "index": 3,
@@ -814,9 +815,13 @@
             "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
           }
         ],
-        "as_of": "2026-10-22T05:15:45.499477+08:00",
-        "stage_execution": "STOPPED_AFTER_CLOSURE",
-        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+        "as_of": "2026-10-23",
+        "stage_execution": "DEFERRED_BY_USER_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence",
+        "original_status": "BLOCKED",
+        "disposition_source": "data/stage-user-disposition-20261023.json",
+        "disposition_report": "reports/product/stage-closure-20261022.html",
+        "disposition_reason": "用户决定延期当前BLOCKED／FAIL项，并评估剩余待测项无较大或严重问题，批准发版0.0.1；原测试判定与未测范围保留。"
       }
     },
     {
@@ -917,8 +922,8 @@
         "低层300秒、固定grid9及B14生命周期是不同验收范围"
       ],
       "stage_status": {
-        "status": "FAIL",
-        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "status": "DEFERRED",
+        "scope": "Current user deferral; original assessment and executed verdicts retained, no whole-group test PASS",
         "completed_scope": [
           "固定16路低层300秒短门仅按其原负载、订阅/解码与分页范围保留。"
         ],
@@ -940,8 +945,9 @@
           {
             "index": 0,
             "definition": "负载前置：恢复100路实际发布与完整音频／翻页条件，未到达负载即停止，长稳记NOT_RUN。",
-            "status": "FAIL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "DEFERRED",
+            "interpretation": "用户决定延期；原判定FAIL及对应未测／失败证据保留，未新增测试。",
+            "original_status": "FAIL"
           },
           {
             "index": 1,
@@ -962,9 +968,13 @@
             "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
           }
         ],
-        "as_of": "2026-10-22T05:15:45.499477+08:00",
-        "stage_execution": "STOPPED_AFTER_CLOSURE",
-        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+        "as_of": "2026-10-23",
+        "stage_execution": "DEFERRED_BY_USER_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence",
+        "original_status": "FAIL",
+        "disposition_source": "data/stage-user-disposition-20261023.json",
+        "disposition_report": "reports/product/stage-closure-20261022.html",
+        "disposition_reason": "用户决定延期当前BLOCKED／FAIL项，并评估剩余待测项无较大或严重问题，批准发版0.0.1；原测试判定与未测范围保留。"
       }
     },
     {
@@ -1235,11 +1245,11 @@
         "completed_scope": [
           "10月21日非最终工件的只读身份与两处离线源码定位保留独立范围；当前工件身份采用下列10月22日三对staged结果，旧部署错配仍按原工件保留。",
           "公开产品/私有工程解耦的既有工程证据仅按原输入复用。",
-          "2026-10-22修复验证：08:05完成当前diagnostic-ON产品EXE及DX11／OpenGL DLL三对PDB身份与staged输出校验，PASS_SCOPED_STAGED_PAIR_IDENTITY。"
+          "2026-10-22修复验证：08:05完成当前diagnostic-ON产品EXE及DX11／OpenGL DLL三对PDB身份、staged输出及两份runtime renderer部署副本校验，PASS_SCOPED_STAGED_PAIR_IDENTITY。"
         ],
         "remaining": [
           "最终来源/工件未收敛冻结，clean clone、签名、安装/升级/卸载、受控故障符号及外部Windows启动未执行。",
-          "当前旧部署renderer DLL age1与新PDB age2错配仍保留，不能替换旧DLL后回写历史通过。"
+          "10月21日历史旧部署renderer DLL age1与PDB age2错配的原失败及证据保留追溯，不重复计入当前工件身份结果。"
         ],
         "retained_failures": [
           "旧部署DX11/OpenGL DLL与当前同GUID PDB的age错配；真实交换PDB负例为预期拒绝，不记产品FAIL。"
@@ -1601,7 +1611,7 @@
         ],
         "remaining": [
           "其他host（含Windows .151）的当前真实产品强身份、global topology／all-node native／被动无参与／创建持有释放与cleanup仍需独立封存及三次完整PILOT；本机READY不外推。",
-          "本次8小时／100周期Formal尚未启动；READY仅表示本机冻结环境资格就绪，不拼接历史Formal或任何阈值例外。"
+          "本机READY仅表示冻结环境资格就绪，不外推其他host或最终发行工件；后续100周期／8小时Formal结果独立见P20，原机器FAIL与用户user_pass分别保留。"
         ],
         "retained_failures": [],
         "inconclusive": [],
@@ -1641,7 +1651,7 @@
             "index": 4,
             "definition": "交接Formal：只有对应环境的全部准入成立才转交一次完整Formal，READY仅表示资格就绪。",
             "status": "READY",
-            "interpretation": "READY仅适用于本机冻结环境，允许交接一次Formal；Formal本身仍NOT_RUN，整组信用0。"
+            "interpretation": "READY仅适用于本机冻结环境；后续完整Formal结果及用户处置独立见P20，资格整组信用0。"
           }
         ],
         "as_of": "2026-10-22T18:07:13.027190+00:00",
@@ -2110,5 +2120,12 @@
     "closed_at": "2026-10-22T05:15:45.499477+08:00",
     "remaining_additional_executions": 0,
     "stage_report_html": "reports/product/stage-closure-20261022.html"
+  },
+  "release_approval": {
+    "source": "data/stage-user-disposition-20261023.json",
+    "date": "2026-10-23",
+    "status": "APPROVED_BY_USER",
+    "version": "0.0.1",
+    "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1"
   }
 }

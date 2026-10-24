@@ -37,10 +37,10 @@
       "path": "reports/product/stage-closure-20261022.html",
       "json_path": "reports/product/stage-closure-20261022.json",
       "title": "冻结测试清单：阶段收口报告",
-      "date": "2026-10-22",
+      "date": "2026-10-23",
       "status": "PARTIAL",
-      "updated_utc": "2026-10-22T05:15:45.499477+08:00",
-      "statement": "冻结现有24组后收口；已通过范围复用，P13/Flutter等正式FAIL保留；P03有限内容INCONCLUSIVE；P20暂停、最终回归未跑。本阶段停止，无新增执行项。",
+      "updated_utc": "2026-10-23",
+      "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
       "details": [
         {
           "label": "任务状态",
@@ -63,11 +63,19 @@
           "value": "NOT_RUN"
         },
         {
+          "label": "发版批准",
+          "value": "APPROVED_BY_USER"
+        },
+        {
+          "label": "批准版本",
+          "value": "0.0.1"
+        },
+        {
           "label": "Production Ready",
           "value": false
         }
       ],
-      "boundary": "阶段已收口，完整主门完成0，最终回归NOT_RUN，Production Ready为false；各已完成子门及原失败分别保留，不代表最终工件已冻结或完整验收通过。"
+      "boundary": "2026-10-23阶段已收口（PARTIAL）；当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1。原测试判定与未测范围保留，本次仅更新报告。"
     },
     {
       "path": "reports/product/resource-completion-20261021-01.html",
@@ -246,6 +254,15 @@
       "status_basis": "historical_metrics_json_top_level"
     },
     {
+      "path": "reports/product/stage-closure-20261022.html",
+      "json_path": "reports/product/stage-closure-20261022.json",
+      "category": "product",
+      "date": "2026-10-23",
+      "title": "冻结测试清单：阶段收口报告",
+      "status": "PARTIAL",
+      "status_basis": "companion_json_top_level"
+    },
+    {
       "path": "reports/b14/b14-full-standard-20261020-01.html",
       "json_path": "reports/b14/b14-full-standard-20261020-01.json",
       "category": "b14",
@@ -270,15 +287,6 @@
       "date": "2026-10-22",
       "title": "P15 双机软件校时：局域网直连，媒体经阿里云 SFU",
       "status": "PASS",
-      "status_basis": "companion_json_top_level"
-    },
-    {
-      "path": "reports/product/stage-closure-20261022.html",
-      "json_path": "reports/product/stage-closure-20261022.json",
-      "category": "product",
-      "date": "2026-10-22",
-      "title": "冻结测试清单：阶段收口报告",
-      "status": "PARTIAL",
       "status_basis": "companion_json_top_level"
     },
     {

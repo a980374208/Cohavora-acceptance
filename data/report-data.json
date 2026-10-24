@@ -16,7 +16,7 @@
     "no_project_wide_pass": true,
     "originalReportAt": "2026-10-12 19:38:59",
     "curation_policy": "最新有效完整保留；历史只保留最终验收结果摘要，不保留测试过程、重复投影或旧明细。缺少当前输入等价依据时列待重测/补测。",
-    "documentRevisedAt": "2026-10-23T08:41:20.072Z",
+    "documentRevisedAt": "2026-10-23T14:25:58.755Z",
     "evidenceBaselineAt": "2026-10-12T19:40:19.353Z",
     "portablePackage": true,
     "packageScope": "报告直接引用的最终来源、直接输入指纹快照、分类与清理审计；不追溯原结果中已删除的过程文件，不包含可运行产品完整环境。"
@@ -3031,10 +3031,10 @@
         "HP／UGREEN短preflight不构成完整B09通过",
         "物理端到端延迟由独立校准主项判定"
       ],
-      "status": "BLOCKED",
+      "status": "DEFERRED",
       "stage_status": {
-        "status": "BLOCKED",
-        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "status": "DEFERRED",
+        "scope": "Current user deferral; original assessment and executed verdicts retained, no whole-group test PASS",
         "completed_scope": [
           "HP/UGREEN等短preflight只保留设备前置范围。"
         ],
@@ -3066,8 +3066,9 @@
           {
             "index": 2,
             "definition": "独立音源：已知物理音源与可核验PCM支持内容对应，无法确认音源时保留SOURCE_NOT_CONFIRMED。",
-            "status": "BLOCKED",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "DEFERRED",
+            "interpretation": "用户决定延期；原判定BLOCKED及对应未测／失败证据保留，未新增测试。",
+            "original_status": "BLOCKED"
           },
           {
             "index": 3,
@@ -3076,9 +3077,13 @@
             "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
           }
         ],
-        "as_of": "2026-10-22T05:15:45.499477+08:00",
-        "stage_execution": "STOPPED_AFTER_CLOSURE",
-        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+        "as_of": "2026-10-23",
+        "stage_execution": "DEFERRED_BY_USER_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence",
+        "original_status": "BLOCKED",
+        "disposition_source": "data/stage-user-disposition-20261023.json",
+        "disposition_report": "reports/product/stage-closure-20261022.html",
+        "disposition_reason": "用户决定延期当前BLOCKED／FAIL项，并评估剩余待测项无较大或严重问题，批准发版0.0.1；原测试判定与未测范围保留。"
       },
       "full_gate_credit": 0,
       "reference_statuses": [
@@ -3087,7 +3092,7 @@
         "SOURCE_NOT_CONFIRMED",
         "MANUAL_REQUIRED"
       ],
-      "date": "2026-10-22T05:15:45.499477+08:00",
+      "date": "2026-10-23",
       "evidence_scope": "PRODUCT_ACCEPTANCE_FROZEN_STAGE_ASSESSMENT",
       "coverage": [
         "原 T012 · B09 · 待重测／补测；完整case、原重测原因与历史依据见 data/report-input.json。",
@@ -3096,11 +3101,12 @@
       "metrics": [],
       "sources": [
         "reports/product/stage-closure-20261022.html",
-        "data/stage-closure-20261022.json"
+        "data/stage-closure-20261022.json",
+        "data/stage-user-disposition-20261023.json"
       ],
       "source_checks": [],
       "environmentIds": [],
-      "validity": "状态来自冻结阶段收口；已完成范围、剩余子门、保留失败与未定结论分别保留，不授予整组通过。本次文档更新未新增测试执行，也未改变原结果或版本边界。",
+      "validity": "当前处置按用户要求延期；原实测FAIL和冻结阶段留作历史。已完成范围、剩余子门、保留失败与未定结论分别保留，不授予整组通过。本次文档更新未新增测试执行，也未改变原结果或版本边界。",
       "limitations": "HP／UGREEN短preflight不构成完整B09通过；物理端到端延迟由独立校准主项判定",
       "disposition": "RETEST_REQUIRED",
       "reason": "将设备客观行为与声学听感放在同一现场矩阵，短采集只作设备前置。",
@@ -3388,10 +3394,10 @@
         "原61／100发布失败与LONG_SOAK_NOT_RUN不被短门覆盖",
         "低层300秒、固定grid9及B14生命周期是不同验收范围"
       ],
-      "status": "FAIL",
+      "status": "DEFERRED",
       "stage_status": {
-        "status": "FAIL",
-        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "status": "DEFERRED",
+        "scope": "Current user deferral; original assessment and executed verdicts retained, no whole-group test PASS",
         "completed_scope": [
           "固定16路低层300秒短门仅按其原负载、订阅/解码与分页范围保留。"
         ],
@@ -3413,8 +3419,9 @@
           {
             "index": 0,
             "definition": "负载前置：恢复100路实际发布与完整音频／翻页条件，未到达负载即停止，长稳记NOT_RUN。",
-            "status": "FAIL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "DEFERRED",
+            "interpretation": "用户决定延期；原判定FAIL及对应未测／失败证据保留，未新增测试。",
+            "original_status": "FAIL"
           },
           {
             "index": 1,
@@ -3435,9 +3442,13 @@
             "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
           }
         ],
-        "as_of": "2026-10-22T05:15:45.499477+08:00",
-        "stage_execution": "STOPPED_AFTER_CLOSURE",
-        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+        "as_of": "2026-10-23",
+        "stage_execution": "DEFERRED_BY_USER_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence",
+        "original_status": "FAIL",
+        "disposition_source": "data/stage-user-disposition-20261023.json",
+        "disposition_report": "reports/product/stage-closure-20261022.html",
+        "disposition_reason": "用户决定延期当前BLOCKED／FAIL项，并评估剩余待测项无较大或严重问题，批准发版0.0.1；原测试判定与未测范围保留。"
       },
       "full_gate_credit": 0,
       "reference_statuses": [
@@ -3446,7 +3457,7 @@
         "FAIL / LONG_SOAK_NOT_RUN",
         "PASS（固定网格/内存）"
       ],
-      "date": "2026-10-22T05:15:45.499477+08:00",
+      "date": "2026-10-23",
       "evidence_scope": "PRODUCT_ACCEPTANCE_FROZEN_STAGE_ASSESSMENT",
       "coverage": [
         "原 T014 · B11 · 待重测／补测；完整case、原重测原因与历史依据见 data/report-input.json。",
@@ -3455,11 +3466,12 @@
       "metrics": [],
       "sources": [
         "reports/product/stage-closure-20261022.html",
-        "data/stage-closure-20261022.json"
+        "data/stage-closure-20261022.json",
+        "data/stage-user-disposition-20261023.json"
       ],
       "source_checks": [],
       "environmentIds": [],
-      "validity": "状态来自冻结阶段收口；已完成范围、剩余子门、保留失败与未定结论分别保留，不授予整组通过。本次文档更新未新增测试执行，也未改变原结果或版本边界。",
+      "validity": "当前处置按用户要求延期；原实测FAIL和冻结阶段留作历史。已完成范围、剩余子门、保留失败与未定结论分别保留，不授予整组通过。本次文档更新未新增测试执行，也未改变原结果或版本边界。",
       "limitations": "原61／100发布失败与LONG_SOAK_NOT_RUN不被短门覆盖；低层300秒、固定grid9及B14生命周期是不同验收范围",
       "disposition": "RETEST_REQUIRED",
       "reason": "B11容量与有条件的固定grid9长稳统一规划，保留负载、带宽和运行差异。",
@@ -4061,11 +4073,11 @@
         "completed_scope": [
           "10月21日非最终工件的只读身份与两处离线源码定位保留独立范围；当前工件身份采用下列10月22日三对staged结果，旧部署错配仍按原工件保留。",
           "公开产品/私有工程解耦的既有工程证据仅按原输入复用。",
-          "2026-10-22修复验证：08:05完成当前diagnostic-ON产品EXE及DX11／OpenGL DLL三对PDB身份与staged输出校验，PASS_SCOPED_STAGED_PAIR_IDENTITY。"
+          "2026-10-22修复验证：08:05完成当前diagnostic-ON产品EXE及DX11／OpenGL DLL三对PDB身份、staged输出及两份runtime renderer部署副本校验，PASS_SCOPED_STAGED_PAIR_IDENTITY。"
         ],
         "remaining": [
           "最终来源/工件未收敛冻结，clean clone、签名、安装/升级/卸载、受控故障符号及外部Windows启动未执行。",
-          "当前旧部署renderer DLL age1与新PDB age2错配仍保留，不能替换旧DLL后回写历史通过。"
+          "10月21日历史旧部署renderer DLL age1与PDB age2错配的原失败及证据保留追溯，不重复计入当前工件身份结果。"
         ],
         "retained_failures": [
           "旧部署DX11/OpenGL DLL与当前同GUID PDB的age错配；真实交换PDB负例为预期拒绝，不记产品FAIL。"
@@ -4151,15 +4163,6 @@
       },
       "completed_results": [
         {
-          "id": "artifact-old_deployment",
-          "title": "旧部署EXE／renderer DLL与PDB身份",
-          "status": "FAIL_ARTIFACT_IDENTITY",
-          "date": "2026-10-21",
-          "scope": "非最终发行工件的只读限定审计；保留部署DLL/PDB age不匹配FAIL，不推断历史UI15运行身份。 未执行全新克隆、签名、安装升级卸载或外机启动，不授发行工件通过。",
-          "source_path": "data/completed-evidence/p14-artifact-identity-20261021-scoped.json",
-          "source_locator": "/old_deployment/status"
-        },
-        {
           "id": "artifact-negative_control",
           "title": "真实交换PDB：预期拒绝负例",
           "status": "PASS_EXPECTED_REJECTION",
@@ -4197,10 +4200,10 @@
         },
         {
           "id": "artifact-current-staged-pairs",
-          "title": "当前diagnostic-ON产品：三对binary／PDB身份",
+          "title": "当前diagnostic-ON产品：三对EXE／DLL／PDB身份及部署副本校验",
           "status": "PASS_SCOPED_STAGED_PAIR_IDENTITY",
           "date": "2026-10-22T00:05:53.400547+00:00",
-          "scope": "仅本次EXE、DX11／OpenGL DLL三对PDB及staged输出、runtime renderer副本字节校验。source provenance、最终SDK／Flutter冻结和发行资格未验证，产品runtime未运行；旧部署age错配是不同工件，保留其原失败。",
+          "scope": "本次EXE、DX11／OpenGL DLL三对PDB身份及staged输出校验通过；两份runtime renderer部署副本与对应构建DLL的SHA256一致。source provenance、最终SDK／Flutter冻结和发行资格未验证，产品runtime未运行；10月21日旧部署age错配属于不同工件，原失败及证据仅保留历史追溯，不重复计入当前结果。",
           "source_path": "data/completed-evidence/repair-artifact-identity-20261022-result.json",
           "source_locator": "/status"
         }
@@ -4786,7 +4789,7 @@
         ],
         "remaining": [
           "其他host（含Windows .151）的当前真实产品强身份、global topology／all-node native／被动无参与／创建持有释放与cleanup仍需独立封存及三次完整PILOT；本机READY不外推。",
-          "本次8小时／100周期Formal尚未启动；READY仅表示本机冻结环境资格就绪，不拼接历史Formal或任何阈值例外。"
+          "本机READY仅表示冻结环境资格就绪，不外推其他host或最终发行工件；后续100周期／8小时Formal结果独立见P20，原机器FAIL与用户user_pass分别保留。"
         ],
         "retained_failures": [],
         "inconclusive": [],
@@ -4826,7 +4829,7 @@
             "index": 4,
             "definition": "交接Formal：只有对应环境的全部准入成立才转交一次完整Formal，READY仅表示资格就绪。",
             "status": "READY",
-            "interpretation": "READY仅适用于本机冻结环境，允许交接一次Formal；Formal本身仍NOT_RUN，整组信用0。"
+            "interpretation": "READY仅适用于本机冻结环境；后续完整Formal结果及用户处置独立见P20，资格整组信用0。"
           }
         ],
         "as_of": "2026-10-22T18:07:13.027190+00:00",
@@ -10191,7 +10194,9 @@
       "P13当前整组PARTIAL、完成结果6 PASS／0 FAIL；冻结FAIL保留历史。P05／P06补充18:03独立隔离RTP／SIF完成诊断，仅解释本次空白帧生产者链路，不替换shared复测、不新增验收计数",
       "P05／P06按用户要求将当前失败处置改为DEFERRED；保留原实测FAIL、日期及来源，登记两个共享bug、优先A1／条件备选B和后续串并行修复顺序，本轮未修复或重测",
       "P15最新双机LAN软件校时PASS：媒体经阿里云SFU，最大保守不确定度2.898ms低于原10ms门，30/30有效并完成独立误差包络复算；历史41.258ms及26.496ms FAIL保留，真实产品媒体与物理测量门未执行，整组PARTIAL",
-      "P19摄像头二次入会子项按原33/33 PASS及首帧超时确定性测试更正为PASS_SCOPED；保留2026-10-19原输入／日期、当前三轮资格READY、其他host和Formal独立边界，整组PARTIAL"
+      "P19摄像头二次入会子项按原33/33 PASS及首帧超时确定性测试更正为PASS_SCOPED；保留2026-10-19原输入／日期、当前三轮资格READY、其他host和Formal独立边界，整组PARTIAL",
+      "P14工件身份采用10月22日已完成的三对EXE／DLL／PDB及两份runtime部署副本校验PASS；旧部署age错配仅保留历史证据，不重复计入当前结果，整组仍PARTIAL",
+      "P08／P10按用户要求将当前BLOCKED／FAIL处置改为DEFERRED；阶段收口页同步主报告最新结果，2026-10-23用户评估剩余待测项无较大或严重问题并批准发版0.0.1，原测试判定保留"
     ],
     "product_runtime": "NOT_RUN",
     "evidence_baseline": "2026-10-12T19:40:19.353Z"
@@ -11287,29 +11292,43 @@
     "reports/product/stage-closure-20261022.json": {
       "original_path": "reports/product/stage-closure-20261022.json",
       "portable_path": "reports/product/stage-closure-20261022.json",
-      "sha256": "b72a00b897d899ba89aa9bf68003742a6da83b2787ddc22d469da56390e9c544",
-      "bytes": 946,
+      "sha256": "22873a551384fdd12030b03948cf40e01e640627865b66e752a80fefc244c41c",
+      "bytes": 203026,
       "status": "COMPLETED_SCOPED_RESULT_SOURCE"
     },
     "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/stage-closure-20261022.json": {
       "original_path": "reports/product/stage-closure-20261022.json",
       "portable_path": "reports/product/stage-closure-20261022.json",
-      "sha256": "b72a00b897d899ba89aa9bf68003742a6da83b2787ddc22d469da56390e9c544",
-      "bytes": 946,
+      "sha256": "22873a551384fdd12030b03948cf40e01e640627865b66e752a80fefc244c41c",
+      "bytes": 203026,
       "status": "COMPLETED_SCOPED_RESULT_SOURCE"
     },
     "reports/product/stage-closure-20261022.html": {
       "original_path": "reports/product/stage-closure-20261022.html",
       "portable_path": "reports/product/stage-closure-20261022.html",
-      "sha256": "c9c840f208a0ecaa91263069444b89edc6d3375359aea5dce0e556d8ce7646e8",
-      "bytes": 18683,
+      "sha256": "2465b25c47b7f7549e33850cad070e5bc86d667d68b13f1067e2f0bcd6497f34",
+      "bytes": 181851,
       "status": "COMPLETED_SCOPED_RESULT_SOURCE"
     },
     "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/stage-closure-20261022.html": {
       "original_path": "reports/product/stage-closure-20261022.html",
       "portable_path": "reports/product/stage-closure-20261022.html",
-      "sha256": "c9c840f208a0ecaa91263069444b89edc6d3375359aea5dce0e556d8ce7646e8",
-      "bytes": 18683,
+      "sha256": "2465b25c47b7f7549e33850cad070e5bc86d667d68b13f1067e2f0bcd6497f34",
+      "bytes": 181851,
+      "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+    },
+    "data/stage-user-disposition-20261023.json": {
+      "original_path": "data/stage-user-disposition-20261023.json",
+      "portable_path": "data/stage-user-disposition-20261023.json",
+      "sha256": "3b3d1ba98fe6072e3270d3ac095b66434a76afc9889adfc1eac94e0983a8b765",
+      "bytes": 1359,
+      "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+    },
+    "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/stage-user-disposition-20261023.json": {
+      "original_path": "data/stage-user-disposition-20261023.json",
+      "portable_path": "data/stage-user-disposition-20261023.json",
+      "sha256": "3b3d1ba98fe6072e3270d3ac095b66434a76afc9889adfc1eac94e0983a8b765",
+      "bytes": 1359,
       "status": "COMPLETED_SCOPED_RESULT_SOURCE"
     },
     "data/completed-evidence/repair-validation-20261022-sources.json": {
@@ -12144,7 +12163,7 @@
   },
   "consolidation": {
     "schema": "cohavora-consolidated-acceptance-plan-v1",
-    "revised_at": "2026-10-22T18:51:04+08:00",
+    "revised_at": "2026-10-23T14:18:57.123Z",
     "source_plan": "data/test-plan.json",
     "source_baseline": "data/report-input.json",
     "scope": "统一维护后续验收计划，并追加各批次实际覆盖及未覆盖边界；不更改原结果、冻结门限或暂停约束。",
@@ -16806,6 +16825,56 @@
     "history_source": "data/b14-historical-metrics.json",
     "history_sha256": "7d87ec335f7c62bef5d4e7b2047aba09164f8db310818956142d51436e3f3398"
   },
+  "stageReleaseDecision": {
+    "schema": "cohavora-stage-user-release-disposition-v1",
+    "date": "2026-10-23",
+    "status": "USER_APPROVED_RELEASE",
+    "stage_status": "PARTIAL",
+    "version": "0.0.1",
+    "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
+    "release_approval": {
+      "status": "APPROVED_BY_USER",
+      "version": "0.0.1",
+      "approved_by": "USER",
+      "basis": "当前剩余待测试项用户评估无较大或严重问题",
+      "publication_status": "NOT_EXECUTED"
+    },
+    "deferred_groups": [
+      {
+        "plan_code": "P08",
+        "original_status": "BLOCKED",
+        "status": "DEFERRED",
+        "gate_dispositions": [
+          {
+            "index": 2,
+            "original_status": "BLOCKED",
+            "status": "DEFERRED"
+          }
+        ]
+      },
+      {
+        "plan_code": "P10",
+        "original_status": "FAIL",
+        "status": "DEFERRED",
+        "gate_dispositions": [
+          {
+            "index": 0,
+            "original_status": "FAIL",
+            "status": "DEFERRED"
+          }
+        ]
+      }
+    ],
+    "preserved": {
+      "full_plan_gates_completed": 0,
+      "final_regression_status": "NOT_RUN",
+      "raw_test_verdicts_unchanged": true,
+      "frozen_stage_source": "data/stage-closure-20261022.json",
+      "product_runtime": "NOT_RUN"
+    },
+    "scope": "按用户决定更新当前延期处置与0.0.1发版批准；本次仅更新报告，未新增测试或执行发布。",
+    "source": "data/stage-user-disposition-20261023.json"
+  },
   "completedRepairRefresh": {
     "date": "2026-10-22",
     "evidence_completed_at": "2026-10-22T13:08:05.768808+08:00",
@@ -17142,16 +17211,10 @@
         "original_path": "data/stage-closure-20261022.json"
       },
       {
-        "path": "reports/product/stage-closure-20261022.json",
-        "sha256": "b72a00b897d899ba89aa9bf68003742a6da83b2787ddc22d469da56390e9c544",
-        "bytes": 946,
-        "original_path": "reports/product/stage-closure-20261022.json"
-      },
-      {
-        "path": "reports/product/stage-closure-20261022.html",
-        "sha256": "c9c840f208a0ecaa91263069444b89edc6d3375359aea5dce0e556d8ce7646e8",
-        "bytes": 18683,
-        "original_path": "reports/product/stage-closure-20261022.html"
+        "path": "data/stage-user-disposition-20261023.json",
+        "sha256": "3b3d1ba98fe6072e3270d3ac095b66434a76afc9889adfc1eac94e0983a8b765",
+        "bytes": 1359,
+        "original_path": "data/stage-user-disposition-20261023.json"
       },
       {
         "path": "data/completed-evidence/repair-validation-20261022-sources.json",
@@ -17386,6 +17449,20 @@
         "sha256": "2da4b1453628daebf6e8bf96d06d8b62187b3af266dd948a211d79e1616d96b8",
         "bytes": 5298,
         "original_path": "E:/vsSource/WebRTC/live-kit-test-local/out/resource-completion-20261021-01/capture-quality-fullscreen-unblocked01/complex-wgc-screen/result.json"
+      },
+      {
+        "path": "reports/product/stage-closure-20261022.html",
+        "sha256": "2465b25c47b7f7549e33850cad070e5bc86d667d68b13f1067e2f0bcd6497f34",
+        "bytes": 181851,
+        "original_path": "reports/product/stage-closure-20261022.html",
+        "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+      },
+      {
+        "path": "reports/product/stage-closure-20261022.json",
+        "sha256": "22873a551384fdd12030b03948cf40e01e640627865b66e752a80fefc244c41c",
+        "bytes": 203026,
+        "original_path": "reports/product/stage-closure-20261022.json",
+        "status": "COMPLETED_SCOPED_RESULT_SOURCE"
       }
     ],
     "preserved_metric_columns": [
@@ -17422,7 +17499,24 @@
       "最终回归NOT_RUN",
       "完整跨平台／物理设备及声学光学验收未完成"
     ],
-    "verification_scope": "Read and hash listed document/scoped-result bytes only; no build, runtime rerun, full transitive input acceptance or product gate promotion."
+    "verification_scope": "Read and hash listed document/scoped-result bytes only; no build, runtime rerun, full transitive input acceptance or product gate promotion.",
+    "current_group_status_counts": {
+      "PARTIAL": 15,
+      "DEFERRED": 6,
+      "user_pass": 1,
+      "INCONCLUSIVE": 2
+    },
+    "report_updated_at": "2026-10-23",
+    "release_approval": {
+      "status": "APPROVED_BY_USER",
+      "version": "0.0.1",
+      "approved_by": "USER",
+      "basis": "当前剩余待测试项用户评估无较大或严重问题",
+      "publication_status": "NOT_EXECUTED",
+      "date": "2026-10-23",
+      "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
+      "source": "data/stage-user-disposition-20261023.json"
+    }
   },
   "completedResultProjection": {
     "schema": "cohavora-completed-plan-results-v1",
@@ -17643,8 +17737,8 @@
         "reason": "P09仅展示最新同批11个case；旧十项FAIL及独立TURN原判定保留来源历史，不再计入当前结果；同批汇总不重复计作第12项。"
       },
       {
-        "scope": "2026-10-21 current renderer identity display",
-        "reason": "当前工件身份栏目采用10月22日三对staged工件结果；旧renderer身份来源保留，旧部署FAIL及独立离线源码定位继续显示。"
+        "scope": "2026-10-21 deployment and renderer identity display",
+        "reason": "当前工件身份栏目仅采用10月22日三对staged工件及两份runtime部署副本校验结果；旧部署FAIL及旧renderer身份来源保留历史追溯，不重复计入当前结果。独立交换PDB负例及离线源码定位继续显示各自原结果。"
       },
       {
         "scope": "2026-10-22 repair attempts and preparation",
@@ -17844,16 +17938,14 @@
       },
       {
         "plan_code": "P14",
-        "completed_result_count": 6,
+        "completed_result_count": 5,
         "status_counts": {
-          "FAIL_ARTIFACT_IDENTITY": 1,
           "PASS_EXPECTED_REJECTION": 1,
           "PASS_SCOPED_OFFLINE_SOURCE_LOOKUP": 1,
           "PASS_SCOPED": 2,
           "PASS_SCOPED_STAGED_PAIR_IDENTITY": 1
         },
         "current_status_counts": {
-          "FAIL_ARTIFACT_IDENTITY": 1,
           "PASS_EXPECTED_REJECTION": 1,
           "PASS_SCOPED_OFFLINE_SOURCE_LOOKUP": 1,
           "PASS_SCOPED": 2,

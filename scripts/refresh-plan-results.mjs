@@ -297,10 +297,14 @@ export async function refreshPlanResults(root, data, {writeEvidence = false} = {
   assert.equal(repairedArtifact.value.pairs.length, 3);
   assert.deepEqual(repairedArtifact.value.errors, []);
   assert.ok(Object.values(repairedArtifact.value.checks).every(value => value === true));
+  assert.equal(repairedArtifact.value.runtime_renderer_bindings.length, 2);
+  assert.ok(repairedArtifact.value.runtime_renderer_bindings.every(binding => binding.same_bytes === true
+    && binding.runtime.sha256 === repairedArtifact.value.pairs.find(pair => pair.id === binding.id)?.binary.sha256));
+  results.get('P14').delete('artifact-old_deployment');
   results.get('P14').delete('artifact-current_renderer_build');
   add(['P14'], repairedArtifact, '/status', {
-    id: 'artifact-current-staged-pairs', title: '当前diagnostic-ON产品：三对binary／PDB身份', date: repairedArtifact.value.completed_utc,
-    scope: '仅本次EXE、DX11／OpenGL DLL三对PDB及staged输出、runtime renderer副本字节校验。source provenance、最终SDK／Flutter冻结和发行资格未验证，产品runtime未运行；旧部署age错配是不同工件，保留其原失败。'
+    id: 'artifact-current-staged-pairs', title: '当前diagnostic-ON产品：三对EXE／DLL／PDB身份及部署副本校验', date: repairedArtifact.value.completed_utc,
+    scope: '本次EXE、DX11／OpenGL DLL三对PDB身份及staged输出校验通过；两份runtime renderer部署副本与对应构建DLL的SHA256一致。source provenance、最终SDK／Flutter冻结和发行资格未验证，产品runtime未运行；10月21日旧部署age错配属于不同工件，原失败及证据仅保留历史追溯，不重复计入当前结果。'
   });
   const remoteOutput = await read('data/completed-evidence/repair-remote-output-20261022-receipt.json');
   assert.equal(remoteOutput.value.focused_gates.length, 2);
@@ -312,7 +316,7 @@ export async function refreshPlanResults(root, data, {writeEvidence = false} = {
 
   skipped.push(
     {scope: 'superseded network executions and batch summaries', reason: 'P09仅展示最新同批11个case；旧十项FAIL及独立TURN原判定保留来源历史，不再计入当前结果；同批汇总不重复计作第12项。'},
-    {scope: '2026-10-21 current renderer identity display', reason: '当前工件身份栏目采用10月22日三对staged工件结果；旧renderer身份来源保留，旧部署FAIL及独立离线源码定位继续显示。'},
+    {scope: '2026-10-21 deployment and renderer identity display', reason: '当前工件身份栏目仅采用10月22日三对staged工件及两份runtime部署副本校验结果；旧部署FAIL及旧renderer身份来源保留历史追溯，不重复计入当前结果。独立交换PDB负例及离线源码定位继续显示各自原结果。'},
     {scope: '2026-10-22 repair attempts and preparation', reason: '入会前失败、零媒体互通尝试与仅准备的实服重测不替换原Flutter格；P13仅采用最新完成60秒配对，容量没有新同范围完成结果。'},
     {scope: 'P15 historical H122 current display', reason: '当前仅显示最新完成LAN双机软件校时PASS；历史H122原输入及41.258ms FAIL、原阿里云SFU 26.496ms FAIL保留原判定和证据，不重复计作当前结果。路径与模型不同，不宣称原失败分项根因已解决；真实产品媒体延迟门与物理门未执行。'},
     {scope: 'functional observations history', reason: '仅使用current_observations；不重复旧attempt或同case的多gate映射。'},

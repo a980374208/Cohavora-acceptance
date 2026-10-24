@@ -1,6 +1,6 @@
 {
   "status": "PASS_STATIC_LIGHTWEIGHT",
-  "checked_at": "2026-10-23T08:41:32.455Z",
+  "checked_at": "2026-10-23T14:26:11.768Z",
   "validation_mode": "LIGHTWEIGHT_REPO",
   "method": "Node vm structure/synthetic DOM, relative links, lightweight report data consistency; heavy offline evidence decoupled",
   "checks": {
@@ -56,8 +56,8 @@
     "b14_initial_and_post_leave_idle_scenes_separated": true,
     "memory_occupancy_growth_and_run_scopes_separated": true,
     "package_local_links": {
-      "references": 530,
-      "verified_existing": 115,
+      "references": 534,
+      "verified_existing": 116,
       "decoupled_omitted": 0,
       "omitted_paths": []
     },
@@ -76,8 +76,9 @@
     "b14_complete_raw_fail_private_growth_without_inherited_exception": true,
     "media_latency_highlight_removed": true,
     "highlight_result_boundaries": true,
+    "current_closure_matches_main_and_user_approved_release": true,
     "closed_stage_partial_without_full_gate_or_release_credit": true,
-    "completed_stage_sources_bound_and_hashed": 42,
+    "completed_stage_sources_bound_and_hashed": 43,
     "completed_stage_notes_preserve_original_metric_windows_and_plan": true,
     "new_formal_first_pair_failure_separate_from_old_three_pairs": true,
     "whiteboard_1800_completed_scope_not_substituted_for_b12_or_m5": true,
@@ -119,7 +120,7 @@
     },
     "original_five_card_layout_retained": true,
     "report_links": {
-      "package_references": 123,
+      "package_references": 381,
       "machine_local_references": 360,
       "machine_local_existing": 360,
       "machine_local_missing": 0,
@@ -133,7 +134,7 @@
       "original_missing_links": 2
     },
     "complete_package_file_hashes": {
-      "verified_existing": 295,
+      "verified_existing": 298,
       "decoupled_omitted": 0
     },
     "report_text_checkout_line_endings": 0,

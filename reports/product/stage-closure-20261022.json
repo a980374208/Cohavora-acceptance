@@ -3,7 +3,8 @@
   "title": "冻结测试清单：阶段收口报告",
   "status": "PARTIAL",
   "task_status": "STAGE_CLOSED_BY_USER",
-  "updated_utc": "2026-10-22T05:15:45.499477+08:00",
+  "updated_utc": "2026-10-23",
+  "current_revision_date": "2026-10-23",
   "frozen_at": "2026-10-22T05:07:21.396912+08:00",
   "draft": false,
   "final_snapshot": true,
@@ -11,11 +12,3354 @@
   "active_runs": [],
   "stage_data": "../../data/stage-closure-20261022.json",
   "summary": {
-    "statement": "冻结现有24组后收口；已通过范围复用，P13/Flutter等正式FAIL保留；P03有限内容INCONCLUSIVE；P20暂停、最终回归未跑。本阶段停止，无新增执行项。",
+    "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
     "full_plan_gates_completed": 0,
     "final_regression_status": "NOT_RUN",
     "production_ready": false,
     "completion_percentage": null
   },
-  "scope": "Documentary stage closure only; no new test item, result rejudgment or product gate credit."
+  "scope": "Current main-report projection and explicit user release approval; no new test execution or original-result rejudgment.",
+  "release_approval": {
+    "status": "APPROVED_BY_USER",
+    "version": "0.0.1",
+    "approved_by": "USER",
+    "basis": "当前剩余待测试项用户评估无较大或严重问题",
+    "publication_status": "NOT_EXECUTED",
+    "date": "2026-10-23",
+    "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
+    "source": "data/stage-user-disposition-20261023.json"
+  },
+  "current_group_status_counts": {
+    "PARTIAL": 15,
+    "DEFERRED": 6,
+    "user_pass": 1,
+    "INCONCLUSIVE": 2
+  },
+  "current_groups": [
+    {
+      "plan_code": "P01",
+      "title": "核心生命周期与异常回滚",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "启动事务、会话/发布及异常回滚的直接工程范围；两项audio lifetime仅按影响范围复用。"
+        ],
+        "remaining": [
+          "相同最终冻结工件的完整runtime引用释放链和按定义关联的入离会耗时未完成。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "stage_report_reuse",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "Room／Session／发布与取消发布：状态转换、generation、owner和thread归属一致，Qt投影不持有native lifetime。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "取消、late callback、重复操作和启动失败：终态唯一、回滚完整，销毁后的回调不改写新会话。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "音频source／track／factory／probe／Qt引用链：在相同冻结工件下配对复现与释放，直接lifetime断言成立。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "入离会耗时：按timing_measurements中的join_ready／leave_complete关联业务终态、native cleanup与Qt投影，保存逐轮原始起终点及结果。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": [
+        {
+          "id": "functional-meeting_startup_transaction_test",
+          "title": "engineering-01 · meeting_startup_transaction_test",
+          "status": "PASS",
+          "date": "2026-10-20T14:15:38.067179+00:00",
+          "scope": "原输入已完成的独立case；工程／单元合同，不代替真实设备、服务或完整runtime。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/80/current_status"
+        },
+        {
+          "id": "historical-H125",
+          "title": "历史保留 · 音频source/track引用环修复配对复现",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-11",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：actual production source/track/factory/probe and real Qt gate; no UI/session/remote；真实production source/track/factory/probe和Qt gate；未覆盖UI/Session/remote，HeapWalk不是PrivateBytes或全类型raw heap dump。整个产品内存NOT_RERUN；无法由局部引用环修复关闭原产品Formal FAIL。",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/7/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P02",
+      "title": "遥测功能、持久化与恢复",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Completed telemetry scopes plus latest eleven-case snapshot/store-close evidence; no whole-group PASS or release credit",
+        "completed_scope": [
+          "遥测直接工程合同、限定service-restart/九成功网络子集/TURN审计。",
+          "TURN02封存源生产导出与回读：7文件、93 revisions、61104指标、17 timeline；UI15三次生产导出回读另按自己的run成立。",
+          "2026-10-22同批11项网络case的接收端snapshot与真实store-close限定完成，逐项persistence_close_status为PASS；不覆盖生产导出、故障日志关联或缺失／重复事件审计。"
+        ],
+        "remaining": [
+          "故障后live-current/UI导出及历史稳定性详情/session link、crash metadata、persistent loss summary缺口保留。",
+          "缓存benchmark仅在对应输入变化时按原合同执行；本次无新benchmark结果。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "turn_export",
+          "ui_export",
+          "stage_report_network",
+          "resolution22",
+          "data/completed-evidence/p09-network-eleven-20261022-scoped.json"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "事件与P2-A／B／C投影：事件、序列化、管线、文件输出和桥接保持声明语义。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "持久化与导出：状态、筛选和恢复后内容可回读，工程与实服结果分别记录。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "独立信令恢复：重连后遥测状态和文件链可继续，缺失或重复不被静默忽略。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "checkpoint缓存：仅在实现或benchmark输入变化时比较48／768段ABBA，核对逻辑I/O与JSON重解析。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T15:26:57.874258+08:00",
+        "stage_execution": "COMPLETED_SCOPED_BATCH",
+        "evidence_catalog": "data/completed-evidence/p09-network-eleven-20261022-scoped.json"
+      },
+      "completed_results": [
+        {
+          "id": "functional-session_telemetry_test",
+          "title": "engineering-01 · session_telemetry_test",
+          "status": "PASS",
+          "date": "2026-10-20T14:15:38.067179+00:00",
+          "scope": "原输入已完成的独立case；工程／单元合同，不代替真实设备、服务或完整runtime。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/69/current_status"
+        },
+        {
+          "id": "functional-telemetry_report_test",
+          "title": "engineering-01 · telemetry_report_test",
+          "status": "PASS",
+          "date": "2026-10-20T14:15:38.067179+00:00",
+          "scope": "原输入已完成的独立case；工程／单元合同，不代替真实设备、服务或完整runtime。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/70/current_status"
+        },
+        {
+          "id": "functional-meeting_subscription_telemetry_reconnect_test",
+          "title": "engineering-01 · meeting_subscription_telemetry_reconnect_test",
+          "status": "PASS",
+          "date": "2026-10-20T14:15:38.067179+00:00",
+          "scope": "原输入已完成的独立case；工程／单元合同，不代替真实设备、服务或完整runtime。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/79/current_status"
+        },
+        {
+          "id": "functional-meeting_telemetry_panel_test",
+          "title": "engineering-01 · meeting_telemetry_panel_test",
+          "status": "PASS",
+          "date": "2026-10-20T14:15:38.067179+00:00",
+          "scope": "原输入已完成的独立case；工程／单元合同，不代替真实设备、服务或完整runtime。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/81/current_status"
+        },
+        {
+          "id": "functional-meeting_telemetry_panel_150_test",
+          "title": "engineering-01 · meeting_telemetry_panel_150_test",
+          "status": "PASS",
+          "date": "2026-10-20T14:15:38.067179+00:00",
+          "scope": "原输入已完成的独立case；工程／单元合同，不代替真实设备、服务或完整runtime。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/82/current_status"
+        },
+        {
+          "id": "functional-meeting_telemetry_panel_200_test",
+          "title": "engineering-01 · meeting_telemetry_panel_200_test",
+          "status": "PASS",
+          "date": "2026-10-20T14:15:38.067179+00:00",
+          "scope": "原输入已完成的独立case；工程／单元合同，不代替真实设备、服务或完整runtime。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/83/current_status"
+        },
+        {
+          "id": "network-nine-export_readback",
+          "title": "九成功网络子集：生产导出回读",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "显式选取原FAIL批次中的9个成功case；原FAIL、遗漏TURN和cleanup failure不改写，审计不算新runtime。 仅该完成审计条件；不是新的网络runtime或整组通过。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/network_audit/export_readback/status"
+        },
+        {
+          "id": "network-nine-independent_review",
+          "title": "九成功网络子集：独立支持包复盘",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "显式选取原FAIL批次中的9个成功case；原FAIL、遗漏TURN和cleanup failure不改写，审计不算新runtime。 仅该完成审计条件；不是新的网络runtime或整组通过。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/network_audit/independent_review/status"
+        },
+        {
+          "id": "service-restart-export-review",
+          "title": "service-restart生产导出与独立复盘",
+          "status": "PASS_SCOPED",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "原runtime按未受影响输入复用，本批补生产导出回读和独立复盘；原34文件不改写。 仅限定复用／审计范围，完整主门信用0。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/service_restart/status"
+        },
+        {
+          "id": "network-eleven-store-close",
+          "title": "同批网络11项：接收端snapshot及存储关闭",
+          "status": "PASS",
+          "date": "2026-10-22T07:24:47.694145+00:00",
+          "scope": "仅本轮11个case的接收端snapshot与真实store-close：逐项persistence_close_status均PASS；不覆盖生产导出回读、故障日志关联或缺失／重复事件审计，不替换原独立导出和复盘结果。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "ui-smoke-export-observed15-20261021-scoped",
+          "title": "UI15三轮短测与三次生产导出回读",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21T10:46:33.8171459Z",
+          "scope": "strict UI短测3/3轮、三次生产导出回读；仅UI／导出范围，不授媒体、L3、长期内存、fault恢复或全隐私注入通过。",
+          "source_path": "data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "turn02-export-readback-20261021-scoped",
+          "title": "TURN02封存源：生产导出与独立回读",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21",
+          "scope": "7文件、93 revisions、61104指标及17 timeline的封存源生产导出回读；不重跑媒体，不等于fault后实时当前导出或整组通过。",
+          "source_path": "data/completed-evidence/turn02-export-readback-20261021-scoped.json",
+          "source_locator": "/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P03",
+      "title": "界面流程、文件与真实I/O",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "B01 UIA10项、B02文件/上传4项；受控磁盘满/恢复、oplock取消/恢复及诊断sink退出三个独立I/O条件。",
+          "UI15 strict短测3/3轮和三次生产导出；UI09 typed耗时只为OBSERVATION_ONLY。",
+          "四主题Qt CPU静帧runtime17b：同帧/绑定/单次自然Paint身份及16个桌面合成像素闭合，限定PASS_SCOPED。"
+        ],
+        "remaining": [
+          "有限时变内容runtime23为INCONCLUSIVE：strict输入在peer启动前变化，0/12帧；本阶段不再重试。",
+          "完整CPU/GPU/DPI/多屏/白板内容原色矩阵、媒体连续性、L3、长时内存及人工键盘/IME/读屏未由这些短门关闭。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [
+          "P03_FINITE_CHANGING_CPU_CONTENT: P21_STRICT_INPUT_CHANGED; no product processes launched; no frame evidence."
+        ],
+        "evidence_refs": [
+          "functional_media",
+          "resource20",
+          "ui_export",
+          "ui_timing",
+          "p03_static",
+          "runtime23",
+          "runtime23_exec",
+          "raw_mouse23"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "界面流程：settings、入会、会议工具栏／分页、日志及白板文件操作，在声明语言下完成且状态一致；页面首绘与入离会分别引用timing_measurements的ui_first_paint／join_ready／leave_complete。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "主题外观与舞台：系统／浅色／深色／青绿四种模式下，已打开及新建的主窗、设置、菜单／弹层、图标／缓存图片和白板外围一致；舞台、视频格及留白在CPU／GPU后端已有静止画面时即时切换，视频／共享内容和白板页面／笔迹保持原色。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "文件内容：JPEG、拒绝访问、页数替换、导出回读与像素／哈希判定；同一文件case只执行一次。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "远端上传：离线拒绝、上传中断、回读和重试恢复分别验证，失败不残留错误状态。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 4,
+            "definition": "真实I/O：受控磁盘满、oplock／慢I/O、驱动不响应及关停持久化／恢复按独立故障条件判定。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 5,
+            "definition": "人工输入与辅助操作：键盘导航、中文IME及声明支持的屏幕阅读器完成实际功能。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence",
+        "followup_only": [
+          "Early-exit readback reported one unexplained declared-input-map difference.",
+          "User later reported mouse disconnected; no post-freeze probe or retry."
+        ]
+      },
+      "completed_results": [
+        {
+          "id": "functional-settings-zh_CN",
+          "title": "b01-uia · settings-zh_CN",
+          "status": "PASS",
+          "date": "2026-10-20T14:12:13.017607+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/0/current_status"
+        },
+        {
+          "id": "functional-join-zh_CN",
+          "title": "b01-uia · join-zh_CN",
+          "status": "PASS",
+          "date": "2026-10-20T14:12:14.544150+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/1/current_status"
+        },
+        {
+          "id": "functional-meeting-zh_CN",
+          "title": "b01-uia · meeting-zh_CN",
+          "status": "PASS",
+          "date": "2026-10-20T14:12:19.131635+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/2/current_status"
+        },
+        {
+          "id": "functional-console-zh_CN",
+          "title": "b01-uia · console-zh_CN",
+          "status": "PASS",
+          "date": "2026-10-20T14:12:22.007798+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/3/current_status"
+        },
+        {
+          "id": "functional-whiteboard-zh_CN",
+          "title": "b01-uia · whiteboard-zh_CN",
+          "status": "PASS",
+          "date": "2026-10-20T14:12:25.100887+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/4/current_status"
+        },
+        {
+          "id": "functional-whiteboard_clear-zh_CN",
+          "title": "b01-uia · whiteboard_clear-zh_CN",
+          "status": "PASS",
+          "date": "2026-10-20T14:12:28.206013+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/5/current_status"
+        },
+        {
+          "id": "functional-whiteboard_files-zh_CN",
+          "title": "b01-uia · whiteboard_files-zh_CN",
+          "status": "PASS",
+          "date": "2026-10-20T14:12:50.210088+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/6/current_status"
+        },
+        {
+          "id": "functional-whiteboard_files-en_US",
+          "title": "b01-uia · whiteboard_files-en_US",
+          "status": "PASS",
+          "date": "2026-10-20T14:13:08.595201+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/7/current_status"
+        },
+        {
+          "id": "functional-whiteboard_file_edges-zh_CN",
+          "title": "b01-uia · whiteboard_file_edges-zh_CN",
+          "status": "PASS",
+          "date": "2026-10-20T14:13:19.481490+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/8/current_status"
+        },
+        {
+          "id": "functional-whiteboard_file_edges-en_US",
+          "title": "b01-uia · whiteboard_file_edges-en_US",
+          "status": "PASS",
+          "date": "2026-10-20T14:13:29.979372+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/9/current_status"
+        },
+        {
+          "id": "functional-offline-upload-rejection",
+          "title": "b02-files · offline-upload-rejection",
+          "status": "PASS",
+          "date": "2026-10-20T14:16:06.808397+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/10/current_status"
+        },
+        {
+          "id": "functional-remote-upload-readback",
+          "title": "b02-files · remote-upload-readback",
+          "status": "PASS",
+          "date": "2026-10-20T14:16:06.808397+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/11/current_status"
+        },
+        {
+          "id": "functional-inflight-upload-failure",
+          "title": "b02-files · inflight-upload-failure",
+          "status": "PASS",
+          "date": "2026-10-20T14:16:06.808397+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/12/current_status"
+        },
+        {
+          "id": "functional-upload-retry-recovery",
+          "title": "b02-files · upload-retry-recovery",
+          "status": "PASS",
+          "date": "2026-10-20T14:16:06.808397+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/13/current_status"
+        },
+        {
+          "id": "controlled-io-three",
+          "title": "真实I/O：三项受控运行子条件",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-20T17:54:04.618596+00:00（非逐格完成时间）",
+          "scope": "真实诊断sink进程退出；隔离受控NTFS卷磁盘满及恢复；oplock阻塞文件打开取消及恢复。 三项使用各自受控条件；真实物理慢盘、驱动不响应及断电恢复未覆盖。",
+          "source_path": "reports/product/resource-completion-20261020-01.json",
+          "source_locator": "/entries/io/status"
+        },
+        {
+          "id": "ui-smoke-export-observed15-20261021-scoped",
+          "title": "UI15三轮短测与三次生产导出回读",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21T10:46:33.8171459Z",
+          "scope": "strict UI短测3/3轮、三次生产导出回读；仅UI／导出范围，不授媒体、L3、长期内存、fault恢复或全隐私注入通过。",
+          "source_path": "data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "p03-cpu-static-content17b-20261022-scoped",
+          "title": "四主题Qt CPU静帧与16个桌面合成像素",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-22",
+          "scope": "单远端静帧、同帧／绑定／自然Paint身份及16个合成像素限定闭合；不是逐帧Present、物理显示像素、运动媒体或全renderer矩阵。",
+          "source_path": "data/completed-evidence/p03-cpu-static-content17b-20261022-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "ui9-typed-timing",
+          "title": "UI09 typed耗时：仅观测",
+          "status": "OBSERVATION_ONLY",
+          "date": "2026-10-21T05:31:33.3889942Z",
+          "scope": "按同run业务终态和Qt投影关联的入会、离会及首绘耗时观测；无新增性能阈值，OBSERVATION_ONLY不授性能PASS。",
+          "source_path": "data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json",
+          "source_locator": "/timing/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P04",
+      "title": "编码矩阵、选层与主备回退",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "B03编码9格及B04策略/恢复/负向13项已按实际codec、发布/接收和退出成立；本批22项按影响范围复用，未新增运行。"
+        ],
+        "remaining": [
+          "只适用各格冻结输入和已运行逻辑拓扑；未运行硬件/设备、跨平台及物理故障矩阵不外推。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "stage_report_reuse"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "codec矩阵：Auto、VP8、H264、VP9-SVC、AV1及声明备用编码，实际requested／effective codec与预期一致。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "尺寸与选层：原720／360、simulcast中／低层等负载逐项核对实际发布、RTP／解码增长和marker。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "主备策略与重发布：prefer／regression／simulcast backup、手动重发布的选择及旧资源清理正确。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "编码恢复：信令／完整重连分别覆盖simulcast、regression与allowlist，恢复后核对实际codec。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 4,
+            "definition": "负向能力：disabled AV1和无视频交集等失败可解释并完成回滚。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": [
+        {
+          "id": "functional-auto-camera-720",
+          "title": "b03-codec · auto-camera-720",
+          "status": "PASS",
+          "date": "2026-10-20T13:56:39.953267+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/14/current_status"
+        },
+        {
+          "id": "functional-vp8-720-high",
+          "title": "b03-codec · vp8-720-high",
+          "status": "PASS",
+          "date": "2026-10-20T13:56:39.953267+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/15/current_status"
+        },
+        {
+          "id": "functional-h264-720-high",
+          "title": "b03-codec · h264-720-high",
+          "status": "PASS",
+          "date": "2026-10-20T13:56:39.953267+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/16/current_status"
+        },
+        {
+          "id": "functional-vp9-svc-camera",
+          "title": "b03-codec · vp9-svc-camera",
+          "status": "PASS",
+          "date": "2026-10-20T13:56:39.953267+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/17/current_status"
+        },
+        {
+          "id": "functional-av1-camera",
+          "title": "b03-codec · av1-camera",
+          "status": "PASS",
+          "date": "2026-10-20T13:56:39.953267+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/18/current_status"
+        },
+        {
+          "id": "functional-av1-backup-screen",
+          "title": "b03-codec · av1-backup-screen",
+          "status": "PASS",
+          "date": "2026-10-20T13:56:39.953267+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/19/current_status"
+        },
+        {
+          "id": "functional-vp8-source-360",
+          "title": "b03-codec · vp8-source-360",
+          "status": "PASS",
+          "date": "2026-10-20T13:56:39.953267+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/20/current_status"
+        },
+        {
+          "id": "functional-vp8-simulcast-medium",
+          "title": "b03-codec · vp8-simulcast-medium",
+          "status": "PASS",
+          "date": "2026-10-20T13:56:39.953267+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/21/current_status"
+        },
+        {
+          "id": "functional-vp8-simulcast-low",
+          "title": "b03-codec · vp8-simulcast-low",
+          "status": "PASS",
+          "date": "2026-10-20T13:56:39.953267+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/22/current_status"
+        },
+        {
+          "id": "functional-allowlist-full-reconnect",
+          "title": "b04-allowlist · allowlist-full-reconnect",
+          "status": "PASS",
+          "date": "2026-10-20T14:04:31.371086+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/23/current_status"
+        },
+        {
+          "id": "functional-disabled-av1",
+          "title": "b04-disabled-av1 · disabled-av1",
+          "status": "PASS",
+          "date": "2026-10-20T14:02:44.545567+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/24/current_status"
+        },
+        {
+          "id": "functional-no-video-intersection",
+          "title": "b04-no-intersection · no-video-intersection",
+          "status": "PASS",
+          "date": "2026-10-20T14:04:09.558119+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/25/current_status"
+        },
+        {
+          "id": "functional-full-reconnect",
+          "title": "b04-recovery · full-reconnect",
+          "status": "PASS",
+          "date": "2026-10-20T13:59:53.477200+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/26/current_status"
+        },
+        {
+          "id": "functional-manual-republish",
+          "title": "b04-recovery · manual-republish",
+          "status": "PASS",
+          "date": "2026-10-20T13:59:16.620059+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/27/current_status"
+        },
+        {
+          "id": "functional-prefer-regression-backup",
+          "title": "b04-recovery · prefer-regression-backup",
+          "status": "PASS",
+          "date": "2026-10-20T13:58:25.547460+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/28/current_status"
+        },
+        {
+          "id": "functional-regression-backup",
+          "title": "b04-recovery · regression-backup",
+          "status": "PASS",
+          "date": "2026-10-20T13:58:59.099819+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/29/current_status"
+        },
+        {
+          "id": "functional-regression-full-reconnect",
+          "title": "b04-recovery · regression-full-reconnect",
+          "status": "PASS",
+          "date": "2026-10-20T14:01:03.480438+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/30/current_status"
+        },
+        {
+          "id": "functional-regression-signal-reconnect",
+          "title": "b04-recovery · regression-signal-reconnect",
+          "status": "PASS",
+          "date": "2026-10-20T14:00:45.374360+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/31/current_status"
+        },
+        {
+          "id": "functional-signal-reconnect",
+          "title": "b04-recovery · signal-reconnect",
+          "status": "PASS",
+          "date": "2026-10-20T13:59:34.757857+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/32/current_status"
+        },
+        {
+          "id": "functional-simulcast-backup",
+          "title": "b04-recovery · simulcast-backup",
+          "status": "PASS",
+          "date": "2026-10-20T13:58:42.019638+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/33/current_status"
+        },
+        {
+          "id": "functional-simulcast-full-reconnect",
+          "title": "b04-recovery · simulcast-full-reconnect",
+          "status": "PASS",
+          "date": "2026-10-20T14:00:27.729128+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/34/current_status"
+        },
+        {
+          "id": "functional-simulcast-signal-reconnect",
+          "title": "b04-recovery · simulcast-signal-reconnect",
+          "status": "PASS",
+          "date": "2026-10-20T14:00:10.570612+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/35/current_status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P05",
+      "title": "跨SDK媒体与数据互通",
+      "status": "DEFERRED",
+      "stage_status": {
+        "status": "DEFERRED",
+        "scope": "Current user disposition after closure; raw executed FAIL/PASS retained, no whole-group PASS or release credit",
+        "completed_scope": [
+          "固定派生Flutter七格最新终态及其他独立格分别保留；官方C++数据12格、受控视频4格及OFF/ON合成音频内容已完成限定范围。"
+        ],
+        "remaining": [
+          "同slot换钥恢复与decoder-clear普通交付问题按用户要求DEFERRED；两组共用两个bug、三条失败来源，原FAIL与修复衍生PASS分开保留；详见延期原因与方案。",
+          "官方C++ SDK缺callback-drain barrier，进程退出不能证明进程内安全退休；其他平台未跑。"
+        ],
+        "retained_failures": [
+          "Flutter最新逐格14 PASS／2 FAIL：replace-two-relay02为二次换钥后的媒体／数据恢复失败（marker检查通过）；flutter-full-relay03为严格relay_marker_content_valid失败（512帧中506有效、6无效）。P05／P06共用这两项，不重复计数。",
+          "SFU六帧close-flush源码合同解释不改变原内容门限或剔除失败帧。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "stage_report_flutter",
+          "stage_report_cpp",
+          "official_audio",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "固定派生Flutter：冻结双方版本，验证当前C++双向媒体与数据的实际交付。",
+            "status": "DEFERRED",
+            "interpretation": "User-deferred scope; raw executed FAIL retained in original sources, not a new test receipt",
+            "previous_status": "FAIL"
+          },
+          {
+            "index": 1,
+            "definition": "官方独立C++对端：按声明能力验证双向媒体、数据、退出与恢复。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "未修复Flutter及其他平台：逐一确认版本、能力与结果，未具备条件的格子保持未跑。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T18:51:04+08:00",
+        "stage_execution": "DEFERRED_BY_USER_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence",
+        "previous_assessment": {
+          "status": "FAIL",
+          "as_of": "2026-10-22T05:15:45.499477+08:00",
+          "source": "reports/product/stage-closure-20261022.html"
+        },
+        "disposition_source": "reports/product/p05-p06-deferred-remediation-20261022.json",
+        "disposition_report": "reports/product/p05-p06-deferred-remediation-20261022.html",
+        "deferred_bug_ids": [
+          "BUG-FLUTTER-SAME-SLOT-KEY-REPLACE",
+          "BUG-SFU-DECODER-CLEAR-DELIVERY"
+        ],
+        "deferred_scope": "当前暂缓，不表示已修复或通过；阶段仍停止，不启动源码修改、构建或重测。"
+      },
+      "completed_results": [
+        {
+          "id": "flutter-VP8 OFF",
+          "title": "固定派生Flutter · VP8 OFF",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-e9d2d6568e3a4544；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/0/status"
+        },
+        {
+          "id": "flutter-VP8 ON",
+          "title": "固定派生Flutter · VP8 ON",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-51e9b80679b144f3；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/1/status"
+        },
+        {
+          "id": "flutter-H264 OFF",
+          "title": "固定派生Flutter · H264 OFF",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-5450d7f058274933；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/2/status"
+        },
+        {
+          "id": "flutter-h264-on",
+          "title": "固定派生Flutter · h264-on",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-53afae4241544b8a；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/3/status"
+        },
+        {
+          "id": "flutter-replace-two",
+          "title": "固定派生Flutter · replace-two",
+          "status": "FAIL",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：replace-two-relay02；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/4/status",
+          "current_disposition": {
+            "status": "DEFERRED",
+            "date": "2026-10-22T18:51:04+08:00",
+            "bug_id": "BUG-FLUTTER-SAME-SLOT-KEY-REPLACE",
+            "source_path": "reports/product/p05-p06-deferred-remediation-20261022.json",
+            "source_locator": "/case_dispositions/0/status",
+            "report_path": "reports/product/p05-p06-deferred-remediation-20261022.html"
+          }
+        },
+        {
+          "id": "flutter-ratchet-two",
+          "title": "固定派生Flutter · ratchet-two",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-04f5839bc78c4b05；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/5/status"
+        },
+        {
+          "id": "flutter-slot",
+          "title": "固定派生Flutter · slot",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-2ce2a0768ac04f4d；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/6/status"
+        },
+        {
+          "id": "flutter-wrong-slot",
+          "title": "固定派生Flutter · wrong-slot",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-5f2cd50f70164cb9；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/7/status"
+        },
+        {
+          "id": "flutter-missing-slot",
+          "title": "固定派生Flutter · missing-slot",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-fbbd5ddf7f9b4eea；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/8/status"
+        },
+        {
+          "id": "flutter-latejoin-ten",
+          "title": "固定派生Flutter · latejoin-ten",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-edafb08a4ddd47f2；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/9/status"
+        },
+        {
+          "id": "flutter-signal",
+          "title": "固定派生Flutter · signal",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-61f4f39a46c04648；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/10/status"
+        },
+        {
+          "id": "flutter-native-full",
+          "title": "固定派生Flutter · native-full",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：native-full-relay03；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/11/status"
+        },
+        {
+          "id": "flutter-flutter-full",
+          "title": "固定派生Flutter · flutter-full",
+          "status": "FAIL",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：flutter-full-relay03；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/12/status",
+          "current_disposition": {
+            "status": "DEFERRED",
+            "date": "2026-10-22T18:51:04+08:00",
+            "bug_id": "BUG-SFU-DECODER-CLEAR-DELIVERY",
+            "source_path": "reports/product/p05-p06-deferred-remediation-20261022.json",
+            "source_locator": "/case_dispositions/1/status",
+            "report_path": "reports/product/p05-p06-deferred-remediation-20261022.html"
+          }
+        },
+        {
+          "id": "flutter-rejoin",
+          "title": "固定派生Flutter · rejoin",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-bab797fba6514842；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/13/status"
+        },
+        {
+          "id": "flutter-rpc",
+          "title": "固定派生Flutter · rpc",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-bb0135da48c841c2；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/14/status"
+        },
+        {
+          "id": "flutter-ratchet-window-zero",
+          "title": "固定派生Flutter · ratchet-window-zero",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-c7e25102eade49f7；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/15/status"
+        },
+        {
+          "id": "flutter-repair-derivative-replace-two",
+          "title": "修复衍生Flutter · replace-two（credit 0）",
+          "status": "PASS",
+          "date": "2026-10-22T09:16:35.629004Z",
+          "scope": "P05／P06共用同一case，不重复计数；原shared服务、ON／60秒／VP8 relay、继承桌面；run=e2ee-4d6e67436a214ad9，检查66/66，返回视频478帧／有效478／无效0，首帧marker=true，退出码0/0。两轮replace的媒体／数据恢复及严格marker原判据通过，仅授本修复衍生范围。仅复用排除task7的冻结修复产物；acceptance_credit=0／full_gate_credit=0，pristine official=false。原official 14 PASS／2 FAIL及阶段冻结保持，未授官方SDK、完整互通／E2EE、跨机、物理声学或长稳信用；原run来源SHA256=5e4454b9bbdee2d9084f64ad4675c23e710d6cb1e7fe04e35f7b8c84c3f7b898。",
+          "source_path": "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+          "source_locator": "/cases/0/status"
+        },
+        {
+          "id": "flutter-repair-derivative-flutter-full",
+          "title": "修复衍生Flutter · flutter-full（credit 0）",
+          "status": "FAIL",
+          "date": "2026-10-22T09:18:02.472456Z",
+          "scope": "P05／P06共用同一case，不重复计数；原shared服务、ON／60秒／VP8 relay、继承桌面；run=e2ee-0770bdfb88004ca8，检查69/70，返回视频522帧／有效516／无效6，首帧marker=true，退出码0/0。原判据失败=relay_marker_content_valid；根因UNKNOWN，未剔除异常帧或按尺寸豁免。仅复用排除task7的冻结修复产物；acceptance_credit=0／full_gate_credit=0，pristine official=false。原official 14 PASS／2 FAIL及阶段冻结保持，未授官方SDK、完整互通／E2EE、跨机、物理声学或长稳信用；原run来源SHA256=284867a04d82783604731db5312dd392414bab091db938e2678db6d1d0147c26。",
+          "source_path": "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+          "source_locator": "/cases/1/status",
+          "current_disposition": {
+            "status": "DEFERRED",
+            "date": "2026-10-22T18:51:04+08:00",
+            "bug_id": "BUG-SFU-DECODER-CLEAR-DELIVERY",
+            "source_path": "reports/product/p05-p06-deferred-remediation-20261022.json",
+            "source_locator": "/case_dispositions/2/status",
+            "report_path": "reports/product/p05-p06-deferred-remediation-20261022.html"
+          }
+        },
+        {
+          "id": "cpp-data_cells-0",
+          "title": "官方C++数据 · official-to-native / shared / good",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/0/status"
+        },
+        {
+          "id": "cpp-data_cells-1",
+          "title": "官方C++数据 · official-to-native / shared / wrong",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/1/status"
+        },
+        {
+          "id": "cpp-data_cells-2",
+          "title": "官方C++数据 · official-to-native / shared / missing",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/2/status"
+        },
+        {
+          "id": "cpp-data_cells-3",
+          "title": "官方C++数据 · official-to-native / participant / good",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/3/status"
+        },
+        {
+          "id": "cpp-data_cells-4",
+          "title": "官方C++数据 · official-to-native / participant / wrong",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/4/status"
+        },
+        {
+          "id": "cpp-data_cells-5",
+          "title": "官方C++数据 · official-to-native / participant / missing",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/5/status"
+        },
+        {
+          "id": "cpp-data_cells-6",
+          "title": "官方C++数据 · native-to-official / shared / good",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/6/status"
+        },
+        {
+          "id": "cpp-data_cells-7",
+          "title": "官方C++数据 · native-to-official / shared / wrong",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/7/status"
+        },
+        {
+          "id": "cpp-data_cells-8",
+          "title": "官方C++数据 · native-to-official / shared / missing",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/8/status"
+        },
+        {
+          "id": "cpp-data_cells-9",
+          "title": "官方C++数据 · native-to-official / participant / good",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/9/status"
+        },
+        {
+          "id": "cpp-data_cells-10",
+          "title": "官方C++数据 · native-to-official / participant / wrong",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/10/status"
+        },
+        {
+          "id": "cpp-data_cells-11",
+          "title": "官方C++数据 · native-to-official / participant / missing",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/11/status"
+        },
+        {
+          "id": "cpp-controlled_video_cells-0",
+          "title": "官方C++受控视频 · vp8 / off",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-video-vp8-off-finish01；仅受控合成视频内容及该codec／OFF或ON条件。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/controlled_video_cells/0/status"
+        },
+        {
+          "id": "cpp-controlled_video_cells-1",
+          "title": "官方C++受控视频 · vp8 / on",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-video-vp8-on-finish01；仅受控合成视频内容及该codec／OFF或ON条件。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/controlled_video_cells/1/status"
+        },
+        {
+          "id": "cpp-controlled_video_cells-2",
+          "title": "官方C++受控视频 · h264 / off",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-video-h264-off-finish01；仅受控合成视频内容及该codec／OFF或ON条件。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/controlled_video_cells/2/status"
+        },
+        {
+          "id": "cpp-controlled_video_cells-3",
+          "title": "官方C++受控视频 · h264 / on",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-video-h264-on-finish01；仅受控合成视频内容及该codec／OFF或ON条件。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/controlled_video_cells/3/status"
+        },
+        {
+          "id": "official-cpp-audio-windows01-20261021-scoped",
+          "title": "官方C++合成音频：OFF／ON内容对应",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21",
+          "scope": "固定官方C++ SDK及Native显式绑定，同一Windows主机两进程，返回音频每种模式60秒；全部tone/silent/other窗口保留。仅内容存在PASS_SCOPED，不证明音频连续性、主观音质、物理嘴到耳、跨机、换钥或SDK进程内退场；content04仅历史支持，不重复列项。",
+          "source_path": "data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json",
+          "source_locator": "/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P06",
+      "title": "E2EE协议、安全与实际媒体",
+      "status": "DEFERRED",
+      "stage_status": {
+        "status": "DEFERRED",
+        "scope": "Current user disposition after closure; raw executed FAIL/PASS retained, no whole-group PASS or release credit",
+        "completed_scope": [
+          "Windows Native协议/换钥/data/Qt/退场及后端支持工程范围；三端ABBA与600秒观察按原工件成立。",
+          "固定派生Flutter的H264/VP8、换钥/RPC、ratchet/latejoin、wrong-slot恢复等独立成功格；官方C++视频和合成音频OFF/ON内容各自成立。",
+          "2026-10-22修复验证：派生Native三项直接运行（track/router、Room PC/DC等待、默认DX11模块clear/fence）各PASS；仅Native限定范围，非完整E2EE或跨SDK互通。"
+        ],
+        "remaining": [
+          "同slot换钥恢复与decoder-clear普通交付问题按用户要求DEFERRED；两组共用两个bug、三条失败来源，原FAIL与修复衍生PASS分开保留；详见延期原因与方案。",
+          "摄像头成本、物理口到耳、跨平台、长期稳定性和完整SDK进程内退休边界仍未完成。"
+        ],
+        "retained_failures": [
+          "与P05共用Flutter两项原FAIL：replace-two-relay02换钥后恢复不完整，flutter-full-relay03六帧严格内容异常；新增Native限定门不能覆盖。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "native_abba",
+          "stage_report_flutter",
+          "stage_report_cpp",
+          "official_audio",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "协议与密钥：声明Windows opt-in profile、同slot换钥、错误恢复、data、Qt及退场契约成立。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "实际媒体：VP8／H264等声明codec逐项核对双向内容、正确解密及受控relay返回的首帧／marker。",
+            "status": "DEFERRED",
+            "interpretation": "User-deferred scope; raw executed FAIL retained in original sources, not a new test receipt",
+            "previous_status": "FAIL"
+          },
+          {
+            "index": 2,
+            "definition": "安全输出：实际持久化、导出、应用owned dump策略及限定敏感sink符合原边界。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "性能与观察：同一冻结三端、同负载执行OFF／ON／ON／OFF配对及600秒功能观察。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T18:51:04+08:00",
+        "stage_execution": "DEFERRED_BY_USER_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence",
+        "previous_assessment": {
+          "status": "FAIL",
+          "as_of": "2026-10-22T05:15:45.499477+08:00",
+          "source": "reports/product/stage-closure-20261022.html"
+        },
+        "disposition_source": "reports/product/p05-p06-deferred-remediation-20261022.json",
+        "disposition_report": "reports/product/p05-p06-deferred-remediation-20261022.html",
+        "deferred_bug_ids": [
+          "BUG-FLUTTER-SAME-SLOT-KEY-REPLACE",
+          "BUG-SFU-DECODER-CLEAR-DELIVERY"
+        ],
+        "deferred_scope": "当前暂缓，不表示已修复或通过；阶段仍停止，不启动源码修改、构建或重测。"
+      },
+      "completed_results": [
+        {
+          "id": "functional-native-encoded-audio-backend",
+          "title": "e2ee-backend · native-encoded-audio-backend",
+          "status": "PASS",
+          "date": "2026-10-20T14:22:55.823231+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/56/current_status"
+        },
+        {
+          "id": "functional-native-backend-product-sender",
+          "title": "e2ee-backend-product · native-backend-product-sender",
+          "status": "PASS",
+          "date": "2026-10-20T14:58:51.836662+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/57/current_status"
+        },
+        {
+          "id": "functional-native-backend-product-receiver",
+          "title": "e2ee-backend-product · native-backend-product-receiver",
+          "status": "PASS",
+          "date": "2026-10-20T14:58:51.836662+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/58/current_status"
+        },
+        {
+          "id": "functional-native-backend-track-isolation",
+          "title": "e2ee-backend-product · native-backend-track-isolation",
+          "status": "PASS",
+          "date": "2026-10-20T14:58:51.836662+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/59/current_status"
+        },
+        {
+          "id": "functional-e2ee-h264",
+          "title": "e2ee-h264 · e2ee-h264",
+          "status": "PASS",
+          "date": "2026-10-20T14:43:44.423933+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/60/current_status"
+        },
+        {
+          "id": "functional-e2ee-inflight",
+          "title": "e2ee-inflight · e2ee-inflight",
+          "status": "PASS",
+          "date": "2026-10-20T14:49:00.943048+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/61/current_status"
+        },
+        {
+          "id": "functional-e2ee-output-evidence",
+          "title": "e2ee-output-evidence · e2ee-output-evidence",
+          "status": "PASS",
+          "date": "2026-10-20T14:58:41.015533+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/62/current_status"
+        },
+        {
+          "id": "functional-e2ee-reconnect",
+          "title": "e2ee-reconnect · e2ee-reconnect",
+          "status": "PASS",
+          "date": "2026-10-20T14:45:51.530423+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/64/current_status"
+        },
+        {
+          "id": "functional-e2ee-vp8",
+          "title": "e2ee-vp8 · e2ee-vp8",
+          "status": "PASS",
+          "date": "2026-10-20T14:44:47.982653+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/65/current_status"
+        },
+        {
+          "id": "functional-e2ee-whiteboard-late",
+          "title": "e2ee-whiteboard-late · e2ee-whiteboard-late",
+          "status": "PASS",
+          "date": "2026-10-20T14:47:27.378267+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/66/current_status"
+        },
+        {
+          "id": "functional-e2ee-wrong-key",
+          "title": "e2ee-wrong-key · e2ee-wrong-key",
+          "status": "PASS",
+          "date": "2026-10-20T14:42:13.894171+00:00",
+          "scope": "原输入已完成的独立case；仅限该case实际codec、负载和退出条件，不授整组通过。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/67/current_status"
+        },
+        {
+          "id": "flutter-VP8 OFF",
+          "title": "固定派生Flutter · VP8 OFF",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-e9d2d6568e3a4544；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/0/status"
+        },
+        {
+          "id": "flutter-VP8 ON",
+          "title": "固定派生Flutter · VP8 ON",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-51e9b80679b144f3；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/1/status"
+        },
+        {
+          "id": "flutter-H264 OFF",
+          "title": "固定派生Flutter · H264 OFF",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-5450d7f058274933；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/2/status"
+        },
+        {
+          "id": "flutter-h264-on",
+          "title": "固定派生Flutter · h264-on",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-53afae4241544b8a；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/3/status"
+        },
+        {
+          "id": "flutter-replace-two",
+          "title": "固定派生Flutter · replace-two",
+          "status": "FAIL",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：replace-two-relay02；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/4/status",
+          "current_disposition": {
+            "status": "DEFERRED",
+            "date": "2026-10-22T18:51:04+08:00",
+            "bug_id": "BUG-FLUTTER-SAME-SLOT-KEY-REPLACE",
+            "source_path": "reports/product/p05-p06-deferred-remediation-20261022.json",
+            "source_locator": "/case_dispositions/0/status",
+            "report_path": "reports/product/p05-p06-deferred-remediation-20261022.html"
+          }
+        },
+        {
+          "id": "flutter-ratchet-two",
+          "title": "固定派生Flutter · ratchet-two",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-04f5839bc78c4b05；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/5/status"
+        },
+        {
+          "id": "flutter-slot",
+          "title": "固定派生Flutter · slot",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-2ce2a0768ac04f4d；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/6/status"
+        },
+        {
+          "id": "flutter-wrong-slot",
+          "title": "固定派生Flutter · wrong-slot",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-5f2cd50f70164cb9；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/7/status"
+        },
+        {
+          "id": "flutter-missing-slot",
+          "title": "固定派生Flutter · missing-slot",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-fbbd5ddf7f9b4eea；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/8/status"
+        },
+        {
+          "id": "flutter-latejoin-ten",
+          "title": "固定派生Flutter · latejoin-ten",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-edafb08a4ddd47f2；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/9/status"
+        },
+        {
+          "id": "flutter-signal",
+          "title": "固定派生Flutter · signal",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-61f4f39a46c04648；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/10/status"
+        },
+        {
+          "id": "flutter-native-full",
+          "title": "固定派生Flutter · native-full",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：native-full-relay03；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/11/status"
+        },
+        {
+          "id": "flutter-flutter-full",
+          "title": "固定派生Flutter · flutter-full",
+          "status": "FAIL",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：flutter-full-relay03；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/12/status",
+          "current_disposition": {
+            "status": "DEFERRED",
+            "date": "2026-10-22T18:51:04+08:00",
+            "bug_id": "BUG-SFU-DECODER-CLEAR-DELIVERY",
+            "source_path": "reports/product/p05-p06-deferred-remediation-20261022.json",
+            "source_locator": "/case_dispositions/1/status",
+            "report_path": "reports/product/p05-p06-deferred-remediation-20261022.html"
+          }
+        },
+        {
+          "id": "flutter-rejoin",
+          "title": "固定派生Flutter · rejoin",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-bab797fba6514842；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/13/status"
+        },
+        {
+          "id": "flutter-rpc",
+          "title": "固定派生Flutter · rpc",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-bb0135da48c841c2；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/14/status"
+        },
+        {
+          "id": "flutter-ratchet-window-zero",
+          "title": "固定派生Flutter · ratchet-window-zero",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "各格分别采用原输入／原run：e2ee-c7e25102eade49f7；受控relay内容／媒体数据及所声明换钥、恢复条件。14 PASS／2 FAIL为逐格投影，不拼成同run完整互通或E2EE通过；不覆盖摄像头、物理跨机或长稳。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_flutter/latest_projection/cells/15/status"
+        },
+        {
+          "id": "flutter-repair-derivative-replace-two",
+          "title": "修复衍生Flutter · replace-two（credit 0）",
+          "status": "PASS",
+          "date": "2026-10-22T09:16:35.629004Z",
+          "scope": "P05／P06共用同一case，不重复计数；原shared服务、ON／60秒／VP8 relay、继承桌面；run=e2ee-4d6e67436a214ad9，检查66/66，返回视频478帧／有效478／无效0，首帧marker=true，退出码0/0。两轮replace的媒体／数据恢复及严格marker原判据通过，仅授本修复衍生范围。仅复用排除task7的冻结修复产物；acceptance_credit=0／full_gate_credit=0，pristine official=false。原official 14 PASS／2 FAIL及阶段冻结保持，未授官方SDK、完整互通／E2EE、跨机、物理声学或长稳信用；原run来源SHA256=5e4454b9bbdee2d9084f64ad4675c23e710d6cb1e7fe04e35f7b8c84c3f7b898。",
+          "source_path": "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+          "source_locator": "/cases/0/status"
+        },
+        {
+          "id": "flutter-repair-derivative-flutter-full",
+          "title": "修复衍生Flutter · flutter-full（credit 0）",
+          "status": "FAIL",
+          "date": "2026-10-22T09:18:02.472456Z",
+          "scope": "P05／P06共用同一case，不重复计数；原shared服务、ON／60秒／VP8 relay、继承桌面；run=e2ee-0770bdfb88004ca8，检查69/70，返回视频522帧／有效516／无效6，首帧marker=true，退出码0/0。原判据失败=relay_marker_content_valid；根因UNKNOWN，未剔除异常帧或按尺寸豁免。仅复用排除task7的冻结修复产物；acceptance_credit=0／full_gate_credit=0，pristine official=false。原official 14 PASS／2 FAIL及阶段冻结保持，未授官方SDK、完整互通／E2EE、跨机、物理声学或长稳信用；原run来源SHA256=284867a04d82783604731db5312dd392414bab091db938e2678db6d1d0147c26。",
+          "source_path": "data/completed-evidence/flutter-original-failures-retest-20261022-scoped.json",
+          "source_locator": "/cases/1/status",
+          "current_disposition": {
+            "status": "DEFERRED",
+            "date": "2026-10-22T18:51:04+08:00",
+            "bug_id": "BUG-SFU-DECODER-CLEAR-DELIVERY",
+            "source_path": "reports/product/p05-p06-deferred-remediation-20261022.json",
+            "source_locator": "/case_dispositions/2/status",
+            "report_path": "reports/product/p05-p06-deferred-remediation-20261022.html"
+          }
+        },
+        {
+          "id": "cpp-data_cells-0",
+          "title": "官方C++数据 · official-to-native / shared / good",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/0/status"
+        },
+        {
+          "id": "cpp-data_cells-1",
+          "title": "官方C++数据 · official-to-native / shared / wrong",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/1/status"
+        },
+        {
+          "id": "cpp-data_cells-2",
+          "title": "官方C++数据 · official-to-native / shared / missing",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/2/status"
+        },
+        {
+          "id": "cpp-data_cells-3",
+          "title": "官方C++数据 · official-to-native / participant / good",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/3/status"
+        },
+        {
+          "id": "cpp-data_cells-4",
+          "title": "官方C++数据 · official-to-native / participant / wrong",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/4/status"
+        },
+        {
+          "id": "cpp-data_cells-5",
+          "title": "官方C++数据 · official-to-native / participant / missing",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-forward-ready01；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/5/status"
+        },
+        {
+          "id": "cpp-data_cells-6",
+          "title": "官方C++数据 · native-to-official / shared / good",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/6/status"
+        },
+        {
+          "id": "cpp-data_cells-7",
+          "title": "官方C++数据 · native-to-official / shared / wrong",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/7/status"
+        },
+        {
+          "id": "cpp-data_cells-8",
+          "title": "官方C++数据 · native-to-official / shared / missing",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/8/status"
+        },
+        {
+          "id": "cpp-data_cells-9",
+          "title": "官方C++数据 · native-to-official / participant / good",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/9/status"
+        },
+        {
+          "id": "cpp-data_cells-10",
+          "title": "官方C++数据 · native-to-official / participant / wrong",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/10/status"
+        },
+        {
+          "id": "cpp-data_cells-11",
+          "title": "官方C++数据 · native-to-official / participant / missing",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-data-reverse-02；固定官方SDK的该方向及key条件下数据/流合同。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/data_cells/11/status"
+        },
+        {
+          "id": "cpp-controlled_video_cells-0",
+          "title": "官方C++受控视频 · vp8 / off",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-video-vp8-off-finish01；仅受控合成视频内容及该codec／OFF或ON条件。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/controlled_video_cells/0/status"
+        },
+        {
+          "id": "cpp-controlled_video_cells-1",
+          "title": "官方C++受控视频 · vp8 / on",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-video-vp8-on-finish01；仅受控合成视频内容及该codec／OFF或ON条件。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/controlled_video_cells/1/status"
+        },
+        {
+          "id": "cpp-controlled_video_cells-2",
+          "title": "官方C++受控视频 · h264 / off",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-video-h264-off-finish01；仅受控合成视频内容及该codec／OFF或ON条件。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/controlled_video_cells/2/status"
+        },
+        {
+          "id": "cpp-controlled_video_cells-3",
+          "title": "官方C++受控视频 · h264 / on",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "独立格原输入／attempt=cpp-video-h264-on-finish01；仅受控合成视频内容及该codec／OFF或ON条件。 多run不拼接完整矩阵通过，音频、跨物理机和长稳另判。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/official_cpp/latest_projection/controlled_video_cells/3/status"
+        },
+        {
+          "id": "official-cpp-audio-windows01-20261021-scoped",
+          "title": "官方C++合成音频：OFF／ON内容对应",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21",
+          "scope": "固定官方C++ SDK及Native显式绑定，同一Windows主机两进程，返回音频每种模式60秒；全部tone/silent/other窗口保留。仅内容存在PASS_SCOPED，不证明音频连续性、主观音质、物理嘴到耳、跨机、换钥或SDK进程内退场；content04仅历史支持，不重复列项。",
+          "source_path": "data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "native-abba-performance",
+          "title": "三Native OFF/ON/ON/OFF性能",
+          "status": "PASS",
+          "date": "2026-10-20T15:16:57.503106+00:00",
+          "scope": "three RelWithDebInfo native products, H264 window share+microphone, initial chat/file/whiteboard; third late join；每轮100秒，原固定CPU/内存/解码FPS预算；只授本次负载，不证明摄像头性能或完整E2EE。",
+          "source_path": "data/completed-evidence/native-e2ee-abba-20261020-result.json",
+          "source_locator": "/performance_status"
+        },
+        {
+          "id": "native-common-600",
+          "title": "三Native共同600秒逐轨观察",
+          "status": "PASS",
+          "date": "2026-10-20T15:16:57.503106+00:00",
+          "scope": "同机三独立Native进程，共同有效观察600秒；独立于ABBA性能结论，不等于跨物理机、Flutter或长期稳定性。",
+          "source_path": "data/completed-evidence/native-e2ee-abba-20261020-result.json",
+          "source_locator": "/observation/status"
+        },
+        {
+          "id": "historical-H133",
+          "title": "历史保留 · E2EE 真实摄像头 VP8/H264 双向内容对应",
+          "status": "PASS",
+          "date": "2026-10-01",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：Real camera content correspondence in memory, H264/VP8 both native/Flutter directions, before and after shared slot replacement；8x8 spatial correspondence is not perceptual quality or final display pixel verification；not a camera performance budget or long stability verdict",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/13/status"
+        },
+        {
+          "id": "historical-H135",
+          "title": "历史保留 · E2EE 实际持久化与安全导出扫描",
+          "status": "PASS",
+          "date": "2026-10-01",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：双产品进程实际 INI/DiagnosticPipeline/TelemetryHistoryStore/current export/bundle export；扫描文件及文件名。；不保存测试密钥及其 hash；不保证第三方历史内存副本或管理员/OS dump。",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/15/status"
+        },
+        {
+          "id": "native-clear-direct-runtime",
+          "title": "派生Native：三项clear／等待／DX11直接运行",
+          "status": "PASS_SCOPED_NATIVE_RUNTIME_ONLY",
+          "date": "来源收口于 2026-10-22T05:07:22.065002+00:00（非逐项执行时间）",
+          "scope": "track/router、Room PC/DC等待及默认DX11模块clear/fence三项直接运行均PASS；仅派生Native模块范围。SDK ACK／SFU收据未直接观测，替换、full reconnect及完整marker未取得本次端到端信用；不覆盖原Flutter失败、跨SDK内容、物理显示或完整E2EE。",
+          "source_path": "data/completed-evidence/repair-native-clear-20261022-runtime.json",
+          "source_locator": "/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P07",
+      "title": "屏幕采集、共享质量与显示边界",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "capture-backends与capture-quality-fullscreen桌面子门按各自实际范围完成；GDI50热切及signal/full重连完成。",
+          "WGC独立3600秒/100轮生命周期及1800秒实服六资源门均已完成，按各自负载复用。"
+        ],
+        "remaining": [
+          "物理多显示器、混合DPI、横竖屏、跨GPU及人工画质不由单机逻辑端点覆盖。",
+          "M0及生成图案不证明产品overlay目视或全部人工运动画质。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "stage_report_desktop",
+          "wgc3600",
+          "wgc1800",
+          "wgc1800_resources",
+          "gdi50"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "采集与交付：DXGI／WGC／GDI的窗口／全屏、实帧故障回退、停止释放和会议媒体交付分别成立。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "质量与成本：复杂内容capture／encode／decode、15／20／30 FPS、质量热切及重连按原负载与门限判定。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "局部长时：GDI 50次热切、WGC 1800秒六资源门及WGC同进程至少1小时／100轮按各自范围执行或等价复用。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "显示设备：双屏、负坐标、混合DPI、横竖屏、跨GPU／分辨率下的源身份、尺寸、坐标和鼠标正确。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 4,
+            "definition": "人工画质：小字号、表格、滚动及运动视频的可读性、拖影、清晰度与延迟感按声明FPS确认。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": [
+        {
+          "id": "desktop-capture-backends",
+          "title": "桌面限定子门 · capture-backends",
+          "status": "PASS",
+          "date": "2026-10-21T02:52:50.156736+00:00",
+          "scope": "实际backend/场景逐格结果；双屏、跨DPI/GPU及主观画质不由此推断。 原输入／attempt=capture-desktop11-dxgi02；仅该实际范围，不授完整主门。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/desktop_runtime/latest_projection/cells/1/status"
+        },
+        {
+          "id": "wgc-3600-100-20261021-result",
+          "title": "WGC局部生命周期：至少3600秒／100轮",
+          "status": "PASS",
+          "date": "2026-10-20T19:09:09.011938+00:00",
+          "scope": "原同进程100轮创建、采集、停止与join生命周期及资源门；不是实服会议、跨机音视频或B14 Formal。",
+          "source_path": "data/completed-evidence/wgc-3600-100-20261021-result.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "wgc-1800-20261021-resource-analysis",
+          "title": "WGC实服共享：1800秒六资源",
+          "status": "PASS",
+          "date": "2026-10-21T00:05:59.536640+00:00",
+          "scope": "仅同run连续共享1800秒六资源分析PASS；与3600秒局部生命周期是独立运行。WDDM计数不等于DXGI预算／驻留，未授主观画质或完整会议长稳。",
+          "source_path": "data/completed-evidence/wgc-1800-20261021-resource-analysis.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "gdi-hot-50-20261021-summary",
+          "title": "GDI：50次热切与信令／完整重连",
+          "status": "PASS",
+          "date": "2026-10-20T17:47:39.117942+00:00",
+          "scope": "原GDI原生功能与采集合同完成；六资源增长为NOT_APPLICABLE，不能由该PASS推出新的FPS预算、六资源或主观画质通过。",
+          "source_path": "data/completed-evidence/gdi-hot-50-20261021-summary.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "capture-quality-2k-20261021-result",
+          "title": "WGC 2K复杂图案：采集交付与客观画质",
+          "status": "PASS",
+          "date": "2026-10-21T02:04:17.330689+00:00",
+          "scope": "complex-wgc-screen原run：2560×1440自有文字／色彩／滚动图案，同进程两个不同Native Room；原采集交付、停止清理检查与30个PSNR/SSIM样本按原门限PASS。父批次不重复列项；不证明复杂真实桌面主观可读性、两独立进程、跨机或新2K性能预算。",
+          "source_path": "data/completed-evidence/capture-quality-2k-20261021-result.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "historical-H136",
+          "title": "历史保留 · B07/B08 屏幕共享十五项最终自动回归",
+          "status": "PASS",
+          "date": "2026-10-02",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：RelWithDebInfo；同进程两个 native Room 经真实 SFU；7 后端/fallback +6 质量/成本+GDI hot+WGC 1800s。；自有生成内容与本机 2K 环境；不证明持续复杂 4K/30、主观可读性、跨设备/多屏或数小时完整产品长稳。",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/16/status"
+        },
+        {
+          "id": "historical-H154",
+          "title": "历史保留 · 局部 WGC 24 轮最终 ETW 生命周期验收",
+          "status": "PASS",
+          "date": "2026-09-29",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：本机自有目标窗口，产品 Start/Stop，提升令牌 ETW；每轮 session/frame-pool/D3D/destroyed/join。；Elevated ETW token; ordinary-token no-ETW evidence retained separately.；HandleDuplicate is not reconstructed; system handle counts are authoritative.；Product inputs unchanged; subsequent probe-only soak mode has separate fingerprints.；Windows private callback owner remains UNKNOWN; module retention mitigates unload race. 本条仅保留历史24轮提升令牌ETW instrumentation／owner链专项，不重复计为新的生命周期或长稳完成。",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/19/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P08",
+      "title": "真实音视频设备与声学体验",
+      "status": "DEFERRED",
+      "stage_status": {
+        "status": "DEFERRED",
+        "scope": "Current user deferral; original assessment and executed verdicts retained, no whole-group test PASS",
+        "completed_scope": [
+          "HP/UGREEN等短preflight只保留设备前置范围。"
+        ],
+        "remaining": [
+          "独立已知物理音源及可核验PCM来源未确认，不能由合成tone替代。",
+          "完整设备枚举/切换/权限占用矩阵及真实声学听感、双讲/串音/失真需对应端点与人工环境。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "设备选择：当前产品摄像头／麦克风／扬声器的枚举、切换、稳定性、FPS和连续性成立。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "失败处理：权限、占用及回滚逐端点验证，不以设备可打开推断完整产品矩阵通过。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "独立音源：已知物理音源与可核验PCM支持内容对应，无法确认音源时保留SOURCE_NOT_CONFIRMED。",
+            "status": "DEFERRED",
+            "interpretation": "用户决定延期；原判定BLOCKED及对应未测／失败证据保留，未新增测试。",
+            "original_status": "BLOCKED"
+          },
+          {
+            "index": 3,
+            "definition": "真实声学：回声／降噪／增益／双讲／串音／失真及可闻卡顿由实际环境和听感判定。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-23",
+        "stage_execution": "DEFERRED_BY_USER_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence",
+        "original_status": "BLOCKED",
+        "disposition_source": "data/stage-user-disposition-20261023.json",
+        "disposition_report": "reports/product/stage-closure-20261022.html",
+        "disposition_reason": "用户决定延期当前BLOCKED／FAIL项，并评估剩余待测项无较大或严重问题，批准发版0.0.1；原测试判定与未测范围保留。"
+      },
+      "completed_results": [
+        {
+          "id": "historical-H115",
+          "title": "历史保留 · B09 对端 HP 摄像头短采集",
+          "status": "PASS",
+          "date": "2026-10-09",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：FIRST_ENUMERATED_DEVICE_SHORT_CAPTURE_ONLY_NO_PRODUCT_MATRIX_CREDIT；第一枚举设备/短访问，不证明设备稳定性、30FPS、热插拔、切换、占用/权限失败回滚或产品完整矩阵。权限变化与PASS时间相关，原BindToObject具体HRESULT及唯一根因UNKNOWN。",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/1/status"
+        },
+        {
+          "id": "historical-H116",
+          "title": "历史保留 · B09 本机 UGREEN 摄像头权限后短采集",
+          "status": "PASS",
+          "date": "2026-10-10",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：B09_LOCAL_CAMERA_PERMISSION_CHANGE_PREFLIGHT_ONLY；第一枚举设备/短访问，不证明设备稳定性、30FPS、热插拔、切换、占用/权限失败回滚或产品完整矩阵。权限变化与PASS时间相关，原BindToObject具体HRESULT及唯一根因UNKNOWN。",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/2/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P09",
+      "title": "网络、认证与服务恢复",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Latest completed eleven-case software network batch plus unclosed required scope; no whole-group PASS or release credit",
+        "completed_scope": [
+          "2026-10-22同一产物、同一隔离拓扑的11项软件网络矩阵同批完成：11 PASS／0 FAIL；清理、输入及terminal工件身份、外部环境和安全组恢复均PASS。",
+          "path-switch实际TCP、TURN实际relay/udp；11项均有解码增长、真实MeetingRoomWindow交付、双方自然退出及native退场／持久化关闭证据。批次汇总不额外计作测试项。"
+        ],
+        "remaining": [
+          "物理断网、实际音频恢复、UDP/RTP故障日志闭环及故障后live-current／UI导出未覆盖。",
+          "长稳、最终回归和发布资格未由本软件网络矩阵关闭。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "data/completed-evidence/p09-network-eleven-20261022-scoped.json"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "网络退化：baseline、丢包、抖动和限速逐条件测实际音视频恢复与正常清理。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "连接中断：断网、信令重连和完整重连分别验证Session状态、owner和媒体交付。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "服务与认证：真实服务重启及auth recovery恢复业务，不仅观察连接状态。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "路径：path switch与真实TURN relay有实际路径、媒体和退出证据。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T15:26:57.874258+08:00",
+        "stage_execution": "COMPLETED_SCOPED_BATCH",
+        "evidence_catalog": "data/completed-evidence/p09-network-eleven-20261022-scoped.json"
+      },
+      "completed_results": [
+        {
+          "id": "network-auth-recovery",
+          "title": "最新同批网络case · auth-recovery",
+          "status": "PASS",
+          "date": "2026-10-22T07:24:12.576400+00:00",
+          "scope": "本轮同批／同一新产物；decoded 14→25、DX11交付24帧，实际prflx/udp；双方自然退出0、native rooms_alive／cleanup_pending均0、持久化关闭及case清理PASS，同批输入身份PASS。仅该软件注入／合成视频范围，实际音频和物理故障另判；不授P09整组通过。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/cases/8/status"
+        },
+        {
+          "id": "network-bandwidth",
+          "title": "最新同批网络case · bandwidth",
+          "status": "PASS",
+          "date": "2026-10-22T07:23:06.770679+00:00",
+          "scope": "本轮同批／同一新产物；decoded 12→133、DX11交付131帧，实际prflx/udp；双方自然退出0、native rooms_alive／cleanup_pending均0、持久化关闭及case清理PASS，同批输入身份PASS。仅该软件注入／合成视频范围，实际音频和物理故障另判；不授P09整组通过。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/cases/3/status"
+        },
+        {
+          "id": "network-baseline",
+          "title": "最新同批网络case · baseline",
+          "status": "PASS",
+          "date": "2026-10-22T07:21:57.278450+00:00",
+          "scope": "本轮同批／同一新产物；decoded 17→28、DX11交付25帧，实际prflx/udp；双方自然退出0、native rooms_alive／cleanup_pending均0、持久化关闭及case清理PASS，同批输入身份PASS。仅该软件注入／合成视频范围，实际音频和物理故障另判；不授P09整组通过。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/cases/0/status"
+        },
+        {
+          "id": "network-full-reconnect",
+          "title": "最新同批网络case · full-reconnect",
+          "status": "PASS",
+          "date": "2026-10-22T07:24:01.303448+00:00",
+          "scope": "本轮同批／同一新产物；decoded 12→36、DX11交付33帧，实际prflx/udp；双方自然退出0、native rooms_alive／cleanup_pending均0、持久化关闭及case清理PASS，同批输入身份PASS。仅该软件注入／合成视频范围，实际音频和物理故障另判；不授P09整组通过。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/cases/7/status"
+        },
+        {
+          "id": "network-packet-loss",
+          "title": "最新同批网络case · packet-loss",
+          "status": "PASS",
+          "date": "2026-10-22T07:22:20.975834+00:00",
+          "scope": "本轮同批／同一新产物；decoded 13→235、DX11交付209帧，实际prflx/udp；双方自然退出0、native rooms_alive／cleanup_pending均0、持久化关闭及case清理PASS，同批输入身份PASS。仅该软件注入／合成视频范围，实际音频和物理故障另判；不授P09整组通过。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/cases/1/status"
+        },
+        {
+          "id": "network-jitter",
+          "title": "最新同批网络case · jitter",
+          "status": "PASS",
+          "date": "2026-10-22T07:22:43.765067+00:00",
+          "scope": "本轮同批／同一新产物；decoded 11→235、DX11交付218帧，实际prflx/udp；双方自然退出0、native rooms_alive／cleanup_pending均0、持久化关闭及case清理PASS，同批输入身份PASS。仅该软件注入／合成视频范围，实际音频和物理故障另判；不授P09整组通过。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/cases/2/status"
+        },
+        {
+          "id": "network-network-loss",
+          "title": "最新同批网络case · network-loss",
+          "status": "PASS",
+          "date": "2026-10-22T07:23:21.695905+00:00",
+          "scope": "本轮同批／同一新产物；decoded 12→31、DX11交付29帧，实际prflx/udp；双方自然退出0、native rooms_alive／cleanup_pending均0、持久化关闭及case清理PASS，同批输入身份PASS。仅该软件注入／合成视频范围，实际音频和物理故障另判；不授P09整组通过。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/cases/4/status"
+        },
+        {
+          "id": "network-service-restart",
+          "title": "最新同批网络case · service-restart",
+          "status": "PASS",
+          "date": "2026-10-22T07:23:39.602416+00:00",
+          "scope": "本轮同批／同一新产物；decoded 15→73、DX11交付68帧，实际prflx/udp；双方自然退出0、native rooms_alive／cleanup_pending均0、持久化关闭及case清理PASS，同批输入身份PASS。仅该软件注入／合成视频范围，实际音频和物理故障另判；不授P09整组通过。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/cases/5/status"
+        },
+        {
+          "id": "network-signal-reconnect",
+          "title": "最新同批网络case · signal-reconnect",
+          "status": "PASS",
+          "date": "2026-10-22T07:23:50.142198+00:00",
+          "scope": "本轮同批／同一新产物；decoded 14→36、DX11交付34帧，实际prflx/udp；双方自然退出0、native rooms_alive／cleanup_pending均0、持久化关闭及case清理PASS，同批输入身份PASS。仅该软件注入／合成视频范围，实际音频和物理故障另判；不授P09整组通过。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/cases/6/status"
+        },
+        {
+          "id": "network-path-switch",
+          "title": "最新同批网络case · path-switch",
+          "status": "PASS",
+          "date": "2026-10-22T07:24:31.120609+00:00",
+          "scope": "本轮同批／同一新产物；decoded 15→61、DX11交付57帧，实际prflx/tcp；双方自然退出0、native rooms_alive／cleanup_pending均0、持久化关闭及case清理PASS，同批输入身份PASS。仅该软件注入／合成视频范围，实际音频和物理故障另判；不授P09整组通过。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/cases/9/status"
+        },
+        {
+          "id": "network-turn-relay",
+          "title": "最新同批网络case · turn-relay",
+          "status": "PASS",
+          "date": "2026-10-22T07:24:47.609914+00:00",
+          "scope": "本轮同批／同一新产物；decoded 14→32、DX11交付32帧，实际relay/udp；双方自然退出0、native rooms_alive／cleanup_pending均0、持久化关闭及case清理PASS，同批输入身份PASS。仅该软件注入／合成视频范围，实际音频和物理故障另判；不授P09整组通过。",
+          "source_path": "data/completed-evidence/p09-network-eleven-20261022-scoped.json",
+          "source_locator": "/cases/10/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P10",
+      "title": "大会议容量、分页与固定负载长稳",
+      "status": "DEFERRED",
+      "stage_status": {
+        "status": "DEFERRED",
+        "scope": "Current user deferral; original assessment and executed verdicts retained, no whole-group test PASS",
+        "completed_scope": [
+          "固定16路低层300秒短门仅按其原负载、订阅/解码与分页范围保留。"
+        ],
+        "remaining": [
+          "100路发布前置仅61/100，未达到完整音频/翻页负载；混合长稳保持LONG_SOAK_NOT_RUN。",
+          "当前最终版固定grid9长稳是否仍要求需定版条件，不与B14生命周期拼接。"
+        ],
+        "retained_failures": [
+          "原61/100实际发布失败。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "负载前置：恢复100路实际发布与完整音频／翻页条件，未到达负载即停止，长稳记NOT_RUN。",
+            "status": "DEFERRED",
+            "interpretation": "用户决定延期；原判定FAIL及对应未测／失败证据保留，未新增测试。",
+            "original_status": "FAIL"
+          },
+          {
+            "index": 1,
+            "definition": "容量与收敛：核对实际订阅、RTP、解码／交付路数和分页收敛；固定16路低层300秒仅授予该短门范围。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "混合长稳：高清层、音频、翻页、恢复及资源曲线按当前声明负载和冻结时长执行。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "固定grid9：仅当定版仍要求该负载时执行当前版本长稳，保留实际活跃媒体、画质、音频、GPU与资源证据。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-23",
+        "stage_execution": "DEFERRED_BY_USER_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence",
+        "original_status": "FAIL",
+        "disposition_source": "data/stage-user-disposition-20261023.json",
+        "disposition_report": "reports/product/stage-closure-20261022.html",
+        "disposition_reason": "用户决定延期当前BLOCKED／FAIL项，并评估剩余待测项无较大或严重问题，批准发版0.0.1；原测试判定与未测范围保留。"
+      },
+      "completed_results": [
+        {
+          "id": "historical-H123",
+          "title": "历史保留 · B11 100发布 / 2K全屏第二页16路低层 / 300秒",
+          "status": "PASS_SCOPED / NOT_CLOSED",
+          "date": "2026-10-09",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：B11_100PUB_720P_SIMULCAST_FULLSCREEN_GRID16_300S；100路HD源广告不等于100路高层解码；实际16路320×150/180低层约15FPS。20Mbps仅用户确认配置，公网均3.359/峰3.560Mbps只证明该负载余量。16×720p原画质、音频/翻页/恢复、30分钟固定＋至少2小时混合长稳、actual RTP RID/GPU Present FPS/硬解归因仍未覆盖。",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/5/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P11",
+      "title": "白板、批注与协同负载",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "三产品进程白板B12八项、whiteboard-functional及annotation-runtime按实际范围完成。",
+          "1800-fixed04：一机8产品进程/4书写者、1802.609秒、50对共享/批注启停、每写者361笔，八端最终收敛，8/8自然退出、forced0且netem已清除。"
+        ],
+        "remaining": [
+          "单机多进程不等于物理多端；M0不覆盖产品overlay/候选框目视和跨DPI/多GPU完整人工对齐矩阵。",
+          "Debug合成4K数字不外推当前最终产品实服性能。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "whiteboard1800",
+          "whiteboard_b12",
+          "stage_report_desktop"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "三产品进程实服：同时写、图片资产、迟加入、同步、重连、导出像素及authority正常／异常退场。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "批注：跨DPI和质量切换后的连续画线／文字、缩放、预览与远端画面对齐。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "网络与负载：100ms RTT／2%丢包、4书写者／8人、各50次批注与共享启停及30分钟书写。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "局部确定性与4K合成：冻结白板依赖和测试工件，复核核心契约与原合成性能口径。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": [
+        {
+          "id": "desktop-annotation-runtime",
+          "title": "桌面限定子门 · annotation-runtime",
+          "status": "PASS",
+          "date": "2026-10-21T02:52:50.158257+00:00",
+          "scope": "M0 custom overlay capture exclusion, click-through and IME; candidate visual placement and full product overlay remain NOT_RUN 原输入／attempt=annotation-runtime-04；仅该实际范围，不授完整主门。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/desktop_runtime/latest_projection/cells/3/status"
+        },
+        {
+          "id": "whiteboard-b12-20261021-index",
+          "title": "B12白板：三独立产品进程八项",
+          "status": "PASS",
+          "date": "2026-10-21T01:44:36.174036+00:00",
+          "scope": "同机三独立产品进程、实服八项功能及Qt导出／独立像素回读；正常离会和authority异常断开各按其run判定，不是三台物理终端或主观批注对齐。",
+          "source_path": "data/completed-evidence/whiteboard-b12-20261021-index.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "whiteboard-1800-fixed04-20261021-result",
+          "title": "白板1800秒：8进程／4书写者／50对启停",
+          "status": "PASS",
+          "date": "2026-10-21T05:29:03.085176+00:00",
+          "scope": "一机8产品进程、4书写者，1802.609秒、每写者361笔、50对共享／批注启停；8端收敛、8/8自然退出、forced0及netem清除。替代同范围旧失败，不能外推跨DPI、物理跨机或主观视觉对齐。",
+          "source_path": "data/completed-evidence/whiteboard-1800-fixed04-20261021-result.json",
+          "source_locator": "/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P12",
+      "title": "日志工业化与安全边界",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "工程typed safe summary/业务raw语义及限定sink直接合同；service-restart、九成功网络子集、独立TURN封存导出/回读各自成立。"
+        ],
+        "remaining": [
+          "限定实服不等于完整L3；故障后live-current/UI导出、UDP/RTP及既有接受的deferred runtime边界未关闭。",
+          "原历史stability/crash/loss字段缺失不得回填。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "functional_media",
+          "resource20",
+          "turn_export",
+          "stage_report_network",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "工程合同：LG本地门与8 producer合成入口验证typed safe summary、持久化及输出行为。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "业务语义：raw detail在业务链完整保留，诊断sink只消费安全摘要，不因脱敏改变错误或恢复语义。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "限定实服：真实信令故障的日志、关联及导出按原范围判定，未覆盖的UDP／RTP故障保持未跑。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "安全finding：PR-SEC-001／IR-SEC-001按明确sink与已接受deferred runtime边界补核。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": [
+        {
+          "id": "functional-diagnostic_pipeline_test",
+          "title": "engineering-01 · diagnostic_pipeline_test",
+          "status": "PASS",
+          "date": "2026-10-20T14:15:38.067179+00:00",
+          "scope": "原输入已完成的独立case；工程／单元合同，不代替真实设备、服务或完整runtime。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/68/current_status"
+        },
+        {
+          "id": "functional-log_redaction_test",
+          "title": "engineering-01 · log_redaction_test",
+          "status": "PASS",
+          "date": "2026-10-20T14:15:38.067179+00:00",
+          "scope": "原输入已完成的独立case；工程／单元合同，不代替真实设备、服务或完整runtime。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/71/current_status"
+        },
+        {
+          "id": "network-nine-export_readback",
+          "title": "九成功网络子集：生产导出回读",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "显式选取原FAIL批次中的9个成功case；原FAIL、遗漏TURN和cleanup failure不改写，审计不算新runtime。 仅该完成审计条件；不是新的网络runtime或整组通过。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/network_audit/export_readback/status"
+        },
+        {
+          "id": "network-nine-independent_review",
+          "title": "九成功网络子集：独立支持包复盘",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "显式选取原FAIL批次中的9个成功case；原FAIL、遗漏TURN和cleanup failure不改写，审计不算新runtime。 仅该完成审计条件；不是新的网络runtime或整组通过。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/network_audit/independent_review/status"
+        },
+        {
+          "id": "service-restart-export-review",
+          "title": "service-restart生产导出与独立复盘",
+          "status": "PASS_SCOPED",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "原runtime按未受影响输入复用，本批补生产导出回读和独立复盘；原34文件不改写。 仅限定复用／审计范围，完整主门信用0。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/service_restart/status"
+        },
+        {
+          "id": "ui-smoke-export-observed15-20261021-scoped",
+          "title": "UI15三轮短测与三次生产导出回读",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21T10:46:33.8171459Z",
+          "scope": "strict UI短测3/3轮、三次生产导出回读；仅UI／导出范围，不授媒体、L3、长期内存、fault恢复或全隐私注入通过。",
+          "source_path": "data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "turn02-export-readback-20261021-scoped",
+          "title": "TURN02封存源：生产导出与独立回读",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21",
+          "scope": "7文件、93 revisions、61104指标及17 timeline的封存源生产导出回读；不重跑媒体，不等于fault后实时当前导出或整组通过。",
+          "source_path": "data/completed-evidence/turn02-export-readback-20261021-scoped.json",
+          "source_locator": "/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P13",
+      "title": "遥测与日志的性能、资源开销",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Latest completed sixty-second paired performance scope plus independent completed gates; no whole-group PASS or release credit",
+        "completed_scope": [
+          "2026-10-22同一冻结RelWithDebInfo工件六窗、三对60秒OFF／ON正式配对全部PASS；callback p99、CPU、工作集及UI批次均满足原门限，清理、输入身份及环境／安全组恢复PASS。",
+          "UIA20轮、5轮同进程残余及9000秒资源门分别保留各自原输入的独立PASS；当前完成结果6 PASS／0 FAIL，不拼接为同一最终工件的完整P13通过。"
+        ],
+        "remaining": [
+          "最新60秒配对与原180秒三对、UIA20、5轮残余及9000秒资源门的输入／窗口分别解释；最终来源和工件的完整P13贯通未关闭。",
+          "最终回归、P20 Formal及发布资格未由该配对子门授予；历史正式失败根因UNKNOWN，不声称新运行已解决原根因。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "data/completed-evidence/p13-performance-paired-20261022-scoped.json",
+          "stage_report_performance",
+          "telemetry9000",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "三组OFF／ON配对：同负载比较CPU／内存、callback p99与UI批次，沿用原门限及窗口。",
+            "status": "PASS_SCOPED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "独立UIA干扰：20轮查询与退出观察分别核对干扰、资源和清理。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "五轮同进程：join／leave后残余资源按原释放窗口判定。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "9000秒资源长门：真实媒体／UI／持久化及配额证据完整，不拼接其他运行。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T16:52:40.945203+08:00",
+        "stage_execution": "COMPLETED_SCOPED_BATCH",
+        "evidence_catalog": "data/completed-evidence/p13-performance-paired-20261022-scoped.json"
+      },
+      "completed_results": [
+        {
+          "id": "telemetry-uia-interference",
+          "title": "遥测UIA干扰：20轮",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "两个独立原输入分别判定的资源／生命周期子门；本条=uia-interference，不抵扣正式OFF/ON首对P99失败。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/telemetry_lifecycle/checks/0/status"
+        },
+        {
+          "id": "telemetry-residual-growth",
+          "title": "遥测同进程残余：5轮",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "两个独立原输入分别判定的资源／生命周期子门；本条=residual-growth，不抵扣正式OFF/ON首对P99失败。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/telemetry_lifecycle/checks/1/status"
+        },
+        {
+          "id": "telemetry-formal-60s-pair-1",
+          "title": "最新正式OFF/ON配对 · 第1对",
+          "status": "PASS",
+          "date": "2026-10-22T08:49:06.878305+00:00",
+          "scope": "同一冻结RelWithDebInfo工件，每窗60秒、计划3对；本对callback P99保守增幅-11.436950146627566%，原门限5%；CPU增量0.386523922248836个百分点、工作集增量11.90625MiB。六窗、三对均在同一运行中完成；清理、输入身份及环境／安全组恢复PASS。旧7.014681892332786% FAIL保留历史来源和UNKNOWN根因，原180秒表不覆盖，完整P13信用0。",
+          "source_path": "data/completed-evidence/p13-performance-paired-20261022-scoped.json",
+          "source_locator": "/pairs/0/status"
+        },
+        {
+          "id": "telemetry-formal-60s-pair-2",
+          "title": "最新正式OFF/ON配对 · 第2对",
+          "status": "PASS",
+          "date": "2026-10-22T08:49:06.878305+00:00",
+          "scope": "同一冻结RelWithDebInfo工件，每窗60秒、计划3对；本对callback P99保守增幅-6.758620689655171%，原门限5%；CPU增量0.29702174261488945个百分点、工作集增量10.49609375MiB。六窗、三对均在同一运行中完成；清理、输入身份及环境／安全组恢复PASS。旧7.014681892332786% FAIL保留历史来源和UNKNOWN根因，原180秒表不覆盖，完整P13信用0。",
+          "source_path": "data/completed-evidence/p13-performance-paired-20261022-scoped.json",
+          "source_locator": "/pairs/1/status"
+        },
+        {
+          "id": "telemetry-formal-60s-pair-3",
+          "title": "最新正式OFF/ON配对 · 第3对",
+          "status": "PASS",
+          "date": "2026-10-22T08:49:06.878305+00:00",
+          "scope": "同一冻结RelWithDebInfo工件，每窗60秒、计划3对；本对callback P99保守增幅-16.260162601626014%，原门限5%；CPU增量0.31407074741347263个百分点、工作集增量12.916015625MiB。六窗、三对均在同一运行中完成；清理、输入身份及环境／安全组恢复PASS。旧7.014681892332786% FAIL保留历史来源和UNKNOWN根因，原180秒表不覆盖，完整P13信用0。",
+          "source_path": "data/completed-evidence/p13-performance-paired-20261022-scoped.json",
+          "source_locator": "/pairs/2/status"
+        },
+        {
+          "id": "telemetry-9000s-20261021-result",
+          "title": "遥测原生媒体／UI／持久化：9000秒资源门",
+          "status": "PASS",
+          "date": "2026-10-20T23:32:46.514833+00:00",
+          "scope": "独立原输入9030.448秒资源门、预热300秒，原资源阈值PASS；不是新的三对OFF/ON性能通过，也不是B14八小时／100周期。",
+          "source_path": "data/completed-evidence/telemetry-9000s-20261021-result.json",
+          "source_locator": "/long_resource_gate/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P14",
+      "title": "全新克隆、发行工件与安装升级",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "10月21日非最终工件的只读身份与两处离线源码定位保留独立范围；当前工件身份采用下列10月22日三对staged结果，旧部署错配仍按原工件保留。",
+          "公开产品/私有工程解耦的既有工程证据仅按原输入复用。",
+          "2026-10-22修复验证：08:05完成当前diagnostic-ON产品EXE及DX11／OpenGL DLL三对PDB身份、staged输出及两份runtime renderer部署副本校验，PASS_SCOPED_STAGED_PAIR_IDENTITY。"
+        ],
+        "remaining": [
+          "最终来源/工件未收敛冻结，clean clone、签名、安装/升级/卸载、受控故障符号及外部Windows启动未执行。",
+          "10月21日历史旧部署renderer DLL age1与PDB age2错配的原失败及证据保留追溯，不重复计入当前工件身份结果。"
+        ],
+        "retained_failures": [
+          "旧部署DX11/OpenGL DLL与当前同GUID PDB的age错配；真实交换PDB负例为预期拒绝，不记产品FAIL。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "artifact_identity",
+          "resolution22",
+          "frozen_plan"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "干净来源：人工全新克隆完成依赖、configure、build、启动与历史边界检查；未执行保持NOT_RUN。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "产品／私有测试解耦：公开产品独立configure／build，私有bootstrap与受影响离线gate注册正确。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "工件身份：EXE／DLL／PDB对应，受控故障符号可匹配；签名和归档单独核验。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "安装与升级：安装器编译、Restart Manager、全新安装／升级／卸载、ACL及外机启动逐场景成立。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": [
+        {
+          "id": "artifact-negative_control",
+          "title": "真实交换PDB：预期拒绝负例",
+          "status": "PASS_EXPECTED_REJECTION",
+          "date": "2026-10-21",
+          "scope": "非最终发行工件的只读限定审计；仅本条身份／负例／离线定位条件。 未执行全新克隆、签名、安装升级卸载或外机启动，不授发行工件通过。",
+          "source_path": "data/completed-evidence/p14-artifact-identity-20261021-scoped.json",
+          "source_locator": "/negative_control/status"
+        },
+        {
+          "id": "artifact-offline_renderer_symbols",
+          "title": "两个renderer离线源码定位",
+          "status": "PASS_SCOPED_OFFLINE_SOURCE_LOOKUP",
+          "date": "2026-10-21",
+          "scope": "非最终发行工件的只读限定审计；仅本条身份／负例／离线定位条件。 未执行全新克隆、签名、安装升级卸载或外机启动，不授发行工件通过。",
+          "source_path": "data/completed-evidence/p14-artifact-identity-20261021-scoped.json",
+          "source_locator": "/offline_renderer_symbols/status"
+        },
+        {
+          "id": "historical-H127",
+          "title": "历史保留 · 私有tests/docs接入与产品解耦",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-11",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：公开产品与私有tests/docs解耦；本机私有bootstrap复用当前产品源码链接及targets。Debug产品构建和限定离线测试。；104是CTest发现/注册数，不是104项执行PASS。只确认当时本地Debug构建与2/2＋5/5；runtime未运行。当前仍有dirty源码，后续变更无统一冻结归属。",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/8/status"
+        },
+        {
+          "id": "historical-H175",
+          "title": "历史保留 · Windows 安装器编译及 Restart Manager 历史夹具",
+          "status": "PASS_SCOPED",
+          "date": "2026-09-26",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：2026-09-26文件时间佐证；Inno7.1.0编译Release目录；Restart Manager自有fixture。；既有0.1.0安装器快照，不证明当前HEAD发布包；未由此覆盖签名、全新安装/升级/卸载、安装ACL、Release EXE/DLL/PDB归档、外机启动和媒体。",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/33/status"
+        },
+        {
+          "id": "artifact-current-staged-pairs",
+          "title": "当前diagnostic-ON产品：三对EXE／DLL／PDB身份及部署副本校验",
+          "status": "PASS_SCOPED_STAGED_PAIR_IDENTITY",
+          "date": "2026-10-22T00:05:53.400547+00:00",
+          "scope": "本次EXE、DX11／OpenGL DLL三对PDB身份及staged输出校验通过；两份runtime renderer部署副本与对应构建DLL的SHA256一致。source provenance、最终SDK／Flutter冻结和发行资格未验证，产品runtime未运行；10月21日旧部署age错配属于不同工件，原失败及证据仅保留历史追溯，不重复计入当前结果。",
+          "source_path": "data/completed-evidence/repair-artifact-identity-20261022-result.json",
+          "source_locator": "/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P15",
+      "title": "跨机延迟与独立物理校准",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "LAN software clock and synthetic media submit baseline PASS; no whole-group or physical acceptance credit",
+        "completed_scope": [
+          "2026-10-22双机LAN UDP校时、媒体经阿里云SFU：55次交换，30/30 marker和有效单程；最大保守U=2.898ms≤10ms，独立复算PASS。",
+          "固定4秒预热／3秒跨度、滚32／250ms刷新、首次失效停止；双端exit0及进程／端口／临时规则／本轮云容器清理完成。"
+        ],
+        "remaining": [
+          "真实产品跨机媒体和Qt/DX11显示路径未执行；本轮仅合成媒体软件提交基线。",
+          "独立共享时钟光学／声学装置缺失，物理测量DEFERRED。"
+        ],
+        "retained_failures": [
+          "腾讯云SFU 41.258ms FAIL及UNKNOWN根因、阿里云SFU 26.496ms FAIL保留原判定、日期与证据；LAN PASS不追判历史分项根因。"
+        ],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "双机软件校时：修复并冻结双方输入，按现有10ms门核对校时误差。",
+            "status": "PASS",
+            "interpretation": "LAN affine interval model; 30/30 valid; independently reproduced maximum2898us <= original10000us gate; old SFU FAIL retained."
+          },
+          {
+            "index": 1,
+            "definition": "跨机软件延迟：校准通过后再测实际媒体延迟，保留完整采样与强身份。",
+            "status": "NOT_RUN",
+            "interpretation": "Synthetic software-submit baseline PASS; real product media/display latency gate NOT_RUN."
+          },
+          {
+            "index": 2,
+            "definition": "物理端到端：独立光学／声学装置完成校准与产品测量，设备缺失时保留DEFERRED。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T21:12:58+08:00",
+        "stage_execution": "COMPLETED_USER_AUTHORIZED_LAN_CLOCK_SOFTWARE_BASELINE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": [
+        {
+          "id": "p15-aliyun-software-clock",
+          "title": "双机软件校时 · LAN直连／媒体经阿里云SFU",
+          "status": "PASS",
+          "date": "2026-10-22T21:12:58+08:00",
+          "scope": "run=b18-20261022T131227Z-3bf2e7fe37e5；LAN UDP校时，媒体经阿里云任务SFU；affine_interval_v1。最大保守不确定度2898≤10000us PASS；有效软件单程样本30/30，marker匹配30/30；四时间戳与事件误差包络独立复算PASS。历史H122的41.258ms FAIL及UNKNOWN根因、原阿里云SFU的26.496ms FAIL保留原始证据及归档报告，不追判历史分项根因已修复。真实产品跨机媒体延迟门与独立光学／声学物理门未执行；合成媒体仅到软件提交，完整P15信用0。",
+          "source_path": "reports/product/p15-lan-clock-20261022.json",
+          "source_locator": "/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P16",
+      "title": "物理环境变化与系统恢复",
+      "status": "DEFERRED",
+      "stage_status": {
+        "status": "DEFERRED",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "软件fault injection/工程恢复仅在各自门引用，不计真实物理操作。"
+        ],
+        "remaining": [
+          "真实热插拔、拔网线、锁屏/RDP/休眠唤醒、受控断电及损坏恢复未在本阶段执行。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "真实热插拔：音视频／显示设备移除和恢复后，源身份、权限、媒体与资源状态正确。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "物理断网：拔网线及恢复后的网络、Session与实际媒体恢复分别成立。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "系统会话：锁屏／RDP／休眠唤醒后，采集、设备及业务状态符合声明行为。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "断电恢复：在受控条件核对持久化、损坏恢复及再次启动。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": []
+    },
+    {
+      "plan_code": "P17",
+      "title": "支持包与独立事故复盘",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "独立bundle-first信令/解码/渲染时间线复盘；TURN封存源导出与UI15三包独立回读按各自run完成。",
+          "本机工件身份和renderer离线源码定位不替代真实事故符号链。"
+        ],
+        "remaining": [
+          "故障后live-current UI导出、confirmed crash metadata/persistent loss summary等缺项保留。",
+          "支持包可读不证明事故根因确认；完整Release受控故障及最终符号分发未执行。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "stage_report_network",
+          "turn_export",
+          "ui_export",
+          "artifact_identity",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "事故时间线：独立审阅者可从支持包重建关键状态、运行身份和事件顺序。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "信息完整性：必要字段、缺失原因和安全输出边界可判断，不把unknown补成推测。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "Release符号：包内工件身份与符号对应，声明故障可定位到足够粒度。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": [
+        {
+          "id": "network-nine-export_readback",
+          "title": "九成功网络子集：生产导出回读",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "显式选取原FAIL批次中的9个成功case；原FAIL、遗漏TURN和cleanup failure不改写，审计不算新runtime。 仅该完成审计条件；不是新的网络runtime或整组通过。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/network_audit/export_readback/status"
+        },
+        {
+          "id": "network-nine-independent_review",
+          "title": "九成功网络子集：独立支持包复盘",
+          "status": "PASS",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "显式选取原FAIL批次中的9个成功case；原FAIL、遗漏TURN和cleanup failure不改写，审计不算新runtime。 仅该完成审计条件；不是新的网络runtime或整组通过。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/network_audit/independent_review/status"
+        },
+        {
+          "id": "service-restart-export-review",
+          "title": "service-restart生产导出与独立复盘",
+          "status": "PASS_SCOPED",
+          "date": "来源报告更新于 2026-10-21T02:52:50.224869+00:00（非逐格完成时间）",
+          "scope": "原runtime按未受影响输入复用，本批补生产导出回读和独立复盘；原34文件不改写。 仅限定复用／审计范围，完整主门信用0。",
+          "source_path": "reports/product/resource-completion-20261021-01.json",
+          "source_locator": "/entries/service_restart/status"
+        },
+        {
+          "id": "ui-smoke-export-observed15-20261021-scoped",
+          "title": "UI15三轮短测与三次生产导出回读",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21T10:46:33.8171459Z",
+          "scope": "strict UI短测3/3轮、三次生产导出回读；仅UI／导出范围，不授媒体、L3、长期内存、fault恢复或全隐私注入通过。",
+          "source_path": "data/completed-evidence/ui-smoke-export-observed15-20261021-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "turn02-export-readback-20261021-scoped",
+          "title": "TURN02封存源：生产导出与独立回读",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21",
+          "scope": "7文件、93 revisions、61104指标及17 timeline的封存源生产导出回读；不重跑媒体，不等于fault后实时当前导出或整组通过。",
+          "source_path": "data/completed-evidence/turn02-export-readback-20261021-scoped.json",
+          "source_locator": "/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P18",
+      "title": "远控授权、暂停与安全释放",
+      "status": "DEFERRED",
+      "stage_status": {
+        "status": "DEFERRED",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "既有focused/UI工程证据和USER_REPORTED_PASS保持各自来源，不授真实双机自动化通过。",
+          "2026-10-22修复验证：远控诊断输出ON／OFF两个直接工程门PASS：阻塞sink时UI继续处理暂停／停止／销毁，单worker和latest-only队列有界；非真实双机远控。"
+        ],
+        "remaining": [
+          "invoke_product_remote_control.py真实双方当前v2工件需第二Windows端点；常规桌面双机见证与安全桌面/IME/多屏/物理优先及长稳未执行。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "常规桌面双机自动化：私有入口 invoke_product_remote_control.py 使用配置化双方与服务器，真实 UI 授权及独立窗口见证键鼠效果、暂停恢复、本地软件输入优先和持键安全释放；离线验证不计真实双机通过。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "授权与本地优先：真实双方当前v2工件验证授权、权限边界和本地操作优先。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "生命周期：暂停／恢复、自动开始及指定安全释放操作后状态和资源一致。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "真实桌面：权限桌面、IME、多屏等声明条件逐项验证，长期行为单独留结果。",
+            "status": "DEFERRED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": [
+        {
+          "id": "functional-remote_control_ui_test",
+          "title": "engineering-02 · remote_control_ui_test",
+          "status": "PASS",
+          "date": "2026-10-20T14:51:04.724547+00:00",
+          "scope": "原输入已完成的独立case；工程／单元合同，不代替真实设备、服务或完整runtime。",
+          "source_path": "reports/product/functional-media-retest-20261020-01.json",
+          "source_locator": "/current_observations/84/current_status"
+        },
+        {
+          "id": "historical-H171",
+          "title": "历史保留 · 屏幕共享远控 v2 暂停/恢复 focused 与自动开始 UI 回归",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-05",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：RelWithDebInfo 受影响构建及focused；Qt/Wire/owner fake契约，不把OS效果推导成全runtime。；保护上限是静态合同，不是测得吞吐/时延。；双方必须更新v2；普通交互桌面，不覆盖提权/IME/无人值守、多屏混合DPI、动态拔屏/坐标变化与长稳。；最新自动开始真实双机复测在该现存文档仍为NOT_RUN；不从记忆补写PASS。",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/29/status"
+        },
+        {
+          "id": "remote-output-focused-contract",
+          "title": "远控诊断输出：ON／OFF直接工程门",
+          "status": "PASS",
+          "date": "2026-10-22",
+          "scope": "仅remote_control_probe_nonblocking_output_only：阻塞sink下暂停／停止／销毁可返回，单worker及latest-only队列有界；非真实双机、物理输入、安全桌面或长稳验收，无硬耗时上限声明。",
+          "source_path": "data/completed-evidence/repair-remote-output-20261022-receipt.json",
+          "source_locator": "/implementation_status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P19",
+      "title": "B14环境冻结与资格准入",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "本机direct冻结环境controller=e4b0a73762e84cb9ace03afc5fcb22f3：当前软件／工具及同进程退出前置按哈希复用，三次独立完整PILOT均为PILOT_PASS（每次2周期、78/78检查），release-gate READY／full_media_gpu_ready=true。仅该环境限定准入，不授完整P19或Formal信用。",
+          "本次真实检查覆盖合同内all-node预算、scheduler／queue／WDDM观测、UIA、固定负载、实际RTP／解码、音频连续性、整机NIC、诊断／遥测无丢失、释放与正常退出；仅三次短PILOT范围。",
+          "摄像头二次入会原专项（2026-10-19、run=299e0e35cb1f4bad9417c2ecaedbe091）为PASS_SCOPED：33 PASS／0 FAIL；同一产品进程两周期的本代VideoSource／RTC分段计数、source 1发布、独立接收解码及离会释放通过。首帧超时到GUI、首帧成功及过期回调拒绝另有原输入确定性测试通过；不抵扣当前三次资格或Formal。"
+        ],
+        "remaining": [
+          "其他host（含Windows .151）的当前真实产品强身份、global topology／all-node native／被动无参与／创建持有释放与cleanup仍需独立封存及三次完整PILOT；本机READY不外推。",
+          "本机READY仅表示冻结环境资格就绪，不外推其他host或最终发行工件；后续100周期／8小时Formal结果独立见P20，原机器FAIL与用户user_pass分别保留。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22",
+          "data/completed-evidence/p19-camera-rejoin-20261023-scoped.json"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "输入与环境：目标host的产品／工具／合同、强身份和完整环境冻结一致。",
+            "status": "PASS_SCOPED",
+            "interpretation": "PASS_SCOPED仅适用于本机direct冻结输入、当前验证导入及三PILOT绑定；其他host未通过。"
+          },
+          {
+            "index": 1,
+            "definition": "观测语义：global topology、all-node native／被动无参与、创建／持有／释放、未知值传播与cleanup均有完整证据。",
+            "status": "PASS_SCOPED",
+            "interpretation": "PASS_SCOPED仅覆盖本次三PILOT合同中实际GPU／身份／创建释放和cleanup检查；未知项及其他host不外推。"
+          },
+          {
+            "index": 2,
+            "definition": "摄像头二次入会：同一产品进程两周期均验证本代VideoSource／RTC分段计数、产品source 1发布和独立接收解码；首帧超时有失败终态及重试入口，离会释放完整。本项专项诊断不抵扣三次完整资格或Formal。",
+            "status": "PASS_SCOPED",
+            "interpretation": "PASS_SCOPED仅适用于2026-10-19原专项33/33 PASS及同批首帧超时确定性测试；原输入、原日期分别保留，未注入真实硬件首帧超时，不授当前工件、完整资格或Formal信用。"
+          },
+          {
+            "index": 3,
+            "definition": "完整PILOT：每个待用环境在同一冻结输入下取得三次独立完整PILOT PASS；提前退出和失败如实保留。",
+            "status": "PASS_SCOPED",
+            "interpretation": "本机同一冻结输入三次独立完整PILOT通过；不抵扣其他host的三轮资格。"
+          },
+          {
+            "index": 4,
+            "definition": "交接Formal：只有对应环境的全部准入成立才转交一次完整Formal，READY仅表示资格就绪。",
+            "status": "READY",
+            "interpretation": "READY仅适用于本机冻结环境；后续完整Formal结果及用户处置独立见P20，资格整组信用0。"
+          }
+        ],
+        "as_of": "2026-10-22T18:07:13.027190+00:00",
+        "stage_execution": "COMPLETED_SCOPED_BATCH",
+        "evidence_catalog": "data/completed-evidence/p19-qualification-20261023-completed-scoped.json"
+      },
+      "completed_results": [
+        {
+          "id": "current-local-b14-three-pilots",
+          "title": "本机当前冻结输入：3/3完整资格准入",
+          "status": "READY",
+          "date": "2026-10-22T18:07:13.027190+00:00",
+          "scope": "controller=e4b0a73762e84cb9ace03afc5fcb22f3；三次独立同进程双周期PILOT全部PASS，仅本机direct冻结环境READY。P19仍PARTIAL／full_gate_credit=0；摄像头专项、其他host与Formal保持独立原边界。",
+          "source_path": "data/completed-evidence/p19-qualification-20261023-completed-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "historical-camera-two-cycle-scoped",
+          "title": "摄像头二次入会原专项：33 PASS／0 FAIL",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-19T06:59:32.123957+00:00",
+          "scope": "摄像头二次入会原专项（2026-10-19、run=299e0e35cb1f4bad9417c2ecaedbe091）为PASS_SCOPED：33 PASS／0 FAIL；同一产品进程两周期的本代VideoSource／RTC分段计数、source 1发布、独立接收解码及离会释放通过。首帧超时到GUI、首帧成功及过期回调拒绝另有原输入确定性测试通过；不抵扣当前三次资格或Formal。 像素质量、原始DirectShow回调／转换失败、编码器输出／逐帧RTP及真实硬件超时注入均未由原专项测量；这些保留为证据边界，不降低已完成限定范围的原PASS。 历史原输入的专项通过不继承为当前产品工件、其他host、三次独立完整资格或Formal通过。",
+          "source_path": "data/completed-evidence/p19-camera-rejoin-20261023-scoped.json",
+          "source_locator": "/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "P20",
+      "title": "B14同进程8小时／100周期正式长稳",
+      "status": "user_pass",
+      "stage_status": {
+        "status": "user_pass",
+        "scope": "本次用户暂定接受B14长稳未闭环内存增长风险；原机器FAIL／64 MiB门及全部原始测量保留，不签无例外Formal或发布通过。",
+        "completed_scope": [
+          "run=5653c962b41646c4aa1e4600fefa8e97；同进程100周期／28824.411051秒，产品存活28820.990211秒；3200/3200逐轮检查PASS、11/11最终检查true，唯一跨周期Private增长FAIL。",
+          "同run300项计时仅OBSERVATION_ONLY；服务/任务与进程默认TokenOwner恢复收据PASS，owner执行formal FAILED/exit1。"
+        ],
+        "remaining": [
+          "继续定位本对话估算的10～38 MiB未闭环残余；同run、同窗口、互斥核算后提出合理新门限，未来重测前另行冻结。",
+          "68 MiB仅为本次讨论参考值，不追溯替换原64 MiB门限；本次不运行产品、重测或长稳。",
+          "原DEFERRED、VS内存专项NOT_RUN、其他host与最终发布回归边界不变。"
+        ],
+        "retained_failures": [
+          "本run resource_growth.private_bytes FAIL原记录保留；2026-10-23另记用户暂定PASS。旧完整run及其网络限定例外保留各自归档和原范围。"
+        ],
+        "inconclusive": [
+          "Private增长分配owner与泄漏根因仍UNKNOWN；10～38 MiB不是已证实泄漏量或上限，未闭环估算不能抵扣原实测值。",
+          "owner OS退出码未独立观察，不新增gate。"
+        ],
+        "evidence_refs": [
+          "data/completed-evidence/b14-formal-20261023-completed-scoped.json",
+          "reports/b14/b14-clipboard-readmission-20261019-01.json",
+          "data/b14-user-disposition-20261023.json",
+          "data/b14-historical-metrics.json",
+          "reports/b14/b14-historical-metrics.html"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "执行前置：明确资源增长与测量链，对应环境同输入三次完整PILOT通过，满足现有Formal执行条件。",
+            "status": "PASS_SCOPED",
+            "interpretation": "本机同冻结输入3/3独立PILOT准入READY；P19边界不变"
+          },
+          {
+            "index": 1,
+            "definition": "固定生命周期：同一产品进程连续8小时／100轮，关联cycle与session强身份，全部必需阶段完成。",
+            "status": "PASS",
+            "interpretation": "同产品强身份100周期与28800秒下限满足"
+          },
+          {
+            "index": 2,
+            "definition": "资源与媒体：按冻结释放窗口、GPU、音视频／共享连续性等门限独立判定，Private Bytes原64 MiB门限不变。",
+            "status": "FAIL",
+            "interpretation": "逐轮检查全PASS；跨周期Private Bytes增长超64MiB，其他三资源门PASS"
+          },
+          {
+            "index": 3,
+            "definition": "归档与完整性：遥测、日志、support bundle、质量和终态完整；按timing_measurements保留入离会及各scene首绘的逐轮起终点、版本与结果，丢失或缺项不得用其他run拼接。",
+            "status": "PASS_SCOPED",
+            "interpretation": "最终11项检查true与清理收据PASS；原DEFERRED及缺测边界保留"
+          }
+        ],
+        "as_of": "2026-10-23T02:46:59.226524+00:00",
+        "stage_execution": "FORMAL_COMPLETE_USER_PROVISIONAL_PASS_RUNTIME_PAUSED",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence",
+        "raw_status": "FAIL",
+        "disposition_as_of": "2026-10-23",
+        "disposition_source": "data/b14-user-disposition-20261023.json",
+        "user_disposition": {
+          "status": "user_pass",
+          "date": "2026-10-23",
+          "raw_verdict": "FAIL",
+          "source": "data/b14-user-disposition-20261023.json"
+        }
+      },
+      "completed_results": [
+        {
+          "id": "current-b14-latest-complete",
+          "title": "最新完整B14：100周期／8小时（user_pass）",
+          "status": "FAIL",
+          "date": "2026-10-23T02:13:55.4078362Z",
+          "scope": "run=5653c962b41646c4aa1e4600fefa8e97；100周期／28824.411051秒；3200逐轮检查及11最终检查通过，唯一跨周期Private增长95.869140625MiB＞原64MiB，根因UNKNOWN；原runner/owner exit1。原机器FAIL保留；2026-10-23用户暂定PASS另见data/b14-user-disposition-20261023.json，不扣除估算保留量、不改变旧门限。P19资格、摄像头专项及其他host保持独立；无新重测或发布信用。",
+          "source_path": "reports/b14/b14-clipboard-readmission-20261019-01.json",
+          "source_locator": "/formal/status",
+          "current_disposition": {
+            "status": "user_pass",
+            "date": "2026-10-23",
+            "source_path": "data/b14-user-disposition-20261023.json",
+            "source_locator": "/status",
+            "report_path": "data/b14-user-disposition-20261023.json"
+          }
+        }
+      ]
+    },
+    {
+      "plan_code": "P21",
+      "title": "软件更新与异步设置",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "update manifest/service、异步settings既有直接工程范围按影响复用。",
+          "四主题设置、重启、unsupported/empty/wrong-section回退、派生首窗、真实Windows偏好8行及DX11/CPU/当前GLES模块会中限定范围分别完成。"
+        ],
+        "remaining": [
+          "原冻结EXE首窗/物理无闪烁、桌面OpenGL会议矩阵、完整stage矩阵与正式连续性未证明。",
+          "当前工件增量构建，传递性clean-build来源未证明；最终工件产品链/最终回归未跑。",
+          "其他任意损坏INI/类型case并非本阶段新增执行项，不追加矩阵。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "theme_restart",
+          "theme_invalid",
+          "theme_first_window",
+          "theme_system",
+          "theme_seeds",
+          "meeting_theme",
+          "meeting_cpu",
+          "meeting_gles",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "更新清单与服务：当前受影响协议、安全和错误路径的直接gate成立。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "异步设置：状态投影、取消和生命周期按当前输入验证，不受late callback覆盖。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "主题设置与恢复：系统／浅色／深色／青绿即时生效且记住所选模式，重启在首窗前恢复；系统模式响应Windows应用明暗变化，手动模式不被系统覆盖；无效配置回退系统。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "产品链：同一冻结版本完成必要最终回归与实际runtime；未执行部分单列。",
+            "status": "NOT_RUN",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": [
+        {
+          "id": "theme-restart04-20261021-scoped",
+          "title": "四主题设置：产品重启恢复",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21",
+          "scope": "四主题独立进程设置及重启恢复，原strict输入和自然退出；不是首屏物理无闪烁、媒体连续性或完整舞台矩阵。",
+          "source_path": "data/completed-evidence/theme-restart04-20261021-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "theme-invalid02-20261021-scoped",
+          "title": "主题无效值：unsupported token回退",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21",
+          "scope": "原unsupported token种子、实际settings读回及回退；不外推任意畸形INI或首窗物理显示。",
+          "source_path": "data/completed-evidence/theme-invalid02-20261021-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "theme-configuration-seeds01-20261021-scoped",
+          "title": "主题配置：empty／wrong-section两个有限种子",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21",
+          "scope": "两个有限隔离配置种子的原完成Read；保留未使用pin在运行后的漂移，不外推任意INI、首窗或换机。",
+          "source_path": "data/completed-evidence/theme-configuration-seeds01-20261021-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "theme-first-window02-20261021-scoped",
+          "title": "主题：派生首窗限定观察",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21T14:05:38.321206+00:00",
+          "scope": "原限定首窗颜色／配置恢复观察；非物理扫描显示或无闪烁认证，不扩展到系统往返或媒体矩阵。",
+          "source_path": "data/completed-evidence/theme-first-window02-20261021-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "p21-system-theme16-20261021-scoped",
+          "title": "系统主题：真实Windows偏好八行",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21T14:48:19.342494+00:00",
+          "scope": "真实Windows light/dark偏好往返八行与恢复、strict输入及自然退出；仅该工件及设置窗口范围。",
+          "source_path": "data/completed-evidence/p21-system-theme16-20261021-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "p21-meeting-theme04-20261022-scoped",
+          "title": "会中主题：DX11限定设置交互",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-22",
+          "scope": "真实设置控件与合成媒体并发，DX11原工件限定范围；不授完整舞台视觉矩阵或物理声学通过。",
+          "source_path": "data/completed-evidence/p21-meeting-theme04-20261022-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "p21-meeting-cpu05-20261022-scoped",
+          "title": "会中主题：Qt CPU限定设置交互",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-22",
+          "scope": "真实设置控件与合成媒体并发，Qt CPU原工件限定范围；初始render stall保留，不授新连续性阈值或逐帧像素完整性。",
+          "source_path": "data/completed-evidence/p21-meeting-cpu05-20261022-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "p21-meeting-opengl05-20261022-scoped",
+          "title": "会中主题：当前GLES模块限定设置交互",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-22",
+          "scope": "当前GLES模块真实会中设置与合成媒体；不能外推Desktop OpenGL、完整DPI／舞台矩阵或传递性全新构建。",
+          "source_path": "data/completed-evidence/p21-meeting-opengl05-20261022-scoped.json",
+          "source_locator": "/status"
+        },
+        {
+          "id": "ui9-theme-settings",
+          "title": "UI09：四主题设置窗口交互",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-21T05:31:33.3889942Z",
+          "scope": "四主题settings选择、持久化与同进程重开；其他重启、首窗、真实系统偏好及会中renderer范围分别用各自专项，不拼成完整P21通过。",
+          "source_path": "data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json",
+          "source_locator": "/theme/status"
+        },
+        {
+          "id": "historical-H129",
+          "title": "历史保留 · 更新清单/更新服务/异步设置 focused CTest",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-12",
+          "scope": "原输入／原日期的封存摘要；未新增同范围重测，不继承为当前工件PASS。原范围：私有Debug工程settings_async_test、update_manifest_test、update_service_test。；静态/单元/本地契约证据；没有端到端真实更新发布、真实服务器下载安装/重启或完整RC回归证据。无记录的统一冻结manifest，不能外推runtime。",
+          "source_path": "data/report-input.json",
+          "source_locator": "/historicalRecords/9/status"
+        }
+      ]
+    },
+    {
+      "plan_code": "A01",
+      "title": "自动化工具与判定器合同",
+      "status": "PARTIAL",
+      "stage_status": {
+        "status": "PARTIAL",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "变更工具的直接正负例/缺证据合同按各次冻结输入通过并复用；P03有限内容23项Python+PS7集合、实际WinPS5.1 stub/嵌入C#compile-only通过。",
+          "P13 bool合同14项及八窗实际数据类型回读完成；只授工具范围。",
+          "2026-10-22修复验证：Flutter同slot换钥源码合同及PC关闭后observer registry离线门各ctest 1/1 PASS；不授Flutter修复DLL实服或原失败通过。"
+        ],
+        "remaining": [
+          "工具PASS不升级产品runtime/正式门；本阶段不重复未变工具，不新增判定器。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "resolution22",
+          "p03_offline",
+          "p03_winps",
+          "p03_source_review"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "捕获排空：变更的helper在退出、取消及失败后完成owned cleanup。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "调用合同：UIA JSONL caller与调度只消费实际输出，不补写成功结果。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "判定器：正负例、证据缺失和状态边界正确，未变独立helper仅在等价证明后复用。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": []
+    },
+    {
+      "plan_code": "A02",
+      "title": "ETW测量链、证据合同与准入",
+      "status": "INCONCLUSIVE",
+      "stage_status": {
+        "status": "INCONCLUSIVE",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "离线证据/analyzer/receipt-adapter、既有wrapper和符号合同按各原限定结果复用。"
+        ],
+        "remaining": [
+          "当前非管理员ETW查询handle2为AccessDenied，capture未开始；原loss/guard/BLOCKED/UNAVAILABLE不重写或自动重试。",
+          "完整zero-loss库存/topology/ownership/phase及8GiB热窗口准入未齐；符号覆盖不证明根因。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "离线证据合同：守恒与false_growth／false_idle_transient／dropped_unknown_bytes／subtract_unmatched_free／credit_upgrade五个负例成立；来源或脚本变化须重新核对。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "analyzer完整逻辑：core／contract／receipt-adapter及STOP-return时钟接口在当前输入下成立，未变直接门按指纹复用。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "owner与cleanup：Session4 wrapper按同run／identity／retained-handle实测退出与owned cleanup；native INVALID／null不得补写成有效。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 3,
+            "definition": "捕获准入：沿用零loss、完整库存／topology／relation／ownership／phase与冻结预算，热窗口原8 GiB可用commit要求不放宽。",
+            "status": "BLOCKED",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 4,
+            "definition": "窗口归因：完整候选窗口的分配语义、模块／符号强身份和unknown完整保留；旧ETL补分析只授予离线范围信用。",
+            "status": "INCONCLUSIVE",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": []
+    },
+    {
+      "plan_code": "A03",
+      "title": "释放窗口内存归属与修复对照",
+      "status": "INCONCLUSIVE",
+      "stage_status": {
+        "status": "INCONCLUSIVE",
+        "scope": "Frozen stage assessment; no whole-group PASS or release credit",
+        "completed_scope": [
+          "既有ETL、owner/页/heap离线分析和baseline/fixed局部观察按原输入复用。"
+        ],
+        "remaining": [
+          "第6heap/页/PRIVATE commit完整归属与增长因果未闭合；PCM超限独立保留。",
+          "局部资源收益不关闭R181/B14正式资源失败，不得以夹具/系统缓存解释推断产品无泄漏。"
+        ],
+        "retained_failures": [],
+        "inconclusive": [],
+        "evidence_refs": [
+          "frozen_plan",
+          "report_data",
+          "resolution22"
+        ],
+        "full_gate_credit": 0,
+        "gates": [
+          {
+            "index": 0,
+            "definition": "完整释放边界：同步取得库存、页和heap owner证据，核对未知第6 heap及页归属与增长关系。",
+            "status": "INCONCLUSIVE",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 1,
+            "definition": "同输入对照：baseline／fixed保持相同负载、释放窗口和强身份，消除前台／GPU等混杂。",
+            "status": "PARTIAL",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          },
+          {
+            "index": 2,
+            "definition": "收益与因果：资源差异、未知贡献和可归属部分分别报告；未闭环保持INCONCLUSIVE／UNKNOWN。",
+            "status": "INCONCLUSIVE",
+            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+          }
+        ],
+        "as_of": "2026-10-22T05:15:45.499477+08:00",
+        "stage_execution": "STOPPED_AFTER_CLOSURE",
+        "evidence_catalog": "data/stage-closure-20261022.json#evidence"
+      },
+      "completed_results": []
+    }
+  ]
 }

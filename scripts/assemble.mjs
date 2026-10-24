@@ -11,6 +11,7 @@ import {refreshCompleted} from './refresh-completed.mjs';
 import {refreshHistory} from './refresh-history.mjs';
 import {refreshStage} from './refresh-stage.mjs';
 import {refreshPlanResults} from './refresh-plan-results.mjs';
+import {refreshStageReport} from './render-stage-closure.mjs';
 import {buildReportCatalog, renderReportDirectory} from './report-catalog.mjs';
 
 const dest = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -26,6 +27,7 @@ await refreshCompleted(dest, data);
 await refreshHistory(dest, data);
 await refreshStage(dest, data);
 await refreshPlanResults(dest, data);
+await refreshStageReport(dest, data);
 const reportCatalog = await buildReportCatalog(dest);
 data.meta.documentRevisedAt = new Date().toISOString();
 const revisionDate = new Intl.DateTimeFormat('sv-SE', {timeZone: 'Asia/Shanghai', dateStyle: 'short'}).format(new Date(data.meta.documentRevisedAt));
@@ -38,6 +40,8 @@ data.documentRevision.changes.push('P13当前整组PARTIAL、完成结果6 PASS�
 data.documentRevision.changes.push('P05／P06按用户要求将当前失败处置改为DEFERRED；保留原实测FAIL、日期及来源，登记两个共享bug、优先A1／条件备选B和后续串并行修复顺序，本轮未修复或重测');
 data.documentRevision.changes.push('P15最新双机LAN软件校时PASS：媒体经阿里云SFU，最大保守不确定度2.898ms低于原10ms门，30/30有效并完成独立误差包络复算；历史41.258ms及26.496ms FAIL保留，真实产品媒体与物理测量门未执行，整组PARTIAL');
 data.documentRevision.changes.push('P19摄像头二次入会子项按原33/33 PASS及首帧超时确定性测试更正为PASS_SCOPED；保留2026-10-19原输入／日期、当前三轮资格READY、其他host和Formal独立边界，整组PARTIAL');
+data.documentRevision.changes.push('P14工件身份采用10月22日已完成的三对EXE／DLL／PDB及两份runtime部署副本校验PASS；旧部署age错配仅保留历史证据，不重复计入当前结果，整组仍PARTIAL');
+data.documentRevision.changes.push('P08／P10按用户要求将当前BLOCKED／FAIL处置改为DEFERRED；阶段收口页同步主报告最新结果，2026-10-23用户评估剩余待测项无较大或严重问题并批准发版0.0.1，原测试判定保留');
 const productPlans = data.retestRecords.filter(record => record.plan_kind === 'product');
 const auxiliaryPlans = data.retestRecords.filter(record => record.plan_kind === 'auxiliary');
 const timestamp = new Intl.DateTimeFormat('sv-SE', {timeZone: 'Asia/Shanghai', dateStyle: 'short', timeStyle: 'medium'}).format(new Date(data.meta.documentRevisedAt));
@@ -73,7 +77,7 @@ const html = `<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cohavora · 验收计划与证据</title><style>${css}</style></head><body>
 <header class="hero"><div class="kicker">COHAVORA · ACCEPTANCE</div><h1>验收计划与测试证据</h1><p>按验收目标组织执行组，按原版本保留结果。先看实测摘要，再查阅待测范围与历史依据。</p><div class="tags"><span>文档修订 ${esc(timestamp)} · 北京时间</span><span>证据分类基准 2026-10-12/13</span><span>本次仅更新文档</span></div></header>
 <div class="shell"><aside><nav aria-label="报告目录"><a href="#decision">验收结论</a><a href="#highlights">五类实测摘要</a><a href="#retests">产品验收计划 · ${productPlans.length}</a><a href="#memory-usage">平均内存占用</a><a href="#test-environments">原测试环境</a><a href="#history">历史最终结果</a><a href="#appendix">工具与审计附录</a></nav><p>计划按当前阶段状态筛选；历史结果保留原状态。PASS 与 PASS_SCOPED 精确区分。</p><button id="print-main">打印报告</button><p><a href="data/test-plan.json">维护验收计划</a><br><a href="data/report-data.json">完整结构化数据</a><br><a href="validation.json">报告静态核验</a></p></aside><main>
-<section id="decision"><h2>验收结论</h2><p class="lede">2026-10-22阶段已收口（PARTIAL），完整主门完成0；最终回归NOT_RUN，当前证据仍不足以签发项目正式验收通过。<a href="${esc(data.stageRefresh.report_path)}">查看阶段收口结果与剩余范围</a>。</p><p class="boundary"><b>B14：暂定PASS（user_pass）。</b>按2026-10-23用户决定接受当前未闭环内存增长风险；最新完整100轮的Private Bytes增长95.869140625 MiB，原机器FAIL与64 MiB门限保留。10～38 MiB为本对话残余估算，用户认为规模较小；后续继续定位并制定合理新门限。<a href="data/b14-user-disposition-20261023.json">暂定处置</a> · <a href="reports/b14/b14-historical-metrics.html">五次历史指标</a>。未授予无例外Formal或发布验收通过。</p>
+<section id="decision"><h2>验收结论</h2><p class="lede">${esc(data.stageReleaseDecision.statement)}。<a href="${esc(data.stageRefresh.report_path)}">查看阶段收口结果与剩余范围</a>。</p><p class="boundary"><b>B14：暂定PASS（user_pass）。</b>按2026-10-23用户决定接受当前未闭环内存增长风险；最新完整100轮的Private Bytes增长95.869140625 MiB，原机器FAIL与64 MiB门限保留。10～38 MiB为本对话残余估算，用户认为规模较小；后续继续定位并制定合理新门限。<a href="data/b14-user-disposition-20261023.json">暂定处置</a> · <a href="reports/b14/b14-historical-metrics.html">五次历史指标</a>。<a href="${esc(data.stageReleaseDecision.source)}">0.0.1发版批准</a>记录本次用户决定。</p>
 <div class="metric-grid"><div class="metric"><strong>${productPlans.length}</strong><span>产品验收组<br>合并主题，保留独立子门</span></div><div class="metric"><strong>${auxiliaryPlans.length}</strong><span>附属工具／诊断组<br>随依赖执行，见附录</span></div><div class="metric"><strong>52 → ${data.retestRecords.length}</strong><span>待测入口精简<br>原条目去向全部可追溯</span></div><div class="metric"><strong>${data.historicalRecords.length}</strong><span>历史最终结果<br>保留原状态与版本边界</span></div></div><p class="overview-note">执行组数量不是用例数或通过率。本次只整理报告，未启动构建、产品、服务、设备测试或长稳。基准日的 ${data.currentRecords.length} 条限定工具结果放入附录，未重新核验为当前产品通过。</p></section>
 <section id="highlights"><h2>五类实测摘要</h2><p>以下按原栏目更新已完成且同范围的最新结果；未执行、仅尝试及未完成的范围保留原数据。展开后查看各指标日期、门限、环境与限制，不合并不同运行的验收信用。</p><div class="highlight-grid">${highlightCards}</div></section>
 <section id="retests"><h2>产品验收计划</h2><p>计划卡片显示最新阶段评估状态；展开查看已完成范围、剩余项及原始来源，详见<a href="${esc(data.stageRefresh.report_path)}">最新阶段收口报告</a>。阶段PARTIAL或某个子门PASS均不代表整组通过。同组共享准备步骤和冻结工件，每个验收子门分别判定。与当前改动无关且输入完整一致的结果可复用；改变的范围才补测。物理条件不足、已暂缓的现场测试和正式长稳继续保持原暂停边界。</p>${renderTimingDefinitions(data.timingMeasurements, data.b14CycleSummary)}${toolbar('retest')}${consolidationHTML}</section>

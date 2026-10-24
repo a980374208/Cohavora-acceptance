@@ -49,6 +49,28 @@ export async function refreshStage(root, data, {writeEvidence = true} = {}) {
   assert.equal(report.summary.final_regression_status, 'NOT_RUN');
   assert.equal(stage.groups.length, 24);
   const stageByCode = new Map(stage.groups.map(group => [group.plan_code, group]));
+  const stageDecisionSource = await read('data/stage-user-disposition-20261023.json');
+  const stageDecision = stageDecisionSource.value;
+  assert.equal(stageDecision.schema, 'cohavora-stage-user-release-disposition-v1');
+  assert.equal(stageDecision.status, 'USER_APPROVED_RELEASE');
+  assert.equal(stageDecision.stage_status, 'PARTIAL');
+  assert.equal(stageDecision.release_approval.status, 'APPROVED_BY_USER');
+  assert.equal(stageDecision.release_approval.version, stageDecision.version);
+  assert.deepEqual(stageDecision.deferred_groups.map(row => row.plan_code), ['P08', 'P10']);
+  for (const disposition of stageDecision.deferred_groups) {
+    const target = data.retestRecords.find(record => record.plan_code === disposition.plan_code);
+    assert.equal(stageByCode.get(disposition.plan_code).stage_status.status, disposition.original_status);
+    assert.equal(target.stage_status.original_status, disposition.original_status);
+    assert.equal(target.status, disposition.status);
+    assert.equal(target.stage_status.disposition_source, stageDecisionSource.relative);
+    for (const gate of disposition.gate_dispositions) {
+      const current = target.stage_status.gates.find(row => row.index === gate.index);
+      assert.equal(current.original_status, gate.original_status);
+      assert.equal(current.status, gate.status);
+    }
+    target.sources = unique([...target.sources, stageDecisionSource.relative]);
+  }
+  data.stageReleaseDecision = {...structuredClone(stageDecision), source: stageDecisionSource.relative};
 
   // Retain the original closed stage and bind later completed subscopes separately.
   const repairSources = await read('data/completed-evidence/repair-validation-20261022-sources.json');
@@ -206,11 +228,13 @@ export async function refreshStage(root, data, {writeEvidence = true} = {}) {
   cameraAssessment.completed_scope[2] = camera.completed_scope;
   assert.ok(cameraAssessment.remaining[1].startsWith('摄像头二次入会独立专项仍PARTIAL：'));
   cameraAssessment.remaining.splice(1, 1);
+  cameraAssessment.remaining[1] = '本机READY仅表示冻结环境资格就绪，不外推其他host或最终发行工件；后续100周期／8小时Formal结果独立见P20，原机器FAIL与用户user_pass分别保留。';
+  cameraAssessment.gates[4].interpretation = 'READY仅适用于本机冻结环境；后续完整Formal结果及用户处置独立见P20，资格整组信用0。';
   cameraAssessment.gates[2].status = camera.status;
   cameraAssessment.gates[2].interpretation = camera.interpretation;
   cameraAssessment.evidence_refs.push(cameraSource.relative);
   const p19Plan = data.retestRecords.find(record => record.plan_code === 'P19');
-  assert.deepEqual(p19Plan.stage_status, cameraAssessment, 'P19 camera correction must preserve all other recorded qualification fields');
+  assert.deepEqual(p19Plan.stage_status, cameraAssessment, 'P19 camera interpretation and independent Formal reference preserve qualification evidence');
   p19Plan.sources = unique([...p19Plan.sources, p19Source.relative, cameraSource.relative]);
   data.completedP19CameraRefresh = {
     source: cameraSource.relative, sha256: cameraSource.receipt.sha256, bytes: cameraSource.receipt.bytes,

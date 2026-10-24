@@ -1089,29 +1089,43 @@
   "reports/product/stage-closure-20261022.json": {
     "original_path": "reports/product/stage-closure-20261022.json",
     "portable_path": "reports/product/stage-closure-20261022.json",
-    "sha256": "b72a00b897d899ba89aa9bf68003742a6da83b2787ddc22d469da56390e9c544",
-    "bytes": 946,
+    "sha256": "22873a551384fdd12030b03948cf40e01e640627865b66e752a80fefc244c41c",
+    "bytes": 203026,
     "status": "COMPLETED_SCOPED_RESULT_SOURCE"
   },
   "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/stage-closure-20261022.json": {
     "original_path": "reports/product/stage-closure-20261022.json",
     "portable_path": "reports/product/stage-closure-20261022.json",
-    "sha256": "b72a00b897d899ba89aa9bf68003742a6da83b2787ddc22d469da56390e9c544",
-    "bytes": 946,
+    "sha256": "22873a551384fdd12030b03948cf40e01e640627865b66e752a80fefc244c41c",
+    "bytes": 203026,
     "status": "COMPLETED_SCOPED_RESULT_SOURCE"
   },
   "reports/product/stage-closure-20261022.html": {
     "original_path": "reports/product/stage-closure-20261022.html",
     "portable_path": "reports/product/stage-closure-20261022.html",
-    "sha256": "c9c840f208a0ecaa91263069444b89edc6d3375359aea5dce0e556d8ce7646e8",
-    "bytes": 18683,
+    "sha256": "2465b25c47b7f7549e33850cad070e5bc86d667d68b13f1067e2f0bcd6497f34",
+    "bytes": 181851,
     "status": "COMPLETED_SCOPED_RESULT_SOURCE"
   },
   "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/stage-closure-20261022.html": {
     "original_path": "reports/product/stage-closure-20261022.html",
     "portable_path": "reports/product/stage-closure-20261022.html",
-    "sha256": "c9c840f208a0ecaa91263069444b89edc6d3375359aea5dce0e556d8ce7646e8",
-    "bytes": 18683,
+    "sha256": "2465b25c47b7f7549e33850cad070e5bc86d667d68b13f1067e2f0bcd6497f34",
+    "bytes": 181851,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "data/stage-user-disposition-20261023.json": {
+    "original_path": "data/stage-user-disposition-20261023.json",
+    "portable_path": "data/stage-user-disposition-20261023.json",
+    "sha256": "3b3d1ba98fe6072e3270d3ac095b66434a76afc9889adfc1eac94e0983a8b765",
+    "bytes": 1359,
+    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/stage-user-disposition-20261023.json": {
+    "original_path": "data/stage-user-disposition-20261023.json",
+    "portable_path": "data/stage-user-disposition-20261023.json",
+    "sha256": "3b3d1ba98fe6072e3270d3ac095b66434a76afc9889adfc1eac94e0983a8b765",
+    "bytes": 1359,
     "status": "COMPLETED_SCOPED_RESULT_SOURCE"
   },
   "data/completed-evidence/repair-validation-20261022-sources.json": {

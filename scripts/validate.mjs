@@ -10,6 +10,7 @@ import {refreshCompleted} from './refresh-completed.mjs';
 import {refreshHistory} from './refresh-history.mjs';
 import {refreshStage} from './refresh-stage.mjs';
 import {refreshPlanResults} from './refresh-plan-results.mjs';
+import {refreshStageReport} from './render-stage-closure.mjs';
 const dest=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const html=await fs.readFile(path.join(dest,'index.html'),'utf8');
 const dataText=html.match(/<script id="report-data" type="application\/json">([\s\S]*?)<\/script>/)[1];
@@ -32,6 +33,7 @@ const beforeStage=structuredClone({highlights:derived.highlights,retestRecords:d
 await refreshStage(dest,derived,{writeEvidence:false});
 const beforePlanResults=structuredClone(derived.retestRecords);
 await refreshPlanResults(dest,derived);
+await refreshStageReport(dest,derived,{writeEvidence:false});
 assert.deepEqual(data.completedResultProjection,derived.completedResultProjection,'Completed test results must be reproducible from their exact source judgments');
 for(const [index,record] of derived.retestRecords.entries()){
   const {completed_results,...unchanged}=record;
@@ -41,6 +43,7 @@ for(const [index,record] of derived.retestRecords.entries()){
 }
 assert.deepEqual(data.retestRecords,derived.retestRecords,'Generated plan result notes differ from completed-scope evidence');
 assert.deepEqual(data.stageRefresh,derived.stageRefresh,'Stage projection must be reproducible from the retained sources');
+assert.deepEqual(data.stageReleaseDecision,derived.stageReleaseDecision,'User release approval must reproduce from its explicit decision source');
 assert.deepEqual(data.completedRepairRefresh,derived.completedRepairRefresh,'Later completed repair scopes must reproduce from frozen receipts');
 assert.deepEqual(data.completedNetworkRefresh,derived.completedNetworkRefresh,'The completed eleven-case network update must reproduce from its scoped source');
 assert.deepEqual(data.completedTelemetryRefresh,derived.completedTelemetryRefresh,'The latest completed 60-second telemetry pair must reproduce from its scoped source');
@@ -150,7 +153,7 @@ for(const record of data.retestRecords){
   assert.equal(record.full_gate_credit,0);
   assert.equal(record.date,group.stage_status.as_of,'Plan result date must be the recorded assessment date');
   assert.deepEqual(record.sources.slice(0,2),[testPlan.stage_freeze.stage_report_html,testPlan.stage_freeze.stage_report]);
-  for(const source of record.sources.slice(2))assert.ok(data.completedRepairRefresh.sources.some(receipt=>receipt.path===source)||source===data.completedNetworkRefresh.source||source===data.completedTelemetryRefresh.source||(record.plan_code==='P19'&&[data.completedP19Refresh.source,data.completedP19CameraRefresh.source].includes(source))||(record.plan_code==='P15'&&source===data.completedP15Refresh.source)||(record.plan_code==='P20'&&['data/b14-user-disposition-20261023.json','data/b14-historical-metrics.json','reports/b14/b14-historical-metrics.html'].includes(source))||(['P05','P06'].includes(record.plan_code)&&[data.completedFlutterDiagnosis.source,data.completedFlutterDiagnosis.execution_source,data.deferredFlutterBugs.source,data.deferredFlutterBugs.report].includes(source)),'Later scope sources must belong to the recorded completed receipts or explicit user disposition');
+  for(const source of record.sources.slice(2))assert.ok(data.completedRepairRefresh.sources.some(receipt=>receipt.path===source)||source===data.completedNetworkRefresh.source||source===data.completedTelemetryRefresh.source||(['P08','P10'].includes(record.plan_code)&&source===data.stageReleaseDecision.source)||(record.plan_code==='P19'&&[data.completedP19Refresh.source,data.completedP19CameraRefresh.source].includes(source))||(record.plan_code==='P15'&&source===data.completedP15Refresh.source)||(record.plan_code==='P20'&&['data/b14-user-disposition-20261023.json','data/b14-historical-metrics.json','reports/b14/b14-historical-metrics.html'].includes(source))||(['P05','P06'].includes(record.plan_code)&&[data.completedFlutterDiagnosis.source,data.completedFlutterDiagnosis.execution_source,data.deferredFlutterBugs.source,data.deferredFlutterBugs.report].includes(source)),'Later scope sources must belong to the recorded completed receipts or explicit user disposition');
   assert.deepEqual(record.conditions,group.conditions);
   assert.deepEqual(record.boundaries.slice(0,group.boundaries.length),group.boundaries,'Original plan boundaries must remain before the completed-scope notes');
   assert.ok(record.conditions.length&&record.boundaries.length);
@@ -326,7 +329,7 @@ assert.deepEqual([...structure.match(/<nav aria-label="报告目录">([\s\S]*?)<
 assert.equal(data.highlights.length,5);
 assert.equal((structure.match(/class="highlight-card"/g)||[]).length,5);
 assert.ok(structure.indexOf('id="highlights"')<structure.indexOf('id="boundary"'));
-assert.ok(structure.includes('当前证据仍不足以签发项目正式验收通过。'));
+assert.ok(structure.includes(data.stageReleaseDecision.statement + '。'),'The conclusion must show the current user-approved release decision');
 assert.ok(!structure.includes('callout danger'));
 assert.ok(!structure.includes('建议：完成所需补测及正式验收后再决定定版放行。'));
 assert.ok(!structure.includes('最新D盘部署／源码验证已完成'));
@@ -778,6 +781,28 @@ assert.equal(stageClosure.groups.length,24);
 assert.deepEqual(stageClosure.groups.map(row=>row.plan_code),testPlan.groups.map(row=>row.plan_code));
 const decisionMarkup=structure.slice(structure.indexOf('id="decision"'),structure.indexOf('id="highlights"'));
 assert.ok(decisionMarkup.includes('reports/product/stage-closure-20261022.html')&&decisionMarkup.includes('PARTIAL'),'Existing conclusion must link the closed partial stage');
+assert.ok(decisionMarkup.includes(htmlEscape(data.stageReleaseDecision.statement)));
+assert.ok(!decisionMarkup.includes('当前证据仍不足以签发项目正式验收通过'));
+assert.equal(stageReference.current_revision_date,'2026-10-23');
+assert.equal(stageReference.release_approval.status,'APPROVED_BY_USER');
+assert.equal(stageReference.release_approval.version,'0.0.1');
+assert.equal(stageReference.release_approval.publication_status,'NOT_EXECUTED');
+assert.deepEqual(stageReference.current_groups,data.retestRecords.map(record=>({
+  plan_code:record.plan_code,title:record.title,status:record.status,
+  stage_status:record.stage_status,completed_results:record.completed_results||[]
+})),'Closure report must display the same current groups and results as the main report');
+for(const disposition of data.stageReleaseDecision.deferred_groups){
+  const current=data.retestRecords.find(record=>record.plan_code===disposition.plan_code);
+  assert.equal(current.status,'DEFERRED');
+  assert.equal(current.stage_status.original_status,disposition.original_status);
+  assert.equal(stageClosure.groups.find(record=>record.plan_code===disposition.plan_code).stage_status.status,disposition.original_status);
+  for(const gate of disposition.gate_dispositions){
+    const projected=current.stage_status.gates.find(row=>row.index===gate.index);
+    assert.equal(projected.status,'DEFERRED');assert.equal(projected.original_status,gate.original_status);
+  }
+}
+assert.deepEqual(data.stageRefresh.current_group_status_counts,stageReference.current_group_status_counts);
+checks.current_closure_matches_main_and_user_approved_release=true;
 assert.ok(structure.includes('完整主门')&&structure.includes('NOT_RUN'));
 assert.equal(data.stageRefresh.status,stageClosure.status);
 assert.equal(data.stageRefresh.full_plan_gates_completed,0);assert.equal(data.stageRefresh.formal_credit,0);assert.equal(data.stageRefresh.p20_credit,0);
@@ -1103,7 +1128,7 @@ assert.ok(p20ResultRow?.includes('<span class="badge good">user_pass</span>')&&p
 checks.b14_user_pass_group_detail_and_current_counts_consistent=true;
 assert.ok(completedFor('P06').some(result=>result.id==='native-clear-direct-runtime'&&result.status==='PASS_SCOPED_NATIVE_RUNTIME_ONLY'));
 assert.ok(completedFor('P14').some(result=>result.id==='artifact-current-staged-pairs'&&result.status==='PASS_SCOPED_STAGED_PAIR_IDENTITY'));
-assert.ok(!completedFor('P14').some(result=>result.id==='artifact-current_renderer_build'),'The newer staged-pair result replaces the previous current-renderer identity display');
+assert.ok(!completedFor('P14').some(result=>['artifact-old_deployment','artifact-current_renderer_build'].includes(result.id)),'The latest staged-pair and runtime-copy result replaces the previous deployment and renderer identity display; original evidence stays historical');
 assert.ok(completedFor('P18').some(result=>result.id==='remote-output-focused-contract'&&result.status==='PASS'));
 assert.equal(data.retestRecords.find(record=>record.plan_code==='P20').stage_status.retained_failures.length,1);assert.ok(data.retestRecords.find(record=>record.plan_code==='P20').stage_status.retained_failures[0].includes('resource_growth.private_bytes FAIL'));
 assert.equal(data.completedRepairRefresh.full_gate_credit,0);
@@ -1154,10 +1179,12 @@ for(const receipt of cameraScope.sources){
 const expectedP19Stage=structuredClone(latestP19.plan_update.stage_status);
 expectedP19Stage.completed_scope[2]=cameraScope.completed_scope;
 expectedP19Stage.remaining.splice(1,1);
+expectedP19Stage.remaining[1]='本机READY仅表示冻结环境资格就绪，不外推其他host或最终发行工件；后续100周期／8小时Formal结果独立见P20，原机器FAIL与用户user_pass分别保留。';
+expectedP19Stage.gates[4].interpretation='READY仅适用于本机冻结环境；后续完整Formal结果及用户处置独立见P20，资格整组信用0。';
 expectedP19Stage.gates[2].status=cameraScope.status;
 expectedP19Stage.gates[2].interpretation=cameraScope.interpretation;
 expectedP19Stage.evidence_refs.push(data.completedP19CameraRefresh.source);
-assert.deepEqual(p19Record.stage_status,expectedP19Stage,'Only the camera interpretation changes; qualification fields retain their original scope');
+assert.deepEqual(p19Record.stage_status,expectedP19Stage,'Camera interpretation and the later independent Formal reference change; qualification fields retain their original scope');
 assert.deepEqual(p19Record.stage_status.gates.map(row=>row.status),['PASS_SCOPED','PASS_SCOPED','PASS_SCOPED','PASS_SCOPED','READY']);
 assert.equal(latestP19.camera.status,'PARTIAL');assert.equal(latestP19.other_hosts[0].status,'PARTIAL');
 assert.equal(data.completedP19Refresh.camera_status,'PASS_SCOPED');
