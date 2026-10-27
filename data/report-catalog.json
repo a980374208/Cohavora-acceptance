@@ -1,17 +1,17 @@
 {
   "schema": "cohavora-acceptance-report-catalog-v1",
-  "revised_at": "2026-10-23",
+  "revised_at": "2026-10-27",
   "entry": "reports/index.html",
   "plan": "data/test-plan.json",
   "scope": "文档导航与原报告状态索引；不新增验收项，不授予当前产品通过。",
   "status_policy": "仅索引已登记来源JSON顶层status/verdict/result；缺少可靠结构化状态时记UNRECORDED，正文中的局部PASS不用于推定整份报告通过。",
-  "report_count": 12,
+  "report_count": 18,
   "categories": [
     {
       "id": "product",
       "title": "产品与阶段补测",
       "description": "功能、媒体、资源与界面报告；按各批次声明的子门与输入判断。",
-      "count": 6
+      "count": 12
     },
     {
       "id": "b14",
@@ -37,10 +37,10 @@
       "path": "reports/product/stage-closure-20261022.html",
       "json_path": "reports/product/stage-closure-20261022.json",
       "title": "冻结测试清单：阶段收口报告",
-      "date": "2026-10-23",
+      "date": "2026-10-27",
       "status": "PARTIAL",
-      "updated_utc": "2026-10-23",
-      "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
+      "updated_utc": "2026-10-27",
+      "statement": "2026-10-27阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
       "details": [
         {
           "label": "任务状态",
@@ -75,7 +75,7 @@
           "value": false
         }
       ],
-      "boundary": "2026-10-23阶段已收口（PARTIAL）；当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1。原测试判定与未测范围保留，本次仅更新报告。"
+      "boundary": "2026-10-27阶段已收口（PARTIAL）；当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1。原测试判定与未测范围保留，本次仅更新报告。"
     },
     {
       "path": "reports/product/resource-completion-20261021-01.html",
@@ -236,6 +236,69 @@
   ],
   "reports": [
     {
+      "path": "reports/product/p10-long-soak-results-20261027.html",
+      "json_path": "reports/product/p10-long-soak-results-20261027.json",
+      "category": "product",
+      "date": "2026-10-27",
+      "title": "P10 百路媒体与分页负载长稳：两次完整测试结果",
+      "status": "PASS_SCOPED",
+      "status_basis": "companion_json_top_level"
+    },
+    {
+      "path": "reports/product/stage-closure-20261022.html",
+      "json_path": "reports/product/stage-closure-20261022.json",
+      "category": "product",
+      "date": "2026-10-27",
+      "title": "冻结测试清单：阶段收口报告",
+      "status": "PARTIAL",
+      "status_basis": "companion_json_top_level"
+    },
+    {
+      "path": "reports/product/p10-reconnect-diagnostic-20261026.html",
+      "json_path": null,
+      "category": "product",
+      "date": "2026-10-26",
+      "title": "P10完整重连局部诊断 · 2026-10-26",
+      "status": "UNRECORDED",
+      "status_basis": "no_structured_top_level_status"
+    },
+    {
+      "path": "reports/product/p10-default-gc-fps-diagnosis-20261025.html",
+      "json_path": null,
+      "category": "product",
+      "date": "2026-10-25",
+      "title": "P10 默认 GC 帧率定位 · 2026-10-25",
+      "status": "UNRECORDED",
+      "status_basis": "no_structured_top_level_status"
+    },
+    {
+      "path": "reports/product/p10-publisher-gc-comparison-20261025.html",
+      "json_path": null,
+      "category": "product",
+      "date": "2026-10-25",
+      "title": "P10 三组发布器 GC 短对照 · 2026-10-25",
+      "status": "UNRECORDED",
+      "status_basis": "no_structured_top_level_status"
+    },
+    {
+      "path": "reports/product/p10-server-capacity-20261025.html",
+      "json_path": null,
+      "category": "product",
+      "date": "2026-10-25",
+      "title": "P10 百路媒体与分页预检 · 2026-10-26",
+      "status": "UNRECORDED",
+      "status_basis": "no_structured_top_level_status"
+    },
+    {
+      "path": "reports/product/p10-udp-transport-diagnosis-20261025.html",
+      "json_path": null,
+      "category": "product",
+      "date": "2026-10-25",
+      "title": "P10 UDP 传输专项诊断 · 2026-10-25",
+      "status": "UNRECORDED",
+      "status_basis": "no_structured_top_level_status"
+    },
+    {
       "path": "reports/b14/b14-clipboard-readmission-20261019-01.html",
       "json_path": "reports/b14/b14-clipboard-readmission-20261019-01.json",
       "category": "b14",
@@ -252,15 +315,6 @@
       "title": "B14 历史五次八小时／一百轮重要实测指标",
       "status": "READ_ONLY_DERIVED_NO_RETEST",
       "status_basis": "historical_metrics_json_top_level"
-    },
-    {
-      "path": "reports/product/stage-closure-20261022.html",
-      "json_path": "reports/product/stage-closure-20261022.json",
-      "category": "product",
-      "date": "2026-10-23",
-      "title": "冻结测试清单：阶段收口报告",
-      "status": "PARTIAL",
-      "status_basis": "companion_json_top_level"
     },
     {
       "path": "reports/b14/b14-full-standard-20261020-01.html",

@@ -33,14 +33,122 @@ const beforeStage=structuredClone({highlights:derived.highlights,retestRecords:d
 await refreshStage(dest,derived,{writeEvidence:false});
 const beforePlanResults=structuredClone(derived.retestRecords);
 await refreshPlanResults(dest,derived);
-await refreshStageReport(dest,derived,{writeEvidence:false});
-assert.deepEqual(data.completedResultProjection,derived.completedResultProjection,'Completed test results must be reproducible from their exact source judgments');
+const beforeP10Records=structuredClone(derived.retestRecords);
 for(const [index,record] of derived.retestRecords.entries()){
   const {completed_results,...unchanged}=record;
   assert.deepEqual(unchanged,beforePlanResults[index],'Completed result display must not change group assessments, gate definitions or boundaries');
   if(record.plan_kind==='product')assert.ok(Array.isArray(completed_results),'Every product group needs an explicit completed-result list');
   else assert.equal(completed_results,undefined,'Auxiliary plans keep their existing display');
 }
+const latestP10Source='reports/product/p10-long-soak-results-20261027.json';
+const latestP10Report=latestP10Source.replace(/\.json$/,'.html');
+let latestP10Bytes,latestP10;
+try{latestP10Bytes=await fs.readFile(path.join(dest,latestP10Source));}
+catch(error){if(error.code!=='ENOENT')throw error;}
+if(latestP10Bytes){
+  latestP10=JSON.parse(latestP10Bytes.toString('utf8').replace(/^\uFEFF/,''));
+  assert.equal(latestP10.status,'PASS_SCOPED');assert.equal(latestP10.raw_status,undefined);assert.equal(latestP10.current_disposition,undefined);
+  assert.equal(latestP10.full_gate_credit,0);assert.equal(latestP10.formal_credit,0);assert.equal(latestP10.release_eligible,false);
+  assert.equal(latestP10.runs.length,2);
+  assert.deepEqual(latestP10.runs.map(run=>run.status),['PASS_SCOPED','INCONCLUSIVE']);
+  assert.ok(latestP10.runs.every(run=>run.raw_status===undefined&&run.current_disposition===undefined));
+  assert.equal(latestP10.acceptance_policy.server_net_rx_drops.role,'record_only');
+  assert.equal(latestP10.acceptance_policy.server_net_rx_drops.threshold,null);
+  assert.equal(latestP10.acceptance_policy.server_net_rx_drops.recording_required,true);
+  assert.equal(latestP10.policy_id,'P10_HOLD_RECOVERY_MEDIA_V2_20261027');
+  assert.equal(latestP10.acceptance_policy.policy_id,latestP10.policy_id);
+  assert.equal(latestP10.acceptance_policy.wall_duration.role,'efficiency_record_only');
+  assert.equal(latestP10.acceptance_policy.wall_duration.threshold,null);
+  assert.equal(latestP10.acceptance_policy.wall_duration.recording_required,true);
+  assert.equal(latestP10.acceptance_policy.execution_watchdog.role,'execution_guard');
+  assert.equal(latestP10.acceptance_policy.execution_watchdog.limit_seconds,10500);
+  for(const [index,run]of latestP10.runs.entries()){
+    const review=run.reassessment;
+    assert.equal(review.policy_id,latestP10.policy_id);
+    assert.equal(review.date,'2026-10-27');
+    assert.equal(review.method,'OFFLINE_REASSESSMENT_EXISTING_EVIDENCE');
+    assert.equal(review.status,index===0?'PASS_SCOPED':'INCONCLUSIVE');
+    assert.deepEqual(Object.keys(review.criteria).sort(),Object.keys(run.criteria).sort());
+    const reviewCounts={};
+    for(const [name,criterion]of Object.entries(review.criteria)){
+      const expected=run.criteria[name].status;
+      assert.equal(criterion.status,expected,'Published criterion status must match its current reassessment');
+      assert.ok(criterion.source_locator.startsWith('/runs/'+index+'/criteria/'+name),'Reassessment must identify its criterion source');
+      reviewCounts[criterion.status]=(reviewCounts[criterion.status]||0)+1;
+    }
+    assert.deepEqual(review.criteria_status_counts,reviewCounts);
+    assert.deepEqual(reviewCounts,index===0?{PASS:10}:{PASS:7,INCONCLUSIVE:3});
+    assert.ok(review.effective_hold.fixed_seconds>=1800&&review.effective_hold.mixed_seconds>=7200&&review.effective_hold.recovered_seconds>=60);
+    assert.equal(review.effective_hold.status,'PASS');
+    assert.equal(review.action_recovery.command_count,168);assert.equal(review.action_recovery.all_converged,true);
+    assert.equal(review.action_recovery.soft_reconnect_count,9);assert.equal(review.action_recovery.full_reconnect_count,9);
+    assert.equal(review.action_recovery.status,'PASS');
+    assert.equal(review.media_quality.fixed_status,'PASS');assert.equal(review.media_quality.recovered_status,'PASS');
+    assert.equal(review.media_quality.audio_status,run.criteria.audio_healthy_windows.status);
+    assert.equal(review.media_quality.status,index===0?'PASS':'INCONCLUSIVE');
+    assert.equal(review.execution_watchdog.limit_seconds,10500);
+    assert.equal(review.execution_watchdog.observed_wall_seconds,run.timing.wall_seconds);
+    assert.ok(review.execution_watchdog.observed_wall_seconds<review.execution_watchdog.limit_seconds);
+    assert.equal(review.execution_watchdog.triggered,false);assert.equal(review.execution_watchdog.status,'PASS');
+    assert.equal(review.efficiency.role,'efficiency_record_only');
+    assert.equal(review.efficiency.wall_seconds,run.timing.wall_seconds);
+  }
+  assert.equal(latestP10.runs[0].criteria.server_resources.host.metrics.zero_growth_deltas.net_rx_drops,45);
+  assert.equal(new Set(latestP10.runs.map(run=>run.run_id)).size,2);
+  assert.ok(latestP10.runs.every(run=>run.run_id&&run.full_gate_credit===0&&run.formal_credit===0));
+  const projection=latestP10.plan_projection,allowed=new Set(['status','date','stage_status','evidence_scope','validity','limitations','sources','environmentIds','completed_results','full_gate_credit']);
+  assert.ok(Object.keys(projection).every(key=>allowed.has(key)),'Latest P10 must preserve the maintained plan definitions');
+  assert.equal(projection.status,'PASS_SCOPED');assert.equal(projection.stage_status.status,'PASS_SCOPED');
+  assert.equal(projection.full_gate_credit,0);assert.equal(projection.stage_status.full_gate_credit,0);
+  assert.equal(projection.date,projection.stage_status.as_of);
+  const record=derived.retestRecords.find(row=>row.plan_code==='P10'),previousPlan=structuredClone(record);
+  Object.assign(record,structuredClone(projection));
+  const runResults=record.completed_results.filter(result=>result.source_path===latestP10Source);
+  assert.equal(runResults.length,2,'Both completed long-soak runs must remain independent');
+  assert.ok(runResults.every(result=>result.current_disposition===undefined),'Current revised-policy results must be published directly');
+  for(const [index,run]of latestP10.runs.entries())assert.equal(runResults.find(result=>result.source_locator==='/runs/'+index+'/status')?.status,run.status);
+  assert.equal(latestP10.highlight.id,'highlight-p10');
+  const profileIds=new Set(latestP10.environment_profiles.map(profile=>profile.id));
+  assert.equal(profileIds.size,latestP10.environment_profiles.length);
+  assert.ok(latestP10.highlight.environmentIds.length>0&&latestP10.highlight.environmentIds.every(id=>profileIds.has(id)));
+  derived.testEnvironments.profiles=[...derived.testEnvironments.profiles.filter(profile=>!profileIds.has(profile.id)),...structuredClone(latestP10.environment_profiles)];
+  derived.retainedHighlights=[structuredClone(derived.highlights.find(highlight=>highlight.id==='highlight-e2ee'))];
+  const cards=new Map(derived.highlights.map(highlight=>[highlight.id,highlight]));
+  cards.set('highlight-p10',{...structuredClone(latestP10.highlight),report_path:latestP10Report});
+  derived.highlights=['highlight-b14','highlight-p10','highlight-b15','highlight-screen-share','highlight-whiteboard'].map(id=>cards.get(id));
+  await refreshStageReport(dest,derived,{writeEvidence:false});
+  const sources=[];
+  for(const relative of new Set([latestP10Source,latestP10Report,...latestP10.highlight.sources,...record.sources,...latestP10.environment_profiles.flatMap(profile=>profile.sources.map(source=>source.path))])){
+    const absolute=path.resolve(dest,relative),within=path.relative(dest,absolute);
+    assert.ok(within&&!within.startsWith('..')&&!path.isAbsolute(within));
+    const bytes=relative===latestP10Source?latestP10Bytes:await fs.readFile(absolute);
+    const receipt={original_path:relative,portable_path:relative,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),bytes:bytes.length,status:'COMPLETED_P10_RESULT_SOURCE'};
+    for(const name of [relative,absolute])derived.portableFiles[name.replaceAll('\\','/').toLowerCase()]=receipt;
+    sources.push({path:relative,sha256:receipt.sha256,bytes:receipt.bytes});
+  }
+  const summary=derived.completedResultProjection.groups.find(group=>group.plan_code==='P10');
+  Object.assign(summary,{completed_result_count:record.completed_results.length,
+    status_counts:record.completed_results.reduce((counts,result)=>{counts[result.status]=(counts[result.status]||0)+1;return counts;},{}),
+    current_status_counts:record.completed_results.reduce((counts,result)=>{const status=result.current_disposition?.status||result.status;counts[status]=(counts[status]||0)+1;return counts;},{})});
+  delete summary.empty_reason;
+  derived.completedResultProjection.sources=[...derived.completedResultProjection.sources.filter(source=>source.path!==latestP10Source),sources.find(source=>source.path===latestP10Source)];
+  const runSummaryFields=['run_id','label','status','full_gate_credit','formal_credit','qualification_credit','release_eligible'];
+  const runSummaries=latestP10.runs.map(run=>Object.fromEntries(runSummaryFields.filter(key=>Object.hasOwn(run,key)).map(key=>[key,run[key]])));
+  derived.p10LatestProjection={source:latestP10Source,report:latestP10Report,status:latestP10.status,policy_id:latestP10.policy_id,runs:runSummaries,full_gate_credit:0,formal_credit:0,release_eligible:false,previous_plan:previousPlan,sources};
+  assert.deepEqual(data.retainedHighlights,derived.retainedHighlights,'Replacing a homepage card must preserve the original E2EE evidence');
+  assert.deepEqual(data.p10LatestProjection,derived.p10LatestProjection,'P10 latest projection must bind both current reassessments and source bytes');
+  const start=structure.indexOf('id="highlight-p10"'),cardMarkup=structure.slice(start,structure.indexOf('</article>',start));
+  assert.ok(start>=0&&cardMarkup.includes('href="'+latestP10Report+'"'),'P10 homepage card must link the complete two-run report');
+  assert.ok(!structure.includes('id="highlight-e2ee"'),'The replaced E2EE card must not create a sixth homepage card');
+  const p10HTML=await fs.readFile(path.join(dest,latestP10Report),'utf8');
+  for(const run of latestP10.runs)assert.ok(p10HTML.includes(run.run_id)&&p10HTML.includes(run.status),'Both run identities and current judgments must remain in the detailed report');
+  assert.ok(p10HTML.includes('PASS_SCOPED')&&p10HTML.includes('INCONCLUSIVE'));
+}else{
+  await refreshStageReport(dest,derived,{writeEvidence:false});
+  assert.equal(data.p10LatestProjection,undefined);assert.equal(data.retainedHighlights,undefined);
+}
+const closureRecords=structuredClone(derived.retestRecords);
+assert.deepEqual(data.completedResultProjection,derived.completedResultProjection,'Completed test results must be reproducible from their exact source judgments');
 assert.deepEqual(data.retestRecords,derived.retestRecords,'Generated plan result notes differ from completed-scope evidence');
 assert.deepEqual(data.stageRefresh,derived.stageRefresh,'Stage projection must be reproducible from the retained sources');
 assert.deepEqual(data.stageReleaseDecision,derived.stageReleaseDecision,'User release approval must reproduce from its explicit decision source');
@@ -52,7 +160,7 @@ assert.deepEqual(data.completedP19Refresh,derived.completedP19Refresh,'Current l
 assert.deepEqual(data.completedP19CameraRefresh,derived.completedP19CameraRefresh,'Camera scoped PASS must reproduce from the original review and deterministic owner test');
 assert.deepEqual(data.completedFlutterDiagnosis,derived.completedFlutterDiagnosis,'Completed isolated diagnosis must reproduce without changing shared-service test results');
 assert.deepEqual(data.deferredFlutterBugs,derived.deferredFlutterBugs,'User-deferred bug disposition must reproduce independently of raw runtime verdicts');
-for(const [index,highlight] of data.highlights.entries())assert.deepEqual(highlight.metrics,beforeStage.highlights[index].metrics,'Different-scope or unfinished new results must preserve existing metric rows');
+for(const highlight of [...data.highlights,...(data.retainedHighlights||[])].filter(row=>row.id!=='highlight-p10'))assert.deepEqual(highlight.metrics,beforeStage.highlights.find(row=>row.id===highlight.id).metrics,'Different-scope or unfinished new results must preserve existing metric rows');
 assert.deepEqual(data.highlights.find(row=>row.id==='highlight-b14'),beforeStage.highlights.find(row=>row.id==='highlight-b14'),'Stage closure must not supersede the completed B14 Formal');
 assert.deepEqual(data.b14CycleSummary,beforeStage.b14CycleSummary,'The three-cycle UI observation must not replace B14 100-cycle timings');
 assert.deepEqual(data.memoryUsageSummary,beforeStage.memoryUsageSummary,'The newer missing idle observation must not replace completed B14/B11 memory means');
@@ -78,8 +186,8 @@ assert.deepEqual(data.currentRecords,baseline.currentRecords);
 assert.deepEqual(data.historicalRecords,derived.historicalRecords);
 assert.deepEqual(data.testEnvironments,derived.testEnvironments);
 assert.deepEqual(data.highlights,derived.highlights);
-for(const [i,highlight] of data.highlights.entries()){
- const original=baseline.highlights[i];
+for(const highlight of [...data.highlights,...(data.retainedHighlights||[])].filter(row=>row.id!=='highlight-p10')){
+ const original=baseline.highlights.find(row=>row.id===highlight.id);
  assert.equal(highlight.id,original.id); assert.equal(highlight.title,original.title);
  assert.deepEqual(highlight.metrics.map(({name,limit,unit})=>({name,limit,unit})),original.metrics.map(({name,limit,unit})=>({name,limit,unit})),'Preserve original metric columns and thresholds');
 }
@@ -141,19 +249,20 @@ assert.equal(groupedOriginalIds.length,50);assert.equal(new Set(groupedOriginalI
 assert.ok(!groupedOriginalIds.includes('T028')&&!groupedOriginalIds.includes('T029'));
 for(const record of data.retestRecords){
   const group=planById.get(record.id);assert.ok(group);
+  const expectedStage=latestP10&&record.plan_code==='P10'?latestP10.plan_projection.stage_status:group.stage_status;
   assert.deepEqual(record.originalIds,group.originalIds);
   assert.equal(record.plan_kind,group.plan_kind);assert.equal(record.plan_code,group.plan_code);
   assert.ok(group.gates.length>=3&&group.gates.every(gate=>typeof gate==='string'&&gate.trim()));
   assert.equal(new Set(group.gates).size,group.gates.length);
   assert.deepEqual(record.gates,group.gates);assert.deepEqual(record.curation.retestScope,group.gates);
   assert.ok(group.stage_status,'A recorded stage assessment must be projected for '+group.plan_code);
-  assert.equal(record.status,group.stage_status.status,'Plan badge must show its recorded stage status: '+group.plan_code);
-  assert.deepEqual(record.stage_status,group.stage_status,'Plan details must preserve the complete recorded assessment: '+group.plan_code);
+  assert.equal(record.status,expectedStage.status,'Plan badge must show its recorded stage status: '+group.plan_code);
+  assert.deepEqual(record.stage_status,expectedStage,'Plan details must preserve the complete recorded assessment: '+group.plan_code);
   assert.equal(record.stage_status.full_gate_credit,0,'Partial-stage projection cannot award complete gate credit');
   assert.equal(record.full_gate_credit,0);
-  assert.equal(record.date,group.stage_status.as_of,'Plan result date must be the recorded assessment date');
+  assert.equal(record.date,expectedStage.as_of,'Plan result date must be the recorded assessment date');
   assert.deepEqual(record.sources.slice(0,2),[testPlan.stage_freeze.stage_report_html,testPlan.stage_freeze.stage_report]);
-  for(const source of record.sources.slice(2))assert.ok(data.completedRepairRefresh.sources.some(receipt=>receipt.path===source)||source===data.completedNetworkRefresh.source||source===data.completedTelemetryRefresh.source||(['P08','P10'].includes(record.plan_code)&&source===data.stageReleaseDecision.source)||(record.plan_code==='P19'&&[data.completedP19Refresh.source,data.completedP19CameraRefresh.source].includes(source))||(record.plan_code==='P15'&&source===data.completedP15Refresh.source)||(record.plan_code==='P20'&&['data/b14-user-disposition-20261023.json','data/b14-historical-metrics.json','reports/b14/b14-historical-metrics.html'].includes(source))||(['P05','P06'].includes(record.plan_code)&&[data.completedFlutterDiagnosis.source,data.completedFlutterDiagnosis.execution_source,data.deferredFlutterBugs.source,data.deferredFlutterBugs.report].includes(source)),'Later scope sources must belong to the recorded completed receipts or explicit user disposition');
+  for(const source of record.sources.slice(2))assert.ok((latestP10&&record.plan_code==='P10'&&data.p10LatestProjection.sources.some(receipt=>receipt.path===source))||data.completedRepairRefresh.sources.some(receipt=>receipt.path===source)||source===data.completedNetworkRefresh.source||source===data.completedTelemetryRefresh.source||(['P08','P10'].includes(record.plan_code)&&source===data.stageReleaseDecision.source)||(record.plan_code==='P19'&&[data.completedP19Refresh.source,data.completedP19CameraRefresh.source].includes(source))||(record.plan_code==='P15'&&source===data.completedP15Refresh.source)||(record.plan_code==='P20'&&['data/b14-user-disposition-20261023.json','data/b14-historical-metrics.json','reports/b14/b14-historical-metrics.html'].includes(source))||(['P05','P06'].includes(record.plan_code)&&[data.completedFlutterDiagnosis.source,data.completedFlutterDiagnosis.execution_source,data.deferredFlutterBugs.source,data.deferredFlutterBugs.report].includes(source)),'Later scope sources must belong to the recorded completed receipts or explicit user disposition');
   assert.deepEqual(record.conditions,group.conditions);
   assert.deepEqual(record.boundaries.slice(0,group.boundaries.length),group.boundaries,'Original plan boundaries must remain before the completed-scope notes');
   assert.ok(record.conditions.length&&record.boundaries.length);
@@ -204,6 +313,7 @@ function domRun(input){
   return {elements,context,window,staticDetails,set:(id,value)=>{const element=elements.get(id);assert.ok(element,'Missing DOM ID '+id);element.value=value;element.dispatch();},visible:prefix=>recordElements().filter(x=>x.id.startsWith(prefix+'-')&&!x.hidden).map(x=>x.id.slice(prefix.length+1))};
 }
 const checks={html_unique_ids:true,inline_json_matches_output:true,maintained_script_matches_inline:true,script_syntax:true,curation_removes_historical_records:true,retained_scope_only:true,original_52_ids_have_unique_destinations:true,product_21_auxiliary_3_separated:true,subgates_and_original_states_preserved:true,summary_not_reexecuted_and_archive_not_counted:true,frozen_thresholds_and_formal_unknown_boundaries_preserved:true};
+if(latestP10)checks.p10_revised_policy_two_run_reassessment_and_zero_full_gate_credit=true;
 checks.completed_scopes_replace_original_columns_only=true;
 checks.unfinished_attempts_not_promoted=true;
 const actual=domRun(data);
@@ -238,7 +348,7 @@ for(const record of data.retestRecords){
     const counts=new Map([['PASS',0],['FAIL',0]]);
     for(const result of results){const status=result.current_disposition?.status||result.status;counts.set(status,(counts.get(status)||0)+1);}
     if(!results.length)assert.ok(summary.includes('无已完成结果记录'),'Empty evidence must not become a PASS');
-    else for(const [status,count] of counts){const label=status==='USER_PASS'?'user_pass':status;if(count>0)assert.ok(summary.includes(htmlEscape(label+' '+count)),'Collapsed result counts must distinguish current dispositions from raw executed verdicts: '+record.plan_code+'.'+status);else assert.ok(!summary.includes(htmlEscape(label+' 0')),'Default zero placeholder must be hidden when non-zero completed results exist: '+record.plan_code+'.'+status);}
+    else for(const [status,count] of counts){const label=status==='USER_PASS'?'user_pass':status==='USER-PASS'?'user-pass':status;if(count>0)assert.ok(summary.includes(htmlEscape(label+' '+count)),'Collapsed result counts must distinguish current dispositions from raw executed verdicts: '+record.plan_code+'.'+status);else assert.ok(!summary.includes(htmlEscape(label+' 0')),'Default zero placeholder must be hidden when non-zero completed results exist: '+record.plan_code+'.'+status);}
     const table=markup.match(/<table class="metric-table completed-results">([\s\S]*?)<\/table>/)?.[1]||'';
     assert.equal((table.match(/data-result-id=/g)||[]).length,results.length,'Every completed result must be directly visible in its original group');
     for(const result of results){
@@ -261,7 +371,7 @@ for(const prefix of ['report','retest','aux']){
   const rows=prefix==='report'?data.currentRecords:data.retestRecords.filter(r=>r.plan_kind===(prefix==='retest'?'product':'auxiliary'));
   const expectedOptions=[...new Set(rows.map(row=>String(row.status).trim().toUpperCase()))].sort();
   assert.deepEqual(actual.elements.get(prefix+'-status').options.map(x=>x.value).sort(),expectedOptions);
-  for(const option of actual.elements.get(prefix+'-status').options){const count=rows.filter(row=>String(row.status).trim().toUpperCase()===option.value).length;assert.ok(option.text.endsWith(' ('+count+')'));assert.equal(option.title,option.value==='USER_PASS'?'user_pass':option.value);}
+  for(const option of actual.elements.get(prefix+'-status').options){const count=rows.filter(row=>String(row.status).trim().toUpperCase()===option.value).length;assert.ok(option.text.endsWith(' ('+count+')'));assert.equal(option.title,option.value==='USER_PASS'?'user_pass':option.value==='USER-PASS'?'user-pass':option.value);}
   for(const state of [...new Set([...expectedOptions,'PASS','PASS_SCOPED'])]){
     actual.set(prefix+'-status',state);
     assert.deepEqual(actual.visible(prefix).sort(),rows.filter(row=>String(row.status).trim().toUpperCase()===state).map(row=>row.id).sort());
@@ -783,16 +893,16 @@ const decisionMarkup=structure.slice(structure.indexOf('id="decision"'),structur
 assert.ok(decisionMarkup.includes('reports/product/stage-closure-20261022.html')&&decisionMarkup.includes('PARTIAL'),'Existing conclusion must link the closed partial stage');
 assert.ok(decisionMarkup.includes(htmlEscape(data.stageReleaseDecision.statement)));
 assert.ok(!decisionMarkup.includes('当前证据仍不足以签发项目正式验收通过'));
-assert.equal(stageReference.current_revision_date,'2026-10-23');
+assert.equal(stageReference.current_revision_date,'2026-10-27');
 assert.equal(stageReference.release_approval.status,'APPROVED_BY_USER');
 assert.equal(stageReference.release_approval.version,'0.0.1');
 assert.equal(stageReference.release_approval.publication_status,'NOT_EXECUTED');
-assert.deepEqual(stageReference.current_groups,data.retestRecords.map(record=>({
+assert.deepEqual(stageReference.current_groups,closureRecords.map(record=>({
   plan_code:record.plan_code,title:record.title,status:record.status,
   stage_status:record.stage_status,completed_results:record.completed_results||[]
-})),'Closure report must display the same current groups and results as the main report');
+})),'The current closure must include the latest P10 result and user disposition');
 for(const disposition of data.stageReleaseDecision.deferred_groups){
-  const current=data.retestRecords.find(record=>record.plan_code===disposition.plan_code);
+  const current=beforeP10Records.find(record=>record.plan_code===disposition.plan_code);
   assert.equal(current.status,'DEFERRED');
   assert.equal(current.stage_status.original_status,disposition.original_status);
   assert.equal(stageClosure.groups.find(record=>record.plan_code===disposition.plan_code).stage_status.status,disposition.original_status);
@@ -803,6 +913,10 @@ for(const disposition of data.stageReleaseDecision.deferred_groups){
 }
 assert.deepEqual(data.stageRefresh.current_group_status_counts,stageReference.current_group_status_counts);
 checks.current_closure_matches_main_and_user_approved_release=true;
+if(latestP10){
+  assert.equal(closureRecords.find(record=>record.plan_code==='P10').status,'PASS_SCOPED');
+  checks.current_20261027_closure_includes_p10_scoped_pass_under_revised_policy=true;
+}
 assert.ok(structure.includes('完整主门')&&structure.includes('NOT_RUN'));
 assert.equal(data.stageRefresh.status,stageClosure.status);
 assert.equal(data.stageRefresh.full_plan_gates_completed,0);assert.equal(data.stageRefresh.formal_credit,0);assert.equal(data.stageRefresh.p20_credit,0);
@@ -817,7 +931,7 @@ for(const receipt of data.stageRefresh.sources){
   assert.equal(sha(bytes),receipt.sha256,'Stage source hash: '+receipt.path);assert.equal(bytes.length,receipt.bytes);
   assert.equal(data.portableFiles[norm(receipt.path)]?.sha256,receipt.sha256,'Stage source is not bound to the portable map: '+receipt.path);
 }
-for(const record of data.retestRecords){
+for(const record of beforeP10Records){
   const original=beforeStage.retestRecords.find(row=>row.id===record.id);
   for(const key of ['status','gates','conditions','metrics','source_checks','originalIds','plan_code','plan_kind'])assert.deepEqual(record[key],original[key],'Stage notes changed a plan or execution field: '+record.id+'.'+key);
   const note=data.stageRefresh.group_updates.find(row=>row.plan_code===record.plan_code);
@@ -851,11 +965,11 @@ const telemetryDescription=JSON.stringify({status:currentTelemetry.status,summar
 assert.ok(telemetryDescription.includes('FAIL')&&telemetryDescription.includes('7.014681')&&telemetryDescription.includes('UNKNOWN'),'Formal first-pair failure and unresolved cause must stay visible');
 assert.ok(currentTelemetry.sources.includes('data/completed-evidence/telemetry-paired-first-20261021-index.json'));
 assert.deepEqual(currentTelemetry.metrics.slice(0,4),beforeStage.highlights.find(row=>row.id==='highlight-b15').metrics.slice(0,4),'One sixty-second pair must not replace three historical 180-second pairs');
-const currentE2EE=data.highlights.find(row=>row.id==='highlight-e2ee');
+const currentE2EE=[...data.highlights,...(data.retainedHighlights||[])].find(row=>row.id==='highlight-e2ee');
 assert.equal(currentE2EE.status,'PASS（Native 限定性能负载）','The E2EE badge must describe the displayed Native performance subgate');
 const e2eeDescription=JSON.stringify({summary:currentE2EE.summary,scope:currentE2EE.scope,limitations:currentE2EE.limitations});
 assert.ok(e2eeDescription.includes('14 PASS')&&e2eeDescription.includes('2 FAIL')&&e2eeDescription.includes('Flutter'),'The independent Flutter failures must remain visible in their own scope');
-for(const highlight of [currentTelemetry,currentE2EE]){
+for(const highlight of [currentTelemetry,...(latestP10?[]:[currentE2EE])]){
   const start=structure.indexOf('id="'+highlight.id+'"');
   const markup=structure.slice(start,structure.indexOf('</article>',start));
   assert.ok(markup.includes(htmlEscape(highlight.status)),'Visible card badge must match the displayed metric scope: '+highlight.id);
@@ -908,7 +1022,9 @@ for(const receipt of data.completedResultProjection.sources){
 }
 for(const record of data.retestRecords.filter(row=>row.plan_kind==='product'))for(const result of record.completed_results){
   assert.ok(result.id&&result.title&&result.scope&&result.date,'Completed results must retain their independent scope and date');
-  assert.match(result.status,/^(?:PASS(?:_[A-Z0-9]+)*|FAIL(?:_[A-Z0-9]+)*|READY|OBSERVATION_ONLY|PASS_SCOPED \/ NOT_CLOSED)$/,'Unfinished or unexecuted attempts cannot be completed test results');
+  if(latestP10&&record.plan_code==='P10'&&result.source_path===latestP10Source&&result.status==='INCONCLUSIVE'){
+    assert.ok(latestP10.runs.some((run,index)=>run.status===result.status&&result.source_locator==='/runs/'+index+'/status'),'Only an explicitly terminal P10 run may project INCONCLUSIVE');
+  }else assert.match(result.status,/^(?:PASS(?:_[A-Z0-9]+)*|FAIL(?:_[A-Z0-9]+)*|READY|OBSERVATION_ONLY|PASS_SCOPED \/ NOT_CLOSED)$/,'Unfinished or unexecuted attempts cannot be completed test results');
   assert.ok(completedSourceJSON.has(result.source_path),'Completed result source must have a checked receipt');
   assert.ok(result.source_locator.startsWith('/'),'Completed result needs an exact JSON Pointer to its original judgment');
   let value=completedSourceJSON.get(result.source_path);

@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import crypto from 'node:crypto';
 import vm from 'node:vm';
 import path from 'node:path';
+import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 import {consolidateTests} from './consolidate-tests.mjs';
 import {renderB14Procedure, renderB14Measured, renderTimingDefinitions} from './render-b14.mjs';
@@ -27,7 +28,74 @@ await refreshCompleted(dest, data);
 await refreshHistory(dest, data);
 await refreshStage(dest, data);
 await refreshPlanResults(dest, data);
-await refreshStageReport(dest, data);
+// Apply later P10 results before rendering the current stage closure.
+const p10Source = 'reports/product/p10-long-soak-results-20261027.json';
+const p10Report = p10Source.replace(/\.json$/, '.html');
+let p10Bytes;
+try { p10Bytes = await fs.readFile(path.join(dest, p10Source)); }
+catch (error) { if (error.code !== 'ENOENT') throw error; }
+if (p10Bytes) {
+  const latest = JSON.parse(p10Bytes.toString('utf8').replace(/^\uFEFF/, ''));
+  assert.equal(latest.status, 'PASS_SCOPED');
+  assert.equal(latest.raw_status, undefined);
+  assert.equal(latest.current_disposition, undefined);
+  assert.equal(latest.full_gate_credit, 0);assert.equal(latest.formal_credit, 0);assert.equal(latest.release_eligible, false);
+  assert.equal(latest.runs.length, 2);
+  assert.deepEqual(latest.runs.map(run => run.status), ['PASS_SCOPED', 'INCONCLUSIVE']);
+  assert.ok(latest.runs.every(run => run.raw_status === undefined && run.current_disposition === undefined));
+  assert.equal(latest.policy_id, 'P10_HOLD_RECOVERY_MEDIA_V2_20261027');
+  assert.equal(latest.acceptance_policy.policy_id, latest.policy_id);
+  assert.equal(latest.acceptance_policy.wall_duration.role, 'efficiency_record_only');
+  assert.equal(latest.acceptance_policy.wall_duration.threshold, null);
+  assert.equal(latest.acceptance_policy.execution_watchdog.role, 'execution_guard');
+  assert.equal(latest.acceptance_policy.execution_watchdog.limit_seconds, 10500);
+  assert.equal(latest.acceptance_policy.server_net_rx_drops.role, 'record_only');
+  assert.equal(latest.acceptance_policy.server_net_rx_drops.threshold, null);
+  assert.deepEqual(latest.runs.map(run => run.reassessment.status), ['PASS_SCOPED', 'INCONCLUSIVE']);
+  assert.ok(latest.runs.every(run => run.run_id && run.full_gate_credit === 0 && run.formal_credit === 0));
+  const current = data.retestRecords.find(record => record.plan_code === 'P10');
+  const previousPlan = structuredClone(current);
+  const fields = new Set(['status', 'date', 'stage_status', 'evidence_scope', 'validity', 'limitations', 'sources', 'environmentIds', 'completed_results', 'full_gate_credit']);
+  assert.ok(Object.keys(latest.plan_projection).every(key => fields.has(key)), 'P10 projection cannot replace plan definitions');
+  assert.equal(latest.plan_projection.status, 'PASS_SCOPED');
+  assert.equal(latest.plan_projection.stage_status.status, 'PASS_SCOPED');
+  assert.equal(latest.plan_projection.full_gate_credit, 0);assert.equal(latest.plan_projection.stage_status.full_gate_credit, 0);
+  Object.assign(current, structuredClone(latest.plan_projection));
+  assert.equal(latest.highlight.id, 'highlight-p10');
+  assert.ok(Array.isArray(latest.environment_profiles));
+  const profileIds = new Set(latest.environment_profiles.map(profile => profile.id));
+  assert.equal(profileIds.size, latest.environment_profiles.length);
+  data.testEnvironments.profiles = [...data.testEnvironments.profiles.filter(profile => !profileIds.has(profile.id)), ...structuredClone(latest.environment_profiles)];
+  data.retainedHighlights = [structuredClone(data.highlights.find(highlight => highlight.id === 'highlight-e2ee'))];
+  const cards = new Map(data.highlights.map(highlight => [highlight.id, highlight]));
+  cards.set('highlight-p10', {...structuredClone(latest.highlight), report_path: p10Report});
+  data.highlights = ['highlight-b14', 'highlight-p10', 'highlight-b15', 'highlight-screen-share', 'highlight-whiteboard'].map(id => {
+    assert.ok(cards.has(id), 'Missing requested homepage card: ' + id);
+    return cards.get(id);
+  });
+  await refreshStageReport(dest, data);
+  const sources = [];
+  for (const relative of new Set([p10Source, p10Report, ...latest.highlight.sources, ...current.sources, ...latest.environment_profiles.flatMap(profile => profile.sources.map(source => source.path))])) {
+    const absolute = path.resolve(dest, relative), within = path.relative(dest, absolute);
+    assert.ok(within && !within.startsWith('..') && !path.isAbsolute(within), 'P10 source must belong to the report package: ' + relative);
+    const bytes = relative === p10Source ? p10Bytes : await fs.readFile(absolute);
+    const receipt = {original_path: relative, portable_path: relative, sha256: sha(bytes), bytes: bytes.length, status: 'COMPLETED_P10_RESULT_SOURCE'};
+    for (const name of [relative, absolute]) data.portableFiles[name.replaceAll('\\', '/').toLowerCase()] = receipt;
+    sources.push({path: relative, sha256: receipt.sha256, bytes: receipt.bytes});
+  }
+  const summary = data.completedResultProjection.groups.find(group => group.plan_code === 'P10');
+  Object.assign(summary, {
+    completed_result_count: current.completed_results.length,
+    status_counts: current.completed_results.reduce((counts, result) => { counts[result.status] = (counts[result.status] || 0) + 1;return counts; }, {}),
+    current_status_counts: current.completed_results.reduce((counts, result) => { const status = result.current_disposition?.status || result.status;counts[status] = (counts[status] || 0) + 1;return counts; }, {})
+  });
+  delete summary.empty_reason;
+  data.completedResultProjection.sources = [...data.completedResultProjection.sources.filter(source => source.path !== p10Source), sources.find(source => source.path === p10Source)];
+  const runSummaryFields = ['run_id', 'label', 'status', 'full_gate_credit', 'formal_credit', 'qualification_credit', 'release_eligible'];
+  const runSummaries = latest.runs.map(run => Object.fromEntries(runSummaryFields.filter(key => Object.hasOwn(run, key)).map(key => [key, run[key]])));
+  data.p10LatestProjection = {source: p10Source, report: p10Report, status: latest.status, policy_id: latest.policy_id, runs: runSummaries, full_gate_credit: 0, formal_credit: 0, release_eligible: false, previous_plan: previousPlan, sources};
+}
+if (!p10Bytes) await refreshStageReport(dest, data);
 const reportCatalog = await buildReportCatalog(dest);
 data.meta.documentRevisedAt = new Date().toISOString();
 const revisionDate = new Intl.DateTimeFormat('sv-SE', {timeZone: 'Asia/Shanghai', dateStyle: 'short'}).format(new Date(data.meta.documentRevisedAt));
@@ -41,7 +109,11 @@ data.documentRevision.changes.push('P05／P06按用户要求将当前失败处�
 data.documentRevision.changes.push('P15最新双机LAN软件校时PASS：媒体经阿里云SFU，最大保守不确定度2.898ms低于原10ms门，30/30有效并完成独立误差包络复算；历史41.258ms及26.496ms FAIL保留，真实产品媒体与物理测量门未执行，整组PARTIAL');
 data.documentRevision.changes.push('P19摄像头二次入会子项按原33/33 PASS及首帧超时确定性测试更正为PASS_SCOPED；保留2026-10-19原输入／日期、当前三轮资格READY、其他host和Formal独立边界，整组PARTIAL');
 data.documentRevision.changes.push('P14工件身份采用10月22日已完成的三对EXE／DLL／PDB及两份runtime部署副本校验PASS；旧部署age错配仅保留历史证据，不重复计入当前结果，整组仍PARTIAL');
-data.documentRevision.changes.push('P08／P10按用户要求将当前BLOCKED／FAIL处置改为DEFERRED；阶段收口页同步主报告最新结果，2026-10-23用户评估剩余待测项无较大或严重问题并批准发版0.0.1，原测试判定保留');
+data.documentRevision.changes.push('保留10-23原阶段决定及0.0.1批准来源；当前阶段收口日期与P10修订口径结果按最新明确决定更新');
+if (data.p10LatestProjection) {
+  data.meta.scope += '；两次P10完整长稳按修订口径复核为PASS_SCOPED／INCONCLUSIVE；总耗时与RX丢弃仅记录，保留执行看门狗；阶段收口日期10-27';
+  data.documentRevision.changes.push('首页02展示两次P10完整长稳及详细报告入口，屏幕共享移至04；有效保持时长、动作恢复及媒体质量按修订口径复核，德国PASS_SCOPED、上海INCONCLUSIVE；总耗时为效率记录、RX丢弃仅记录、10500秒执行看门狗保留；完整主门零信用保留，10-27阶段页同步当前结果');
+}
 const productPlans = data.retestRecords.filter(record => record.plan_kind === 'product');
 const auxiliaryPlans = data.retestRecords.filter(record => record.plan_kind === 'auxiliary');
 const timestamp = new Intl.DateTimeFormat('sv-SE', {timeZone: 'Asia/Shanghai', dateStyle: 'short', timeStyle: 'medium'}).format(new Date(data.meta.documentRevisedAt));
@@ -57,7 +129,7 @@ const toolbar = prefix => `<div class="toolbar" role="search" aria-label="${pref
 <div id="${prefix}-count" class="status-line" aria-live="polite"></div><div id="${prefix}-list"></div><div id="${prefix}-empty" class="empty" hidden>没有匹配的记录。可调整筛选或重置。</div>`;
 
 const highlightCards = data.highlights.map((highlight, index) => `<article class="highlight-card" id="${esc(highlight.id)}">
-<div class="highlight-heading"><span class="highlight-number">0${index + 1}</span><div><h3>${esc(highlight.title)}</h3><span class="badge ${/FAIL/.test(highlight.status) ? 'bad' : 'good'}">${esc(highlight.status)}</span><span class="scope-tag">限定范围结果</span></div></div>
+<div class="highlight-heading"><span class="highlight-number">0${index + 1}</span><div><h3>${highlight.report_path ? '<a href="' + esc(highlight.report_path) + '">' + esc(highlight.title) + '</a>' : esc(highlight.title)}</h3><span class="badge ${/FAIL/.test(highlight.status) ? 'bad' : 'good'}">${esc(highlight.status)}</span><span class="scope-tag">限定范围结果</span></div></div>
 <p>${esc(highlight.summary)}</p><p class="boundary"><b>适用范围：</b>${esc(highlight.scope)}</p>
 <details><summary>查看实测指标、原门限与测试环境</summary><p class="note">原执行日期：${esc(highlight.date)}</p>
 ${renderHighlightEnvironments(highlight.environmentIds, data.testEnvironments.profiles)}${renderB14Procedure(highlight, data.b14CycleSummary)}

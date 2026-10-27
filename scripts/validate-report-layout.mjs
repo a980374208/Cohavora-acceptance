@@ -58,7 +58,34 @@ export async function validateReportLayout(root, {verifyMigration = false} = {})
   const css = await fs.readFile(path.join(root, 'assets/report-style.css'), 'utf8');
   assert.equal(directory, renderReportDirectory(catalog, css));
   assert.ok(!/id="(?:latest-reports|completed-results)"/.test(home), 'Home must retain the pushed layout without new result sections');
-  assert.deepEqual([...home.matchAll(/<article class="highlight-card" id="([^"]+)"/g)].map(match => match[1]), ['highlight-b14', 'highlight-screen-share', 'highlight-b15', 'highlight-e2ee', 'highlight-whiteboard'], 'Original five highlight cards and their order must remain');
+  const p10Path = 'reports/product/p10-long-soak-results-20261027.html';
+  let latestP10;
+  try { latestP10 = await readJSON(path.join(root, p10Path.replace(/\.html$/, '.json'))); }
+  catch (error) { if (error.code !== 'ENOENT') throw error; }
+  const cardIds = [...home.matchAll(/<article class="highlight-card" id="([^"]+)"/g)].map(match => match[1]);
+  assert.deepEqual(cardIds, latestP10
+    ? ['highlight-b14', 'highlight-p10', 'highlight-b15', 'highlight-screen-share', 'highlight-whiteboard']
+    : ['highlight-b14', 'highlight-screen-share', 'highlight-b15', 'highlight-e2ee', 'highlight-whiteboard'], 'Homepage must retain five cards with only the requested P10 replacement and exchange');
+  if (latestP10) {
+    assert.equal(latestP10.status, 'PASS_SCOPED');assert.equal(latestP10.raw_status, undefined);
+    assert.equal(latestP10.runs.length, 2);
+    assert.deepEqual(latestP10.runs.map(run => run.status), ['PASS_SCOPED', 'INCONCLUSIVE']);
+    assert.ok(latestP10.runs.every(run => run.raw_status === undefined && run.current_disposition === undefined));
+    assert.equal(latestP10.policy_id, 'P10_HOLD_RECOVERY_MEDIA_V2_20261027');
+    assert.deepEqual(latestP10.runs.map(run => run.reassessment.status), ['PASS_SCOPED', 'INCONCLUSIVE']);
+    assert.equal(latestP10.acceptance_policy.wall_duration.role, 'efficiency_record_only');
+    assert.equal(latestP10.acceptance_policy.execution_watchdog.limit_seconds, 10500);
+    assert.equal(latestP10.full_gate_credit, 0);assert.equal(latestP10.formal_credit, 0);assert.equal(latestP10.release_eligible, false);
+    for (const [id, number] of [['highlight-p10', '02'], ['highlight-screen-share', '04']]) {
+      const start = home.indexOf('id="' + id + '"'), card = home.slice(start, home.indexOf('</article>', start));
+      assert.ok(card.includes('<span class="highlight-number">' + number + '</span>'), 'Requested card number differs: ' + id);
+      if (id === 'highlight-p10') assert.ok(card.includes('href="' + p10Path + '"'), 'P10 summary must link the detailed two-run report');
+    }
+    const entry = catalog.reports.find(report => report.path === p10Path);
+    assert.equal(entry?.status, 'PASS_SCOPED');assert.equal(entry?.json_path, p10Path.replace(/\.html$/, '.json'));
+    checks.p10_replaces_e2ee_and_exchanges_position_with_screen_share = true;
+    checks.p10_complete_two_run_report_in_catalog = true;
+  }
   assert.ok(home.includes('Private Bytes增长')&&home.includes('95.869140625'),'Latest completed Formal FAIL must be visible');
   assert.equal(latestFormal.status,'FAIL');
   assert.ok(!((await fs.readdir(root)).some(name => name.endsWith('.html') && name !== 'index.html')), 'Independent reports must live under reports/');

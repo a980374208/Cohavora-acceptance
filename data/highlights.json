@@ -131,6 +131,181 @@
     "historyMetricsPath": "reports/b14/b14-historical-metrics.html"
   },
   {
+    "id": "highlight-p10",
+    "title": "P10 百路媒体与分页负载长稳测试",
+    "status": "PASS_SCOPED／INCONCLUSIVE（修订口径复核）",
+    "date": "2026-10-27（两run按各自冻结输入）",
+    "summary": "100路视频＋音频、真实账号业务入会，两次均完成30分钟固定页＋2小时混合长稳。本次德国按有效保持、动作恢复和媒体质量门复核PASS_SCOPED；前次上海三门证据不完整，仍INCONCLUSIVE。总耗时与RX丢弃仅记录，10500秒执行看门狗保留。",
+    "scope": "仅授本次P10完整长稳实测范围；默认GC、自动ICE、实际RelWithDebInfo，固定页16路自动低层。两run分别评估，不跨run拼接。",
+    "metrics": [
+      {
+        "name": "当前验收结果",
+        "value": "德国 PASS_SCOPED（10 PASS）；上海 INCONCLUSIVE（7 PASS／3 INCONCLUSIVE）",
+        "limit": "有效保持、动作恢复和媒体质量达标；看门狗保护保留",
+        "unit": "判定",
+        "basis": "policy_id、acceptance_policy与runs[*].criteria/reassessment"
+      },
+      {
+        "name": "固定页时长",
+        "value": "1800.031／1800.062",
+        "limit": "≥1800",
+        "unit": "s",
+        "basis": "runs[*].criteria.fixed_media.media.seconds"
+      },
+      {
+        "name": "混合阶段／实际保持",
+        "value": "144／7259.757；144／7273.164",
+        "limit": "混合保持≥7200",
+        "unit": "阶段／s",
+        "basis": "runs[*].timing.mixed_phase_count/mixed_actual_hold_seconds"
+      },
+      {
+        "name": "总耗时（效率记录）",
+        "value": "10009.281／9777.094",
+        "limit": "仅记录，不作为验收门限",
+        "unit": "s",
+        "basis": "runs[*].timing.wall_seconds；acceptance_policy.wall_duration"
+      },
+      {
+        "name": "执行看门狗",
+        "value": "两次均未触发（10009.281／9777.094）",
+        "limit": "10500秒执行保护保留",
+        "unit": "s",
+        "basis": "runs[*].reassessment.execution_watchdog；原observer.execution_watchdog_seconds"
+      },
+      {
+        "name": "软重连／完整重连",
+        "value": "各9/9恢复；德国均24.701／9.231，上海均14.832／4.069",
+        "limit": "原动作ACK与媒体恢复门",
+        "unit": "s",
+        "basis": "runs[*].timing与observer.commands"
+      },
+      {
+        "name": "服务端网卡RX丢弃",
+        "value": "德国+45；上海资源门覆盖不完整",
+        "limit": "仅记录，不作为门限",
+        "unit": "次",
+        "basis": "acceptance_policy.server_net_rx_drops；德国+45及9个窗口保留，因果INSUFFICIENT_EVIDENCE；上海不跨run补证"
+      },
+      {
+        "name": "采样提交成功／失败",
+        "value": "德国9982／0，最大采样间隔2.141秒",
+        "limit": "最大间隔≤3秒",
+        "unit": "次／s",
+        "basis": "runs[0].diagnostics.sampling_timing最终提交回执"
+      },
+      {
+        "name": "整组／正式／资格信用",
+        "value": "0／0／0",
+        "limit": "仅按原合同授予",
+        "unit": "信用",
+        "basis": "PASS_SCOPED仅授本次P10范围；完整B11未关闭，原技术信用不自动升级，release_eligible=false"
+      },
+      {
+        "name": "实际操作流程",
+        "value": "真实登录入会/百路源+音频 → 全屏grid16下一页稳定后固定1800秒 → 20次连续翻页（末次10秒） → 混合16动作×9轮（每次收敛后50秒，共7200秒） → 恢复grid16下一页60秒 → 退出、资源释放与任务清理。 混合顺序：4宫格 → 下一页 → 9宫格 → 下一页 → 16宫格 → 下一页 → 固定成员 → 取消固定 → 开白板 → 关白板 → 开始共享 → 停止共享 → 软重连 → 完整重连 → 最小化 → 恢复窗口。",
+        "limit": "每次按相同168命令计划完整执行；全部步骤见子页",
+        "unit": "操作",
+        "basis": "operation_sequence及两run.observer.executed_plan/phase_observations"
+      }
+    ],
+    "limitations": [
+      "本次德国按当前P10口径评估PASS_SCOPED，前次上海INCONCLUSIVE；仅授各自实测范围，完整B11/整组、Formal及资格信用仍为0，release_eligible=false。",
+      "100路发布宣告三层视频；固定页仅16路自动低层，不能解读为100路高清同时解码。",
+      "服务端网卡RX丢弃仅记录、不作门限：德国累计+45及9个窗口保留；候选TCP重传/RTT未观察同步异常，但ICE关联只到端口与时间，因果仍INSUFFICIENT_EVIDENCE。",
+      "总wall仅作为效率记录：德国10009.281秒、上海9777.094秒；10500秒执行看门狗保留且两run均未触发。总耗时完整包含收敛、布局准备、保持及编排时间。",
+      "有效保持时长、每次动作恢复与媒体质量须达标；音频、采样覆盖、资源其他预算与清理等检查保持。前次存在3.016/3.297秒采样缺口且三门证据不完整，后续证据不追补旧run。",
+      "两台服务器、传输协议与链路不同，不构成单变量性能对照；本次仅按当前口径更新文档，未重跑产品、网络或长稳，未改动私有运行器。",
+      "2026-10-27阶段已收口(PARTIAL)；完整B11仍NOT_CLOSED，无物理Present/声学播放结论，无新增发布资格。"
+    ],
+    "sources": [
+      "reports/product/p10-long-soak-results-20261027.json",
+      "reports/product/p10-long-soak-results-20261027.html"
+    ],
+    "environmentIds": [
+      "env-p10-germany-20261027",
+      "env-p10-shanghai-20261027"
+    ],
+    "report_path": "reports/product/p10-long-soak-results-20261027.html"
+  },
+  {
+    "id": "highlight-b15",
+    "title": "B15 遥测与日志系统配对（A/B）性能开销测试",
+    "status": "PASS（原配对范围／最新资源子门）",
+    "date": "三对OFF/ON：原2026-10-01／10-02；9000秒资源：2026-10-20至10-21",
+    "summary": "表内原180秒三组配对及独立9000秒资源子门仍为各自限定范围的PASS，保留原日期和数值。2026-10-22最新正式重测每侧60秒，计划三对、已完成3对，原判定PASS；各对callback p99保守增幅为-11.4369501466%／-6.7586206897%／-16.2601626016%，原门限5%。三对在同一运行中完成。该60秒范围不替换表内180秒结果。",
+    "scope": "原三组性能配对沿用原f153e339fe58aad7023e18ba89bfc4daa4714a13及原夹具身份；9000秒资源子门采用2026-10-20／21独立RelWithDebInfo运行，不将其视为新三对性能PASS。 最新60秒各对CPU增量0.386524／0.297022／0.314071个百分点，工作集增量11.906250／10.496094／12.916016MiB。清理、输入身份、外部环境和安全组恢复均PASS；独立窗口PASS不抵扣配对失败，与旧180秒三对和资源门分别解释。",
+    "metrics": [
+      {
+        "name": "正式 OFF / ON 配对",
+        "value": "3 / 3，每侧180秒",
+        "limit": "三组同负载配对",
+        "unit": "组",
+        "basis": "B15_BATCH_INDEX.json: cases[paired-1..3].status；每侧180秒见 FINAL_AUTOMATION_ACCEPTANCE_REPORT.md:152；保留原2026-10-01／10-02已完成结果，本轮未以未完成配对替换"
+      },
+      {
+        "name": "CPU 增量（第1 / 2 / 3组）",
+        "value": "0.6748644834018991 / 0.7064084782162388 / 0.7098815712675011",
+        "limit": "每组≤1",
+        "unit": "个百分点",
+        "basis": "B15_BATCH_INDEX.json: cases[0..2].comparison.cpu_increase_pp、comparison.limits.cpu_increase_pp；保留原2026-10-01／10-02已完成结果，本轮未以未完成配对替换"
+      },
+      {
+        "name": "工作集增量（第1 / 2 / 3组）",
+        "value": "4.26953125 / 4.736328125 / 2.181640625",
+        "limit": "每组≤32",
+        "unit": "MiB",
+        "basis": "B15_BATCH_INDEX.json: cases[0..2].comparison.working_set_increase_bytes =4476928 /4966400 /2287616，除以1048576；limit=33554432 bytes；保留原2026-10-01／10-02已完成结果，本轮未以未完成配对替换"
+      },
+      {
+        "name": "回调 p99 增幅保守上界（第1 / 2 / 3组）",
+        "value": "-3.831417624521072 / 0 / -5.67200986436498",
+        "limit": "每组≤5",
+        "unit": "%",
+        "basis": "B15_BATCH_INDEX.json: cases[0..2].comparison.callback_p99_increase_upper_percent、limits.callback_p99_increase_percent；保留原2026-10-01／10-02已完成结果，本轮未以未完成配对替换"
+      },
+      {
+        "name": "原生媒体 / UI / 持久化长门实测时长",
+        "value": 9030.448,
+        "limit": "≥9000",
+        "unit": "s",
+        "basis": "data/completed-evidence/telemetry-9000s-20261021-result.json: long_resource_gate.duration_s；9033样本、最大间隔1.068秒、预热300秒；原9000秒门"
+      },
+      {
+        "name": "长门 Private Bytes 增长",
+        "value": 11.994140625,
+        "limit": "≤64",
+        "unit": "MiB",
+        "basis": "data/completed-evidence/telemetry-9000s-20261021-result.json: long_resource_gate.private_growth_mib；退会后相对入会前32.5703125MiB≤64MiB"
+      }
+    ],
+    "limitations": [
+      "三组性能配对和9000秒资源来自各自完成运行，不拼接为当前整批通过；未完成的新性能配对不覆盖原三组数值。",
+      "native callback计时不包含decoder自身计算，p99负增量不证明整条解码链提升。",
+      "9000秒资源子门不等于B14八小时／100轮完整会议生命周期；各自输入与版本边界保留。",
+      "历史正式首对p99 +7.0146818923%＞5% FAIL保留原工件与日期；原失败根因UNKNOWN，不因新运行改判或声称根因已解决。panel-closed batch22八窗及143693项回读仅为诊断，不能改判；P13完整主门信用0。"
+    ],
+    "sources": [
+      "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/batch-g-20261002/B15_BATCH_INDEX.json",
+      "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
+      "reports/product/resource-completion-20261021-01.json",
+      "reports/product/resource-completion-20261021-01.html",
+      "data/completed-evidence/telemetry-9000s-20261021-result.json",
+      "data/completed-evidence/telemetry-9000s-20261021-index.json",
+      "data/completed-evidence/p13-performance-paired-20261022-scoped.json",
+      "data/completed-evidence/telemetry-paired-first-20261021-index.json",
+      "reports/product/stage-closure-20261022.html"
+    ],
+    "resolvedSources": {
+      "E:/vsSource/WebRTC/live-kit-test-local/docs/acceptance/evidence/batch-g-20261002/B15_BATCH_INDEX.json": "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/batch-g-20261002/B15_BATCH_INDEX.json"
+    },
+    "environmentIds": [
+      "env-b15",
+      "env-telemetry-9000s-20261021",
+      "env-telemetry-pair-20261022"
+    ]
+  },
+  {
     "id": "highlight-screen-share",
     "title": "屏幕共享（WGC / GDI）生命周期与性能成本测试",
     "status": "PASS（已完成子门；完整P07仍PARTIAL）",
@@ -226,166 +401,6 @@
       "env-wgc-20261021",
       "env-gdi-50-20261021",
       "env-wgc-quality-2k-20261021"
-    ]
-  },
-  {
-    "id": "highlight-b15",
-    "title": "B15 遥测与日志系统配对（A/B）性能开销测试",
-    "status": "PASS（原配对范围／最新资源子门）",
-    "date": "三对OFF/ON：原2026-10-01／10-02；9000秒资源：2026-10-20至10-21",
-    "summary": "表内原180秒三组配对及独立9000秒资源子门仍为各自限定范围的PASS，保留原日期和数值。2026-10-22最新正式重测每侧60秒，计划三对、已完成3对，原判定PASS；各对callback p99保守增幅为-11.4369501466%／-6.7586206897%／-16.2601626016%，原门限5%。三对在同一运行中完成。该60秒范围不替换表内180秒结果。",
-    "scope": "原三组性能配对沿用原f153e339fe58aad7023e18ba89bfc4daa4714a13及原夹具身份；9000秒资源子门采用2026-10-20／21独立RelWithDebInfo运行，不将其视为新三对性能PASS。 最新60秒各对CPU增量0.386524／0.297022／0.314071个百分点，工作集增量11.906250／10.496094／12.916016MiB。清理、输入身份、外部环境和安全组恢复均PASS；独立窗口PASS不抵扣配对失败，与旧180秒三对和资源门分别解释。",
-    "metrics": [
-      {
-        "name": "正式 OFF / ON 配对",
-        "value": "3 / 3，每侧180秒",
-        "limit": "三组同负载配对",
-        "unit": "组",
-        "basis": "B15_BATCH_INDEX.json: cases[paired-1..3].status；每侧180秒见 FINAL_AUTOMATION_ACCEPTANCE_REPORT.md:152；保留原2026-10-01／10-02已完成结果，本轮未以未完成配对替换"
-      },
-      {
-        "name": "CPU 增量（第1 / 2 / 3组）",
-        "value": "0.6748644834018991 / 0.7064084782162388 / 0.7098815712675011",
-        "limit": "每组≤1",
-        "unit": "个百分点",
-        "basis": "B15_BATCH_INDEX.json: cases[0..2].comparison.cpu_increase_pp、comparison.limits.cpu_increase_pp；保留原2026-10-01／10-02已完成结果，本轮未以未完成配对替换"
-      },
-      {
-        "name": "工作集增量（第1 / 2 / 3组）",
-        "value": "4.26953125 / 4.736328125 / 2.181640625",
-        "limit": "每组≤32",
-        "unit": "MiB",
-        "basis": "B15_BATCH_INDEX.json: cases[0..2].comparison.working_set_increase_bytes =4476928 /4966400 /2287616，除以1048576；limit=33554432 bytes；保留原2026-10-01／10-02已完成结果，本轮未以未完成配对替换"
-      },
-      {
-        "name": "回调 p99 增幅保守上界（第1 / 2 / 3组）",
-        "value": "-3.831417624521072 / 0 / -5.67200986436498",
-        "limit": "每组≤5",
-        "unit": "%",
-        "basis": "B15_BATCH_INDEX.json: cases[0..2].comparison.callback_p99_increase_upper_percent、limits.callback_p99_increase_percent；保留原2026-10-01／10-02已完成结果，本轮未以未完成配对替换"
-      },
-      {
-        "name": "原生媒体 / UI / 持久化长门实测时长",
-        "value": 9030.448,
-        "limit": "≥9000",
-        "unit": "s",
-        "basis": "data/completed-evidence/telemetry-9000s-20261021-result.json: long_resource_gate.duration_s；9033样本、最大间隔1.068秒、预热300秒；原9000秒门"
-      },
-      {
-        "name": "长门 Private Bytes 增长",
-        "value": 11.994140625,
-        "limit": "≤64",
-        "unit": "MiB",
-        "basis": "data/completed-evidence/telemetry-9000s-20261021-result.json: long_resource_gate.private_growth_mib；退会后相对入会前32.5703125MiB≤64MiB"
-      }
-    ],
-    "limitations": [
-      "三组性能配对和9000秒资源来自各自完成运行，不拼接为当前整批通过；未完成的新性能配对不覆盖原三组数值。",
-      "native callback计时不包含decoder自身计算，p99负增量不证明整条解码链提升。",
-      "9000秒资源子门不等于B14八小时／100轮完整会议生命周期；各自输入与版本边界保留。",
-      "历史正式首对p99 +7.0146818923%＞5% FAIL保留原工件与日期；原失败根因UNKNOWN，不因新运行改判或声称根因已解决。panel-closed batch22八窗及143693项回读仅为诊断，不能改判；P13完整主门信用0。"
-    ],
-    "sources": [
-      "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/batch-g-20261002/B15_BATCH_INDEX.json",
-      "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/FINAL_AUTOMATION_ACCEPTANCE_REPORT.md",
-      "reports/product/resource-completion-20261021-01.json",
-      "reports/product/resource-completion-20261021-01.html",
-      "data/completed-evidence/telemetry-9000s-20261021-result.json",
-      "data/completed-evidence/telemetry-9000s-20261021-index.json",
-      "data/completed-evidence/p13-performance-paired-20261022-scoped.json",
-      "data/completed-evidence/telemetry-paired-first-20261021-index.json",
-      "reports/product/stage-closure-20261022.html"
-    ],
-    "resolvedSources": {
-      "E:/vsSource/WebRTC/live-kit-test-local/docs/acceptance/evidence/batch-g-20261002/B15_BATCH_INDEX.json": "E:/vsSource/WebRTC/live-kit-test/out/html-refresh-20261007-105933/source-snapshots/docs/acceptance/evidence/batch-g-20261002/B15_BATCH_INDEX.json"
-    },
-    "environmentIds": [
-      "env-b15",
-      "env-telemetry-9000s-20261021",
-      "env-telemetry-pair-20261022"
-    ]
-  },
-  {
-    "id": "highlight-e2ee",
-    "title": "E2EE 端到端加密性能基准测试",
-    "status": "PASS（Native 限定性能负载）",
-    "date": "2026-10-20（Native ABBA 与共同600秒）",
-    "summary": "表内Native ABBA和共同600秒限定性能结果仍为PASS。独立跨SDK内容范围中，Flutter为14 PASS／2 FAIL；官方C++数据12格、受控视频4格及合成音频OFF／ON限定内容分别完成。内容失败不改判本卡Native性能结果，完整P05／P06未关闭。 当前失败处置已改为DEFERRED，历史14 PASS／2 FAIL属于原实测。",
-    "scope": "three RelWithDebInfo native products, H264 window share+microphone, initial chat/file/whiteboard; third late join。每轮100秒，最后一端入会后预热20秒，共同测量窗口45秒；各客户端两轮On/Off的逐轮P95分别平均。三端为同机三个独立进程。 官方C++合成音频为独立OFF／ON各60秒内容观察，原生解码及实际回送按同run留证，不是物理口到耳、音质或连续性门。",
-    "metrics": [
-      {
-        "name": "CPU 增量范围（On−Off）",
-        "value": "−0.132983～＋0.041726",
-        "limit": "≤10",
-        "unit": "个百分点",
-        "basis": "data/completed-evidence/native-e2ee-abba-20261020-result.json: comparison.*.cpu_delta_pp；2026-10-20 同机三 Native 完成运行"
-      },
-      {
-        "name": "最大私有内存增量（On−Off）",
-        "value": 0.910156,
-        "limit": "≤128",
-        "unit": "MiB",
-        "basis": "data/completed-evidence/native-e2ee-abba-20261020-result.json: comparison.*.private_memory_delta_mib (maximum)；2026-10-20 同机三 Native 完成运行"
-      },
-      {
-        "name": "解码 FPS 损失范围",
-        "value": "0.323782～0.747328",
-        "limit": "≤10",
-        "unit": "%",
-        "basis": "data/completed-evidence/native-e2ee-abba-20261020-result.json: comparison.*.decoded_fps_loss_percent；2026-10-20 同机三 Native 完成运行"
-      },
-      {
-        "name": "PCM 回调间隔 P95 上界／稳态 >100 ms 间隔",
-        "value": "15 / 0",
-        "limit": "仅观测，未设音质门限",
-        "unit": "ms / 次",
-        "basis": "data/completed-evidence/native-e2ee-abba-20261020-result.json: trials[0..3].metrics.*.pcm_gap_p95_upper_ms / pcm_intervals_over_100ms；2026-10-20 同机三 Native 完成运行"
-      },
-      {
-        "name": "音频 jitter-buffer delay P95 差值（On−Off）",
-        "value": "−15.000000～＋8.000000",
-        "limit": "仅观测，未设音质门限",
-        "unit": "ms",
-        "basis": "data/completed-evidence/native-e2ee-abba-20261020-result.json: comparison.*.observations.audio_jitter_buffer_delay_p95_delta_ms；2026-10-20 同机三 Native 完成运行"
-      },
-      {
-        "name": "共同可用窗口／逐轨判定时长",
-        "value": "617.579 / 600",
-        "limit": "逐轨判定覆盖≥600",
-        "unit": "s",
-        "basis": "data/completed-evidence/native-e2ee-abba-20261020-result.json: observation.common_available_seconds / verified_seconds；2026-10-20 同机三 Native 完成运行"
-      }
-    ],
-    "limitations": [
-      "仅授予该次Native ABBA负载及共同600秒范围；不代替完整E2EE验收、Flutter内容对应或跨物理机器互通。",
-      "PCM间隔及jitter-buffer delay仅观察，后者不是嘴到耳延迟；负差值按测量波动解释，不宣称加密提高性能。",
-      "未覆盖摄像头负载、长期稳定性、物理延迟或最终E2EE完成。",
-      "2026-10-22阶段收口：Flutter严格媒体内容两格FAIL及六帧异常原判据保留；不剔除失败帧，不用Native成功改判。官方C++进程退出不证明SDK进程内callback-drain或安全退休。",
-      "18:03完成的独立隔离RTP／SIF诊断仅解释本次run e2ee-6d63ce9849614878：508帧中502有效、6异常，原严格检查仍FAIL 69/70；六帧按SSRC／RTP时间戳关联至SFU关闭旧轨时生成的VP8 blank frame，再经Native SIF兼容路径交付。仅本次生产者链路已确认，不追判17:20 shared修复衍生run的六帧来源；不替换其522帧结果，不新增产品PASS／FAIL，验收信用0。",
-      "当前P05／P06及三条共享失败来源按用户要求DEFERRED，涉及两个bug；原实测FAIL／日期／输入和replace-two衍生PASS保留。优先评估A1严格新建接收管线，必须复用或隔离无法证明时采用B显式clear／epoch／完成ACK；本轮未修复或重测。"
-    ],
-    "sources": [
-      "E:/vsSource/WebRTC/live-kit-test-local/docs/analysis/e2ee/E2EE_IMPLEMENTATION_REPORT_20260930.md",
-      "reports/product/functional-media-retest-20261020-01.json",
-      "reports/product/functional-media-retest-20261020-01.html",
-      "data/completed-evidence/native-e2ee-abba-20261020-result.json",
-      "reports/product/resource-completion-20261021-01.json",
-      "data/completed-evidence/official-cpp-audio-windows01-20261021-scoped.json",
-      "data/completed-evidence/flutter-full-rtp-sif-20261022-diagnosis.json",
-      "data/completed-evidence/flutter-full-rtp-sif-20261022-execution.json",
-      "reports/product/stage-closure-20261022.html",
-      "reports/product/p05-p06-deferred-remediation-20261022.json",
-      "reports/product/p05-p06-deferred-remediation-20261022.html"
-    ],
-    "sourceChecks": [
-      {
-        "path": "E:/vsSource/WebRTC/live-kit-test-local/docs/analysis/e2ee/E2EE_IMPLEMENTATION_REPORT_20260930.md",
-        "sha256": "45fc5367429d0fabea9545b0f843ba52dfaadc9296dd693967fd3fc2b48f92ea",
-        "status": "MATCH_RECORDED_RECEIPT"
-      }
-    ],
-    "environmentIds": [
-      "env-e2ee-abba-20261020"
     ]
   },
   {

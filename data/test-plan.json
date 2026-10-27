@@ -1,6 +1,6 @@
 {
   "schema": "cohavora-consolidated-acceptance-plan-v1",
-  "revised_at": "2026-10-23T14:18:57.123Z",
+  "revised_at": "2026-10-27",
   "timezone": "Asia/Shanghai",
   "source": "data/report-input.json",
   "scope": "统一维护后续验收计划，并追加各批次实际覆盖及未覆盖边界；不更改原结果、冻结门限或暂停约束。",
@@ -915,7 +915,10 @@
         "固定grid9：仅当定版仍要求该负载时执行当前版本长稳，保留实际活跃媒体、画质、音频、GPU与资源证据。"
       ],
       "conditions": [
-        "固定grid9是条件负载，不因曾有历史记录而额外强制重跑；3 Mbps与20 Mbps等环境分别冻结。"
+        "固定grid9是条件负载，不因曾有历史记录而额外强制重跑；3 Mbps与20 Mbps等环境分别冻结。",
+        "正式P10接收端使用实际RelWithDebInfo Cohavora客户端，以受保护真实账号密码登录并通过九位业务会议号入会；核验登录账号、业务授权和实际SFU room后才收敛并开始1800秒固定页＋7200秒混合。复用原b11_mixed_run入口、默认GC和原十个子门，业务入会／结束证据合入原动作／清理门，不新增验收计项；完整长稳未完成前保留原结果。",
+        "默认GC短诊断复用固定页60秒／20次快翻／恢复页60秒，提示条隐藏且布局稳定后冻结；接收链附加原生丢帧、缓冲延迟和解码耗时计数，仅辅助归因，不新增验收项或正式信用。",
+        "完整重连局部诊断复用reconnect-diagnostic：默认GC、100路及自动ICE，稳定固定页60秒后只执行一次完整重连并观察60秒；记录重连前后实际ICE协议、逐轨重传包／字节与NACK／PLI／FIR，缺失为UNKNOWN。前序动作协议FIXED60_MIXED50_SOFT_FULL60_V1保留原20次快翻与前12个混合动作各50秒，软／完整重连各观察60秒并分别核对原来源与路数，仅该诊断wall上限1200秒。保留45秒收敛、3秒保护和3000毫秒帧龄门，越限保留失败并继续观察；仅辅助诊断，不替代30分钟＋2小时长稳，不新增验收项或正式信用。"
       ],
       "boundaries": [
         "原61／100发布失败与LONG_SOAK_NOT_RUN不被短门覆盖",
@@ -975,6 +978,51 @@
         "disposition_source": "data/stage-user-disposition-20261023.json",
         "disposition_report": "reports/product/stage-closure-20261022.html",
         "disposition_reason": "用户决定延期当前BLOCKED／FAIL项，并评估剩余待测项无较大或严重问题，批准发版0.0.1；原测试判定与未测范围保留。"
+      },
+      "latest_completed_result_source": "reports/product/p10-long-soak-results-20261027.json",
+      "current_results_projection": {
+        "as_of": "2026-10-27",
+        "source": "reports/product/p10-long-soak-results-20261027.json",
+        "locator": "/plan_projection",
+        "status": "PASS_SCOPED",
+        "completed_runs": 2,
+        "full_gate_credit": 0,
+        "formal_credit": 0,
+        "historical_stage_status_preserved": "DEFERRED_AS_OF_2026-10-23",
+        "previous_run_status": "INCONCLUSIVE",
+        "policy_id": "P10_HOLD_RECOVERY_MEDIA_V2_20261027",
+        "method": "OFFLINE_REASSESSMENT_OF_EXISTING_EVIDENCE"
+      },
+      "acceptance_policy": {
+        "as_of": "2026-10-27",
+        "source": "reports/product/p10-long-soak-results-20261027.json",
+        "server_net_rx_drops": {
+          "role": "record_only",
+          "threshold": null,
+          "record_delta": true,
+          "basis": "用户明确服务端网卡RX丢弃只记录增量、窗口和归因，不作为当前验收门限。"
+        },
+        "other_thresholds": "UNCHANGED_EXCEPT_WALL_AND_SERVER_NET_RX_DROPS",
+        "policy_id": "P10_HOLD_RECOVERY_MEDIA_V2_20261027",
+        "scope": "当前P10完整长稳范围；按新口径展示两次结果，旧评估结论不纳入当前文档。",
+        "required_gates": [
+          "有效保持时长达标",
+          "每次动作ACK及恢复收敛达标",
+          "媒体与参考音频质量达标",
+          "其余已声明资源、采样覆盖及退出清理门保持"
+        ],
+        "wall_duration": {
+          "role": "efficiency_record_only",
+          "threshold": null,
+          "recording_required": true,
+          "basis": "总耗时仅记录效率，不参与通过/失败判定；有效保持时长独立达标，保留执行看门狗。"
+        },
+        "execution_watchdog": {
+          "role": "execution_guard",
+          "limit_seconds": 10500,
+          "preserved": true
+        },
+        "result_presentation": "仅展示修订口径评估结果；不保留本轮旧评估结论或旧门限。"
       }
     },
     {
@@ -2123,9 +2171,10 @@
   },
   "release_approval": {
     "source": "data/stage-user-disposition-20261023.json",
-    "date": "2026-10-23",
+    "date": "2026-10-27",
     "status": "APPROVED_BY_USER",
     "version": "0.0.1",
-    "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1"
+    "statement": "2026-10-27阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
+    "original_approval_date": "2026-10-23"
   }
 }

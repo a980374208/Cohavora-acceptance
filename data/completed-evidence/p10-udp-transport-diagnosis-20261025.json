@@ -1,0 +1,1473 @@
+{
+  "schema": 1,
+  "scope": "P10_UDP_TRANSPORT_DIAGNOSTIC",
+  "date": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "status": "FAIL",
+  "formal_credit": 0,
+  "long_soak_status": "NOT_RUN",
+  "udp_media_measurement_status": "NOT_RUN",
+  "finished_utc": "2026-10-25T08:59:32.229279+00:00",
+  "target": {
+    "host": "89.106.76.195",
+    "vcpus": 4,
+    "memory_kib": 20480320,
+    "server_bandwidth_mbps_user_confirmed": 1000,
+    "client_downlink_mbps_user_confirmed": 100
+  },
+  "normal_preflight": {
+    "aggregate_status": "INCONCLUSIVE",
+    "runner_status": "FAIL",
+    "path_gate_status": "FAIL",
+    "observation_seconds": 15.021976796000672,
+    "public_tx_bytes": 1024133,
+    "original_public_tx_limit_bytes": 262144,
+    "media_route": "TASK_NAMESPACE_VERIFIED_HOST_LOCAL_ICE",
+    "evidence": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-preflight"
+  },
+  "udp_diagnostic": {
+    "aggregate_status": "FAIL",
+    "runner_status": "FAIL",
+    "observer_status": "FAIL",
+    "observer_reason": "receiver_exit_not_clean",
+    "primary_failure": "receiver_exited_early",
+    "exit_code": 3,
+    "shutdown_ack": false,
+    "native_release": {
+      "active_native_bindings": 0,
+      "available": true,
+      "before_window_destruction": {
+        "render_attached_tracks": 0,
+        "renderer_session_present": true,
+        "ui_render_leases": 0,
+        "ui_video_bindings": 0,
+        "window_fullscreen": true,
+        "window_minimized": false
+      },
+      "coordinator_room_absent": true,
+      "native_audio_bindings": 0,
+      "native_measurement_point": "observed_room_destroyed",
+      "native_video_bindings": 0,
+      "observed_room_expired": true,
+      "render_attached_tracks": 0,
+      "renderer_session_present": false,
+      "schema": 1,
+      "ui_render_leases": 0,
+      "ui_video_bindings": 0,
+      "verified": true,
+      "webrtc_deinitialized": true,
+      "window_destroyed": true
+    },
+    "wall_seconds": 31.937000000005355,
+    "transport": {
+      "status": "UNKNOWN",
+      "error_type": null,
+      "seconds_since_check": 0.0,
+      "pairs": [],
+      "boundary": "SFU_selected_ICE_pairs_not_wire_capture"
+    },
+    "go_runtime": {
+      "requested_profile": "default",
+      "resolved_profile": "default",
+      "environment": {
+        "GOGC": null,
+        "GOMEMLIMIT": null
+      },
+      "default_gogc": 100,
+      "default_memory_limit": true
+    },
+    "publication_status": "PASS",
+    "publication_snapshot": {
+      "ok": true,
+      "all_sources_advertise_hd": true,
+      "publisher_participants": 100,
+      "video_tracks": 100,
+      "tracks": [
+        {
+          "sid_hash": "ae183268f5a57b57",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "82f303401a86139e",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "7a01996797e8ed7e",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "deee3aee459eb4ba",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "bbd9fb09be022c0a",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "c6886fb7d1a702cc",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "1c1b0189ea957dab",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "a36ccfa5bac1a2bd",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "ee6f4bd94fc96a76",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "b1dc0258493880d8",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "9bf26e7f182e716f",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "897b5fcaaaebb5b4",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "fa639153ede9c7c9",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "86964c0490e7d1f4",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "282ccb826612fcde",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "b07c3428b8fa5c78",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "05b0d0fcbc4e1f31",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "db60bbeebe04f03f",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "e2fc1655788d0e13",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "ded29547846f8737",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "dbe907a0b241efa8",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "804dc55e87a83203",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "db17ea25afad700b",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "a40a19b921c9fa0f",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "b4cd78138be56411",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "f27dee887427d6e7",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "40ef5c7a30ef1db4",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "ea60c29ae0ae3b52",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "1290fc344260d428",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "2fadf539cf3739f7",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "38377271269fd484",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "2a40ec1bdad55297",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "99753311d94de5d7",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "64d50d41c27e58c6",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "d08e113bf4180b4d",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "8a07a0bdb4dd3c6f",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "3ba335f1898facdf",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "de99839605462da5",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "99e7b3383335cbe9",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "446b352bf7b9d0c4",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "e294fa4133358b57",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "9d391550f48fd439",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "377fb0c67b0a99e7",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "710fa7c8b747b48b",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "159443194a3f2887",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "411f787f41910da3",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "9fb8b80f0205aa50",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "eb377bb79a294ce0",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "b71db17f61715775",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "737a65d37a30bcab",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "8d82838709407317",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "253a8ae81bedfca9",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "674d998de34908c4",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "4acb572c890b5fb7",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "bcce558d168a9f0c",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "95a29cb952179902",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "75af20ae12aa0b2c",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "51fe075ca6d877f1",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "c9ba6188db2a33bb",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "ec06fa5807c4e8b5",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "684be7e0579277ec",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "2874648fd838f62c",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "7673f992dff7e7d5",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "2b1aab6c534435bf",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "e4e4a5b73dac5780",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "07f5326bf909b536",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "fa24ca1843c221a2",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "45061d206687081b",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "31327a8231779ce4",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "6ddd0b3df6ea471f",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "9cc5c4fd7ef3c2c1",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "49089a62bba8c136",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "a8df64cfe6adf407",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "c1886dfa797a5191",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "ed35737941f65694",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "0c1837ab5ea8fe4f",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "222ceb23c8de8bcc",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "99159f96fee8e47c",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "957a6d76870e2755",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "db3783e8217074cd",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "fa629cac2f0aca6f",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "f57e79c75b0edd03",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "e746569bf8d56a54",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "ab682808ed7e8e14",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "67991c0fb4691f3c",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "59a26f1b68ba8f03",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "f42851dd454c20fb",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "b7ffd4a9b45ba13a",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "f8a2a80a0d92d990",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "162d3b6befb216bd",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "852ab1fa99aa1397",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "f5dc3728b5a1ab54",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "b45ce08323663823",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "960ee8aa7713bde4",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "12e31a43d9d5582d",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "63aa3fe019cd1bc0",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "019743df50fcbd9f",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "7d87430970155742",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "9197d83c3e24724f",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        },
+        {
+          "sid_hash": "c7ebe4435e28d5f4",
+          "layer_count": 3,
+          "high_1280x720_advertised": true
+        }
+      ],
+      "measurement_scope": "PUBLICATION_METADATA_NOT_DECODED_FPS",
+      "audio_reference": {
+        "participant_count": 1,
+        "track_count": 1,
+        "tracks": [
+          {
+            "sid_hash": "7e5dd6f8a74f035c",
+            "muted": false,
+            "source": "MICROPHONE",
+            "name": "b11-owned-tone"
+          }
+        ]
+      },
+      "participant_boundary": "100_VIDEO_PLUS_1_TASK_AUDIO_REFERENCE",
+      "room_participants_including_receiver": 101,
+      "prerequisite_status": "MATCH"
+    },
+    "formal_qualification_credit": 0,
+    "evidence": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-diagnostic"
+  },
+  "server_observer_ice": {
+    "message_counts": {
+      "starting signal connection": 1,
+      "starting RTC session": 1,
+      "setup enabled codecs": 1,
+      "new participant joined": 1,
+      "processing join request": 1,
+      "join request validated": 1,
+      "sent signal response": 9,
+      "updating participant state": 2,
+      "SetMigrateState": 1,
+      "sending initial response": 1,
+      "new client WS connected": 1,
+      "sending signal response": 5,
+      "received signal request": 6,
+      "handling signal request": 7,
+      "updating subscription permission": 1,
+      "received offer": 2,
+      "processing offer": 1,
+      "ice gathering state change": 2,
+      "ice connection state change": 2,
+      "peer connection state change": 2,
+      "sending answer": 2,
+      "added ICE candidate": 3,
+      "sending ICE candidate": 4,
+      "sending participant update": 1,
+      "sending room update": 1,
+      "finishing WS connection": 1,
+      "signal stream closed": 2,
+      "signal source valid": 1,
+      "stats worker active": 1,
+      "participant closing": 1,
+      "closing signal connection": 1,
+      "removing participant without connection": 1,
+      "RTC session finishing": 1,
+      "could not send message to participant, participant disconnected": 1
+    },
+    "rows": [
+      {
+        "utc": "2026-10-25T08:59:01.913Z",
+        "message": "ice connection state change",
+        "field_names": [
+          "participant",
+          "participantID",
+          "remote",
+          "room",
+          "roomID",
+          "state",
+          "transport"
+        ],
+        "state": "checking"
+      },
+      {
+        "utc": "2026-10-25T08:59:01.913Z",
+        "message": "peer connection state change",
+        "field_names": [
+          "participant",
+          "participantID",
+          "remote",
+          "room",
+          "roomID",
+          "state",
+          "transport"
+        ],
+        "state": "connecting"
+      },
+      {
+        "utc": "2026-10-25T08:59:01.914Z",
+        "message": "added ICE candidate",
+        "field_names": [
+          "candidate",
+          "participant",
+          "participantID",
+          "remote",
+          "room",
+          "roomID",
+          "transport"
+        ],
+        "candidates": [
+          {
+            "protocol": "udp",
+            "port": 54657,
+            "kind": "host",
+            "address_role": "non_public"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-25T08:59:01.914Z",
+        "message": "added ICE candidate",
+        "field_names": [
+          "candidate",
+          "participant",
+          "participantID",
+          "remote",
+          "room",
+          "roomID",
+          "transport"
+        ],
+        "candidates": [
+          {
+            "protocol": "udp",
+            "port": 54658,
+            "kind": "host",
+            "address_role": "non_public"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-25T08:59:02.601Z",
+        "message": "added ICE candidate",
+        "field_names": [
+          "candidate",
+          "participant",
+          "participantID",
+          "remote",
+          "room",
+          "roomID",
+          "transport"
+        ],
+        "candidates": [
+          {
+            "protocol": "udp",
+            "port": 48675,
+            "kind": "srflx",
+            "address_role": "public"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-25T08:59:12.216Z",
+        "message": "participant closing",
+        "field_names": [
+          "clientInfo",
+          "country",
+          "isExpectedToResume",
+          "kind",
+          "participant",
+          "participantID",
+          "reason",
+          "remote",
+          "room",
+          "roomID",
+          "sendLeave",
+          "sessionDuration"
+        ],
+        "reason": "SIGNAL_SOURCE_CLOSE"
+      },
+      {
+        "utc": "2026-10-25T08:59:12.217Z",
+        "message": "closing signal connection",
+        "field_names": [
+          "connID",
+          "participant",
+          "participantID",
+          "reason",
+          "remote",
+          "room",
+          "roomID"
+        ],
+        "reason": "PARTICIPANT_CLOSE"
+      },
+      {
+        "utc": "2026-10-25T08:59:12.218Z",
+        "message": "ice connection state change",
+        "field_names": [
+          "participant",
+          "participantID",
+          "remote",
+          "room",
+          "roomID",
+          "state",
+          "transport"
+        ],
+        "state": "closed"
+      },
+      {
+        "utc": "2026-10-25T08:59:12.218Z",
+        "message": "peer connection state change",
+        "field_names": [
+          "participant",
+          "participantID",
+          "remote",
+          "room",
+          "roomID",
+          "state",
+          "transport"
+        ],
+        "state": "closed"
+      }
+    ]
+  },
+  "cleanup": {
+    "owned_resources": "COMPLETE",
+    "issues": [],
+    "network_removed": true,
+    "shared_sfu_prerequisite_status": "MATCH",
+    "receiver_exit_status": "FAIL_EXIT_3",
+    "native_and_qt_release_verified": true
+  },
+  "unknown": [
+    "Root cause of absent matching SFU STUN responses and mismatched client srflx; authenticated requests now verified at eth0, socket delivery not proven per task.",
+    "TCP background flow owners and relationship to earlier path-gate windows.",
+    "UDP steady frame rate, RTP delivery, page recovery, soft/full reconnect and 30m plus 2h soak."
+  ],
+  "bounded_public_egress_audit": {
+    "seconds": 8.00950967099925,
+    "captured_top_rows": [
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "a13c7da8e3280f52",
+        "packets": 47,
+        "bytes": 97493
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "d00b87a8a17265fc",
+        "packets": 71,
+        "bytes": 35345
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "99cbd8e9d8cb1132",
+        "packets": 13,
+        "bytes": 7338
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "fb31170a79b92ddf",
+        "packets": 4,
+        "bytes": 6844
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "8988df749f0fad93",
+        "packets": 9,
+        "bytes": 5834
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "7c003e3f7267cc27",
+        "packets": 9,
+        "bytes": 5833
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "4464b88783a2c88e",
+        "packets": 8,
+        "bytes": 5768
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "8fedd53a82638bf6",
+        "packets": 5,
+        "bytes": 5462
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 22,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "68a8ed6843418574",
+        "packets": 13,
+        "bytes": 2809
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "7fef26282e92c08b",
+        "packets": 10,
+        "bytes": 1405
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "f1412386aa8db257",
+        "packets": 2,
+        "bytes": 1249
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "66b40061dbf6130b",
+        "packets": 8,
+        "bytes": 1124
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "b0177b0e1d93bcf5",
+        "packets": 4,
+        "bytes": 562
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "8bc1f9a892bd366d",
+        "packets": 2,
+        "bytes": 281
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "948bb1f56e1dd220",
+        "packets": 3,
+        "bytes": 222
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "de1d38040b9f43a3",
+        "packets": 3,
+        "bytes": 222
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "1ea17a2aeda30440",
+        "packets": 3,
+        "bytes": 222
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "98eba6461d26c588",
+        "packets": 3,
+        "bytes": 222
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "8af39eb2a0b8e9e3",
+        "packets": 3,
+        "bytes": 174
+      },
+      {
+        "ip_protocol": 6,
+        "known_source_port": 0,
+        "known_destination_port": 0,
+        "destination_role": "other",
+        "destination_hash": "4c315ea09aa4dd75",
+        "packets": 2,
+        "bytes": 132
+      }
+    ],
+    "boundary": "Separate later eight-second sample; top-20 rows only; not attribution of earlier gate bytes."
+  },
+  "validation": {
+    "affected_build": "RelWithDebInfo test_participant_window_remediation PASS",
+    "tool_selftests": "24 PASS (2 UDP transport + 22 mixed runner)",
+    "runtime": "UDP-only connection failed before media measurement",
+    "receiver_provenance": "Rebuilt from current dirty workspace; files and executable frozen in manifest"
+  },
+  "fingerprints": [
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-preflight\\readiness-summary.json",
+      "sha256": "306780a5f5cd0bb82b9a4425c4469b18fbb2018a88486406dc964b97c20e75f8",
+      "bytes": 8460
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-preflight\\runner-summary.json",
+      "sha256": "516d53912e43559eed89773b1e852b12cee471e22fc7fcf0f89eb4e4c12589f8",
+      "bytes": 466
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-preflight\\path-gate-measurement.json",
+      "sha256": "0a636fbee943af02f23f5aa8cd2d253567035135d860cc7a7bfaaabe2475a039",
+      "bytes": 5398
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-diagnostic\\comparison-summary.json",
+      "sha256": "2f661bea5dc60c90a437c1dfc266c2872630d53d5a55a7104db63e29dade15a7",
+      "bytes": 5969
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-diagnostic\\runner-summary.json",
+      "sha256": "4b2b350410cd012bad99731304e035080847f216006f99dd9bcd8d781276e4d3",
+      "bytes": 825
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-diagnostic\\observer\\observer-summary.json",
+      "sha256": "241773074d0c243c728ec4b5f53d5fbd5f78bd6ebb2f6eb4eb98dd812ccb6198",
+      "bytes": 18298
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-diagnostic\\observer\\udp-transport.json",
+      "sha256": "4b45f2914b0a60266cb660eec821efffbacbb7d74e528c67010e0e8623f71d49",
+      "bytes": 150
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-diagnostic\\remote\\publisher-started.json",
+      "sha256": "017a6d8970d37de7e775d3074cde66fd3049a4af6a3642c9551a177b9422109f",
+      "bytes": 1915
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-diagnostic\\remote\\publication-snapshot.json",
+      "sha256": "07040e1e08d1f647b297c8614f535822ee69027b5b671c3e1008b496f7b920fc",
+      "bytes": 11983
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-diagnostic\\remote\\cleanup-stop.json",
+      "sha256": "dc9c88fbed6cb0c2687be43da6ea520c7b16b5b4022067bb5f580b5a491b885f",
+      "bytes": 696
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-diagnostic\\remote\\cleanup-delete.json",
+      "sha256": "4aecc9ea4563cc3e18561f350c61257bf94654e3a5cc38cd5081170a192c9fb6",
+      "bytes": 78
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-diagnostic\\remote\\ecs-metrics.status.json",
+      "sha256": "96d7292ba679439c47ff8136fcae19ffd85cc8b4f3783d3791d696f79ec0b5b1",
+      "bytes": 401
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-only-diagnostic\\remote\\namespace-metrics.status.json",
+      "sha256": "b002bff9fd634dbf5ead61c7c4df3dca58f1cf34164e655ecf3e1378711ef7a4",
+      "bytes": 541
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\prepared\\udp-only-freeze.json",
+      "sha256": "389420099cbd4ce7371df071ebbf558370e0f8c785793729ffd099c98b9a3c77",
+      "bytes": 566928
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\prepared\\udp-diagnostic-only-freeze.json",
+      "sha256": "b5f77eea0c24169d639dd7732731e8777e0a44c1fb0c7ab36afcfe587dcfe9b8",
+      "bytes": 567120
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\udp-candidate-log-audit-complete.json",
+      "sha256": "9269701f82bc017324debbfbb7d5861abd6ccd44d9e6b7fdade398ee39cb5f2f",
+      "bytes": 13014
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-20261025\\public-header-audit-result-retry.json",
+      "sha256": "98e61975d48d451e0fa5e571a44cefea94a3b838a64dd2f386916472c9082da4",
+      "bytes": 3692
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-reachability-20261025\\network-roundtrip\\summary.json",
+      "sha256": "06491d523cf8813d313472a6d46606ca1cd9dfff81451144e7ae7dce7f8708a7",
+      "bytes": 8410
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-reachability-20261025\\network-roundtrip\\verified-result.json",
+      "sha256": "5cc4844c56f19b42035338c91171549c465896d7ee7f0f8156e157dd4ca5ed03",
+      "bytes": 845
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-reachability-20261025\\network-roundtrip\\server-before.json",
+      "sha256": "5553cf0358b72c35890acdf4934f08ab31309d93efc08600342078c25127a9c3",
+      "bytes": 421
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-reachability-20261025\\network-roundtrip\\capture-request.json",
+      "sha256": "940d01e4f0e530ccd52143386e1afcfe4e4d3aa640e7d72f2c208cd716446786",
+      "bytes": 521
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-reachability-20261025\\network-roundtrip\\tool-provenance.json",
+      "sha256": "26dd21622cc563b65430e73902fcd4590eaa596aff83326c85e6ac126ea906ed",
+      "bytes": 292
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-reachability-20261025\\network-roundtrip\\frozen-tool.py",
+      "sha256": "9c4e56d23ed94ff9efda74adfb1eac741b95cfa3368d9bf0474a9e523db692bd",
+      "bytes": 15035
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-ice-stun-nat-20261025\\kernel-check\\summary.json",
+      "sha256": "c366343c2f8178b0310da3858c47949afad51e1f87ed3383819e3b95f52635b5",
+      "bytes": 85030
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-ice-stun-nat-20261025\\kernel-check\\request.json",
+      "sha256": "0c8972b511f597fef4374922cb752ce46f78fb3ccdf717db0802de8bb3ffd6d4",
+      "bytes": 163
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-ice-stun-nat-20261025\\kernel-check\\tool-provenance.json",
+      "sha256": "1e0f506872851a53e48ba4f9a940150b22a2d1f6c7e6a8f9be60dd80218763aa",
+      "bytes": 332
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-ice-stun-nat-20261025\\kernel-check\\frozen-b11_ice_diagnostics.py",
+      "sha256": "ad818e612d050cbb21c092a8093902c146d1ed45686bd9af9694d6ceefb8dedc",
+      "bytes": 22185
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-ice-stun-nat-20261025\\kernel-check\\frozen-b11_udp_reachability.py",
+      "sha256": "b52b16b7af0283abe35bc35859e2049828abb3d6ca3147f644293ab987b873bf",
+      "bytes": 17678
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-ice-stun-nat-20261025\\kernel-check\\frozen-evaluator.py",
+      "sha256": "571218b30aabaf9f90e02abe2fbbf3207e0086787e209a0a38a254afcdb5070b",
+      "bytes": 24607
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-ice-stun-nat-20261025\\kernel-check\\verified-result.json",
+      "sha256": "1393dd28dc0a951829ea1573504f587f0b040ab178eb2bd66a1918f6a32bddd8",
+      "bytes": 3746
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-ice-stun-nat-20261025\\server-socket-audit.json",
+      "sha256": "01d00e6b7b9134d181ec16f9836a6f0db3c5719d7d996a8ab78735756a95ef80",
+      "bytes": 2578
+    },
+    {
+      "path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-ice-stun-nat-20261025\\server-netfilter-audit.json",
+      "sha256": "eea7f5956a9d78ba63a5f5f8efd3e97ac48c513275d3e8b4441c624f8d25d5a3",
+      "bytes": 3853
+    }
+  ],
+  "next_step": "Trace SFU UDP mux dispatch and STUN response handling for the task; compare client STUN gathering and media per-destination proxy/NAT paths in one isolated connection. Keep P10 long soak NOT_RUN.",
+  "udp_port_reachability": {
+    "scope": "P10_UDP_17882_BIDIRECTIONAL_REACHABILITY",
+    "verdict": "PASS_SCOPED",
+    "evidence_written_utc": "2026-10-25T09:17:48.138060+00:00",
+    "routes": {
+      "default": {
+        "passed": 3,
+        "total": 3,
+        "minimum_rtt_ms": 235.00000000058208,
+        "maximum_rtt_ms": 296.0000000020955
+      },
+      "ethernet": {
+        "passed": 3,
+        "total": 3,
+        "minimum_rtt_ms": 233.99999999674037,
+        "maximum_rtt_ms": 250.0
+      }
+    },
+    "server_ingress_packets": 6,
+    "server_egress_packets": 6,
+    "socket_drops": 0,
+    "cleanup": {
+      "worker_stopped": true,
+      "directory_removed": true,
+      "shared_sfu_unchanged": true
+    },
+    "summary_sha256": "06491d523cf8813d313472a6d46606ca1cd9dfff81451144e7ae7dce7f8708a7",
+    "boundary": "task_auxiliary_raw_UDP_response_not_LiveKit_ICE_or_media_acceptance",
+    "evidence_directory": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-udp-reachability-20261025\\network-roundtrip",
+    "port": 17882,
+    "server_listener_owned": true,
+    "server_input_accept_no_rules": true,
+    "default_route_observed": "FlClash interface 5, 198.18.0.1",
+    "ethernet_probe_binding": "IPv4 192.168.31.17, IP_UNICAST_IF 10",
+    "interpretation": "Port-level round trips passed in this later window; original LiveKit ICE failure and P10 long-soak status are retained.",
+    "tool_verification": "2 offline selftests PASS; no product build required"
+  },
+  "ice_stun_nat_diagnostic": {
+    "status": "FAIL_SCOPED",
+    "stun_request_authentication": "PASS_SCOPED",
+    "request_packets": 104,
+    "matched_response_packets": 0,
+    "use_candidate_packets": 104,
+    "selected_udp_pair": false,
+    "advertised_srflx_matches_observed_source": false,
+    "boundary": "single_observer_ICE_only_not_media_or_P10_capacity;mapping_difference_not_NAT_type_proof",
+    "finished_utc": "2026-10-25T09:35:07.266239+00:00",
+    "binary_sha256": "6fb6dc6c9a0d61fd4338f737ed06dc2c036e47732bdb1f05d0d4459417fd6475",
+    "requests_ip_checksum_pass": 104,
+    "requests_udp_checksum_pass": 104,
+    "unique_transactions": 104,
+    "observed_sources": [
+      {
+        "address_hash": "d00b87a8a17265fc",
+        "port": 52066,
+        "address_role": "public"
+      }
+    ],
+    "request_elapsed_range_seconds": [
+      1.3218848979995528,
+      11.29317201899903
+    ],
+    "udp_counters_host_wide_delta": {
+      "InDatagrams": 234,
+      "NoPorts": 0,
+      "InErrors": 0,
+      "OutDatagrams": 146,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 0,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 39,
+      "MemErrors": 0
+    },
+    "cleanup": {
+      "worker_stopped": true,
+      "directory_removed": true,
+      "sfu_unchanged": true
+    },
+    "receiver_exit_code": 3,
+    "candidate_events": [
+      {
+        "utc": "2026-10-25T09:34:42.631Z",
+        "message": "added ICE candidate",
+        "candidates": [
+          {
+            "address_hash": "3ebe27a5987fe405",
+            "port": 52065,
+            "address_role": "benchmark_tun",
+            "protocol": "udp",
+            "kind": "host"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-25T09:34:42.631Z",
+        "message": "sending ICE candidate",
+        "candidates": [
+          {
+            "address_hash": "c34bc011438b7137",
+            "port": 17882,
+            "address_role": "public",
+            "protocol": "udp",
+            "kind": "host"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-25T09:34:42.631Z",
+        "message": "sending ICE candidate",
+        "candidates": [
+          {
+            "address_hash": "ceac1451ae5ed3e2",
+            "port": 17882,
+            "address_role": "public",
+            "protocol": "udp",
+            "kind": "host"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-25T09:34:42.632Z",
+        "message": "sending ICE candidate",
+        "candidates": [
+          {
+            "address_hash": "c34bc011438b7137",
+            "port": 17881,
+            "address_role": "public",
+            "protocol": "tcp",
+            "kind": "host"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-25T09:34:42.632Z",
+        "message": "sending ICE candidate",
+        "candidates": [
+          {
+            "address_hash": "ceac1451ae5ed3e2",
+            "port": 17881,
+            "address_role": "public",
+            "protocol": "tcp",
+            "kind": "host"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-25T09:34:42.681Z",
+        "message": "added ICE candidate",
+        "candidates": [
+          {
+            "address_hash": "1e2ac0d21e46f38e",
+            "port": 52066,
+            "address_role": "non_public",
+            "protocol": "udp",
+            "kind": "host"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-25T09:34:43.533Z",
+        "message": "added ICE candidate",
+        "candidates": [
+          {
+            "address_hash": "c34bc011438b7137",
+            "port": 54569,
+            "address_role": "public",
+            "protocol": "udp",
+            "kind": "srflx"
+          }
+        ]
+      }
+    ],
+    "interpretation": "Authenticated ICE requests observed at eth0; no matching eth0 responses; socket ownership/config correct; root cause of missing response UNKNOWN. srflx differs from observed source; no NAT-type attribution.",
+    "scope": "single native UDP-only observer; no publishers; no auxiliary STUN responses",
+    "evidence_directory": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-ice-stun-nat-20261025\\kernel-check",
+    "server_advertised_ipv4": "89.106.76.195:17882",
+    "client_advertised_srflx": "89.106.76.195:54569",
+    "client_host_ports": {
+      "benchmark_tun": 52065,
+      "ethernet": 52066
+    },
+    "server_observed_source": {
+      "address_hash": "d00b87a8a17265fc",
+      "port": 52066
+    },
+    "server_socket_audit": {
+      "pid": 85140,
+      "host_network": true,
+      "rtc": {
+        "tcp_port": 17881,
+        "udp_port": 17882,
+        "use_external_ip": false,
+        "node_ip_hash": "c34bc011438b7137"
+      },
+      "addresses": [
+        {
+          "interface": "lo",
+          "address_hash": "12ca17b49af22894",
+          "family": "inet",
+          "scope": "host"
+        },
+        {
+          "interface": "lo",
+          "address_hash": "eff8e7ca506627fe",
+          "family": "inet6",
+          "scope": "host"
+        },
+        {
+          "interface": "eth0",
+          "address_hash": "c34bc011438b7137",
+          "family": "inet",
+          "scope": "global"
+        },
+        {
+          "interface": "eth0",
+          "address_hash": "ceac1451ae5ed3e2",
+          "family": "inet6",
+          "scope": "global"
+        },
+        {
+          "interface": "eth0",
+          "address_hash": "bb2ed4e017461c70",
+          "family": "inet6",
+          "scope": "link"
+        },
+        {
+          "interface": "docker0",
+          "address_hash": "346840d5a3d9fe9b",
+          "family": "inet",
+          "scope": "global"
+        },
+        {
+          "interface": "br-56c0cda89fb5",
+          "address_hash": "245c0ffc0f6a0215",
+          "family": "inet",
+          "scope": "global"
+        },
+        {
+          "interface": "br-56c0cda89fb5",
+          "address_hash": "ab2ea8edbee0ec74",
+          "family": "inet6",
+          "scope": "link"
+        },
+        {
+          "interface": "veth7735f3d",
+          "address_hash": "0b548479190dfb9f",
+          "family": "inet6",
+          "scope": "link"
+        },
+        {
+          "interface": "vethb49541e",
+          "address_hash": "e9e4f47f3f5f590b",
+          "family": "inet6",
+          "scope": "link"
+        },
+        {
+          "interface": "vethe9ba9be",
+          "address_hash": "a65e15b94349836c",
+          "family": "inet6",
+          "scope": "link"
+        }
+      ],
+      "sockets": [
+        {
+          "protocol": "udp",
+          "address_hex_hash": "533723295c5975c1",
+          "inode": "226282",
+          "drops": 0,
+          "rx_queue": 0,
+          "owned_by_sfu": true
+        },
+        {
+          "protocol": "udp",
+          "address_hex_hash": "0404dbbbb2896e63",
+          "inode": "226281",
+          "drops": 0,
+          "rx_queue": 0,
+          "owned_by_sfu": true
+        },
+        {
+          "protocol": "udp",
+          "address_hex_hash": "05dd8dfd9baf6a18",
+          "inode": "226279",
+          "drops": 0,
+          "rx_queue": 0,
+          "owned_by_sfu": true
+        },
+        {
+          "protocol": "udp6",
+          "address_hex_hash": "bc0ba750f9b5f918",
+          "inode": "226280",
+          "drops": 0,
+          "rx_queue": 0,
+          "owned_by_sfu": true
+        }
+      ],
+      "rp_filter": {
+        "conf/all/rp_filter": "2",
+        "conf/eth0/rp_filter": "2"
+      }
+    },
+    "netfilter_audit_path": "E:\\vsSource\\WebRTC\\live-kit-test-local\\out\\p10-ice-stun-nat-20261025\\server-netfilter-audit.json",
+    "validation": "4 ICE/checksum/evaluation selftests and 2 port reachability selftests PASS; existing receiver reused; no product rebuild",
+    "root_cause": "UNKNOWN: request arrival/authentication established, missing matching response not localized to specific SFU code or network hook",
+    "security": "No raw SDP, tokens, ICE passwords or packet payloads exported; only task-matched metadata and endpoint hashes"
+  }
+}

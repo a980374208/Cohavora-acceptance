@@ -1,6 +1,6 @@
 {
   "status": "PASS_STATIC_LIGHTWEIGHT",
-  "checked_at": "2026-10-23T14:26:11.768Z",
+  "checked_at": "2026-10-27T03:15:46.645Z",
   "validation_mode": "LIGHTWEIGHT_REPO",
   "method": "Node vm structure/synthetic DOM, relative links, lightweight report data consistency; heavy offline evidence decoupled",
   "checks": {
@@ -15,6 +15,7 @@
     "subgates_and_original_states_preserved": true,
     "summary_not_reexecuted_and_archive_not_counted": true,
     "frozen_thresholds_and_formal_unknown_boundaries_preserved": true,
+    "p10_revised_policy_two_run_reassessment_and_zero_full_gate_credit": true,
     "completed_scopes_replace_original_columns_only": true,
     "unfinished_attempts_not_promoted": true,
     "initial_separate_scopes": true,
@@ -47,7 +48,7 @@
     "highlight_display_paths_match_package": true,
     "missing_sources_explicit_no_absolute_fallback": true,
     "environment_profiles_in_single_collapsible_table_with_original_configuration_and_sources": true,
-    "server_and_client_environment_profiles": 22,
+    "server_and_client_environment_profiles": 24,
     "cloud_provider_full_names": true,
     "local_and_cloud_test_environments_separated": true,
     "b14_server_configuration_matches_frozen_plan": true,
@@ -57,7 +58,7 @@
     "memory_occupancy_growth_and_run_scopes_separated": true,
     "package_local_links": {
       "references": 534,
-      "verified_existing": 116,
+      "verified_existing": 118,
       "decoupled_omitted": 0,
       "omitted_paths": []
     },
@@ -77,6 +78,7 @@
     "media_latency_highlight_removed": true,
     "highlight_result_boundaries": true,
     "current_closure_matches_main_and_user_approved_release": true,
+    "current_20261027_closure_includes_p10_scoped_pass_under_revised_policy": true,
     "closed_stage_partial_without_full_gate_or_release_credit": true,
     "completed_stage_sources_bound_and_hashed": 43,
     "completed_stage_notes_preserve_original_metric_windows_and_plan": true,
@@ -92,16 +94,18 @@
     "completed_repair_scopes_bound_without_formal_promotion": true,
     "completed_test_badges_match_exact_source_judgments": true,
     "completed_cases_deduplicated_and_independent_failures_retained": true,
-    "completed_result_source_hashes": 41,
+    "completed_result_source_hashes": 42,
     "current_local_p19_three_pilots_scoped_ready_without_formal_credit": true,
     "p19_camera_original_33_passes_separate_from_qualification_and_unmeasured_scope": true,
     "ten_presentation_optimizations_verified": true,
+    "p10_replaces_e2ee_and_exchanges_position_with_screen_share": true,
+    "p10_complete_two_run_report_in_catalog": true,
     "classified_report_catalog": {
-      "reports": 12,
+      "reports": 18,
       "categories": [
         {
           "id": "product",
-          "count": 6
+          "count": 12
         },
         {
           "id": "b14",
@@ -120,7 +124,7 @@
     },
     "original_five_card_layout_retained": true,
     "report_links": {
-      "package_references": 381,
+      "package_references": 431,
       "machine_local_references": 360,
       "machine_local_existing": 360,
       "machine_local_missing": 0,
@@ -128,13 +132,13 @@
     },
     "migration_traceability": {
       "reports": 67,
-      "current_reports": 12,
+      "current_reports": 18,
       "archived_files_verified": 73,
       "archived_html": 60,
       "original_missing_links": 2
     },
     "complete_package_file_hashes": {
-      "verified_existing": 298,
+      "verified_existing": 326,
       "decoupled_omitted": 0
     },
     "report_text_checkout_line_endings": 0,

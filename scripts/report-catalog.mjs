@@ -71,7 +71,7 @@ function featuredSummary(entry, source) {
     details,
     boundary: source.task_status === 'STAGE_CLOSED_BY_USER'
       ? source.release_approval?.status === 'APPROVED_BY_USER'
-        ? '2026-10-23阶段已收口（PARTIAL）；当前剩余待测试项用户评估无较大或严重问题，批准发版' + source.release_approval.version + '。原测试判定与未测范围保留，本次仅更新报告。'
+        ? (source.current_revision_date || source.release_approval.date) + '阶段已收口（PARTIAL）；当前剩余待测试项用户评估无较大或严重问题，批准发版' + source.release_approval.version + '。原测试判定与未测范围保留，本次仅更新报告。'
         : '阶段已收口，完整主门完成0，最终回归NOT_RUN，Production Ready为false；各已完成子门及原失败分别保留，不代表最终工件已冻结或完整验收通过。'
       : source.formal?.status === 'PASS_WITH_USER_EXCEPTION'
       ? '限定 run 的授权例外处置：原机器 FAIL 保留，仅接受第52周期整机NIC超限；不属于无例外 Formal PASS，其他暂缓范围保留。'
@@ -124,7 +124,7 @@ export async function buildReportCatalog(dest) {
   };
 }
 
-const statusBadge = status => `<span class="badge ${status === 'FAIL' ? 'bad' : status === 'PASS' || status === 'PASS_SCOPED' || status === 'user_pass' ? 'good' : ''}">${esc(status === 'UNRECORDED' ? '未归档结构化总状态' : status)}</span>`;
+const statusBadge = status => `<span class="badge ${status === 'FAIL' ? 'bad' : status === 'PASS' || status === 'PASS_SCOPED' || /^user[-_]pass$/.test(status) ? 'good' : ''}">${esc(status === 'UNRECORDED' ? '未归档结构化总状态' : status)}</span>`;
 const facts = details => details.length ? `<dl>${details.map(detail => `<div><dt>${esc(detail.label)}</dt><dd>${esc(detail.value)}</dd></div>`).join('')}</dl>` : '';
 
 export function renderLatestReports(catalog) {

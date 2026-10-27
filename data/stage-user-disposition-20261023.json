@@ -1,10 +1,10 @@
 {
   "schema": "cohavora-stage-user-release-disposition-v1",
-  "date": "2026-10-23",
+  "date": "2026-10-27",
   "status": "USER_APPROVED_RELEASE",
   "stage_status": "PARTIAL",
   "version": "0.0.1",
-  "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
+  "statement": "2026-10-27阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
   "release_approval": {
     "status": "APPROVED_BY_USER",
     "version": "0.0.1",
@@ -18,7 +18,11 @@
       "original_status": "BLOCKED",
       "status": "DEFERRED",
       "gate_dispositions": [
-        {"index": 2, "original_status": "BLOCKED", "status": "DEFERRED"}
+        {
+          "index": 2,
+          "original_status": "BLOCKED",
+          "status": "DEFERRED"
+        }
       ]
     },
     {
@@ -26,7 +30,11 @@
       "original_status": "FAIL",
       "status": "DEFERRED",
       "gate_dispositions": [
-        {"index": 0, "original_status": "FAIL", "status": "DEFERRED"}
+        {
+          "index": 0,
+          "original_status": "FAIL",
+          "status": "DEFERRED"
+        }
       ]
     }
   ],
@@ -37,5 +45,39 @@
     "frozen_stage_source": "data/stage-closure-20261022.json",
     "product_runtime": "NOT_RUN"
   },
-  "scope": "按用户决定更新当前延期处置与0.0.1发版批准；本次仅更新报告，未新增测试或执行发布。"
+  "scope": "2026-10-27阶段收口及P10修订口径评估；当前P10文档仅展示新口径结果，其他主题及原10-23批准来源保持各自范围。未新增测试、修改私有运行评估器或执行发布。",
+  "prior_decision": {
+    "date": "2026-10-23",
+    "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
+    "release_approval": {
+      "status": "APPROVED_BY_USER",
+      "version": "0.0.1",
+      "approved_by": "USER",
+      "basis": "当前剩余待测试项用户评估无较大或严重问题",
+      "publication_status": "NOT_EXECUTED"
+    }
+  },
+  "closure_revision": {
+    "date": "2026-10-27",
+    "basis": "当前阶段收口日期10-27；纳入P10新口径PASS_SCOPED／INCONCLUSIVE，仅展示当前评估结果。",
+    "source": "本会话用户明确指令；本次仅更新报告。"
+  },
+  "current_group_dispositions": [
+    {
+      "plan_code": "P10",
+      "status": "PASS_SCOPED",
+      "previous_run_status": "INCONCLUSIVE",
+      "source": "reports/product/p10-long-soak-results-20261027.json",
+      "locator": "/plan_projection",
+      "basis": "按有效保持、逐动作恢复和媒体质量新口径复核：本次PASS_SCOPED、前次INCONCLUSIVE；总耗时仅效率记录，保留10500秒执行看门狗，RX丢弃仅记录。",
+      "policy_id": "P10_HOLD_RECOVERY_MEDIA_V2_20261027"
+    }
+  ],
+  "p10_policy_revision": {
+    "date": "2026-10-27",
+    "policy_id": "P10_HOLD_RECOVERY_MEDIA_V2_20261027",
+    "source": "reports/product/p10-long-soak-results-20261027.json",
+    "locator": "/acceptance_policy",
+    "execution": "DOCUMENTATION_AND_EXISTING_EVIDENCE_REASSESSMENT_ONLY"
+  }
 }

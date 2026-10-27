@@ -3,7 +3,7 @@ const e = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<
 const joinClauses = items => items.map(item => String(item ?? '').trim()).filter(Boolean).reduce((acc, item) => !acc ? item : /[。！？；;]$/.test(acc) ? acc + item : acc + '；' + item, '');
 const str = value => Array.isArray(value) ? joinClauses(value.map(str)) : value && typeof value === 'object' ? Object.entries(value).map(([key, item]) => key + ': ' + str(item)).join('；') : String(value ?? '');
 const statusKey = value => String(value ?? '').trim().toUpperCase();
-const statusLabel = value => statusKey(value) === 'USER_PASS' ? 'user_pass' : value;
+const statusLabel = value => statusKey(value) === 'USER_PASS' ? 'user_pass' : statusKey(value) === 'USER-PASS' ? 'user-pass' : value;
 const cls = status => /FAIL|BLOCKED|NOT_READY/i.test(status) ? 'bad' : /PASS|COMPLETE|READY/i.test(status) && !/NOT|UNKNOWN|PENDING|INCOMPLETE/i.test(status) ? 'good' : 'warn';
 const kind = status => cls(status) === 'good' ? 'PASS' : cls(status) === 'bad' ? 'FAIL' : 'OTHER';
 const statesFor = record => [record.status];
@@ -110,7 +110,7 @@ function completedResultSummary(record) {
 function completedResultTable(record) {
   const results = completedResults(record);
   if (!results.length) return '<h4>已完成测试结果</h4><p class="note">无已完成结果记录；整组状态及历史参考状态不转换为已完成测试的PASS／FAIL。</p>';
-  return '<h4>已完成测试结果</h4><p class="note">按各自范围保留原实测判定；有用户判定或延期处置时同格另列当前处置及决定日期，摘要按当前处置计数。user_pass表示用户暂定通过，原实测另列。结果记录数不代表用例总数或整组通过率，P05／P06共享来源不跨组相加。PASS_SCOPED和授权例外分别保留。</p>'
+  return '<h4>已完成测试结果</h4><p class="note">按各自范围保留原实测判定；有用户判定或延期处置时同格另列当前处置及决定日期，摘要按当前处置计数。user_pass／user-pass表示用户处置通过，原实测另列。结果记录数不代表用例总数或整组通过率，P05／P06共享来源不跨组相加。PASS_SCOPED和授权例外分别保留。</p>'
     + '<div class="table-wrap"><table class="metric-table completed-results"><thead><tr><th>测试与适用范围</th><th>当前处置／原判定</th><th>结果日期／来源时间</th><th>结果来源</th></tr></thead><tbody>'
     + results.map(result => '<tr data-result-id="' + e(result.id) + '"><td><b>' + e(result.title) + '</b><br>' + e(str(result.scope)) + '</td><td>' + (result.current_disposition ? badge(result.current_disposition.status) + '<br><small>原实测 ' + e(result.status) + '<br>处置日期：' + e(result.current_disposition.date) + '</small><br>' + sourceLink(result.current_disposition.report_path, '处置依据与后续方案') : badge(result.status)) + '</td><td>' + e(result.date || '日期见原来源') + '</td><td>' + sourceLink(result.source_path, '查看结果') + (result.source_locator ? '<br><code>' + e(result.source_locator) + '</code>' : '') + '</td></tr>').join('')
     + '</tbody></table></div>';

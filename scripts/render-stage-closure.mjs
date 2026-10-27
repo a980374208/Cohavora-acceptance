@@ -15,7 +15,7 @@ const counts = (rows, statusOf) => rows.reduce((result, row) => {
   return result;
 }, {});
 const countText = value => Object.entries(value).map(([status, count]) => status + ' ' + count).join('；');
-const badge = status => '<strong class="' + (/^PASS|^READY$|^user_pass$/.test(status) ? 'pass' : /^FAIL/.test(status) ? 'fail' : 'partial') + '">' + esc(status) + '</strong>';
+const badge = status => '<strong class="' + (/^PASS|^READY$|^user[-_]pass$/.test(status) ? 'pass' : /^FAIL/.test(status) ? 'fail' : 'partial') + '">' + esc(status) + '</strong>';
 
 // Result paths come from package-local evidence; unsupported paths remain visible text.
 const sourceLink = (source, locator = '') => {
@@ -99,9 +99,9 @@ export async function refreshStageReport(root, data, {writeEvidence = true} = {}
     '<aside><p>' + esc(decision.statement) + '</p><p>24组：21产品组、3辅助组；50条原测试映射及2条非测试动作，合计52条原记录。当前处置、最新已完成范围及原始结果分别保留，不计算完成百分比。未新增子门、矩阵或门限。</p><p>本次报告更新未执行构建、产品测试、桌面探测或新增诊断；阶段保持停止。发版批准来自用户评估，来源：' + sourceLink(decision.source) + '。</p></aside>' +
     '<section><h2>阶段结果</h2><table><thead><tr><th>分类</th><th>状态与范围</th></tr></thead><tbody>' +
     '<tr><td>用户评估与发版批准</td><td>' + esc(decision.statement) + '<p>批准状态：' + badge(decision.status) + '；版本 ' + esc(decision.version) + '。</p></td></tr>' +
-    '<tr><td>当前分组处置</td><td>' + esc(countText(groupCounts)) + '<p>当前24组状态与主报告使用同一份stage_status；P20用户处置与机器原始判定独立展示。</p></td></tr>' +
+    '<tr><td>当前分组处置</td><td>' + esc(countText(groupCounts)) + '<p>当前24组状态与主报告使用同一份stage_status；P10及P20用户处置与机器原始判定独立展示。</p></td></tr>' +
     '<tr><td>已完成范围</td><td>' + esc(countText(resultCounts)) + '。各条为完成范围的分组投影，共享范围不重复计产品测试项。<details><summary>各组完成结果的当前处置</summary>' + resultSummary + '</details></td></tr>' +
-    '<tr><td>固定余项</td><td>' + esc(remainingGroups.length) + '组保留remaining／inconclusive边界，详见下表。原始FAIL、历史结果及缺测范围按各自来源保留；当前DEFERRED和user_pass按用户处置展示。</td></tr>' +
+    '<tr><td>固定余项</td><td>' + esc(remainingGroups.length) + '组保留remaining／inconclusive边界，详见下表。原始FAIL、历史结果及缺测范围按各自来源保留；当前DEFERRED、user-pass及user_pass按用户处置展示。P10服务端网卡RX丢弃保留实测记录，不作为当前门限。</td></tr>' +
     '<tr><td>完整主门与最终回归</td><td>完整主门完成0；最终回归NOT_RUN。原冻结技术字段继续保留，用户批准发版' + esc(decision.version) + '见上方决定与来源。</td></tr>' +
     '<tr><td>源码与原阶段记录</td><td>冻结源码改动清单与原始证据继续追溯：' + sourceTitle + '。当前正文按主报告最新完成范围更新，原冻结数据、日期和判据不改写。</td></tr>' +
     '</tbody></table></section>' +

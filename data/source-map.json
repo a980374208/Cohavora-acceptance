@@ -1077,55 +1077,55 @@
     "portable_path": "data/stage-closure-20261022.json",
     "sha256": "12813b3ed22cdf47a4da314977fd5cbf69d756954204b331428c9ddf687221c1",
     "bytes": 96544,
-    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+    "status": "COMPLETED_P10_RESULT_SOURCE"
   },
   "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/stage-closure-20261022.json": {
     "original_path": "data/stage-closure-20261022.json",
     "portable_path": "data/stage-closure-20261022.json",
     "sha256": "12813b3ed22cdf47a4da314977fd5cbf69d756954204b331428c9ddf687221c1",
     "bytes": 96544,
-    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+    "status": "COMPLETED_P10_RESULT_SOURCE"
   },
   "reports/product/stage-closure-20261022.json": {
     "original_path": "reports/product/stage-closure-20261022.json",
     "portable_path": "reports/product/stage-closure-20261022.json",
-    "sha256": "22873a551384fdd12030b03948cf40e01e640627865b66e752a80fefc244c41c",
-    "bytes": 203026,
+    "sha256": "5313af9b6c35ad6eb6bd3ab3813793d14942150709f7034c87a8ca1153483105",
+    "bytes": 204969,
     "status": "COMPLETED_SCOPED_RESULT_SOURCE"
   },
   "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/stage-closure-20261022.json": {
     "original_path": "reports/product/stage-closure-20261022.json",
     "portable_path": "reports/product/stage-closure-20261022.json",
-    "sha256": "22873a551384fdd12030b03948cf40e01e640627865b66e752a80fefc244c41c",
-    "bytes": 203026,
+    "sha256": "5313af9b6c35ad6eb6bd3ab3813793d14942150709f7034c87a8ca1153483105",
+    "bytes": 204969,
     "status": "COMPLETED_SCOPED_RESULT_SOURCE"
   },
   "reports/product/stage-closure-20261022.html": {
     "original_path": "reports/product/stage-closure-20261022.html",
     "portable_path": "reports/product/stage-closure-20261022.html",
-    "sha256": "2465b25c47b7f7549e33850cad070e5bc86d667d68b13f1067e2f0bcd6497f34",
-    "bytes": 181851,
-    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+    "sha256": "f848d668d3cb241329c1bcdb325c73a84811689a33d53c1ef9e2f3ea45208753",
+    "bytes": 184402,
+    "status": "COMPLETED_P10_RESULT_SOURCE"
   },
   "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/stage-closure-20261022.html": {
     "original_path": "reports/product/stage-closure-20261022.html",
     "portable_path": "reports/product/stage-closure-20261022.html",
-    "sha256": "2465b25c47b7f7549e33850cad070e5bc86d667d68b13f1067e2f0bcd6497f34",
-    "bytes": 181851,
-    "status": "COMPLETED_SCOPED_RESULT_SOURCE"
+    "sha256": "f848d668d3cb241329c1bcdb325c73a84811689a33d53c1ef9e2f3ea45208753",
+    "bytes": 184402,
+    "status": "COMPLETED_P10_RESULT_SOURCE"
   },
   "data/stage-user-disposition-20261023.json": {
     "original_path": "data/stage-user-disposition-20261023.json",
     "portable_path": "data/stage-user-disposition-20261023.json",
-    "sha256": "3b3d1ba98fe6072e3270d3ac095b66434a76afc9889adfc1eac94e0983a8b765",
-    "bytes": 1359,
+    "sha256": "2d9058770f6524bbe308d0fb96a4ad09bc42ef2b15f2998654c190f16cb1a09e",
+    "bytes": 3034,
     "status": "COMPLETED_SCOPED_RESULT_SOURCE"
   },
   "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/stage-user-disposition-20261023.json": {
     "original_path": "data/stage-user-disposition-20261023.json",
     "portable_path": "data/stage-user-disposition-20261023.json",
-    "sha256": "3b3d1ba98fe6072e3270d3ac095b66434a76afc9889adfc1eac94e0983a8b765",
-    "bytes": 1359,
+    "sha256": "2d9058770f6524bbe308d0fb96a4ad09bc42ef2b15f2998654c190f16cb1a09e",
+    "bytes": 3034,
     "status": "COMPLETED_SCOPED_RESULT_SOURCE"
   },
   "data/completed-evidence/repair-validation-20261022-sources.json": {
@@ -1806,5 +1806,33 @@
     "sha256": "a351efea402b714414b29fe5634d8102e428055efe19aa07d7a4a972c0b3c86b",
     "bytes": 3010,
     "status": "DOCUMENT_DISPOSITION_OR_HISTORICAL_SUMMARY"
+  },
+  "reports/product/p10-long-soak-results-20261027.json": {
+    "original_path": "reports/product/p10-long-soak-results-20261027.json",
+    "portable_path": "reports/product/p10-long-soak-results-20261027.json",
+    "sha256": "b73f05cc938c222bf42fea260fd6c276b1de13235b4ee6ba5df93a759de48f7b",
+    "bytes": 2715362,
+    "status": "COMPLETED_P10_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/p10-long-soak-results-20261027.json": {
+    "original_path": "reports/product/p10-long-soak-results-20261027.json",
+    "portable_path": "reports/product/p10-long-soak-results-20261027.json",
+    "sha256": "b73f05cc938c222bf42fea260fd6c276b1de13235b4ee6ba5df93a759de48f7b",
+    "bytes": 2715362,
+    "status": "COMPLETED_P10_RESULT_SOURCE"
+  },
+  "reports/product/p10-long-soak-results-20261027.html": {
+    "original_path": "reports/product/p10-long-soak-results-20261027.html",
+    "portable_path": "reports/product/p10-long-soak-results-20261027.html",
+    "sha256": "fb8fe949cfdccdae6d3b4cb8cb476cb7c686518153ca31db0b6ccf8aea5d361b",
+    "bytes": 2869733,
+    "status": "COMPLETED_P10_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/p10-long-soak-results-20261027.html": {
+    "original_path": "reports/product/p10-long-soak-results-20261027.html",
+    "portable_path": "reports/product/p10-long-soak-results-20261027.html",
+    "sha256": "fb8fe949cfdccdae6d3b4cb8cb476cb7c686518153ca31db0b6ccf8aea5d361b",
+    "bytes": 2869733,
+    "status": "COMPLETED_P10_RESULT_SOURCE"
   }
 }

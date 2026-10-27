@@ -3,8 +3,8 @@
   "title": "冻结测试清单：阶段收口报告",
   "status": "PARTIAL",
   "task_status": "STAGE_CLOSED_BY_USER",
-  "updated_utc": "2026-10-23",
-  "current_revision_date": "2026-10-23",
+  "updated_utc": "2026-10-27",
+  "current_revision_date": "2026-10-27",
   "frozen_at": "2026-10-22T05:07:21.396912+08:00",
   "draft": false,
   "final_snapshot": true,
@@ -12,7 +12,7 @@
   "active_runs": [],
   "stage_data": "../../data/stage-closure-20261022.json",
   "summary": {
-    "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
+    "statement": "2026-10-27阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
     "full_plan_gates_completed": 0,
     "final_regression_status": "NOT_RUN",
     "production_ready": false,
@@ -25,13 +25,14 @@
     "approved_by": "USER",
     "basis": "当前剩余待测试项用户评估无较大或严重问题",
     "publication_status": "NOT_EXECUTED",
-    "date": "2026-10-23",
-    "statement": "2026-10-23阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
+    "date": "2026-10-27",
+    "statement": "2026-10-27阶段已收口(PARTIAL)，当前剩余待测试项用户评估无较大或严重问题，批准发版0.0.1",
     "source": "data/stage-user-disposition-20261023.json"
   },
   "current_group_status_counts": {
     "PARTIAL": 15,
-    "DEFERRED": 6,
+    "DEFERRED": 5,
+    "PASS_SCOPED": 1,
     "user_pass": 1,
     "INCONCLUSIVE": 2
   },
@@ -2100,63 +2101,81 @@
     {
       "plan_code": "P10",
       "title": "大会议容量、分页与固定负载长稳",
-      "status": "DEFERRED",
+      "status": "PASS_SCOPED",
       "stage_status": {
-        "status": "DEFERRED",
-        "scope": "Current user deferral; original assessment and executed verdicts retained, no whole-group test PASS",
+        "status": "PASS_SCOPED",
+        "scope": "本次德国P10完整长稳按当前口径评估PASS_SCOPED；前次上海INCONCLUSIVE，各run分别记录。",
         "completed_scope": [
-          "固定16路低层300秒短门仅按其原负载、订阅/解码与分页范围保留。"
+          "本次德国TCP：固定页1800.031秒、144混合阶段保持7259.757秒、恢复60.125秒；软/全重连各9/9恢复，原媒体质量门PASS；RX仅记录后资源其余预算通过，新口径10门PASS，复核PASS_SCOPED。",
+          "前次上海UDP：相同负载完整执行；7门PASS，音频/客户端资源/服务端资源3门INCONCLUSIVE；仍未补证。"
         ],
         "remaining": [
-          "100路发布前置仅61/100，未达到完整音频/翻页负载；混合长稳保持LONG_SOAK_NOT_RUN。",
-          "当前最终版固定grid9长稳是否仍要求需定版条件，不与B14生命周期拼接。"
+          "前次采样覆盖不完整仍需其自身完整证据，不能跨run拼接；完整B11、100路高清同时解码和物理Present/声学播放仍未关闭。",
+          "RX丢弃+45及9个窗口继续诊断，因果INSUFFICIENT_EVIDENCE；总wall继续记录效率，不作当前验收门限；10500秒看门狗保留。",
+          "本次结论仅授既有P10负载范围；未重跑产品或修改私有执行器，完整B11及未覆盖范围独立判定。"
         ],
         "retained_failures": [
-          "原61/100实际发布失败。"
+          "历史61/100实际发布失败属于另一独立运行，保留其原输入与日期；不与本次完整P10结果合并。"
         ],
-        "inconclusive": [],
+        "inconclusive": [
+          "前次audio_healthy_windows、client_resources、server_resources INCONCLUSIVE。",
+          "45次网卡RX丢弃因果INSUFFICIENT_EVIDENCE；没有观察关联P10媒体故障。"
+        ],
         "evidence_refs": [
-          "frozen_plan",
-          "report_data",
-          "resolution22"
+          "reports/product/p10-long-soak-results-20261027.json",
+          "reports/product/p10-long-soak-results-20261027.html"
         ],
         "full_gate_credit": 0,
         "gates": [
           {
             "index": 0,
             "definition": "负载前置：恢复100路实际发布与完整音频／翻页条件，未到达负载即停止，长稳记NOT_RUN。",
-            "status": "DEFERRED",
-            "interpretation": "用户决定延期；原判定FAIL及对应未测／失败证据保留，未新增测试。",
-            "original_status": "FAIL"
+            "status": "PARTIAL",
+            "interpretation": "最新完整长稳及十门当前评估见独立两run报告；不同范围不拼接通过。"
           },
           {
             "index": 1,
             "definition": "容量与收敛：核对实际订阅、RTP、解码／交付路数和分页收敛；固定16路低层300秒仅授予该短门范围。",
             "status": "PARTIAL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "interpretation": "最新完整长稳及十门当前评估见独立两run报告；不同范围不拼接通过。"
           },
           {
             "index": 2,
             "definition": "混合长稳：高清层、音频、翻页、恢复及资源曲线按当前声明负载和冻结时长执行。",
-            "status": "NOT_RUN",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "PASS_SCOPED",
+            "interpretation": "本次完整P10长稳PASS_SCOPED；有效保持、动作恢复与媒体质量达标，wall/RX仅记录且看门狗保留；前次INCONCLUSIVE及未覆盖范围独立判定。"
           },
           {
             "index": 3,
             "definition": "固定grid9：仅当定版仍要求该负载时执行当前版本长稳，保留实际活跃媒体、画质、音频、GPU与资源证据。",
             "status": "NOT_RUN",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "interpretation": "最新完整长稳及十门当前评估见独立两run报告；不同范围不拼接通过。"
           }
         ],
-        "as_of": "2026-10-23",
-        "stage_execution": "DEFERRED_BY_USER_AFTER_CLOSURE",
-        "evidence_catalog": "data/stage-closure-20261022.json#evidence",
-        "original_status": "FAIL",
-        "disposition_source": "data/stage-user-disposition-20261023.json",
-        "disposition_report": "reports/product/stage-closure-20261022.html",
-        "disposition_reason": "用户决定延期当前BLOCKED／FAIL项，并评估剩余待测项无较大或严重问题，批准发版0.0.1；原测试判定与未测范围保留。"
+        "as_of": "2026-10-27",
+        "stage_execution": "COMPLETED_TWO_RUNS_REASSESSED_PASS_SCOPED_AND_INCONCLUSIVE",
+        "evidence_catalog": "reports/product/p10-long-soak-results-20261027.json",
+        "policy_id": "P10_HOLD_RECOVERY_MEDIA_V2_20261027"
       },
       "completed_results": [
+        {
+          "id": "p10-complete-germany-20261027",
+          "title": "本次：德国法兰克福／9929链路 · 30分钟固定页＋2小时混合完整执行",
+          "status": "PASS_SCOPED",
+          "date": "2026-10-27",
+          "scope": "实际RelWithDebInfo客户端真实业务登录入会；100路视频＋音频；有效保持、动作恢复及媒体质量通过，wall/RX仅记录且执行看门狗保留；仅授本次P10完整长稳范围，完整B11/正式/资格信用0。",
+          "source_path": "reports/product/p10-long-soak-results-20261027.json",
+          "source_locator": "/runs/0/status"
+        },
+        {
+          "id": "p10-complete-shanghai-20261027",
+          "title": "前次：上海链路 · 30分钟固定页＋2小时混合完整执行",
+          "status": "INCONCLUSIVE",
+          "date": "2026-10-27",
+          "scope": "实际RelWithDebInfo客户端真实业务登录入会；100路视频＋音频；本run按当前十门评估，资源与采样边界不变；完成执行不等于验收通过，整组/正式/资格信用0。",
+          "source_path": "reports/product/p10-long-soak-results-20261027.json",
+          "source_locator": "/runs/1/status"
+        },
         {
           "id": "historical-H123",
           "title": "历史保留 · B11 100发布 / 2K全屏第二页16路低层 / 300秒",
