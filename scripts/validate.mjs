@@ -96,11 +96,15 @@ if(latestP10Bytes){
   assert.equal(latestP10.runs[0].criteria.server_resources.host.metrics.zero_growth_deltas.net_rx_drops,45);
   assert.equal(new Set(latestP10.runs.map(run=>run.run_id)).size,2);
   assert.ok(latestP10.runs.every(run=>run.run_id&&run.full_gate_credit===0&&run.formal_credit===0));
-  const projection=latestP10.plan_projection,allowed=new Set(['status','date','stage_status','evidence_scope','validity','limitations','sources','environmentIds','completed_results','full_gate_credit']);
+  const projection=latestP10.plan_projection,allowed=new Set(['status','date','stage_status','reference_statuses','evidence_scope','validity','limitations','sources','environmentIds','completed_results','full_gate_credit']);
   assert.ok(Object.keys(projection).every(key=>allowed.has(key)),'Latest P10 must preserve the maintained plan definitions');
   assert.equal(projection.status,'PASS_SCOPED');assert.equal(projection.stage_status.status,'PASS_SCOPED');
   assert.equal(projection.full_gate_credit,0);assert.equal(projection.stage_status.full_gate_credit,0);
   assert.equal(projection.date,projection.stage_status.as_of);
+  assert.deepEqual(projection.stage_status.gates.map(gate=>gate.status),['PASS_SCOPED','PASS_SCOPED','PASS_SCOPED','NOT_RUN']);
+  assert.deepEqual(projection.reference_statuses,[],'Current P10 presentation must omit superseded historical statuses');
+  assert.deepEqual(projection.stage_status.retained_failures,[],'Current P10 presentation must omit superseded historical failures');
+  assert.deepEqual(projection.stage_status.gates.map(gate=>gate.definition),testPlan.groups.find(group=>group.plan_code==='P10').gates);
   const record=derived.retestRecords.find(row=>row.plan_code==='P10'),previousPlan=structuredClone(record);
   Object.assign(record,structuredClone(projection));
   const runResults=record.completed_results.filter(result=>result.source_path===latestP10Source);
@@ -267,7 +271,8 @@ for(const record of data.retestRecords){
   assert.deepEqual(record.boundaries.slice(0,group.boundaries.length),group.boundaries,'Original plan boundaries must remain before the completed-scope notes');
   assert.ok(record.conditions.length&&record.boundaries.length);
   const originals=record.originalIds.map(id=>{const original=originalById.get(id);assert.ok(original);const mapping=mappingById.get(id);assert.equal(mapping.destination_kind,record.plan_kind);assert.equal(mapping.destination_id,record.id);assert.equal(mapping.destination_code,record.plan_code);assert.ok(mapping.reason);return original;});
-  assert.deepEqual(record.reference_statuses,[...new Set(originals.flatMap(original=>original.reference_statuses||[original.status]))],'Original FAIL/UNKNOWN/composite states must survive '+record.id);
+  const expectedReferences=latestP10&&record.plan_code==='P10'?latestP10.plan_projection.reference_statuses:[...new Set(originals.flatMap(original=>original.reference_statuses||[original.status]))];
+  assert.deepEqual(record.reference_statuses,expectedReferences,'Reference statuses must follow the current presentation scope: '+record.id);
   assert.deepEqual(record.coverage.length,record.originalIds.length);
   for(const [index,original]of originals.entries()){assert.ok(record.coverage[index].includes(original.id)&&record.coverage[index].includes(original.title));}
 }
@@ -325,6 +330,9 @@ checks.initial_separate_scopes=true;
 for(const record of data.retestRecords){
   const markup=vm.runInContext('recordMarkup('+JSON.stringify(record)+',"retest")',actual.context);
   const summary=markup.slice(0,markup.indexOf('</summary>'));
+  if(latestP10&&record.plan_code==='P10'){
+    assert.ok(!markup.includes('<summary>历史参考状态')&&!markup.includes('<h4>保留失败</h4>')&&!markup.includes('61／100')&&!markup.includes('61/100')&&!markup.includes('LONG_SOAK_NOT_RUN'),'Rendered P10 card must omit superseded failures and stale long-soak status');
+  }
   assert.ok(summary.includes(htmlEscape(record.status))&&summary.includes(htmlEscape(record.date)),'Collapsed plan header must show its recorded stage result and date: '+record.plan_code);
   for(const [field,label] of [['completed_scope','已完成范围'],['remaining','剩余范围'],['retained_failures','保留失败'],['inconclusive','未定结论']]){
     const items=record.stage_status[field]||[];
@@ -1166,6 +1174,43 @@ assert.equal(completedFor('P04').filter(result=>result.source_path==='reports/pr
 for(const file of ['wgc-3600-100-20261021-result.json','wgc-1800-20261021-resource-analysis.json','gdi-hot-50-20261021-summary.json'])assert.ok(completedFor('P07').some(result=>result.source_path.endsWith(file)&&result.status==='PASS'),'Completed screen-sharing PASS must be visible: '+file);
 assert.ok(completedFor('P11').some(result=>result.source_path.endsWith('whiteboard-1800-fixed04-20261021-result.json')&&result.status==='PASS'),'Completed whiteboard load PASS must be visible');
 assert.ok(!completedFor('P11').some(result=>result.id==='desktop-whiteboard-functional')&&!completedFor('P07').some(result=>result.id==='desktop-capture-quality-fullscreen'),'Raw B12 and complex-wgc-screen receipts must not be counted again through their parent summaries');
+// These independently completed subgates retain their original result dates and scopes.
+for(const [code,index,resultIds] of [
+  ['P06',3,['native-abba-performance','native-common-600']],
+  ['P07',2,['gdi-hot-50-20261021-summary','wgc-1800-20261021-resource-analysis','wgc-3600-100-20261021-result']],
+  ['P09',2,['network-service-restart','network-auth-recovery']],
+  ['P09',3,['network-path-switch','network-turn-relay']],
+  ['P11',0,['whiteboard-b12-20261021-index']],
+  ['P13',1,['telemetry-uia-interference']],
+  ['P13',2,['telemetry-residual-growth']],
+  ['P13',3,['telemetry-9000s-20261021-result']]
+]){
+  const record=data.retestRecords.find(row=>row.plan_code===code);
+  assert.equal(record.stage_status.gates.find(gate=>gate.index===index).status,'PASS_SCOPED','Completed scoped subgate must not retain an obsolete PARTIAL: '+code+'.'+index);
+  for(const id of resultIds)assert.ok(completedFor(code).some(result=>result.id===id&&result.status==='PASS'),'Scoped subgate requires its original completed PASS: '+id);
+  assert.equal(record.status,code==='P06'?'DEFERRED':'PARTIAL');
+  assert.equal(record.full_gate_credit,0);
+}
+checks.completed_scoped_subgates_synced_without_full_group_promotion=true;
+const updateOnlineSource='data/completed-evidence/p21-update-online-20261027-scoped.json';
+const updateOnline=completedSourceJSON.get(updateOnlineSource);
+assert.equal(updateOnline.status,'PASS_SCOPED');
+assert.equal(updateOnline.install_or_upgrade,'NOT_RUN');assert.equal(updateOnline.installer_launched,false);
+assert.equal(updateOnline.full_P21_gate_credit,0);
+assert.deepEqual(updateOnline.cases.map(row=>[row.case,row.status,row.download_verified,row.up_to_date]),[
+  ['primary-upgrade','PASS',true,false],['github-check','PASS',false,false],['same-version','PASS',false,true]
+]);
+assert.ok(updateOnline.cases.every(row=>row.installer_launched===false));
+const updateOnlineResults=completedFor('P21').filter(result=>result.source_path===updateOnlineSource);
+assert.equal(updateOnlineResults.length,4,'Three protocol cases and independent public verification are separate completed scopes');
+assert.ok(updateOnlineResults.every(result=>result.status==='PASS'));
+assert.ok(updateOnlineResults.filter(result=>result.id!=='update-public-release-identity').every(result=>result.date.includes(updateOnline.completed_date)),'Protocol cases must retain their original batch receipt time');
+assert.equal(updateOnlineResults.find(result=>result.id==='update-public-release-identity').date,updateOnline.public_verification.checked_at_utc);
+assert.equal(updateOnline.public_verification.ed25519_and_installer_verification,'PASS');
+const updatePlan=data.retestRecords.find(record=>record.plan_code==='P21');
+assert.equal(updatePlan.status,'PARTIAL');assert.equal(updatePlan.stage_status.gates[0].status,'PARTIAL');assert.equal(updatePlan.full_gate_credit,0);
+assert.ok(updatePlan.stage_status.remaining.some(text=>text.includes('安装／覆盖升级仍NOT_RUN')));
+checks.p21_completed_online_update_scopes_preserve_dates_inputs_and_install_not_run=true;
 const latestTelemetry=completedSourceJSON.get(data.completedTelemetryRefresh.source);
 const latestTelemetryResults=completedFor('P13').filter(result=>result.source_path===data.completedTelemetryRefresh.source);
 assert.equal(latestTelemetry.requested_seconds,60);
@@ -1283,6 +1328,10 @@ for(const pilot of latestP19.completed_pilots){
   assert.ok(pilot.check_names.includes('normal_exit_and_no_windows_crash'));
 }
 assert.equal(p19Record.status,'PARTIAL');assert.equal(p19Record.full_gate_credit,0);
+const p19FormalCondition=p19Record.conditions[1];
+for(const detail of [cycleSummary.run_id,String(cycleSummary.process.uia_duration_seconds),'P20','95.869140625','user_pass','UNKNOWN'])assert.ok(p19FormalCondition.includes(detail),'P19 conditions must point to the latest independent Formal: '+detail);
+assert.ok(!p19FormalCondition.includes('28819.79')&&!p19FormalCondition.includes('无剩余失败'),'Historical Formal completion must not remain the current P19 execution condition');
+checks.p19_formal_condition_matches_current_independent_result=true;
 const cameraSourceBytes=await fs.readFile(safePath(data.completedP19CameraRefresh.source));
 assert.equal(sha(cameraSourceBytes),data.completedP19CameraRefresh.sha256);
 const cameraScope=JSON.parse(cameraSourceBytes.toString('utf8'));

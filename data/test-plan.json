@@ -636,8 +636,8 @@
           {
             "index": 3,
             "definition": "性能与观察：同一冻结三端、同负载执行OFF／ON／ON／OFF配对及600秒功能观察。",
-            "status": "PARTIAL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "PASS_SCOPED",
+            "interpretation": "原记录2026-10-20T23:16:57.503106+08:00：同机冻结三Native、原负载OFF／ON／ON／OFF性能及共同600秒观察均PASS，来源data/completed-evidence/native-e2ee-abba-20261020-result.json；保留原工件、负载与门限，不外推摄像头、跨机或完整E2EE，P06整组继续DEFERRED。"
           }
         ],
         "as_of": "2026-10-22T18:51:04+08:00",
@@ -725,8 +725,8 @@
           {
             "index": 2,
             "definition": "局部长时：GDI 50次热切、WGC 1800秒六资源门及WGC同进程至少1小时／100轮按各自范围执行或等价复用。",
-            "status": "PARTIAL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "PASS_SCOPED",
+            "interpretation": "三个原输入独立PASS：GDI50热切及signal/full重连完成于2026-10-21T01:47:39.117942+08:00（gdi-hot-50-20261021-summary.json），WGC1800实服六资源运行完成于2026-10-21T08:05:59.53664+08:00（wgc-1800-20261021-summary.json及对应resource-analysis.json），WGC3600秒／100轮完成于2026-10-21T03:09:09.011938+08:00（wgc-3600-100-20261021-result.json）；均见data/completed-evidence。各自负载、工件与判据分别保留，GDI不授六资源信用，不互相替代或授予P07整组／产品Formal通过。"
           },
           {
             "index": 3,
@@ -882,14 +882,14 @@
           {
             "index": 2,
             "definition": "服务与认证：真实服务重启及auth recovery恢复业务，不仅观察连接状态。",
-            "status": "PARTIAL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "PASS_SCOPED",
+            "interpretation": "同批原RelWithDebInfo工件／隔离拓扑／合成视频：service-restart完成于2026-10-22T15:23:39.602416+08:00、auth-recovery完成于2026-10-22T15:24:12.5764+08:00，均有解码增长、真实会议窗交付、双方自然退出及native清理PASS；来源data/completed-evidence/p09-network-eleven-20261022-scoped.json。仅该软件矩阵范围，实际音频、物理故障及完整P09仍未关闭。"
           },
           {
             "index": 3,
             "definition": "路径：path switch与真实TURN relay有实际路径、媒体和退出证据。",
-            "status": "PARTIAL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "PASS_SCOPED",
+            "interpretation": "同批原RelWithDebInfo工件／隔离拓扑／合成视频：path-switch实际TCP，完成于2026-10-22T15:24:31.120609+08:00；TURN实际relay/udp，完成于2026-10-22T15:24:47.609914+08:00；两项媒体交付、自然退出及native清理PASS。来源data/completed-evidence/p09-network-eleven-20261022-scoped.json；保留各case输入与协议，不外推实际音频、物理故障或P09整组通过。"
           }
         ],
         "as_of": "2026-10-22T15:26:57.874258+08:00",
@@ -909,9 +909,9 @@
       ],
       "description": "B11容量与有条件的固定grid9长稳统一规划，保留负载、带宽和运行差异。",
       "gates": [
-        "负载前置：恢复100路实际发布与完整音频／翻页条件，未到达负载即停止，长稳记NOT_RUN。",
-        "容量与收敛：核对实际订阅、RTP、解码／交付路数和分页收敛；固定16路低层300秒仅授予该短门范围。",
-        "混合长稳：高清层、音频、翻页、恢复及资源曲线按当前声明负载和冻结时长执行。",
+        "负载前置：100路三层VP8实际发布＋1路Opus参考音频，真实客户端登录入会并核验完整翻页条件。",
+        "容量与收敛：固定16路自动低层1800秒，核对实际订阅、RTP、解码／交付路数及20次连续翻页收敛。",
+        "混合长稳：按冻结负载完成144阶段／至少7200秒有效保持，核对音频、翻页、恢复、媒体质量与资源曲线。",
         "固定grid9：仅当定版仍要求该负载时执行当前版本长稳，保留实际活跃媒体、画质、音频、GPU与资源证据。"
       ],
       "conditions": [
@@ -921,8 +921,8 @@
         "完整重连局部诊断复用reconnect-diagnostic：默认GC、100路及自动ICE，稳定固定页60秒后只执行一次完整重连并观察60秒；记录重连前后实际ICE协议、逐轨重传包／字节与NACK／PLI／FIR，缺失为UNKNOWN。前序动作协议FIXED60_MIXED50_SOFT_FULL60_V1保留原20次快翻与前12个混合动作各50秒，软／完整重连各观察60秒并分别核对原来源与路数，仅该诊断wall上限1200秒。保留45秒收敛、3秒保护和3000毫秒帧龄门，越限保留失败并继续观察；仅辅助诊断，不替代30分钟＋2小时长稳，不新增验收项或正式信用。"
       ],
       "boundaries": [
-        "原61／100发布失败与LONG_SOAK_NOT_RUN不被短门覆盖",
-        "低层300秒、固定grid9及B14生命周期是不同验收范围"
+        "本次覆盖100路三层VP8发布及参考音频，固定／恢复页实际接收16路自动低层；不等于100路高清同时解码或16路720p画质验收。",
+        "30分钟固定页＋2小时混合长稳不替代独立固定grid9长期驻留、B14生命周期、物理Present或声学播放验收。"
       ],
       "stage_status": {
         "status": "DEFERRED",
@@ -1078,8 +1078,8 @@
           {
             "index": 0,
             "definition": "三产品进程实服：同时写、图片资产、迟加入、同步、重连、导出像素及authority正常／异常退场。",
-            "status": "PARTIAL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "PASS_SCOPED",
+            "interpretation": "2026-10-21T09:44:36.174036+08:00完成：原冻结工件、同机三独立产品进程实服及独立PNG回读，B12八项均PASS，来源data/completed-evidence/whiteboard-b12-20261021-index.json。仅该三进程功能范围，不外推三台物理终端、跨DPI人工对齐、1800秒负载或P11整组通过。"
           },
           {
             "index": 1,
@@ -1239,20 +1239,20 @@
           {
             "index": 1,
             "definition": "独立UIA干扰：20轮查询与退出观察分别核对干扰、资源和清理。",
-            "status": "PARTIAL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "PASS_SCOPED",
+            "interpretation": "原UIA20轮独立运行PASS，rooms_alive=0、cleanup_pending=0；来源reports/product/resource-completion-20261021-01.json#/entries/telemetry_lifecycle/checks/0，来源报告更新于2026-10-21T02:52:50.224869+00:00（非逐门完成时间）。保留该运行原输入、资源与退出判据，不与其他运行拼接为当前最终工件的完整P13通过。"
           },
           {
             "index": 2,
             "definition": "五轮同进程：join／leave后残余资源按原释放窗口判定。",
-            "status": "PARTIAL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "PASS_SCOPED",
+            "interpretation": "原五轮同进程残余独立运行PASS，残余PrivateBytes 2330624、handles 0、threads -1；来源reports/product/resource-completion-20261021-01.json#/entries/telemetry_lifecycle/checks/1，来源报告更新于2026-10-21T02:52:50.224869+00:00（非逐门完成时间）。保留原输入及释放窗口，不抵扣配对性能、9000秒资源或完整P13门。"
           },
           {
             "index": 3,
             "definition": "9000秒资源长门：真实媒体／UI／持久化及配额证据完整，不拼接其他运行。",
-            "status": "PARTIAL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "status": "PASS_SCOPED",
+            "interpretation": "原独立9000秒资源门完成于2026-10-21T07:32:46.514833+08:00：实际9030.448秒／9033样本、媒体／UI／持久化资源判据、持久化完整关闭及两端自然退出／native退场均PASS。来源data/completed-evidence/telemetry-9000s-20261021-result.json；保留原工件、负载和门限，不拼接为最新最终工件的完整P13或Formal通过。"
           }
         ],
         "as_of": "2026-10-22T16:52:40.945203+08:00",
@@ -1642,7 +1642,7 @@
       ],
       "conditions": [
         "本机与Windows .151分别判定，不能互借PASS；原FAIL／PAUSED与未授权runtime边界保留。",
-        "本机AMD Crash Defender限时停服环境方案见reports/b14/b14-amd-bounded-service-plan-20261019.html：用户已授权，恢复故障gate已通过；最新摄像头二次入会诊断33/33 PASS，服务已恢复Running/Automatic；日志复制空文本已确认OLE剪贴板暂时无法打开的故障机制，并补齐有界重试、序号／代际取消及真实占用回归（2/2直接测试PASS），详见reports/b14/b14-clipboard-fix-20261019-01.html；历史原轮次具体占用者UNKNOWN；新输入软件gate（58/58原生及1/1 GPU工具发布）、完整退出前置、重新封存及三轮独立资格全部通过，schema2 full-media/GPU READY已签发；本轮Formal已完成100/100轮及28819.79秒产品存活，最终PASS_WITH_USER_EXCEPTION：99周期PASS，第52周期唯一整机NIC超限按用户明确授权接受（用户说明使用服务端RustDesk）；原始FAIL与测量值保留，其余逐周期、资源增长和最终检查通过，服务已恢复Running/Automatic，无剩余失败；既有DEFERRED与历史失败保留，见reports/b14/b14-clipboard-readmission-20261019-01.html；停服最多10小时；环境变化后重新封存及三轮资格，摄像头专项未闭环不得交接Formal。"
+        "本机AMD Crash Defender限时停服环境及剪贴板修复的原输入、日期和恢复要求分别见reports/b14/b14-amd-bounded-service-plan-20261019.html、reports/b14/b14-clipboard-fix-20261019-01.html及reports/b14/b14-clipboard-readmission-20261019-01.html；停服最多10小时，环境变化后须重新封存及完成三轮独立资格，摄像头专项按原完成范围解释。当前本机冻结环境三次完整PILOT的READY仅表示资格就绪；后续Formal独立见P20：run=5653c962b41646c4aa1e4600fefa8e97，100周期／28824.411051秒，Private Bytes增长95.869140625MiB＞原64MiB，原机器FAIL、根因UNKNOWN；2026-10-23用户处置user_pass单列，不能改写资源判据或作为P19完整通过。来源data/completed-evidence/b14-formal-20261023-completed-scoped.json及data/b14-user-disposition-20261023.json。"
       ],
       "boundaries": [
         "局部校准／静态门不等于完整PILOT",
@@ -1836,6 +1836,7 @@
       "boundaries": [
         "旧104／104或focused结果不自动继承",
         "实现、静态验证与产品runtime分别记录",
+        "2026-10-27当前0.0.1更新协议／下载限定验证3/3 PASS：primary-upgrade验证主源清单、下载安装包及SHA；github-check仅检查GitHub清单，不授GitHub安装包下载信用；same-version确认up_to_date。公共回读Ed25519清单签名及安装包身份验证PASS；安装包19071384 bytes，SHA256 ee2c13f2b7d0f2a420c14a95598f955e22e891ce7a372f6b6b96eb306c241444，发布回执完成于2026-10-27T03:52:59.7555646Z（非逐case完成时间）。来源data/completed-evidence/p21-update-online-20261027-scoped.json；installer_launched=false，实际安装／覆盖升级仍NOT_RUN，完整安全／错误路径、异步设置及P21整组不由此关闭。",
         "主题四模式、重启恢复、无效配置及自有HWND系统通知跟随工程回归PASS，见reports/product/theme-settings-20261016.html（独立工程范围保留）；最新完成ui-timing-theme-unblocked09（2026-10-21）主题设置限定子门PASS_SCOPED：浅色／深色／青绿／系统四模式settings像素、即时生效、持久化、同进程重开设置及自有HWND通知成立；Windows偏好未改变。新增完成theme-restart04（2026-10-21）设置页产品重启恢复子门PASS_SCOPED：浅色／深色／青绿／系统四对Write→自然退出→新进程Read共8个不同进程身份，持久值、当前选择项和原精确设置页像素均一致；Read不重新选择主题，全部自然退出码0、forced0、清理完成，全程1190次父进程采样及各步骤strict输入时间戳不变，Windows偏好保持深色。来源data/completed-evidence/theme-restart04-20261021-scoped.json，追溯data/completed-evidence/theme-restart04-20261021-provenance.json；原输入中止记录保留，来源UNKNOWN；复用UI15冻结工件，binary_source_provenance仍NOT_VERIFIED。新增完成theme-invalid02（2026-10-21）未支持主题值回退子门PASS_SCOPED：启动前在隔离INI写入acceptance-unsupported-theme并封存SHA，产品只执行Read、未选择主题，持久值自动规范为system，选择项为系统且实际设置页像素符合Windows深色偏好；自然退出码0、forced0、清理完成，17项绑定输入不变，155次父观察及子步骤strict输入均未变化。30秒辅助Raw观察另有测试结束后的3条鼠标消息，完整记录保留，测试窗口内0条；来源仍UNKNOWN。来源data/completed-evidence/theme-invalid02-20261021-scoped.json，追溯data/completed-evidence/theme-invalid02-20261021-provenance.json。新增完成theme-first-window02（2026-10-21）派生产品入口首窗子门PASS_SCOPED：同一当前源码快照的实际产品main加只读观察器，浅色／深色／青绿／系统各独立INI与进程；首个登录窗Show、窗口Paint及卡片Paint状态正确且有序，绘制后空白卡片边缘有效像素分别为16777215／3221540／16646139／3221540（系统跟随Windows深色）；4进程均LOGIN_REJECT自然退出0、forced0、清理完成，56次父观察和4337次子采样strict输入未变，1432项绑定输入在执行时及独立复核时匹配。工件为增量构建的专用观察版本，传递性clean-build来源未完全验证；原冻结EXE首窗、首次Paint实际扫描输出及物理无闪烁未观察／未测，不授予整门通过。来源data/completed-evidence/theme-first-window02-20261021-scoped.json，追溯data/completed-evidence/theme-first-window02-20261021-provenance.json。新增完成p21-system-theme-runtime16（2026-10-21）真实Windows应用明暗偏好子门PASS_SCOPED：同一当前增量产品进程完成系统／浅色／深色／青绿×Windows偏好0／1共8行；系统模式分别呈现深色／浅色，三个手动模式在两种系统偏好下保持自身颜色，8行选择标签、INI持久值、实际系统值与原64×42 DIP空白区域像素全部匹配。驱动先经可见UI切至Light以建立真实状态变化，未直接写INI；guardian为唯一系统偏好writer，驱动未直接通知或刷新产品；1304项绑定输入及完整产品／guardian身份独立复核，strict输入全程不变，产品自然退出码0、forced0、清理完成。系统原偏好0已恢复并读回，恢复广播DELIVERED，guardian自然退出0、无残留；48个保护根证据文件已逐项核SHA导出，原件保留。来源为当前源码增量构建，传递性clean-build来源未证明；来源data/completed-evidence/p21-system-theme16-20261021-scoped.json，追溯data/completed-evidence/p21-system-theme16-20261021-provenance.json。新增完成theme-configuration-seeds01（2026-10-21）两个配置子案例均PASS_SCOPED：显式空ui/theme自动规范为system；错误not-ui section中的theme=dark被保留且不影响缺省System，未新增ui/theme。均使用当前增量产品，只执行Read未重新选择主题；选择项为系统，实际设置页像素3221540，Windows偏好保持0，产品与driver自然退出0、forced0、清理完成，保留的strict输入观察未变。原终态各1325项绑定一致；后验各1324项匹配，唯一差异为执行后修改且未被配置路径调用的会中PS；原完整超集核验INCONCLUSIVE保留，调用范围独立核验通过，不声称当前全部pin一致。原unsupported-token案例独立保留；来源data/completed-evidence/theme-configuration-seeds01-20261021-scoped.json，追溯data/completed-evidence/theme-configuration-seeds01-20261021-provenance.json。新增完成p21-meeting-runtime04（2026-10-22北京时间）会中主题限定子门PASS_SCOPED：同一当前增量fixture通过真实SettingsDialog可见下拉及SelectionItem.Select切换浅色／深色／青绿／系统四模式，选择标签、隔离INI和设置页原精确像素匹配；关闭对话框后，实际DX11舞台安全留白像素依次为RGB(233,237,243)／(18,24,32)／(214,233,224)／(18,24,32)，系统跟随原Windows深色。四主题各切换前／操作期间／切换后共12个解码窗口均有变化视频和预期完整PCM窗口：共534帧、522次内容指纹变化、329/329个完整440Hz窗口；静音／other／invalid均0，另24000个尾窗样本未作完整窗口分类。原始最大视频／音频callback间隔分别80.7592／10.7821ms，未新增数值连续性门限。原生Present累计最大间隔624ms、stall计数2在首个before观察已存在，12次快照未增；保留原因UNKNOWN，不声称零stall。1319项绑定、原始窗口及进程身份独立回读；strict输入不变，两端自然退出0、forced0、清理完成，原共享服务指纹未变且房间为空。会议窗本身无设置按钮；fixture命令仅打开真实产品设置对话框。原生解码PCM不证明扬声器输出，scene_presented不证明逐帧Present；当前源码增量工件的传递性clean-build来源未证明。来源data/completed-evidence/p21-meeting-theme04-20261022-scoped.json，追溯data/completed-evidence/p21-meeting-theme04-20261022-provenance.json。新增完成p21-meeting-cpu05（2026-10-22北京时间）Qt CPU会中四主题限定子门PASS_SCOPED：同一增量fixture的独立两端进程，经真实SettingsDialog可见下拉选择浅色／深色／青绿／系统，选择标签、隔离INI及设置页像素匹配；关闭对话框后舞台安全留白实测依次RGB(233,237,243)／(18,24,32)／(214,233,224)／(18,24,32)。12个切换前／中／后窗口共531帧、519次内容变化、332/332个完整440Hz PCM窗口，静音／other／invalid均0；另11520尾窗样本未作完整分类，原始最大视频／音频callback间隔88.4716／10.5852ms，未新增数值连续性门限。实际／请求后端均qt-cpu、fallback=user-selected-cpu、GPU failure=none；12次均有可见远端tile持有解码图像及有效绑定render frame。scene_presented全部false，持图与舞台像素不证明CPU视频Paint／Present。1327项输入绑定、原始窗口和身份独立回读；strict输入未变，两端自然退出0、forced0、清理完成、共享服务指纹未变且房间为空。原生render累计最大间隔559ms、stall=1在首个before已存在，12次快照未增；原因UNKNOWN，不声称零stall或正式连续性通过，解码PCM不证明扬声器输出。会议窗没有设置按钮，fixture仅打开真实设置对话框；传递性clean-build与完整stage矩阵仍未证明。来源data/completed-evidence/p21-meeting-cpu05-20261022-scoped.json，追溯data/completed-evidence/p21-meeting-cpu05-20261022-provenance.json。新增完成p21-meeting-opengl05（2026-10-22北京时间）OpenGL模块（当前Qt为GLES构建）会中四主题限定子门PASS_SCOPED：同一增量fixture的独立两端进程，经真实SettingsDialog可见下拉选择浅色／深色／青绿／系统，选择标签、隔离INI及设置页像素匹配；关闭对话框后舞台安全留白实测依次RGB(233,237,243)／(18,24,32)／(214,233,224)／(18,24,32)。12个切换前／中／后窗口共534帧、522次内容变化、330/330个完整440Hz PCM窗口，静音／other／invalid均0；另21600尾窗样本未作完整分类，原始最大视频／音频callback间隔92.7983／10.6223ms，未新增数值连续性门限。实际／请求后端均opengl、fallback及GPU failure均none；12次当前提交scene呈现布尔均true。模块DLL已绑定，scene布尔不证明逐帧Present；当前Qt为OpenGLES2，不计桌面OpenGL会中信用。1327项输入绑定、原始窗口和身份独立回读；strict输入未变，两端自然退出0、forced0、清理完成、共享服务指纹未变且房间为空。原生render累计最大间隔991ms、stall=1在首个before已存在，12次快照未增；原因UNKNOWN，不声称零stall或正式连续性通过，解码PCM不证明扬声器输出。会议窗没有设置按钮，fixture仅打开真实设置对话框；传递性clean-build与完整stage矩阵仍未证明。来源data/completed-evidence/p21-meeting-opengl05-20261022-scoped.json，追溯data/completed-evidence/p21-meeting-opengl05-20261022-provenance.json。任意其他损坏INI／类型配置、无新增连续性门限下的正式媒体连续性判定及完整stage外观矩阵仍未覆盖。来源data/completed-evidence/ui-timing-theme-unblocked09-20261021-scoped.json，追溯data/completed-evidence/ui-terminal-20261021-provenance.json；主题仅在本既有边界计项，不复制为P03通过；不授予更新清单、异步设置或完整P21通过，原gates/conditions/门限与完整P21/full-plan/Formal/P20信用0保留。"
       ],
       "stage_status": {
@@ -1843,12 +1844,14 @@
         "scope": "Frozen stage assessment; no whole-group PASS or release credit",
         "completed_scope": [
           "update manifest/service、异步settings既有直接工程范围按影响复用。",
-          "四主题设置、重启、unsupported/empty/wrong-section回退、派生首窗、真实Windows偏好8行及DX11/CPU/当前GLES模块会中限定范围分别完成。"
+          "四主题设置、重启、unsupported/empty/wrong-section回退、派生首窗、真实Windows偏好8行及DX11/CPU/当前GLES模块会中限定范围分别完成。",
+          "2026-10-27当前0.0.1在线更新协议／下载限定范围3/3 PASS：主源下载验签／校SHA、GitHub清单检查、同版本判断；公共Ed25519及安装包身份回读PASS。各自原工件、日期与来源见data/completed-evidence/p21-update-online-20261027-scoped.json，未启动安装器。"
         ],
         "remaining": [
           "原冻结EXE首窗/物理无闪烁、桌面OpenGL会议矩阵、完整stage矩阵与正式连续性未证明。",
           "当前工件增量构建，传递性clean-build来源未证明；最终工件产品链/最终回归未跑。",
-          "其他任意损坏INI/类型case并非本阶段新增执行项，不追加矩阵。"
+          "其他任意损坏INI/类型case并非本阶段新增执行项，不追加矩阵。",
+          "10-27在线更新限定验证未启动安装器，实际安装／覆盖升级仍NOT_RUN；不授完整更新安全／错误路径、异步设置或最终产品链通过。"
         ],
         "retained_failures": [],
         "inconclusive": [],
@@ -1861,7 +1864,8 @@
           "meeting_theme",
           "meeting_cpu",
           "meeting_gles",
-          "resolution22"
+          "resolution22",
+          "data/completed-evidence/p21-update-online-20261027-scoped.json"
         ],
         "full_gate_credit": 0,
         "gates": [
@@ -1869,7 +1873,7 @@
             "index": 0,
             "definition": "更新清单与服务：当前受影响协议、安全和错误路径的直接gate成立。",
             "status": "PARTIAL",
-            "interpretation": "Read together with this group completed_scope/remaining; not a new execution receipt"
+            "interpretation": "10-27当前0.0.1主源下载验签／校SHA、GitHub清单检查、同版本判断3/3 PASS_SCOPED，公共Ed25519及安装包身份回读PASS；来源data/completed-evidence/p21-update-online-20261027-scoped.json。仅原工件在线检查／下载范围，实际安装／覆盖升级NOT_RUN，未证明全部安全与错误路径，广义子门及P21整组继续PARTIAL。"
           },
           {
             "index": 1,

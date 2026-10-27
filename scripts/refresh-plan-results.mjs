@@ -232,6 +232,30 @@ export async function refreshPlanResults(root, data, {writeEvidence = false} = {
     scope: '按同run业务终态和Qt投影关联的入会、离会及首绘耗时观测；无新增性能阈值，OBSERVATION_ONLY不授性能PASS。'});
   add(['P21'], ui9, '/theme/status', {id: 'ui9-theme-settings', title: 'UI09：四主题设置窗口交互', date: sourceDate(ui9),
     scope: '四主题settings选择、持久化与同进程重开；其他重启、首窗、真实系统偏好及会中renderer范围分别用各自专项，不拼成完整P21通过。'});
+  const updateOnline = await read('data/completed-evidence/p21-update-online-20261027-scoped.json');
+  assert.equal(updateOnline.value.schema, 'cohavora-p21-update-online-completed-scoped-v1');
+  assert.equal(updateOnline.value.full_P21_gate_credit, 0);
+  assert.equal(updateOnline.value.installer_launched, false);
+  assert.equal(updateOnline.value.install_or_upgrade, 'NOT_RUN');
+  assert.deepEqual(updateOnline.value.cases.map(row => row.case), ['primary-upgrade', 'github-check', 'same-version']);
+  for (const [index, row] of updateOnline.value.cases.entries()) {
+    assert.equal(row.status, 'PASS');
+    assert.equal(row.installer_launched, false);
+    add(['P21'], updateOnline, '/cases/' + index + '/status', {
+      id: 'update-online-' + row.case, title: '在线更新限定协议 · ' + row.case,
+      date: '批次完成回执 ' + updateOnline.value.completed_date + '（原回执未记录逐case完成时间）',
+      scope: row.scope + ' 原输入' + row.current_version + '→' + row.expected_version + '、source=' + row.source +
+        '；工件' + updateOnline.value.artifact.installer + '，SHA256=' + updateOnline.value.artifact.sha256 +
+        '。probe二进制身份未见原回执记录，不授安装／覆盖升级、全部安全错误路径或完整P21通过。'
+    });
+  }
+  add(['P21'], updateOnline, '/public_verification/status', {
+    id: 'update-public-release-identity', title: '在线更新：公共发布回读与Ed25519／工件身份',
+    date: updateOnline.value.public_verification.checked_at_utc,
+    scope: updateOnline.value.public_verification.scope + ' 原0.0.1安装包' + updateOnline.value.artifact.bytes +
+      '字节，SHA256=' + updateOnline.value.artifact.sha256 + '；清单SHA256=' + updateOnline.value.artifact.manifest_sha256 +
+      '。与三项probe分别记录，非同一测试重复计项；完整P21信用0。'
+  });
   const artifact = await read('data/completed-evidence/p14-artifact-identity-20261021-scoped.json');
   for (const [field, title] of [['old_deployment', '旧部署EXE／renderer DLL与PDB身份'], ['current_renderer_build', '当前renderer DLL／PDB身份'], ['negative_control', '真实交换PDB：预期拒绝负例'], ['offline_renderer_symbols', '两个renderer离线源码定位']]) add(['P14'], artifact, '/' + field + '/status', {
     id: 'artifact-' + field, title, date: sourceDate(artifact),

@@ -1,7 +1,7 @@
 {
   "schema": "cohavora-portable-acceptance-report-v1",
   "entry": "index.html",
-  "revised_at": "2026-10-27T03:15:36.465Z",
+  "revised_at": "2026-10-27T04:16:47.651Z",
   "evidence_baseline": "2026-10-12T19:40:19.353Z",
   "generate": "node scripts/assemble.mjs",
   "verify": "node scripts/validate.mjs",

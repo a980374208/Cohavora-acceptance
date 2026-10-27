@@ -1,6 +1,6 @@
 {
   "status": "PASS_STATIC_LIGHTWEIGHT",
-  "checked_at": "2026-10-27T03:15:46.645Z",
+  "checked_at": "2026-10-27T04:17:22.526Z",
   "validation_mode": "LIGHTWEIGHT_REPO",
   "method": "Node vm structure/synthetic DOM, relative links, lightweight report data consistency; heavy offline evidence decoupled",
   "checks": {
@@ -57,8 +57,8 @@
     "b14_initial_and_post_leave_idle_scenes_separated": true,
     "memory_occupancy_growth_and_run_scopes_separated": true,
     "package_local_links": {
-      "references": 534,
-      "verified_existing": 118,
+      "references": 539,
+      "verified_existing": 119,
       "decoupled_omitted": 0,
       "omitted_paths": []
     },
@@ -88,13 +88,16 @@
     "latest_p15_lan_clock_pass_and_historical_failures_retained": true,
     "p05_p06_user_deferred_without_rewriting_original_failures": true,
     "latest_network_eleven_passes_replace_superseded_current_failures": true,
+    "completed_scoped_subgates_synced_without_full_group_promotion": true,
+    "p21_completed_online_update_scopes_preserve_dates_inputs_and_install_not_run": true,
     "latest_60s_telemetry_pairs_preserve_history_and_zero_full_gate_credit": true,
     "completed_flutter_diagnosis_not_counted_or_attributed_to_historical_frames": true,
     "b14_user_pass_group_detail_and_current_counts_consistent": true,
     "completed_repair_scopes_bound_without_formal_promotion": true,
     "completed_test_badges_match_exact_source_judgments": true,
     "completed_cases_deduplicated_and_independent_failures_retained": true,
-    "completed_result_source_hashes": 42,
+    "completed_result_source_hashes": 43,
+    "p19_formal_condition_matches_current_independent_result": true,
     "current_local_p19_three_pilots_scoped_ready_without_formal_credit": true,
     "p19_camera_original_33_passes_separate_from_qualification_and_unmeasured_scope": true,
     "ten_presentation_optimizations_verified": true,
@@ -124,7 +127,7 @@
     },
     "original_five_card_layout_retained": true,
     "report_links": {
-      "package_references": 431,
+      "package_references": 436,
       "machine_local_references": 360,
       "machine_local_existing": 360,
       "machine_local_missing": 0,
@@ -138,7 +141,7 @@
       "original_missing_links": 2
     },
     "complete_package_file_hashes": {
-      "verified_existing": 326,
+      "verified_existing": 327,
       "decoupled_omitted": 0
     },
     "report_text_checkout_line_endings": 0,

@@ -59501,9 +59501,7 @@
         "RX丢弃+45及9个窗口继续诊断，因果INSUFFICIENT_EVIDENCE；总wall继续记录效率，不作当前验收门限；10500秒看门狗保留。",
         "本次结论仅授既有P10负载范围；未重跑产品或修改私有执行器，完整B11及未覆盖范围独立判定。"
       ],
-      "retained_failures": [
-        "历史61/100实际发布失败属于另一独立运行，保留其原输入与日期；不与本次完整P10结果合并。"
-      ],
+      "retained_failures": [],
       "inconclusive": [
         "前次audio_healthy_windows、client_resources、server_resources INCONCLUSIVE。",
         "45次网卡RX丢弃因果INSUFFICIENT_EVIDENCE；没有观察关联P10媒体故障。"
@@ -59516,19 +59514,19 @@
       "gates": [
         {
           "index": 0,
-          "definition": "负载前置：恢复100路实际发布与完整音频／翻页条件，未到达负载即停止，长稳记NOT_RUN。",
-          "status": "PARTIAL",
-          "interpretation": "最新完整长稳及十门当前评估见独立两run报告；不同范围不拼接通过。"
+          "definition": "负载前置：100路三层VP8实际发布＋1路Opus参考音频，真实客户端登录入会并核验完整翻页条件。",
+          "status": "PASS_SCOPED",
+          "interpretation": "本次德国完整运行已核验100路实际发布、参考音频、真实业务入会及翻页条件，frozen_inputs与source_and_private_media_path均PASS；仅授本次冻结负载范围。"
         },
         {
           "index": 1,
-          "definition": "容量与收敛：核对实际订阅、RTP、解码／交付路数和分页收敛；固定16路低层300秒仅授予该短门范围。",
-          "status": "PARTIAL",
-          "interpretation": "最新完整长稳及十门当前评估见独立两run报告；不同范围不拼接通过。"
+          "definition": "容量与收敛：固定16路自动低层1800秒，核对实际订阅、RTP、解码／交付路数及20次连续翻页收敛。",
+          "status": "PASS_SCOPED",
+          "interpretation": "本次德国固定页1800.031秒、20次连续翻页及恢复页60.125秒的媒体与收敛门均PASS；实际为16路自动低层，不授100路高清同时解码或16路720p范围。"
         },
         {
           "index": 2,
-          "definition": "混合长稳：高清层、音频、翻页、恢复及资源曲线按当前声明负载和冻结时长执行。",
+          "definition": "混合长稳：按冻结负载完成144阶段／至少7200秒有效保持，核对音频、翻页、恢复、媒体质量与资源曲线。",
           "status": "PASS_SCOPED",
           "interpretation": "本次完整P10长稳PASS_SCOPED；有效保持、动作恢复与媒体质量达标，wall/RX仅记录且看门狗保留；前次INCONCLUSIVE及未覆盖范围独立判定。"
         },
@@ -59536,7 +59534,7 @@
           "index": 3,
           "definition": "固定grid9：仅当定版仍要求该负载时执行当前版本长稳，保留实际活跃媒体、画质、音频、GPU与资源证据。",
           "status": "NOT_RUN",
-          "interpretation": "最新完整长稳及十门当前评估见独立两run报告；不同范围不拼接通过。"
+          "interpretation": "混合计划中的grid9切换与保持不等于独立固定grid9长期驻留；该条件负载未单独完成，保留NOT_RUN。"
         }
       ],
       "as_of": "2026-10-27",
@@ -59544,6 +59542,7 @@
       "evidence_catalog": "reports/product/p10-long-soak-results-20261027.json",
       "policy_id": "P10_HOLD_RECOVERY_MEDIA_V2_20261027"
     },
+    "reference_statuses": [],
     "evidence_scope": "两次100路P10真实业务客户端完整长稳按当前口径评估：德国PASS_SCOPED，上海INCONCLUSIVE，分别保留实测范围。",
     "validity": "PASS_SCOPED_CURRENT_P10_POLICY_ZERO_FULL_CREDIT",
     "limitations": [

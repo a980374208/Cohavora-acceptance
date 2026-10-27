@@ -55,7 +55,7 @@ if (p10Bytes) {
   assert.ok(latest.runs.every(run => run.run_id && run.full_gate_credit === 0 && run.formal_credit === 0));
   const current = data.retestRecords.find(record => record.plan_code === 'P10');
   const previousPlan = structuredClone(current);
-  const fields = new Set(['status', 'date', 'stage_status', 'evidence_scope', 'validity', 'limitations', 'sources', 'environmentIds', 'completed_results', 'full_gate_credit']);
+  const fields = new Set(['status', 'date', 'stage_status', 'reference_statuses', 'evidence_scope', 'validity', 'limitations', 'sources', 'environmentIds', 'completed_results', 'full_gate_credit']);
   assert.ok(Object.keys(latest.plan_projection).every(key => fields.has(key)), 'P10 projection cannot replace plan definitions');
   assert.equal(latest.plan_projection.status, 'PASS_SCOPED');
   assert.equal(latest.plan_projection.stage_status.status, 'PASS_SCOPED');

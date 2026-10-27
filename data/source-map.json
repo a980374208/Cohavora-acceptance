@@ -1089,29 +1089,29 @@
   "reports/product/stage-closure-20261022.json": {
     "original_path": "reports/product/stage-closure-20261022.json",
     "portable_path": "reports/product/stage-closure-20261022.json",
-    "sha256": "5313af9b6c35ad6eb6bd3ab3813793d14942150709f7034c87a8ca1153483105",
-    "bytes": 204969,
+    "sha256": "f826061da83bedfd073e1e9cbc2f3e8bb6d27ce4ef9787443fbba2721378c8eb",
+    "bytes": 211710,
     "status": "COMPLETED_SCOPED_RESULT_SOURCE"
   },
   "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/stage-closure-20261022.json": {
     "original_path": "reports/product/stage-closure-20261022.json",
     "portable_path": "reports/product/stage-closure-20261022.json",
-    "sha256": "5313af9b6c35ad6eb6bd3ab3813793d14942150709f7034c87a8ca1153483105",
-    "bytes": 204969,
+    "sha256": "f826061da83bedfd073e1e9cbc2f3e8bb6d27ce4ef9787443fbba2721378c8eb",
+    "bytes": 211710,
     "status": "COMPLETED_SCOPED_RESULT_SOURCE"
   },
   "reports/product/stage-closure-20261022.html": {
     "original_path": "reports/product/stage-closure-20261022.html",
     "portable_path": "reports/product/stage-closure-20261022.html",
-    "sha256": "f848d668d3cb241329c1bcdb325c73a84811689a33d53c1ef9e2f3ea45208753",
-    "bytes": 184402,
+    "sha256": "a15133ad60832d59106883b99791b7caa8405732c37344ffa6c64396f33cbb73",
+    "bytes": 188418,
     "status": "COMPLETED_P10_RESULT_SOURCE"
   },
   "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/stage-closure-20261022.html": {
     "original_path": "reports/product/stage-closure-20261022.html",
     "portable_path": "reports/product/stage-closure-20261022.html",
-    "sha256": "f848d668d3cb241329c1bcdb325c73a84811689a33d53c1ef9e2f3ea45208753",
-    "bytes": 184402,
+    "sha256": "a15133ad60832d59106883b99791b7caa8405732c37344ffa6c64396f33cbb73",
+    "bytes": 188418,
     "status": "COMPLETED_P10_RESULT_SOURCE"
   },
   "data/stage-user-disposition-20261023.json": {
@@ -1765,6 +1765,20 @@
     "bytes": 2744,
     "status": "COMPLETED_RESULT_SOURCE"
   },
+  "data/completed-evidence/p21-update-online-20261027-scoped.json": {
+    "original_path": "data/completed-evidence/p21-update-online-20261027-scoped.json",
+    "portable_path": "data/completed-evidence/p21-update-online-20261027-scoped.json",
+    "sha256": "c524c0a4487bc3018641e137ce62a8bc05c6932a969ee779e287b8be9a71be03",
+    "bytes": 6665,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
+  "e:/vssource/webrtc/live-kit-test/samples/acceptance/data/completed-evidence/p21-update-online-20261027-scoped.json": {
+    "original_path": "data/completed-evidence/p21-update-online-20261027-scoped.json",
+    "portable_path": "data/completed-evidence/p21-update-online-20261027-scoped.json",
+    "sha256": "c524c0a4487bc3018641e137ce62a8bc05c6932a969ee779e287b8be9a71be03",
+    "bytes": 6665,
+    "status": "COMPLETED_PLAN_RESULT_SOURCE"
+  },
   "data/report-input.json": {
     "original_path": "data/report-input.json",
     "portable_path": "data/report-input.json",
@@ -1810,15 +1824,15 @@
   "reports/product/p10-long-soak-results-20261027.json": {
     "original_path": "reports/product/p10-long-soak-results-20261027.json",
     "portable_path": "reports/product/p10-long-soak-results-20261027.json",
-    "sha256": "b73f05cc938c222bf42fea260fd6c276b1de13235b4ee6ba5df93a759de48f7b",
-    "bytes": 2715362,
+    "sha256": "7c6dbc087d5ea7c836c139f0f775b2e6ac28efe209c42d1d6c2d47c86e7aeca7",
+    "bytes": 2715514,
     "status": "COMPLETED_P10_RESULT_SOURCE"
   },
   "e:/vssource/webrtc/live-kit-test/samples/acceptance/reports/product/p10-long-soak-results-20261027.json": {
     "original_path": "reports/product/p10-long-soak-results-20261027.json",
     "portable_path": "reports/product/p10-long-soak-results-20261027.json",
-    "sha256": "b73f05cc938c222bf42fea260fd6c276b1de13235b4ee6ba5df93a759de48f7b",
-    "bytes": 2715362,
+    "sha256": "7c6dbc087d5ea7c836c139f0f775b2e6ac28efe209c42d1d6c2d47c86e7aeca7",
+    "bytes": 2715514,
     "status": "COMPLETED_P10_RESULT_SOURCE"
   },
   "reports/product/p10-long-soak-results-20261027.html": {

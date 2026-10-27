@@ -1,0 +1,146 @@
+{
+  "schema": "cohavora-p21-update-online-completed-scoped-v1",
+  "status": "PASS_SCOPED",
+  "completed_date": "2026-10-27T03:52:59.7555646Z",
+  "date_basis": "原替换回执的批次完成时刻；原在线summary及逐case回执未记录完成时间，不补造逐case时戳。",
+  "scope": "原0.0.1发布工件的在线更新协议限定观察：主源检查及下载校验、GitHub清单检查、同版本判断三项PASS；独立公共发布回读的Ed25519及工件身份验证PASS。仅投影已有回执，未重新执行测试或安装器，不代表完整P21、安全错误路径、UI安装或覆盖升级通过。",
+  "full_P21_gate_credit": 0,
+  "new_test_execution": "NOT_RUN",
+  "installer_launched": false,
+  "install_or_upgrade": "NOT_RUN",
+  "probe_binary_identity": "NOT_RECORDED_IN_ORIGINAL_RECEIPTS",
+  "artifact": {
+    "version": "0.0.1",
+    "installer": "Cohavora-0.0.1-x64-Setup.exe",
+    "bytes": 19071384,
+    "sha256": "ee2c13f2b7d0f2a420c14a95598f955e22e891ce7a372f6b6b96eb306c241444",
+    "manifest_bytes": 742,
+    "manifest_sha256": "5d3a90bc149b5d315ffe25b6cbf99b5dd81f625291de8f03b6edf19843d5fd77",
+    "public_key": "20cdd8328dd6f7ddc2842be3897176b2803e9b3b7ebd71da6c8ce4fbaeb13e42"
+  },
+  "cases": [
+    {
+      "case": "primary-upgrade",
+      "status": "PASS",
+      "source": "primary",
+      "current_version": "0.0.0",
+      "expected_version": "0.0.1",
+      "release_version": "0.0.1",
+      "state": 5,
+      "error": 0,
+      "timeout": false,
+      "download_verified": true,
+      "up_to_date": false,
+      "exit_code": 0,
+      "installer_launched": false,
+      "source_locator": "/cases/0",
+      "scope": "主源独立检查，接受签名清单并下载19,071,384字节安装包，校验预期SHA256后到达Ready；未启动安装器。",
+      "requests": [
+        {"url": "http://123.56.225.164/downloads/latest.json", "http_status": 200, "network_error": 0},
+        {"url": "http://123.56.225.164/downloads/Cohavora-0.0.1-x64-Setup.exe", "http_status": 200, "network_error": 0}
+      ]
+    },
+    {
+      "case": "github-check",
+      "status": "PASS",
+      "source": "github",
+      "current_version": "0.0.0",
+      "expected_version": "0.0.1",
+      "release_version": "0.0.1",
+      "state": 3,
+      "error": 0,
+      "timeout": false,
+      "download_verified": false,
+      "up_to_date": false,
+      "exit_code": 0,
+      "installer_launched": false,
+      "source_locator": "/cases/1",
+      "scope": "GitHub源独立获取并接受签名清单，发现预期0.0.1版本；仅清单检查，未由该probe下载或安装工件。",
+      "requests": [
+        {"url": "https://github.com/a980374208/Cohavora/releases/latest/download/latest.json", "http_status": 302, "network_error": 5},
+        {"url": "https://github.com/a980374208/Cohavora/releases/download/v0.0.1/latest.json", "http_status": 302, "network_error": 5},
+        {"url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306786600/79bf4f38-9f9e-4630-b5b4-dc168b12c470", "http_status": 200, "network_error": 0}
+      ]
+    },
+    {
+      "case": "same-version",
+      "status": "PASS",
+      "source": "primary",
+      "current_version": "0.0.1",
+      "expected_version": "0.0.1",
+      "release_version": "0.0.1",
+      "state": 2,
+      "error": 0,
+      "timeout": false,
+      "download_verified": false,
+      "up_to_date": true,
+      "exit_code": 0,
+      "installer_launched": false,
+      "source_locator": "/cases/2",
+      "scope": "主源同版本0.0.1检查到达UpToDate；未下载或启动安装器。",
+      "requests": [
+        {"url": "http://123.56.225.164/downloads/latest.json", "http_status": 200, "network_error": 0}
+      ]
+    }
+  ],
+  "public_verification": {
+    "status": "PASS",
+    "source": "github-stable-public-release",
+    "release": "v0.0.1",
+    "checked_at_utc": "2026-10-27T03:51:58.9413098Z",
+    "installer_identity_matches": true,
+    "manifest_identity_matches": true,
+    "checksum_declaration_matches": true,
+    "manifest_verifier_exit_code": 0,
+    "ed25519_and_installer_verification": "PASS",
+    "installer_launched": false,
+    "private_key_read": false,
+    "checksum_file_bytes": 95,
+    "checksum_file_sha256": "7455187557b65d0d33d99b883d90ba514ba0cd913bb90beccb256a7b3484813c",
+    "scope": "独立公共发布回读，安装包、签名清单及checksum声明身份匹配，Ed25519验证器退出0；未启动安装器，不授签名安装器、UI安装或覆盖升级信用。"
+  },
+  "provenance": {
+    "policy": "安全字段摘录；源路径相对各自仓库根，SHA256及bytes绑定原始回执。原始证据保留原位；不复制服务器接入信息、本机用户路径或凭据。",
+    "sources": [
+      {
+        "repository": "product",
+        "path": "out/installer/republish-20261027/replacement-receipt.json",
+        "sha256": "fc099453046db1fc4992ad9a6565802e37f7066bc909e1df78c3e135f709af39",
+        "bytes": 2145,
+        "locators": ["/completed_at_utc", "/version", "/installer", "/size", "/sha256", "/manifest_sha256", "/online_probe", "/installer_launched", "/install_or_upgrade"]
+      },
+      {
+        "repository": "product",
+        "path": "out/installer/republish-20261027/github-public-verify/receipt.json",
+        "sha256": "f31312cd957831bd3250995030186ba24c65d58bdc82319dc81e9bc546002bd1",
+        "bytes": 1005,
+        "locators": ["/status", "/checked_at_utc", "/files", "/installer_identity_matches", "/manifest_identity_matches", "/checksum_declaration_matches", "/manifest_verifier_exit_code", "/ed25519_and_installer_verification", "/installer_launched", "/private_key_read"]
+      },
+      {
+        "repository": "private",
+        "path": "out/update-republish-20261027/summary.json",
+        "sha256": "aeeb9f298b4c3acd8925426d0a12eff641fd0f3a89030bbff8e86be1a80e2e9f",
+        "bytes": 2985,
+        "locators": ["/status", "/cases/0", "/cases/1", "/cases/2", "/installer_launched"]
+      },
+      {
+        "repository": "private",
+        "path": "out/update-republish-20261027/primary-upgrade.json",
+        "sha256": "86770021ad07abd35b6492f28b4219a114f8e405d0bec89b23739582a35093f8",
+        "bytes": 821
+      },
+      {
+        "repository": "private",
+        "path": "out/update-republish-20261027/github-check.json",
+        "sha256": "554d6ef325b68af8c4339329f1deb9c1c26fa64dea8081a1d91d0a1b59713a69",
+        "bytes": 1099
+      },
+      {
+        "repository": "private",
+        "path": "out/update-republish-20261027/same-version.json",
+        "sha256": "bda399d20c0e97d57ff4a28b263870e6636fc3ff1b14681b8d37524382ed1cf5",
+        "bytes": 654
+      }
+    ]
+  }
+}
