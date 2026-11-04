@@ -9,35 +9,25 @@
 <p>首次部署按第一步至第七步执行，第八步填写验证记录。已有服务升级前先备份并核对版本，不重新覆盖 Compose、数据库或现有密钥配置。</p>
 <p><strong>复制使用：</strong>点击命令块右上角的“复制命令”，复制该段完整内容；多行配置的 EOF 结束符会一起复制。执行前替换示例地址、账号及密钥路径。复制按钮不会执行命令。</p></div><section id="section-1"><h2><span class="step">01</span>一、部署前确认</h2>
 <h3>1. 文档中的部署 IP 为 203.0.113.10。默认值仅作示例；请通过上方输入框设置服务器真实公网 IPv4 地址后再执行命令。</h3>
-<h3>2. 使用云镜像配置的实际登录账号和对应 SSH 密钥。以下以 ubuntu 为示例，密钥路径 C:\Keys\example-key.pem 也需替换；是否允许 root 登录由服务器 SSH 策略决定。</h3>
-<h3>本地 PowerShell：</h3>
-<div class="command"><div class="command-bar"><span>PowerShell · 本地电脑</span><button type="button" class="copy" data-copy="code-1" aria-label="复制第 1 段命令">复制命令</button></div><pre tabindex="0"><code id="code-1">ssh -i &quot;C:\Keys\example-key.pem&quot; ubuntu@203.0.113.10
-</code></pre></div>
+<h3>2. 使用云镜像配置的实际登录账号和对应 SSH 密钥。后续以 ubuntu 为示例，密钥路径 C:\Keys\example-key.pem 也需替换；是否允许 root 登录由服务器 SSH 策略决定。</h3>
 <h3>3. 项目路径以实际部署用户为准。下文默认使用该用户主目录下的 openmeeting-server；已有部署应改为实际目录。</h3>
 <h3>下文使用：</h3>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-2" aria-label="复制第 2 段命令">复制命令</button></div><pre tabindex="0"><code id="code-2">export SERVER_IP=&quot;203.0.113.10&quot;
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-1" aria-label="复制第 1 段命令">复制命令</button></div><pre tabindex="0"><code id="code-1">export SERVER_IP=&quot;203.0.113.10&quot;
 export APP_DIR=&quot;$HOME/openmeeting-server&quot;
 </code></pre></div>
 <h3>4. 当前仓库要求 Go &gt;= 1.21.2。本文以 Go 1.21.6 作为示例构建基线，不代表最新或长期维护推荐版本。</h3>
-<h3>5. 主持人移交修复分两部分：</h3>
-<p>- OpenMeeting 服务端：至少包含 ae64a2ba1e86fd71476311f76290df122163d57c。</p>
-<p>进行中会议按当前主持人归属；预约和历史会议仍按创建人归属。</p>
-<p>- Cohavora 客户端：另行部署包含主持人业务 API、白板权限、参会人列表、结束会议状态同步及提示自动消失修复的版本。</p>
-<p>更新 OpenMeeting 服务端不会自动更新客户端。</p>
-<h3>6. 先完成网络和凭据配置，再对外启用服务。示例沿用仓库初始化凭据；首次部署前应在数据库、Redis、LiveKit 和业务配置中成套替换，并保持一致。</h3>
-<p>已有部署修改数据库环境变量不会自动修改数据库内的现有密码，须按对应组件的改密流程处理。</p>
 </section>
 <section id="section-2"><h2><span class="step">02</span>二、可选：GitHub 访问加速</h2>
 <p>仅在服务器无法正常访问 GitHub 时使用。确认本地访问github正常且代理端口确实支持 SOCKS5。</p>
 <h3>本地 PowerShell（另开终端并保持连接）：</h3>
-<div class="command"><div class="command-bar"><span>PowerShell · 本地电脑</span><button type="button" class="copy" data-copy="code-3" aria-label="复制第 3 段命令">复制命令</button></div><pre tabindex="0"><code id="code-3">ssh -i &quot;C:\Keys\example-key.pem&quot; -R 7890:127.0.0.1:7890 ubuntu@203.0.113.10
+<div class="command"><div class="command-bar"><span>PowerShell · 本地电脑</span><button type="button" class="copy" data-copy="code-2" aria-label="复制第 2 段命令">复制命令</button></div><pre tabindex="0"><code id="code-2">ssh -i &quot;C:\Keys\example-key.pem&quot; -R 7890:127.0.0.1:7890 ubuntu@203.0.113.10
 </code></pre></div>
 <h3>该 SSH 会话中的服务器 Bash：</h3>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-4" aria-label="复制第 4 段命令">复制命令</button></div><pre tabindex="0"><code id="code-4">export http_proxy=socks5h://127.0.0.1:7890
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-3" aria-label="复制第 3 段命令">复制命令</button></div><pre tabindex="0"><code id="code-3">export http_proxy=socks5h://127.0.0.1:7890
 export https_proxy=socks5h://127.0.0.1:7890
 </code></pre></div>
 <h3>用完后：</h3>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-5" aria-label="复制第 5 段命令">复制命令</button></div><pre tabindex="0"><code id="code-5">unset http_proxy https_proxy ALL_PROXY all_proxy
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-4" aria-label="复制第 4 段命令">复制命令</button></div><pre tabindex="0"><code id="code-4">unset http_proxy https_proxy ALL_PROXY all_proxy
 </code></pre></div>
 <p>SSH 主机指纹变化时先核实服务器身份，不应直接删除 known_hosts 记录。</p>
 <p>源码获取是必做步骤，见第三步；本节仅提供可选代理方法。</p>
@@ -47,21 +37,21 @@ export https_proxy=socks5h://127.0.0.1:7890
 <p>以下 apt、/etc 与 systemctl 命令需要管理员权限；具备 sudo 权限的部署用户可先 sudo -i，执行完系统安装后 exit 回原用户。</p>
 <p>不要在 root 会话中无意把后续项目部署到 /root。</p>
 <h3>采用清华镜像源；若镜像不可达，以实际网络条件调整。安装前清除临时代理：</h3>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-6" aria-label="复制第 6 段命令">复制命令</button></div><pre tabindex="0"><code id="code-6">unset http_proxy https_proxy ALL_PROXY all_proxy
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-5" aria-label="复制第 5 段命令">复制命令</button></div><pre tabindex="0"><code id="code-5">unset http_proxy https_proxy ALL_PROXY all_proxy
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-7" aria-label="复制第 7 段命令">复制命令</button></div><pre tabindex="0"><code id="code-7"># 1. 基础工具与 Keyrings 目录创建
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-6" aria-label="复制第 6 段命令">复制命令</button></div><pre tabindex="0"><code id="code-6"># 1. 基础工具与 Keyrings 目录创建
 apt update -y &amp;&amp; apt install -y curl ca-certificates git wget
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL &quot;https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu/gpg&quot; -o /etc/apt/keyrings/docker.asc
 chmod a+r /etc/apt/keyrings/docker.asc
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-8" aria-label="复制第 8 段命令">复制命令</button></div><pre tabindex="0"><code id="code-8"># 2. 写入清华软件源（自动匹配系统版本代号）
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-7" aria-label="复制第 7 段命令">复制命令</button></div><pre tabindex="0"><code id="code-7"># 2. 写入清华软件源（自动匹配系统版本代号）
 CODENAME=$(. /etc/os-release &amp;&amp; echo &quot;$VERSION_CODENAME&quot;)
 cat &lt;&lt;EOF &gt; /etc/apt/sources.list.d/docker.list
 deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu ${CODENAME} stable
 EOF
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-9" aria-label="复制第 9 段命令">复制命令</button></div><pre tabindex="0"><code id="code-9"># 3. 安装 Docker 组件并启动
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-8" aria-label="复制第 8 段命令">复制命令</button></div><pre tabindex="0"><code id="code-8"># 3. 安装 Docker 组件并启动
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 systemctl enable --now docker
@@ -71,7 +61,7 @@ systemctl enable --now docker
 <p>仅在拉取镜像受阻时配置。镜像站可能不可用，以下列表不保证持续有效；Docker Hub 镜像加速也不一定覆盖 quay.io。</p>
 <p>已有 /etc/docker/daemon.json 时先备份并合并 registry-mirrors，不要直接覆盖其他配置。</p>
 <p>以下为新环境的示例；重启 Docker 可能影响已有容器，需安排维护窗口。</p>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-10" aria-label="复制第 10 段命令">复制命令</button></div><pre tabindex="0"><code id="code-10">mkdir -p /etc/docker
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-9" aria-label="复制第 9 段命令">复制命令</button></div><pre tabindex="0"><code id="code-9">mkdir -p /etc/docker
 cat &lt;&lt;EOF &gt; /etc/docker/daemon.json
 {
   &quot;registry-mirrors&quot;: [
@@ -83,26 +73,26 @@ cat &lt;&lt;EOF &gt; /etc/docker/daemon.json
 }
 EOF
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-11" aria-label="复制第 11 段命令">复制命令</button></div><pre tabindex="0"><code id="code-11">systemctl daemon-reload &amp;&amp; systemctl restart docker
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-10" aria-label="复制第 10 段命令">复制命令</button></div><pre tabindex="0"><code id="code-10">systemctl daemon-reload &amp;&amp; systemctl restart docker
 </code></pre></div>
 </section>
 <section id="section-5"><h2><span class="step">05</span>第三步：拉取源码与调整 LiveKit 为 Host 网络模式</h2>
 <p>说明：本文采用 LiveKit host 网络方案，减少容器端口映射配置。host 网络不是所有部署的强制要求，也不能保证没有丢包。</p>
 <p>以下操作回到部署用户执行；该用户需具备 Docker 使用权限，权限不足时按本机权限策略使用 sudo docker。</p>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-12" aria-label="复制第 12 段命令">复制命令</button></div><pre tabindex="0"><code id="code-12"># 1. 获取源码（首次部署必做；目录已存在时不要重复 clone，先备份并按已有部署的升级流程处理）
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-11" aria-label="复制第 11 段命令">复制命令</button></div><pre tabindex="0"><code id="code-11"># 1. 获取源码（首次部署必做；目录已存在时不要重复 clone，先备份并按已有部署的升级流程处理）
 export APP_DIR=&quot;$HOME/openmeeting-server&quot;
 git clone https://github.com/a980374208/openmeeting-server.git &quot;$APP_DIR&quot;
 cd &quot;$APP_DIR&quot;
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-13" aria-label="复制第 13 段命令">复制命令</button></div><pre tabindex="0"><code id="code-13"># 核对当前版本和主持人修复；任一失败时停止，不应继续宣称修复已部署
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-12" aria-label="复制第 12 段命令">复制命令</button></div><pre tabindex="0"><code id="code-12"># 核对当前版本和主持人修复；任一失败时停止，不应继续宣称修复已部署
 git log -1 --oneline
 git merge-base --is-ancestor ae64a2ba1e86fd71476311f76290df122163d57c HEAD
 # 上一命令退出码为 0 表示 HEAD 包含该提交，1 表示不包含，其他值表示检查失败。
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-14" aria-label="复制第 14 段命令">复制命令</button></div><pre tabindex="0"><code id="code-14"># 原仓库 .env 需保留；检查其中镜像、DATA_DIR、DOCKER_DIR 与实际挂载一致。
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-13" aria-label="复制第 13 段命令">复制命令</button></div><pre tabindex="0"><code id="code-13"># 原仓库 .env 需保留；检查其中镜像、DATA_DIR、DOCKER_DIR 与实际挂载一致。
 # 为可复现部署，记录镜像 tag 和 digest；不要将 latest 视为固定版本。
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-15" aria-label="复制第 15 段命令">复制命令</button></div><pre tabindex="0"><code id="code-15"># 2. 将 docker-compose.yml 中的 livekit 调整为 host 网络模式
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-14" aria-label="复制第 14 段命令">复制命令</button></div><pre tabindex="0"><code id="code-14"># 2. 将 docker-compose.yml 中的 livekit 调整为 host 网络模式
 cat &lt;&lt;&#x27;EOF&#x27; &gt; docker-compose.yml
 version: &#x27;3.8&#x27;
 
@@ -187,11 +177,11 @@ EOF
 </code></pre></div>
 </section>
 <section id="section-6"><h2><span class="step">06</span>第四步：配置 LiveKit 与业务服务公网 IP（单端口生产模式）</h2>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-16" aria-label="复制第 16 段命令">复制命令</button></div><pre tabindex="0"><code id="code-16">export SERVER_IP=&quot;203.0.113.10&quot;
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-15" aria-label="复制第 15 段命令">复制命令</button></div><pre tabindex="0"><code id="code-15">export SERVER_IP=&quot;203.0.113.10&quot;
 cd &quot;$APP_DIR&quot;
 mkdir -p components/livekit/config
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-17" aria-label="复制第 17 段命令">复制命令</button></div><pre tabindex="0"><code id="code-17"># 1. 配置 LiveKit SFU 核心配置（固定单端口 17882/udp，移除随机范围端口）
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-16" aria-label="复制第 16 段命令">复制命令</button></div><pre tabindex="0"><code id="code-16"># 1. 配置 LiveKit SFU 核心配置（固定单端口 17882/udp，移除随机范围端口）
 cat &lt;&lt;EOF &gt; components/livekit/config/livekit.yml
 port: 17880
 log_level: info
@@ -208,12 +198,12 @@ room:
   departure_timeout: 86400
 EOF
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-18" aria-label="复制第 18 段命令">复制命令</button></div><pre tabindex="0"><code id="code-18"># 2. 配置业务服务连接 LiveKit 的 WebSocket 地址
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-17" aria-label="复制第 17 段命令">复制命令</button></div><pre tabindex="0"><code id="code-17"># 2. 配置业务服务连接 LiveKit 的 WebSocket 地址
 # 下条 sed 仅用于含 external_ip 占位符的新配置。已有配置应核对 url，不能仅重复执行替换命令。
 # config/livekit.yml 的 url 应指向 ws://${SERVER_IP}:17880；两侧 API key/secret 必须匹配。
 sed -i &quot;s/external_ip/${SERVER_IP}/g&quot; config/livekit.yml
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-19" aria-label="复制第 19 段命令">复制命令</button></div><pre tabindex="0"><code id="code-19"># 3. 配置 UDP 缓冲区（需管理员权限；已有更高数值时保留原调优值）
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-18" aria-label="复制第 18 段命令">复制命令</button></div><pre tabindex="0"><code id="code-18"># 3. 配置 UDP 缓冲区（需管理员权限；已有更高数值时保留原调优值）
 # 以下值沿用本部署基线，不代表媒体质量保证；同时检查其他 sysctl 文件有无重复配置。
 sudo tee /etc/sysctl.d/90-openmeeting-udp.conf &gt;/dev/null &lt;&lt;&#x27;EOF&#x27;
 net.core.rmem_max=5000000
@@ -221,24 +211,24 @@ net.core.wmem_max=5000000
 EOF
 sudo sysctl --system
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-20" aria-label="复制第 20 段命令">复制命令</button></div><pre tabindex="0"><code id="code-20"># 4. 启动容器依赖组件（MongoDB、Redis、Etcd、LiveKit）
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-19" aria-label="复制第 19 段命令">复制命令</button></div><pre tabindex="0"><code id="code-19"># 4. 启动容器依赖组件（MongoDB、Redis、Etcd、LiveKit）
 docker compose up -d
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-21" aria-label="复制第 21 段命令">复制命令</button></div><pre tabindex="0"><code id="code-21"># 5. 检查启动状态和错误日志；Up 仅表示容器运行，不代表业务或媒体验证通过
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-20" aria-label="复制第 20 段命令">复制命令</button></div><pre tabindex="0"><code id="code-20"># 5. 检查启动状态和错误日志；Up 仅表示容器运行，不代表业务或媒体验证通过
 docker compose ps
 docker compose logs --tail=80 livekit
 # 日志可能包含敏感配置，分享前先脱敏。
 </code></pre></div>
 </section>
 <section id="section-7"><h2><span class="step">07</span>第五步：安装 Go 语言编译环境与 Mage 工具</h2>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-22" aria-label="复制第 22 段命令">复制命令</button></div><pre tabindex="0"><code id="code-22"># 1. 下载并安装示例构建基线 Go 1.21.6（仅首次部署；管理员权限）
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-21" aria-label="复制第 21 段命令">复制命令</button></div><pre tabindex="0"><code id="code-21"># 1. 下载并安装示例构建基线 Go 1.21.6（仅首次部署；管理员权限）
 # 已有满足版本要求的 Go 时跳过。下载后先核对发布方提供的 SHA256，确认包完整再安装。
 wget https://golang.google.cn/dl/go1.21.6.linux-amd64.tar.gz
 # 确认 /usr/local/go 是待替换的 Go 安装目录，再执行：
 rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.21.6.linux-amd64.tar.gz
 rm -f go1.21.6.linux-amd64.tar.gz
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-23" aria-label="复制第 23 段命令">复制命令</button></div><pre tabindex="0"><code id="code-23"># 2. 配置部署用户的 Go 环境（回到实际部署用户执行）
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-22" aria-label="复制第 22 段命令">复制命令</button></div><pre tabindex="0"><code id="code-22"># 2. 配置部署用户的 Go 环境（回到实际部署用户执行）
 # 当前 Bash 会话：
 export PATH=&quot;/usr/local/go/bin:$HOME/go/bin:$PATH&quot;
 export GOPROXY=https://goproxy.cn,direct
@@ -246,18 +236,18 @@ go version
 # 持久化时，将上面两行 export 放入该用户 ~/.bashrc，一次即可；不要反复追加。
 # 不必强制设置 GOROOT，避免与现有 Go 安装冲突。
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-24" aria-label="复制第 24 段命令">复制命令</button></div><pre tabindex="0"><code id="code-24"># 3. 执行项目初始化脚本（安装构建工具 mage）
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-23" aria-label="复制第 23 段命令">复制命令</button></div><pre tabindex="0"><code id="code-23"># 3. 执行项目初始化脚本（安装构建工具 mage）
 cd &quot;$APP_DIR&quot;
 bash bootstrap.sh
 </code></pre></div>
 </section>
 <section id="section-8"><h2><span class="step">08</span>第六步：编译与启动业务服务</h2>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-25" aria-label="复制第 25 段命令">复制命令</button></div><pre tabindex="0"><code id="code-25">cd &quot;$APP_DIR&quot;
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-24" aria-label="复制第 24 段命令">复制命令</button></div><pre tabindex="0"><code id="code-24">cd &quot;$APP_DIR&quot;
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-26" aria-label="复制第 26 段命令">复制命令</button></div><pre tabindex="0"><code id="code-26"># 编译并启动所有核心微服务
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-25" aria-label="复制第 25 段命令">复制命令</button></div><pre tabindex="0"><code id="code-25"># 编译并启动所有核心微服务
 mage &amp;&amp; mage start
 </code></pre></div>
-<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-27" aria-label="复制第 27 段命令">复制命令</button></div><pre tabindex="0"><code id="code-27"># 检查四个业务服务的进程状态；验证结果记录见第八步
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-26" aria-label="复制第 26 段命令">复制命令</button></div><pre tabindex="0"><code id="code-26"># 检查四个业务服务的进程状态；验证结果记录见第八步
 mage check
 </code></pre></div>
 </section>
