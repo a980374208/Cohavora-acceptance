@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>OpenMeeting 服务端部署说明</title><style>
+:root{--ink:#172b43;--muted:#62758a;--line:#dfe7f0;--blue:#2463dd;--paper:#fff;--bg:#f2f5f9}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.85 "Segoe UI","Microsoft YaHei",sans-serif}a{color:inherit}aside{position:fixed;inset:0 auto 0 0;width:266px;padding:32px 22px;background:#10233d;color:#b5c5dc;overflow:auto}.brand{color:#fff;font-size:22px;font-weight:750;letter-spacing:-.5px}.brand small{display:block;font-size:11px;font-weight:500;letter-spacing:2px;color:#7fa5de;margin-top:4px}.nav-title{font-size:11px;letter-spacing:2px;margin:32px 12px 12px;color:#7590b4}nav a{display:block;text-decoration:none;font-size:13px;padding:10px 12px;border-radius:8px;line-height:1.6;margin:4px 0}nav a:hover,nav a:focus-visible{background:#233e63;color:white}.offline{font-size:12px;margin:30px 12px;color:#8fa8c8}main{max-width:1270px;padding:48px 48px 80px;margin-left:266px}.hero{padding:30px 34px;border-radius:16px;background:linear-gradient(120deg,#e2edff,#f1f6ff);border:1px solid #d2e1fa;margin-bottom:28px}.eyebrow{font-size:11px;color:var(--blue);font-weight:700;letter-spacing:2px}h1{font-size:34px;line-height:1.4;letter-spacing:-1px;margin:10px 0 12px}.hero p{color:#4c6480;margin:8px 0}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.tags span{background:#fff9;border:1px solid #cfddf0;border-radius:20px;padding:3px 12px;font-size:12px}.intro,section{padding:28px 32px;background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-bottom:22px;min-width:0}h2{font-size:21px;line-height:1.6;display:flex;gap:12px;align-items:baseline;margin:0 0 22px;letter-spacing:-.4px}.step{font-family:Consolas,monospace;color:var(--blue);font-size:15px}h3{font-size:15px;line-height:1.8;margin:24px 0 10px}p{margin:10px 0;overflow-wrap:anywhere}.command{margin:16px 0 22px;border:1px solid #243b54;border-radius:10px;overflow:hidden;background:#102033;color:#dce7f6}.command-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 14px;background:#1b3049;color:#b4c9e4;font-size:11px;letter-spacing:.3px}.copy{border:1px solid #54708f;border-radius:6px;background:#2b4565;color:#fff;cursor:pointer;padding:6px 12px;font:12px "Microsoft YaHei",sans-serif;min-width:85px}.copy:hover{background:#365c86}.copy:focus-visible{outline:3px solid #9cc3ff;outline-offset:2px}.copy.ok{background:#17664f;border-color:#4d9d81}.copy.failed{background:#8c3443}pre{margin:0;padding:18px 20px;overflow:auto;tab-size:2;font:12.5px/1.85 Consolas,"Cascadia Code",monospace;white-space:pre}pre code{font:inherit}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:9px;margin:18px 0}table{border-collapse:collapse;width:100%;font-size:13px;min-width:500px;text-align:left}th{background:#edf3fb;color:#3f5e84;font-weight:650}th,td{padding:11px 15px;border-bottom:1px solid var(--line);vertical-align:top}tbody tr:last-child td{border-bottom:0}td:first-child{white-space:nowrap;font-weight:600}tbody tr:nth-child(even){background:#f9fbfd}.port-summary{padding:12px 16px;background:#edf4ff;border-radius:8px;color:#244d86;font-family:Consolas,"Microsoft YaHei",monospace}footer{color:var(--muted);font-size:12px;text-align:center;margin-top:30px}#status{position:fixed;right:25px;bottom:25px;max-width:360px;padding:12px 18px;background:#142c46;color:white;border-radius:9px;box-shadow:0 4px 20px #0002;opacity:0;pointer-events:none;transition:opacity .15s}#status.show{opacity:1}@media(min-width:1600px){main{margin-right:auto;margin-left:calc(266px + (100vw - 1600px)/2)}}@media(max-width:1000px){aside{width:220px;padding:26px 14px}main{margin-left:220px;padding:30px 22px}section,.intro{padding:23px}h1{font-size:29px}}@media(max-width:720px){aside{position:static;width:auto;padding:22px}nav{display:flex;gap:6px;overflow:auto}nav a{flex:0 0 170px}.nav-title,.offline{display:none}main{margin-left:0;padding:20px 14px}.hero{padding:24px}section,.intro{padding:20px}h1{font-size:26px}h2{font-size:18px}pre{font-size:12px;padding:15px}}@media print{aside,.copy,#status{display:none!important}main{margin:0;padding:0;max-width:none}body{background:#fff;font-size:11px}.hero,section,.intro{border:0;padding:14px 0;margin-bottom:14px}.command{background:#f4f6f9;color:#172b43;border-color:#ccd5df;break-inside:avoid}.command-bar{background:#edf1f6;color:#456}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:9px}.table-wrap{overflow:visible}table{min-width:0;font-size:10px}h2,h3{break-after:avoid}}
+
+.ip-panel{background:#fff;border:1px solid #cbdcf7;border-radius:14px;padding:24px 28px;margin:0 0 22px;box-shadow:0 4px 18px #2463dd08}.ip-panel h2{font-size:18px;margin:0 0 8px}.ip-panel p{color:var(--muted);font-size:13px;margin:6px 0 14px}.ip-form{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.ip-field{display:flex;flex-direction:column;gap:5px;flex:1;min-width:200px;max-width:400px}.ip-field label{font-size:12px;font-weight:600}.ip-field input{width:100%;height:43px;padding:9px 13px;border:1px solid #b8c9df;border-radius:7px;font:16px Consolas,monospace;color:var(--ink);background:#fff}.ip-field input:focus{outline:3px solid #c9ddff;border-color:#2463dd}.ip-field input[aria-invalid=true]{border-color:#ba344a}.ip-action{height:43px;padding:0 18px;border-radius:7px;border:1px solid #2463dd;background:#2463dd;color:#fff;cursor:pointer;font:14px "Microsoft YaHei",sans-serif}.ip-action.secondary{background:#fff;color:#385c8d;border-color:#c4d2e5}.ip-action:focus-visible{outline:3px solid #a6c6ff;outline-offset:2px}.ip-message{min-height:24px;font-size:13px;color:#286b50;margin-top:10px}.ip-message.error{color:#b12e44}@media(max-width:720px){.ip-panel{padding:20px}.ip-field{max-width:none;flex-basis:100%}.ip-action{flex:1}}@media print{.ip-panel{display:none}}
+</style></head>
+<body><aside><div class="brand">OpenMeeting<small>SERVER DEPLOYMENT GUIDE</small></div><div class="nav-title">部署导航</div><nav aria-label="文档目录"><a href="#section-1">一、部署前确认</a><a href="#section-2">二、可选：GitHub 访问加速</a><a href="#section-3">第一步：安装 Docker 与 Compose 插件（首次部署）</a><a href="#section-4">第二步：可选配置 Docker 镜像加速源</a><a href="#section-5">第三步：拉取源码与调整 LiveKit 为 Host 网络模式</a><a href="#section-6">第四步：配置 LiveKit 与业务服务公网 IP（单端口生产模式）</a><a href="#section-7">第五步：安装 Go 语言编译环境与 Mage 工具</a><a href="#section-8">第六步：编译与启动业务服务</a><a href="#section-9">第七步：安全组与主机防火墙（保留原说明全部放行端口）</a><a href="#section-10">第八步：部署与验证记录模板</a></nav><div class="offline">离线可用 · 单文件文档<br>每段命令均可点击复制</div></aside><main><header class="hero"><div class="eyebrow">OPERATIONS / 部署指南</div><h1>OpenMeeting 服务端部署说明</h1><p>从环境准备到服务启动，以步骤完成配置与记录。</p><div class="tags"><span>Ubuntu x86_64</span><span>Docker + Mage</span><span>部署 IP · 203.0.113.10</span></div></header><div class="ip-panel" id="ip-settings"><h2>一键设置部署 IP</h2><p>应用后将同步更新全文地址与所有命令；点击“复制命令”即可复制更新后的内容。</p><form class="ip-form" id="ip-form"><div class="ip-field"><label for="server-ip">服务器公网 IPv4 地址</label><input id="server-ip" name="server-ip" type="text" inputmode="decimal" value="203.0.113.10" placeholder="例如：203.0.113.10" maxlength="15" autocomplete="off" spellcheck="false" aria-describedby="ip-message"></div><button class="ip-action" type="submit">应用 IP</button><button class="ip-action secondary" id="reset-ip" type="button">恢复示例 IP</button></form><div class="ip-message" id="ip-message" role="status" aria-live="polite">当前使用示例 IP，请在执行命令前修改。</div></div><div class="intro"><p>适用范围：Ubuntu x86_64 单机部署，Docker 运行依赖组件，Mage 启动业务微服务。</p>
+<p>以下 Linux 命令在服务器 Bash 中执行；注明“本地 PowerShell”的命令在 Windows 执行。</p>
+<p>首次部署按第一步至第七步执行，第八步填写验证记录。已有服务升级前先备份并核对版本，不重新覆盖 Compose、数据库或现有密钥配置。</p>
+<p><strong>复制使用：</strong>点击命令块右上角的“复制命令”，复制该段完整内容；多行配置的 EOF 结束符会一起复制。执行前替换示例地址、账号及密钥路径。复制按钮不会执行命令。</p></div><section id="section-1"><h2><span class="step">01</span>一、部署前确认</h2>
+<h3>1. 文档中的部署 IP 为 203.0.113.10。默认值仅作示例；请通过上方输入框设置服务器真实公网 IPv4 地址后再执行命令。</h3>
+<h3>2. 使用云镜像配置的实际登录账号和对应 SSH 密钥。以下以 ubuntu 为示例，密钥路径 C:\Keys\example-key.pem 也需替换；是否允许 root 登录由服务器 SSH 策略决定。</h3>
+<h3>本地 PowerShell：</h3>
+<div class="command"><div class="command-bar"><span>PowerShell · 本地电脑</span><button type="button" class="copy" data-copy="code-1" aria-label="复制第 1 段命令">复制命令</button></div><pre tabindex="0"><code id="code-1">ssh -i &quot;C:\Keys\example-key.pem&quot; ubuntu@203.0.113.10
+</code></pre></div>
+<h3>3. 项目路径以实际部署用户为准。下文默认使用该用户主目录下的 openmeeting-server；已有部署应改为实际目录。</h3>
+<h3>下文使用：</h3>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-2" aria-label="复制第 2 段命令">复制命令</button></div><pre tabindex="0"><code id="code-2">export SERVER_IP=&quot;203.0.113.10&quot;
+export APP_DIR=&quot;$HOME/openmeeting-server&quot;
+</code></pre></div>
+<h3>4. 当前仓库要求 Go &gt;= 1.21.2。本文以 Go 1.21.6 作为示例构建基线，不代表最新或长期维护推荐版本。</h3>
+<h3>5. 主持人移交修复分两部分：</h3>
+<p>- OpenMeeting 服务端：至少包含 ae64a2ba1e86fd71476311f76290df122163d57c。</p>
+<p>进行中会议按当前主持人归属；预约和历史会议仍按创建人归属。</p>
+<p>- Cohavora 客户端：另行部署包含主持人业务 API、白板权限、参会人列表、结束会议状态同步及提示自动消失修复的版本。</p>
+<p>更新 OpenMeeting 服务端不会自动更新客户端。</p>
+<h3>6. 先完成网络和凭据配置，再对外启用服务。示例沿用仓库初始化凭据；首次部署前应在数据库、Redis、LiveKit 和业务配置中成套替换，并保持一致。</h3>
+<p>已有部署修改数据库环境变量不会自动修改数据库内的现有密码，须按对应组件的改密流程处理。</p>
+</section>
+<section id="section-2"><h2><span class="step">02</span>二、可选：GitHub 访问加速</h2>
+<p>仅在服务器无法正常访问 GitHub 时使用。确认本地访问github正常且代理端口确实支持 SOCKS5。</p>
+<h3>本地 PowerShell（另开终端并保持连接）：</h3>
+<div class="command"><div class="command-bar"><span>PowerShell · 本地电脑</span><button type="button" class="copy" data-copy="code-3" aria-label="复制第 3 段命令">复制命令</button></div><pre tabindex="0"><code id="code-3">ssh -i &quot;C:\Keys\example-key.pem&quot; -R 7890:127.0.0.1:7890 ubuntu@203.0.113.10
+</code></pre></div>
+<h3>该 SSH 会话中的服务器 Bash：</h3>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-4" aria-label="复制第 4 段命令">复制命令</button></div><pre tabindex="0"><code id="code-4">export http_proxy=socks5h://127.0.0.1:7890
+export https_proxy=socks5h://127.0.0.1:7890
+</code></pre></div>
+<h3>用完后：</h3>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-5" aria-label="复制第 5 段命令">复制命令</button></div><pre tabindex="0"><code id="code-5">unset http_proxy https_proxy ALL_PROXY all_proxy
+</code></pre></div>
+<p>SSH 主机指纹变化时先核实服务器身份，不应直接删除 known_hosts 记录。</p>
+<p>源码获取是必做步骤，见第三步；本节仅提供可选代理方法。</p>
+</section>
+<section id="section-3"><h2><span class="step">03</span>第一步：安装 Docker 与 Compose 插件（首次部署）</h2>
+<p>已有 Docker 环境先检查 docker version、docker compose version，满足要求时跳过安装。</p>
+<p>以下 apt、/etc 与 systemctl 命令需要管理员权限；具备 sudo 权限的部署用户可先 sudo -i，执行完系统安装后 exit 回原用户。</p>
+<p>不要在 root 会话中无意把后续项目部署到 /root。</p>
+<h3>采用清华镜像源；若镜像不可达，以实际网络条件调整。安装前清除临时代理：</h3>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-6" aria-label="复制第 6 段命令">复制命令</button></div><pre tabindex="0"><code id="code-6">unset http_proxy https_proxy ALL_PROXY all_proxy
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-7" aria-label="复制第 7 段命令">复制命令</button></div><pre tabindex="0"><code id="code-7"># 1. 基础工具与 Keyrings 目录创建
+apt update -y &amp;&amp; apt install -y curl ca-certificates git wget
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL &quot;https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu/gpg&quot; -o /etc/apt/keyrings/docker.asc
+chmod a+r /etc/apt/keyrings/docker.asc
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-8" aria-label="复制第 8 段命令">复制命令</button></div><pre tabindex="0"><code id="code-8"># 2. 写入清华软件源（自动匹配系统版本代号）
+CODENAME=$(. /etc/os-release &amp;&amp; echo &quot;$VERSION_CODENAME&quot;)
+cat &lt;&lt;EOF &gt; /etc/apt/sources.list.d/docker.list
+deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu ${CODENAME} stable
+EOF
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-9" aria-label="复制第 9 段命令">复制命令</button></div><pre tabindex="0"><code id="code-9"># 3. 安装 Docker 组件并启动
+apt-get update
+apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+systemctl enable --now docker
+</code></pre></div>
+</section>
+<section id="section-4"><h2><span class="step">04</span>第二步：可选配置 Docker 镜像加速源</h2>
+<p>仅在拉取镜像受阻时配置。镜像站可能不可用，以下列表不保证持续有效；Docker Hub 镜像加速也不一定覆盖 quay.io。</p>
+<p>已有 /etc/docker/daemon.json 时先备份并合并 registry-mirrors，不要直接覆盖其他配置。</p>
+<p>以下为新环境的示例；重启 Docker 可能影响已有容器，需安排维护窗口。</p>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-10" aria-label="复制第 10 段命令">复制命令</button></div><pre tabindex="0"><code id="code-10">mkdir -p /etc/docker
+cat &lt;&lt;EOF &gt; /etc/docker/daemon.json
+{
+  &quot;registry-mirrors&quot;: [
+    &quot;https://docker.m.daocloud.io&quot;,
+    &quot;https://dockerproxy.net&quot;,
+    &quot;https://docker.1panel.live&quot;,
+    &quot;https://hub-mirror.c.163.com&quot;
+  ]
+}
+EOF
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-11" aria-label="复制第 11 段命令">复制命令</button></div><pre tabindex="0"><code id="code-11">systemctl daemon-reload &amp;&amp; systemctl restart docker
+</code></pre></div>
+</section>
+<section id="section-5"><h2><span class="step">05</span>第三步：拉取源码与调整 LiveKit 为 Host 网络模式</h2>
+<p>说明：本文采用 LiveKit host 网络方案，减少容器端口映射配置。host 网络不是所有部署的强制要求，也不能保证没有丢包。</p>
+<p>以下操作回到部署用户执行；该用户需具备 Docker 使用权限，权限不足时按本机权限策略使用 sudo docker。</p>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-12" aria-label="复制第 12 段命令">复制命令</button></div><pre tabindex="0"><code id="code-12"># 1. 获取源码（首次部署必做；目录已存在时不要重复 clone，先备份并按已有部署的升级流程处理）
+export APP_DIR=&quot;$HOME/openmeeting-server&quot;
+git clone https://github.com/a980374208/openmeeting-server.git &quot;$APP_DIR&quot;
+cd &quot;$APP_DIR&quot;
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-13" aria-label="复制第 13 段命令">复制命令</button></div><pre tabindex="0"><code id="code-13"># 核对当前版本和主持人修复；任一失败时停止，不应继续宣称修复已部署
+git log -1 --oneline
+git merge-base --is-ancestor ae64a2ba1e86fd71476311f76290df122163d57c HEAD
+# 上一命令退出码为 0 表示 HEAD 包含该提交，1 表示不包含，其他值表示检查失败。
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-14" aria-label="复制第 14 段命令">复制命令</button></div><pre tabindex="0"><code id="code-14"># 原仓库 .env 需保留；检查其中镜像、DATA_DIR、DOCKER_DIR 与实际挂载一致。
+# 为可复现部署，记录镜像 tag 和 digest；不要将 latest 视为固定版本。
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-15" aria-label="复制第 15 段命令">复制命令</button></div><pre tabindex="0"><code id="code-15"># 2. 将 docker-compose.yml 中的 livekit 调整为 host 网络模式
+cat &lt;&lt;&#x27;EOF&#x27; &gt; docker-compose.yml
+version: &#x27;3.8&#x27;
+
+networks:
+  openmeeting:
+    driver: bridge
+
+services:
+  mongodb:
+    image: &quot;${MONGO_IMAGE}&quot;
+    ports:
+      - &quot;37017:27017&quot;
+    container_name: mongo
+    command: [ &quot;/bin/bash&quot;, &quot;-c&quot;, &quot;/docker-entrypoint-initdb.d/mongo-init.sh; docker-entrypoint.sh mongod --wiredTigerCacheSizeGB 1 --auth&quot; ]
+    volumes:
+      - &quot;${DATA_DIR}/mongodb/data/db:/data/db&quot;
+      - &quot;${DATA_DIR}/mongodb/data/logs:/data/logs&quot;
+      - &quot;${DATA_DIR}/mongodb/data/conf:/etc/mongo&quot;
+      - &quot;./scripts/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro&quot;
+    environment:
+      - TZ=Asia/Shanghai
+      - wiredTigerCacheSizeGB=1
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=openMeeting123
+      - MONGO_INITDB_DATABASE=openmeeting_v1
+      - MONGO_OPENIM_USERNAME=openmeeting
+      - MONGO_OPENIM_PASSWORD=openMeeting123
+    restart: always
+    networks:
+      - openmeeting
+
+  redis:
+    image: &quot;${REDIS_IMAGE}&quot;
+    container_name: redis
+    ports:
+      - &quot;16379:6379&quot;
+    volumes:
+      - &quot;${DATA_DIR}/redis/data:/data&quot;
+      - &quot;${DATA_DIR}/redis/config/redis.conf:${DOCKER_DIR}/redis/config/redis.conf&quot;
+    environment:
+      TZ: Asia/Shanghai
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    command: redis-server ${DOCKER_DIR}/redis/config/redis.conf --requirepass openmeeting_v1 --appendonly yes
+    networks:
+      - openmeeting
+
+  etcd:
+    image: &quot;${ETCD_IMAGE}&quot;
+    container_name: etcd
+    ports:
+      - &quot;12379:2379&quot;
+      - &quot;12380:2380&quot;
+    environment:
+      - ETCD_NAME=s1
+      - ETCD_DATA_DIR=/etcd-data
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+      - ETCD_ADVERTISE_CLIENT_URLS=http://0.0.0.0:2379
+      - ETCD_LISTEN_PEER_URLS=http://0.0.0.0:2380
+      - ETCD_INITIAL_ADVERTISE_PEER_URLS=http://0.0.0.0:2380
+      - ETCD_INITIAL_CLUSTER=s1=http://0.0.0.0:2380
+      - ETCD_INITIAL_CLUSTER_TOKEN=tkn
+      - ETCD_INITIAL_CLUSTER_STATE=new
+    restart: always
+    networks:
+      - openmeeting
+
+  livekit:
+    image: &quot;${LIVEKIT_IMAGE}&quot;
+    container_name: livekit
+    network_mode: host
+    volumes:
+      - ${DATA_DIR}/livekit/config/livekit.yml:${DOCKER_DIR}/livekit.yaml
+    environment:
+      TZ: Asia/Shanghai
+    restart: always
+    command: --config ${DOCKER_DIR}/livekit.yaml --bind 0.0.0.0
+    depends_on:
+      - redis
+EOF
+</code></pre></div>
+</section>
+<section id="section-6"><h2><span class="step">06</span>第四步：配置 LiveKit 与业务服务公网 IP（单端口生产模式）</h2>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-16" aria-label="复制第 16 段命令">复制命令</button></div><pre tabindex="0"><code id="code-16">export SERVER_IP=&quot;203.0.113.10&quot;
+cd &quot;$APP_DIR&quot;
+mkdir -p components/livekit/config
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-17" aria-label="复制第 17 段命令">复制命令</button></div><pre tabindex="0"><code id="code-17"># 1. 配置 LiveKit SFU 核心配置（固定单端口 17882/udp，移除随机范围端口）
+cat &lt;&lt;EOF &gt; components/livekit/config/livekit.yml
+port: 17880
+log_level: info
+rtc:
+  tcp_port: 17881
+  use_external_ip: false
+  node_ip: ${SERVER_IP}
+  udp_port: 17882
+
+keys:
+  APIftrpEkL9x2pa: 23ztfSqsfQ8hKkHzHTl3Z4bvaxro0snjk5jwbp5p6Q3
+room:
+  empty_timeout: 72000
+  departure_timeout: 86400
+EOF
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-18" aria-label="复制第 18 段命令">复制命令</button></div><pre tabindex="0"><code id="code-18"># 2. 配置业务服务连接 LiveKit 的 WebSocket 地址
+# 下条 sed 仅用于含 external_ip 占位符的新配置。已有配置应核对 url，不能仅重复执行替换命令。
+# config/livekit.yml 的 url 应指向 ws://${SERVER_IP}:17880；两侧 API key/secret 必须匹配。
+sed -i &quot;s/external_ip/${SERVER_IP}/g&quot; config/livekit.yml
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-19" aria-label="复制第 19 段命令">复制命令</button></div><pre tabindex="0"><code id="code-19"># 3. 配置 UDP 缓冲区（需管理员权限；已有更高数值时保留原调优值）
+# 以下值沿用本部署基线，不代表媒体质量保证；同时检查其他 sysctl 文件有无重复配置。
+sudo tee /etc/sysctl.d/90-openmeeting-udp.conf &gt;/dev/null &lt;&lt;&#x27;EOF&#x27;
+net.core.rmem_max=5000000
+net.core.wmem_max=5000000
+EOF
+sudo sysctl --system
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-20" aria-label="复制第 20 段命令">复制命令</button></div><pre tabindex="0"><code id="code-20"># 4. 启动容器依赖组件（MongoDB、Redis、Etcd、LiveKit）
+docker compose up -d
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-21" aria-label="复制第 21 段命令">复制命令</button></div><pre tabindex="0"><code id="code-21"># 5. 检查启动状态和错误日志；Up 仅表示容器运行，不代表业务或媒体验证通过
+docker compose ps
+docker compose logs --tail=80 livekit
+# 日志可能包含敏感配置，分享前先脱敏。
+</code></pre></div>
+</section>
+<section id="section-7"><h2><span class="step">07</span>第五步：安装 Go 语言编译环境与 Mage 工具</h2>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-22" aria-label="复制第 22 段命令">复制命令</button></div><pre tabindex="0"><code id="code-22"># 1. 下载并安装示例构建基线 Go 1.21.6（仅首次部署；管理员权限）
+# 已有满足版本要求的 Go 时跳过。下载后先核对发布方提供的 SHA256，确认包完整再安装。
+wget https://golang.google.cn/dl/go1.21.6.linux-amd64.tar.gz
+# 确认 /usr/local/go 是待替换的 Go 安装目录，再执行：
+rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.21.6.linux-amd64.tar.gz
+rm -f go1.21.6.linux-amd64.tar.gz
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-23" aria-label="复制第 23 段命令">复制命令</button></div><pre tabindex="0"><code id="code-23"># 2. 配置部署用户的 Go 环境（回到实际部署用户执行）
+# 当前 Bash 会话：
+export PATH=&quot;/usr/local/go/bin:$HOME/go/bin:$PATH&quot;
+export GOPROXY=https://goproxy.cn,direct
+go version
+# 持久化时，将上面两行 export 放入该用户 ~/.bashrc，一次即可；不要反复追加。
+# 不必强制设置 GOROOT，避免与现有 Go 安装冲突。
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-24" aria-label="复制第 24 段命令">复制命令</button></div><pre tabindex="0"><code id="code-24"># 3. 执行项目初始化脚本（安装构建工具 mage）
+cd &quot;$APP_DIR&quot;
+bash bootstrap.sh
+</code></pre></div>
+</section>
+<section id="section-8"><h2><span class="step">08</span>第六步：编译与启动业务服务</h2>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-25" aria-label="复制第 25 段命令">复制命令</button></div><pre tabindex="0"><code id="code-25">cd &quot;$APP_DIR&quot;
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-26" aria-label="复制第 26 段命令">复制命令</button></div><pre tabindex="0"><code id="code-26"># 编译并启动所有核心微服务
+mage &amp;&amp; mage start
+</code></pre></div>
+<div class="command"><div class="command-bar"><span>Bash · 服务器</span><button type="button" class="copy" data-copy="code-27" aria-label="复制第 27 段命令">复制命令</button></div><pre tabindex="0"><code id="code-27"># 检查四个业务服务的进程状态；验证结果记录见第八步
+mage check
+</code></pre></div>
+</section>
+<section id="section-9"><h2><span class="step">09</span>第七步：安全组与主机防火墙（保留原说明全部放行端口）</h2>
+<p>以下清单包含原部署说明中的全部端口。云安全组与主机防火墙均需配置对应规则。</p>
+<p>放行规则本身不会启动服务；端口用途及是否实际监听，以部署配置为准。</p>
+<p>本文基础配置未部署 Nginx、TLS 或 TURN，扩展端口仍保留在完整清单中。</p>
+<div class="table-wrap"><table><thead><tr><th>协议</th><th>端口</th><th>用途与放行范围</th></tr></thead><tbody>
+<tr><td>TCP</td><td>22</td><td>SSH 登录及 SSH 端口转发；允许维护来源 IP。</td></tr>
+<tr><td>TCP</td><td>80</td><td>HTTP 反向代理及证书 HTTP 校验；公网访问时允许 0.0.0.0/0。</td></tr>
+<tr><td>TCP</td><td>443</td><td>HTTPS / 安全 WebSocket 反向代理入口；公网访问时允许 0.0.0.0/0。</td></tr>
+<tr><td>TCP</td><td>11020</td><td>原说明保留的客户端业务扩展端口；具体服务按实际配置核对，当前默认客户端 API 为 11102。</td></tr>
+<tr><td>TCP</td><td>11022</td><td>openmeeting-admin-api 管理接口；允许管理来源或内网。</td></tr>
+<tr><td>TCP</td><td>11102</td><td>openmeeting-api：客户端注册、登录、会议业务接口；按客户端访问范围放行。</td></tr>
+<tr><td>TCP</td><td>17880</td><td>LiveKit HTTP / WebSocket 信令；按客户端访问范围放行。</td></tr>
+<tr><td>TCP</td><td>17881</td><td>LiveKit TCP ICE 回退；按客户端访问范围放行。</td></tr>
+<tr><td>TCP</td><td>5349</td><td>TURN TLS 扩展端口；实际启用 TURN TLS 后使用。</td></tr>
+<tr><td>TCP</td><td>8080</td><td>原说明保留的 Web / 管理页面扩展端口；按实际监听服务及访问范围配置。</td></tr>
+<tr><td>TCP</td><td>8443</td><td>原说明保留的 HTTPS / 管理页面扩展端口；按实际监听服务及访问范围配置。</td></tr>
+<tr><td>UDP</td><td>17882</td><td>LiveKit 单端口媒体通道；按客户端访问范围放行。</td></tr>
+<tr><td>UDP</td><td>3478</td><td>STUN / TURN 扩展端口；实际启用对应服务后使用。</td></tr>
+<tr><td>UDP</td><td>50000-60000</td><td>原说明保留的媒体 / TURN 中继端口范围；实际用途和范围按对应组件配置核对。</td></tr>
+</tbody></table></div>
+<h3>安全组批量录入参考（端口全部保留，访问来源按上表设置）：</h3>
+<p class="port-summary">TCP：22、80、443、11020、11022、11102、17880、17881、5349、8080、8443。</p>
+<p class="port-summary">UDP：17882、3478、50000-60000。</p>
+<p>若控制台不支持逗号分隔的多端口输入，按单端口分别建规则；范围端口按控制台要求填写。</p>
+<h3>IPv6 放行：</h3>
+<p>使用 IPv6 时，另建 IPv6 入站规则，并确认服务监听 IPv6、服务器具备 IPv6 地址和路由。</p>
+<h3>原说明中的 IPv6 清单保留如下：</h3>
+<p class="port-summary">TCP：11020、11022、17880、17881。</p>
+<p class="port-summary">UDP：17882、3478。</p>
+<p>客户端 API 11102 及其他上表端口如也提供 IPv6 访问，补充对应 IPv6 规则。</p>
+<p>公网 IPv6 来源可使用 ::/0；维护和管理端口按实际来源限制。</p>
+<p>仅配置 IPv4 的部署不需要额外启用 IPv6。</p>
+<h3>配置说明：</h3>
+<p>- 本文 rtc.udp_port=17882 使用单端口媒体模式；保留 UDP 50000-60000 规则不代表 LiveKit 会自动使用该范围。</p>
+<p>- 放行 UDP 3478 / TCP 5349 不等于已启用 TURN；还需配置监听、地址及相应证书等服务参数。</p>
+<p>- 80、443、11020、8080、8443 是否有服务监听，应结合实际部署核对。</p>
+<h3>内部依赖端口（与上述原说明公网放行清单分开）：</h3>
+<p>MongoDB 37017、Redis 16379、etcd 12379/12380；</p>
+<p>RPC 11110/11112；指标 21100/21101/21113/20114。</p>
+<p>这些端口用于内部组件通信或监控，不因补齐原清单而新增公网开放要求。</p>
+<p>Compose 中 ports 映射可能监听所有网卡，应由绑定地址与防火墙落实访问范围。</p>
+</section>
+<section id="section-10"><h2><span class="step">10</span>第八步：部署与验证记录模板</h2>
+<p>每次部署填写一份实际记录，示例字段不得当作已完成结果。</p>
+<div class="table-wrap"><table><thead><tr><th>记录字段</th><th>填写内容</th></tr></thead><tbody>
+<tr><td>部署日期</td><td>&lt;实际日期与时区&gt;</td></tr>
+<tr><td>服务器公网地址</td><td>&lt;实际 IP 或域名&gt;</td></tr>
+<tr><td>部署账号</td><td>&lt;实际登录账号，不填写密码或密钥内容&gt;</td></tr>
+<tr><td>部署目录</td><td>&lt;实际 APP_DIR&gt;</td></tr>
+<tr><td>源码来源</td><td>&lt;仓库地址或可信源码包来源&gt;</td></tr>
+<tr><td>源码版本</td><td>&lt;完整提交 ID 或源码包摘要&gt;</td></tr>
+<tr><td>主持人目录修复核验</td><td>&lt;包含 ae64a2b / 对应源码一致 / 已审阅后续差异 / UNKNOWN&gt;</td></tr>
+<tr><td>Go 版本</td><td>&lt;实际版本&gt;</td></tr>
+<tr><td>容器镜像</td><td>&lt;各组件 tag 与 digest&gt;</td></tr>
+<tr><td>运行会议 RPC PID</td><td>&lt;实际 PID，仅代表本次检查时点&gt;</td></tr>
+<tr><td>部署二进制 SHA256</td><td>&lt;实际值&gt;</td></tr>
+<tr><td>运行文件 SHA256</td><td>&lt;实际值&gt;</td></tr>
+<tr><td>客户端版本</td><td>&lt;实际版本或 UNKNOWN&gt;</td></tr>
+<tr><td>回滚备份目录</td><td>&lt;实际路径&gt;</td></tr>
+</tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>检查项</th><th>结果及证据位置</th></tr></thead><tbody>
+<tr><td>容器与业务进程</td><td>&lt;填写&gt;</td></tr>
+<tr><td>运行程序与部署二进制一致</td><td>&lt;填写&gt;</td></tr>
+<tr><td>业务登录与会议 API</td><td>&lt;填写&gt;</td></tr>
+<tr><td>公网信令连接</td><td>&lt;填写&gt;</td></tr>
+<tr><td>真实音视频</td><td>&lt;填写&gt;</td></tr>
+<tr><td>A→B、B→A 主持人移交</td><td>&lt;填写&gt;</td></tr>
+<tr><td>白板权限与参会人列表同步</td><td>&lt;填写&gt;</td></tr>
+<tr><td>结束全员会议与普通退会</td><td>&lt;填写&gt;</td></tr>
+<tr><td>重新登录后的会议卡片归属</td><td>&lt;填写&gt;</td></tr>
+<tr><td>麦克风错误提示自动消失</td><td>&lt;填写&gt;</td></tr>
+</tbody></table></div>
+<p>最终结论：&lt;仅总结已完成的验证范围；未执行项保留 NOT_RUN&gt;</p>
+<p>记录不包含账号密码、API secret、SSH 私钥或带凭据的 URL。</p>
+<p>后续更新源码、镜像、配置或客户端后，按受影响范围重新核验，不能沿用旧 PID 与哈希作为当前结果。</p>
+</section><footer>依据当前 TXT 说明生成 · 支持离线阅读与命令复制</footer></main><div id="status" role="status" aria-live="polite"></div><script>
+const statusBox=document.getElementById('status');let statusTimer;
+function notify(message){statusBox.textContent=message;statusBox.classList.add('show');clearTimeout(statusTimer);statusTimer=setTimeout(()=>statusBox.classList.remove('show'),3200);}
+async function copyText(text){
+ if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);return true;}catch(error){}}
+ const active=document.activeElement;const area=document.createElement('textarea');area.value=text;area.setAttribute('readonly','');area.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0';document.body.appendChild(area);area.select();area.setSelectionRange(0,area.value.length);let success=false;try{success=document.execCommand('copy');}catch(error){}area.remove();if(active&&active.focus)active.focus({preventScroll:true});return success;
+}
+document.querySelectorAll('[data-copy]').forEach(button=>{button.addEventListener('click',async()=>{const code=document.getElementById(button.dataset.copy);const original='复制命令';button.disabled=true;try{const success=await copyText(code.textContent);button.textContent=success?'已复制 ✓':'请手动复制';button.classList.toggle('ok',success);button.classList.toggle('failed',!success);notify(success?'命令已复制，可粘贴到对应终端。':'浏览器未允许复制，请选中命令后按 Ctrl+C。');}finally{button.disabled=false;clearTimeout(button.resetTimer);button.resetTimer=setTimeout(()=>{button.textContent=original;button.classList.remove('ok','failed');},2400);}});});
+
+// Keep original text templates so repeated changes never depend on the last IP.
+const defaultIP='203.0.113.10';
+const ipStorageKey='openmeeting-deployment-ip-v1';
+const ipInput=document.getElementById('server-ip');
+const ipMessage=document.getElementById('ip-message');
+const ipTemplates=[];
+const ipWalker=document.createTreeWalker(document.querySelector('main'),NodeFilter.SHOW_TEXT);
+let ipNode;
+while((ipNode=ipWalker.nextNode())){
+ if(!ipNode.parentElement.closest('#ip-settings,script,style')&&ipNode.nodeValue.includes(defaultIP)) ipTemplates.push({node:ipNode,template:ipNode.nodeValue});
+}
+function validIPv4(value){return /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/.test(value)&&value.split('.').every(part=>Number(part)<=255&&(part==='0'||!part.startsWith('0')));}
+function applyIP(value,persist=true){
+ const ip=value.trim();
+ if(!validIPv4(ip)){ipInput.setAttribute('aria-invalid','true');ipMessage.classList.add('error');ipMessage.textContent='请输入有效的 IPv4 地址，例如 203.0.113.10；每段应为 0–255。';return false;}
+ for(const item of ipTemplates)item.node.nodeValue=item.template.split(defaultIP).join(ip);
+ ipInput.value=ip;ipInput.setAttribute('aria-invalid','false');ipMessage.classList.remove('error');
+ ipMessage.textContent=ip===defaultIP?'已恢复示例 IP，请在执行命令前修改。':'已应用 '+ip+'，全文地址和复制命令均已更新。';
+ if(persist){try{if(ip===defaultIP)localStorage.removeItem(ipStorageKey);else localStorage.setItem(ipStorageKey,ip);}catch(error){ipMessage.textContent+=' 当前浏览器无法保存设置，刷新后需重新填写。';}}
+ return true;
+}
+document.getElementById('ip-form').addEventListener('submit',event=>{event.preventDefault();applyIP(ipInput.value);});
+document.getElementById('reset-ip').addEventListener('click',()=>applyIP(defaultIP));
+try{const savedIP=localStorage.getItem(ipStorageKey);if(savedIP&&validIPv4(savedIP))applyIP(savedIP,false);}catch(error){}
+</script></body></html>
